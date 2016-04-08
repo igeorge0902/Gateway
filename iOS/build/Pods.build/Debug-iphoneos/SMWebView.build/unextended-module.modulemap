@@ -1,0 +1,10 @@
+framework module SMWebView {
+  umbrella header "SMWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module SMWebView.__Swift {
+    exclude header "SMWebView-Swift.h"
+}

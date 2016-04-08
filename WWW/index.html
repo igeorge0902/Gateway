@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html ng-app="hmac">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">       
+    <title>Login</title>
+    <script type="text/javascript" src="jsR/sha512.js"></script>
+    <script type="text/javascript" src="jsR/sha3.js"></script>
+    <script type="text/javascript" src="jsR/hmac-sha512.js"></script>
+    <script type="text/javascript" src="jsR/angular.min.js"></script>
+    <script type="text/javascript" src="jsR/app.js"></script>
+    <script type="text/javascript" src="jsR/enc-base64-min.js"></script>
+    <script type="text/javascript" src="jsR/angular-utf8-base64.min.js"></script>
+    <script type="text/javascript" src="jsR/ng-device-detector.min.js"></script>
+    <script type="text/javascript" src="jsR/re-tree/re-tree.min.js"></script>
+
+	<style type="text/css">
+		.login-form {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+		#inputUsername {
+		  margin-bottom: -1px;
+		  border-bottom-right-radius: 0;
+		  border-bottom-left-radius: 0;
+		}
+		#inputPassword {
+			border-top-left-radius: 0;
+  			border-top-right-radius: 0;
+		}
+	</style>
+</head>
+<body>
+
+<!--<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    
+      FB.init({
+          appId      : '901031536677304',
+          xfbml      : true,
+          version    : 'v2.5'
+    });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>-->
+    
+
+    
+    <!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<!--<fb:login-button scope="public_profile,email,user_events" data-size="medium" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></fb:login-button>
+
+<div id="status"></div>
+    
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+    <h1 id="fb-welcome"></h1>
+    
+    <button onclick="createMyEvent()" type="button">Try it</button>
+    
+    <script>
+    
+function createEvent(token, name, startTime, endTime, location, description) {
+    var eventData = {
+        "access_token": token,
+        "start_time" : startTime,
+        "end_time":endTime,
+        "location" : location,
+        "name" : name,
+        "description":description,
+        "privacy":"OPEN"
+    }
+    FB.api("/me/events",'post',eventData,function(response){
+        if(response.id){
+            alert("We have successfully created a Facebook event with ID: "+response.id);
+        }
+    })
+}
+
+function createMyEvent(response){
+    var token = response.authResponse.access_token;
+    var name = "My Amazing Event";
+    var startTime = "10/29/2011 12:00 PM";
+    var endTime = "10/29/2011 06:00 PM";
+    var location = "Dhaka";
+    var description = "It will be freaking awesome";
+    createEvent(token, name, startTime,endTime, location, description);
+}
+        
+</script>-->
+
+    <div class="container">
+       <div ng-controller="LoginController">
+          <form class="login-form">
+            <h2>Login</h2>
+            <section class="4u">
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" name="username" id="username" ng-model="username"/>
+            <br />
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" id="password" ng-model="password"/>
+            </section>
+            <div class="row">
+            <section class="4u">
+            <br>
+            <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="successMsg">{{successMsg}}</div>
+            <br>
+            <button ng-click="login()">Login</button>
+            <input type="reset" value="Cancel"/>
+            </section>
+            </div>
+          </form>
+        </div>
+    </div>
+        <div ng-controller="myCtrl as vm">
+            <p>You are using <b>{{vm.data.browser}}</b> on <b>{{vm.data.os}} ({{vm.data.os_version}})</b>.</p>
+            <p>Your <b>{{vm.data.browser}}</b> version is <b>{{vm.data.browser_version}}</b></p>
+            <p>Device - <b></b>{{vm.data.device}}</p>
+            <p>Complete deviceDetector data - <b></b><pre>{{vm.allData}}<pre></p>
+        </div>
+  <hr/>
+</body>
+</html>

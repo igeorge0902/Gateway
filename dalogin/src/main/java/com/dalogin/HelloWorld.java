@@ -1,0 +1,293 @@
+package com.dalogin;
+
+/**
+ * @author George Gaspar
+ * @email: igeorge1982@gmail.com 
+ * 
+ * @Year: 2015
+ */
+
+//Import required java libraries
+import java.io.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import org.apache.log4j.Logger;
+import org.json.JSONObject;
+
+import com.dalogin.utils.AesUtil;
+import com.dalogin.utils.hmac512;
+
+//Extend HttpServlet class
+public class HelloWorld extends HttpServlet {
+    /**
+    *
+    */
+    private static final long serialVersionUID = 1L;
+	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
+	private volatile static String pass;
+	private volatile static String user;
+	private volatile static String hash1;
+	private volatile static String deviceId;
+	private volatile static String contentLength;
+	private volatile static String ios;
+	private volatile static String WebView;
+	private volatile static String M;
+	private volatile static HttpSession session;
+	private volatile static boolean devices;
+	private volatile static long SessionCreated;
+	private volatile static String sessionID;
+	private volatile static String token2;
+	private volatile static String hmac;
+	private volatile static String hmacHash;
+	private volatile static String time;
+	private static AesUtil aesUtil;
+    private static final String SALT = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
+    private static final String IV = "F27D5C9927726BCEFE7510B1BDD3D137";
+    private static final int KEYSIZE = 128;
+    private static final int ITERATIONCOUNT = 1000;
+    private static volatile Cookie c;
+    private static volatile long T;
+
+	private static Logger log = Logger.getLogger(Logger.class.getName());
+
+    public void init() throws ServletException
+    {
+    	aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
+    }
+    
+    // performance test combined with API only possible with unique deviceIds due to the logic that the session is tied to device
+    public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+    	
+    	// Set response content type
+		response.setContentType("application/json"); 
+		response.setCharacterEncoding("utf-8"); 
+		
+	 	session = request.getSession(false);
+      	
+ 	     if(session != null){
+ 	  		 
+ 		     session.invalidate();
+ 	     }
+ 		
+ 	     ServletContext context = request.getServletContext();
+	      
+ 	     final long T2 = Long.parseLong(context.getAttribute("time").toString());
+
+        // Actual logic goes here.		
+        try {
+        	
+        	// hmac is not encrypted, just the password inside
+        	hmac = request.getHeader("X-HMAC-HASH");
+        	contentLength = request.getHeader("Content-Length");
+        	time = request.getHeader("X-MICRO-TIME");
+    		pass = request.getParameter("pswrd");	
+    		user = request.getParameter("user");	
+    		deviceId = request.getParameter("deviceId");
+    		ios = request.getParameter("ios");
+    		WebView = request.getHeader("User-Agent");
+    		M = request.getHeader("M");
+            T = Long.parseLong(time.trim());
+    				
+    		hmacHash = hmac512.getLoginHmac512(user, pass, deviceId, time, contentLength);
+    		    		
+    		log.info("HandShake was given: "+hmac+" & "+hmacHash);
+    		
+			hash1 = SQLAccess.hash(pass, context);
+			devices = SQLAccess.insert_device(deviceId, user, context);
+		
+		} catch (Exception e) {
+			
+    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "There is a big problem!");
+
+		}
+        	/*
+        	 *  user authentication only can happen during the intervallum that the network latency produces 
+        	 *  plus seconds given as context parameter
+        	 *  
+        	 */
+        	if(pass.equals(hash1) && devices && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())){
+        		
+        		// Create new session
+				session = request.getSession(true);
+				
+				// synchronized session object to prevent concurrent update		        	   
+				synchronized(session) {
+	                
+				/* 
+				 * The reason session ids are not checked at this point is 
+				 * that it can have impact on the speed. In normal conditions, the listener works correctly 
+				 * in normal conditions, independently from the main thread and always the last generated 
+				 * token can be used, only. 
+				 * 
+				 * There is no user count limitation, not planned, but also the listener should manage it.
+				 * 
+                 *	// Init HashMap that stores session objects
+                 *	activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
+                 *	// Get session with sessionId
+                 *	session = activeUsers.get(session.getId());
+                 *
+                 */
+	                
+				session.setAttribute("user", user);
+				session.setAttribute("deviceId", deviceId);
+				
+				session.removeAttribute("pswrd");
+				SessionCreated = session.getCreationTime();
+				sessionID = session.getId();
+		           }
+
+				try {
+					SQLAccess.insert_sessionCreated(deviceId, SessionCreated, sessionID, context);
+				} catch (Exception e) {	
+					throw new ServletException();
+				}
+
+				//setting session to expiry in 30 mins
+				session.setMaxInactiveInterval(30*60); 	
+		        String homePage = getServletContext().getInitParameter("homePage");
+
+				ServletContext otherContext = getServletContext().getContext(homePage);
+				
+				// X-Token should be sent as json response I guess
+				// native mobile
+						if (ios != null) {
+						try {
+						
+						token2 = SQLAccess.token2(deviceId, context);
+						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+						response.addCookie(c);
+						response.setContentType("application/json"); 
+						response.setCharacterEncoding("utf-8"); 
+						response.setStatus(200);
+		
+						PrintWriter out = response.getWriter(); 
+						
+						JSONObject json = new JSONObject(); 
+						
+						json.put("success", 1);
+						json.put("JSESSIONID", sessionID);
+						json.put("X-Token", token2);
+						
+						out.print(json.toString());
+						out.flush();
+						
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
+						// mobile webview (there is no session in iOS simulator in normal webview with GlassFish. Interesting.)
+						} else if (WebView.contains("Mobile") && M.equals("M")){ 
+							
+							try {
+								token2 = SQLAccess.token2(deviceId, context);
+								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+								response.addCookie(c);
+								// The token2 will be used as key-salt-whatever as originally planned.
+								response.addHeader("X-Token", token2);
+												
+								JSONObject json = new JSONObject(); 
+								
+								json.put("Session", "raked"); 
+								json.put("Success", "true"); 
+								
+								// this is necessary because the X-Token header did not appear in the native mobile app
+								json.put("X-Token", token2);
+								
+								response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
+
+								
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						
+						} 
+						// standard path
+						else {
+							try {
+								token2 = SQLAccess.token2(deviceId, context);
+								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+								response.addCookie(c);
+								// The token2 will be used as key-salt-whatever as originally planned.
+								response.addHeader("X-Token", token2);
+								
+								PrintWriter out = response.getWriter(); 
+								
+								JSONObject json = new JSONObject(); 
+								
+								json.put("Session", "raked"); 
+								json.put("Success", "true"); 
+								// this is necessary because the X-Token header did not appear in the native mobile app
+								json.put("X-Token", token2);
+								
+								out.print(json.toString());
+								out.flush();
+								
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+
+		
+						}
+				
+
+			}else {
+				
+				response.setContentType("application/json"); 
+				response.setCharacterEncoding("utf-8"); 
+				response.setStatus(502);
+
+				PrintWriter out = response.getWriter(); 
+				
+				JSONObject json = new JSONObject(); 
+				
+				json.put("Session creation", "failed"); 
+				json.put("Success", "false"); 
+				
+				out.print(json.toString());
+				out.flush();
+	    		
+			}
+        
+    }
+    
+    public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        
+    	
+    	// Set response content type
+        response.setContentType("text/html");
+        
+	 	session = request.getSession(false);
+      	
+	     if(session != null){
+	  		 
+		     session.invalidate();
+	     }
+	      
+        // Actual logic goes here.		
+        try {
+    		pass = request.getParameter("pswrd");	
+    		user = request.getParameter("user");	
+    		deviceId = request.getParameter("deviceId");
+			
+			if (user.trim().isEmpty() || pass.trim().isEmpty() || deviceId.trim().isEmpty()) {
+	    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+			}
+					
+		} catch (Exception e) {
+			
+    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+
+		}
+    	
+    }
+    
+    public void destroy()
+    {
+        // do nothing.
+    }
+}
