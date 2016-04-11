@@ -10,6 +10,8 @@ The iOS swift code contains both type of login method, where the webview login s
 
 Important:
 - configure your links according your environment setup!
+- I have included an exported db schema with data structure to get started.
+- You must run it over SSL. Check the CustomURLSessionDelegate.swift file and SessionDelegate configuration if you face SSL issues.
 
 Documentation will be coming soon.
 ----
