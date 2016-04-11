@@ -60,7 +60,9 @@ myRegController.config(function ($httpProvider) {
 
             // 4RI "Message", "secret"
             // TODO: add content-length
-            var hash = CryptoJS.HmacSHA512(headersGetter()['X-URL'] + ':' + data + ':' + microTime, localStorage.hmacSecret);
+            var hash = CryptoJS.HmacSHA512(headersGetter()['X-URL'] + ':' + data + ':' + microTime + ':' + data.length, localStorage.hmacSecret);
+
+           // var hash = CryptoJS.HmacSHA512(headersGetter()['X-URL'] + ':' + data + ':' + microTime, localStorage.hmacSecret);
             var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
             // Finally generate HMAC and set header

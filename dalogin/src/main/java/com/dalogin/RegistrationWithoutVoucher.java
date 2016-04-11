@@ -104,7 +104,7 @@ public class RegistrationWithoutVoucher extends HttpServlet {
         // Try - catch is necessary anyways, and will catch user names that have become identical in the meantime
         try {
 			
-			if (hmac.equals(hmacHash) && (T < (System.currentTimeMillis()+T2))) {
+			if (hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())) {
                   
               if (SQLAccess.new_hash(pass, user, email, context) && SQLAccess.insert_device(deviceId, user, context)) {
 				

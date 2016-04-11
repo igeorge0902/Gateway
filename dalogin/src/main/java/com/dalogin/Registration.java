@@ -107,8 +107,8 @@ public class Registration extends HttpServlet {
 
         // Try - catch is necessary anyways, and will catch user names that have become identical in the meantime
         try {
-			
-			if (SQLAccess.register_voucher(voucher, context) && hmac.equals(hmacHash) && (T < (System.currentTimeMillis()+T2))) {
+			// TODO: fix that registration must not complete if hmac is not correct
+			if (SQLAccess.register_voucher(voucher, context) && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())) {
                   
               if (SQLAccess.new_hash(pass, user, email, context) && SQLAccess.insert_voucher(voucher, user, pass, context) && SQLAccess.insert_device(deviceId, user, context)) {
 				
