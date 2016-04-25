@@ -1,0 +1,71 @@
+package com.dalogin;
+	
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
+	 
+public class ExceptionHandler extends HttpServlet {
+
+	private static final long serialVersionUID = 1L; 
+	   
+	protected synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        processError(request, response);
+	    }
+	 
+	protected synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        processError(request, response);
+	    }
+
+	public synchronized void processError(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+    	// Analyze the servlet exception
+        Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
+        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+        String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
+        
+        if (servletName == null) {
+            servletName = "Unknown";
+        }
+        
+        String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
+        if (requestUri == null) {
+            requestUri = "Unknown";
+        }
+         
+        // Set response content type
+          response.setContentType("application/json");
+      
+          PrintWriter out = response.getWriter();
+          			
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			HashMap<String, String> error = new HashMap<>();
+	      
+			if(statusCode != 500){
+				
+			error.put("Status Code:", statusCode.toString());
+			error.put("Requested URI:", requestUri);
+			
+			} else {
+				error.put("Servlet Name:", statusCode.toString());
+				error.put("Exception name:", throwable.getClass().getName());
+				error.put("Requested URI:", requestUri);
+				error.put("Exception Message:", throwable.getMessage());
+			}
+			// put some value pairs into the JSON object . 				
+			json.put("Error Details", error); 
+			
+			// finally output the json string 
+			out.print(json.toString());
+			out.flush();
+			
+    }
+	
+}

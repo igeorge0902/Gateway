@@ -1,0 +1,146 @@
+package com.dalogin;
+
+/**
+ * @author George Gaspar
+ * @email: igeorge1982@gmail.com 
+ * 
+ * @Year: 2015
+ */
+
+import java.io.*;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import org.apache.log4j.Logger;
+import org.json.HTTP;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.dalogin.utils.SendHtmlEmail;
+
+public class RegActivation extends HttpServlet {
+    
+	private volatile static String voucher;
+	private volatile static String user;
+	private volatile static String token2;
+	private volatile static String ciphertext;
+	protected volatile static HttpSession session = null;
+	private volatile static String deviceId;
+	public static volatile String token;
+	private static volatile String email;
+	private static volatile List<String> list;
+
+	private static Logger log = Logger.getLogger(Logger.class.getName());
+
+	/**
+    *
+    */
+    private static final long serialVersionUID = 1L;
+	
+
+    public void init() throws ServletException
+    {
+    	
+    }
+    
+    public synchronized void processRequest (HttpServletRequest request, HttpServletResponse response)
+    	    throws ServletException, IOException {
+    	
+    }
+    
+    public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    { 	
+
+		session = request.getSession(false);		
+		
+        ServletContext context = session.getServletContext();
+
+        ciphertext = request.getParameter("Ciphertext");
+    	user = request.getParameter("user");
+    	deviceId = request.getParameter("deviceId");
+
+    	
+    	if (ciphertext != null) ciphertext = ciphertext.trim();
+        if (user != null) user = user.trim();
+        
+        try {
+        	
+            token2 = SQLAccess.token2(deviceId, context);
+
+			if (token2.equals(ciphertext)) {
+				
+				list = SQLAccess.activation_token(user, context);
+
+				token = list.get(0);
+				email = list.get(1);
+				
+				// send email for activation 
+			    String scheme = request.getScheme();             
+				String serverName = request.getServerName();
+				String servletContext = context.getContextPath();
+
+				// Construct requesting URL
+			    StringBuilder url = new StringBuilder();
+			    
+			    url.append(scheme).append("://")
+			    .append(serverName).append(servletContext).append("/activation")
+			    .append("?").append("&user="+user).append("&token2="+token);
+			    
+			    SendHtmlEmail.generateAndSendEmail(email, url.toString());			
+				
+			}
+		} catch (Exception e) {
+			
+			log.info(e.getMessage());
+			response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Line 100");
+		}
+
+        PrintWriter out = response.getWriter(); 
+
+        JSONObject json = new JSONObject(); 
+		json.put("Success", "true");
+		
+		out.print(json.toString());
+		out.flush();
+
+    
+    }
+    
+    public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+		response.setContentType("application/json"); 
+		response.setCharacterEncoding("utf-8"); 
+
+		voucher = request.getParameter("voucher");
+		user = request.getParameter("user");
+		token2 = request.getParameter("token2");
+				
+		//TODO: activate the voucher
+		
+		PrintWriter out = response.getWriter(); 
+		HashMap<String, String> map = new HashMap<>();
+		
+		map.put("voucher", voucher);
+		map.put("user", user);
+		map.put("token2", token2);
+
+		JSONObject json = new JSONObject(); 
+		JSONArray list = new JSONArray();
+		list.put(map);
+		json.put("activation", list);
+		
+		out.print(json.toString());
+		out.flush();
+    	
+    }
+    
+    public void destroy()
+    {
+        // do nothing.
+    }
+}

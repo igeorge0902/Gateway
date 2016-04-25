@@ -55,7 +55,7 @@ myAppControllers.factory('userApi', userApi)
                     var method = config.method;
                     var url = config.url;
                     
-                    if (rejection.status === 502) {
+                    if (rejection.status === 300) {
                         // Return a new promise
                         return authenticate().then(function() {
                             return $injector.get('$http')(rejection.config);

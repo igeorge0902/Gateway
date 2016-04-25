@@ -297,6 +297,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="VOUCHER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-N2-sy0" userLabel="Txt Voucher">
+                                <rect key="frame" x="75" y="59" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GDn-ee-6pW" id="N9Z-P0-RDs"/>
+                                </connections>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHh-VB-k10">
                                 <rect key="frame" x="75" y="151" width="170" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -325,7 +333,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2O-W0-bV4">
-                                <rect key="frame" x="117" y="80" width="86" height="31"/>
+                                <rect key="frame" x="117" y="20" width="86" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -348,19 +356,29 @@
                                     <outlet property="delegate" destination="GDn-ee-6pW" id="dwb-cC-rzi"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-M6-vj4" userLabel="Txt Email">
+                                <rect key="frame" x="75" y="105" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GDn-ee-6pW" id="0pS-dg-Fai"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="bWl-8T-Kvf"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="h4a-mP-JMo" id="r9q-Ot-bf6"/>
+                        <outlet property="txtEmail" destination="XTa-M6-vj4" id="qzj-wF-3Pu"/>
                         <outlet property="txtPassword" destination="RdZ-7M-weq" id="7A6-nb-Ljv"/>
                         <outlet property="txtUsername" destination="xHh-VB-k10" id="YuE-tJ-eP5"/>
+                        <outlet property="txtVoucher" destination="JJU-N2-sy0" id="nUV-gj-hHy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAX-OK-XaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2531.25" y="-761.24999999999989"/>
+            <point key="canvasLocation" x="2531" y="-762"/>
         </scene>
         <!--MoviesVC-->
         <scene sceneID="D8D-s4-kzX">
@@ -436,19 +454,19 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="uym-DJ-CdI" kind="popoverPresentation" identifier="popOver" popoverAnchorView="E3A-TQ-Y7n" id="sNR-0J-MrI">
+                        <segue destination="uym-DJ-CdI" kind="popoverPresentation" identifier="popOver" popoverAnchorView="E3A-TQ-Y7n" id="w1m-i1-Edk">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pl-l2-K8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3364" y="927"/>
+            <point key="canvasLocation" x="3364" y="938"/>
         </scene>
-        <!--Seats View Controller-->
+        <!--Seats Cells-->
         <scene sceneID="vJo-ci-vDf">
             <objects>
-                <viewController id="uym-DJ-CdI" customClass="SeatsViewController" customModule="SwiftLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uym-DJ-CdI" customClass="SeatsCells" customModule="SwiftLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xuy-EI-eef"/>
                         <viewControllerLayoutGuide type="bottom" id="LMb-HN-95w"/>

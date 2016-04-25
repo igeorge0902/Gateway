@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 typealias zeroTime = (Int64)
 //let currentTime = zeroTime(0).getCurrentMillis()
@@ -20,4 +21,21 @@ extension Int64 {
         return  time
     }
     
+}
+
+extension SequenceType {
+    var minimalDescrption: String {
+        return map { String($0) }.joinWithSeparator(" ")
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

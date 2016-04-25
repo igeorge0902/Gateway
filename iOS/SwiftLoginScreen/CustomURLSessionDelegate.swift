@@ -27,8 +27,6 @@ class CustomURLSessionDelegate: NSObject, NSURLSessionDelegate {
         }
     }
     
-    // MARK: - Constants
-    
     struct Constants {
         
         // A list of hosts you allow self-signed certificates on.
@@ -37,5 +35,61 @@ class CustomURLSessionDelegate: NSObject, NSURLSessionDelegate {
         
         static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost"]
     }
+    
+    
+    /*
+     
+     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
+     (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+     
+     completionHandler(
+     
+     NSURLSessionAuthChallengeDisposition.UseCredential,
+     NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+     }
+     
+     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
+     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+     
+     let newRequest : NSURLRequest? = request
+     
+     print(newRequest?.description);
+     completionHandler(newRequest)
+     }*/
+    
+    
+     /*
+     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
+     (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+     
+     print("didReceiveAuthenticationChallenge")
+     
+     completionHandler(
+     
+     NSURLSessionAuthChallengeDisposition.UseCredential,
+     NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+     }
+     
+     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
+     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+     
+     let newRequest : NSURLRequest? = request
+     
+     print(newRequest?.description);
+     completionHandler(newRequest)
+     }*/
+    
+    /*
+     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
+     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+     
+     let newRequest : NSURLRequest? = request
+     
+     print(newRequest?.description);
+     completionHandler(newRequest)
+     }*/
+    
+    // MARK: - Constants
+    
 
 }

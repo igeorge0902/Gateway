@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class SignupVC: UIViewController {
+    
+    var imageView:UIImageView = UIImageView()
+    var backgroundDict:Dictionary<String, String> = Dictionary()
     
     deinit {
         print(#function, "\(self)")
     }
     
+    lazy var session = NSURLSession.sharedCustomSession
+    var running = false
+
+    @IBOutlet var txtVoucher : UITextField!
+    @IBOutlet var txtEmail : UITextField!
+
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     @IBOutlet var txtConfirmPassword : UITextField!
@@ -21,7 +32,26 @@ class SignupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        backgroundDict = ["Signup":"signup"]
+        
+        let view:UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height));
+        
+        self.view.addSubview(view)
+        
+        self.view.sendSubviewToBack(view)
+        
+        
+        let backgroundImage:UIImage? = UIImage(named: backgroundDict["Signup"]!)
+        
+        
+        imageView = UIImageView(frame: view.frame);
+        
+        imageView.image = backgroundImage;
+        
+        view.addSubview(imageView);
+        
+        self.hideKeyboardWhenTappedAround();
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,127 +73,360 @@ class SignupVC: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    let url:NSURL = NSURL(string:"https://milo.crabdance.com/login/voucher")!
+    let urlR:NSURL = NSURL(string:"https://milo.crabdance.com/login/register")!
+
+    typealias ServiceResponse = (JSON, NSError?) -> Void
     
-    @IBAction func signupTapped(sender : UIButton) {
-        let username:NSString = txtUsername.text! as NSString
-        let password:NSString = txtPassword.text! as NSString
-        let confirm_password:NSString = txtConfirmPassword.text! as NSString
+    func dataTask(voucher: String, email: String, username: String, hash: String, deviceId: String, systemVersion: String, onCompletion: ServiceResponse) {
         
-        if ( username.isEqualToString("") || password.isEqualToString("") ) {
+        let requestV:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+
+        let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlR)
+        
+        // post data. The server will use this data to reproduce the hash
+        let post:NSString = "user=\(username)&email=\(email)&pswrd=\(hash)&deviceId=\(deviceId)&voucher_=\(voucher)&ios=\(systemVersion)"
+        
+        let postV:NSString = "voucher=\(voucher)"
+        
+        let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
+        let postDataV:NSData = postV.dataUsingEncoding(NSASCIIStringEncoding)!
+        
+        // content length
+        let postLength:NSString = String( postData.length )
+        let postLengthV:NSString = String( postDataV.length )
+
+        let time = zeroTime(0).getCurrentMillis()
+        
+        // hmac data
+        let post_ = "/login/register:user=\(username)&email=\(email)&pswrd=\(hash)&deviceId=\(deviceId)&voucher_=\(voucher):\(time):\(post.length)"
+        
+        let hmacSHA512 = CryptoJS.hmacSHA512()
+        
+        // Create secret for "X-HMAC-HASH" header generation
+        let hmacSec:NSString = hmacSHA512.hmac(username as String, secret: hash as String)
+        
+        
+        // Create base64 encoded hmacHash for "X-HMAC-HASH" header
+        let hmacHash:NSString = hmacSHA512.hmac(post_, secret: hmacSec as String)
+        
+        NSLog("hmacSecret: %@",hmacSec);
+        NSLog("PostData: %@",post);
+        NSLog("PostData: %@",postV);
+
+        request.HTTPMethod = "POST"
+        request.HTTPBody = postData
+        request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
+        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(hmacHash as String, forHTTPHeaderField: "X-HMAC-HASH")
+        request.setValue(String(time), forHTTPHeaderField: "X-MICRO-TIME")
+        
+        requestV.HTTPMethod = "POST"
+        requestV.HTTPBody = postDataV
+        requestV.setValue(postLengthV as String, forHTTPHeaderField: "Content-Length")
+        
+        requestV.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        requestV.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        
+        let taskV = session.dataTaskWithRequest(requestV, completionHandler: {data, response, sessionError -> Void in
             
-            let alertView:UIAlertView = UIAlertView()
-            alertView.title = "Sign Up Failed!"
-            alertView.message = "Please enter Username and Password"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
-        } else if ( !password.isEqual(confirm_password) ) {
+            var error = sessionError
             
-            let alertView:UIAlertView = UIAlertView()
-            alertView.title = "Sign Up Failed!"
-            alertView.message = "Passwords doesn't Match"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
-        } else {
-            
-            let post:NSString = "username=\(username)&password=\(password)&c_password=\(confirm_password)"
-            
-            NSLog("PostData: %@",post);
-            
-            let url:NSURL = NSURL(string: "https://dipinkrishna.com/jsonsignup.php")!
-            
-            let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
-            
-            let postLength:NSString = String( postData.length )
-            
-            let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
-            request.HTTPBody = postData
-            request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            
-            var reponseError: NSError?
-            var response: NSURLResponse?
-            
-            var urlData: NSData?
-            do {
-                urlData = try NSURLConnection.sendSynchronousRequest(request, returningResponse:&response)
-            } catch let error as NSError {
-                reponseError = error
-                urlData = nil
+            if let httpResponse = response as? NSHTTPURLResponse {
+                
+                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
+                    
+                    let description = "HTTP response was \(httpResponse.statusCode)"
+                    
+                    error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                    NSLog(error!.description)
+                    
+                }
             }
             
-            if ( urlData != nil ) {
-                let res = response as! NSHTTPURLResponse!;
+            if error != nil {
                 
-                NSLog("Response code: %ld", res.statusCode);
+                let alertView:UIAlertView = UIAlertView()
                 
-                if (res.statusCode >= 200 && res.statusCode < 300)
-                {
-                    let responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
+                
+                if let httpResponse = response as? NSHTTPURLResponse {
                     
-                    NSLog("Response ==> %@", responseData);
+                    if httpResponse.statusCode == 412 {
                     
-                  //  var error: NSError?
+                        alertView.title = "SignUp Failed!"
+                        alertView.message = "Voucher is already used!"
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
                     
-                    let jsonData:NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers )) as! NSDictionary
-                    
-                    
-                    let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
-                    
-                    //[jsonData[@"success"] integerValue];
-                    
-                    NSLog("Success: %ld", success);
-                    
-                    if(success == 1)
-                    {
-                        NSLog("Sign Up SUCCESS");
-                        self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
-                        var error_msg:NSString
                         
-                        if jsonData["error_message"] as? NSString != nil {
-                            error_msg = jsonData["error_message"] as! NSString
-                        } else {
-                            error_msg = "Unknown Error"
-                        }
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Sign Up Failed!"
-                        alertView.message = error_msg as String
+                        alertView.title = "Connection Failure!"
+                        alertView.message = error!.localizedDescription
                         alertView.delegate = self
                         alertView.addButtonWithTitle("OK")
                         alertView.show()
                         
                     }
+                }
+                
+                else {
                     
-                } else {
-                    let alertView:UIAlertView = UIAlertView()
-                    alertView.title = "Sign Up Failed!"
-                    alertView.message = "Connection Failed"
+                    alertView.title = "Connection Failure!"
+                    alertView.message = error!.localizedDescription
                     alertView.delegate = self
                     alertView.addButtonWithTitle("OK")
                     alertView.show()
+                    
                 }
-            }  else {
-                let alertView:UIAlertView = UIAlertView()
-                alertView.title = "Sign in Failed!"
-                alertView.message = "Connection Failure"
-                if let error = reponseError {
-                    alertView.message = (error.localizedDescription)
+
+                
+            } else {
+                
+                let json:JSON = JSON(data: data!)
+                
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    print("got some data")
+                    
+                    switch(httpResponse.statusCode) {
+                    case 200:
+                        
+                        do {
+                            
+                                self.dataTask(request, username: username, onCompletion: { (json) in
+                                    //
+                                })
+                        }
+                        
+                    default:
+                        
+                        let alertView:UIAlertView = UIAlertView()
+                        alertView.title = "SignUp Failed!"
+                        alertView.message = "Server error \(httpResponse.statusCode)"
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                    }
+                    
                 }
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
+                
+                self.running = false
+                onCompletion(json, error)
+                
             }
-        }
+        })
         
+        running = true
+        taskV.resume()
+        
+       
+    }
+    
+    func dataTask (request:NSMutableURLRequest, username:String, onCompletion: ServiceResponse) {
+        
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+            
+            var error = sessionError
+            let json:JSON = JSON(data: data!)
+
+            if let httpResponse = response as? NSHTTPURLResponse {
+                
+                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
+                    
+                    let description = "HTTP response was \(httpResponse.statusCode)"
+                    
+                    error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                    NSLog(error!.description)
+                    
+                    
+                }
+            }
+            
+            if error != nil {
+                
+                let alertView:UIAlertView = UIAlertView()
+
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    
+                    if httpResponse.statusCode == 502 {
+                        
+                        let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                            
+                            NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                        
+                        let message:NSString = jsonData.valueForKey("Message") as! NSString
+                        
+                        
+                        alertView.title = "SignUp Failed!"
+                        alertView.message = "Error: \(message)"
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        
+                        
+                    } else {
+                
+                        let alertView:UIAlertView = UIAlertView()
+                        alertView.title = "Connection Failure!"
+                        alertView.message = error!.localizedDescription
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+  
+                    }
+                }
+                
+            } else {
+                
+               // let json:JSON = JSON(data: data!)
+                
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    print("got some data")
+                    
+                    switch(httpResponse.statusCode) {
+                    case 200:
+                            
+                            let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                            
+                            let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                                
+                                NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                            
+                            let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
+                            let sessionID:NSString = jsonData.valueForKey("JSESSIONID") as! NSString
+                            let xtoken:NSString = jsonData.valueForKey("X-Token") as! NSString
+                            
+                            NSLog("sessionId ==> %@", sessionID);
+                            
+                            NSLog("Success: %ld", success);
+                            
+                            if(success == 1)
+                            {
+                                NSLog("Login SUCCESS");
+                                
+                                prefs.setObject(username, forKey: "USERNAME")
+                                prefs.setInteger(1, forKey: "ISLOGGEDIN")
+                                prefs.setValue(sessionID, forKey: "JSESSIONID")
+                                prefs.setValue(deviceId, forKey: "deviceId")
+                                prefs.setValue(xtoken, forKey: "X-Token")
+                                
+                                prefs.synchronize()
+                            }
+                            
+                            NSLog("got a 200")
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                        
+                    default:
+                        
+                        let alertView:UIAlertView = UIAlertView()
+                        alertView.title = "SignUp Failed!"
+                        alertView.message = "Server error \(httpResponse.statusCode)"
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                    }
+                    
+                }
+                
+                self.running = false
+                onCompletion(json, error)
+                
+            }
+        })
+        
+        running = true
+        task.resume()
+        
+    }
+    
+    
+    @IBAction func signupTapped(sender : UIButton) {
+        //let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        NSLog("deviceId ==> %@", deviceId)
+        let username:NSString = txtUsername.text!
+        let password:NSString = txtPassword.text!
+        let voucher:NSString = txtVoucher.text!
+        let email:NSString = txtEmail.text!
+
+        let systemVersion = UIDevice.currentDevice().systemVersion
+        
+        let SHA3 = CryptoJS.SHA3()
+        
+        let hash = SHA3.hash(password as String,outputLength: 512)
+                
+        let isUsername = username.isEqualToString("")
+        let isPassword = password.isEqualToString("")
+        let isEmail = email.isEqualToString("")
+        let isVoucher = voucher.isEqualToString("")
+
+        var ErrorData:Array< String > = Array < String >()
+
+        if ( isUsername || isPassword || isEmail || isVoucher) {
+            
+            let Message:NSDictionary = ["Username":isUsername, "Password":isPassword, "Email":isEmail, "Voucher":isVoucher]
+            
+            for (bookid, title) in Message {
+                if (title.isEqualToNumber(1)) {
+                    
+                    ErrorData.append(bookid as! String)
+                    
+                }
+                
+            }
+            
+            let alertView:UIAlertView = UIAlertView()
+            alertView.title = "SignUp Failed!"
+            alertView.message = "Please enter \(ErrorData.minimalDescrption)!"
+            alertView.delegate = self
+            alertView.addButtonWithTitle("OK")
+            alertView.show()
+                    
+                
+            
+            
+        } else {
+            
+            self.dataTask(voucher as String, email: email as String, username: username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion){
+                (resultString, error) -> Void in
+                
+                print(resultString)
+                
+            }
+        
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
         textField.resignFirstResponder()
         return true
     }
+    
+    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
+        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+        
+        completionHandler(
+            
+            NSURLSessionAuthChallengeDisposition.UseCredential,
+            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+    }
+    
+    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
+                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+        
+        let newRequest : NSURLRequest? = request
+        
+        print(newRequest?.description);
+        completionHandler(newRequest)
+    }
+
+
 }

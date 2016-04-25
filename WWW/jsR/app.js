@@ -163,11 +163,13 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
                 window.location.href = '/example/tabularasa.jsp';
             } else {
                 // 
+                console.log(data);
                 $scope.errorMsg = "Login not correct";
             }
         }).
         error(function (data, status, headers, config) {
-            $scope.errorMsg = 'Login incorrect';
+            
+            $scope.errorMsg = "Login not correct";
         });
     };
 

@@ -32,6 +32,18 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
     @IBOutlet weak var txtUsername : UITextField!
     @IBOutlet weak var txtPassword : UITextField!
     
+    override func viewWillAppear(animated: Bool) {
+        
+        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        
+        if (isLoggedIn == 1) {
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,10 +67,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
         
         view.addSubview(imageView);
         
-        /*
-        let myGesture = UITapGestureRecognizer(target: self, action: "tappedAwayFunction:")
-        self.view.addGestureRecognizer(myGesture)
-        */
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,16 +75,6 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // #pragma mark - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
     
     let url:NSURL = NSURL(string:"https://milo.crabdance.com/login/HelloWorld")!
     
@@ -263,7 +262,6 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
                     
     }
     
-   
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
        
@@ -273,22 +271,23 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
     
     }
     
+    
     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
         (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+        
+        completionHandler(
             
-            completionHandler(
-                
-                NSURLSessionAuthChallengeDisposition.UseCredential,
-                NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+            NSURLSessionAuthChallengeDisposition.UseCredential,
+            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-        newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-            
-            let newRequest : NSURLRequest? = request
-            
-            print(newRequest?.description);
-            completionHandler(newRequest)
+                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+        
+        let newRequest : NSURLRequest? = request
+        
+        print(newRequest?.description);
+        completionHandler(newRequest)
     }
 
 }

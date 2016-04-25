@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIButton.appearance().tintColor = UIColor.whiteColor()
                 
         // Google Maps
-        GMSServices.provideAPIKey("")
+        GMSServices.provideAPIKey("AIzaSyBSGtLZM_liUV-HDLbFGBrqccBBkNun048")
                 
         return true
     }

@@ -274,17 +274,19 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
                 window.location.href = '/example/tabularasa.jsp';
             } else {
                 // 
+                console.log(data);
                 $scope.errorMsg = "Login not correct";
             }
         }).
         error(function (data, status, headers, config) {
-            $scope.errorMsg = 'Login incorrect';
+            $scope.Result = data;
+            $scope.errorMsg = data.Message;
         });
 
             
         }).
         error(function (data, status, headers, config) {
-            $scope.errorMsg = 'Login incorrect';
+            $scope.errorMsg = "Login incorrect";
         });
 
        

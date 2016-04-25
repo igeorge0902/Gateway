@@ -11,12 +11,44 @@ import SwiftyJSON
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-class RestApiManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate  {
+class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate  {
 
     static let sharedInstance = RestApiManager()
+    
+    func alertView(View: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        
+        switch buttonIndex{
+            
+        case 0:
+            
+            let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            let deviceId = prefs.valueForKey("deviceId")
+            let user = prefs.valueForKey("USERNAME")
+
+            var errorOnLogin:GeneralRequestManager?
+            
+            var i = ["a","b"]
+            
+            let stringRepresentation = i.joinWithSeparator("-")
+            
+            errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": stringRepresentation as String, "user": user as! String])
+            
+            errorOnLogin?.getResponse {
+                
+                (resultString, error) -> Void in
+                
+                print(resultString)
+            }
+
+        default: break
+            
+        }
+    }
 
     //let baseURL = "http://api.randomuser.me/"
     let baseURL = "https://milo.crabdance.com/login/admin?JSESSIONID="
+
+    var running = false
 
     func getRandomUser(onCompletion: (JSON, NSError?) -> Void) {
         
@@ -64,11 +96,37 @@ class RestApiManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate  
                 
                 let alertView:UIAlertView = UIAlertView()
                 
-                alertView.title = "Error!"
-                alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    
+                    if httpResponse.statusCode == 300 {
+                        
+                        let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                            
+                            NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                        
+                        let message:NSString = jsonData.valueForKey("Activation") as! NSString
+                        
+                        alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
+                        alertView.message = "Voucher is active: \(message)"
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("Okay")
+                        alertView.addButtonWithTitle("Cancel")
+                        alertView.cancelButtonIndex = 1
+                        alertView.show()
+                        
+                        
+                    } else {
+                        
+                        let alertView:UIAlertView = UIAlertView()
+                        alertView.title = "Connection Failure!"
+                        alertView.message = error!.localizedDescription
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                        
+                    }
+                }
                 
                 
             } else {
@@ -78,6 +136,7 @@ class RestApiManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate  
                 onCompletion(json, error)
             }
         })
+        running = true
         task.resume()
     }
     
@@ -106,24 +165,25 @@ class RestApiManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate  
         task.resume()
     }
     
+    
     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
         (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+        
+        print("didReceiveAuthenticationChallenge")
+        
+        completionHandler(
             
-            print("didReceiveAuthenticationChallenge")
-            
-            completionHandler(
-                
-                NSURLSessionAuthChallengeDisposition.UseCredential,
-                NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+            NSURLSessionAuthChallengeDisposition.UseCredential,
+            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-        newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-            
-            let newRequest : NSURLRequest? = request
-            
-            print(newRequest?.description);
-            completionHandler(newRequest)
+                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+        
+        let newRequest : NSURLRequest? = request
+        
+        print(newRequest?.description);
+        completionHandler(newRequest)
     }
 
     
