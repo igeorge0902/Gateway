@@ -6,6 +6,9 @@ Update
 - Registration is considered to be finished combined with voucher activation
 - native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
 
+Description
+----
+
 The complete service system consists of several parts, layers that makes it easy to alter or extend the functionalities. The server part can be deployed as it is, just take care of the web.xml. The current configuration shall work without modification.
 
 - as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only)
@@ -15,8 +18,10 @@ The iOS swift code contains both type of login method, where the webview login s
 
 Important:
 - configure your links according your environment setup!
+- make sure you place the hibernate-configuration-3.0.dtd file, that you can obtain from the internet, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can use the default configuration that needs web access. Please refer to the Hibernate configuration! 
+----
 
-Documentation will be coming soon.
+Documentation will be coming soon!!
 ----
 
 The structure:
