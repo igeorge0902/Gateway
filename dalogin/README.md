@@ -17,9 +17,9 @@ The complete service system consists of several parts, layers that makes it easy
 The iOS swift code contains both type of login method, where the webview login serves as "ChangeUser" function.
 
 Important:
-- configure your links according your environment setup!
-- make sure you place the hibernate-configuration-3.0.dtd file, that you can obtain from the internet, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can use the default configuration that needs web access. Please refer to the Hibernate configuration! 
 ----
+- configure your links according your environment setup!
+- make sure you place the hibernate-configuration-3.0.dtd file, found at the resource folder of the dalogin project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
 
 Documentation will be coming soon!!
 ----
