@@ -46,7 +46,7 @@ Notes on Windows:
 - NHibernate is available as an object-relational mapping (ORM) solution for the Microsoft .NET platform. 
 
 Notes on GlassFish:
-- you will need to replace the jBoss logging jar to the newest version because of the Hibernate that is used
+- you will need to replace the jBoss logging jar to the newest version because of the Hibernate that is used in the APIs. You will find this jar here in GLASSFISH_HOME/glassfish/modules, and then also insert a new logger at the server console referencing this logger.
 
 Deploy description:
 ----
