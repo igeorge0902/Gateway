@@ -190,6 +190,18 @@ myAppControllers.controller('SearchCtrl', ['$scope', '$http',
     }]);
 
 function userApi($http) {
+    
+    if  (!localStorage.sessionToken) {
+        
+        localStorage.sessionToken = 'undefined';
+        
+    }
+    
+    if  (!localStorage.hmacSecret) {
+        
+        localStorage.hmacSecret = 'undefined';
+    }
+    
     return {
         getUser: function () {
             var url = '/login/admin';
