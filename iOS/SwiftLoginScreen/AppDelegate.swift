@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIButton.appearance().tintColor = UIColor.whiteColor()
                 
         // Google Maps
-        GMSServices.provideAPIKey("AIzaSyBSGtLZM_liUV-HDLbFGBrqccBBkNun048")
+        //GMSServices.provideAPIKey("AIzaSyBSGtLZM_liUV-HDLbFGBrqccBBkNun048")
                 
         return true
     }

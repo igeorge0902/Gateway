@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		0CDBDE3367C16ADBD1C24365 /* Pods_SwiftLoginScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A188A522422B0D6F7D9D8C /* Pods_SwiftLoginScreen.framework */; };
 		A407DE081C31DFA300D3CAD1 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A407DE071C31DFA300D3CAD1 /* Time.swift */; };
-		A409CD111CA6A1E700CD4328 /* VenuesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409CD101CA6A1E700CD4328 /* VenuesDetailsVC.swift */; };
 		A41942011BF263F8003EFC0E /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41942001BF263F8003EFC0E /* RegEx.swift */; };
 		A41942031BF264B7003EFC0E /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41942021BF264B7003EFC0E /* RequestManager.swift */; };
 		A449DA3F1BFD185A004A9402 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A449DA3E1BFD185A004A9402 /* AFSecurityPolicy.m */; };
-		A45ADFF91CA8892C00B22F08 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ADFF81CA8892C00B22F08 /* BookingVC.swift */; };
-		A45ADFFB1CA8897100B22F08 /* MyBookingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45ADFFA1CA8897100B22F08 /* MyBookingsVC.swift */; };
 		A46A6DCA1BFA11A700F4EB6F /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A6DC91BFA11A700F4EB6F /* CustomURLProtocol.swift */; };
 		A46A6DD01BFA139300F4EB6F /* CachedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A6DCF1BFA139300F4EB6F /* CachedResponse.swift */; };
 		A46A6DD41BFA15E100F4EB6F /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A6DD21BFA15E100F4EB6F /* People+CoreDataProperties.swift */; };
@@ -22,12 +19,12 @@
 		A46A92661C2B1A13003F31F1 /* hmac-sha512.js in Resources */ = {isa = PBXBuildFile; fileRef = A46A92651C2B1A13003F31F1 /* hmac-sha512.js */; };
 		A46A926A1C2B2154003F31F1 /* hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A92691C2B2154003F31F1 /* hmac.swift */; };
 		A46A926C1C2B242D003F31F1 /* enc-base64-min.js in Resources */ = {isa = PBXBuildFile; fileRef = A46A926B1C2B242D003F31F1 /* enc-base64-min.js */; };
-		A46BF1DD1C9DAF1000046FD9 /* VenuesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BF1DC1C9DAF1000046FD9 /* VenuesVC.swift */; };
 		A4743E4E1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4743E4C1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld */; };
 		A4743E931BF3E0FB009078F9 /* LogItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4743E911BF3E0FB009078F9 /* LogItem+CoreDataProperties.swift */; };
 		A4743E941BF3E0FB009078F9 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4743E921BF3E0FB009078F9 /* LogItem.swift */; };
 		A47C41E01BFA947F009504B1 /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C41DF1BFA947F009504B1 /* URLSessionManager.swift */; };
 		A47D31741C309B8C00429EB8 /* enc.js in Resources */ = {isa = PBXBuildFile; fileRef = A47D31731C309B8C00429EB8 /* enc.js */; };
+		A48D62C41CD3F5C1002A5E0A /* GeneralRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D62C31CD3F5C1002A5E0A /* GeneralRequestManager.swift */; };
 		A49A51F61BF6829C00E197D7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A51F51BF6829C00E197D7 /* WebViewController.swift */; };
 		A49F831D1BEF5ABA00572CC5 /* UrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F831C1BEF5ABA00572CC5 /* UrlProtocol.swift */; };
 		A4AA7BB41C1F508A007FE726 /* AesUtil.js in Resources */ = {isa = PBXBuildFile; fileRef = A4AA7BB31C1F5089007FE726 /* AesUtil.js */; };
@@ -60,10 +57,7 @@
 		A4C3F2A71BFCEAC700ADE1E3 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C3F2A61BFCEAC700ADE1E3 /* Responses.swift */; };
 		A4CA8DA51C07328F00EA59A4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */; };
 		A4CC2C451C33E07A0015546C /* ciphertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CC2C441C33E07A0015546C /* ciphertext.swift */; };
-		A4D578E01CA6DB2500F31015 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D578DF1CA6DB2500F31015 /* MovieDetailVC.swift */; };
 		A4D58A451BFA40AB00D379F8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D58A441BFA40AB00D379F8 /* AFNetworkReachabilityManager.m */; };
-		A4DF6D751BFA2822004B42A5 /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF6D741BFA2822004B42A5 /* MoviesVC.swift */; };
-		A4F34F6B1CB036F90034CFE8 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F34F6A1CB036F90034CFE8 /* SeatsViewController.swift */; };
 		A4F5D5B81BF88548002850B2 /* CachedURLResponse+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F5D5B61BF88548002850B2 /* CachedURLResponse+CoreDataProperties.swift */; };
 		A4F5D5B91BF88548002850B2 /* CachedURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F5D5B71BF88548002850B2 /* CachedURLResponse.swift */; };
 		EA62FD561989F6AC00469896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62FD551989F6AC00469896 /* AppDelegate.swift */; };
@@ -89,13 +83,10 @@
 		46C1B4769B655748EC85640D /* Pods-SwiftLoginScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLoginScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLoginScreen/Pods-SwiftLoginScreen.debug.xcconfig"; sourceTree = "<group>"; };
 		78A188A522422B0D6F7D9D8C /* Pods_SwiftLoginScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftLoginScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A407DE071C31DFA300D3CAD1 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
-		A409CD101CA6A1E700CD4328 /* VenuesDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesDetailsVC.swift; sourceTree = "<group>"; };
 		A41942001BF263F8003EFC0E /* RegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
 		A41942021BF264B7003EFC0E /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		A449DA3D1BFD185A004A9402 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
 		A449DA3E1BFD185A004A9402 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		A45ADFF81CA8892C00B22F08 /* BookingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
-		A45ADFFA1CA8897100B22F08 /* MyBookingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingsVC.swift; sourceTree = "<group>"; };
 		A46A6DC91BFA11A700F4EB6F /* CustomURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
 		A46A6DCF1BFA139300F4EB6F /* CachedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedResponse.swift; sourceTree = "<group>"; };
 		A46A6DD21BFA15E100F4EB6F /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "People+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -103,13 +94,13 @@
 		A46A92651C2B1A13003F31F1 /* hmac-sha512.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hmac-sha512.js"; sourceTree = "<group>"; };
 		A46A92691C2B2154003F31F1 /* hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hmac.swift; sourceTree = "<group>"; };
 		A46A926B1C2B242D003F31F1 /* enc-base64-min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "enc-base64-min.js"; sourceTree = "<group>"; };
-		A46BF1DC1C9DAF1000046FD9 /* VenuesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesVC.swift; sourceTree = "<group>"; };
 		A4743E4D1BF3DBD6009078F9 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A4743E911BF3E0FB009078F9 /* LogItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4743E921BF3E0FB009078F9 /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		A47C41DF1BFA947F009504B1 /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		A47D31731C309B8C00429EB8 /* enc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = enc.js; sourceTree = "<group>"; };
 		A48055721BFB807E007E9E34 /* MyPlayground3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground3.playground; sourceTree = "<group>"; };
+		A48D62C31CD3F5C1002A5E0A /* GeneralRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralRequestManager.swift; sourceTree = "<group>"; };
 		A49A51F51BF6829C00E197D7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A49F831C1BEF5ABA00572CC5 /* UrlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlProtocol.swift; sourceTree = "<group>"; };
 		A4AA7BB31C1F5089007FE726 /* AesUtil.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AesUtil.js; sourceTree = "<group>"; };
@@ -142,12 +133,9 @@
 		A4C3F2A61BFCEAC700ADE1E3 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A4CC2C441C33E07A0015546C /* ciphertext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ciphertext.swift; sourceTree = "<group>"; };
-		A4D578DF1CA6DB2500F31015 /* MovieDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		A4D58A431BFA40AB00D379F8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		A4D58A441BFA40AB00D379F8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		A4D58A471BFA40D000D379F8 /* SwiftLoginScreen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftLoginScreen-Bridging-Header.h"; sourceTree = "<group>"; };
-		A4DF6D741BFA2822004B42A5 /* MoviesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
-		A4F34F6A1CB036F90034CFE8 /* SeatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
 		A4F34F6C1CB03E940034CFE8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		A4F5D5B61BF88548002850B2 /* CachedURLResponse+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CachedURLResponse+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4F5D5B71BF88548002850B2 /* CachedURLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedURLResponse.swift; sourceTree = "<group>"; };
@@ -223,13 +211,7 @@
 				EAA118A6198A23CB00F443F1 /* LoginVC.swift */,
 				EAA118A8198AAC7100F443F1 /* SignupVC.swift */,
 				A4BBC52C1BF0919900CDD365 /* MenuVC.swift */,
-				A4DF6D741BFA2822004B42A5 /* MoviesVC.swift */,
-				A46BF1DC1C9DAF1000046FD9 /* VenuesVC.swift */,
 				A49A51F51BF6829C00E197D7 /* WebViewController.swift */,
-				A409CD101CA6A1E700CD4328 /* VenuesDetailsVC.swift */,
-				A4D578DF1CA6DB2500F31015 /* MovieDetailVC.swift */,
-				A45ADFF81CA8892C00B22F08 /* BookingVC.swift */,
-				A45ADFFA1CA8897100B22F08 /* MyBookingsVC.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -300,7 +282,6 @@
 		A4F34F691CB0366B0034CFE8 /* PopOvers */ = {
 			isa = PBXGroup;
 			children = (
-				A4F34F6A1CB036F90034CFE8 /* SeatsViewController.swift */,
 			);
 			name = PopOvers;
 			sourceTree = "<group>";
@@ -339,6 +320,7 @@
 		EA62FD521989F6AC00469896 /* SwiftLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A48D62C31CD3F5C1002A5E0A /* GeneralRequestManager.swift */,
 				A4F34F691CB0366B0034CFE8 /* PopOvers */,
 				A42E84D31CAC32210043C320 /* Temp */,
 				A46BF1DE1C9DAF1E00046FD9 /* Screens */,
@@ -608,30 +590,24 @@
 				A4743E4E1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld in Sources */,
 				A4B992901BED305900F87E21 /* CryptoJS.swift in Sources */,
 				A4CC2C451C33E07A0015546C /* ciphertext.swift in Sources */,
-				A45ADFF91CA8892C00B22F08 /* BookingVC.swift in Sources */,
 				A4F5D5B81BF88548002850B2 /* CachedURLResponse+CoreDataProperties.swift in Sources */,
 				A4BBC52D1BF0919900CDD365 /* MenuVC.swift in Sources */,
 				A46A6DCA1BFA11A700F4EB6F /* CustomURLProtocol.swift in Sources */,
 				EA62FD561989F6AC00469896 /* AppDelegate.swift in Sources */,
-				A46BF1DD1C9DAF1000046FD9 /* VenuesVC.swift in Sources */,
 				A46A6DD41BFA15E100F4EB6F /* People+CoreDataProperties.swift in Sources */,
 				A46A6DD01BFA139300F4EB6F /* CachedResponse.swift in Sources */,
-				A4F34F6B1CB036F90034CFE8 /* SeatsViewController.swift in Sources */,
 				A47C41E01BFA947F009504B1 /* URLSessionManager.swift in Sources */,
 				A41942011BF263F8003EFC0E /* RegEx.swift in Sources */,
-				A409CD111CA6A1E700CD4328 /* VenuesDetailsVC.swift in Sources */,
-				A4D578E01CA6DB2500F31015 /* MovieDetailVC.swift in Sources */,
-				A45ADFFB1CA8897100B22F08 /* MyBookingsVC.swift in Sources */,
 				A46A6DD51BFA15E100F4EB6F /* People.swift in Sources */,
 				A4BBC52F1BF14AE200CDD365 /* RestApiManager.swift in Sources */,
 				A4C3F2A71BFCEAC700ADE1E3 /* Responses.swift in Sources */,
 				A449DA3F1BFD185A004A9402 /* AFSecurityPolicy.m in Sources */,
+				A48D62C41CD3F5C1002A5E0A /* GeneralRequestManager.swift in Sources */,
 				A46A926A1C2B2154003F31F1 /* hmac.swift in Sources */,
 				A41942031BF264B7003EFC0E /* RequestManager.swift in Sources */,
 				A4F5D5B91BF88548002850B2 /* CachedURLResponse.swift in Sources */,
 				EAA118A5198A1BF000F443F1 /* HomeVC.swift in Sources */,
 				A49A51F61BF6829C00E197D7 /* WebViewController.swift in Sources */,
-				A4DF6D751BFA2822004B42A5 /* MoviesVC.swift in Sources */,
 				A4D58A451BFA40AB00D379F8 /* AFNetworkReachabilityManager.m in Sources */,
 				EAA118A7198A23CB00F443F1 /* LoginVC.swift in Sources */,
 			);
