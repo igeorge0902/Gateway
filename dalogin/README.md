@@ -1,5 +1,10 @@
-General Authentication Service @George Gaspar
+#General Authentication Service @George Gaspar
 (Release Candidate)
+
+#Tested: OK!
+
+Questions:
+igeorge1982@gmail.com
 
 Update
 ----
@@ -18,7 +23,7 @@ The iOS swift code contains both type of login method, where the webview login s
 
 Important:
 ----
-- configure your links according your environment setup!
+- configure your links according your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found at the resource folder of the dalogin project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
 
 Documentation will be coming soon!!
@@ -36,9 +41,29 @@ The structure:
 
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
-The webserver and the application server is configured not to use cache!
+The webserver and the application server is configured not to use cache, but it worked for me without cache settings, too!
 
-The project uses and needs Java JDK 1.8
+Cache Settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
+
+  <IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set X-Frame-Options DENY
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection 1;mode=block
+    Header always set X-Content-Type-Options nosniff
+    Header always set Access-Control-Expose-Headers "X-Token"
+    Header always set Access-Control-Max-Age "1800"
+    Header always set Access-Control-Allow-Headers "X-Requested-With, Content-Type, Origin, Authorization, Accept, X-Token, Accept-Encoding"
+    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+  </IfModule>
+
+  <FilesMatch "\.(html|ico|pdf|flv|jpg|jpeg|png|gif|js|jsp|css|swf)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+
+The project uses and needs Java JDK 1.8.x 
 ----
 
 Notes on Windows:
@@ -84,7 +109,17 @@ Usage:
 
 Authentication process:
 - authentication will happen with user supplied and system generated data on the front end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used that will be generated on the fly, and some of its components, too, with the aim to make the process secure.
+
 - on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated from code in the angular js, but the device will supply its own id that will be placed into the js that is saved into the cache.
 
 About the WebView login:
-- it will use a redirection: basically the browser in the webview will tell the server it uses a mobile browser. As all the requests are going to be copied into a new one, that go through the urlprotocol in iOS, the protocol can and will set a header value for these particular requests, and these new requests are going to make the connection. The js in the webview is going to pick up this value that is set into the header and the server knows that a redirection must be carried out. After the redirection has been taken place, the server will supply the necessary data for the mobile so that the user can access restricted data through the API. These user variables are going to be up-to-date for the particular user specifically and always.
+----
+- it will use a redirection: basically the browser in the webview will tell the server it uses a mobile browser and as such is going to use a designated headerField called M, too. 
+
+In iOS, as all the requests are going to be copied into a new one, that go through the url protocol (NSURLProtocol), the protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. 
+
+The js in the webView is going to pick up this value that is set into the headerField, but it checks only if its value is undefined or not, and makes an empty redirect to the same location as the server does: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, knowing that the webView has finished the redirect successfully. 
+
+The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
+
+After the redirection has been taken place, the server will supply the necessary data for the mobile so that the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
