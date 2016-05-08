@@ -1,7 +1,7 @@
 #General Authentication Service @George Gaspar
 (Release Candidate)
 
-#Tested: OK!
+#Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
 
 Questions:
 igeorge1982@gmail.com
@@ -42,6 +42,8 @@ The structure:
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
 The webserver and the application server is configured not to use cache, but it worked for me without cache settings, too!
+
+Apache HTTPD configuration files are included that you should use to get started.
 
 Cache Settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
 
