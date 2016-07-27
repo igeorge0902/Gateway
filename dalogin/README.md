@@ -36,6 +36,7 @@ Important:
 ----
 - configure your links according your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found at the resource folder of the dalogin project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
+- make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
 
 Documentation will be coming soon!!
 ----
