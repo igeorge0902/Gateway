@@ -10,6 +10,7 @@ Known issue:
 ----
 - You will need to replace lines between 237 and 253 with between 214 and 229 in AdminServlet.java
 - On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
+- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your browser not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 
 Note:
 ----
