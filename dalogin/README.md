@@ -6,6 +6,15 @@
 Questions:
 igeorge1982@gmail.com
 
+Known issue:
+----
+- You will need to replace lines between 237 and 253 with between 214 and 229 in AdminServlet.java
+- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
+
+Note:
+----
+Update will be coming soon!
+
 Update
 ----
 - Registration is considered to be finished combined with voucher activation
@@ -112,7 +121,7 @@ Usage:
 Authentication process:
 - authentication will happen with user supplied and system generated data on the front end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used that will be generated on the fly, and some of its components, too, with the aim to make the process secure.
 
-- on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated from code in the angular js, but the device will supply its own id that will be placed into the js that is saved into the cache.
+- on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated during runtime from code in the angular js, but the mobile device will supply its own id that will be placed into the js that is then saved into the cache. The cache is actually a core data that you can check using SQLite dB frontend application when you use iOS simulator.
 
 About the WebView login:
 ----
