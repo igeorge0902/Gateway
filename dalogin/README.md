@@ -10,7 +10,8 @@ Known issue:
 ----
 - You will need to replace lines between 237 and 253 with between 214 and 229 in AdminServlet.java
 - On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
-- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your browser not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
+- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
+- For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
 
 Note:
 ----
@@ -47,7 +48,7 @@ The structure:
 - RESTful service methods that passes the DAO objects to the controller
 - RESTful controller layer to provide HTTP methods
 - TOMCAT 7 or GlassFish 4 servlet container as middleware component (Tomcat with crossContext enabled (required))
-- APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing) 
+- APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing, otherwise you are supposed to use a webserver to properly access the header fields) 
 
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
