@@ -20,7 +20,13 @@
 	</properties>
 	
 		<dependencies>
-		    
+
+			<dependency>
+			    <groupId>com.googlecode.json-simple</groupId>
+			    <artifactId>json-simple</artifactId>
+			    <version>1.1.1</version>
+			</dependency>
+
 		    <dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -125,6 +131,12 @@
                   		<excludes>
     					    <exclude>web.xml</exclude>
    					    </excludes>                 
+                </resource>
+                 <resource>
+                  <directory>${basedir}</directory>
+	                  	<includes>
+	                  		<include>properties.properties</include>
+	                  	</includes>
                 </resource>
               </resources>              
             </configuration>                        

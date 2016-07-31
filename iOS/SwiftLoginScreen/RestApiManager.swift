@@ -22,16 +22,16 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         case 0:
             
             let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            let deviceId = prefs.valueForKey("deviceId")
+           // deviceId = prefs.valueForKey("deviceId")
             let user = prefs.valueForKey("USERNAME")
-
+            
             var errorOnLogin:GeneralRequestManager?
             
-            var i = ["a","b"]
+            //var i = ["a","b"]
             
-            let stringRepresentation = i.joinWithSeparator("-")
+            //let stringRepresentation = i.joinWithSeparator("-")
             
-            errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": stringRepresentation as String, "user": user as! String])
+            errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil)
             
             errorOnLogin?.getResponse {
                 
@@ -69,7 +69,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let xtoken = prefs.valueForKey("X-Token")
 
-        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
+        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10, isCacheable: nil)
         
        //let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
        //let session = NSURLSession(configuration: configuration, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
@@ -165,7 +165,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         task.resume()
     }
     
-    
+    /* for JMeter, otherwise the CustomURLSessionDelegate is enough */
     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
         (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         

@@ -192,8 +192,9 @@ public class HelloWorld extends HttpServlet {
 								JSONObject json = new JSONObject(); 
 								
 								json.put("Session", "raked"); 
-								json.put("Success", "true"); 
-								
+								json.put("Success", "true");
+								json.put("JSESSIONID", sessionID);
+
 								// this is necessary because the X-Token header did not appear in the native mobile app
 								json.put("X-Token", token2);
 								

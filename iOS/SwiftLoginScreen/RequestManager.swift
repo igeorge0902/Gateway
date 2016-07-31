@@ -10,7 +10,6 @@ import Foundation
 import SwiftyJSON
 
 typealias ServiceResponses = (JSON, NSError?) -> Void
-
 class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
     
     var url: NSURL!
@@ -50,7 +49,6 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
         })
     }
     
-    // TODO: use this class for every dataTask operation
     func dataTask(onCompletion: ServiceResponses) {
        
         let xtoken = prefs.valueForKey("X-Token")
@@ -66,6 +64,20 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
                     
+                    let headers:NSDictionary = httpResponse.allHeaderFields
+                    
+                    if let xtoken:NSString = headers.valueForKey("X-Token") as? NSString {
+                        
+                        self.prefs.setObject(xtoken, forKey: "X-Token")
+                 
+                    }
+                    
+                    if let user:NSString = headers.valueForKey("user") as? NSString {
+                        
+                        self.prefs.setObject(user, forKey: "USERNAME")
+                        
+                    }
+                
                     let description = "HTTP response was \(httpResponse.statusCode)"
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
@@ -75,44 +87,76 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
             }
         
             if error != nil {
-            
-                let alertView:UIAlertView = UIAlertView()
                 
-                alertView.title = self.errors
-                alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
+                if let httpResponse = response as? NSHTTPURLResponse {
+            
+                if httpResponse.statusCode == 300 {
+                    
+                    let alertView:UIAlertView = UIAlertView()
+                    
+                    alertView.title = "Warning!"
+                    alertView.message = "Your account is not activated yet: \(error!.localizedDescription)"
+                    alertView.delegate = self
+                    alertView.addButtonWithTitle("OK")
+                    alertView.show()
+                    
+                } else {
+                    
+                    let alertView:UIAlertView = UIAlertView()
+                    
+                    alertView.title = self.errors
+                    alertView.message = "Connection Failure: \(error!.localizedDescription)"
+                    alertView.delegate = self
+                    alertView.addButtonWithTitle("OK")
+                    alertView.show()
+                    
+                    }
+                }
 
+            }
 
-            } 
             else {
                 
-
                 let json:JSON = JSON(data: data!)
-
                 let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                let alertView:UIAlertView = UIAlertView()
 
-                    NSLog("got a 200")
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    
+                print("got some data")
+                    
+                switch(httpResponse.statusCode) {
                 
+                case 300:
+                        
+                do {
+
+                    print("Case 300")
+                
+                }
+                
+                default:
+                        
+                    let alertView:UIAlertView = UIAlertView()
+                    
+                    NSLog("got a 200")
+                    
                     if let user = json["user"].string {
-                   
+                        
                         if !user.isEmpty {
-                        
-                        prefs.setObject(user, forKey: "USERNAME")
-                        
-                        alertView.title = "Welcome"
-                        alertView.message = user as String
-                        alertView.delegate = self
-                        alertView.addButtonWithTitle("OK")
-                        alertView.show()
+                            
+                            prefs.setObject(user, forKey: "USERNAME")
+                            
+                            alertView.title = "Welcome"
+                            alertView.message = user as String
+                            alertView.delegate = self
+                            alertView.addButtonWithTitle("OK")
+                            alertView.show()
                             
                             NSLog("User ==> %@", user);
-
-                        
+                            
+                            
                         } else {
-                           
+                            
                             alertView.title = "Sorry!"
                             alertView.message = "User does not exist!"
                             alertView.delegate = self
@@ -120,9 +164,9 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                             alertView.show()
                             
                             NSLog("User ==> %@", user);
-
+                            
                         }
-
+                        
                     } else {
                         
                         alertView.title = "Hmmm..."
@@ -131,15 +175,17 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                         alertView.addButtonWithTitle("OK")
                         alertView.show()
                         
-                        NSLog("Dictionary\(["user"]) does not exist")
+                        NSLog("User does not exist")
                     }
+            }
+            
                 
             self.running = false            
             onCompletion(json, error)
                 
-                }
+                    }
             
-            //  }
+              }
         })
         
         running = true

@@ -29,6 +29,8 @@ public class AdminServlet extends HttpServlet {
 	protected volatile static HttpSession session = null;
 	protected volatile static String sessionId = null;
 	protected volatile static String sessionId_ = null;
+	private volatile static String token2;
+
 	
 	private static Logger log = Logger.getLogger(Logger.class.getName());
 	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
@@ -113,11 +115,24 @@ public class AdminServlet extends HttpServlet {
 		// else if voucher needs activation
 		if(Response == "S") {
 			
+			try {
+				token2 = SQLAccess.token2(deviceId, context);
+			
+			} catch (Exception e) {
+
+				response.setContentType("application/json"); 
+				response.setCharacterEncoding("utf-8"); 
+				response.setStatus(502);
+				
+				log.info(e.getMessage());
+			}
+
 				response.setContentType("application/json"); 
 				response.setCharacterEncoding("utf-8"); 
 				response.setHeader("Response", "S");
 				response.setStatus(300);
-				response.setHeader("User", user);
+				response.addHeader("User", user);
+				response.addHeader("X-Token", token2);
 
 				PrintWriter out = response.getWriter(); 
 				
@@ -126,7 +141,7 @@ public class AdminServlet extends HttpServlet {
 				
 				// put some value pairs into the JSON object . 				
 				json.put("Activation", "false"); 
-				json.put("Success", "false"); 
+				json.put("Success", "false");
 				
 				// finally output the json string 
 				out.print(json.toString());
@@ -215,6 +230,8 @@ public class AdminServlet extends HttpServlet {
     			response.setCharacterEncoding("utf-8"); 
     			response.setStatus(502);
 
+    			session.invalidate();
+
     			PrintWriter out = response.getWriter(); 
     			
     			//create Json Object 
@@ -234,16 +251,24 @@ public class AdminServlet extends HttpServlet {
     	
     	if (session == null || session.getAttribute("user") == null) {
         	
-        	response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Line 220");
+			response.setContentType("application/json"); 
+			response.setCharacterEncoding("utf-8"); 
+			response.setStatus(502);
 
-    		session = request.getSession(false);		
-
-        	try {
-        	sessionId_ = session.getId();
-        	activeUsers.remove(sessionId_);
-        		} catch (Exception e) {
-        		log.info("No sessionId found during invalid session request...");
-        	}
+			session.invalidate();
+			
+			PrintWriter out = response.getWriter(); 
+			
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			
+			// put some value pairs into the JSON object . 				
+			json.put("acticeUsers", "failed"); 
+			json.put("Success", "false"); 
+			
+			// finally output the json string 
+			out.print(json.toString());
+			out.flush();
         	
 
         } else {

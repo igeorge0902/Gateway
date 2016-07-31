@@ -138,6 +138,7 @@ public class RegActivation extends HttpServlet {
 
         JSONObject json = new JSONObject(); 
 		json.put("Success", "true");
+		json.put("Email was sent to:", email);
 		
 		out.print(json.toString());
 		out.flush();
