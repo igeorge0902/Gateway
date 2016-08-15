@@ -4,7 +4,8 @@
 #Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
 
 Questions:
-igeorge1982@gmail.com
+----
+If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
 
 Known issue:
 ----
@@ -141,3 +142,9 @@ The js in the webView is going to pick up this value that is set into the header
 The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
 
 After the redirection has been taken place, the server will supply the necessary data for the mobile so that the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
+
+Credits:
+----
+The logic of the code base itself is 90% original, the rest doesn't exceed the principle of fair use that applies to intellectual properties, that includes generally available code snipets with or without any modifications.
+
+- Otherwise freely available (without any commercial license or trademark) code snipets may not be target of any copyright claims.
