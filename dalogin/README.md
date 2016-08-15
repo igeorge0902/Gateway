@@ -6,6 +6,7 @@
 Questions:
 ----
 If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
+Please note, I try to maintain the most recent working version, but for any issues your feedback is most welcomed!
 
 Known issue:
 ----
