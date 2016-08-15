@@ -13,6 +13,10 @@ Known issue:
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
 
+RoadMap:
+----
+- The fix for deviceId mismatch will need a redesign of the mobile webview login. We have to make sure to insert the right deviceId after we have created the session, therefor the deviceId will be sent in the headerFields, encrypted, instead of as a form parameter. After the workflow will remain identical.
+
 Note:
 ----
 Last update: 2016.08.01.
