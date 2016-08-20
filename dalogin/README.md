@@ -4,24 +4,7 @@
 #Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
 
 Questions:
-----
-If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
-Please note, I try to maintain the most recent working version, but for any issues your feedback is most welcomed!
-
-Known issue:
-----
-- There is a deviceId mismatch when sending email after webview login if the app has not been restarted yet. 
-- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
-- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
-- For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
-
-RoadMap:
-----
-- The fix for deviceId mismatch will need a redesign of the mobile webview login. We have to make sure to insert the right deviceId after we have created the session, therefor the deviceId will be sent in the headerFields, encrypted, instead of as a form parameter. After the workflow will remain identical.
-
-Note:
-----
-Last update: 2016.08.01.
+igeorge1982@gmail.com
 
 Update
 ----
@@ -42,7 +25,6 @@ Important:
 ----
 - configure your links according your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found at the resource folder of the dalogin project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
-- make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
 
 Documentation will be coming soon!!
 ----
@@ -55,7 +37,7 @@ The structure:
 - RESTful service methods that passes the DAO objects to the controller
 - RESTful controller layer to provide HTTP methods
 - TOMCAT 7 or GlassFish 4 servlet container as middleware component (Tomcat with crossContext enabled (required))
-- APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing, otherwise you are supposed to use a webserver to properly access the header fields) 
+- APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing) 
 
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
@@ -130,7 +112,7 @@ Usage:
 Authentication process:
 - authentication will happen with user supplied and system generated data on the front end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used that will be generated on the fly, and some of its components, too, with the aim to make the process secure.
 
-- on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated during runtime from code in the angular js, but the mobile device will supply its own id that will be placed into the js that is then saved into the cache. The cache is actually a core data that you can check using SQLite dB frontend application when you use iOS simulator.
+- on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated from code in the angular js, but the device will supply its own id that will be placed into the js that is saved into the cache.
 
 About the WebView login:
 ----
@@ -143,9 +125,3 @@ The js in the webView is going to pick up this value that is set into the header
 The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
 
 After the redirection has been taken place, the server will supply the necessary data for the mobile so that the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
-
-Credits:
-----
-The logic of the code base itself is 90% original, the rest doesn't exceed the principle of fair use that applies to intellectual properties, that includes generally available code snipets with or without any modifications.
-
-- Otherwise freely available (without any commercial license or trademark) code snipets may not be target of any copyright claims.

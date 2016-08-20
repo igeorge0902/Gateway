@@ -61,6 +61,8 @@ class GeneralRequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDel
         
         let request = NSMutableURLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
         
+        print(bodyParameters)
+        print(xtoken)
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
             
             //  if  let json:JSON = try! JSON(data: data!) {

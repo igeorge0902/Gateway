@@ -22,7 +22,6 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         case 0:
             
             let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-           // deviceId = prefs.valueForKey("deviceId")
             let user = prefs.valueForKey("USERNAME")
             
             var errorOnLogin:GeneralRequestManager?

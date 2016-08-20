@@ -40,7 +40,7 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
 
     var running = false
     
-    func getResponse(onCompletion: (JSON, NSError?) -> Void) {
+    func getResponse(onCompletion: ServiceResponses) {
         
         dataTask ({ json, err in
         
@@ -53,7 +53,7 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
        
         let xtoken = prefs.valueForKey("X-Token")
         
-        let request = NSMutableURLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
+        let request = NSMutableURLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil)
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
             
@@ -91,6 +91,15 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                 if let httpResponse = response as? NSHTTPURLResponse {
             
                 if httpResponse.statusCode == 300 {
+                    
+                    let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                        
+                        NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                    
+                    let activation:NSString = jsonData.valueForKey("Activation") as! NSString
+                    
+                    self.prefs.setValue(activation, forKey: "Activation")
+                    self.prefs.setInteger(1, forKey: "ISWEBLOGGEDIN")
                     
                     let alertView:UIAlertView = UIAlertView()
                     
@@ -145,7 +154,8 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                         if !user.isEmpty {
                             
                             prefs.setObject(user, forKey: "USERNAME")
-                            
+                            prefs.setInteger(1, forKey: "ISWEBLOGGEDIN")
+
                             alertView.title = "Welcome"
                             alertView.message = user as String
                             alertView.delegate = self

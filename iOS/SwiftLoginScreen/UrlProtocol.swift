@@ -34,7 +34,7 @@ class MyURLProtocol: NSURLProtocol {
             return false
         }
         
-        print("Request #\(requestCount++): URL = \(request.URL!.absoluteString)")
+        print("Request #\(requestCount+=1): URL = \(request.URL!.absoluteString)")
         NSLog("Relative path ==> %@", request.URL!.relativePath!)
 
 
@@ -52,6 +52,7 @@ class MyURLProtocol: NSURLProtocol {
     
     override func startLoading() {
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         if AFNetworkReachabilityManager.sharedManager().reachable {
             NSLog("AFNetwork is reachable...")
             
@@ -80,10 +81,27 @@ class MyURLProtocol: NSURLProtocol {
             // 5
             NSLog("Serving response from NSURLConnection url == %@", self.request.URL!.absoluteString)
             
-            if request.URL!.relativePath != "/example/tabularasa.jsp" {
+            
+            if request.URL!.relativePath == "/login/HelloWorld" {
+                
+                newRequest = self.request.mutableCopy() as! NSMutableURLRequest
+                NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", inRequest: newRequest)
+                /* We set the headerfield and value that the Apache webserver will accept */
+  
+                let ciphertext = cipherText.getCipherText(deviceId)
+                newRequest.setValue(ciphertext, forHTTPHeaderField: "M-Device")
+                
+                newRequest.setValue("M", forHTTPHeaderField: "M")
+                self.connection = NSURLConnection(request: newRequest, delegate: self)
+                
+            }
+            
+            if request.URL!.relativePath != "/example/tabularasa.jsp" && request.URL!.relativePath != "/login/HelloWorld"{
              
             newRequest = self.request.mutableCopy() as! NSMutableURLRequest
             NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", inRequest: newRequest)
+            /* We set the headerfield and value that the Apache webserver will accept */
+            
             newRequest.setValue("M", forHTTPHeaderField: "M")
             self.connection = NSURLConnection(request: newRequest, delegate: self)
                 
@@ -114,6 +132,8 @@ class MyURLProtocol: NSURLProtocol {
             self.connection.cancel()
         }
         self.connection = nil
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
     }
     
     
@@ -138,7 +158,7 @@ class MyURLProtocol: NSURLProtocol {
                 prefs.setValue(xtoken, forKey: "X-Token")
                 NSLog("Sending Request from %@ to %@", response!.URL!, request.URL!);
                 
-                
+            
                 let match = RegEx()
                 let url = request.URL!.absoluteString
                 var requestLogin:RequestManager?
@@ -154,15 +174,17 @@ class MyURLProtocol: NSURLProtocol {
                     requestLogin = RequestManager(url: adminUrl!, errors: "")
                     
                     requestLogin?.getResponse {
-                        (resultString) -> Void in
+                        (json: JSON, error: NSError?) in
                         
-                        print(resultString)
+                        print(json)
+                        
                     }
                 }
                 
                 NSLog("Url to be redirected ==> %@", request.URL!.absoluteString)
                 
             }
+            
 
         }
         
@@ -193,14 +215,16 @@ class MyURLProtocol: NSURLProtocol {
         self.saveCachedResponse()
     }
     
+    // It sends a call to RequestManager to present an alert view about the error
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
         self.client!.URLProtocol(self, didFailWithError: error)
-        
+
         if (newRequest != nil) {
         var errorOnLogin:RequestManager?
         
         errorOnLogin = RequestManager(url: "https://milo.crabdance.com/login/HelloWorld", errors: "Connection error!")
         errorOnLogin?.getResponse { _ in }
+        
         
         }
         
@@ -211,7 +235,12 @@ class MyURLProtocol: NSURLProtocol {
         
         // 1
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // Create a private NSManagedObjectContext with private queue concurrency type and use it to access CoreData whenever operating on a background thread.
         let context = delegate.managedObjectContext
+       
+        //let privateMOC = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        //privateMOC.parentContext = context
         
         // 2
         let cachedResponse = NSEntityDescription.insertNewObjectForEntityForName("CachedURLResponse", inManagedObjectContext: context) as NSManagedObject
@@ -230,13 +259,12 @@ class MyURLProtocol: NSURLProtocol {
                 cachedResponse.setValue(self.response.textEncodingName, forKey: "encoding")
                 cachedResponse.setValue(self.httpresponse.statusCode, forKey: "statusCode")
                     
+                    
                     if request.URL!.relativePath == "/example/jsR/app.js" {
 
                     let urldata:NSData = self.mutableData
                     let convertedString = NSString(data: urldata, encoding: NSUTF8StringEncoding)
                     
-                        //let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
-                        print(deviceId)
                         let newString:NSString = convertedString!.stringByReplacingOccurrencesOfString("(uuid)", withString: "("+("\"\((deviceId))\"")+")")
                         let newurldata:NSData = newString.dataUsingEncoding(NSASCIIStringEncoding)!
                         self.mutableData.appendData(newurldata)
@@ -310,7 +338,7 @@ class MyURLProtocol: NSURLProtocol {
         
     }
     
-    // FIXMES: app.js is modified and stored in cache like this, however, it won't take effect untill app restart. 
+    // FIXMES: app.js is modified and stored in cache like this, however, it won't take effect untill app restart, because still the original app.js is loaded. 
     func cachedResponseForCurrentRequest() -> NSManagedObject? {
         // 1
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate

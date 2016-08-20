@@ -1,0 +1,447 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "libxmlHTMLDocument"
+- "libxmlXMLDocument"
+provides-nominal:
+- "C5Kanna18libxmlHTMLDocument"
+- "C5Kanna17libxmlXMLDocument"
+provides-member:
+- ["C5Kanna18libxmlHTMLDocument", ""]
+- ["C5Kanna17libxmlXMLDocument", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "HTMLDocument"
+- !private "<="
+- "libxmlXMLDocument"
+- "xmlDocPtr"
+- !private "StringLiteralType"
+- !private "CFStringConvertEncodingToIANACharSetName"
+- !private "CInt"
+- !private "xmlFreeDoc"
+- !private "??"
+- !private "CFStringEncoding"
+- "UInt"
+- !private "htmlReadDoc"
+- !private "xmlChar"
+- !private "UnsafePointer"
+- "htmlDocPtr"
+- "XMLElement"
+- "libxmlHTMLDocument"
+- "XMLDocument"
+- !private "xmlReadDoc"
+- "XMLNodeSet"
+- "String"
+- !private "CFStringConvertNSStringEncodingToEncoding"
+- !private "libxmlHTMLNode"
+depends-member:
+- !private ["Ps9AnyObject", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["Ps9AnyObject", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["Ps9AnyObject", "CInt"]
+- !private ["Ps9AnyObject", "String"]
+- !private ["Ps9AnyObject", "UnsafePointer"]
+- !private ["Ps9AnyObject", "XMLNodeSet"]
+- ["Ps9AnyObject", "at_css"]
+- ["Ps9AnyObject", "at_xpath"]
+- ["Ps9AnyObject", "body"]
+- !private ["Ps9AnyObject", "cStringUsingEncoding"]
+- ["Ps9AnyObject", "className"]
+- ["Ps9AnyObject", "css"]
+- !private ["Ps9AnyObject", "docPtr"]
+- !private ["Ps9AnyObject", "encoding"]
+- ["Ps9AnyObject", "head"]
+- !private ["Ps9AnyObject", "html"]
+- !private ["Ps9AnyObject", "htmlReadDoc"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "innerHTML"]
+- !private ["Ps9AnyObject", "lengthOfBytesUsingEncoding"]
+- !private ["Ps9AnyObject", "libxmlHTMLNode"]
+- !private ["Ps9AnyObject", "rootNode"]
+- ["Ps9AnyObject", "tagName"]
+- ["Ps9AnyObject", "text"]
+- ["Ps9AnyObject", "title"]
+- ["Ps9AnyObject", "toHTML"]
+- !private ["Ps9AnyObject", "url"]
+- !private ["Ps9AnyObject", "xml"]
+- !private ["Ps9AnyObject", "xmlFreeDoc"]
+- !private ["Ps9AnyObject", "xmlReadDoc"]
+- ["Ps9AnyObject", "xpath"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps22BidirectionalIndexType", "init"]
+- !private ["Ps21BitwiseOperationsType", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["CSo8CFString", "deinit"]
+- !private ["Ps11CVarArgType", "cStringUsingEncoding"]
+- !private ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "lengthOfBytesUsingEncoding"]
+- !private ["Ps10Comparable", "cStringUsingEncoding"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "lengthOfBytesUsingEncoding"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- !private ["Ps28CustomDebugStringConvertible", "cStringUsingEncoding"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "cStringUsingEncoding"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "cStringUsingEncoding"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "lengthOfBytesUsingEncoding"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps16ForwardIndexType", "init"]
+- !private ["P5Kanna12HTMLDocument", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["P5Kanna12HTMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["P5Kanna12HTMLDocument", "CInt"]
+- !private ["P5Kanna12HTMLDocument", "String"]
+- !private ["P5Kanna12HTMLDocument", "UnsafePointer"]
+- !private ["P5Kanna12HTMLDocument", "XMLNodeSet"]
+- ["P5Kanna12HTMLDocument", "at_css"]
+- ["P5Kanna12HTMLDocument", "at_xpath"]
+- ["P5Kanna12HTMLDocument", "body"]
+- ["P5Kanna12HTMLDocument", "className"]
+- ["P5Kanna12HTMLDocument", "css"]
+- !private ["P5Kanna12HTMLDocument", "docPtr"]
+- !private ["P5Kanna12HTMLDocument", "encoding"]
+- ["P5Kanna12HTMLDocument", "head"]
+- !private ["P5Kanna12HTMLDocument", "html"]
+- !private ["P5Kanna12HTMLDocument", "htmlReadDoc"]
+- ["P5Kanna12HTMLDocument", "innerHTML"]
+- !private ["P5Kanna12HTMLDocument", "libxmlHTMLNode"]
+- !private ["P5Kanna12HTMLDocument", "rootNode"]
+- ["P5Kanna12HTMLDocument", "tagName"]
+- ["P5Kanna12HTMLDocument", "text"]
+- ["P5Kanna12HTMLDocument", "title"]
+- ["P5Kanna12HTMLDocument", "toHTML"]
+- !private ["P5Kanna12HTMLDocument", "url"]
+- !private ["P5Kanna12HTMLDocument", "xmlFreeDoc"]
+- ["P5Kanna12HTMLDocument", "xpath"]
+- ["P5Kanna12HTMLDocument", ""]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "cStringUsingEncoding"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "lengthOfBytesUsingEncoding"]
+- !private ["SQ", "deinit"]
+- !private ["Vs5Int32", "init"]
+- !private ["Ps21IntegerArithmeticType", "init"]
+- !private ["Ps25IntegerLiteralConvertible", "init"]
+- !private ["Ps11IntegerType", "init"]
+- !private ["Ps14MirrorPathType", "cStringUsingEncoding"]
+- !private ["Ps14MirrorPathType", "init"]
+- !private ["Ps14MirrorPathType", "lengthOfBytesUsingEncoding"]
+- !private ["PSo8NSCoding", "cStringUsingEncoding"]
+- !private ["PSo8NSCoding", "lengthOfBytesUsingEncoding"]
+- !private ["PSo9NSCopying", "cStringUsingEncoding"]
+- !private ["PSo9NSCopying", "lengthOfBytesUsingEncoding"]
+- !private ["PSo16NSMutableCopying", "cStringUsingEncoding"]
+- !private ["PSo16NSMutableCopying", "lengthOfBytesUsingEncoding"]
+- !private ["CSo8NSObject", "cStringUsingEncoding"]
+- !private ["CSo8NSObject", "lengthOfBytesUsingEncoding"]
+- !private ["PSo16NSObjectProtocol", "cStringUsingEncoding"]
+- !private ["PSo16NSObjectProtocol", "lengthOfBytesUsingEncoding"]
+- !private ["PSo14NSSecureCoding", "cStringUsingEncoding"]
+- !private ["PSo14NSSecureCoding", "lengthOfBytesUsingEncoding"]
+- !private ["CSo8NSString", "cStringUsingEncoding"]
+- !private ["CSo8NSString", "lengthOfBytesUsingEncoding"]
+- ["Ps21NilLiteralConvertible", "Some"]
+- !private ["Ps21NilLiteralConvertible", "init"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- !private ["Ps16OutputStreamType", "cStringUsingEncoding"]
+- !private ["Ps16OutputStreamType", "init"]
+- !private ["Ps16OutputStreamType", "lengthOfBytesUsingEncoding"]
+- !private ["Ps21RandomAccessIndexType", "init"]
+- !private ["P5Kanna10Searchable", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["P5Kanna10Searchable", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["P5Kanna10Searchable", "CInt"]
+- !private ["P5Kanna10Searchable", "String"]
+- !private ["P5Kanna10Searchable", "UnsafePointer"]
+- !private ["P5Kanna10Searchable", "XMLNodeSet"]
+- ["P5Kanna10Searchable", "at_css"]
+- ["P5Kanna10Searchable", "at_xpath"]
+- ["P5Kanna10Searchable", "body"]
+- ["P5Kanna10Searchable", "className"]
+- ["P5Kanna10Searchable", "css"]
+- !private ["P5Kanna10Searchable", "docPtr"]
+- !private ["P5Kanna10Searchable", "encoding"]
+- ["P5Kanna10Searchable", "head"]
+- !private ["P5Kanna10Searchable", "html"]
+- !private ["P5Kanna10Searchable", "htmlReadDoc"]
+- !private ["P5Kanna10Searchable", "init"]
+- ["P5Kanna10Searchable", "innerHTML"]
+- !private ["P5Kanna10Searchable", "libxmlHTMLNode"]
+- !private ["P5Kanna10Searchable", "rootNode"]
+- ["P5Kanna10Searchable", "tagName"]
+- ["P5Kanna10Searchable", "text"]
+- ["P5Kanna10Searchable", "title"]
+- ["P5Kanna10Searchable", "toHTML"]
+- !private ["P5Kanna10Searchable", "url"]
+- !private ["P5Kanna10Searchable", "xml"]
+- !private ["P5Kanna10Searchable", "xmlFreeDoc"]
+- !private ["P5Kanna10Searchable", "xmlReadDoc"]
+- ["P5Kanna10Searchable", "xpath"]
+- ["P5Kanna10Searchable", ""]
+- !private ["P5Kanna14SearchableNode", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["P5Kanna14SearchableNode", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["P5Kanna14SearchableNode", "CInt"]
+- !private ["P5Kanna14SearchableNode", "String"]
+- !private ["P5Kanna14SearchableNode", "UnsafePointer"]
+- !private ["P5Kanna14SearchableNode", "XMLNodeSet"]
+- ["P5Kanna14SearchableNode", "at_css"]
+- ["P5Kanna14SearchableNode", "at_xpath"]
+- ["P5Kanna14SearchableNode", "body"]
+- ["P5Kanna14SearchableNode", "className"]
+- ["P5Kanna14SearchableNode", "css"]
+- !private ["P5Kanna14SearchableNode", "docPtr"]
+- !private ["P5Kanna14SearchableNode", "encoding"]
+- ["P5Kanna14SearchableNode", "head"]
+- !private ["P5Kanna14SearchableNode", "html"]
+- !private ["P5Kanna14SearchableNode", "htmlReadDoc"]
+- !private ["P5Kanna14SearchableNode", "init"]
+- ["P5Kanna14SearchableNode", "innerHTML"]
+- !private ["P5Kanna14SearchableNode", "libxmlHTMLNode"]
+- !private ["P5Kanna14SearchableNode", "rootNode"]
+- ["P5Kanna14SearchableNode", "tagName"]
+- ["P5Kanna14SearchableNode", "text"]
+- ["P5Kanna14SearchableNode", "title"]
+- ["P5Kanna14SearchableNode", "toHTML"]
+- !private ["P5Kanna14SearchableNode", "url"]
+- !private ["P5Kanna14SearchableNode", "xml"]
+- !private ["P5Kanna14SearchableNode", "xmlFreeDoc"]
+- !private ["P5Kanna14SearchableNode", "xmlReadDoc"]
+- ["P5Kanna14SearchableNode", "xpath"]
+- ["P5Kanna14SearchableNode", ""]
+- !private ["Ps12SequenceType", "init"]
+- !private ["Ps17SignedIntegerType", "init"]
+- !private ["Ps16SignedNumberType", "init"]
+- !private ["Ps10Streamable", "cStringUsingEncoding"]
+- !private ["Ps10Streamable", "init"]
+- !private ["Ps10Streamable", "lengthOfBytesUsingEncoding"]
+- !private ["Ps10Strideable", "init"]
+- !private ["SS", "cStringUsingEncoding"]
+- !private ["SS", "init"]
+- !private ["SS", "lengthOfBytesUsingEncoding"]
+- !private ["Ps30StringInterpolationConvertible", "cStringUsingEncoding"]
+- !private ["Ps30StringInterpolationConvertible", "init"]
+- !private ["Ps30StringInterpolationConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps24StringLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps24StringLiteralConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["SP", "init"]
+- !private ["P5Kanna11XMLDocument", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["P5Kanna11XMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["P5Kanna11XMLDocument", "CInt"]
+- !private ["P5Kanna11XMLDocument", "String"]
+- !private ["P5Kanna11XMLDocument", "UnsafePointer"]
+- !private ["P5Kanna11XMLDocument", "XMLNodeSet"]
+- ["P5Kanna11XMLDocument", "at_css"]
+- ["P5Kanna11XMLDocument", "at_xpath"]
+- ["P5Kanna11XMLDocument", "body"]
+- ["P5Kanna11XMLDocument", "className"]
+- ["P5Kanna11XMLDocument", "css"]
+- !private ["P5Kanna11XMLDocument", "docPtr"]
+- !private ["P5Kanna11XMLDocument", "encoding"]
+- ["P5Kanna11XMLDocument", "head"]
+- !private ["P5Kanna11XMLDocument", "html"]
+- !private ["P5Kanna11XMLDocument", "htmlReadDoc"]
+- ["P5Kanna11XMLDocument", "innerHTML"]
+- !private ["P5Kanna11XMLDocument", "libxmlHTMLNode"]
+- !private ["P5Kanna11XMLDocument", "rootNode"]
+- ["P5Kanna11XMLDocument", "tagName"]
+- ["P5Kanna11XMLDocument", "text"]
+- ["P5Kanna11XMLDocument", "title"]
+- ["P5Kanna11XMLDocument", "toHTML"]
+- !private ["P5Kanna11XMLDocument", "url"]
+- !private ["P5Kanna11XMLDocument", "xml"]
+- !private ["P5Kanna11XMLDocument", "xmlFreeDoc"]
+- !private ["P5Kanna11XMLDocument", "xmlReadDoc"]
+- ["P5Kanna11XMLDocument", "xpath"]
+- ["P5Kanna11XMLDocument", ""]
+- !private ["P5Kanna10XMLElement", "at_css"]
+- !private ["P5Kanna10XMLElement", "at_xpath"]
+- !private ["P5Kanna10XMLElement", "css"]
+- !private ["P5Kanna10XMLElement", "init"]
+- !private ["P5Kanna10XMLElement", "innerHTML"]
+- !private ["P5Kanna10XMLElement", "text"]
+- !private ["P5Kanna10XMLElement", "xpath"]
+- !private ["C5Kanna10XMLNodeSet", "init"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "cStringUsingEncoding"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps14_Incrementable", "init"]
+- !private ["Ps22_IntegerArithmeticType", "init"]
+- !private ["Ps12_IntegerType", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "cStringUsingEncoding"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "lengthOfBytesUsingEncoding"]
+- !private ["Ps12_PointerType", "init"]
+- !private ["Ps22_RandomAccessAmbiguity", "init"]
+- ["Ps12_Reflectable", "Some"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "cStringUsingEncoding"]
+- !private ["Ps12_Reflectable", "init"]
+- !private ["Ps12_Reflectable", "lengthOfBytesUsingEncoding"]
+- !private ["Ps18_SignedIntegerType", "init"]
+- !private ["C5Kanna18libxmlHTMLDocument", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["C5Kanna18libxmlHTMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["C5Kanna18libxmlHTMLDocument", "CFStringEncoding"]
+- !private ["C5Kanna18libxmlHTMLDocument", "CInt"]
+- ["C5Kanna18libxmlHTMLDocument", "String"]
+- ["C5Kanna18libxmlHTMLDocument", "UInt"]
+- !private ["C5Kanna18libxmlHTMLDocument", "UnsafePointer"]
+- ["C5Kanna18libxmlHTMLDocument", "XMLElement"]
+- ["C5Kanna18libxmlHTMLDocument", "XMLNodeSet"]
+- ["C5Kanna18libxmlHTMLDocument", "at_css"]
+- ["C5Kanna18libxmlHTMLDocument", "at_xpath"]
+- ["C5Kanna18libxmlHTMLDocument", "body"]
+- ["C5Kanna18libxmlHTMLDocument", "className"]
+- ["C5Kanna18libxmlHTMLDocument", "css"]
+- ["C5Kanna18libxmlHTMLDocument", "deinit"]
+- !private ["C5Kanna18libxmlHTMLDocument", "docPtr"]
+- !private ["C5Kanna18libxmlHTMLDocument", "encoding"]
+- ["C5Kanna18libxmlHTMLDocument", "head"]
+- !private ["C5Kanna18libxmlHTMLDocument", "html"]
+- ["C5Kanna18libxmlHTMLDocument", "htmlDocPtr"]
+- !private ["C5Kanna18libxmlHTMLDocument", "htmlReadDoc"]
+- ["C5Kanna18libxmlHTMLDocument", "init"]
+- ["C5Kanna18libxmlHTMLDocument", "innerHTML"]
+- !private ["C5Kanna18libxmlHTMLDocument", "libxmlHTMLNode"]
+- !private ["C5Kanna18libxmlHTMLDocument", "rootNode"]
+- ["C5Kanna18libxmlHTMLDocument", "tagName"]
+- ["C5Kanna18libxmlHTMLDocument", "text"]
+- ["C5Kanna18libxmlHTMLDocument", "title"]
+- ["C5Kanna18libxmlHTMLDocument", "toHTML"]
+- !private ["C5Kanna18libxmlHTMLDocument", "url"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlChar"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlFreeDoc"]
+- ["C5Kanna18libxmlHTMLDocument", "xpath"]
+- !private ["C5Kanna14libxmlHTMLNode", "deinit"]
+- !private ["C5Kanna14libxmlHTMLNode", "init"]
+- !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertEncodingToIANACharSetName"]
+- !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
+- !private ["C5Kanna17libxmlXMLDocument", "CFStringEncoding"]
+- !private ["C5Kanna17libxmlXMLDocument", "CInt"]
+- ["C5Kanna17libxmlXMLDocument", "String"]
+- ["C5Kanna17libxmlXMLDocument", "UInt"]
+- !private ["C5Kanna17libxmlXMLDocument", "UnsafePointer"]
+- ["C5Kanna17libxmlXMLDocument", "XMLElement"]
+- ["C5Kanna17libxmlXMLDocument", "XMLNodeSet"]
+- ["C5Kanna17libxmlXMLDocument", "at_css"]
+- ["C5Kanna17libxmlXMLDocument", "at_xpath"]
+- ["C5Kanna17libxmlXMLDocument", "className"]
+- ["C5Kanna17libxmlXMLDocument", "css"]
+- ["C5Kanna17libxmlXMLDocument", "deinit"]
+- !private ["C5Kanna17libxmlXMLDocument", "docPtr"]
+- !private ["C5Kanna17libxmlXMLDocument", "encoding"]
+- ["C5Kanna17libxmlXMLDocument", "init"]
+- ["C5Kanna17libxmlXMLDocument", "innerHTML"]
+- !private ["C5Kanna17libxmlXMLDocument", "libxmlHTMLNode"]
+- !private ["C5Kanna17libxmlXMLDocument", "rootNode"]
+- ["C5Kanna17libxmlXMLDocument", "tagName"]
+- ["C5Kanna17libxmlXMLDocument", "text"]
+- ["C5Kanna17libxmlXMLDocument", "toHTML"]
+- !private ["C5Kanna17libxmlXMLDocument", "url"]
+- !private ["C5Kanna17libxmlXMLDocument", "xml"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlChar"]
+- ["C5Kanna17libxmlXMLDocument", "xmlDocPtr"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlReadDoc"]
+- ["C5Kanna17libxmlXMLDocument", "xpath"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps22BidirectionalIndexType"
+- !private "Ps21BitwiseOperationsType"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- !private "CSo8CFString"
+- !private "Ps11CVarArgType"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps23CustomStringConvertible"
+- !private "Ps9Equatable"
+- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps16ForwardIndexType"
+- "P5Kanna12HTMLDocument"
+- !private "Ps8Hashable"
+- !private "SQ"
+- !private "Vs5Int32"
+- !private "Ps21IntegerArithmeticType"
+- !private "Ps25IntegerLiteralConvertible"
+- !private "Ps11IntegerType"
+- !private "Ps14MirrorPathType"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- "Ps21NilLiteralConvertible"
+- "Sq"
+- !private "Ps16OutputStreamType"
+- !private "Ps21RandomAccessIndexType"
+- "P5Kanna10Searchable"
+- "P5Kanna14SearchableNode"
+- !private "Ps12SequenceType"
+- !private "Ps17SignedIntegerType"
+- !private "Ps16SignedNumberType"
+- !private "Ps10Streamable"
+- !private "Ps10Strideable"
+- !private "SS"
+- !private "Ps30StringInterpolationConvertible"
+- !private "Ps24StringLiteralConvertible"
+- !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "SP"
+- "P5Kanna11XMLDocument"
+- !private "P5Kanna10XMLElement"
+- !private "C5Kanna10XMLNodeSet"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps33_BuiltinIntegerLiteralConvertible"
+- !private "Ps32_BuiltinStringLiteralConvertible"
+- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
+- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Ps14_Incrementable"
+- !private "Ps22_IntegerArithmeticType"
+- !private "Ps12_IntegerType"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps12_PointerType"
+- !private "Ps22_RandomAccessAmbiguity"
+- "Ps12_Reflectable"
+- !private "Ps18_SignedIntegerType"
+- "C5Kanna18libxmlHTMLDocument"
+- !private "C5Kanna14libxmlHTMLNode"
+- "C5Kanna17libxmlXMLDocument"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "dd33bf067b1b7cb1b52ac3180765b26e"

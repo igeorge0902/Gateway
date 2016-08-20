@@ -14,11 +14,11 @@ let cipherText = cipher("")
 
 extension String {
     
-    func getCipherText()->String{
+    func getCipherText(plaintext: String)->String{
         
         let iterationCount = 1000;
         let keySize = 128;
-        let plainText = "G";
+        let plainText = plaintext;
         let passPhrase = "SecretPassphrase";
         let iv = "F27D5C9927726BCEFE7510B1BDD3D137";
         let salt = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";

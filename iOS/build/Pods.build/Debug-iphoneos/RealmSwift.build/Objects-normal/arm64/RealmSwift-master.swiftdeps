@@ -1,0 +1,20 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "51a59f718c9b556acb2064b2c4ee5009"
+build_time: [525012186, 676070000]
+inputs:
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Aliases.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Error.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/List.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Migration.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Object.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/ObjectSchema.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Optional.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Property.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Realm.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/RealmCollectionType.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/RealmConfiguration.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Results.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Schema.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/SortDescriptor.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/SwiftVersion.swift": [9223372036854775807, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Util.swift": [9223372036854775807, 0]

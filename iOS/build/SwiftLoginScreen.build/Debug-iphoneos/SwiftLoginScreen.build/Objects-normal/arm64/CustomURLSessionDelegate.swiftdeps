@@ -1,0 +1,275 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CustomURLSessionDelegate"
+provides-nominal:
+- "C16SwiftLoginScreen24CustomURLSessionDelegate"
+- "VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants"
+provides-member:
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", ""]
+- ["VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants", ""]
+provides-dynamic-lookup:
+- "URLSession"
+depends-top-level:
+- "NSURLSessionAuthChallengeDisposition"
+- "NSObject"
+- "NSURLAuthenticationChallenge"
+- "StringLiteralType"
+- "NSURLCredential"
+- "Void"
+- !private "&&"
+- !private "=="
+- !private "NSURLAuthenticationMethodServerTrust"
+- "CustomURLSessionDelegate"
+- "Set"
+- "String"
+- "Array"
+- "NSURLSessionDelegate"
+- "NSURLSession"
+depends-member:
+- !private ["Ps9AnyObject", "Constants"]
+- !private ["Ps9AnyObject", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps9AnyObject", "NSURLCredential"]
+- ["Ps9AnyObject", "URLSession"]
+- ["Ps9AnyObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps9AnyObject", "authenticationMethod"]
+- !private ["Ps9AnyObject", "host"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "protectionSpace"]
+- !private ["Ps9AnyObject", "serverTrust"]
+- ["Ps9AnyObject", ""]
+- ["Ps23ArrayLiteralConvertible", "Element"]
+- !private ["Ps23ArrayLiteralConvertible", "Generator"]
+- !private ["Ps23ArrayLiteralConvertible", "contains"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["Ps11CVarArgType", "Constants"]
+- !private ["Ps11CVarArgType", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps11CVarArgType", "NSURLCredential"]
+- ["Ps11CVarArgType", "URLSession"]
+- ["Ps11CVarArgType", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps11CVarArgType", "authenticationMethod"]
+- !private ["Ps11CVarArgType", "host"]
+- ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "protectionSpace"]
+- !private ["Ps11CVarArgType", "serverTrust"]
+- ["Ps11CVarArgType", ""]
+- ["Ps14CollectionType", "Element"]
+- !private ["Ps14CollectionType", "Generator"]
+- !private ["Ps14CollectionType", "contains"]
+- ["VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants", "Set"]
+- ["VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants", "String"]
+- ["VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants", "init"]
+- ["VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants", "selfSignedHosts"]
+- !private ["Ps28CustomDebugStringConvertible", "Constants"]
+- ["Ps28CustomDebugStringConvertible", "Element"]
+- !private ["Ps28CustomDebugStringConvertible", "Generator"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURLCredential"]
+- ["Ps28CustomDebugStringConvertible", "URLSession"]
+- ["Ps28CustomDebugStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps28CustomDebugStringConvertible", "authenticationMethod"]
+- !private ["Ps28CustomDebugStringConvertible", "contains"]
+- !private ["Ps28CustomDebugStringConvertible", "host"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "protectionSpace"]
+- !private ["Ps28CustomDebugStringConvertible", "serverTrust"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "Constants"]
+- ["Ps23CustomStringConvertible", "Element"]
+- !private ["Ps23CustomStringConvertible", "Generator"]
+- !private ["Ps23CustomStringConvertible", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps23CustomStringConvertible", "NSURLCredential"]
+- ["Ps23CustomStringConvertible", "URLSession"]
+- ["Ps23CustomStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "authenticationMethod"]
+- !private ["Ps23CustomStringConvertible", "contains"]
+- !private ["Ps23CustomStringConvertible", "host"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "protectionSpace"]
+- !private ["Ps23CustomStringConvertible", "serverTrust"]
+- ["Ps23CustomStringConvertible", ""]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "Constants"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "NSURLAuthenticationChallenge"]
+- !private ["C16SwiftLoginScreen24CustomURLSessionDelegate", "NSURLAuthenticationMethodServerTrust"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "NSURLCredential"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "NSURLSession"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "NSURLSessionAuthChallengeDisposition"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "Set"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "String"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "URLSession"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "Void"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "deinit"]
+- ["C16SwiftLoginScreen24CustomURLSessionDelegate", "init"]
+- !private ["Ps9Equatable", "Constants"]
+- ["Ps9Equatable", "Element"]
+- !private ["Ps9Equatable", "Generator"]
+- !private ["Ps9Equatable", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps9Equatable", "NSURLCredential"]
+- !private ["Ps9Equatable", "PerformDefaultHandling"]
+- ["Ps9Equatable", "URLSession"]
+- ["Ps9Equatable", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps9Equatable", "UseCredential"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "authenticationMethod"]
+- !private ["Ps9Equatable", "contains"]
+- !private ["Ps9Equatable", "host"]
+- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "protectionSpace"]
+- !private ["Ps9Equatable", "serverTrust"]
+- ["Ps9Equatable", ""]
+- !private ["Ps13GeneratorType", "Element"]
+- !private ["Ps8Hashable", "Constants"]
+- ["Ps8Hashable", "Element"]
+- !private ["Ps8Hashable", "Generator"]
+- !private ["Ps8Hashable", "NSURLAuthenticationMethodServerTrust"]
+- !private ["Ps8Hashable", "NSURLCredential"]
+- !private ["Ps8Hashable", "PerformDefaultHandling"]
+- ["Ps8Hashable", "URLSession"]
+- ["Ps8Hashable", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps8Hashable", "UseCredential"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "authenticationMethod"]
+- !private ["Ps8Hashable", "contains"]
+- !private ["Ps8Hashable", "host"]
+- ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "protectionSpace"]
+- !private ["Ps8Hashable", "serverTrust"]
+- ["Ps8Hashable", ""]
+- ["Ps9Indexable", "Element"]
+- !private ["Ps9Indexable", "Generator"]
+- !private ["Ps9Indexable", "contains"]
+- !private ["PSo8NSCoding", "authenticationMethod"]
+- !private ["PSo8NSCoding", "host"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "protectionSpace"]
+- !private ["PSo8NSCoding", "serverTrust"]
+- !private ["PSo9NSCopying", "authenticationMethod"]
+- !private ["PSo9NSCopying", "host"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "serverTrust"]
+- !private ["CSo8NSObject", "Constants"]
+- ["CSo8NSObject", "NSURLAuthenticationChallenge"]
+- !private ["CSo8NSObject", "NSURLAuthenticationMethodServerTrust"]
+- ["CSo8NSObject", "NSURLCredential"]
+- ["CSo8NSObject", "NSURLSession"]
+- ["CSo8NSObject", "NSURLSessionAuthChallengeDisposition"]
+- ["CSo8NSObject", "Set"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "URLSession"]
+- ["CSo8NSObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["CSo8NSObject", "Void"]
+- !private ["CSo8NSObject", "authenticationMethod"]
+- !private ["CSo8NSObject", "host"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "protectionSpace"]
+- !private ["CSo8NSObject", "serverTrust"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "Constants"]
+- !private ["PSo16NSObjectProtocol", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo16NSObjectProtocol", "NSURLCredential"]
+- ["PSo16NSObjectProtocol", "URLSession"]
+- ["PSo16NSObjectProtocol", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["PSo16NSObjectProtocol", "authenticationMethod"]
+- !private ["PSo16NSObjectProtocol", "host"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "protectionSpace"]
+- !private ["PSo16NSObjectProtocol", "serverTrust"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "authenticationMethod"]
+- !private ["PSo14NSSecureCoding", "host"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "protectionSpace"]
+- !private ["PSo14NSSecureCoding", "serverTrust"]
+- !private ["CSo28NSURLAuthenticationChallenge", "protectionSpace"]
+- !private ["CSo15NSURLCredential", "init"]
+- !private ["CSo20NSURLProtectionSpace", "authenticationMethod"]
+- !private ["CSo20NSURLProtectionSpace", "host"]
+- !private ["CSo20NSURLProtectionSpace", "serverTrust"]
+- !private ["OSC36NSURLSessionAuthChallengeDisposition", "PerformDefaultHandling"]
+- !private ["OSC36NSURLSessionAuthChallengeDisposition", "UseCredential"]
+- !private ["PSo20NSURLSessionDelegate", "Constants"]
+- !private ["PSo20NSURLSessionDelegate", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo20NSURLSessionDelegate", "NSURLCredential"]
+- ["PSo20NSURLSessionDelegate", "URLSession"]
+- ["PSo20NSURLSessionDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["PSo20NSURLSessionDelegate", ""]
+- !private ["Ps16RawRepresentable", "PerformDefaultHandling"]
+- !private ["Ps16RawRepresentable", "UseCredential"]
+- ["Ps12SequenceType", "Element"]
+- !private ["Ps12SequenceType", "Generator"]
+- !private ["Ps12SequenceType", "contains"]
+- ["Vs3Set", "Element"]
+- !private ["Vs3Set", "Generator"]
+- !private ["Vs3Set", "contains"]
+- !private ["Vs12SetGenerator", "Element"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["Ps21_ObjectiveCBridgeable", "Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "Generator"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "contains"]
+- ["Ps12_Reflectable", "Element"]
+- !private ["Ps12_Reflectable", "Generator"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "contains"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps23ArrayLiteralConvertible"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- "Ps11CVarArgType"
+- "Ps14CollectionType"
+- "VC16SwiftLoginScreen24CustomURLSessionDelegate9Constants"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "C16SwiftLoginScreen24CustomURLSessionDelegate"
+- "Ps9Equatable"
+- !private "Ps13GeneratorType"
+- "Ps8Hashable"
+- "Ps9Indexable"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo28NSURLAuthenticationChallenge"
+- !private "CSo15NSURLCredential"
+- !private "CSo20NSURLProtectionSpace"
+- !private "OSC36NSURLSessionAuthChallengeDisposition"
+- "PSo20NSURLSessionDelegate"
+- !private "Ps16RawRepresentable"
+- "Ps12SequenceType"
+- "Vs3Set"
+- !private "Vs12SetGenerator"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphoneos/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphoneos/Kanna.framework/Modules/Kanna.swiftmodule/arm64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/WebKit.swiftmodule"
+interface-hash: "b56979382d0ac17707b0c56d7f83d00d"

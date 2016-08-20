@@ -1,0 +1,9 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "61a9c3fddfd84e0775a722ff91fabe72"
+build_time: [525012197, 305553000]
+inputs:
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Source/CSS.swift": [523321567, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Source/Kanna.swift": [523321567, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Source/libxml/libxmlHTMLDocument.swift": [523321567, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Source/libxml/libxmlHTMLNode.swift": [523321567, 0]
+  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Source/libxml/libxmlParserOption.swift": [523321567, 0]

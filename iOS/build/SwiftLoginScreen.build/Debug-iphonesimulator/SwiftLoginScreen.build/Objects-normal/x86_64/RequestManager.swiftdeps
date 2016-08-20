@@ -1,0 +1,473 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ServiceResponses"
+- "RequestManager"
+provides-nominal:
+- "C16SwiftLoginScreen14RequestManager"
+provides-member:
+- ["C16SwiftLoginScreen14RequestManager", ""]
+provides-dynamic-lookup:
+- "session"
+- "running"
+- "prefs"
+- "url"
+- "errors"
+depends-top-level:
+- "NSURLSessionDelegate"
+- "String"
+- "NSError"
+- !private "NSMutableURLRequest"
+- "BooleanLiteralType"
+- "RequestManager"
+- "Void"
+- "JSON"
+- !private "StringLiteralType"
+- "NSURL"
+- "NSUserDefaults"
+- "NSURLSession"
+- "ServiceResponses"
+- "NSObject"
+- !private "NSLog"
+- "NSURLSessionTaskDelegate"
+- !private "Dictionary"
+depends-member:
+- !private ["Ps9AnyObject", "NSLog"]
+- !private ["Ps9AnyObject", "NSMutableURLRequest"]
+- !private ["Ps9AnyObject", "NSURL"]
+- !private ["Ps9AnyObject", "NSURLSession"]
+- ["Ps9AnyObject", "NSUserDefaults"]
+- ["Ps9AnyObject", "URLSession"]
+- ["Ps9AnyObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["Ps9AnyObject", "dataTask"]
+- !private ["Ps9AnyObject", "dataTaskWithRequest"]
+- ["Ps9AnyObject", "errors"]
+- ["Ps9AnyObject", "getResponse"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "isEmpty"]
+- ["Ps9AnyObject", "prefs"]
+- !private ["Ps9AnyObject", "requestWithURL"]
+- ["Ps9AnyObject", "running"]
+- ["Ps9AnyObject", "session"]
+- ["Ps9AnyObject", "session.storage"]
+- !private ["Ps9AnyObject", "sharedCustomSession"]
+- ["Ps9AnyObject", "standardUserDefaults"]
+- ["Ps9AnyObject", "url"]
+- !private ["Ps9AnyObject", "valueForKey"]
+- ["Ps9AnyObject", ""]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["Ps11CVarArgType", "NSLog"]
+- !private ["Ps11CVarArgType", "NSMutableURLRequest"]
+- !private ["Ps11CVarArgType", "NSURL"]
+- !private ["Ps11CVarArgType", "NSURLSession"]
+- ["Ps11CVarArgType", "NSUserDefaults"]
+- ["Ps11CVarArgType", "URLSession"]
+- ["Ps11CVarArgType", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["Ps11CVarArgType", "dataTask"]
+- !private ["Ps11CVarArgType", "dataTaskWithRequest"]
+- !private ["Ps11CVarArgType", "deinit"]
+- ["Ps11CVarArgType", "errors"]
+- ["Ps11CVarArgType", "getResponse"]
+- ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "isEmpty"]
+- ["Ps11CVarArgType", "prefs"]
+- !private ["Ps11CVarArgType", "requestWithURL"]
+- ["Ps11CVarArgType", "running"]
+- ["Ps11CVarArgType", "session"]
+- ["Ps11CVarArgType", "session.storage"]
+- !private ["Ps11CVarArgType", "sharedCustomSession"]
+- ["Ps11CVarArgType", "standardUserDefaults"]
+- ["Ps11CVarArgType", "url"]
+- !private ["Ps11CVarArgType", "valueForKey"]
+- ["Ps11CVarArgType", ""]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "isEmpty"]
+- !private ["Ps28CustomDebugStringConvertible", "NSLog"]
+- !private ["Ps28CustomDebugStringConvertible", "NSMutableURLRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURL"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURLSession"]
+- ["Ps28CustomDebugStringConvertible", "NSUserDefaults"]
+- ["Ps28CustomDebugStringConvertible", "URLSession"]
+- ["Ps28CustomDebugStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["Ps28CustomDebugStringConvertible", "dataTask"]
+- !private ["Ps28CustomDebugStringConvertible", "dataTaskWithRequest"]
+- ["Ps28CustomDebugStringConvertible", "errors"]
+- ["Ps28CustomDebugStringConvertible", "getResponse"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
+- ["Ps28CustomDebugStringConvertible", "prefs"]
+- !private ["Ps28CustomDebugStringConvertible", "requestWithURL"]
+- ["Ps28CustomDebugStringConvertible", "running"]
+- ["Ps28CustomDebugStringConvertible", "session"]
+- ["Ps28CustomDebugStringConvertible", "session.storage"]
+- !private ["Ps28CustomDebugStringConvertible", "sharedCustomSession"]
+- ["Ps28CustomDebugStringConvertible", "standardUserDefaults"]
+- ["Ps28CustomDebugStringConvertible", "url"]
+- !private ["Ps28CustomDebugStringConvertible", "valueForKey"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "NSLog"]
+- !private ["Ps23CustomStringConvertible", "NSMutableURLRequest"]
+- !private ["Ps23CustomStringConvertible", "NSURL"]
+- !private ["Ps23CustomStringConvertible", "NSURLSession"]
+- ["Ps23CustomStringConvertible", "NSUserDefaults"]
+- ["Ps23CustomStringConvertible", "URLSession"]
+- ["Ps23CustomStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "dataTask"]
+- !private ["Ps23CustomStringConvertible", "dataTaskWithRequest"]
+- ["Ps23CustomStringConvertible", "errors"]
+- ["Ps23CustomStringConvertible", "getResponse"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "isEmpty"]
+- ["Ps23CustomStringConvertible", "prefs"]
+- !private ["Ps23CustomStringConvertible", "requestWithURL"]
+- ["Ps23CustomStringConvertible", "running"]
+- ["Ps23CustomStringConvertible", "session"]
+- ["Ps23CustomStringConvertible", "session.storage"]
+- !private ["Ps23CustomStringConvertible", "sharedCustomSession"]
+- ["Ps23CustomStringConvertible", "standardUserDefaults"]
+- ["Ps23CustomStringConvertible", "url"]
+- !private ["Ps23CustomStringConvertible", "valueForKey"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "NSLog"]
+- !private ["Ps9Equatable", "NSMutableURLRequest"]
+- !private ["Ps9Equatable", "NSURL"]
+- !private ["Ps9Equatable", "NSURLSession"]
+- ["Ps9Equatable", "NSUserDefaults"]
+- ["Ps9Equatable", "URLSession"]
+- ["Ps9Equatable", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "dataTask"]
+- !private ["Ps9Equatable", "dataTaskWithRequest"]
+- ["Ps9Equatable", "errors"]
+- ["Ps9Equatable", "getResponse"]
+- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "isEmpty"]
+- ["Ps9Equatable", "prefs"]
+- !private ["Ps9Equatable", "requestWithURL"]
+- ["Ps9Equatable", "running"]
+- ["Ps9Equatable", "session"]
+- ["Ps9Equatable", "session.storage"]
+- !private ["Ps9Equatable", "sharedCustomSession"]
+- ["Ps9Equatable", "standardUserDefaults"]
+- ["Ps9Equatable", "url"]
+- !private ["Ps9Equatable", "valueForKey"]
+- ["Ps9Equatable", ""]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
+- !private ["Sf", "deinit"]
+- !private ["Ps8Hashable", "NSLog"]
+- !private ["Ps8Hashable", "NSMutableURLRequest"]
+- !private ["Ps8Hashable", "NSURL"]
+- !private ["Ps8Hashable", "NSURLSession"]
+- ["Ps8Hashable", "NSUserDefaults"]
+- ["Ps8Hashable", "URLSession"]
+- ["Ps8Hashable", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "dataTask"]
+- !private ["Ps8Hashable", "dataTaskWithRequest"]
+- ["Ps8Hashable", "errors"]
+- ["Ps8Hashable", "getResponse"]
+- ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "isEmpty"]
+- ["Ps8Hashable", "prefs"]
+- !private ["Ps8Hashable", "requestWithURL"]
+- ["Ps8Hashable", "running"]
+- ["Ps8Hashable", "session"]
+- ["Ps8Hashable", "session.storage"]
+- !private ["Ps8Hashable", "sharedCustomSession"]
+- ["Ps8Hashable", "standardUserDefaults"]
+- ["Ps8Hashable", "url"]
+- !private ["Ps8Hashable", "valueForKey"]
+- ["Ps8Hashable", ""]
+- !private ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["P10SwiftyJSON17JSONSubscriptType", "init"]
+- !private ["P10SwiftyJSON17JSONSubscriptType", "isEmpty"]
+- !private ["Ps14MirrorPathType", "init"]
+- !private ["Ps14MirrorPathType", "isEmpty"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "isEmpty"]
+- !private ["PSo8NSCoding", "requestWithURL"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "isEmpty"]
+- !private ["PSo9NSCopying", "requestWithURL"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "isEmpty"]
+- !private ["PSo16NSMutableCopying", "requestWithURL"]
+- !private ["CSo19NSMutableURLRequest", "requestWithURL"]
+- !private ["CSo8NSObject", "JSON"]
+- !private ["CSo8NSObject", "NSLog"]
+- !private ["CSo8NSObject", "NSMutableURLRequest"]
+- ["CSo8NSObject", "NSURL"]
+- ["CSo8NSObject", "NSURLSession"]
+- ["CSo8NSObject", "NSUserDefaults"]
+- ["CSo8NSObject", "ServiceResponses"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "URLSession"]
+- ["CSo8NSObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "dataTask"]
+- !private ["CSo8NSObject", "dataTaskWithRequest"]
+- ["CSo8NSObject", "errors"]
+- ["CSo8NSObject", "getResponse"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "isEmpty"]
+- ["CSo8NSObject", "prefs"]
+- !private ["CSo8NSObject", "requestWithURL"]
+- ["CSo8NSObject", "running"]
+- ["CSo8NSObject", "session"]
+- ["CSo8NSObject", "session.storage"]
+- !private ["CSo8NSObject", "sharedCustomSession"]
+- ["CSo8NSObject", "standardUserDefaults"]
+- ["CSo8NSObject", "url"]
+- !private ["CSo8NSObject", "valueForKey"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "NSLog"]
+- !private ["PSo16NSObjectProtocol", "NSMutableURLRequest"]
+- !private ["PSo16NSObjectProtocol", "NSURL"]
+- !private ["PSo16NSObjectProtocol", "NSURLSession"]
+- ["PSo16NSObjectProtocol", "NSUserDefaults"]
+- ["PSo16NSObjectProtocol", "URLSession"]
+- ["PSo16NSObjectProtocol", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["PSo16NSObjectProtocol", "dataTask"]
+- !private ["PSo16NSObjectProtocol", "dataTaskWithRequest"]
+- ["PSo16NSObjectProtocol", "errors"]
+- ["PSo16NSObjectProtocol", "getResponse"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "isEmpty"]
+- ["PSo16NSObjectProtocol", "prefs"]
+- !private ["PSo16NSObjectProtocol", "requestWithURL"]
+- ["PSo16NSObjectProtocol", "running"]
+- ["PSo16NSObjectProtocol", "session"]
+- ["PSo16NSObjectProtocol", "session.storage"]
+- !private ["PSo16NSObjectProtocol", "sharedCustomSession"]
+- ["PSo16NSObjectProtocol", "standardUserDefaults"]
+- ["PSo16NSObjectProtocol", "url"]
+- !private ["PSo16NSObjectProtocol", "valueForKey"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "isEmpty"]
+- !private ["PSo14NSSecureCoding", "requestWithURL"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "isEmpty"]
+- !private ["CSo5NSURL", "init"]
+- !private ["CSo12NSURLRequest", "requestWithURL"]
+- !private ["CSo12NSURLSession", "dataTaskWithRequest"]
+- !private ["CSo12NSURLSession", "sharedCustomSession"]
+- !private ["PSo20NSURLSessionDelegate", "NSLog"]
+- !private ["PSo20NSURLSessionDelegate", "NSMutableURLRequest"]
+- !private ["PSo20NSURLSessionDelegate", "NSURL"]
+- !private ["PSo20NSURLSessionDelegate", "NSURLSession"]
+- ["PSo20NSURLSessionDelegate", "NSUserDefaults"]
+- ["PSo20NSURLSessionDelegate", "URLSession"]
+- ["PSo20NSURLSessionDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["PSo20NSURLSessionDelegate", "dataTask"]
+- !private ["PSo20NSURLSessionDelegate", "errors"]
+- !private ["PSo20NSURLSessionDelegate", "prefs"]
+- !private ["PSo20NSURLSessionDelegate", "running"]
+- !private ["PSo20NSURLSessionDelegate", "session"]
+- !private ["PSo20NSURLSessionDelegate", "url"]
+- ["PSo20NSURLSessionDelegate", ""]
+- !private ["PSo24NSURLSessionTaskDelegate", "NSLog"]
+- !private ["PSo24NSURLSessionTaskDelegate", "NSMutableURLRequest"]
+- !private ["PSo24NSURLSessionTaskDelegate", "NSURL"]
+- !private ["PSo24NSURLSessionTaskDelegate", "NSURLSession"]
+- ["PSo24NSURLSessionTaskDelegate", "NSUserDefaults"]
+- ["PSo24NSURLSessionTaskDelegate", "URLSession"]
+- ["PSo24NSURLSessionTaskDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["PSo24NSURLSessionTaskDelegate", "dataTask"]
+- !private ["PSo24NSURLSessionTaskDelegate", "errors"]
+- !private ["PSo24NSURLSessionTaskDelegate", "prefs"]
+- !private ["PSo24NSURLSessionTaskDelegate", "running"]
+- !private ["PSo24NSURLSessionTaskDelegate", "session"]
+- !private ["PSo24NSURLSessionTaskDelegate", "url"]
+- ["PSo24NSURLSessionTaskDelegate", ""]
+- ["CSo14NSUserDefaults", "standardUserDefaults"]
+- !private ["CSo14NSUserDefaults", "valueForKey"]
+- !private ["Ps16OutputStreamType", "init"]
+- !private ["Ps16OutputStreamType", "isEmpty"]
+- !private ["C16SwiftLoginScreen14RequestManager", "JSON"]
+- !private ["C16SwiftLoginScreen14RequestManager", "NSLog"]
+- !private ["C16SwiftLoginScreen14RequestManager", "NSMutableURLRequest"]
+- ["C16SwiftLoginScreen14RequestManager", "NSURL"]
+- ["C16SwiftLoginScreen14RequestManager", "NSURLSession"]
+- ["C16SwiftLoginScreen14RequestManager", "NSUserDefaults"]
+- ["C16SwiftLoginScreen14RequestManager", "ServiceResponses"]
+- ["C16SwiftLoginScreen14RequestManager", "String"]
+- ["C16SwiftLoginScreen14RequestManager", "URLSession"]
+- ["C16SwiftLoginScreen14RequestManager", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["C16SwiftLoginScreen14RequestManager", "Void"]
+- ["C16SwiftLoginScreen14RequestManager", "dataTask"]
+- ["C16SwiftLoginScreen14RequestManager", "deinit"]
+- ["C16SwiftLoginScreen14RequestManager", "errors"]
+- ["C16SwiftLoginScreen14RequestManager", "getResponse"]
+- ["C16SwiftLoginScreen14RequestManager", "init"]
+- ["C16SwiftLoginScreen14RequestManager", "prefs"]
+- ["C16SwiftLoginScreen14RequestManager", "running"]
+- ["C16SwiftLoginScreen14RequestManager", "session"]
+- !private ["C16SwiftLoginScreen14RequestManager", "session.storage"]
+- ["C16SwiftLoginScreen14RequestManager", "url"]
+- !private ["Vs12StaticString", "deinit"]
+- !private ["Ps10Streamable", "init"]
+- !private ["Ps10Streamable", "isEmpty"]
+- !private ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["SS", "isEmpty"]
+- !private ["Ps30StringInterpolationConvertible", "init"]
+- !private ["Ps30StringInterpolationConvertible", "isEmpty"]
+- !private ["Ps24StringLiteralConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "isEmpty"]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["Sc", "deinit"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "isEmpty"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "isEmpty"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "isEmpty"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "isEmpty"]
+- !private ["Ps32_FileReferenceLiteralConvertible", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "isEmpty"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "init"]
+- !private ["Ps12_Reflectable", "isEmpty"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- "Ps11CVarArgType"
+- !private "Vs9Character"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- !private "Sd"
+- "Ps9Equatable"
+- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "Sf"
+- "Ps8Hashable"
+- !private "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "P10SwiftyJSON17JSONSubscriptType"
+- !private "Ps14MirrorPathType"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- !private "CSo19NSMutableURLRequest"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "CSo5NSURL"
+- !private "CSo12NSURLRequest"
+- !private "CSo12NSURLSession"
+- "PSo20NSURLSessionDelegate"
+- "PSo24NSURLSessionTaskDelegate"
+- "CSo14NSUserDefaults"
+- !private "Ps16OutputStreamType"
+- "C16SwiftLoginScreen14RequestManager"
+- !private "Vs12StaticString"
+- !private "Ps10Streamable"
+- !private "SS"
+- !private "Ps30StringInterpolationConvertible"
+- !private "Ps24StringLiteralConvertible"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- !private "Sc"
+- !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "Ps32_BuiltinStringLiteralConvertible"
+- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
+- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Ps32_FileReferenceLiteralConvertible"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMMigration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMDefines.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
+interface-hash: "b51bc17ea3089569fc30d9e8fa19dd5f"
