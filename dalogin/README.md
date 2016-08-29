@@ -5,6 +5,10 @@
 - Mac OS X using TomCat and GlassFish behind Apache through WWW and on mobile with iPhone 5C
 - Windows 10 using TomCat and GlassFish behind IIS through WWW only
 
+Donation
+----
+- I have been developing this project for more than one year and finally I have come to the end of it. Although this project is not commercially licenced I would like to offer the chance to donate.
+
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NN35ATBZCKU4Y)
 
 Description
@@ -110,7 +114,7 @@ After you have built and deployed all parts (web app, iOS) of the service, you h
 Usage:
 ----
 - For registration you need to provide a preset and available voucher, username, email and password. After having successfully registered or logged in, you will receive a token part that you need to use for API calls. Upon each login you will receive a new token part. You will find examples in the example database. 
-- Based on which type of registration you have implemented you may need to activate a voucher to access the restricted API. You can send an email to the email address you have given during the registration. (Registration without voucher workflow is supplied in the code base, however it may not be fully functional as I did some changes recently.) It is not the scope of the project to go beyond successfully recieving the response through the restricted API call. Your part comes in to extend the code.
+- Based on which type of registration you have implemented you may need to activate a voucher to access the restricted API. You can send an email to the email address you have given during the registration. (Registration without voucher workflow is supplied in the code base, however it may not be fully functional as I did some changes recently.) It is not the scope of the project to go beyond successfully recieving the response through the restricted API call, so voucher activation will not be implemented neither the registration through webview. Your part comes in to extend the code.
 - For login you need to provide a valid username and password. The password is immediately transformed using sha3 hashing algoritm and that will be stored in the database. The password is a field of char type in the database. 
 - After your session has been invalidated you will not be able to access the user data through the designated API call because that requires a valid token part to authenticate (once the session has been invalidated, the token will be overwritten automatically on the server, therefor the client will not know it!). You will recieve an error message when trying to access restricted data after session invalidation.
 - there is a parameter in the web.xml that sets the time intervallum for the requests to be completed. This feature has been added only for performance testing purposes.
