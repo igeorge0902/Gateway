@@ -2,40 +2,21 @@
 (Release Candidate)
 
 #Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
+- Mac OS X using TomCat and GlassFish behind Apache through WWW and on mobile with iPhone 5C
+- Windows 10 using TomCat and GlassFish behind IIS through WWW only
 
-Questions:
-----
-If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
-Please note, I try to maintain the most recent working version, but for any issues your feedback is most welcomed!
-
-Known issue:
-----
-- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
-- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
-- For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
-
-RoadMap:
-----
-- Angular JS update to the most newest possible version
-
-Note:
-----
-Last update: 2016.08.20.
-
-Update
-----
-- Registration is considered to be finished combined with voucher activation
-- native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NN35ATBZCKU4Y)
 
 Description
 ----
 
-The complete service system consists of several parts, layers that makes it easy to alter or extend the functionalities. The server part can be deployed as it is, just take care of the web.xml. The current configuration shall work without modification.
+This project is about a login - registration system that can be used on WWW and iOS mobile and provides an authentication service and can be used as a Single-Sign-On service, as well, through desktop WWW, iOS mobile native, mobile WWW and mobile webview from native app because the user will have a token that will server as authenticator for restricted API calls.
 
-- as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only)
-- as for iOS build the project and you can use the registration/login service in native way or through webview, too. The registration is not implemented yet fully, but will work the same way as the login.
+The iOS swift code contains both type of login method from the native app, where the webview login serves as "ChangeUser" function.
 
-The iOS swift code contains both type of login method, where the webview login serves as "ChangeUser" function.
+The complete service system consists of several parts, layers that makes it easy to alter or extend the functionalities. The scope of the project is to demonstrate how the whole system works, starting from a user registration, user login, user accessing restricted data through authenticated API call, logout, timeout, simultenous user logins on different platforms, device login state tracking for native mobile app.
+
+The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
 
 Important:
 ----
@@ -62,7 +43,8 @@ The webserver and the application server is configured not to use cache, but it 
 
 Apache HTTPD configuration files are included that you should use to get started.
 
-Cache Settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
+Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
+- CORS settings have no effect in this project according the single domain environment
 
   <IfModule mod_headers.c>
     Header unset X-Powered-By
@@ -82,30 +64,40 @@ Cache Settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
     Header set Pragma "no-cache"
   </FilesMatch>
 
-The project uses and needs Java JDK 1.8.x 
+> The project uses and needs Java JDK 1.8.x 
 ----
 
 Notes on Windows:
-- mod_jk - ISAPI redirector - NSAPI redirector is available as connector for IIS
+----
+There are several solutions for Windows to use GlassFish or TomCat instance behind the IIS (Please note the how-to may differ based on the version of Windows. The links I supplied worked for me on Windows 10).
+- The Apache Tomcat Connectors to IIS: https://tomcat.apache.org/connectors-doc/webserver_howto/iis.html
+- Integrate Glassfish with IIS: https://jstoup.wordpress.com/2012/04/25/how-to-integrate-glassfish-with-iis/
 - NHibernate is available as an object-relational mapping (ORM) solution for the Microsoft .NET platform. 
 
-Notes on GlassFish:
-- you will need to replace the jBoss logging jar to the newest version because of the Hibernate that is used in the APIs. You will find this jar here in GLASSFISH_HOME/glassfish/modules, and then also insert a new logger at the server console referencing this logger.
+Notes on GlassFish
+----
+- you will need to replace the jBoss logging jar to the newest version because the Hibernate is dependent on it, but there are GlassFish versions that do not include to correct version. You will find this particular jar here in GLASSFISH_HOME/glassfish/modules, and then also insert a new logger at the server console referencing this logger. You may need to restart your computer for the changes to take effect.
 
 Deploy description:
 ----
+- as for the server part can be deployed as it is, just take care of the web.xml. The current configuration shall work without modification.
+- as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only)
+- as for iOS build the project and you can use the registration/login service in native way or through webview, too. The registration is not implemented yet fully, but will work the same way as the login.
+
+
 The project contains the source code of the whole system in the dedicated branches.
 
 Import the project as Existing Maven project into your Java IDE (Eclipse) and run Maven Install.
 
 If you just want to compile, and don't make a war, use the following command:
 
-mvn dependency:copy-dependencies -Dmaven.test.skip=true compile
+> mvn dependency:copy-dependencies -Dmaven.test.skip=true compile
 
 
 - Run the dB scripts to create the dB schema necessary to operate.
 - Create the dB user for the application
 - Check the web.xml if the configuration is correct, and every class is defined correctly
+- place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
 - Listeners are initialized with annotations, but you can change it back to use them directly using the web.xml (Please refer to the Java Http Servlet documentation for it)
 - Place the required log configuration file into the right class folder, and configure it for your needs!
 - Insert initial vouchers with activation flags set into the voucher_states table, if you want to have registration, or just put a username and a hashed password (with the same hashing algorithm that you selected in your client apps - if you had made any changes to the code base) into the logins table. 
@@ -113,35 +105,64 @@ mvn dependency:copy-dependencies -Dmaven.test.skip=true compile
 - Unique username and email checking is not implemented yet fully, but the supplied API will perform the check
 - The servlet context also makes it available to check the active users with a designated API call  (There is one supplied I have used that will make good use of on GlassFish where there is no detaild active sessions list apart from Tomcat)
 
-After you have built and deployed all parts (web app, iOS) of the service, you have to be able to login through WWW (mobile, too), native iOS and iOS webview from the app.
-
-Maintenance:
-- there are four tables that are very sensitive and if you modify them separately unexpected behaviour may occur: Last_seen, Tokens, device_states, devices.
-- if you want to clear / clean up the dB or of devices, but not of the user, because something went wrong, you need to truncate all the following tables:  Last_seen, Tokens, device_states, devices. 
-
-The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status(derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
+After you have built and deployed all parts (web app, iOS) of the service, you have to be able to access the site and use the system. Start registration process and the login through WWW (mobile, too), native iOS and iOS webview from the app.
 
 Usage:
-- For registration you need to provide a preset and available voucher, username, email and password. After having successfully registered or logged in, you will receive a token part that you need to use for API calls. Upon each login you will receive a new token part. I tested it only on WWW.
-- For login you need to provide a valid username and password. After your session has been invalidated you will not be able to access the user data through the designated API call that requires a valid token part to authenticate (once the session has been invalidated, the token will be overwritten automatically).  
+----
+- For registration you need to provide a preset and available voucher, username, email and password. After having successfully registered or logged in, you will receive a token part that you need to use for API calls. Upon each login you will receive a new token part. You will find examples in the example database. 
+- Based on which type of registration you have implemented you may need to activate a voucher to access the restricted API. You can send an email to the email address you have given during the registration. (Registration without voucher workflow is supplied in the code base, however it may not be fully functional as I did some changes recently.) It is not the scope of the project to go beyond successfully recieving the response through the restricted API call. Your part comes in to extend the code.
+- For login you need to provide a valid username and password. The password is immediately transformed using sha3 hashing algoritm and that will be stored in the database. The password is a field of char type in the database. 
+- After your session has been invalidated you will not be able to access the user data through the designated API call because that requires a valid token part to authenticate (once the session has been invalidated, the token will be overwritten automatically on the server, therefor the client will not know it!). You will recieve an error message when trying to access restricted data after session invalidation.
 - there is a parameter in the web.xml that sets the time intervallum for the requests to be completed. This feature has been added only for performance testing purposes.
 
 Authentication process:
-- authentication will happen with user supplied and system generated data on the front end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used that will be generated on the fly, and some of its components, too, with the aim to make the process secure.
+----
+- authentication will happen with user supplied and system generated data on the front-end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used. The hmac signature will be generated on the fly before the client sends out the request. Basically the hmac will take all the necessary arguments and then will create the signature that will be regenerated on the server with the same arguments. Because the server has fix string parameters along with the supplied arguments, it can work as a secure tool to verify the request and the integrity of the data in the request the came through the internet. 
+- For more information on hmac interoperabilty: http://www.jokecamp.com/blog/examples-of-creating-base64-hashes-using-hmac-sha256-in-different-languages/#js.
 
-- on iOS the deviceId will not be identical for the first time when you login through the webview, only after app restart. It is due to the fact that the deviceId is generated during runtime from code in the angular js, but the mobile device will supply its own id that will be placed into the js that is then saved into the cache. The cache is actually a core data that you can check using SQLite dB frontend application when you use iOS simulator.
+- With great effort put into work on iOS the deviceId will be the real ID of the iPhone device. This is a very important step in providing the ability to have the actual device ID that we can track in all cases regardless the user logs in through native authentication, or the webview from the native app. To track a WWW and mobile WWW device login state have never been in scope.
+
+Maintenance:
+----
+- there are four tables that are very sensitive and if you modify them separately unexpected behaviour may occur: Last_seen, Tokens, device_states, devices.
+- if you want to clear / clean up the dB or of devices, but not of the user, because something went wrong, you need to truncate all the following tables:  Last_seen, Tokens, device_states, devices. 
 
 About the WebView login:
 ----
 - it will use a redirection: basically the browser in the webview will tell the server it uses a mobile browser and as such is going to use a designated headerField called M, too. 
 
-In iOS, as all the requests are going to be copied into a new one, that go through the url protocol (NSURLProtocol), the protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. 
+In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. Please note, that the header of the request is goint to make a preflight regardless the body part has been cached. 
 
-The js in the webView is going to pick up this value that is set into the headerField, but it checks only if its value is undefined or not, and makes an empty redirect to the same location as the server does: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, knowing that the webView has finished the redirect successfully. 
+The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the values of "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, also knowing that the webView has finished the redirect successfully. For the webview request we are happy the value of the headerfield M is cached, even though it is not readable, but we check only if it is an object or null. 
 
 The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
 
-After the redirection has been taken place, the server will supply the necessary data for the mobile so that the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
+After the redirect has beed carried out successfully the iOS app has recieved the server response and finalized the user login process in the app initiated throught webview, and the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
+
+Questions:
+----
+If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
+Please note, I try to maintain the most recent working version, but for any issues your feedback is most welcomed!
+
+Known issue:
+----
+- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
+- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
+- For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
+
+RoadMap:
+----
+- Angular JS update to the most newest possible version
+
+Note:
+----
+Last update: 2016.08.29.
+
+Update
+----
+- Registration is considered to be finished combined with voucher activation
+- native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
+
 
 Credits:
 ----
