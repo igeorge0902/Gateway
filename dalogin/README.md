@@ -14,7 +14,7 @@ Donation
 Description
 ----
 
-This project is about a login - registration system that can be used on WWW and iOS mobile and provides an authentication service and can be used as a Single-Sign-On service, as well, through desktop WWW, iOS mobile native, mobile WWW and mobile webview from native app because the user will have a token that will server as authenticator for restricted API calls.
+This project is about a login - registration system that can be used on WWW and iOS mobile and provides an authentication service and can be used as a Single-Sign-On service, as well, through desktop WWW, iOS mobile native, mobile WWW and mobile webview from native app because the user will have a token that will serve as the authenticator for restricted API calls.
 
 The iOS swift code contains both type of login method from the native app, where the webview login serves as "ChangeUser" function.
 
