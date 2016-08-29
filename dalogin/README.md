@@ -20,6 +20,8 @@ The iOS swift code contains both type of login method from the native app, where
 
 The complete service system consists of several parts, layers that makes it easy to alter or extend the functionalities. The scope of the project is to demonstrate how the whole system works, starting from a user registration, user login, user accessing restricted data through authenticated API call, logout, timeout, simultenous user logins on different platforms, device login state tracking for native mobile app.
 
+AES encryption - decryption is available across all platforms, except for Angular JS 1.3.x.
+
 The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
 
 Important:
@@ -108,6 +110,7 @@ If you just want to compile, and don't make a war, use the following command:
 - Registration workflow is implemented with or without voucher activation, but servlets must be configured in the web.xml!
 - Unique username and email checking is not implemented yet fully, but the supplied API will perform the check
 - The servlet context also makes it available to check the active users with a designated API call  (There is one supplied I have used that will make good use of on GlassFish where there is no detaild active sessions list apart from Tomcat)
+- Remove the three unnecessary request overloads from the iOS app ("isCachable").
 
 After you have built and deployed all parts (web app, iOS) of the service, you have to be able to access the site and use the system. Start registration process and the login through WWW (mobile, too), native iOS and iOS webview from the app.
 
