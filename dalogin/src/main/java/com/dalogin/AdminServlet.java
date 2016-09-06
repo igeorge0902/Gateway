@@ -205,9 +205,9 @@ public class AdminServlet extends HttpServlet {
        
         // Return current session
 		session = request.getSession();		
-        //log.info("admin SessionID:" + session.getId().toString());
     	
         // Check session for user attribute
+		// TODO: refactor!
     	if(session.getAttribute("user") == null){
     	
             if (sessionId != null) {
@@ -256,7 +256,9 @@ public class AdminServlet extends HttpServlet {
 			response.setCharacterEncoding("utf-8"); 
 			response.setStatus(502);
 
-			session.invalidate();
+			if (session != null) {
+			session.invalidate();				
+			}
 			
 			PrintWriter out = response.getWriter(); 
 			
@@ -265,7 +267,8 @@ public class AdminServlet extends HttpServlet {
 			
 			// put some value pairs into the JSON object . 				
 			json.put("acticeUsers", "failed"); 
-			json.put("Success", "false"); 
+			json.put("Success", "false");
+			json.put("ErrorMsg", "no valid session");
 			
 			// finally output the json string 
 			out.print(json.toString());
