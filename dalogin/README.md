@@ -31,6 +31,8 @@ Important:
 - configure your links according your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
 - make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
+- as of Apple requirements https is required for server connections and it will be enforced as of 1st Jan 2017. Read more about app transport security: https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html, http://www.techrepublic.com/google-amp/article/how-to-migrate-to-https-using-app-transport-security-when-developing-ios-apps/?client=safari
+
 
 Documentation will be coming soon!!
 ----
