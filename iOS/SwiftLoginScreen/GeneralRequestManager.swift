@@ -8,25 +8,31 @@
 
 import Foundation
 import SwiftyJSON
+import Realm
 
 
-class GeneralRequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+let serverURL = "https://milo.crabdance.com"
+class GeneralRequestManager: NSObject {
     
+    private var urlResponse:NSURLResponse?
+
     var url: NSURL!
     var errors: String!
     var method: String!
     var queryParameters: [String:String]?
     var bodyParameters: [String:String]?
+    var isCacheable: String?
 
     var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
-    init?(url: String, errors: String, method: String, queryParameters: [String:String]?, bodyParameters: [String:String]?) {
+    init?(url: String, errors: String, method: String, queryParameters: [String:String]?, bodyParameters: [String:String]?, isCacheable: String?) {
         super.init()
         self.url = NSURL(string: url)!
         self.errors = errors
         self.method = method
         self.queryParameters = queryParameters
         self.bodyParameters = bodyParameters
+        self.isCacheable = isCacheable
         if url.isEmpty { }
         if errors.isEmpty { }
         
@@ -47,23 +53,57 @@ class GeneralRequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDel
     
     func getResponse(onCompletion: (JSON, NSError?) -> Void) {
         
+        if self.isCacheable == "1" {
+        
+        if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+            
+            var headerFields:[String : String] = [:]
+            
+            headerFields["Content-Length"] = String(format:"%d", data.length)
+            
+            if let mimeType = localResponse.mimeType {
+                headerFields["Content-Type"] = mimeType as String
+            }
+            
+            headerFields["Content-Encoding"] = localResponse.encoding!
+            
+
+        } else {
+            
+            dataTask ({ json, err in
+                
+                onCompletion(json as JSON, err)
+                
+                    })
+            }
+            
+            
+        } else {
+        
         dataTask ({ json, err in
             
             onCompletion(json as JSON, err)
             
-        })
+            })
+        }
     }
     
-    // TODO: use this class for every dataTask operation
+    // INFO: use this class for every dataTask operation
     func dataTask(onCompletion: ServiceResponses) {
         
-        let xtoken = prefs.valueForKey("X-Token")
+        // TODO: temp solution
+        var xtoken = prefs.valueForKey("X-Token")
+        if xtoken == nil {
+            
+            xtoken = ""
+        }
+
         
-        let request = NSMutableURLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
-        
-        print(bodyParameters)
-        print(xtoken)
+        let request = NSMutableURLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 30)
+                
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+
+           // dispatch_async(dispatch_get_main_queue(), { () -> Void in
             
             //  if  let json:JSON = try! JSON(data: data!) {
             var error = sessionError
@@ -94,19 +134,25 @@ class GeneralRequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDel
             }
             else {
                 
+               // let json: AnyObject! = try?NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                
+                if self.isCacheable == "1" {
+                    
+                    self.saveCachedResponse(data!)
+                }
                 
                 let json:JSON = JSON(data: data!)
                 
+                //self.saveCachedResponse(data!)
                 
                 NSLog("got a 200")
-                
-      
                 
                 self.running = false
                 onCompletion(json, error)
                 
-            }
+                }
             
+           // })
             //  }
         })
         
@@ -116,49 +162,68 @@ class GeneralRequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDel
         
     }
     
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    /**
+     Save the current response in local storage for use when offline.
+     */
+    private func saveCachedResponse(data: NSData) {
         
-        print("didReceiveAuthenticationChallenge")
+        let realm = RLMRealm.defaultRealm()
+        realm.beginWriteTransaction()
         
-        completionHandler(
+        var cachedResponse = cachedResponseForCurrentRequest()
+        
+        if cachedResponse == nil {
+            cachedResponse = CachedResponse()
+        }
+        
+        if let data_:NSData = data {
+            cachedResponse!.data = data_
+        }
+        
+        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
+            cachedResponse!.url = absoluteString
+        }
+        
+        cachedResponse!.timestamp = NSDate()
+        if let response = self.urlResponse {
             
-            NSURLSessionAuthChallengeDisposition.UseCredential,
-            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+            if let mimeType = response.MIMEType {
+                cachedResponse!.mimeType = mimeType
+            }
+            
+            if let encoding = response.textEncodingName {
+                cachedResponse!.encoding = encoding
+            }
+        }
+        
+        realm.addObject(cachedResponse!)
+        
+        do {
+            try realm.commitWriteTransaction()
+        } catch {
+            print("Something went wrong!")
+        }
+        
     }
-    /*
-     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-     
-     // For example, you may want to override this to accept some self-signed certs here.
-     if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust &&
-     Constants.selfSignedHosts.contains(challenge.protectionSpace.host) {
-     
-     // Allow the self-signed cert.
-     let credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
-     completionHandler(.UseCredential, credential)
-     } else {
-     // You *have* to call completionHandler either way, so call it to do the default action.
-     completionHandler(.PerformDefaultHandling, nil)
-     }
-     }
-     
-     // MARK: - Constants
-     
-     struct Constants {
-     
-     // A list of hosts you allow self-signed certificates on.
-     // You'd likely have your dev/test servers here.
-     // Please don't put your production server here!
-     static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost"]
-     }*/
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+    /**
+     Gets a cached response from local storage if there is any.
+     
+     :returns: A CachedResponse optional object.
+     */
+    private func cachedResponseForCurrentRequest() -> CachedResponse? {
+        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
+            let p:NSPredicate = NSPredicate(format: "url == %@", argumentArray: [ absoluteString ])
+            
+            // Query
+            let results = CachedResponse.objectsWithPredicate(p)
+            
+            if results.count > 0 {
+                return results.objectAtIndex(0) as? CachedResponse
+            }
+        }
         
-        let newRequest : NSURLRequest? = request
-        
-        print(newRequest?.description);
-        completionHandler(newRequest)
+        return nil
     }
     
 }

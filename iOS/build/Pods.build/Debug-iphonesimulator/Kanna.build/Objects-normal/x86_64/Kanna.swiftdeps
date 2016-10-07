@@ -35,41 +35,42 @@ provides-member:
 - ["C5Kanna10XMLNodeSet", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SequenceType"
+- "HTML"
+- "Array"
+- "HTMLDocument"
+- "AnyGenerator"
 - !private "libxmlXMLDocument"
 - "Libxml2XMLParserOptions"
-- "String"
-- !private "libxmlHTMLDocument"
-- "HTML"
-- "HTMLDocument"
-- !private "=="
-- !private "<"
-- !private "++"
-- !private "kDefaultXmlParseOption"
-- !private "NSString"
-- !private "StringLiteralType"
-- "Int"
-- "Array"
-- "XMLNodeSet"
-- "ParseOption"
-- !private "anyGenerator"
-- !private "-"
-- "Searchable"
-- !private "kDefaultHtmlParseOption"
-- "SearchableNode"
-- "NSData"
-- "AnyGenerator"
-- "NSURL"
-- "XML"
-- !private ">"
-- "Libxml2HTMLParserOptions"
-- "UInt"
-- !private "+"
 - !private "BooleanLiteralType"
-- "XMLDocument"
+- "ParseOption"
 - "XMLElement"
+- "Int"
+- !private "++"
+- !private "-"
+- !private "kDefaultXmlParseOption"
+- !private "=="
+- "NSData"
+- !private "kDefaultHtmlParseOption"
+- "UInt"
+- "Libxml2HTMLParserOptions"
+- !private "NSString"
+- "XMLNodeSet"
+- "String"
+- "SequenceType"
+- "SearchableNode"
+- "Searchable"
+- !private "libxmlHTMLDocument"
+- "XML"
+- !private "+"
+- "XMLDocument"
+- !private ">"
+- !private "<"
+- "NSURL"
+- !private "StringLiteralType"
 depends-member:
 - ["Vs12AnyGenerator", "Element"]
+- !private ["Vs12AnyGenerator", "init"]
+- !private ["Ps9AnyObject", "AnyGenerator"]
 - ["Ps9AnyObject", "Element"]
 - ["Ps9AnyObject", "Generator"]
 - ["Ps9AnyObject", "SubSequence"]
@@ -78,7 +79,6 @@ depends-member:
 - ["Ps9AnyObject", "_initializeTo"]
 - ["Ps9AnyObject", "_preprocessingPass"]
 - !private ["Ps9AnyObject", "absoluteString"]
-- !private ["Ps9AnyObject", "anyGenerator"]
 - !private ["Ps9AnyObject", "at"]
 - !private ["Ps9AnyObject", "count"]
 - ["Ps9AnyObject", "dropFirst"]
@@ -183,6 +183,7 @@ depends-member:
 - !private ["Ps16ForwardIndexType", "Distance"]
 - !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
 - ["Ps13GeneratorType", "Element"]
+- !private ["Ps13GeneratorType", "init"]
 - ["P5Kanna12HTMLDocument", "String"]
 - ["P5Kanna12HTMLDocument", "XMLElement"]
 - ["P5Kanna12HTMLDocument", "body"]
@@ -317,6 +318,7 @@ depends-member:
 - ["P5Kanna14SearchableNode", "text"]
 - ["P5Kanna14SearchableNode", "toHTML"]
 - ["P5Kanna14SearchableNode", ""]
+- !private ["Ps12SequenceType", "AnyGenerator"]
 - ["Ps12SequenceType", "Element"]
 - ["Ps12SequenceType", "Generator"]
 - !private ["Ps12SequenceType", "Index"]
@@ -326,7 +328,6 @@ depends-member:
 - ["Ps12SequenceType", "_customContainsEquatableElement"]
 - ["Ps12SequenceType", "_initializeTo"]
 - ["Ps12SequenceType", "_preprocessingPass"]
-- !private ["Ps12SequenceType", "anyGenerator"]
 - !private ["Ps12SequenceType", "at"]
 - !private ["Ps12SequenceType", "count"]
 - ["Ps12SequenceType", "dropFirst"]
@@ -334,6 +335,7 @@ depends-member:
 - ["Ps12SequenceType", "filter"]
 - ["Ps12SequenceType", "forEach"]
 - ["Ps12SequenceType", "generate"]
+- !private ["Ps12SequenceType", "init"]
 - ["Ps12SequenceType", "map"]
 - !private ["Ps12SequenceType", "nodes"]
 - ["Ps12SequenceType", "prefix"]
@@ -387,7 +389,6 @@ depends-member:
 - ["C5Kanna10XMLNodeSet", "_customContainsEquatableElement"]
 - ["C5Kanna10XMLNodeSet", "_initializeTo"]
 - ["C5Kanna10XMLNodeSet", "_preprocessingPass"]
-- !private ["C5Kanna10XMLNodeSet", "anyGenerator"]
 - ["C5Kanna10XMLNodeSet", "at"]
 - ["C5Kanna10XMLNodeSet", "count"]
 - ["C5Kanna10XMLNodeSet", "deinit"]
@@ -559,15 +560,15 @@ depends-nominal:
 - !private "C5Kanna17libxmlXMLDocument"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 interface-hash: "bbefcbd84a562bb14ffb24489a2da554"

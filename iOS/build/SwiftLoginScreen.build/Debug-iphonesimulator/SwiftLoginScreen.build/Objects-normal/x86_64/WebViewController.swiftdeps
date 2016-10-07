@@ -6,35 +6,35 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen17WebViewController", ""]
 provides-dynamic-lookup:
+- "webView"
+- "webView"
+- "webView"
 - "didReceiveMemoryWarning"
+- "close"
+- "close"
 - "viewDidLoad"
 - "reloadPage"
-- "close"
-- "close"
 - "webViewDidStartLoad"
 - "webViewDidFinishLoad"
-- "webView"
-- "webView"
-- "webView"
 depends-top-level:
-- "UIButton"
-- "UIWebView"
-- !private "UIApplication"
-- "UIWebViewDelegate"
-- "UIWebViewNavigationType"
-- !private "print"
-- !private "NSURL"
-- "Bool"
-- "UIViewController"
-- !private "NSLog"
-- !private "BooleanLiteralType"
-- !private "Dictionary"
-- "AnyObject"
 - !private "=="
-- "NSError"
+- !private "NSURL"
 - "NSURLRequest"
+- "Bool"
+- "UIWebViewNavigationType"
 - !private "StringLiteralType"
+- !private "NSLog"
+- "UIWebView"
+- !private "Dictionary"
+- "UIWebViewDelegate"
+- "UIButton"
+- !private "BooleanLiteralType"
+- "NSError"
+- "AnyObject"
+- !private "UIApplication"
+- "UIViewController"
 - "WebViewController"
+- !private "print"
 depends-member:
 - !private ["Ps9AnyObject", "NSLog"]
 - !private ["Ps9AnyObject", "NSURL"]
@@ -67,6 +67,12 @@ depends-member:
 - !private ["Sb", "deinit"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSo15CALayerDelegate", "addSubview"]
+- !private ["PSo15CALayerDelegate", "bounces"]
+- !private ["PSo15CALayerDelegate", "loadRequest"]
+- !private ["PSo15CALayerDelegate", "reload"]
+- !private ["PSo15CALayerDelegate", "scalesPageToFit"]
+- !private ["PSo15CALayerDelegate", "scrollView"]
 - !private ["Ps11CVarArgType", "NSLog"]
 - !private ["Ps11CVarArgType", "NSURL"]
 - !private ["Ps11CVarArgType", "NSURLRequest"]
@@ -446,6 +452,12 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "webViewDidFinishLoad"]
 - ["PSo18UIFocusEnvironment", "webViewDidStartLoad"]
 - ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "addSubview"]
+- !private ["PSo11UIFocusItem", "bounces"]
+- !private ["PSo11UIFocusItem", "loadRequest"]
+- !private ["PSo11UIFocusItem", "reload"]
+- !private ["PSo11UIFocusItem", "scalesPageToFit"]
+- !private ["PSo11UIFocusItem", "scrollView"]
 - ["CSo11UIResponder", "AnyObject"]
 - ["CSo11UIResponder", "Bool"]
 - ["CSo11UIResponder", "NSError"]
@@ -475,6 +487,30 @@ depends-member:
 - ["CSo11UIResponder", "webView"]
 - ["CSo11UIResponder", "webViewDidFinishLoad"]
 - ["CSo11UIResponder", "webViewDidStartLoad"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLog"]
+- !private ["PSo30UIResponderStandardEditActions", "NSURL"]
+- !private ["PSo30UIResponderStandardEditActions", "NSURLRequest"]
+- !private ["PSo30UIResponderStandardEditActions", "UIApplication"]
+- !private ["PSo30UIResponderStandardEditActions", "addSubview"]
+- !private ["PSo30UIResponderStandardEditActions", "bounces"]
+- ["PSo30UIResponderStandardEditActions", "close"]
+- ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
+- !private ["PSo30UIResponderStandardEditActions", "dismissViewControllerAnimated"]
+- ["PSo30UIResponderStandardEditActions", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "loadRequest"]
+- !private ["PSo30UIResponderStandardEditActions", "networkActivityIndicatorVisible"]
+- !private ["PSo30UIResponderStandardEditActions", "print"]
+- !private ["PSo30UIResponderStandardEditActions", "reload"]
+- ["PSo30UIResponderStandardEditActions", "reloadPage"]
+- !private ["PSo30UIResponderStandardEditActions", "scalesPageToFit"]
+- !private ["PSo30UIResponderStandardEditActions", "scrollView"]
+- !private ["PSo30UIResponderStandardEditActions", "sharedApplication"]
+- !private ["PSo30UIResponderStandardEditActions", "view"]
+- ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", "webView"]
+- ["PSo30UIResponderStandardEditActions", "webViewDidFinishLoad"]
+- ["PSo30UIResponderStandardEditActions", "webViewDidStartLoad"]
+- ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo12UIScrollView", "bounces"]
 - !private ["PSo20UIScrollViewDelegate", "loadRequest"]
 - !private ["PSo20UIScrollViewDelegate", "reload"]
@@ -619,6 +655,7 @@ depends-nominal:
 - !private "Sb"
 - !private "Ps25BooleanLiteralConvertible"
 - !private "Ps11BooleanType"
+- !private "PSo15CALayerDelegate"
 - "Ps11CVarArgType"
 - !private "Vs9Character"
 - !private "Ps14CollectionType"
@@ -668,7 +705,9 @@ depends-nominal:
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
 - "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
 - !private "CSo12UIScrollView"
 - !private "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
@@ -696,35 +735,34 @@ depends-nominal:
 - !private "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
@@ -756,5 +794,5 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
-interface-hash: "09f0592b98ab7ec3b529b51b46c7c5bc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
+interface-hash: "8d3715583d14e78f895b62371d7567aa"

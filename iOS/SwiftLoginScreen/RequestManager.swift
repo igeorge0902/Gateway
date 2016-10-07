@@ -10,7 +10,8 @@ import Foundation
 import SwiftyJSON
 
 typealias ServiceResponses = (JSON, NSError?) -> Void
-class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+// Only used to handle webview logins
+class RequestManager: NSObject {
     
     var url: NSURL!
     var errors: String!
@@ -53,7 +54,7 @@ class RequestManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
        
         let xtoken = prefs.valueForKey("X-Token")
         
-        let request = NSMutableURLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil)
+        let request = NSMutableURLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
             

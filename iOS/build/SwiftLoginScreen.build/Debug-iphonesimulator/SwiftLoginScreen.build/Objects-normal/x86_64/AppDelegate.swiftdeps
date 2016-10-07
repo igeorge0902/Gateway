@@ -6,53 +6,53 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillTerminate"
-- "applicationDidBecomeActive"
-- "managedObjectContext"
-- "managedObjectModel"
-- "applicationDocumentsDirectory"
-- "applicationWillEnterForeground"
-- "persistentStoreCoordinator"
-- "application"
-- "saveContext"
 - "applicationDidEnterBackground"
-- "applicationWillResignActive"
+- "application"
 - "window"
+- "persistentStoreCoordinator"
+- "saveContext"
+- "applicationDidBecomeActive"
+- "applicationDocumentsDirectory"
+- "applicationWillTerminate"
+- "applicationWillEnterForeground"
+- "managedObjectModel"
+- "applicationWillResignActive"
+- "managedObjectContext"
 depends-top-level:
-- "NSURL"
-- !private "BooleanLiteralType"
 - "NSManagedObjectModel"
-- !private "abort"
-- !private "AFNetworkReachabilityManager"
-- !private "NSLocalizedFailureReasonErrorKey"
-- !private "NSBundle"
-- !private "String"
-- !private "UIColor"
-- !private "-"
-- "NSManagedObjectContext"
-- "UIApplication"
-- "AppDelegate"
-- "StringLiteralType"
-- !private "NSSQLiteStoreType"
-- !private "NSFileManager"
-- !private "UIBarButtonItem"
-- "Bool"
-- !private "NSError"
 - !private "NSUnderlyingErrorKey"
-- !private "UINavigationBar"
-- !private "NSLog"
-- "NSPersistentStoreCoordinator"
-- "UIWindow"
-- !private "UIButton"
-- "NSObject"
-- !private "MyURLProtocol"
-- !private "UIToolbar"
+- !private "NSBundle"
+- !private "abort"
 - "AnyObject"
-- !private "NSURLProtocol"
-- "UIApplicationDelegate"
-- !private "NSLocalizedDescriptionKey"
+- !private "NSFileManager"
+- !private "NSError"
+- "NSPersistentStoreCoordinator"
+- !private "UIToolbar"
+- "AppDelegate"
+- !private "MyURLProtocol"
 - !private "UITabBar"
+- !private "UINavigationBar"
+- !private "NSSQLiteStoreType"
+- !private "NSLog"
+- "UIWindow"
+- "StringLiteralType"
+- !private "NSURLProtocol"
+- !private "NSLocalizedDescriptionKey"
+- "NSURL"
+- !private "NSLocalizedFailureReasonErrorKey"
+- !private "UIButton"
+- !private "UIBarButtonItem"
 - "UIResponder"
+- "UIApplicationDelegate"
+- "UIApplication"
+- !private "BooleanLiteralType"
+- "Bool"
+- "NSObject"
+- "NSManagedObjectContext"
+- !private "String"
+- !private "AFNetworkReachabilityManager"
+- !private "-"
+- !private "UIColor"
 depends-member:
 - !private ["CSo28AFNetworkReachabilityManager", "sharedManager"]
 - !private ["CSo28AFNetworkReachabilityManager", "startMonitoring"]
@@ -195,6 +195,10 @@ depends-member:
 - !private ["Sb", "deinit"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSo15CALayerDelegate", "appearance"]
+- !private ["PSo15CALayerDelegate", "barStyle"]
+- !private ["PSo15CALayerDelegate", "tintColor"]
+- !private ["PSo15CALayerDelegate", "translucent"]
 - !private ["Ps11CVarArgType", "AFNetworkReachabilityManager"]
 - !private ["Ps11CVarArgType", "AnyObject"]
 - !private ["Ps11CVarArgType", "Distance"]
@@ -907,6 +911,10 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "barStyle"]
 - !private ["PSo18UIFocusEnvironment", "tintColor"]
 - !private ["PSo18UIFocusEnvironment", "translucent"]
+- !private ["PSo11UIFocusItem", "appearance"]
+- !private ["PSo11UIFocusItem", "barStyle"]
+- !private ["PSo11UIFocusItem", "tintColor"]
+- !private ["PSo11UIFocusItem", "translucent"]
 - !private ["CSo15UINavigationBar", "appearance"]
 - !private ["CSo15UINavigationBar", "barStyle"]
 - !private ["CSo15UINavigationBar", "tintColor"]
@@ -966,6 +974,57 @@ depends-member:
 - !private ["CSo11UIResponder", "translucent"]
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
+- !private ["PSo30UIResponderStandardEditActions", "AFNetworkReachabilityManager"]
+- !private ["PSo30UIResponderStandardEditActions", "AnyObject"]
+- !private ["PSo30UIResponderStandardEditActions", "MyURLProtocol"]
+- !private ["PSo30UIResponderStandardEditActions", "NSBundle"]
+- !private ["PSo30UIResponderStandardEditActions", "NSError"]
+- !private ["PSo30UIResponderStandardEditActions", "NSFileManager"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLocalizedDescriptionKey"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLog"]
+- !private ["PSo30UIResponderStandardEditActions", "NSManagedObjectContext"]
+- !private ["PSo30UIResponderStandardEditActions", "NSManagedObjectModel"]
+- !private ["PSo30UIResponderStandardEditActions", "NSPersistentStoreCoordinator"]
+- !private ["PSo30UIResponderStandardEditActions", "NSSQLiteStoreType"]
+- !private ["PSo30UIResponderStandardEditActions", "NSURLProtocol"]
+- !private ["PSo30UIResponderStandardEditActions", "NSUnderlyingErrorKey"]
+- !private ["PSo30UIResponderStandardEditActions", "String"]
+- !private ["PSo30UIResponderStandardEditActions", "UIBarButtonItem"]
+- !private ["PSo30UIResponderStandardEditActions", "UIButton"]
+- !private ["PSo30UIResponderStandardEditActions", "UIColor"]
+- !private ["PSo30UIResponderStandardEditActions", "UINavigationBar"]
+- !private ["PSo30UIResponderStandardEditActions", "UITabBar"]
+- !private ["PSo30UIResponderStandardEditActions", "UIToolbar"]
+- !private ["PSo30UIResponderStandardEditActions", "abort"]
+- !private ["PSo30UIResponderStandardEditActions", "appearance"]
+- ["PSo30UIResponderStandardEditActions", "application"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidBecomeActive"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidEnterBackground"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidFinishLaunching"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidReceiveMemoryWarning"]
+- ["PSo30UIResponderStandardEditActions", "applicationDocumentsDirectory"]
+- ["PSo30UIResponderStandardEditActions", "applicationDocumentsDirectory.storage"]
+- ["PSo30UIResponderStandardEditActions", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo30UIResponderStandardEditActions", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo30UIResponderStandardEditActions", "applicationShouldRequestHealthAuthorization"]
+- ["PSo30UIResponderStandardEditActions", "applicationSignificantTimeChange"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillEnterForeground"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillResignActive"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillTerminate"]
+- !private ["PSo30UIResponderStandardEditActions", "barStyle"]
+- ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", "managedObjectContext"]
+- ["PSo30UIResponderStandardEditActions", "managedObjectContext.storage"]
+- ["PSo30UIResponderStandardEditActions", "managedObjectModel"]
+- ["PSo30UIResponderStandardEditActions", "managedObjectModel.storage"]
+- ["PSo30UIResponderStandardEditActions", "persistentStoreCoordinator"]
+- ["PSo30UIResponderStandardEditActions", "persistentStoreCoordinator.storage"]
+- ["PSo30UIResponderStandardEditActions", "saveContext"]
+- !private ["PSo30UIResponderStandardEditActions", "tintColor"]
+- !private ["PSo30UIResponderStandardEditActions", "translucent"]
+- ["PSo30UIResponderStandardEditActions", "window"]
+- ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo8UITabBar", "appearance"]
 - !private ["CSo8UITabBar", "barStyle"]
 - !private ["CSo8UITabBar", "tintColor"]
@@ -1051,6 +1110,7 @@ depends-nominal:
 - !private "Sb"
 - !private "Ps25BooleanLiteralConvertible"
 - !private "Ps11BooleanType"
+- !private "PSo15CALayerDelegate"
 - "Ps11CVarArgType"
 - !private "Vs9Character"
 - !private "Ps14CollectionType"
@@ -1133,8 +1193,10 @@ depends-nominal:
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - !private "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
 - !private "CSo15UINavigationBar"
 - "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
 - !private "CSo8UITabBar"
 - !private "CSo9UIToolbar"
 - !private "PSo18UITraitEnvironment"
@@ -1165,35 +1227,34 @@ depends-nominal:
 - !private "Ps18_SignedIntegerType"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
@@ -1225,5 +1286,5 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
 interface-hash: "8127b2207e541b6e76eb0c092219cd76"

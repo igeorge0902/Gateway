@@ -10,14 +10,13 @@ import SwiftyJSON
 import CoreData
 import WebKit
 
-
-
-class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+@available(iOS 9.0, *)
+class HomeVC: UIViewController {
 
     deinit {
         print(#function, "\(self)")
     }
-    
+
     var imageView:UIImageView = UIImageView()
     var backgroundDict:Dictionary<String, String> = Dictionary()
     
@@ -31,6 +30,8 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
     @IBOutlet var usernameLabel : UILabel!
     @IBOutlet var sessionIDLabel : UILabel!
     
+    var collectionView: UICollectionView!
+
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -47,21 +48,17 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
 
         backgroundDict = ["Background1":"background1"]
         
-        let view:UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height));
+        let view:UIView = UIView(frame: CGRectMake(-25, 0, self.view.frame.size.width * 0.7, self.view.frame.size.height));
         
         self.view.addSubview(view)
-        
         self.view.sendSubviewToBack(view)
 
         
         let backgroundImage:UIImage? = UIImage(named: backgroundDict["Background1"]!)
         
-        
         imageView = UIImageView(frame: view.frame);
-        
         imageView.image = backgroundImage;
         
-        view.addSubview(imageView);
         
         print(managedObjectContext)
         
@@ -72,7 +69,7 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
         super.viewDidAppear(true)
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-
+        let isFirstLaunch = NSUserDefaults.isFirstLaunch()
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest(entityName: "LogItem")
@@ -110,30 +107,21 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
         
             self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
             self.sessionIDLabel.text = prefs.valueForKey("JSESSIONID") as? String
+
         }
         
         }
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     let url:NSURL = NSURL(string:"https://milo.crabdance.com/login/logout")!
-    
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
     func dataTask(onCompletion: ServiceResponse) {
@@ -173,8 +161,6 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                 
             } else {
                 
-                let json:JSON = JSON(data: data!)
-            
             if let httpResponse = response as? NSHTTPURLResponse {
                 NSLog("got some data")
                 
@@ -193,6 +179,7 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
                         
                         let appDomain = NSBundle.mainBundle().bundleIdentifier
                         NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
+
                     }
                     self.performSegueWithIdentifier("goto_login", sender: self)
                     
@@ -222,7 +209,6 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
             }
             
             self.running = false
-            onCompletion(json, error)
             
             }
         })
@@ -238,11 +224,21 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
         
         self.dataTask() {
             (resultString, error) -> Void in
-            
+    
             print(error)
             print(resultString)
             
         }
+        
+        
+    }
+    
+    
+    @IBAction func NearbyVenues(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("goto_map", sender: self)
+
+        
     }
     
     @IBAction func Navigation(sender : UIButton) {
@@ -274,11 +270,51 @@ class HomeVC: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDelegate {
 
     }
     
-    @IBAction func Test(sender: UIButton) {
+    @IBAction func Movies(sender: UIButton) {
         
-        self.performSegueWithIdentifier("goto_test", sender: self)
+        self.performSegueWithIdentifier("goto_movies", sender: self)
 
     }
-
     
 }
+
+extension UIView {
+    
+    func addConstraintswithFormat(format: String, views: UIView...) {
+        
+        var ViewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerate() {
+            let key = "v\(index)"
+            ViewsDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(), metrics: nil, views: ViewsDictionary))
+    }
+    
+}
+
+extension NSUserDefaults {
+    // check for is first launch - only true on first invocation after app install, false on all further invocations
+    static func isFirstLaunch() -> NSString {
+       
+        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        prefs.setValue("nil", forKey: "FirstLaunchFlag")
+        
+        let isFirstLaunch:NSString = prefs.valueForKey("FirstLaunchFlag") as! NSString
+        
+        if (isFirstLaunch == "nil") {
+            NSUserDefaults.standardUserDefaults().setObject("true", forKey: "FirstLaunchFlag")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        } else {
+        
+        //if (isFirstLaunch == "true") {
+            NSUserDefaults.standardUserDefaults().setObject("false", forKey: "FirstLaunchFlag")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        return isFirstLaunch
+    }
+}
+
+

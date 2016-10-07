@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
-class CustomURLSessionDelegate: NSObject, NSURLSessionDelegate {
+class CustomURLSessionDelegate: NSURLSessionDownloadTask, NSURLSessionDelegate {
     
     // MARK: - NSURLSessionDelegate
-    
+    /*
     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         
         // For example, you may want to override this to accept some self-signed certs here.
@@ -25,6 +26,13 @@ class CustomURLSessionDelegate: NSObject, NSURLSessionDelegate {
             // You *have* to call completionHandler either way, so call it to do the default action.
             completionHandler(.PerformDefaultHandling, nil)
         }
+    }*/
+    
+    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+        if let data = NSData(contentsOfURL: location) {
+            // work with data ...
+              UIImage(data: data)
+        }
     }
     
     struct Constants {
@@ -36,6 +44,23 @@ class CustomURLSessionDelegate: NSObject, NSURLSessionDelegate {
         static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost"]
     }
     
+    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
+        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+        
+        completionHandler(
+            
+            NSURLSessionAuthChallengeDisposition.UseCredential,
+            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+    }
+    
+    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
+                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+        
+        let newRequest : NSURLRequest? = request
+        
+        print(newRequest?.description);
+        completionHandler(newRequest)
+    }
     
     /*
      

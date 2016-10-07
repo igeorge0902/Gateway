@@ -1,97 +1,122 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "serverURL"
 - "GeneralRequestManager"
 provides-nominal:
 - "C16SwiftLoginScreen21GeneralRequestManager"
 provides-member:
 - ["C16SwiftLoginScreen21GeneralRequestManager", ""]
 provides-dynamic-lookup:
-- "session"
-- "errors"
-- "URLSession"
-- "URLSession"
-- "prefs"
-- "running"
 - "url"
-- "bodyParameters"
+- "isCacheable"
 - "method"
 - "queryParameters"
+- "session"
+- "prefs"
+- "bodyParameters"
+- "running"
+- "errors"
 depends-top-level:
-- !private "NSMutableURLRequest"
 - "String"
-- !private "Dictionary"
-- "NSURLRequest"
-- "NSError"
-- "NSHTTPURLResponse"
-- "NSURLSessionTaskDelegate"
-- "NSURLSession"
-- !private "!="
-- "NSUserDefaults"
-- !private "UIAlertView"
-- "BooleanLiteralType"
-- !private "print"
-- "NSURL"
-- "Void"
-- !private "<"
-- "ServiceResponses"
-- "NSObject"
-- "JSON"
-- "NSURLCredential"
-- !private "||"
-- "NSURLSessionTask"
-- !private "StringLiteralType"
+- "NSURLResponse"
+- !private "RLMRealm"
 - !private "NSLog"
-- "GeneralRequestManager"
+- "BooleanLiteralType"
+- "serverURL"
+- "JSON"
+- !private "NSPredicate"
+- "NSError"
+- !private "NSData"
+- !private "<"
+- !private "Array"
+- !private "NSHTTPURLResponse"
+- !private "CachedResponse"
+- !private "!="
+- !private "NSDate"
+- !private "UnicodeScalarType"
+- "Void"
+- "ServiceResponses"
+- "NSURLSession"
 - !private ">="
+- !private "Dictionary"
+- "NSObject"
+- "NSUserDefaults"
 - !private "NSLocalizedDescriptionKey"
-- "NSURLAuthenticationChallenge"
-- "NSURLSessionDelegate"
-- "NSURLSessionAuthChallengeDisposition"
+- "GeneralRequestManager"
+- !private "NSMutableURLRequest"
+- !private "print"
+- "StringLiteralType"
+- !private ">"
+- !private "=="
+- !private "||"
+- !private "UIAlertView"
+- "NSURL"
 depends-member:
+- !private ["Ps9AnyObject", "CachedResponse"]
 - !private ["Ps9AnyObject", "JSON"]
+- !private ["Ps9AnyObject", "MIMEType"]
+- !private ["Ps9AnyObject", "NSDate"]
 - !private ["Ps9AnyObject", "NSError"]
 - !private ["Ps9AnyObject", "NSLocalizedDescriptionKey"]
 - !private ["Ps9AnyObject", "NSLog"]
 - !private ["Ps9AnyObject", "NSMutableURLRequest"]
+- !private ["Ps9AnyObject", "NSPredicate"]
 - !private ["Ps9AnyObject", "NSURL"]
-- !private ["Ps9AnyObject", "NSURLCredential"]
 - !private ["Ps9AnyObject", "NSURLSession"]
-- !private ["Ps9AnyObject", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps9AnyObject", "NSUserDefaults"]
+- !private ["Ps9AnyObject", "RLMRealm"]
+- !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UIAlertView"]
-- ["Ps9AnyObject", "URLSession"]
-- ["Ps9AnyObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps9AnyObject", "absoluteString"]
 - !private ["Ps9AnyObject", "addButtonWithTitle"]
+- !private ["Ps9AnyObject", "addObject"]
+- !private ["Ps9AnyObject", "beginWriteTransaction"]
 - ["Ps9AnyObject", "bodyParameters"]
+- ["Ps9AnyObject", "cachedResponseForCurrentRequest"]
+- !private ["Ps9AnyObject", "commitWriteTransaction"]
+- !private ["Ps9AnyObject", "count"]
+- !private ["Ps9AnyObject", "data"]
 - ["Ps9AnyObject", "dataTask"]
 - !private ["Ps9AnyObject", "dataTaskWithRequest"]
+- !private ["Ps9AnyObject", "defaultRealm"]
+- !private ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "description"]
+- !private ["Ps9AnyObject", "encoding"]
 - ["Ps9AnyObject", "errors"]
 - ["Ps9AnyObject", "getResponse"]
 - ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "isCacheable"]
 - !private ["Ps9AnyObject", "isEmpty"]
+- !private ["Ps9AnyObject", "length"]
 - !private ["Ps9AnyObject", "localizedDescription"]
 - !private ["Ps9AnyObject", "message"]
 - ["Ps9AnyObject", "method"]
+- !private ["Ps9AnyObject", "mimeType"]
+- !private ["Ps9AnyObject", "objectAtIndex"]
+- !private ["Ps9AnyObject", "objectsWithPredicate"]
 - ["Ps9AnyObject", "prefs"]
 - !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "protectionSpace"]
 - ["Ps9AnyObject", "queryParameters"]
 - !private ["Ps9AnyObject", "requestWithURL"]
 - !private ["Ps9AnyObject", "resume"]
 - ["Ps9AnyObject", "running"]
-- !private ["Ps9AnyObject", "serverTrust"]
+- ["Ps9AnyObject", "saveCachedResponse"]
 - ["Ps9AnyObject", "session"]
 - ["Ps9AnyObject", "session.storage"]
 - !private ["Ps9AnyObject", "sharedCustomSession"]
 - !private ["Ps9AnyObject", "show"]
 - ["Ps9AnyObject", "standardUserDefaults"]
 - !private ["Ps9AnyObject", "statusCode"]
+- !private ["Ps9AnyObject", "textEncodingName"]
+- !private ["Ps9AnyObject", "timestamp"]
 - !private ["Ps9AnyObject", "title"]
 - ["Ps9AnyObject", "url"]
+- ["Ps9AnyObject", "urlResponse"]
 - !private ["Ps9AnyObject", "valueForKey"]
 - ["Ps9AnyObject", ""]
+- !private ["Sa", "Element"]
+- !private ["Ps23ArrayLiteralConvertible", "Element"]
 - !private ["Ps23ArrayLiteralConvertible", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Sb", "deinit"]
@@ -99,203 +124,301 @@ depends-member:
 - !private ["Ps25BooleanLiteralConvertible", "init"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "init"]
+- !private ["PSo15CALayerDelegate", "addButtonWithTitle"]
+- !private ["PSo15CALayerDelegate", "delegate"]
+- !private ["PSo15CALayerDelegate", "init"]
+- !private ["PSo15CALayerDelegate", "message"]
+- !private ["PSo15CALayerDelegate", "show"]
+- !private ["PSo15CALayerDelegate", "title"]
+- !private ["Ps11CVarArgType", "CachedResponse"]
 - !private ["Ps11CVarArgType", "JSON"]
+- !private ["Ps11CVarArgType", "MIMEType"]
+- !private ["Ps11CVarArgType", "NSDate"]
 - !private ["Ps11CVarArgType", "NSError"]
 - !private ["Ps11CVarArgType", "NSLocalizedDescriptionKey"]
 - !private ["Ps11CVarArgType", "NSLog"]
 - !private ["Ps11CVarArgType", "NSMutableURLRequest"]
+- !private ["Ps11CVarArgType", "NSPredicate"]
 - !private ["Ps11CVarArgType", "NSURL"]
-- !private ["Ps11CVarArgType", "NSURLCredential"]
 - !private ["Ps11CVarArgType", "NSURLSession"]
-- !private ["Ps11CVarArgType", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps11CVarArgType", "NSUserDefaults"]
+- !private ["Ps11CVarArgType", "RLMRealm"]
+- !private ["Ps11CVarArgType", "String"]
 - !private ["Ps11CVarArgType", "UIAlertView"]
-- ["Ps11CVarArgType", "URLSession"]
-- ["Ps11CVarArgType", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["Ps11CVarArgType", "absoluteString"]
 - !private ["Ps11CVarArgType", "addButtonWithTitle"]
+- !private ["Ps11CVarArgType", "addObject"]
+- !private ["Ps11CVarArgType", "beginWriteTransaction"]
 - ["Ps11CVarArgType", "bodyParameters"]
+- ["Ps11CVarArgType", "cachedResponseForCurrentRequest"]
+- !private ["Ps11CVarArgType", "commitWriteTransaction"]
+- !private ["Ps11CVarArgType", "count"]
+- !private ["Ps11CVarArgType", "data"]
 - ["Ps11CVarArgType", "dataTask"]
 - !private ["Ps11CVarArgType", "dataTaskWithRequest"]
+- !private ["Ps11CVarArgType", "defaultRealm"]
 - !private ["Ps11CVarArgType", "deinit"]
 - !private ["Ps11CVarArgType", "delegate"]
 - !private ["Ps11CVarArgType", "description"]
+- !private ["Ps11CVarArgType", "encoding"]
 - ["Ps11CVarArgType", "errors"]
 - ["Ps11CVarArgType", "getResponse"]
 - ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "isCacheable"]
 - !private ["Ps11CVarArgType", "isEmpty"]
+- !private ["Ps11CVarArgType", "length"]
 - !private ["Ps11CVarArgType", "localizedDescription"]
 - !private ["Ps11CVarArgType", "message"]
 - ["Ps11CVarArgType", "method"]
+- !private ["Ps11CVarArgType", "mimeType"]
+- !private ["Ps11CVarArgType", "objectAtIndex"]
+- !private ["Ps11CVarArgType", "objectsWithPredicate"]
 - ["Ps11CVarArgType", "prefs"]
 - !private ["Ps11CVarArgType", "print"]
-- !private ["Ps11CVarArgType", "protectionSpace"]
 - ["Ps11CVarArgType", "queryParameters"]
 - !private ["Ps11CVarArgType", "requestWithURL"]
 - !private ["Ps11CVarArgType", "resume"]
 - ["Ps11CVarArgType", "running"]
-- !private ["Ps11CVarArgType", "serverTrust"]
+- ["Ps11CVarArgType", "saveCachedResponse"]
 - ["Ps11CVarArgType", "session"]
 - ["Ps11CVarArgType", "session.storage"]
 - !private ["Ps11CVarArgType", "sharedCustomSession"]
 - !private ["Ps11CVarArgType", "show"]
 - ["Ps11CVarArgType", "standardUserDefaults"]
 - !private ["Ps11CVarArgType", "statusCode"]
+- !private ["Ps11CVarArgType", "textEncodingName"]
+- !private ["Ps11CVarArgType", "timestamp"]
 - !private ["Ps11CVarArgType", "title"]
 - ["Ps11CVarArgType", "url"]
+- ["Ps11CVarArgType", "urlResponse"]
 - !private ["Ps11CVarArgType", "valueForKey"]
 - ["Ps11CVarArgType", ""]
+- !private ["C16SwiftLoginScreen14CachedResponse", "data"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "deinit"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "encoding"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "init"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "mimeType"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "objectsWithPredicate"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "timestamp"]
+- !private ["C16SwiftLoginScreen14CachedResponse", "url"]
 - !private ["Vs9Character", "deinit"]
+- !private ["Ps14CollectionType", "Element"]
+- !private ["Ps14CollectionType", "Generator"]
+- !private ["Ps14CollectionType", "Index"]
 - !private ["Ps14CollectionType", "Key"]
+- !private ["Ps14CollectionType", "SubSequence"]
 - !private ["Ps14CollectionType", "Value"]
+- !private ["Ps14CollectionType", "_Element"]
 - !private ["Ps14CollectionType", "init"]
+- !private ["Ps14CollectionType", "subscript"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "isEmpty"]
+- !private ["Ps28CustomDebugStringConvertible", "CachedResponse"]
+- !private ["Ps28CustomDebugStringConvertible", "Element"]
 - !private ["Ps28CustomDebugStringConvertible", "JSON"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "MIMEType"]
+- !private ["Ps28CustomDebugStringConvertible", "NSDate"]
 - !private ["Ps28CustomDebugStringConvertible", "NSError"]
 - !private ["Ps28CustomDebugStringConvertible", "NSLocalizedDescriptionKey"]
 - !private ["Ps28CustomDebugStringConvertible", "NSLog"]
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableURLRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "NSPredicate"]
 - !private ["Ps28CustomDebugStringConvertible", "NSURL"]
-- !private ["Ps28CustomDebugStringConvertible", "NSURLCredential"]
 - !private ["Ps28CustomDebugStringConvertible", "NSURLSession"]
-- !private ["Ps28CustomDebugStringConvertible", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps28CustomDebugStringConvertible", "NSUserDefaults"]
-- !private ["Ps28CustomDebugStringConvertible", "Some"]
+- !private ["Ps28CustomDebugStringConvertible", "RLMRealm"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- !private ["Ps28CustomDebugStringConvertible", "String"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertView"]
-- ["Ps28CustomDebugStringConvertible", "URLSession"]
-- ["Ps28CustomDebugStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - !private ["Ps28CustomDebugStringConvertible", "UseProtocolCachePolicy"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
+- !private ["Ps28CustomDebugStringConvertible", "absoluteString"]
 - !private ["Ps28CustomDebugStringConvertible", "addButtonWithTitle"]
+- !private ["Ps28CustomDebugStringConvertible", "addObject"]
+- !private ["Ps28CustomDebugStringConvertible", "beginWriteTransaction"]
 - ["Ps28CustomDebugStringConvertible", "bodyParameters"]
+- ["Ps28CustomDebugStringConvertible", "cachedResponseForCurrentRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "commitWriteTransaction"]
+- !private ["Ps28CustomDebugStringConvertible", "count"]
+- !private ["Ps28CustomDebugStringConvertible", "data"]
 - ["Ps28CustomDebugStringConvertible", "dataTask"]
 - !private ["Ps28CustomDebugStringConvertible", "dataTaskWithRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "defaultRealm"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "description"]
+- !private ["Ps28CustomDebugStringConvertible", "encoding"]
 - ["Ps28CustomDebugStringConvertible", "errors"]
 - ["Ps28CustomDebugStringConvertible", "getResponse"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "isCacheable"]
 - !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
+- !private ["Ps28CustomDebugStringConvertible", "length"]
 - !private ["Ps28CustomDebugStringConvertible", "localizedDescription"]
 - !private ["Ps28CustomDebugStringConvertible", "message"]
 - ["Ps28CustomDebugStringConvertible", "method"]
+- !private ["Ps28CustomDebugStringConvertible", "mimeType"]
+- !private ["Ps28CustomDebugStringConvertible", "objectAtIndex"]
+- !private ["Ps28CustomDebugStringConvertible", "objectsWithPredicate"]
 - ["Ps28CustomDebugStringConvertible", "prefs"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
-- !private ["Ps28CustomDebugStringConvertible", "protectionSpace"]
 - ["Ps28CustomDebugStringConvertible", "queryParameters"]
 - !private ["Ps28CustomDebugStringConvertible", "requestWithURL"]
 - !private ["Ps28CustomDebugStringConvertible", "resume"]
 - ["Ps28CustomDebugStringConvertible", "running"]
-- !private ["Ps28CustomDebugStringConvertible", "serverTrust"]
+- ["Ps28CustomDebugStringConvertible", "saveCachedResponse"]
 - ["Ps28CustomDebugStringConvertible", "session"]
 - ["Ps28CustomDebugStringConvertible", "session.storage"]
 - !private ["Ps28CustomDebugStringConvertible", "sharedCustomSession"]
 - !private ["Ps28CustomDebugStringConvertible", "show"]
 - ["Ps28CustomDebugStringConvertible", "standardUserDefaults"]
 - !private ["Ps28CustomDebugStringConvertible", "statusCode"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "textEncodingName"]
+- !private ["Ps28CustomDebugStringConvertible", "timestamp"]
 - !private ["Ps28CustomDebugStringConvertible", "title"]
 - ["Ps28CustomDebugStringConvertible", "url"]
+- ["Ps28CustomDebugStringConvertible", "urlResponse"]
 - !private ["Ps28CustomDebugStringConvertible", "valueForKey"]
 - ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "CachedResponse"]
+- !private ["Ps23CustomStringConvertible", "Element"]
 - !private ["Ps23CustomStringConvertible", "JSON"]
 - !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "MIMEType"]
+- !private ["Ps23CustomStringConvertible", "NSDate"]
 - !private ["Ps23CustomStringConvertible", "NSError"]
 - !private ["Ps23CustomStringConvertible", "NSLocalizedDescriptionKey"]
 - !private ["Ps23CustomStringConvertible", "NSLog"]
 - !private ["Ps23CustomStringConvertible", "NSMutableURLRequest"]
+- !private ["Ps23CustomStringConvertible", "NSPredicate"]
 - !private ["Ps23CustomStringConvertible", "NSURL"]
-- !private ["Ps23CustomStringConvertible", "NSURLCredential"]
 - !private ["Ps23CustomStringConvertible", "NSURLSession"]
-- !private ["Ps23CustomStringConvertible", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps23CustomStringConvertible", "NSUserDefaults"]
+- !private ["Ps23CustomStringConvertible", "RLMRealm"]
+- ["Ps23CustomStringConvertible", "Some"]
+- !private ["Ps23CustomStringConvertible", "String"]
 - !private ["Ps23CustomStringConvertible", "UIAlertView"]
-- ["Ps23CustomStringConvertible", "URLSession"]
-- ["Ps23CustomStringConvertible", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "absoluteString"]
 - !private ["Ps23CustomStringConvertible", "addButtonWithTitle"]
+- !private ["Ps23CustomStringConvertible", "addObject"]
+- !private ["Ps23CustomStringConvertible", "beginWriteTransaction"]
 - ["Ps23CustomStringConvertible", "bodyParameters"]
+- ["Ps23CustomStringConvertible", "cachedResponseForCurrentRequest"]
+- !private ["Ps23CustomStringConvertible", "commitWriteTransaction"]
+- !private ["Ps23CustomStringConvertible", "count"]
+- !private ["Ps23CustomStringConvertible", "data"]
 - ["Ps23CustomStringConvertible", "dataTask"]
 - !private ["Ps23CustomStringConvertible", "dataTaskWithRequest"]
+- !private ["Ps23CustomStringConvertible", "defaultRealm"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "description"]
+- !private ["Ps23CustomStringConvertible", "encoding"]
 - ["Ps23CustomStringConvertible", "errors"]
 - ["Ps23CustomStringConvertible", "getResponse"]
 - ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "isCacheable"]
 - !private ["Ps23CustomStringConvertible", "isEmpty"]
+- !private ["Ps23CustomStringConvertible", "length"]
 - !private ["Ps23CustomStringConvertible", "localizedDescription"]
 - !private ["Ps23CustomStringConvertible", "message"]
 - ["Ps23CustomStringConvertible", "method"]
+- !private ["Ps23CustomStringConvertible", "mimeType"]
+- !private ["Ps23CustomStringConvertible", "objectAtIndex"]
+- !private ["Ps23CustomStringConvertible", "objectsWithPredicate"]
 - ["Ps23CustomStringConvertible", "prefs"]
 - !private ["Ps23CustomStringConvertible", "print"]
-- !private ["Ps23CustomStringConvertible", "protectionSpace"]
 - ["Ps23CustomStringConvertible", "queryParameters"]
 - !private ["Ps23CustomStringConvertible", "requestWithURL"]
 - !private ["Ps23CustomStringConvertible", "resume"]
 - ["Ps23CustomStringConvertible", "running"]
-- !private ["Ps23CustomStringConvertible", "serverTrust"]
+- ["Ps23CustomStringConvertible", "saveCachedResponse"]
 - ["Ps23CustomStringConvertible", "session"]
 - ["Ps23CustomStringConvertible", "session.storage"]
 - !private ["Ps23CustomStringConvertible", "sharedCustomSession"]
 - !private ["Ps23CustomStringConvertible", "show"]
 - ["Ps23CustomStringConvertible", "standardUserDefaults"]
 - !private ["Ps23CustomStringConvertible", "statusCode"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Ps23CustomStringConvertible", "textEncodingName"]
+- !private ["Ps23CustomStringConvertible", "timestamp"]
 - !private ["Ps23CustomStringConvertible", "title"]
 - ["Ps23CustomStringConvertible", "url"]
+- ["Ps23CustomStringConvertible", "urlResponse"]
 - !private ["Ps23CustomStringConvertible", "valueForKey"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Vs10Dictionary", "Key"]
 - !private ["Vs10Dictionary", "Value"]
+- !private ["Vs10Dictionary", "subscript"]
 - !private ["Ps28DictionaryLiteralConvertible", "Key"]
 - !private ["Ps28DictionaryLiteralConvertible", "Value"]
 - !private ["Ps28DictionaryLiteralConvertible", "init"]
+- !private ["Ps28DictionaryLiteralConvertible", "subscript"]
 - !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "CachedResponse"]
 - !private ["Ps9Equatable", "JSON"]
+- !private ["Ps9Equatable", "MIMEType"]
+- !private ["Ps9Equatable", "NSDate"]
 - !private ["Ps9Equatable", "NSError"]
 - !private ["Ps9Equatable", "NSLocalizedDescriptionKey"]
 - !private ["Ps9Equatable", "NSLog"]
 - !private ["Ps9Equatable", "NSMutableURLRequest"]
+- !private ["Ps9Equatable", "NSPredicate"]
 - !private ["Ps9Equatable", "NSURL"]
-- !private ["Ps9Equatable", "NSURLCredential"]
 - !private ["Ps9Equatable", "NSURLSession"]
-- !private ["Ps9Equatable", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps9Equatable", "NSUserDefaults"]
+- !private ["Ps9Equatable", "RLMRealm"]
+- !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "UIAlertView"]
-- ["Ps9Equatable", "URLSession"]
-- ["Ps9Equatable", "URLSessionDidFinishEventsForBackgroundURLSession"]
-- !private ["Ps9Equatable", "UseCredential"]
 - !private ["Ps9Equatable", "UseProtocolCachePolicy"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "absoluteString"]
 - !private ["Ps9Equatable", "addButtonWithTitle"]
+- !private ["Ps9Equatable", "addObject"]
+- !private ["Ps9Equatable", "beginWriteTransaction"]
 - ["Ps9Equatable", "bodyParameters"]
+- ["Ps9Equatable", "cachedResponseForCurrentRequest"]
+- !private ["Ps9Equatable", "commitWriteTransaction"]
+- !private ["Ps9Equatable", "count"]
+- !private ["Ps9Equatable", "data"]
 - ["Ps9Equatable", "dataTask"]
 - !private ["Ps9Equatable", "dataTaskWithRequest"]
+- !private ["Ps9Equatable", "defaultRealm"]
 - !private ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "description"]
+- !private ["Ps9Equatable", "encoding"]
 - ["Ps9Equatable", "errors"]
 - ["Ps9Equatable", "getResponse"]
 - ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "isCacheable"]
 - !private ["Ps9Equatable", "isEmpty"]
+- !private ["Ps9Equatable", "length"]
 - !private ["Ps9Equatable", "localizedDescription"]
 - !private ["Ps9Equatable", "message"]
 - ["Ps9Equatable", "method"]
+- !private ["Ps9Equatable", "mimeType"]
+- !private ["Ps9Equatable", "objectAtIndex"]
+- !private ["Ps9Equatable", "objectsWithPredicate"]
 - ["Ps9Equatable", "prefs"]
 - !private ["Ps9Equatable", "print"]
-- !private ["Ps9Equatable", "protectionSpace"]
 - ["Ps9Equatable", "queryParameters"]
 - !private ["Ps9Equatable", "requestWithURL"]
 - !private ["Ps9Equatable", "resume"]
 - ["Ps9Equatable", "running"]
-- !private ["Ps9Equatable", "serverTrust"]
+- ["Ps9Equatable", "saveCachedResponse"]
 - ["Ps9Equatable", "session"]
 - ["Ps9Equatable", "session.storage"]
 - !private ["Ps9Equatable", "sharedCustomSession"]
 - !private ["Ps9Equatable", "show"]
 - ["Ps9Equatable", "standardUserDefaults"]
 - !private ["Ps9Equatable", "statusCode"]
+- !private ["Ps9Equatable", "textEncodingName"]
+- !private ["Ps9Equatable", "timestamp"]
 - !private ["Ps9Equatable", "title"]
 - ["Ps9Equatable", "url"]
+- ["Ps9Equatable", "urlResponse"]
 - !private ["Ps9Equatable", "valueForKey"]
 - ["Ps9Equatable", ""]
 - !private ["Ps9ErrorType", "description"]
@@ -305,90 +428,119 @@ depends-member:
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
 - !private ["Sf", "deinit"]
 - !private ["Ps23FloatLiteralConvertible", "init"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "CachedResponse"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "JSON"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSData"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSDate"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "NSError"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSHTTPURLResponse"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSHTTPURLResponse"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSLocalizedDescriptionKey"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSLog"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSMutableURLRequest"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "NSPredicate"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "NSURL"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLAuthenticationChallenge"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLCredential"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLRequest"]
+- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLResponse"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLSession"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLSessionAuthChallengeDisposition"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "NSURLSessionTask"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "NSUserDefaults"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "RLMRealm"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "ServiceResponses"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "String"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "UIAlertView"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "URLSession"]
-- ["C16SwiftLoginScreen21GeneralRequestManager", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "Void"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "bodyParameters"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "cachedResponseForCurrentRequest"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "dataTask"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "deinit"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "errors"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "getResponse"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "init"]
+- ["C16SwiftLoginScreen21GeneralRequestManager", "isCacheable"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "method"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "prefs"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "print"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "queryParameters"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "running"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "saveCachedResponse"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "session"]
 - !private ["C16SwiftLoginScreen21GeneralRequestManager", "session.storage"]
 - ["C16SwiftLoginScreen21GeneralRequestManager", "url"]
+- !private ["C16SwiftLoginScreen21GeneralRequestManager", "urlResponse"]
+- !private ["Ps13GeneratorType", "Element"]
+- !private ["Ps8Hashable", "CachedResponse"]
 - !private ["Ps8Hashable", "JSON"]
+- !private ["Ps8Hashable", "MIMEType"]
+- !private ["Ps8Hashable", "NSDate"]
 - !private ["Ps8Hashable", "NSError"]
 - !private ["Ps8Hashable", "NSLocalizedDescriptionKey"]
 - !private ["Ps8Hashable", "NSLog"]
 - !private ["Ps8Hashable", "NSMutableURLRequest"]
+- !private ["Ps8Hashable", "NSPredicate"]
 - !private ["Ps8Hashable", "NSURL"]
-- !private ["Ps8Hashable", "NSURLCredential"]
 - !private ["Ps8Hashable", "NSURLSession"]
-- !private ["Ps8Hashable", "NSURLSessionAuthChallengeDisposition"]
 - ["Ps8Hashable", "NSUserDefaults"]
+- !private ["Ps8Hashable", "RLMRealm"]
+- !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "UIAlertView"]
-- ["Ps8Hashable", "URLSession"]
-- ["Ps8Hashable", "URLSessionDidFinishEventsForBackgroundURLSession"]
-- !private ["Ps8Hashable", "UseCredential"]
 - !private ["Ps8Hashable", "UseProtocolCachePolicy"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "absoluteString"]
 - !private ["Ps8Hashable", "addButtonWithTitle"]
+- !private ["Ps8Hashable", "addObject"]
+- !private ["Ps8Hashable", "beginWriteTransaction"]
 - ["Ps8Hashable", "bodyParameters"]
+- ["Ps8Hashable", "cachedResponseForCurrentRequest"]
+- !private ["Ps8Hashable", "commitWriteTransaction"]
+- !private ["Ps8Hashable", "count"]
+- !private ["Ps8Hashable", "data"]
 - ["Ps8Hashable", "dataTask"]
 - !private ["Ps8Hashable", "dataTaskWithRequest"]
+- !private ["Ps8Hashable", "defaultRealm"]
 - !private ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "description"]
+- !private ["Ps8Hashable", "encoding"]
 - ["Ps8Hashable", "errors"]
 - ["Ps8Hashable", "getResponse"]
 - ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "isCacheable"]
 - !private ["Ps8Hashable", "isEmpty"]
+- !private ["Ps8Hashable", "length"]
 - !private ["Ps8Hashable", "localizedDescription"]
 - !private ["Ps8Hashable", "message"]
 - ["Ps8Hashable", "method"]
+- !private ["Ps8Hashable", "mimeType"]
+- !private ["Ps8Hashable", "objectAtIndex"]
+- !private ["Ps8Hashable", "objectsWithPredicate"]
 - ["Ps8Hashable", "prefs"]
 - !private ["Ps8Hashable", "print"]
-- !private ["Ps8Hashable", "protectionSpace"]
 - ["Ps8Hashable", "queryParameters"]
 - !private ["Ps8Hashable", "requestWithURL"]
 - !private ["Ps8Hashable", "resume"]
 - ["Ps8Hashable", "running"]
-- !private ["Ps8Hashable", "serverTrust"]
+- ["Ps8Hashable", "saveCachedResponse"]
 - ["Ps8Hashable", "session"]
 - ["Ps8Hashable", "session.storage"]
 - !private ["Ps8Hashable", "sharedCustomSession"]
 - !private ["Ps8Hashable", "show"]
 - ["Ps8Hashable", "standardUserDefaults"]
 - !private ["Ps8Hashable", "statusCode"]
+- !private ["Ps8Hashable", "textEncodingName"]
+- !private ["Ps8Hashable", "timestamp"]
 - !private ["Ps8Hashable", "title"]
 - ["Ps8Hashable", "url"]
+- ["Ps8Hashable", "urlResponse"]
 - !private ["Ps8Hashable", "valueForKey"]
 - ["Ps8Hashable", ""]
+- ["SQ", "Some"]
+- !private ["Ps9Indexable", "Element"]
+- !private ["Ps9Indexable", "Generator"]
+- !private ["Ps9Indexable", "Index"]
 - !private ["Ps9Indexable", "Key"]
+- !private ["Ps9Indexable", "SubSequence"]
 - !private ["Ps9Indexable", "Value"]
+- !private ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "init"]
+- !private ["Ps9Indexable", "subscript"]
+- !private ["Vs17IndexingGenerator", "Element"]
 - !private ["Si", "deinit"]
 - !private ["Vs5Int16", "deinit"]
 - !private ["Vs5Int32", "deinit"]
@@ -400,218 +552,249 @@ depends-member:
 - !private ["P10SwiftyJSON17JSONSubscriptType", "isEmpty"]
 - !private ["Ps14MirrorPathType", "init"]
 - !private ["Ps14MirrorPathType", "isEmpty"]
+- !private ["Ps21MutableCollectionType", "Element"]
+- !private ["Ps16MutableIndexable", "Element"]
+- !private ["Ps16MutableSliceable", "Element"]
+- !private ["PSo8NSCoding", "MIMEType"]
+- !private ["PSo8NSCoding", "absoluteString"]
 - !private ["PSo8NSCoding", "addButtonWithTitle"]
 - !private ["PSo8NSCoding", "delegate"]
 - !private ["PSo8NSCoding", "description"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "isEmpty"]
+- !private ["PSo8NSCoding", "length"]
 - !private ["PSo8NSCoding", "localizedDescription"]
 - !private ["PSo8NSCoding", "message"]
-- !private ["PSo8NSCoding", "protectionSpace"]
 - !private ["PSo8NSCoding", "requestWithURL"]
-- !private ["PSo8NSCoding", "serverTrust"]
 - !private ["PSo8NSCoding", "show"]
 - !private ["PSo8NSCoding", "statusCode"]
+- !private ["PSo8NSCoding", "textEncodingName"]
 - !private ["PSo8NSCoding", "title"]
+- !private ["PSo9NSCopying", "MIMEType"]
+- !private ["PSo9NSCopying", "absoluteString"]
 - !private ["PSo9NSCopying", "description"]
 - !private ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "isEmpty"]
+- !private ["PSo9NSCopying", "length"]
 - !private ["PSo9NSCopying", "localizedDescription"]
 - !private ["PSo9NSCopying", "requestWithURL"]
 - !private ["PSo9NSCopying", "resume"]
-- !private ["PSo9NSCopying", "serverTrust"]
 - !private ["PSo9NSCopying", "statusCode"]
+- !private ["PSo9NSCopying", "textEncodingName"]
+- !private ["CSo6NSData", "length"]
+- !private ["CSo6NSDate", "init"]
 - !private ["CSo7NSError", "description"]
 - !private ["CSo7NSError", "init"]
 - !private ["CSo7NSError", "localizedDescription"]
+- !private ["PSo17NSFastEnumeration", "count"]
+- !private ["PSo17NSFastEnumeration", "objectAtIndex"]
 - !private ["CSo17NSHTTPURLResponse", "statusCode"]
-- !private ["PSo16NSMutableCopying", "description"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "isEmpty"]
+- !private ["PSo16NSMutableCopying", "length"]
 - !private ["PSo16NSMutableCopying", "requestWithURL"]
 - !private ["CSo19NSMutableURLRequest", "requestWithURL"]
+- !private ["CSo8NSObject", "CachedResponse"]
 - ["CSo8NSObject", "JSON"]
+- !private ["CSo8NSObject", "MIMEType"]
+- !private ["CSo8NSObject", "NSData"]
+- !private ["CSo8NSObject", "NSDate"]
 - ["CSo8NSObject", "NSError"]
-- ["CSo8NSObject", "NSHTTPURLResponse"]
+- !private ["CSo8NSObject", "NSHTTPURLResponse"]
 - !private ["CSo8NSObject", "NSLocalizedDescriptionKey"]
 - !private ["CSo8NSObject", "NSLog"]
 - !private ["CSo8NSObject", "NSMutableURLRequest"]
+- !private ["CSo8NSObject", "NSPredicate"]
 - ["CSo8NSObject", "NSURL"]
-- ["CSo8NSObject", "NSURLAuthenticationChallenge"]
-- ["CSo8NSObject", "NSURLCredential"]
-- ["CSo8NSObject", "NSURLRequest"]
+- ["CSo8NSObject", "NSURLResponse"]
 - ["CSo8NSObject", "NSURLSession"]
-- ["CSo8NSObject", "NSURLSessionAuthChallengeDisposition"]
-- ["CSo8NSObject", "NSURLSessionTask"]
 - ["CSo8NSObject", "NSUserDefaults"]
+- !private ["CSo8NSObject", "RLMRealm"]
 - ["CSo8NSObject", "ServiceResponses"]
 - ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "UIAlertView"]
-- ["CSo8NSObject", "URLSession"]
-- ["CSo8NSObject", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["CSo8NSObject", "Void"]
+- !private ["CSo8NSObject", "absoluteString"]
 - !private ["CSo8NSObject", "addButtonWithTitle"]
+- !private ["CSo8NSObject", "addObject"]
+- !private ["CSo8NSObject", "beginWriteTransaction"]
 - ["CSo8NSObject", "bodyParameters"]
+- ["CSo8NSObject", "cachedResponseForCurrentRequest"]
+- !private ["CSo8NSObject", "commitWriteTransaction"]
+- !private ["CSo8NSObject", "count"]
+- !private ["CSo8NSObject", "data"]
 - ["CSo8NSObject", "dataTask"]
 - !private ["CSo8NSObject", "dataTaskWithRequest"]
+- !private ["CSo8NSObject", "defaultRealm"]
 - !private ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "description"]
+- !private ["CSo8NSObject", "encoding"]
 - ["CSo8NSObject", "errors"]
 - ["CSo8NSObject", "getResponse"]
 - ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "isCacheable"]
 - !private ["CSo8NSObject", "isEmpty"]
+- !private ["CSo8NSObject", "length"]
 - !private ["CSo8NSObject", "localizedDescription"]
 - !private ["CSo8NSObject", "message"]
 - ["CSo8NSObject", "method"]
+- !private ["CSo8NSObject", "mimeType"]
+- !private ["CSo8NSObject", "objectAtIndex"]
+- !private ["CSo8NSObject", "objectsWithPredicate"]
 - ["CSo8NSObject", "prefs"]
 - !private ["CSo8NSObject", "print"]
-- !private ["CSo8NSObject", "protectionSpace"]
 - ["CSo8NSObject", "queryParameters"]
 - !private ["CSo8NSObject", "requestWithURL"]
 - !private ["CSo8NSObject", "resume"]
 - ["CSo8NSObject", "running"]
-- !private ["CSo8NSObject", "serverTrust"]
+- ["CSo8NSObject", "saveCachedResponse"]
 - ["CSo8NSObject", "session"]
 - ["CSo8NSObject", "session.storage"]
 - !private ["CSo8NSObject", "sharedCustomSession"]
 - !private ["CSo8NSObject", "show"]
 - ["CSo8NSObject", "standardUserDefaults"]
 - !private ["CSo8NSObject", "statusCode"]
+- !private ["CSo8NSObject", "textEncodingName"]
+- !private ["CSo8NSObject", "timestamp"]
 - !private ["CSo8NSObject", "title"]
 - ["CSo8NSObject", "url"]
+- ["CSo8NSObject", "urlResponse"]
 - !private ["CSo8NSObject", "valueForKey"]
 - ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "CachedResponse"]
 - !private ["PSo16NSObjectProtocol", "JSON"]
+- !private ["PSo16NSObjectProtocol", "MIMEType"]
+- !private ["PSo16NSObjectProtocol", "NSDate"]
 - !private ["PSo16NSObjectProtocol", "NSError"]
 - !private ["PSo16NSObjectProtocol", "NSLocalizedDescriptionKey"]
 - !private ["PSo16NSObjectProtocol", "NSLog"]
 - !private ["PSo16NSObjectProtocol", "NSMutableURLRequest"]
+- !private ["PSo16NSObjectProtocol", "NSPredicate"]
 - !private ["PSo16NSObjectProtocol", "NSURL"]
-- !private ["PSo16NSObjectProtocol", "NSURLCredential"]
 - !private ["PSo16NSObjectProtocol", "NSURLSession"]
-- !private ["PSo16NSObjectProtocol", "NSURLSessionAuthChallengeDisposition"]
 - ["PSo16NSObjectProtocol", "NSUserDefaults"]
+- !private ["PSo16NSObjectProtocol", "RLMRealm"]
+- !private ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "UIAlertView"]
-- ["PSo16NSObjectProtocol", "URLSession"]
-- ["PSo16NSObjectProtocol", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- !private ["PSo16NSObjectProtocol", "absoluteString"]
 - !private ["PSo16NSObjectProtocol", "addButtonWithTitle"]
+- !private ["PSo16NSObjectProtocol", "addObject"]
+- !private ["PSo16NSObjectProtocol", "beginWriteTransaction"]
 - ["PSo16NSObjectProtocol", "bodyParameters"]
+- ["PSo16NSObjectProtocol", "cachedResponseForCurrentRequest"]
+- !private ["PSo16NSObjectProtocol", "commitWriteTransaction"]
+- !private ["PSo16NSObjectProtocol", "count"]
+- !private ["PSo16NSObjectProtocol", "data"]
 - ["PSo16NSObjectProtocol", "dataTask"]
 - !private ["PSo16NSObjectProtocol", "dataTaskWithRequest"]
+- !private ["PSo16NSObjectProtocol", "defaultRealm"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "description"]
+- !private ["PSo16NSObjectProtocol", "encoding"]
 - ["PSo16NSObjectProtocol", "errors"]
 - ["PSo16NSObjectProtocol", "getResponse"]
 - ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "isCacheable"]
 - !private ["PSo16NSObjectProtocol", "isEmpty"]
+- !private ["PSo16NSObjectProtocol", "length"]
 - !private ["PSo16NSObjectProtocol", "localizedDescription"]
 - !private ["PSo16NSObjectProtocol", "message"]
 - ["PSo16NSObjectProtocol", "method"]
+- !private ["PSo16NSObjectProtocol", "mimeType"]
+- !private ["PSo16NSObjectProtocol", "objectAtIndex"]
+- !private ["PSo16NSObjectProtocol", "objectsWithPredicate"]
 - ["PSo16NSObjectProtocol", "prefs"]
 - !private ["PSo16NSObjectProtocol", "print"]
-- !private ["PSo16NSObjectProtocol", "protectionSpace"]
 - ["PSo16NSObjectProtocol", "queryParameters"]
 - !private ["PSo16NSObjectProtocol", "requestWithURL"]
 - !private ["PSo16NSObjectProtocol", "resume"]
 - ["PSo16NSObjectProtocol", "running"]
-- !private ["PSo16NSObjectProtocol", "serverTrust"]
+- ["PSo16NSObjectProtocol", "saveCachedResponse"]
 - ["PSo16NSObjectProtocol", "session"]
 - ["PSo16NSObjectProtocol", "session.storage"]
 - !private ["PSo16NSObjectProtocol", "sharedCustomSession"]
 - !private ["PSo16NSObjectProtocol", "show"]
 - ["PSo16NSObjectProtocol", "standardUserDefaults"]
 - !private ["PSo16NSObjectProtocol", "statusCode"]
+- !private ["PSo16NSObjectProtocol", "textEncodingName"]
+- !private ["PSo16NSObjectProtocol", "timestamp"]
 - !private ["PSo16NSObjectProtocol", "title"]
 - ["PSo16NSObjectProtocol", "url"]
+- ["PSo16NSObjectProtocol", "urlResponse"]
 - !private ["PSo16NSObjectProtocol", "valueForKey"]
 - ["PSo16NSObjectProtocol", ""]
+- !private ["CSo11NSPredicate", "init"]
+- !private ["PSo14NSSecureCoding", "MIMEType"]
+- !private ["PSo14NSSecureCoding", "absoluteString"]
 - !private ["PSo14NSSecureCoding", "description"]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "isEmpty"]
+- !private ["PSo14NSSecureCoding", "length"]
 - !private ["PSo14NSSecureCoding", "localizedDescription"]
-- !private ["PSo14NSSecureCoding", "protectionSpace"]
 - !private ["PSo14NSSecureCoding", "requestWithURL"]
-- !private ["PSo14NSSecureCoding", "serverTrust"]
 - !private ["PSo14NSSecureCoding", "statusCode"]
+- !private ["PSo14NSSecureCoding", "textEncodingName"]
+- !private ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "init"]
 - !private ["CSo8NSString", "isEmpty"]
+- !private ["CSo5NSURL", "absoluteString"]
 - !private ["CSo5NSURL", "init"]
-- !private ["CSo28NSURLAuthenticationChallenge", "protectionSpace"]
-- !private ["CSo15NSURLCredential", "init"]
-- !private ["CSo20NSURLProtectionSpace", "serverTrust"]
-- !private ["CSo12NSURLRequest", "description"]
 - !private ["CSo12NSURLRequest", "requestWithURL"]
 - !private ["OSC23NSURLRequestCachePolicy", "UseProtocolCachePolicy"]
+- !private ["CSo13NSURLResponse", "MIMEType"]
 - !private ["CSo13NSURLResponse", "statusCode"]
+- !private ["CSo13NSURLResponse", "textEncodingName"]
 - !private ["CSo12NSURLSession", "dataTaskWithRequest"]
 - !private ["CSo12NSURLSession", "sharedCustomSession"]
-- !private ["OSC36NSURLSessionAuthChallengeDisposition", "UseCredential"]
 - !private ["CSo20NSURLSessionDataTask", "resume"]
-- !private ["PSo20NSURLSessionDelegate", "JSON"]
-- !private ["PSo20NSURLSessionDelegate", "NSError"]
-- !private ["PSo20NSURLSessionDelegate", "NSLocalizedDescriptionKey"]
-- !private ["PSo20NSURLSessionDelegate", "NSLog"]
-- !private ["PSo20NSURLSessionDelegate", "NSMutableURLRequest"]
-- !private ["PSo20NSURLSessionDelegate", "NSURL"]
-- !private ["PSo20NSURLSessionDelegate", "NSURLCredential"]
-- !private ["PSo20NSURLSessionDelegate", "NSURLSession"]
-- !private ["PSo20NSURLSessionDelegate", "NSURLSessionAuthChallengeDisposition"]
-- ["PSo20NSURLSessionDelegate", "NSUserDefaults"]
-- !private ["PSo20NSURLSessionDelegate", "UIAlertView"]
-- ["PSo20NSURLSessionDelegate", "URLSession"]
-- ["PSo20NSURLSessionDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
-- !private ["PSo20NSURLSessionDelegate", "bodyParameters"]
-- !private ["PSo20NSURLSessionDelegate", "dataTask"]
-- !private ["PSo20NSURLSessionDelegate", "errors"]
-- !private ["PSo20NSURLSessionDelegate", "method"]
-- !private ["PSo20NSURLSessionDelegate", "prefs"]
-- !private ["PSo20NSURLSessionDelegate", "print"]
-- !private ["PSo20NSURLSessionDelegate", "queryParameters"]
-- !private ["PSo20NSURLSessionDelegate", "running"]
-- !private ["PSo20NSURLSessionDelegate", "session"]
-- !private ["PSo20NSURLSessionDelegate", "url"]
-- ["PSo20NSURLSessionDelegate", ""]
 - !private ["CSo16NSURLSessionTask", "resume"]
-- !private ["PSo24NSURLSessionTaskDelegate", "JSON"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSError"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSLocalizedDescriptionKey"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSLog"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSMutableURLRequest"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSURL"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSURLCredential"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSURLSession"]
-- !private ["PSo24NSURLSessionTaskDelegate", "NSURLSessionAuthChallengeDisposition"]
-- ["PSo24NSURLSessionTaskDelegate", "NSUserDefaults"]
-- !private ["PSo24NSURLSessionTaskDelegate", "UIAlertView"]
-- ["PSo24NSURLSessionTaskDelegate", "URLSession"]
-- ["PSo24NSURLSessionTaskDelegate", "URLSessionDidFinishEventsForBackgroundURLSession"]
-- !private ["PSo24NSURLSessionTaskDelegate", "bodyParameters"]
-- !private ["PSo24NSURLSessionTaskDelegate", "dataTask"]
-- !private ["PSo24NSURLSessionTaskDelegate", "errors"]
-- !private ["PSo24NSURLSessionTaskDelegate", "method"]
-- !private ["PSo24NSURLSessionTaskDelegate", "prefs"]
-- !private ["PSo24NSURLSessionTaskDelegate", "print"]
-- !private ["PSo24NSURLSessionTaskDelegate", "queryParameters"]
-- !private ["PSo24NSURLSessionTaskDelegate", "running"]
-- !private ["PSo24NSURLSessionTaskDelegate", "session"]
-- !private ["PSo24NSURLSessionTaskDelegate", "url"]
-- ["PSo24NSURLSessionTaskDelegate", ""]
 - ["CSo14NSUserDefaults", "standardUserDefaults"]
 - !private ["CSo14NSUserDefaults", "valueForKey"]
-- !private ["Ps21NilLiteralConvertible", "Some"]
+- ["Ps21NilLiteralConvertible", "Some"]
 - !private ["Ps21NilLiteralConvertible", "UseProtocolCachePolicy"]
 - !private ["Ps21NilLiteralConvertible", "init"]
-- !private ["Sq", "Some"]
+- ["Sq", "Some"]
 - !private ["Sq", "UseProtocolCachePolicy"]
 - !private ["Sq", "deinit"]
 - !private ["Ps16OutputStreamType", "init"]
 - !private ["Ps16OutputStreamType", "isEmpty"]
-- !private ["Ps16RawRepresentable", "UseCredential"]
+- !private ["PSo13RLMCollection", "count"]
+- !private ["PSo13RLMCollection", "objectAtIndex"]
+- !private ["CSo9RLMObject", "data"]
+- !private ["CSo9RLMObject", "deinit"]
+- !private ["CSo9RLMObject", "encoding"]
+- !private ["CSo9RLMObject", "mimeType"]
+- !private ["CSo9RLMObject", "objectsWithPredicate"]
+- !private ["CSo9RLMObject", "timestamp"]
+- !private ["CSo9RLMObject", "url"]
+- !private ["CSo13RLMObjectBase", "data"]
+- !private ["CSo13RLMObjectBase", "encoding"]
+- !private ["CSo13RLMObjectBase", "mimeType"]
+- !private ["CSo13RLMObjectBase", "objectsWithPredicate"]
+- !private ["CSo13RLMObjectBase", "timestamp"]
+- !private ["CSo13RLMObjectBase", "url"]
+- !private ["CSo8RLMRealm", "addObject"]
+- !private ["CSo8RLMRealm", "beginWriteTransaction"]
+- !private ["CSo8RLMRealm", "commitWriteTransaction"]
+- !private ["CSo8RLMRealm", "defaultRealm"]
+- !private ["CSo10RLMResults", "count"]
+- !private ["CSo10RLMResults", "objectAtIndex"]
+- !private ["Ps30RangeReplaceableCollectionType", "Element"]
 - !private ["Ps16RawRepresentable", "UseProtocolCachePolicy"]
 - !private ["Ps16RawRepresentable", "init"]
+- !private ["Ps12SequenceType", "Element"]
+- !private ["Ps12SequenceType", "Generator"]
+- !private ["Ps12SequenceType", "Index"]
 - !private ["Ps12SequenceType", "Key"]
+- !private ["Ps12SequenceType", "SubSequence"]
 - !private ["Ps12SequenceType", "Value"]
+- !private ["Ps12SequenceType", "_Element"]
 - !private ["Ps12SequenceType", "init"]
+- !private ["Ps12SequenceType", "subscript"]
+- !private ["Vs5Slice", "Generator"]
+- !private ["Vs5Slice", "Index"]
+- !private ["Vs5Slice", "SubSequence"]
+- !private ["Vs5Slice", "_Element"]
 - !private ["Vs12StaticString", "deinit"]
 - !private ["Ps10Streamable", "init"]
 - !private ["Ps10Streamable", "isEmpty"]
@@ -664,12 +847,24 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "message"]
 - !private ["PSo18UIFocusEnvironment", "show"]
 - !private ["PSo18UIFocusEnvironment", "title"]
+- !private ["PSo11UIFocusItem", "addButtonWithTitle"]
+- !private ["PSo11UIFocusItem", "delegate"]
+- !private ["PSo11UIFocusItem", "init"]
+- !private ["PSo11UIFocusItem", "message"]
+- !private ["PSo11UIFocusItem", "show"]
+- !private ["PSo11UIFocusItem", "title"]
 - !private ["CSo11UIResponder", "addButtonWithTitle"]
 - !private ["CSo11UIResponder", "delegate"]
 - !private ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "message"]
 - !private ["CSo11UIResponder", "show"]
 - !private ["CSo11UIResponder", "title"]
+- !private ["PSo30UIResponderStandardEditActions", "addButtonWithTitle"]
+- !private ["PSo30UIResponderStandardEditActions", "delegate"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "message"]
+- !private ["PSo30UIResponderStandardEditActions", "show"]
+- !private ["PSo30UIResponderStandardEditActions", "title"]
 - !private ["PSo18UITraitEnvironment", "addButtonWithTitle"]
 - !private ["PSo18UITraitEnvironment", "delegate"]
 - !private ["PSo18UITraitEnvironment", "init"]
@@ -690,6 +885,7 @@ depends-member:
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "isEmpty"]
+- !private ["Ps10_ArrayType", "Element"]
 - !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
@@ -699,32 +895,43 @@ depends-member:
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "isEmpty"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "isEmpty"]
+- !private ["Ps24_DestructorSafeContainer", "Element"]
+- !private ["Ps32_FileReferenceLiteralConvertible", "absoluteString"]
 - !private ["Ps32_FileReferenceLiteralConvertible", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "Key"]
+- ["Ps21_ObjectiveCBridgeable", "Some"]
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "isEmpty"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps12_Reflectable", "Element"]
 - !private ["Ps12_Reflectable", "Key"]
-- !private ["Ps12_Reflectable", "Some"]
+- ["Ps12_Reflectable", "Some"]
 - !private ["Ps12_Reflectable", "UseProtocolCachePolicy"]
 - !private ["Ps12_Reflectable", "Value"]
 - !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "absoluteString"]
 - !private ["Ps12_Reflectable", "addButtonWithTitle"]
 - !private ["Ps12_Reflectable", "delegate"]
 - !private ["Ps12_Reflectable", "init"]
 - !private ["Ps12_Reflectable", "isEmpty"]
 - !private ["Ps12_Reflectable", "message"]
 - !private ["Ps12_Reflectable", "show"]
+- !private ["Ps12_Reflectable", "subscript"]
 - !private ["Ps12_Reflectable", "title"]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "Sa"
 - !private "Ps23ArrayLiteralConvertible"
 - !private "Sb"
 - !private "Ps25BooleanLiteralConvertible"
 - !private "Ps11BooleanType"
+- !private "PSo15CALayerDelegate"
 - "Ps11CVarArgType"
+- !private "C16SwiftLoginScreen14CachedResponse"
 - !private "Vs9Character"
 - !private "Ps14CollectionType"
 - !private "Ps10Comparable"
@@ -739,8 +946,11 @@ depends-nominal:
 - !private "Sf"
 - !private "Ps23FloatLiteralConvertible"
 - "C16SwiftLoginScreen21GeneralRequestManager"
+- !private "Ps13GeneratorType"
 - "Ps8Hashable"
+- "SQ"
 - !private "Ps9Indexable"
+- !private "Vs17IndexingGenerator"
 - !private "Si"
 - !private "Vs5Int16"
 - !private "Vs5Int32"
@@ -750,35 +960,43 @@ depends-nominal:
 - !private "V10SwiftyJSON4JSON"
 - !private "P10SwiftyJSON17JSONSubscriptType"
 - !private "Ps14MirrorPathType"
+- !private "Ps21MutableCollectionType"
+- !private "Ps16MutableIndexable"
+- !private "Ps16MutableSliceable"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
+- !private "CSo6NSData"
+- !private "CSo6NSDate"
 - !private "CSo7NSError"
+- !private "PSo17NSFastEnumeration"
 - !private "CSo17NSHTTPURLResponse"
 - !private "PSo16NSMutableCopying"
 - !private "CSo19NSMutableURLRequest"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
+- !private "CSo11NSPredicate"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
 - !private "CSo5NSURL"
-- !private "CSo28NSURLAuthenticationChallenge"
-- !private "CSo15NSURLCredential"
-- !private "CSo20NSURLProtectionSpace"
 - !private "CSo12NSURLRequest"
 - !private "OSC23NSURLRequestCachePolicy"
 - !private "CSo13NSURLResponse"
 - !private "CSo12NSURLSession"
-- !private "OSC36NSURLSessionAuthChallengeDisposition"
 - !private "CSo20NSURLSessionDataTask"
-- "PSo20NSURLSessionDelegate"
 - !private "CSo16NSURLSessionTask"
-- "PSo24NSURLSessionTaskDelegate"
 - "CSo14NSUserDefaults"
-- !private "Ps21NilLiteralConvertible"
-- !private "Sq"
+- "Ps21NilLiteralConvertible"
+- "Sq"
 - !private "Ps16OutputStreamType"
+- !private "PSo13RLMCollection"
+- !private "CSo9RLMObject"
+- !private "CSo13RLMObjectBase"
+- !private "CSo8RLMRealm"
+- !private "CSo10RLMResults"
+- !private "Ps30RangeReplaceableCollectionType"
 - !private "Ps16RawRepresentable"
 - !private "Ps12SequenceType"
+- !private "Vs5Slice"
 - !private "Vs12StaticString"
 - !private "Ps10Streamable"
 - !private "SS"
@@ -791,7 +1009,9 @@ depends-nominal:
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - !private "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
 - !private "CSo11UIResponder"
+- !private "PSo30UIResponderStandardEditActions"
 - !private "PSo18UITraitEnvironment"
 - !private "CSo6UIView"
 - !private "Su"
@@ -801,46 +1021,47 @@ depends-nominal:
 - !private "Vs5UInt8"
 - !private "Sc"
 - !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "Ps10_ArrayType"
 - !private "Ps33_BuiltinBooleanLiteralConvertible"
 - !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
 - !private "Ps32_BuiltinStringLiteralConvertible"
 - !private "Ps37_BuiltinUTF16StringLiteralConvertible"
 - !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "Ps24_DestructorSafeContainer"
 - !private "Ps32_FileReferenceLiteralConvertible"
-- !private "Ps21_ObjectiveCBridgeable"
+- "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
-- !private "Ps12_Reflectable"
+- "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
@@ -872,5 +1093,5 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
-interface-hash: "03acd166d94cb2677a2b76cc0e180a1c"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
+interface-hash: "f47e91ee4a25e5a1724246b8c503d237"

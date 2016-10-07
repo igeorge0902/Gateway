@@ -79,7 +79,7 @@ class MyURLProtocol: NSURLProtocol {
         } else {
             
             // 5
-            NSLog("Serving response from NSURLConnection url == %@", self.request.URL!.absoluteString)
+           // NSLog("Serving response from NSURLConnection url == %@", self.request.URL!.absoluteString)
             
             
             if request.URL!.relativePath == "/login/HelloWorld" {
@@ -163,10 +163,10 @@ class MyURLProtocol: NSURLProtocol {
                 let url = request.URL!.absoluteString
                 var requestLogin:RequestManager?
                 
-                if match.containsMatch(pattern_, inString: url) {
+                if match.containsMatch(pattern_, inString: url!) {
                     
-                    let adminUrl = match.replaceMatches(pattern_rs, inString: url, withString:"https://milo.crabdance.com/login/admin?JSESSIONID=")
-                    let sessionID = match.replaceMatches(pattern_rs, inString: url, withString:"")
+                    let adminUrl = match.replaceMatches(pattern_rs, inString: url!, withString:"https://milo.crabdance.com/login/admin?JSESSIONID=")
+                    let sessionID = match.replaceMatches(pattern_rs, inString: url!, withString:"")
                     
                     prefs.setValue(sessionID, forKey: "JSESSIONID")
                     NSLog("SessionId ==> %@", sessionID!)
@@ -181,7 +181,7 @@ class MyURLProtocol: NSURLProtocol {
                     }
                 }
                 
-                NSLog("Url to be redirected ==> %@", request.URL!.absoluteString)
+              //  NSLog("Url to be redirected ==> %@", request.URL!.absoluteString)
                 
             }
             
@@ -231,7 +231,7 @@ class MyURLProtocol: NSURLProtocol {
     }
     
     func saveCachedResponse () {
-        NSLog("Saving cached response url == %@", self.request.URL!.absoluteString)
+      //  NSLog("Saving cached response url == %@", self.request.URL!.absoluteString)
         
         // 1
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -350,7 +350,7 @@ class MyURLProtocol: NSURLProtocol {
         fetchRequest.entity = entity
         
         // 3
-        let predicate = NSPredicate(format:"url == %@", self.request.URL!.absoluteString)
+        let predicate = NSPredicate(format:"url == %@", self.request.URL!.absoluteString!)
         fetchRequest.predicate = predicate
         
         
@@ -369,7 +369,7 @@ class MyURLProtocol: NSURLProtocol {
         // 5
         if let result = possibleResult {
             if !result.isEmpty {
-                NSLog("Serving response from cache; url == %@", self.request.URL!.absoluteString)
+             //   NSLog("Serving response from cache; url == %@", self.request.URL!.absoluteString)
 
               return result[0]
             

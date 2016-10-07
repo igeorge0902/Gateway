@@ -16,7 +16,8 @@ extension NSURLSessionConfiguration {
         
         let config = defaultSessionConfiguration()
         
-        config.timeoutIntervalForRequest = 10 // Make things timeout quickly.
+        //config.timeoutIntervalForRequest = 20 // Make things timeout quickly.
+        config.sessionSendsLaunchEvents = true
         config.HTTPAdditionalHeaders = ["MyResponseType": "JSON"] // My web service needs to be explicitly asked for JSON.
         config.HTTPShouldUsePipelining = true // Might speed things up if your server supports it.
         

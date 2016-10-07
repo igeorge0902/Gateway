@@ -6,44 +6,44 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen6MenuVC", ""]
 provides-dynamic-lookup:
-- "navigateBack"
 - "items"
+- "viewWillAppear"
 - "viewDidLoad"
 - "tableView"
 - "tableView"
 - "tableView"
-- "viewWillAppear"
-- "refreshControl"
+- "navigateBack"
 - "addData"
+- "refreshControl"
 depends-top-level:
-- "UITableViewCell"
-- !private "print"
-- "Bool"
-- "MenuVC"
-- !private "-"
-- !private "JSON"
-- !private "RestApiManager"
 - "UIRefreshControl"
-- !private "StringLiteralType"
-- "Int"
-- !private "CGRect"
-- !private "UIControlState"
-- !private "UIControlEvents"
-- !private "NSError"
+- !private "print"
+- !private "-"
 - !private "UIColor"
-- !private "UIButton"
-- !private "/"
-- !private "UITableViewCellStyle"
-- !private "dispatch_get_main_queue"
-- !private "dispatch_async"
-- "UITableView"
-- "UITableViewDataSource"
-- "UITableViewDelegate"
 - "NSIndexPath"
-- !private "AnyObject"
-- !private "BooleanLiteralType"
+- "MenuVC"
+- !private "UIControlEvents"
+- "UITableView"
 - "NSMutableArray"
+- !private "UIButton"
+- "UITableViewCell"
+- !private "RestApiManager"
+- !private "AnyObject"
+- "Int"
+- !private "StringLiteralType"
+- !private "NSError"
+- !private "UIControlState"
+- !private "/"
+- !private "dispatch_get_main_queue"
 - "UIViewController"
+- !private "CGRect"
+- !private "UITableViewCellStyle"
+- "Bool"
+- !private "BooleanLiteralType"
+- !private "JSON"
+- !private "dispatch_async"
+- "UITableViewDelegate"
+- "UITableViewDataSource"
 depends-member:
 - !private ["Ps9AnyObject", "CGRect"]
 - !private ["Ps9AnyObject", "JSON"]
@@ -138,6 +138,18 @@ depends-member:
 - !private ["Ps11BooleanType", "object"]
 - !private ["Ps11BooleanType", "string"]
 - !private ["Ps11BooleanType", "subscript"]
+- !private ["PSo15CALayerDelegate", "addSubview"]
+- !private ["PSo15CALayerDelegate", "addTarget"]
+- !private ["PSo15CALayerDelegate", "backgroundColor"]
+- !private ["PSo15CALayerDelegate", "dataSource"]
+- !private ["PSo15CALayerDelegate", "delegate"]
+- !private ["PSo15CALayerDelegate", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo15CALayerDelegate", "frame"]
+- !private ["PSo15CALayerDelegate", "init"]
+- !private ["PSo15CALayerDelegate", "reloadData"]
+- !private ["PSo15CALayerDelegate", "setTitle"]
+- !private ["PSo15CALayerDelegate", "text"]
+- !private ["PSo15CALayerDelegate", "textLabel"]
 - !private ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["VSC6CGRect", "height"]
 - !private ["VSC6CGRect", "init"]
@@ -527,7 +539,6 @@ depends-member:
 - ["Ps8Hashable", "viewForZoomingInScrollView"]
 - ["Ps8Hashable", "viewWillAppear"]
 - ["Ps8Hashable", ""]
-- !private ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Generator"]
 - !private ["Ps9Indexable", "Index"]
 - !private ["Ps9Indexable", "SubSequence"]
@@ -875,10 +886,6 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "row"]
 - !private ["PSo14NSSecureCoding", "subscript"]
 - !private ["CSo8NSString", "init"]
-- !private ["PSo20NSURLSessionDelegate", "getRandomUser"]
-- !private ["PSo20NSURLSessionDelegate", "sharedInstance"]
-- !private ["PSo24NSURLSessionTaskDelegate", "getRandomUser"]
-- !private ["PSo24NSURLSessionTaskDelegate", "sharedInstance"]
 - !private ["Ps21NilLiteralConvertible", "Generator"]
 - !private ["Ps21NilLiteralConvertible", "Index"]
 - !private ["Ps21NilLiteralConvertible", "SubSequence"]
@@ -1065,6 +1072,7 @@ depends-member:
 - ["PSo18UIContentContainer", "viewForZoomingInScrollView"]
 - ["PSo18UIContentContainer", "viewWillAppear"]
 - ["PSo18UIContentContainer", ""]
+- !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["CSo9UIControl", "addTarget"]
 - !private ["CSo9UIControl", "backgroundColor"]
 - !private ["CSo9UIControl", "init"]
@@ -1149,6 +1157,18 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "viewForZoomingInScrollView"]
 - ["PSo18UIFocusEnvironment", "viewWillAppear"]
 - ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "addSubview"]
+- !private ["PSo11UIFocusItem", "addTarget"]
+- !private ["PSo11UIFocusItem", "backgroundColor"]
+- !private ["PSo11UIFocusItem", "dataSource"]
+- !private ["PSo11UIFocusItem", "delegate"]
+- !private ["PSo11UIFocusItem", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo11UIFocusItem", "frame"]
+- !private ["PSo11UIFocusItem", "init"]
+- !private ["PSo11UIFocusItem", "reloadData"]
+- !private ["PSo11UIFocusItem", "setTitle"]
+- !private ["PSo11UIFocusItem", "text"]
+- !private ["PSo11UIFocusItem", "textLabel"]
 - !private ["PSo27UIGestureRecognizerDelegate", "init"]
 - !private ["PSo27UIGestureRecognizerDelegate", "textLabel"]
 - !private ["CSo7UILabel", "text"]
@@ -1211,6 +1231,60 @@ depends-member:
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "viewForZoomingInScrollView"]
 - ["CSo11UIResponder", "viewWillAppear"]
+- !private ["PSo30UIResponderStandardEditActions", "CGRect"]
+- !private ["PSo30UIResponderStandardEditActions", "JSON"]
+- !private ["PSo30UIResponderStandardEditActions", "MenuVC"]
+- ["PSo30UIResponderStandardEditActions", "NSMutableArray"]
+- !private ["PSo30UIResponderStandardEditActions", "RestApiManager"]
+- !private ["PSo30UIResponderStandardEditActions", "UIButton"]
+- !private ["PSo30UIResponderStandardEditActions", "UIColor"]
+- !private ["PSo30UIResponderStandardEditActions", "UIControlEvents"]
+- !private ["PSo30UIResponderStandardEditActions", "UIControlState"]
+- !private ["PSo30UIResponderStandardEditActions", "UIRefreshControl"]
+- !private ["PSo30UIResponderStandardEditActions", "UITableView"]
+- !private ["PSo30UIResponderStandardEditActions", "UITableViewCell"]
+- !private ["PSo30UIResponderStandardEditActions", "UITableViewCellStyle"]
+- ["PSo30UIResponderStandardEditActions", "addData"]
+- !private ["PSo30UIResponderStandardEditActions", "addSubview"]
+- !private ["PSo30UIResponderStandardEditActions", "addTarget"]
+- !private ["PSo30UIResponderStandardEditActions", "backgroundColor"]
+- !private ["PSo30UIResponderStandardEditActions", "dataSource"]
+- !private ["PSo30UIResponderStandardEditActions", "delegate"]
+- !private ["PSo30UIResponderStandardEditActions", "dequeueReusableCellWithIdentifier"]
+- !private ["PSo30UIResponderStandardEditActions", "dismissViewControllerAnimated"]
+- !private ["PSo30UIResponderStandardEditActions", "dispatch_async"]
+- !private ["PSo30UIResponderStandardEditActions", "dispatch_get_main_queue"]
+- !private ["PSo30UIResponderStandardEditActions", "frame"]
+- ["PSo30UIResponderStandardEditActions", "indexPathForPreferredFocusedViewInTableView"]
+- ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", "items"]
+- ["PSo30UIResponderStandardEditActions", "navigateBack"]
+- ["PSo30UIResponderStandardEditActions", "numberOfSectionsInTableView"]
+- !private ["PSo30UIResponderStandardEditActions", "print"]
+- ["PSo30UIResponderStandardEditActions", "refreshControl"]
+- !private ["PSo30UIResponderStandardEditActions", "reloadData"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidEndDecelerating"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidEndDragging"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidEndScrollingAnimation"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidEndZooming"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidScroll"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidScrollToTop"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewDidZoom"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewShouldScrollToTop"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewWillBeginDecelerating"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewWillBeginDragging"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewWillBeginZooming"]
+- ["PSo30UIResponderStandardEditActions", "scrollViewWillEndDragging"]
+- ["PSo30UIResponderStandardEditActions", "sectionIndexTitlesForTableView"]
+- !private ["PSo30UIResponderStandardEditActions", "setTitle"]
+- ["PSo30UIResponderStandardEditActions", "tableView"]
+- !private ["PSo30UIResponderStandardEditActions", "text"]
+- !private ["PSo30UIResponderStandardEditActions", "textLabel"]
+- !private ["PSo30UIResponderStandardEditActions", "view"]
+- ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", "viewForZoomingInScrollView"]
+- ["PSo30UIResponderStandardEditActions", "viewWillAppear"]
+- ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo12UIScrollView", "addSubview"]
 - !private ["CSo12UIScrollView", "dataSource"]
 - !private ["CSo12UIScrollView", "delegate"]
@@ -1560,6 +1634,7 @@ depends-nominal:
 - !private "Sb"
 - !private "Ps25BooleanLiteralConvertible"
 - !private "Ps11BooleanType"
+- !private "PSo15CALayerDelegate"
 - !private "V12CoreGraphics7CGFloat"
 - !private "VSC6CGRect"
 - "Ps11CVarArgType"
@@ -1577,7 +1652,6 @@ depends-nominal:
 - !private "Ps16ForwardIndexType"
 - !private "Ps13GeneratorType"
 - "Ps8Hashable"
-- !private "SQ"
 - !private "Ps9Indexable"
 - !private "Vs17IndexingGenerator"
 - !private "Si"
@@ -1605,8 +1679,6 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - "PSo14NSSecureCoding"
 - !private "CSo8NSString"
-- !private "PSo20NSURLSessionDelegate"
-- !private "PSo24NSURLSessionTaskDelegate"
 - !private "Ps21NilLiteralConvertible"
 - !private "Ps13OptionSetType"
 - !private "Sq"
@@ -1631,16 +1703,19 @@ depends-nominal:
 - !private "CSo8UIButton"
 - !private "CSo7UIColor"
 - "PSo18UIContentContainer"
+- !private "PSo30UIContentSizeCategoryAdjusting"
 - !private "CSo9UIControl"
 - !private "VSC15UIControlEvents"
 - !private "VSC14UIControlState"
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
 - !private "PSo27UIGestureRecognizerDelegate"
 - !private "CSo7UILabel"
 - !private "CSo16UIRefreshControl"
 - "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
 - !private "CSo12UIScrollView"
 - "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
@@ -1674,35 +1749,34 @@ depends-nominal:
 - !private "Ps18_SignedIntegerType"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
@@ -1734,5 +1808,5 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
 interface-hash: "12e3f344398328247c0ba6872c6132e0"

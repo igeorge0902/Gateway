@@ -10,15 +10,9 @@ import Foundation
 
 extension NSURLRequest {
     
-    /// Helper for making a URL request. This is to be used internally by the string extension
-    /// in wattle, not by the rest of your app.
-    
+    /// Helper for making a URL request.
     /// JSON encodes parameters if any are provided. You may want to change this if your server uses, say, XML.
-    
-    /// Adds any headers specific to only this request too if provided. Any headers you use all the time should be in
-    /// NSURLSessionConfiguration.wattleSessionConfiguration.
-    /// You may want to extend this if your requests need any further customising, eg timeouts etc.
-    
+        
     class func requestWithURL(URL: NSURL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: NSURLRequestCachePolicy?, timeoutInterval: NSTimeInterval?) -> NSURLRequest {
 
         // If there's a querystring, append it to the URL.

@@ -11,7 +11,7 @@ import SwiftyJSON
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate  {
+class RestApiManager: NSObject, UIAlertViewDelegate {
 
     static let sharedInstance = RestApiManager()
     
@@ -68,10 +68,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let xtoken = prefs.valueForKey("X-Token")
 
-        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10, isCacheable: nil)
-        
-       //let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-       //let session = NSURLSession(configuration: configuration, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
+        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
 
         let session = NSURLSession.sharedCustomSession
         
@@ -131,7 +128,6 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
             } else {
             
             let json:JSON = JSON(data: data!)
-                
                 onCompletion(json, error)
             }
         })
@@ -163,27 +159,5 @@ class RestApiManager: NSObject, UIAlertViewDelegate, NSURLSessionDelegate, NSURL
         })
         task.resume()
     }
-    
-    /* for JMeter, otherwise the CustomURLSessionDelegate is enough */
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-        
-        print("didReceiveAuthenticationChallenge")
-        
-        completionHandler(
-            
-            NSURLSessionAuthChallengeDisposition.UseCredential,
-            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
-    }
-    
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-        
-        let newRequest : NSURLRequest? = request
-        
-        print(newRequest?.description);
-        completionHandler(newRequest)
-    }
-
     
 }

@@ -9,14 +9,15 @@
 import UIKit
 import SwiftyJSON
 
-
 let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
-
-class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+var kKeychainItemName: String?
+class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     deinit {
         print(#function, "\(self)")
     }
+    
+    
     
     var imageView:UIImageView = UIImageView()
     var backgroundDict:Dictionary<String, String> = Dictionary()
@@ -31,7 +32,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
     
     @IBOutlet weak var txtUsername : UITextField!
     @IBOutlet weak var txtPassword : UITextField!
-    
+
     override func viewWillAppear(animated: Bool) {
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
@@ -41,14 +42,13 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-    
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         backgroundDict = ["Login":"login"]
         
         let view:UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height));
@@ -67,8 +67,14 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
         
         view.addSubview(imageView);
         
-        self.hideKeyboardWhenTappedAround()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.delegate = self
+
+        view.addGestureRecognizer(tap)
+        
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,7 +154,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
                 
             } else {
             
-            let json:JSON = JSON(data: data!)
+            //let json:JSON = JSON(data: data!)
             
             if let httpResponse = response as? NSHTTPURLResponse {
                 print("got some data")
@@ -178,11 +184,14 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
                                                         
                             prefs.setObject(username, forKey: "USERNAME")
                             prefs.setInteger(1, forKey: "ISLOGGEDIN")
+                            prefs.setInteger(0, forKey: "ISWEBLOGGEDIN")
                             prefs.setValue(sessionID, forKey: "JSESSIONID")
                             prefs.setValue(deviceId, forKey: "deviceId")
                             prefs.setValue(xtoken, forKey: "X-Token")
                             
                             prefs.synchronize()
+                            
+                            kKeychainItemName = username
                         }
                         
                     NSLog("got a 200")
@@ -206,6 +215,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
                 
             } else {
                 
+                // create a helper method
                 let alertView:UIAlertView = UIAlertView()
                 
                 alertView.title = "Sign in Failed!"
@@ -218,7 +228,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
             }
             
             self.running = false
-            onCompletion(json, error)
+            //onCompletion(json, error)
             
             }
         })
@@ -259,7 +269,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
                 print(resultString)
                 
             }
-                    
+        }
     }
     
     
@@ -267,27 +277,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, NSURLSessionDelegate, NSURL
        
             textField.resignFirstResponder()
             return true
-        }
-    
     }
-    
-    
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-        
-        completionHandler(
-            
-            NSURLSessionAuthChallengeDisposition.UseCredential,
-            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
-    }
-    
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-        
-        let newRequest : NSURLRequest? = request
-        
-        print(newRequest?.description);
-        completionHandler(newRequest)
-    }
+
 
 }

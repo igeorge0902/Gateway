@@ -313,6 +313,7 @@ class SignupVC: UIViewController {
                                 
                                 prefs.setObject(username, forKey: "USERNAME")
                                 prefs.setInteger(1, forKey: "ISLOGGEDIN")
+                                prefs.setInteger(0, forKey: "ISWEBLOGGEDIN")
                                 prefs.setValue(sessionID, forKey: "JSESSIONID")
                                 prefs.setValue(deviceId, forKey: "deviceId")
                                 prefs.setValue(xtoken, forKey: "X-Token")
