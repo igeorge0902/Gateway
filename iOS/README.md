@@ -14,6 +14,9 @@ General Authentication Service
 - If you use self-signed certs with the server, you must install your custom cerificate authority file onto your server and device/simulator  (You must use certificate authority format - I use it with Apache http server with mod_jk AJP connector on GlassFish or TomCat).
 - strictly follow the instructions at https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/ and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA)
 
+Update your hostnames in CustomURLSessionDelegate.swift file!
+----
+
 
 Usefull links:
 ----
