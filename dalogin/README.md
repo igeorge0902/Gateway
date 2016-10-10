@@ -7,6 +7,11 @@
 - If you think it's a joke or simulation, first prove it, then pay your bill! ;)
 ----
 
+Known issues:
+----
+- I forgot to add the user parameter to the password check that causes user can login with any available password
+FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.
+
 Donation
 ----
 - I have been developing this project for more than one year and finally I have come to the end of it. Although this project is not commercially licenced I would like to offer the chance to donate.
