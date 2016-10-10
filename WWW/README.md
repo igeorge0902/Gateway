@@ -7,6 +7,8 @@ Notes on request header transformation:
 Features:
 - login and registration is fully tested on WWW
 - for mobile login and registration is fully tested, except for the unimplemented registration through mobile webView
+- to check the validation workflow as to how the password, username will be hashed, and how the transformation happens you can use javascript alert or some analytics tool that you can embed into the web app.
+
 
 Configuration:
 - for registration, if activation is needed the status code is set to 300, so the http interceptors has to be listening to the same status code, therefore.
