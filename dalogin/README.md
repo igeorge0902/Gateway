@@ -42,7 +42,7 @@ The HttpServletRequest object will give you what you need:
 
 For more information on how it works: https://stormpath.com/blog/angular-xsrf
 
-You can also add your own filters to the dirty job:
+You can also add your own filters to do the dirty job:
 https://dzone.com/articles/preventing-csrf-java-web-apps
 
 ----
