@@ -107,10 +107,12 @@ Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd
   </IfModule>
 ```
 
+```xml
   <FilesMatch "\.(html|ico|pdf|flv|jpg|jpeg|png|gif|js|jsp|css|swf)$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
   </FilesMatch>
+```
 
 > The project uses and needs Java JDK 1.8.x 
 ----
