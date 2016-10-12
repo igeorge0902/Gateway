@@ -42,6 +42,10 @@ HttpServletRequest.getContextPath() - the part of the path that identifies the a
 
 For more information on how it works: https://stormpath.com/blog/angular-xsrf
 
+You can also add your own filters to the dirty job:
+https://dzone.com/articles/preventing-csrf-java-web-apps
+
+----
 
 The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
 
