@@ -115,6 +115,7 @@ Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd
   </FilesMatch>
 ```
 
+<br>
 > The project uses and needs Java JDK 1.8.x 
 ----
 
