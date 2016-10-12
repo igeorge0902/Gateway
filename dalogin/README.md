@@ -29,7 +29,7 @@ The complete service system consists of several parts, layers that makes it easy
 
 AES encryption - decryption is available across all platforms, except for Angular JS 1.3.x.
 
-The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie the comes with the initial request of the client: 
+The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client: 
 
 The HttpServletRequest object will give you what you need:
 
