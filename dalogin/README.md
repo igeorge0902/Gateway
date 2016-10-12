@@ -85,15 +85,16 @@ More information on security headers:
 https://www.keycdn.com/blog/http-security-headers/
 
 Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
-- CORS settings have no effect in this project according the single domain environment
+- CORS settings have no effect in this project according the single domain environment.
 
-  <IfModule mod_headers.c>
-	  Header unset X-Powered-By
-	  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-	  Header always set X-Frame-Options SAMEORIGIN
-	  Header always set X-XSS-Protection 1;mode=block
-	  Header always set X-Content-Type-Options nosniff
-	  Header always set Access-Control-Expose-Headers "X-Token"
+```xml
+ <IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection 1;mode=block
+    Header always set X-Content-Type-Options nosniff
+    Header always set Access-Control-Expose-Headers "X-Token"
     Header always set Access-Control-Max-Age "1800"
     Header always set Access-Control-Allow-Headers "Content-Type, Origin, Authorization, Accept, X-Token, Accept-Encoding"
     Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
@@ -104,6 +105,7 @@ Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd
     Header always set Content-Security-Policy "script-src 'self' https://apis.google.com https://www.google-analytics.com https://facebook.com"
     Header always set Public-Key-Pins "pin-sha256=\"the sha256 fingerprint of your certificate\"; max-age=5184000" 
   </IfModule>
+```
 
   <FilesMatch "\.(html|ico|pdf|flv|jpg|jpeg|png|gif|js|jsp|css|swf)$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
