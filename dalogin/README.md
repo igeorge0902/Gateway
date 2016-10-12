@@ -75,13 +75,14 @@ Configured to run on SSL only, which is required as right now the iOS part is co
 
 The webserver and the application server is configured not to use cache, but it worked for me without cache settings, too!
 
-Apache HTTPD configuration files are included that you should use to get started.
-
-HTTP Strict Transport Security (HSTS)
+Apache HTTPD configuration
 ----
+- config files are included that you should use to get started.
+
+# HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
 
-More information on security headers:
+# More information on security headers:
 https://www.keycdn.com/blog/http-security-headers/
 
 Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
