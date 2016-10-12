@@ -33,12 +33,12 @@ The server is also able verify the client's identity, as the most important thin
 
 The HttpServletRequest object will give you what you need:
 
-HttpServletRequest.getLocalAddr() - the server's IP address as a string
-HttpServletRequest.getLocalName() - the name of the server recieving the request
-HttpServletRequest.getServerName() - the name of the server that the request was sent to
-HtppServletRequest.getLocalPort() - the port the server recieved the request on
-HttpServletRequest.getServerPort() - the port the request was sent to
-HttpServletRequest.getContextPath() - the part of the path that identifies the application
+- HttpServletRequest.getLocalAddr() - the server's IP address as a string
+- HttpServletRequest.getLocalName() - the name of the server recieving the request
+- HttpServletRequest.getServerName() - the name of the server that the request was sent to
+- HtppServletRequest.getLocalPort() - the port the server recieved the request on
+- HttpServletRequest.getServerPort() - the port the request was sent to
+- HttpServletRequest.getContextPath() - the part of the path that identifies the application
 
 For more information on how it works: https://stormpath.com/blog/angular-xsrf
 
