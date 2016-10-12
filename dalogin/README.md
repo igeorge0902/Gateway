@@ -29,11 +29,26 @@ The complete service system consists of several parts, layers that makes it easy
 
 AES encryption - decryption is available across all platforms, except for Angular JS 1.3.x.
 
+The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie the comes with the initial request of the client: 
+
+The HttpServletRequest object will give you what you need:
+
+HttpServletRequest.getLocalAddr() - the server's IP address as a string
+HttpServletRequest.getLocalName() - the name of the server recieving the request
+HttpServletRequest.getServerName() - the name of the server that the request was sent to
+HtppServletRequest.getLocalPort() - the port the server recieved the request on
+HttpServletRequest.getServerPort() - the port the request was sent to
+HttpServletRequest.getContextPath() - the part of the path that identifies the application
+
+For more information on how it works: https://stormpath.com/blog/angular-xsrf
+
+
 The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
+
 
 Important:
 ----
-- configure your links according your environment setup (server, webApp, iOS)!
+- configure your links according to your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
 - make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
 - as of Apple requirements https is required for server connections and it will be enforced as of 1st Jan 2017. Read more about app transport security: https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html, http://www.techrepublic.com/google-amp/article/how-to-migrate-to-https-using-app-transport-security-when-developing-ios-apps/?client=safari
