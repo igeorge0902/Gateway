@@ -29,21 +29,11 @@ The complete service system consists of several parts, layers that makes it easy
 
 AES encryption - decryption is available across all platforms, except for Angular JS 1.3.x.
 
-The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client: 
-
-The HttpServletRequest object will give you what you need:
-
-- HttpServletRequest.getLocalAddr() - the server's IP address as a string
-- HttpServletRequest.getLocalName() - the name of the server recieving the request
-- HttpServletRequest.getServerName() - the name of the server that the request was sent to
-- HtppServletRequest.getLocalPort() - the port the server recieved the request on
-- HttpServletRequest.getServerPort() - the port the request was sent to
-- HttpServletRequest.getContextPath() - the part of the path that identifies the application
+The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client and can assign it the session object, too, but you would be best off by adding another column into the table where you store your tokens and you can place your cookie value string to the corresponding row identified by the deviceId. Then you wish to read this value for each API calls. Don't forget to overwrite the cookie value string when the session gets invalidated.
 
 For more information on how it works: https://stormpath.com/blog/angular-xsrf
 
-You can also add your own filters to do the dirty job:
-https://dzone.com/articles/preventing-csrf-java-web-apps
+You can also add your own request / response filters to do the dirty job: https://dzone.com/articles/preventing-csrf-java-web-apps
 
 ----
 
