@@ -12,6 +12,7 @@ Known issues:
 - I forgot to add the user parameter to the password check that causes user can login with any available password
 FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine.
+- Please note you would like to report issues you may find so that I can fix that I might have missed.
 
 Donation
 ----
