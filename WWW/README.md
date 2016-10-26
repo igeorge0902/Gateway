@@ -4,6 +4,10 @@ WWW component for the Gateway
 Notes on request header transformation: 
 - the WWW app is split into two parts due to the fact that I have implemented the requesr header transformation in 1.3.x version of angular, but I plan to upgrade it to newer version when I'll time for it
 
+
+Known issue:
+----
+- there is a programming error in the html tag that displays the response data and it is been left there by mistake: it causes the DOM doesn't refresh with the fresh response data at line 98 &101.
 Features:
 - login and registration is fully tested on WWW
 - for mobile login and registration is fully tested, except for the unimplemented registration through mobile webView
