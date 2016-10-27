@@ -208,7 +208,7 @@ RoadMap:
 ----
 - Angular JS update to the most newest possible version
 - I will update the project with configs for Wildfly 10.1.0 soon. The mobile part is already done. Stay tuned!
-- only for mbook-1: upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
+- DONE:only for mbook-1: upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
 
 Note:
 ----
