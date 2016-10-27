@@ -12,6 +12,9 @@ Known issues:
 - I forgot to add the user parameter to the password check that causes user can login with any available password
 FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine.
+- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
+- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
+- For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
 - Please note you would like to report issues you may find so that I can fix that I might have missed.
 
 Donation
@@ -107,6 +110,16 @@ Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd
   </FilesMatch>
 ```
 
+Clustering:
+----
+- The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
+- GlassFish and Wildfly settings are under construction
+
+Session handling:
+----
+- the main config is set in the web.xml
+- AS dependent settings (GlassFish, Wildfly) must be implemented separately (only Tomcat provides built-in session persistence if you make your session attributes serializable)
+
 <br>
 > The project uses and needs Java JDK 1.8.x 
 ----
@@ -190,16 +203,12 @@ Questions:
 If you encounter any issues during the deployment or running, please contact me at igeorge1982@gmail.com.
 Please note, I try to maintain the most recent working version, but for any issues your feedback is most welcomed!
 
-Known issue:
-----
-- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
-- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
-- For authentication Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute!
 
 RoadMap:
 ----
 - Angular JS update to the most newest possible version
 - I will update the project with configs for Wildfly 10.1.0 soon. The mobile part is already done. Stay tuned!
+- upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
 
 Note:
 ----
