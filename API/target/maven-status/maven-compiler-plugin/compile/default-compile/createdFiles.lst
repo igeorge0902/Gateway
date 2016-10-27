@@ -6,6 +6,7 @@ com/jeet/service/BookingHandlerImpl.class
 com/jeet/utils/AesUtil.class
 com/jeet/utils/CustomNotFoundException.class
 com/jeet/rest/BookController.class
+com/jeet/db/HibernateUtil.class
 com/jeet/api/Logins.class
 com/jeet/api/Devices.class
 com/jeet/db/DAO.class

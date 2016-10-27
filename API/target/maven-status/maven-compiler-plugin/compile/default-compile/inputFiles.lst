@@ -3,6 +3,7 @@
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/api/Logins.java
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/api/ObjectFactory.java
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/utils/CustomNotFoundException.java
+/Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/db/HibernateUtil.java
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/rest/BookController.java
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/utils/EntityNotFoundMapper.java
 /Users/georgegaspar/Documents/workspace/BookMyMovie/src/main/java/com/jeet/api/Tokens.java

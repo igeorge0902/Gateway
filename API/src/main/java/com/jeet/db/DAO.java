@@ -3,14 +3,13 @@ package com.jeet.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.FlushMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+import org.hibernate.resource.transaction.spi.TransactionStatus;
+import org.hibernate.stat.Statistics;
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
 import com.jeet.api.Tokens;
@@ -19,17 +18,36 @@ public class DAO {
 
 	private static DAO instance;
 	private SessionFactory factory;
+	private static volatile Session session;
+	private static volatile Transaction trans;
 
+
+	/**
+	 * Intantiate DAO class that loads configured SessionFactory object. 
+	 * 
+	 * You can also configure further settings for the session. 
+	 * 
+	 */
 	private DAO() {
-		Configuration conf = new Configuration();
-		conf.configure();
-				
-		StandardServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
-		factory = conf.buildSessionFactory(reg);
-		
+
+		factory = HibernateUtil.getSessionFactory();
 		System.out.println("Creating factory");
+
+		Statistics stats = factory.getStatistics(); 
+		stats.setStatisticsEnabled(true);
+		
+		session = factory.openSession();
+		session.setFlushMode(FlushMode.ALWAYS);
+
+		
 	}
 
+	/**
+	 * DAO instance is always synchronized, for sake of memory consistency, 
+	 * and we use a shared static session object.
+	 * 
+	 * @return DAO instance
+	 */
 	public static synchronized DAO instance() {
 		if (instance == null) {
 			instance = new DAO();
@@ -39,7 +57,15 @@ public class DAO {
 	
 	public Devices getDevices(String uuid){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Devices where uuid = :mUuid";
 		
 		Query query = session.createQuery(hql);
@@ -53,7 +79,15 @@ public class DAO {
 	
 	public Logins getUser(String user){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Logins where user = :mUser";
 		
 		Query query = session.createQuery(hql);
@@ -70,7 +104,15 @@ public class DAO {
 	
 	public int getNewUser(String newuser){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Logins where user like :mUser";
 		String hql_ = "from Logins where user = :mUser";
 
@@ -94,7 +136,15 @@ public class DAO {
 	
 	public int getNewEmail(String newemail){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Logins where email like :mEmail";
 		String hql_ = "from Logins where email = :mEmail";
 
@@ -118,7 +168,15 @@ public class DAO {
 	
 	public Logins getUuid(String uuid){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Logins where uuid = :mUuid";
 		
 		Query query = session.createQuery(hql);
@@ -132,7 +190,15 @@ public class DAO {
 	
 	public Tokens getToken(String token1){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Tokens where token1 = :mToken1";
 		
 		Query query = session.createQuery(hql);
@@ -146,7 +212,15 @@ public class DAO {
 	
 	public Tokens getToken2(String token1){
 		
-		Session session = factory.openSession();
+		session = factory.getCurrentSession();
+		
+	    trans = session.getTransaction();
+		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			
+			trans.begin();
+		}
+		
 		String hql = "from Tokens where token1 = :mToken1";
 		
 		Query query = session.createQuery(hql);
