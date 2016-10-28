@@ -12,8 +12,10 @@ hmacApp.config(function ($httpProvider) {
                 }
                 //TODO: get absolute path
                 config.headers['X-URL'] = config.url;
+
                 return config || $q.when(config);
             },
+            
             // This is the responseError interceptor
             responseError: function (rejection) {
 
@@ -24,7 +26,9 @@ hmacApp.config(function ($httpProvider) {
 
             // On request failure
             requestError: function (rejection) {
-                console.log(rejection); // Contains the data about the error on the request.
+                
+                // Contains the data about the error on the request.
+                console.log(rejection); 
 
                 // Return the promise rejection.
                 return $q.reject(rejection);
@@ -34,7 +38,6 @@ hmacApp.config(function ($httpProvider) {
             'response': function (response) {
 
                 // do something on success
-                //window.location.href = '/example/index.jsp'
 
                 // Return the response or promise.
                 return response || $q.when(response);
@@ -49,7 +52,7 @@ hmacApp.config(function ($httpProvider) {
         if (data) {
 
             // Add session token header if available (this is the previous one now)
-            // sessionToken will be used for API calls intead of JSESSIONID
+            // sessionToken will be used for API calls intead of JSESSIONID. The header here is just a decoration.
             if (localStorage.sessionToken) {
                 headersGetter()['X-SESSION-TOKEN'] = localStorage.sessionToken;
             }
@@ -57,26 +60,41 @@ hmacApp.config(function ($httpProvider) {
             // Add current time to prevent replay attacks
             var microTime = new Date().getTime();
             headersGetter()['X-MICRO-TIME'] = microTime;
+            
+            // ??
+            if (headersGetter['M-Device'] != undefined) {
+            var newData = '';
+            
+                var originalId = /deviceId=[0-9]*/gi;
+                var str = data;
+                var newId = 'deviceId='+headersGetter['M-Device'];
+                newData = str.replace(originalId, newId);
+                
+                data = newData;
 
+            }
+            
             // 4RI "Message", "secret"
-            // TODO: add content-length
             var hash = CryptoJS.HmacSHA512(headersGetter()['X-URL'] + ':' + data + ':' + microTime + ':' + data.length, localStorage.hmacSecret);
             var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
+            console.log(data)
             // Finally generate HMAC and set header
             headersGetter()['X-HMAC-HASH'] = hashInBase64;
 
             // And remove our temporary header
-            headersGetter()['X-URL'] = '';
+            headersGetter()['X-URL'] = localStorage.mobileDeviceId;
 
+            // Create an unreadable header object that will handle the redirect (never checked readability at this point :D)
+            // No legacy is so rich as honesty. - Shakespeare
             localStorage.M = headersGetter()['M'];
-            headersGetter()['M'] = localStorage.M;
-                        
+            
         }
         return data;
     });
 });
 
+// TODO: pages (mobile first)
 /*
 hmacApp.config(['$routeProvider',
   function($routeProvider) {
@@ -125,14 +143,14 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
         };
 
         var uuid = guid()
-
+        
         var encodedString = 'user=' +
             encodeURIComponent($scope.username) +
             '&pswrd=' +
             encodeURIComponent(hash) +
             '&deviceId=' +
             encodeURIComponent(uuid);
-
+                
         $scope.username = '';
         $scope.Result = [];
 
@@ -142,7 +160,6 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
             data: encodedString,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                //'Content-Length': encodedString.length,
                 'authorization': 'Basic ' + token
             }
         }).
@@ -150,7 +167,6 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
 
             // Store session token 
             localStorage.sessionToken = headers('X-Token');
-
             // Generate new HMAC secret out of our previous (username + password) and the new session token
             localStorage.hmacSecret = CryptoJS.SHA512(localStorage.sessionToken, localStorage.hmacSecret);
             $scope.Result = data;
@@ -158,6 +174,8 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
             if (data.Session === 'raked') {
                 //
                 window.location.href = '/example/index.jsp';
+            
+            // We check only if localStorage.M = headersGetter()['M'] is an object. The server will evaluate the value. That's fine.
             } else if (localStorage.M){
                 //
                 window.location.href = '/example/tabularasa.jsp';
@@ -179,5 +197,6 @@ hmacApp.controller('myCtrl', ['deviceDetector', function (deviceDetector) {
     var vm = this;
     vm.data = deviceDetector;
     vm.allData = JSON.stringify(vm.data, null, 2);
+    
 
 }]);

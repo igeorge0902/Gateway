@@ -47,8 +47,11 @@
         
 	</head>
 	<body class="homepage">
-
-	<!-- Header -->
+    <% out.println("Your IP address is " + request.getRemoteAddr());%>
+        <p>
+            Today's date: <%= (new java.util.Date()).toLocaleString()%>
+        </p>
+    <!-- Header -->
 		<div id="header">
 			<div id="nav-wrapper"> 
 				<!-- Nav -->
@@ -93,12 +96,18 @@
                                   <button class="btn btn-lg btn-primary" data-ng-click="refreshUser()">
                                     Fetch data from server
                                   </button>
+                                  <br/>
                                   <img ng-show="isLoading()" src="images/progressring.gif" />
                                   <h5>
-                                    Id : {{::user.id}}
+                                    <ul>
+                                        Id: {{user.id}}
+                                    </ul>
                                   </h5>
                                   <h5>
-                                    User name : {{::user.user}}
+                                    <ul>
+                                        User name: {{user.user}}
+                                    </ul>
+                                        Email: {{user.email}}
                                   </h5>
                                 </div>
                                 <div ng-controller="SearchCtrl">

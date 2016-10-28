@@ -104,11 +104,12 @@ myAppControllers.controller('GetUser', ['$scope', 'userApi', function ($scope, u
         $scope.user = [];
         $scope.errorMessage = '';
         $scope.successMessage = '';
-        $scope.refreshUser = refreshUser;
+    // $scope.refreshUser = refreshUser;
    
         userApi.getUser()
             .success(function (data, status, headers) {
                 console.log(headers());
+                $scope.user = null;
                 $scope.user = data;
                 $scope.status = status;
                 $scope.successMessage = "Hello!";
@@ -162,7 +163,7 @@ myAppControllers.controller('LogOut', ['$scope', 'logoutApi', function ($scope, 
 
 myAppControllers.controller('SearchCtrl', ['$scope', '$http',
     function ($scope, $http) {
-        $scope.url = 'https://localhost/mbook-1/rest/newuser';
+        $scope.url = '/mbook-1/rest/newuser';
         $scope.keywords = '';
         $scope.errorMessage = '';
         $scope.successMessage = '';
