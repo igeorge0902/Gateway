@@ -72,7 +72,8 @@ The webserver and the application server is configured not to use cache, but it 
 
 Apache HTTPD configuration
 ----
-- config files are included that you should use to get started.
+- config files are included that you should use to get started. 
+- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation!)
 
 # HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
