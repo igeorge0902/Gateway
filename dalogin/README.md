@@ -72,8 +72,20 @@ The webserver and the application server is configured not to use cache, but it 
 
 Apache HTTPD configuration
 ----
+
 - config files are included that you should use to get started. 
 - it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation!)
+
+# setup
+- build your Apache HTTP server with openssl
+- enable mod_ssl
+- add your SSL Certificate in httpd-ssl.conf (example included)
+- add (compile/build/install) mod_jk to your Apache installation
+- configure your mod_jk config file and include it in your httpd.conf file
+- reference your uriworkermap.properties in mod_jk config file (that is necesary, but actually we won't make use of it in this configuration)
+- reference your workers.properties file in mod_jk config file and set up your workers
+- the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf
+- create your AJP listner with the same port in your AS (Tomcat, GlassFish)
 
 # HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
