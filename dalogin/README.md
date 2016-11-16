@@ -74,18 +74,18 @@ Apache HTTPD configuration
 ----
 
 - config files are included that you should use to get started. 
-- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation!)
+- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation! - http://tomcat.apache.org/connectors-doc/ and http://tomcat.apache.org/connectors-doc/webserver_howto/apache.html)
 
 # setup
-- build your Apache HTTP server with openssl
-- enable mod_ssl
+- build your Apache HTTP server with openssl (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) - https://httpd.apache.org/docs/2.4/install.html, http://httpd.apache.org/docs/current/platform/win_compiling.html, https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL
+- enable mod_ssl - http://www.thegeekstuff.com/2011/03/install-apache2-ssl
 - add your SSL Certificate in httpd-ssl.conf (example included)
-- add (compile/build/install) mod_jk to your Apache installation
-- configure your mod_jk config file and include it in your httpd.conf file
+- add (compile/build/install) mod_jk pointing to your Apache installation like --with-apxs=/usr/sbin/apxs
+- configure your mod_jk config file and include it in your httpd.conf file - https://www.mulesoft.com/tcat/apache-tomcat-mod-jk-connector-configuration, https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/clustering-http-modjk.html
 - reference your uriworkermap.properties in mod_jk config file (that is necesary, but actually we won't make use of it in this configuration)
 - reference your workers.properties file in mod_jk config file and set up your workers
-- the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf
-- create your AJP listner with the same port in your AS (Tomcat, GlassFish)
+- the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf in this configuration
+- create your AJP listner with the same port in your AS (Tomcat, GlassFish - https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html, https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
 
 # HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
@@ -127,6 +127,7 @@ Clustering:
 ----
 - The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
 - GlassFish and Wildfly settings are under construction
+- https://people.apache.org/~mturk/docs/article/ftwai.html
 
 Session handling:
 ----
