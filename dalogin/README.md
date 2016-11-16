@@ -85,7 +85,7 @@ Apache HTTPD configuration
 - reference your uriworkermap.properties in mod_jk config file (that is necesary, but actually we won't make use of it in this configuration)
 - reference your workers.properties file in mod_jk config file and set up your workers
 - the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf in this configuration
-- create your AJP listner with the same port in your AS (Tomcat, GlassFish - https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html, https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
+- create your AJP listner with the same port in your AS (Tomcat, GlassFish - https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-server-xml-configuration-example/, https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html, https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
 
 # HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
