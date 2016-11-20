@@ -77,7 +77,19 @@ Apache HTTPD configuration
 - it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation! - http://tomcat.apache.org/connectors-doc/ and http://tomcat.apache.org/connectors-doc/webserver_howto/apache.html)
 
 # setup
-- build your Apache HTTP server with openssl (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) - https://httpd.apache.org/docs/2.4/install.html, http://httpd.apache.org/docs/current/platform/win_compiling.html, https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL
+- install openssl - for macOs you can use homebrew: brew install openssl
+- build your Apache HTTP server with openssl and optionally apr included (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) - https://httpd.apache.org/docs/2.4/install.html, http://httpd.apache.org/docs/current/platform/win_compiling.html, https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL
+
+```shell
+./configure \
+    --prefix=/opt/httpd \
+    --with-included-apr \
+    --enable-ssl \
+    --with-ssl=/opt/openssl-1.0.1i \
+    --enable-ssl-staticlib-deps \
+    --enable-mods-static=ssl
+```
+
 - enable mod_ssl - http://www.thegeekstuff.com/2011/03/install-apache2-ssl
 - add your SSL Certificate in httpd-ssl.conf (example included)
 - add (compile/build/install) mod_jk pointing to your Apache installation like --with-apxs=/usr/sbin/apxs
