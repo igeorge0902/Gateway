@@ -40,6 +40,27 @@ For more information on how it works: https://stormpath.com/blog/angular-xsrf
 
 You can also add your own request / response filters to do the dirty job: https://dzone.com/articles/preventing-csrf-java-web-apps
 
+# Unix epoch time
+The universal implementation of Unix epoch time in all used languages made it available that all parts of the system can and does align to the elapsed time since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970 in the same format - LONG:
+
+- Angular JS:
+```javascript
+var microTime = new Date().getTime();
+```
+- Java:
+```Java
+System.currentTimeMillis()
+```
+- Swift:
+```swift
+     func getCurrentMillis()->Int64{
+        
+        let time = Int64(NSDate().timeIntervalSince1970 * 1000)
+
+        return  time
+    }
+```
+
 ----
 
 The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
