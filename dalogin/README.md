@@ -49,7 +49,8 @@ var microTime = new Date().getTime();
 ```
 - Java:
 ```Java
-System.currentTimeMillis()
+System.currentTimeMillis();
+SessionCreated = session.getCreationTime();
 ```
 - Swift:
 ```swift
