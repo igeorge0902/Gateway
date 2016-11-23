@@ -66,6 +66,20 @@ SessionCreated = session.getCreationTime();
 
 The general concept was to create an "entity" of a user that consists of username, uuid, password, device, voucher and login status (derived from the sessionid into the device_status table) in the context of the system. The main link should remian the uuid, I think.
 
+The user object will be created by the following request: 
+
+
+Gateway/API/src/main/java/com/jeet/rest/BookController.java, line 68:
+
+```java
+https://your_server.hu/{contextPath}/user/{user}/{token1}"
+```
+that will be called by the following code in AdminServlet.java at line 169
+
+```java
+RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
+```
+The context is what you set up in your web.xml, and the token parameter will be supplied by the client request, that the it has recieved upfront during the authentication.
 
 Important:
 ----
