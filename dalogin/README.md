@@ -79,7 +79,8 @@ that will be called by the following code in AdminServlet.java at line 169
 ```java
 RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 ```
-The context is what you set up in your web.xml, and the token parameter will be supplied by the client request, that the it has recieved upfront during the authentication.
+The context is what you set up in your web.xml, and the token parameter will be retrieved from the session. See between line 60 and 70 in AdminServlet.java.
+
 
 Important:
 ----
