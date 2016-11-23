@@ -81,6 +81,7 @@ RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user
 ```
 The context is what you set up in your web.xml, and the token parameter will be retrieved from the session. See between line 60 and 70 in AdminServlet.java.
 
+User has to provide the second key (token2) of tokens by a client request, which has to belong to the first one - retrieved from the session - by a given device.
 
 Important:
 ----
