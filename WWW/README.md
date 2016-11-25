@@ -50,4 +50,10 @@ Configuration:
 - for registration, if activation is needed the status code is set to 300, so the http interceptors has to be listening to the same status code, therefore.
 - for setting the vouchers you will need to use numbers when setting the voucher and the flags in the dB
 
+Useful links:
+----
+The hmac authentication was implemented by the following example:
+
+- https://github.com/Monofraps/angular-node-hmac-example
+
 Appology for the "place-holder" files!
