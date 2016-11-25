@@ -182,7 +182,16 @@ Clustering:
 Session handling:
 ----
 - the main config is set in the web.xml
-- AS dependent settings (GlassFish, Wildfly) must be implemented separately (only Tomcat provides built-in session persistence if you make your session attributes serializable)
+- AS dependent settings (TomCat, GlassFish, Wildfly) must be implemented separately, with which you also have the ability to scale the resources needed for your system (only Tomcat provides built-in session persistence if you make your session attributes serializable). Please read through carefully the official documentations when configuring the ways of your session management. Basically, you can have three main options: in-memory, file store and database session persistance.
+
+Related links:
+@TomCat
+- http://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Persistence_Across_Restarts
+@GlassFish
+- https://docs.oracle.com/cd/E18930_01/html/821-2418/beaha.html#beahh
+@WildFly
+- https://docs.jboss.org/author/display/WFLY8/Undertow+subsystem+configuration
+- https://wildscribe.github.io/Wildfly/8.2.0.Final/%2Fsubsystem%2Fundertow%2Fservlet-container%2Findex.html
 
 <br>
 > The project uses and needs Java JDK 1.8.x 
