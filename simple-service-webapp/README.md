@@ -5,6 +5,13 @@ RESTful API component for the Gateway project
 
 Feature set:
 - it checks the active user sessions in the /login context
+- in TomCat clustered setup the app listening on the /admin URI can read the /login context on all nodes. You may need to set crossContext flag in context.xml:
+
+```xml
+<Context crossContext="true">     
+
+</Context>
+```
 
 Build from Eclipse:
 - import as Maven project
