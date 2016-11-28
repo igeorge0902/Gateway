@@ -4,7 +4,7 @@ wildFly specific files
 - web.xml
 - pom.xml
 
-Substitute the following files for the originally included ones to make the build be able to run on wildFly application server.
+Substitute the following files for the originally included ones to make the build be able to run on wildFly application server. Don't forget to rebuild the project with the new pom.xml. Place the jboss-deployment-structure.xml to the WEB-INF directory. You may need to manually upgrade certain wildFly dependencies, as well as replace the jboss-logging.jar file, which is a dependency for Hibernate 5.x. Check your versions carefully!
 
 - tested on wildFly 10.x
 
