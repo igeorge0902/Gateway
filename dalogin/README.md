@@ -72,14 +72,32 @@ The user object will be created by the following request:
 Gateway/API/src/main/java/com/jeet/rest/BookController.java, line 68:
 
 ```java
-https://your_server.hu/{contextPath}/user/{user}/{token1}"
+https://your_server.hu/{contextPath}/{user}/{token1}"
 ```
 that will be called by the following code in AdminServlet.java at line 169
 
 ```java
 RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 ```
-The context is what you set up in your web.xml, and the token parameter will be retrieved from the session. See between line 60 and 70 in AdminServlet.java.
+The context is what you set up in your web.xml
+
+```xml
+  <context-param>
+    <param-name>webApiContextUrl</param-name>
+    <param-value>/rest/user/</param-value>
+  </context-param>
+```
+
+You define the first part of the context in the web.xml for the API (Gateway/API/src/main/webapp/WEB-INF/web.xml):
+
+```xml
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+```
+
+The token parameter will be retrieved from the session, which will be the "user" attribute. See between line 60 and 70 in AdminServlet.java.
 
 User has to provide the second key (token2) of tokens by a client request, which has to belong to the first one - retrieved from the session - by a given device.
 
