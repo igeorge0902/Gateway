@@ -72,14 +72,15 @@ The user object will be created by the following request:
 Gateway/API/src/main/java/com/jeet/rest/BookController.java, line 68:
 
 ```java
-https://your_server.hu/{contextPath}/{user}/{token1}"
+https://your_server.hu/{appName}/{contextPath}/{user}/{token1}"
 ```
 that will be called by the following code in AdminServlet.java at line 169
 
 ```java
 RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 ```
-The context is what you set up in your web.xml
+
+The appName (or application context, which is also the base URI you define for JkMount) is defined in the pom.xml with artifactId and version nr (or <finalName> tag, if you prefer it that way), and contextPath is what you set up in your web.xml
 
 ```xml
   <context-param>
