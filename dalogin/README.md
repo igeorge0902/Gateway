@@ -80,7 +80,7 @@ that will be called by the following code in AdminServlet.java at line 169
 RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 ```
 
-The appName (or application context, which is also the base URI you define for JkMount) is defined in the pom.xml with artifactId and version nr (or <finalName> tag, if you prefer it that way), and contextPath is what you set up in your web.xml
+The appName (or application context, which is also the base URI you define for JkMount) is defined in the pom.xml with artifactId and version nr (or finalName tag - https://maven.apache.org/pom.html, if you prefer it that way), and contextPath is what you set up in your web.xml
 
 ```xml
   <context-param>
