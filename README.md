@@ -1,4 +1,4 @@
-# Gateway
+# General Authentication Service - GAS 
 
 Check the listed components above, and their readme for specific notes, instructions.
 
