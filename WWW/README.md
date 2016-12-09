@@ -22,7 +22,7 @@ You might get a response in the form of a white page. It means your environment 
 # Notes on request header transformation: 
 When the user initiates a login or registration through the WWW app, the outgoing request will go through a transformation before the actual call to the server will be made. It means all the corresponding data will be altered before making the request, and the request will happen once the transformation has finished. This mechanism also helps tighten the security since for the same data, which the user sends with the client request, the final data may be different when reaching the server, however containing the same information, which the server is aware of. There is no other way around.  
 
-- the WWW app is split into two parts due to the fact that I have implemented the requesr header transformation in 1.3.x version of angular js, and Google changed the implementation for versions 1.3.x and above, but I plan to upgrade it to newer version when I'll time for it!
+- the WWW app is split into two parts due to the fact that I have implemented the requesr header transformation in 1.3.x version of angular js, and Google changed the implementation for versions above 1.3.x, but I plan to upgrade it to newer version when I'll time for it!
 - the js/AesUtil.js works with at least Angular Js 1.4.x
 
 # Usage of the Aesutil
