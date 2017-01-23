@@ -17,6 +17,19 @@ You can create a fully functional debug environment in Eclipse using any of your
 # Swift
 - updates will be coming soon to Swift 3.0!;)
 
+# Analytics
+You can find various analytics services for web and mobile, as well. Please check out one of them if you want to track app events like app start, login, logout, registration, etc.
+
+######@Facebook
+- https://developers.facebook.com/docs/analytics
+
+######@Google
+- https://developers.google.com/analytics/devguides/collection/
+
+######@Amazon (mobile only)
+- https://www.google.com/aclk?sa=L&ai=DChcSEwi2_eufh9jRAhXLDxgKHQTlDzwYABAA&sig=AOD64_3iKzYsiGgpp5iPc06DrgFf6d6LJA&q=&ved=0ahUKEwidl-afh9jRAhXEDpoKHd8yA2oQ0QwIGA&adurl=
+
+
 # Contacts:
-- email: igeorge1982@gmail.com, igeorge1982@hotmail.com, igeorge1982@yahoo.com
+- email: igeorge1982@gmail.com (primary), igeorge1982@hotmail.com, igeorge1982@yahoo.com
 - mobile: +36304088520
