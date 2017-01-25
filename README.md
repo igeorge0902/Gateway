@@ -69,6 +69,12 @@ The server will handle two error cases once the login has succeeded.
 - 403 response: the server will throw response 403, if and only when the token in the Ciphertext is not the correct one. This can happen whenever the token2 is not the same on the server, which it sent previously to the client. You will pass this stage if and only when the client can supply a valid token2 belonging to the corresponding user. It is a security measurement to overwrite the token pairs automatically if any logout or new session creation occurs for the corresponding user. Also, obviously 403 will be thrown, if no Ciphertext is supplied.
 - 412 response: it actually will never occur, but it handles the case when the user is no longer present in the dataBase, but on the client and server the session is valid and active.
 
+# dateBase
+All the sql scripts should run flawlessly. If not, check your schema, user, etc. The sql script files are a result of dumping my working schema.
+
+# Murphy's Law
+If you have still issues, pls do not hesitate to contact me!
+
 # Swift
 - updates will be coming soon to Swift 3.0!;)
 
