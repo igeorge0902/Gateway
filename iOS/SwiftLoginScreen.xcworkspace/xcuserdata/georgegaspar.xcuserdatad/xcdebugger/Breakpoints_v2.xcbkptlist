@@ -996,7 +996,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftLoginScreen/LoginVC.swift"
@@ -1092,7 +1092,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftLoginScreen/LoginVC.swift"
@@ -1105,14 +1105,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SwiftLoginScreen.LoginVC.signinTapped (__ObjC.UIButton) -&gt; ()"
                   moduleName = "SwiftLoginScreen"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/LoginVC.swift"
-                  timestampString = "507623856.606043"
+                  timestampString = "507624382.152048"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "267"
@@ -1120,14 +1120,14 @@
                   offsetFromSymbolStart = "3033">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SwiftLoginScreen.LoginVC.(signinTapped (__ObjC.UIButton) -&gt; ()).(closure #1)"
                   moduleName = "SwiftLoginScreen"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/LoginVC.swift"
-                  timestampString = "507623856.607292"
+                  timestampString = "507624382.153328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "271"
@@ -1135,6 +1135,22 @@
                   offsetFromSymbolStart = "102">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/LoginVC.swift"
+            timestampString = "507624546.128367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "dataTask(_:hash:deviceId:systemVersion:onCompletion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
