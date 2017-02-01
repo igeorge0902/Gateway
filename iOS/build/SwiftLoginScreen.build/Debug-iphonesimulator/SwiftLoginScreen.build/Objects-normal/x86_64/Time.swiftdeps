@@ -11,20 +11,20 @@ provides-member:
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "dismissKeyboard"]
 provides-dynamic-lookup:
-- "dismissKeyboard"
 - "hideKeyboardWhenTappedAround"
+- "dismissKeyboard"
 depends-top-level:
-- !private "Date"
-- "Sequence"
-- !private "*"
 - "String"
-- !private "UnicodeScalarType"
 - "zeroTime"
-- !private "BooleanLiteralType"
+- !private "*"
 - "Int64"
-- !private "StringLiteralType"
-- !private "UITapGestureRecognizer"
 - "UIViewController"
+- !private "UITapGestureRecognizer"
+- !private "Date"
+- !private "StringLiteralType"
+- "Sequence"
+- !private "UnicodeScalarType"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "UITapGestureRecognizer"]
 - !private ["Ps9AnyObject", "UIViewController"]

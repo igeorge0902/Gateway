@@ -6,20 +6,20 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen14CachedResponse", ""]
 provides-dynamic-lookup:
-- "mimeType"
+- "encoding"
 - "url"
 - "timestamp"
-- "encoding"
 - "data"
+- "mimeType"
 depends-top-level:
 - "AssignmentPrecedence"
-- "Date"
+- "Data"
 - "NSString"
-- "String"
-- !private "StringLiteralType"
+- "Date"
 - "CachedResponse"
 - "RLMObject"
-- "Data"
+- !private "StringLiteralType"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "Data"]
 - !private ["Ps9AnyObject", "Date"]

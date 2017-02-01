@@ -9,9 +9,9 @@ provides-member:
 - ["C16SwiftLoginScreen6People", "uuid"]
 provides-dynamic-lookup:
 - "uuid"
+- "name"
 - "deviceId"
 - "email"
-- "name"
 depends-top-level:
 - "People"
 - "String"

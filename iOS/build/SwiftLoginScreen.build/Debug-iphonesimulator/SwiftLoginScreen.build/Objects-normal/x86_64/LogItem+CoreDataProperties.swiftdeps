@@ -9,8 +9,8 @@ provides-dynamic-lookup:
 - "title"
 - "itemText"
 depends-top-level:
-- "String"
 - "LogItem"
+- "String"
 depends-member:
 - ["Ps9AnyObject", "itemText"]
 - ["Ps9AnyObject", "title"]
