@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomURLSessionDelegate: NSURLSessionDownloadTask, NSURLSessionDelegate {
+class CustomURLSessionDelegate: URLSessionDownloadTask, URLSessionDelegate {
     
     // MARK: - NSURLSessionDelegate
     /*
@@ -28,8 +28,8 @@ class CustomURLSessionDelegate: NSURLSessionDownloadTask, NSURLSessionDelegate {
         }
     }*/
     
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
-        if let data = NSData(contentsOfURL: location) {
+    func URLSession(_ session: Foundation.URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingToURL location: URL) {
+        if let data = try? Data(contentsOf: location) {
             // work with data ...
               UIImage(data: data)
         }
@@ -44,19 +44,19 @@ class CustomURLSessionDelegate: NSURLSessionDownloadTask, NSURLSessionDelegate {
         static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost"]
     }
     
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler:
+        @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
         completionHandler(
             
-            NSURLSessionAuthChallengeDisposition.UseCredential,
-            NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
+            Foundation.URLSession.AuthChallengeDisposition.useCredential,
+            URLCredential(trust: challenge.protectionSpace.serverTrust!))
     }
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-                    newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+    func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
+                    newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
         
-        let newRequest : NSURLRequest? = request
+        let newRequest : URLRequest? = request
         
         print(newRequest?.description);
         completionHandler(newRequest)

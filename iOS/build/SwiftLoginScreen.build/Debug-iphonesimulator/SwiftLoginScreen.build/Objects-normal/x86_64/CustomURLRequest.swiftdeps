@@ -2,411 +2,390 @@
 provides-top-level:
 provides-nominal:
 provides-member:
-- ["CSo12NSURLRequest", ""]
-- ["CSo12NSURLRequest", "requestWithURL"]
+- ["V10Foundation10URLRequest", ""]
+- ["V10Foundation10URLRequest", "requestWithURL"]
 provides-dynamic-lookup:
 depends-top-level:
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- !private "URLQueryItem"
+- "TimeInterval"
+- !private "JSONSerialization"
 - !private "Array"
-- !private "NSJSONSerialization"
-- "NSTimeInterval"
-- !private "NSURLQueryItem"
+- "URLRequest"
 - "NSDictionary"
-- "NSURLRequestCachePolicy"
-- !private "NSURLComponents"
-- !private "BooleanLiteralType"
-- "NSURLRequest"
-- "NSURL"
-- !private "StringLiteralType"
-- !private "NSMutableURLRequest"
+- !private "Foundation"
 - "String"
+- !private "NSMutableURLRequest"
+- !private "BooleanLiteralType"
+- "URL"
+- !private "StringLiteralType"
+- !private "URLComponents"
 depends-member:
-- !private ["Ps9AnyObject", "HTTPBody"]
-- !private ["Ps9AnyObject", "HTTPMethod"]
-- !private ["Ps9AnyObject", "NSJSONSerialization"]
-- !private ["Ps9AnyObject", "NSMutableURLRequest"]
-- !private ["Ps9AnyObject", "NSURLComponents"]
-- !private ["Ps9AnyObject", "NSURLQueryItem"]
-- !private ["Ps9AnyObject", "URL"]
 - !private ["Ps9AnyObject", "addValue"]
-- !private ["Ps9AnyObject", "dataWithJSONObject"]
+- !private ["Ps9AnyObject", "data"]
+- !private ["Ps9AnyObject", "httpBody"]
+- !private ["Ps9AnyObject", "httpMethod"]
 - !private ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "queryItems"]
-- ["Ps9AnyObject", "requestWithURL"]
 - !private ["Ps9AnyObject", "setValue"]
-- !private ["Ps23ArrayLiteralConvertible", "Element"]
-- !private ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
-- !private ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
-- !private ["Ps11CVarArgType", "HTTPBody"]
-- !private ["Ps11CVarArgType", "HTTPMethod"]
-- !private ["Ps11CVarArgType", "IntegerLiteralType"]
-- !private ["Ps11CVarArgType", "NSJSONSerialization"]
-- !private ["Ps11CVarArgType", "NSMutableURLRequest"]
-- !private ["Ps11CVarArgType", "NSURLComponents"]
-- !private ["Ps11CVarArgType", "NSURLQueryItem"]
-- !private ["Ps11CVarArgType", "URL"]
-- !private ["Ps11CVarArgType", "addValue"]
-- !private ["Ps11CVarArgType", "dataWithJSONObject"]
-- !private ["Ps11CVarArgType", "init"]
-- !private ["Ps11CVarArgType", "queryItems"]
-- ["Ps11CVarArgType", "requestWithURL"]
-- !private ["Ps11CVarArgType", "setValue"]
-- !private ["Ps14CollectionType", "Generator"]
-- !private ["Ps14CollectionType", "Index"]
-- !private ["Ps14CollectionType", "SubSequence"]
-- !private ["Ps14CollectionType", "_Element"]
-- !private ["Ps14CollectionType", "map"]
-- !private ["Ps10Comparable", "Distance"]
-- !private ["Ps10Comparable", "IntegerLiteralType"]
-- !private ["Ps10Comparable", "_DisabledRangeIndex"]
-- !private ["Ps28CustomDebugStringConvertible", "Generator"]
-- !private ["Ps28CustomDebugStringConvertible", "HTTPBody"]
-- !private ["Ps28CustomDebugStringConvertible", "HTTPMethod"]
-- !private ["Ps28CustomDebugStringConvertible", "Index"]
-- !private ["Ps28CustomDebugStringConvertible", "NSJSONSerialization"]
+- ["Sa", "deinit"]
+- ["Sb", "deinit"]
+- !private ["Ps7CVarArg", "Iterator"]
+- !private ["Ps7CVarArg", "addValue"]
+- !private ["Ps7CVarArg", "data"]
+- !private ["Ps7CVarArg", "httpBody"]
+- !private ["Ps7CVarArg", "httpMethod"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "map"]
+- !private ["Ps7CVarArg", "setValue"]
+- !private ["Ps10Collection", "Iterator"]
+- !private ["Ps10Collection", "map"]
+- !private ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "CachePolicy"]
+- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
+- !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableURLRequest"]
-- !private ["Ps28CustomDebugStringConvertible", "NSURLComponents"]
-- !private ["Ps28CustomDebugStringConvertible", "NSURLQueryItem"]
-- ["Ps28CustomDebugStringConvertible", "Some"]
-- !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
-- !private ["Ps28CustomDebugStringConvertible", "URL"]
-- !private ["Ps28CustomDebugStringConvertible", "_Element"]
+- !private ["Ps28CustomDebugStringConvertible", "URLComponents"]
+- !private ["Ps28CustomDebugStringConvertible", "URLQueryItem"]
 - !private ["Ps28CustomDebugStringConvertible", "addValue"]
-- !private ["Ps28CustomDebugStringConvertible", "dataWithJSONObject"]
+- !private ["Ps28CustomDebugStringConvertible", "data"]
+- !private ["Ps28CustomDebugStringConvertible", "httpBody"]
+- !private ["Ps28CustomDebugStringConvertible", "httpMethod"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "map"]
 - !private ["Ps28CustomDebugStringConvertible", "queryItems"]
-- ["Ps28CustomDebugStringConvertible", "requestWithURL"]
 - !private ["Ps28CustomDebugStringConvertible", "setValue"]
-- !private ["Ps23CustomStringConvertible", "Generator"]
-- !private ["Ps23CustomStringConvertible", "HTTPBody"]
-- !private ["Ps23CustomStringConvertible", "HTTPMethod"]
-- !private ["Ps23CustomStringConvertible", "Index"]
-- !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
-- !private ["Ps23CustomStringConvertible", "NSJSONSerialization"]
+- !private ["Ps28CustomDebugStringConvertible", "url"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "CachePolicy"]
+- !private ["Ps17CustomReflectable", "Element"]
+- !private ["Ps17CustomReflectable", "Iterator"]
+- !private ["Ps17CustomReflectable", "JSONSerialization"]
+- !private ["Ps17CustomReflectable", "NSMutableURLRequest"]
+- !private ["Ps17CustomReflectable", "URLComponents"]
+- !private ["Ps17CustomReflectable", "URLQueryItem"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "map"]
+- !private ["Ps17CustomReflectable", "queryItems"]
+- !private ["Ps17CustomReflectable", "url"]
+- ["Ps23CustomStringConvertible", "CachePolicy"]
+- !private ["Ps23CustomStringConvertible", "Iterator"]
+- !private ["Ps23CustomStringConvertible", "JSONSerialization"]
 - !private ["Ps23CustomStringConvertible", "NSMutableURLRequest"]
-- !private ["Ps23CustomStringConvertible", "NSURLComponents"]
-- !private ["Ps23CustomStringConvertible", "NSURLQueryItem"]
-- !private ["Ps23CustomStringConvertible", "SubSequence"]
-- !private ["Ps23CustomStringConvertible", "URL"]
-- !private ["Ps23CustomStringConvertible", "_Element"]
+- !private ["Ps23CustomStringConvertible", "URLComponents"]
+- !private ["Ps23CustomStringConvertible", "URLQueryItem"]
 - !private ["Ps23CustomStringConvertible", "addValue"]
-- !private ["Ps23CustomStringConvertible", "dataWithJSONObject"]
+- !private ["Ps23CustomStringConvertible", "data"]
+- !private ["Ps23CustomStringConvertible", "httpBody"]
+- !private ["Ps23CustomStringConvertible", "httpMethod"]
 - !private ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "map"]
 - !private ["Ps23CustomStringConvertible", "queryItems"]
-- ["Ps23CustomStringConvertible", "requestWithURL"]
 - !private ["Ps23CustomStringConvertible", "setValue"]
-- !private ["Vs10Dictionary", "Generator"]
-- !private ["Vs10Dictionary", "Index"]
-- !private ["Vs10Dictionary", "SubSequence"]
-- !private ["Vs10Dictionary", "_Element"]
-- !private ["Vs10Dictionary", "deinit"]
+- !private ["Ps23CustomStringConvertible", "url"]
+- ["V10Foundation4Data", "deinit"]
+- !private ["Vs10Dictionary", "Iterator"]
+- ["Vs10Dictionary", "deinit"]
 - !private ["Vs10Dictionary", "map"]
-- !private ["Vs19DictionaryGenerator", "Element"]
-- !private ["Vs15DictionaryIndex", "Distance"]
-- !private ["Vs15DictionaryIndex", "_DisabledRangeIndex"]
-- !private ["Ps28DictionaryLiteralConvertible", "Generator"]
-- !private ["Ps28DictionaryLiteralConvertible", "Index"]
-- !private ["Ps28DictionaryLiteralConvertible", "SubSequence"]
-- !private ["Ps28DictionaryLiteralConvertible", "_Element"]
-- !private ["Ps28DictionaryLiteralConvertible", "map"]
-- !private ["Ps9Equatable", "Distance"]
+- !private ["Vs18DictionaryIterator", "Element"]
+- ["Ps9Equatable", "CachePolicy"]
 - !private ["Ps9Equatable", "Element"]
-- !private ["Ps9Equatable", "HTTPBody"]
-- !private ["Ps9Equatable", "HTTPMethod"]
-- !private ["Ps9Equatable", "IntegerLiteralType"]
-- !private ["Ps9Equatable", "NSJSONSerialization"]
+- !private ["Ps9Equatable", "JSONSerialization"]
 - !private ["Ps9Equatable", "NSMutableURLRequest"]
-- !private ["Ps9Equatable", "NSURLComponents"]
-- !private ["Ps9Equatable", "NSURLQueryItem"]
-- !private ["Ps9Equatable", "URL"]
-- !private ["Ps9Equatable", "_DisabledRangeIndex"]
+- !private ["Ps9Equatable", "URLComponents"]
+- !private ["Ps9Equatable", "URLQueryItem"]
 - !private ["Ps9Equatable", "addValue"]
-- !private ["Ps9Equatable", "dataWithJSONObject"]
+- !private ["Ps9Equatable", "data"]
+- !private ["Ps9Equatable", "httpBody"]
+- !private ["Ps9Equatable", "httpMethod"]
 - !private ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "queryItems"]
-- ["Ps9Equatable", "requestWithURL"]
 - !private ["Ps9Equatable", "setValue"]
-- !private ["Ps16ForwardIndexType", "Distance"]
-- !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
-- !private ["Ps16ForwardIndexType", "_DisabledRangeIndex"]
-- !private ["Ps13GeneratorType", "Element"]
-- !private ["Ps8Hashable", "HTTPBody"]
-- !private ["Ps8Hashable", "HTTPMethod"]
-- !private ["Ps8Hashable", "IntegerLiteralType"]
-- !private ["Ps8Hashable", "NSJSONSerialization"]
+- !private ["Ps9Equatable", "url"]
+- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Iterator"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "map"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps8Hashable", "CachePolicy"]
+- !private ["Ps8Hashable", "JSONSerialization"]
 - !private ["Ps8Hashable", "NSMutableURLRequest"]
-- !private ["Ps8Hashable", "NSURLComponents"]
-- !private ["Ps8Hashable", "NSURLQueryItem"]
-- !private ["Ps8Hashable", "URL"]
+- !private ["Ps8Hashable", "URLComponents"]
+- !private ["Ps8Hashable", "URLQueryItem"]
 - !private ["Ps8Hashable", "addValue"]
-- !private ["Ps8Hashable", "dataWithJSONObject"]
+- !private ["Ps8Hashable", "data"]
+- !private ["Ps8Hashable", "httpBody"]
+- !private ["Ps8Hashable", "httpMethod"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "queryItems"]
-- ["Ps8Hashable", "requestWithURL"]
 - !private ["Ps8Hashable", "setValue"]
-- !private ["Ps9Indexable", "Generator"]
-- !private ["Ps9Indexable", "Index"]
-- !private ["Ps9Indexable", "SubSequence"]
-- !private ["Ps9Indexable", "_Element"]
+- !private ["Ps8Hashable", "url"]
+- !private ["Ps9Indexable", "Iterator"]
 - !private ["Ps9Indexable", "map"]
-- !private ["Si", "IntegerLiteralType"]
-- !private ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
-- !private ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
-- !private ["Ps11IntegerType", "IntegerLiteralType"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "IntegerLiteralType"]
-- !private ["Ps14MirrorPathType", "IntegerLiteralType"]
-- !private ["PSo8NSCoding", "HTTPBody"]
-- !private ["PSo8NSCoding", "HTTPMethod"]
-- !private ["PSo8NSCoding", "NSJSONSerialization"]
-- !private ["PSo8NSCoding", "NSMutableURLRequest"]
-- !private ["PSo8NSCoding", "NSURLComponents"]
-- !private ["PSo8NSCoding", "NSURLQueryItem"]
+- !private ["Ps13IndexableBase", "Iterator"]
+- !private ["Ps13IndexableBase", "map"]
+- !private ["Ps16IteratorProtocol", "Element"]
+- !private ["CSo17JSONSerialization", "data"]
+- !private ["P10SwiftyJSON17JSONSubscriptType", "init"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
 - !private ["PSo8NSCoding", "addValue"]
+- !private ["PSo8NSCoding", "httpBody"]
+- !private ["PSo8NSCoding", "httpMethod"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "setValue"]
-- !private ["PSo9NSCopying", "HTTPBody"]
-- !private ["PSo9NSCopying", "HTTPMethod"]
-- !private ["PSo9NSCopying", "NSJSONSerialization"]
-- !private ["PSo9NSCopying", "NSMutableURLRequest"]
-- !private ["PSo9NSCopying", "NSURLComponents"]
-- !private ["PSo9NSCopying", "NSURLQueryItem"]
-- !private ["PSo9NSCopying", "URL"]
 - !private ["PSo9NSCopying", "addValue"]
+- !private ["PSo9NSCopying", "httpBody"]
+- !private ["PSo9NSCopying", "httpMethod"]
 - !private ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "queryItems"]
 - !private ["PSo9NSCopying", "setValue"]
-- !private ["CSo19NSJSONSerialization", "dataWithJSONObject"]
-- !private ["VSC20NSJSONWritingOptions", "Element"]
-- !private ["PSo16NSMutableCopying", "HTTPBody"]
-- !private ["PSo16NSMutableCopying", "HTTPMethod"]
-- !private ["PSo16NSMutableCopying", "NSJSONSerialization"]
-- !private ["PSo16NSMutableCopying", "NSMutableURLRequest"]
-- !private ["PSo16NSMutableCopying", "NSURLComponents"]
-- !private ["PSo16NSMutableCopying", "NSURLQueryItem"]
+- ["CSo12NSDictionary", "deinit"]
 - !private ["PSo16NSMutableCopying", "addValue"]
+- !private ["PSo16NSMutableCopying", "httpBody"]
+- !private ["PSo16NSMutableCopying", "httpMethod"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "setValue"]
-- !private ["CSo19NSMutableURLRequest", "HTTPBody"]
-- !private ["CSo19NSMutableURLRequest", "HTTPMethod"]
 - !private ["CSo19NSMutableURLRequest", "addValue"]
+- ["CSo19NSMutableURLRequest", "deinit"]
+- !private ["CSo19NSMutableURLRequest", "httpBody"]
+- !private ["CSo19NSMutableURLRequest", "httpMethod"]
 - !private ["CSo19NSMutableURLRequest", "init"]
 - !private ["CSo19NSMutableURLRequest", "setValue"]
-- !private ["CSo8NSObject", "HTTPBody"]
-- !private ["CSo8NSObject", "HTTPMethod"]
-- ["CSo8NSObject", "NSDictionary"]
-- !private ["CSo8NSObject", "NSJSONSerialization"]
-- !private ["CSo8NSObject", "NSMutableURLRequest"]
-- ["CSo8NSObject", "NSTimeInterval"]
-- ["CSo8NSObject", "NSURL"]
-- !private ["CSo8NSObject", "NSURLComponents"]
-- !private ["CSo8NSObject", "NSURLQueryItem"]
-- ["CSo8NSObject", "NSURLRequest"]
-- ["CSo8NSObject", "NSURLRequestCachePolicy"]
-- ["CSo8NSObject", "String"]
-- !private ["CSo8NSObject", "URL"]
 - !private ["CSo8NSObject", "addValue"]
-- !private ["CSo8NSObject", "dataWithJSONObject"]
+- !private ["CSo8NSObject", "data"]
+- !private ["CSo8NSObject", "httpBody"]
+- !private ["CSo8NSObject", "httpMethod"]
 - !private ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "queryItems"]
-- ["CSo8NSObject", "requestWithURL"]
 - !private ["CSo8NSObject", "setValue"]
-- !private ["PSo16NSObjectProtocol", "HTTPBody"]
-- !private ["PSo16NSObjectProtocol", "HTTPMethod"]
-- !private ["PSo16NSObjectProtocol", "NSJSONSerialization"]
-- !private ["PSo16NSObjectProtocol", "NSMutableURLRequest"]
-- !private ["PSo16NSObjectProtocol", "NSURLComponents"]
-- !private ["PSo16NSObjectProtocol", "NSURLQueryItem"]
-- !private ["PSo16NSObjectProtocol", "URL"]
 - !private ["PSo16NSObjectProtocol", "addValue"]
-- !private ["PSo16NSObjectProtocol", "dataWithJSONObject"]
+- !private ["PSo16NSObjectProtocol", "data"]
+- !private ["PSo16NSObjectProtocol", "httpBody"]
+- !private ["PSo16NSObjectProtocol", "httpMethod"]
 - !private ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "queryItems"]
-- ["PSo16NSObjectProtocol", "requestWithURL"]
 - !private ["PSo16NSObjectProtocol", "setValue"]
-- !private ["PSo14NSSecureCoding", "HTTPBody"]
-- !private ["PSo14NSSecureCoding", "HTTPMethod"]
-- !private ["PSo14NSSecureCoding", "NSJSONSerialization"]
-- !private ["PSo14NSSecureCoding", "NSMutableURLRequest"]
-- !private ["PSo14NSSecureCoding", "NSURLComponents"]
-- !private ["PSo14NSSecureCoding", "NSURLQueryItem"]
 - !private ["PSo14NSSecureCoding", "addValue"]
+- !private ["PSo14NSSecureCoding", "httpBody"]
+- !private ["PSo14NSSecureCoding", "httpMethod"]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "setValue"]
-- !private ["CSo15NSURLComponents", "URL"]
-- !private ["CSo15NSURLComponents", "init"]
-- !private ["CSo15NSURLComponents", "queryItems"]
-- !private ["CSo14NSURLQueryItem", "init"]
-- !private ["CSo12NSURLRequest", "HTTPBody"]
-- !private ["CSo12NSURLRequest", "HTTPMethod"]
-- ["CSo12NSURLRequest", "NSDictionary"]
-- !private ["CSo12NSURLRequest", "NSJSONSerialization"]
-- !private ["CSo12NSURLRequest", "NSMutableURLRequest"]
-- ["CSo12NSURLRequest", "NSTimeInterval"]
-- ["CSo12NSURLRequest", "NSURL"]
-- !private ["CSo12NSURLRequest", "NSURLComponents"]
-- !private ["CSo12NSURLRequest", "NSURLQueryItem"]
-- ["CSo12NSURLRequest", "NSURLRequest"]
-- ["CSo12NSURLRequest", "NSURLRequestCachePolicy"]
-- ["CSo12NSURLRequest", "String"]
+- !private ["CSo8NSString", "init"]
 - !private ["CSo12NSURLRequest", "addValue"]
+- !private ["CSo12NSURLRequest", "httpBody"]
+- !private ["CSo12NSURLRequest", "httpMethod"]
 - !private ["CSo12NSURLRequest", "init"]
-- ["CSo12NSURLRequest", "requestWithURL"]
 - !private ["CSo12NSURLRequest", "setValue"]
-- ["Ps21NilLiteralConvertible", "Some"]
-- !private ["Ps13OptionSetType", "Element"]
-- ["Sq", "Some"]
-- !private ["Sq", "deinit"]
-- !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["Ps9OptionSet", "Element"]
+- ["Sq", "deinit"]
 - !private ["Ps16RawRepresentable", "Element"]
-- !private ["Ps12SequenceType", "Generator"]
-- !private ["Ps12SequenceType", "Index"]
-- !private ["Ps12SequenceType", "SubSequence"]
-- !private ["Ps12SequenceType", "_Element"]
-- !private ["Ps12SequenceType", "map"]
-- !private ["Ps14SetAlgebraType", "Element"]
-- !private ["Ps17SignedIntegerType", "IntegerLiteralType"]
-- !private ["Ps16SignedNumberType", "IntegerLiteralType"]
-- !private ["Vs5Slice", "Generator"]
-- !private ["Vs5Slice", "Index"]
-- !private ["Ps10Strideable", "IntegerLiteralType"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
-- !private ["Ps14_Incrementable", "Distance"]
-- !private ["Ps14_Incrementable", "IntegerLiteralType"]
-- !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
-- !private ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
-- !private ["Ps12_IntegerType", "IntegerLiteralType"]
-- !private ["Ps21_ObjectiveCBridgeable", "Generator"]
-- !private ["Ps21_ObjectiveCBridgeable", "Index"]
-- !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
-- !private ["Ps21_ObjectiveCBridgeable", "SubSequence"]
-- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
+- ["P10Foundation20ReferenceConvertible", "CachePolicy"]
+- !private ["P10Foundation20ReferenceConvertible", "JSONSerialization"]
+- !private ["P10Foundation20ReferenceConvertible", "NSMutableURLRequest"]
+- !private ["P10Foundation20ReferenceConvertible", "URLComponents"]
+- !private ["P10Foundation20ReferenceConvertible", "URLQueryItem"]
+- !private ["P10Foundation20ReferenceConvertible", "init"]
+- !private ["P10Foundation20ReferenceConvertible", "queryItems"]
+- !private ["P10Foundation20ReferenceConvertible", "url"]
+- !private ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "map"]
+- !private ["Ps10SetAlgebra", "Element"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- ["V10Foundation3URL", "deinit"]
+- ["V10Foundation13URLComponents", "deinit"]
+- !private ["V10Foundation13URLComponents", "init"]
+- !private ["V10Foundation13URLComponents", "queryItems"]
+- !private ["V10Foundation13URLComponents", "url"]
+- !private ["V10Foundation12URLQueryItem", "deinit"]
+- !private ["V10Foundation12URLQueryItem", "init"]
+- ["V10Foundation10URLRequest", "CachePolicy"]
+- !private ["V10Foundation10URLRequest", "Foundation"]
+- !private ["V10Foundation10URLRequest", "JSONSerialization"]
+- ["V10Foundation10URLRequest", "NSDictionary"]
+- !private ["V10Foundation10URLRequest", "NSMutableURLRequest"]
+- ["V10Foundation10URLRequest", "String"]
+- ["V10Foundation10URLRequest", "TimeInterval"]
+- ["V10Foundation10URLRequest", "URL"]
+- !private ["V10Foundation10URLRequest", "URLComponents"]
+- !private ["V10Foundation10URLRequest", "URLQueryItem"]
+- ["V10Foundation10URLRequest", "URLRequest"]
+- ["V10Foundation10URLRequest", "deinit"]
+- ["V10Foundation10URLRequest", "requestWithURL"]
+- !private ["VCSo17JSONSerialization14WritingOptions", "Element"]
+- ["VCSo17JSONSerialization14WritingOptions", "deinit"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "addValue"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "httpBody"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "httpMethod"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "setValue"]
+- ["Ps9_Hashable", "CachePolicy"]
+- !private ["Ps9_Hashable", "JSONSerialization"]
+- !private ["Ps9_Hashable", "NSMutableURLRequest"]
+- !private ["Ps9_Hashable", "URLComponents"]
+- !private ["Ps9_Hashable", "URLQueryItem"]
+- !private ["Ps9_Hashable", "addValue"]
+- !private ["Ps9_Hashable", "data"]
+- !private ["Ps9_Hashable", "httpBody"]
+- !private ["Ps9_Hashable", "httpMethod"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "queryItems"]
+- !private ["Ps9_Hashable", "setValue"]
+- !private ["Ps9_Hashable", "url"]
+- !private ["P10Foundation14_MutableBoxing", "init"]
+- !private ["P10Foundation14_MutableBoxing", "queryItems"]
+- !private ["P10Foundation14_MutableBoxing", "url"]
+- ["Ps21_ObjectiveCBridgeable", "CachePolicy"]
+- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
+- !private ["Ps21_ObjectiveCBridgeable", "JSONSerialization"]
+- !private ["Ps21_ObjectiveCBridgeable", "NSMutableURLRequest"]
+- !private ["Ps21_ObjectiveCBridgeable", "URLComponents"]
+- !private ["Ps21_ObjectiveCBridgeable", "URLQueryItem"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "map"]
-- !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
-- !private ["Ps12_Reflectable", "Generator"]
-- !private ["Ps12_Reflectable", "Index"]
-- !private ["Ps12_Reflectable", "IntegerLiteralType"]
-- ["Ps12_Reflectable", "Some"]
-- !private ["Ps12_Reflectable", "SubSequence"]
-- !private ["Ps12_Reflectable", "_Element"]
-- !private ["Ps12_Reflectable", "map"]
-- !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "queryItems"]
+- !private ["Ps21_ObjectiveCBridgeable", "url"]
 depends-nominal:
-- "Ps9AnyObject"
-- !private "Ps23ArrayLiteralConvertible"
-- !private "Ps22BidirectionalIndexType"
-- !private "Ps21BitwiseOperationsType"
-- "Ps11CVarArgType"
-- !private "Ps14CollectionType"
+- !private "Ps9AnyObject"
+- "Sa"
+- "Sb"
+- !private "Ps7CVarArg"
+- !private "Ps10Collection"
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- !private "Vs10Dictionary"
-- !private "Vs19DictionaryGenerator"
-- !private "Vs15DictionaryIndex"
-- !private "Ps28DictionaryLiteralConvertible"
+- "V10Foundation4Data"
+- "Vs10Dictionary"
+- !private "Vs18DictionaryIterator"
 - "Ps9Equatable"
-- !private "Ps16ForwardIndexType"
-- !private "Ps13GeneratorType"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "Ps8Hashable"
 - !private "Ps9Indexable"
-- !private "Si"
-- !private "Ps21IntegerArithmeticType"
-- !private "Ps25IntegerLiteralConvertible"
-- !private "Ps11IntegerType"
+- !private "Ps13IndexableBase"
+- !private "Ps16IteratorProtocol"
+- !private "CSo17JSONSerialization"
 - !private "P10SwiftyJSON17JSONSubscriptType"
-- !private "Ps14MirrorPathType"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
-- !private "CSo19NSJSONSerialization"
-- !private "VSC20NSJSONWritingOptions"
+- "CSo12NSDictionary"
 - !private "PSo16NSMutableCopying"
-- !private "CSo19NSMutableURLRequest"
-- "CSo8NSObject"
-- "PSo16NSObjectProtocol"
+- "CSo19NSMutableURLRequest"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
-- !private "CSo15NSURLComponents"
-- !private "CSo14NSURLQueryItem"
-- "CSo12NSURLRequest"
-- "Ps21NilLiteralConvertible"
-- !private "Ps13OptionSetType"
+- !private "CSo8NSString"
+- !private "CSo12NSURLRequest"
+- !private "Ps9OptionSet"
 - "Sq"
-- !private "Ps21RandomAccessIndexType"
 - !private "Ps16RawRepresentable"
-- !private "Ps12SequenceType"
-- !private "Ps14SetAlgebraType"
-- !private "Ps17SignedIntegerType"
-- !private "Ps16SignedNumberType"
-- !private "Vs5Slice"
-- !private "Ps10Strideable"
-- !private "Ps33_BuiltinIntegerLiteralConvertible"
-- !private "Ps14_Incrementable"
-- !private "Ps22_IntegerArithmeticType"
-- !private "Ps12_IntegerType"
-- !private "Ps21_ObjectiveCBridgeable"
-- !private "Ps22_RandomAccessAmbiguity"
-- "Ps12_Reflectable"
-- !private "Ps18_SignedIntegerType"
+- "P10Foundation20ReferenceConvertible"
+- !private "Ps8Sequence"
+- !private "Ps10SetAlgebra"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- "V10Foundation3URL"
+- "V10Foundation13URLComponents"
+- !private "V10Foundation12URLQueryItem"
+- "V10Foundation10URLRequest"
+- "VCSo17JSONSerialization14WritingOptions"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "P10Foundation14_MutableBoxing"
+- "Ps21_ObjectiveCBridgeable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMMigration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMDefines.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.swiftmodule"
-interface-hash: "d1c8967655bd899ef692d79477cc57b5"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+interface-hash: "339721d3fb9f51b981f14a76e096a2b7"

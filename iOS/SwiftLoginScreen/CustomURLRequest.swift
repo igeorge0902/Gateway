@@ -8,35 +8,35 @@
 
 import Foundation
 
-extension NSURLRequest {
+extension URLRequest {
     
     /// Helper for making a URL request.
     /// JSON encodes parameters if any are provided. You may want to change this if your server uses, say, XML.
         
-    class func requestWithURL(URL: NSURL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: NSURLRequestCachePolicy?, timeoutInterval: NSTimeInterval?) -> NSURLRequest {
+    static func requestWithURL(_ URL: URL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: URLRequest.CachePolicy?, timeoutInterval: TimeInterval?) -> URLRequest {
 
         // If there's a querystring, append it to the URL.
-        let actualURL: NSURL
+        let actualURL: Foundation.URL
       
         if let queryParameters = queryParameters {
         
-            let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: true)!
-            components.queryItems = queryParameters.map { (key, value) in NSURLQueryItem(name: key, value: value) }
+            var components = URLComponents(url: URL, resolvingAgainstBaseURL: true)!
+            components.queryItems = queryParameters.map { (key, value) in URLQueryItem(name: key, value: value) }
             
-            actualURL = components.URL!
+            actualURL = components.url!
         
         } else {
             actualURL = URL
         }
         
         // Make the request for the given method.
-        let request = NSMutableURLRequest(URL: actualURL)
-        request.HTTPMethod = method
+        let request = NSMutableURLRequest(url: actualURL)
+        request.httpMethod = method
         
         // Add any body JSON params (for POSTs).
         if let bodyParameters = bodyParameters {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(bodyParameters, options: [])
+            request.httpBody = try? JSONSerialization.data(withJSONObject: bodyParameters, options: [])
         }
         
         // Add any extra headers if given.
@@ -46,7 +46,7 @@ extension NSURLRequest {
             }
         }
         
-        return request
+        return request as URLRequest
     }
     
 }

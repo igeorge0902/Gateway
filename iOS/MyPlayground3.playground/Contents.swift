@@ -7,12 +7,16 @@ import Foundation
 
 var str = "Hello, playground"
 
-let deviceId = "FF247563-8AB1-4F0D-864A-B6BB15743BA2"
-let newString:NSString =  "("+("\"\((deviceId))\"")+")"
-print(newString)
+let username:String = "GG"
+
+let post:NSString = "user=\(username)" as NSString
+
+//let deviceId = "FF247563-8AB1-4F0D-864A-B6BB15743BA2"
+//let newString:NSString =  "("+("\"\((deviceId))\"")+")"
+//print(newString)
 
 
-("\"\(deviceId)\"")
+//("\"\(deviceId)\"")
 
 
 //current date

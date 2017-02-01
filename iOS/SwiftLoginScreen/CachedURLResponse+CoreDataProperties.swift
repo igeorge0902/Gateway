@@ -14,11 +14,11 @@ import CoreData
 
 extension CachedURLResponse {
 
-    @NSManaged var data: NSData?
+    @NSManaged var data: Data?
     @NSManaged var encoding: String?
     @NSManaged var mimeType: String?
     @NSManaged var statusCode: NSNumber?
-    @NSManaged var timestamp: NSDate?
+    @NSManaged var timestamp: Date?
     @NSManaged var url: String?
 
 }

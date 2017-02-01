@@ -14,18 +14,18 @@ import Foundation
 struct Responses {
    
     // Actual fields.
-    let data: NSData!
-    let response: NSURLResponse!
+    let data: Data!
+    let response: URLResponse!
     var error: NSError?
     
     // Helpers.
-    var HTTPResponse: NSHTTPURLResponse! {
-        return response as? NSHTTPURLResponse
+    var HTTPResponse: HTTPURLResponse! {
+        return response as? HTTPURLResponse
     }
     
     var responseJSON: AnyObject? {
         if let data = data {
-            return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+            return try! JSONSerialization.jsonObject(with: data, options: []) as AnyObject?
         } else {
             return nil
         }
@@ -33,7 +33,7 @@ struct Responses {
     
     var responseString: String? {
         if let data = data,
-            string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                 return String(string)
         } else {
             return nil

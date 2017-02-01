@@ -14,7 +14,7 @@ let cipherText = cipher("")
 
 extension String {
     
-    func getCipherText(plaintext: String)->String{
+    func getCipherText(_ plaintext: String)->String{
         
         let iterationCount = 1000;
         let keySize = 128;

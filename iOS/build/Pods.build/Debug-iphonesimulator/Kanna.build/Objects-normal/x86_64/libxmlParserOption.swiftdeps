@@ -10,113 +10,65 @@ provides-member:
 - ["V5Kanna23Libxml2XMLParserOptions", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "xmlParserOption"
-- "HTML_PARSE_NOERROR"
-- "Libxml2XMLParserOptions"
-- "XML_PARSE_NOWARNING"
-- "HTML_PARSE_RECOVER"
-- "IntegerLiteralType"
-- "OptionSetType"
-- "HTML_PARSE_NOIMPLIED"
-- "HTML_PARSE_IGNORE_ENC"
-- "XML_PARSE_SAX1"
-- "XML_PARSE_DTDLOAD"
-- "XML_PARSE_NOENT"
-- "HTML_PARSE_PEDANTIC"
-- "XML_PARSE_NOBASEFIX"
-- "XML_PARSE_NSCLEAN"
-- "=="
-- "UInt"
-- "XML_PARSE_OLD10"
-- "XML_PARSE_NONET"
-- "XML_PARSE_OLDSAX"
-- "XML_PARSE_DTDVALID"
 - "HTML_PARSE_COMPACT"
-- "XML_PARSE_XINCLUDE"
-- "XML_PARSE_BIG_LINES"
-- "XML_PARSE_NOERROR"
-- "HTML_PARSE_NODEFDTD"
-- !private "htmlParserOption"
-- "HTML_PARSE_NONET"
+- "Libxml2XMLParserOptions"
+- "XML_PARSE_OLDSAX"
+- "XML_PARSE_NOWARNING"
+- "XML_PARSE_DTDVALID"
 - "XML_PARSE_NOBLANKS"
-- "XML_PARSE_NOXINCNODE"
-- "Libxml2HTMLParserOptions"
-- "XML_PARSE_RECOVER"
-- "XML_PARSE_HUGE"
-- "FloatLiteralType"
-- "XML_PARSE_PEDANTIC"
+- "XML_PARSE_XINCLUDE"
+- "HTML_PARSE_RECOVER"
+- "OptionSet"
+- "XML_PARSE_OLD10"
+- "HTML_PARSE_NOERROR"
+- !private "htmlParserOption"
+- "HTML_PARSE_PEDANTIC"
+- "HTML_PARSE_NONET"
 - "XML_PARSE_NOCDATA"
-- "HTML_PARSE_NOBLANKS"
-- "HTML_PARSE_NOWARNING"
-- "XML_PARSE_DTDATTR"
-- "XML_PARSE_COMPACT"
 - "XML_PARSE_NODICT"
+- "UInt"
+- "XML_PARSE_RECOVER"
+- "Libxml2HTMLParserOptions"
+- "XML_PARSE_DTDLOAD"
+- "XML_PARSE_HUGE"
 - "XML_PARSE_IGNORE_ENC"
+- "=="
+- "HTML_PARSE_NOIMPLIED"
+- "XML_PARSE_NOERROR"
+- "HTML_PARSE_NOWARNING"
+- "HTML_PARSE_IGNORE_ENC"
+- !private "xmlParserOption"
+- "XML_PARSE_SAX1"
+- "XML_PARSE_COMPACT"
+- "XML_PARSE_PEDANTIC"
+- "AssignmentPrecedence"
+- "HTML_PARSE_NODEFDTD"
+- "HTML_PARSE_NOBLANKS"
+- "FloatLiteralType"
+- "XML_PARSE_NOXINCNODE"
+- "XML_PARSE_NSCLEAN"
+- "XML_PARSE_NONET"
+- "XML_PARSE_NOENT"
+- "XML_PARSE_BIG_LINES"
+- "IntegerLiteralType"
+- "XML_PARSE_DTDATTR"
+- "XML_PARSE_NOBASEFIX"
 depends-member:
-- ["Ps23ArrayLiteralConvertible", "Element"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_COMPACT"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_IGNORE_ENC"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NOBLANKS"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NODEFDTD"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NOERROR"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NOIMPLIED"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NONET"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_NOWARNING"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_PEDANTIC"]
-- ["Ps23ArrayLiteralConvertible", "HTML_PARSE_RECOVER"]
-- ["Ps23ArrayLiteralConvertible", "Libxml2HTMLParserOptions"]
-- ["Ps23ArrayLiteralConvertible", "Libxml2XMLParserOptions"]
-- ["Ps23ArrayLiteralConvertible", "RawValue"]
-- !private ["Ps23ArrayLiteralConvertible", "UInt"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_BIG_LINES"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_COMPACT"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_DTDATTR"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_DTDLOAD"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_DTDVALID"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_HUGE"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_IGNORE_ENC"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOBASEFIX"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOBLANKS"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOCDATA"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NODICT"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOENT"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOERROR"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NONET"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOWARNING"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NOXINCNODE"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_NSCLEAN"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_OLD10"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_OLDSAX"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_PEDANTIC"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_RECOVER"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_SAX1"]
-- ["Ps23ArrayLiteralConvertible", "XML_PARSE_XINCLUDE"]
-- ["Ps23ArrayLiteralConvertible", "contains"]
-- ["Ps23ArrayLiteralConvertible", "element"]
-- ["Ps23ArrayLiteralConvertible", "exclusiveOr"]
-- ["Ps23ArrayLiteralConvertible", "exclusiveOrInPlace"]
-- ["Ps23ArrayLiteralConvertible", "init"]
-- ["Ps23ArrayLiteralConvertible", "insert"]
-- ["Ps23ArrayLiteralConvertible", "intersect"]
-- ["Ps23ArrayLiteralConvertible", "intersectInPlace"]
-- ["Ps23ArrayLiteralConvertible", "isDisjointWith"]
-- ["Ps23ArrayLiteralConvertible", "isEmpty"]
-- ["Ps23ArrayLiteralConvertible", "isSubsetOf"]
-- ["Ps23ArrayLiteralConvertible", "isSupersetOf"]
-- ["Ps23ArrayLiteralConvertible", "rawValue"]
-- ["Ps23ArrayLiteralConvertible", "remove"]
-- ["Ps23ArrayLiteralConvertible", "subtract"]
-- ["Ps23ArrayLiteralConvertible", "subtractInPlace"]
-- ["Ps23ArrayLiteralConvertible", "union"]
-- ["Ps23ArrayLiteralConvertible", "unionInPlace"]
-- !private ["Ps23ArrayLiteralConvertible", "value"]
-- ["Ps23ArrayLiteralConvertible", ""]
-- !private ["Ps22BidirectionalIndexType", "init"]
-- !private ["Ps21BitwiseOperationsType", "init"]
-- !private ["Ps11CVarArgType", "init"]
+- ["Ps16AbsoluteValuable", "Iterator"]
+- ["Ps19BinaryFloatingPoint", "Iterator"]
+- !private ["Ps17BitwiseOperations", "init"]
+- ["Ps7CVarArg", "Iterator"]
+- !private ["Ps7CVarArg", "init"]
+- ["Ps10Comparable", "Iterator"]
 - !private ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "Iterator"]
+- ["Ps29CustomPlaygroundQuickLookable", "Iterator"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "Iterator"]
+- !private ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "init"]
-- ["Sd", "deinit"]
+- ["Sd", "Iterator"]
 - ["Ps9Equatable", "Element"]
 - ["Ps9Equatable", "HTML_PARSE_COMPACT"]
 - ["Ps9Equatable", "HTML_PARSE_IGNORE_ENC"]
@@ -128,6 +80,7 @@ depends-member:
 - ["Ps9Equatable", "HTML_PARSE_NOWARNING"]
 - ["Ps9Equatable", "HTML_PARSE_PEDANTIC"]
 - ["Ps9Equatable", "HTML_PARSE_RECOVER"]
+- ["Ps9Equatable", "Iterator"]
 - ["Ps9Equatable", "Libxml2HTMLParserOptions"]
 - ["Ps9Equatable", "Libxml2XMLParserOptions"]
 - ["Ps9Equatable", "RawValue"]
@@ -156,32 +109,93 @@ depends-member:
 - ["Ps9Equatable", "XML_PARSE_SAX1"]
 - ["Ps9Equatable", "XML_PARSE_XINCLUDE"]
 - ["Ps9Equatable", "contains"]
-- ["Ps9Equatable", "element"]
-- ["Ps9Equatable", "exclusiveOr"]
-- ["Ps9Equatable", "exclusiveOrInPlace"]
+- ["Ps9Equatable", "formIntersection"]
+- ["Ps9Equatable", "formSymmetricDifference"]
+- ["Ps9Equatable", "formUnion"]
 - ["Ps9Equatable", "init"]
 - ["Ps9Equatable", "insert"]
-- ["Ps9Equatable", "intersect"]
-- ["Ps9Equatable", "intersectInPlace"]
-- ["Ps9Equatable", "isDisjointWith"]
+- ["Ps9Equatable", "intersection"]
+- ["Ps9Equatable", "isDisjoint"]
 - ["Ps9Equatable", "isEmpty"]
-- ["Ps9Equatable", "isSubsetOf"]
-- ["Ps9Equatable", "isSupersetOf"]
+- ["Ps9Equatable", "isSubset"]
+- ["Ps9Equatable", "isSuperset"]
 - ["Ps9Equatable", "rawValue"]
 - ["Ps9Equatable", "remove"]
 - ["Ps9Equatable", "subtract"]
-- ["Ps9Equatable", "subtractInPlace"]
+- ["Ps9Equatable", "subtracting"]
+- ["Ps9Equatable", "symmetricDifference"]
 - ["Ps9Equatable", "union"]
-- ["Ps9Equatable", "unionInPlace"]
+- ["Ps9Equatable", "update"]
 - !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", ""]
-- !private ["Ps16ForwardIndexType", "init"]
-- ["Ps13GeneratorType", "Element"]
+- ["Ps25ExpressibleByArrayLiteral", "Element"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_COMPACT"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_IGNORE_ENC"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NOBLANKS"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NODEFDTD"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NOERROR"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NOIMPLIED"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NONET"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NOWARNING"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_PEDANTIC"]
+- ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_RECOVER"]
+- ["Ps25ExpressibleByArrayLiteral", "Libxml2HTMLParserOptions"]
+- ["Ps25ExpressibleByArrayLiteral", "Libxml2XMLParserOptions"]
+- ["Ps25ExpressibleByArrayLiteral", "RawValue"]
+- !private ["Ps25ExpressibleByArrayLiteral", "UInt"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_BIG_LINES"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_COMPACT"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_DTDATTR"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_DTDLOAD"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_DTDVALID"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_HUGE"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_IGNORE_ENC"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOBASEFIX"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOBLANKS"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOCDATA"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NODICT"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOENT"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOERROR"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NONET"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOWARNING"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NOXINCNODE"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_NSCLEAN"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_OLD10"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_OLDSAX"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_PEDANTIC"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_RECOVER"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_SAX1"]
+- ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_XINCLUDE"]
+- ["Ps25ExpressibleByArrayLiteral", "contains"]
+- ["Ps25ExpressibleByArrayLiteral", "formIntersection"]
+- ["Ps25ExpressibleByArrayLiteral", "formSymmetricDifference"]
+- ["Ps25ExpressibleByArrayLiteral", "formUnion"]
+- ["Ps25ExpressibleByArrayLiteral", "init"]
+- ["Ps25ExpressibleByArrayLiteral", "insert"]
+- ["Ps25ExpressibleByArrayLiteral", "intersection"]
+- ["Ps25ExpressibleByArrayLiteral", "isDisjoint"]
+- ["Ps25ExpressibleByArrayLiteral", "isEmpty"]
+- ["Ps25ExpressibleByArrayLiteral", "isSubset"]
+- ["Ps25ExpressibleByArrayLiteral", "isSuperset"]
+- ["Ps25ExpressibleByArrayLiteral", "rawValue"]
+- ["Ps25ExpressibleByArrayLiteral", "remove"]
+- ["Ps25ExpressibleByArrayLiteral", "subtract"]
+- ["Ps25ExpressibleByArrayLiteral", "subtracting"]
+- ["Ps25ExpressibleByArrayLiteral", "symmetricDifference"]
+- ["Ps25ExpressibleByArrayLiteral", "union"]
+- ["Ps25ExpressibleByArrayLiteral", "update"]
+- !private ["Ps25ExpressibleByArrayLiteral", "value"]
+- ["Ps25ExpressibleByArrayLiteral", ""]
+- ["Ps25ExpressibleByFloatLiteral", "Iterator"]
+- ["Ps27ExpressibleByIntegerLiteral", "Iterator"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
+- ["Ps13FloatingPoint", "Iterator"]
+- ["Ps8Hashable", "Iterator"]
 - !private ["Ps8Hashable", "init"]
 - ["Si", "deinit"]
-- !private ["Ps21IntegerArithmeticType", "init"]
-- !private ["Ps25IntegerLiteralConvertible", "init"]
-- !private ["Ps11IntegerType", "init"]
+- !private ["Ps7Integer", "init"]
+- !private ["Ps17IntegerArithmetic", "init"]
+- ["Ps16IteratorProtocol", "Element"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "COMPACT"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "Element"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "HTML_PARSE_COMPACT"]
@@ -210,25 +224,25 @@ depends-member:
 - ["V5Kanna24Libxml2HTMLParserOptions", "allZeros"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "contains"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "deinit"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "element"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "exclusiveOr"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "exclusiveOrInPlace"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "formIntersection"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "formSymmetricDifference"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "formUnion"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "fromMask"]
 - !private ["V5Kanna24Libxml2HTMLParserOptions", "htmlParserOption"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "init"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "insert"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "intersect"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "intersectInPlace"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "isDisjointWith"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "intersection"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "isDisjoint"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "isEmpty"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "isSubsetOf"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "isSupersetOf"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "isSubset"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "isSuperset"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "rawValue"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "remove"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "subtract"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "subtractInPlace"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "subtracting"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "symmetricDifference"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "union"]
-- ["V5Kanna24Libxml2HTMLParserOptions", "unionInPlace"]
+- ["V5Kanna24Libxml2HTMLParserOptions", "update"]
 - !private ["V5Kanna24Libxml2HTMLParserOptions", "value"]
 - ["V5Kanna23Libxml2XMLParserOptions", "BIG_LINES"]
 - ["V5Kanna23Libxml2XMLParserOptions", "COMPACT"]
@@ -284,88 +298,85 @@ depends-member:
 - ["V5Kanna23Libxml2XMLParserOptions", "allZeros"]
 - ["V5Kanna23Libxml2XMLParserOptions", "contains"]
 - ["V5Kanna23Libxml2XMLParserOptions", "deinit"]
-- ["V5Kanna23Libxml2XMLParserOptions", "element"]
-- ["V5Kanna23Libxml2XMLParserOptions", "exclusiveOr"]
-- ["V5Kanna23Libxml2XMLParserOptions", "exclusiveOrInPlace"]
+- ["V5Kanna23Libxml2XMLParserOptions", "formIntersection"]
+- ["V5Kanna23Libxml2XMLParserOptions", "formSymmetricDifference"]
+- ["V5Kanna23Libxml2XMLParserOptions", "formUnion"]
 - ["V5Kanna23Libxml2XMLParserOptions", "fromMask"]
 - ["V5Kanna23Libxml2XMLParserOptions", "init"]
 - ["V5Kanna23Libxml2XMLParserOptions", "insert"]
-- ["V5Kanna23Libxml2XMLParserOptions", "intersect"]
-- ["V5Kanna23Libxml2XMLParserOptions", "intersectInPlace"]
-- ["V5Kanna23Libxml2XMLParserOptions", "isDisjointWith"]
+- ["V5Kanna23Libxml2XMLParserOptions", "intersection"]
+- ["V5Kanna23Libxml2XMLParserOptions", "isDisjoint"]
 - ["V5Kanna23Libxml2XMLParserOptions", "isEmpty"]
-- ["V5Kanna23Libxml2XMLParserOptions", "isSubsetOf"]
-- ["V5Kanna23Libxml2XMLParserOptions", "isSupersetOf"]
+- ["V5Kanna23Libxml2XMLParserOptions", "isSubset"]
+- ["V5Kanna23Libxml2XMLParserOptions", "isSuperset"]
 - ["V5Kanna23Libxml2XMLParserOptions", "rawValue"]
 - ["V5Kanna23Libxml2XMLParserOptions", "remove"]
 - ["V5Kanna23Libxml2XMLParserOptions", "subtract"]
-- ["V5Kanna23Libxml2XMLParserOptions", "subtractInPlace"]
+- ["V5Kanna23Libxml2XMLParserOptions", "subtracting"]
+- ["V5Kanna23Libxml2XMLParserOptions", "symmetricDifference"]
 - ["V5Kanna23Libxml2XMLParserOptions", "union"]
-- ["V5Kanna23Libxml2XMLParserOptions", "unionInPlace"]
+- ["V5Kanna23Libxml2XMLParserOptions", "update"]
 - !private ["V5Kanna23Libxml2XMLParserOptions", "value"]
 - !private ["V5Kanna23Libxml2XMLParserOptions", "xmlParserOption"]
-- ["CSo8NSNumber", "deinit"]
-- ["CSo8NSObject", "deinit"]
-- ["CSo7NSValue", "deinit"]
-- ["Ps13OptionSetType", "Element"]
-- ["Ps13OptionSetType", "HTML_PARSE_COMPACT"]
-- ["Ps13OptionSetType", "HTML_PARSE_IGNORE_ENC"]
-- ["Ps13OptionSetType", "HTML_PARSE_NOBLANKS"]
-- ["Ps13OptionSetType", "HTML_PARSE_NODEFDTD"]
-- ["Ps13OptionSetType", "HTML_PARSE_NOERROR"]
-- ["Ps13OptionSetType", "HTML_PARSE_NOIMPLIED"]
-- ["Ps13OptionSetType", "HTML_PARSE_NONET"]
-- ["Ps13OptionSetType", "HTML_PARSE_NOWARNING"]
-- ["Ps13OptionSetType", "HTML_PARSE_PEDANTIC"]
-- ["Ps13OptionSetType", "HTML_PARSE_RECOVER"]
-- ["Ps13OptionSetType", "Libxml2HTMLParserOptions"]
-- ["Ps13OptionSetType", "Libxml2XMLParserOptions"]
-- ["Ps13OptionSetType", "RawValue"]
-- !private ["Ps13OptionSetType", "UInt"]
-- ["Ps13OptionSetType", "XML_PARSE_BIG_LINES"]
-- ["Ps13OptionSetType", "XML_PARSE_COMPACT"]
-- ["Ps13OptionSetType", "XML_PARSE_DTDATTR"]
-- ["Ps13OptionSetType", "XML_PARSE_DTDLOAD"]
-- ["Ps13OptionSetType", "XML_PARSE_DTDVALID"]
-- ["Ps13OptionSetType", "XML_PARSE_HUGE"]
-- ["Ps13OptionSetType", "XML_PARSE_IGNORE_ENC"]
-- ["Ps13OptionSetType", "XML_PARSE_NOBASEFIX"]
-- ["Ps13OptionSetType", "XML_PARSE_NOBLANKS"]
-- ["Ps13OptionSetType", "XML_PARSE_NOCDATA"]
-- ["Ps13OptionSetType", "XML_PARSE_NODICT"]
-- ["Ps13OptionSetType", "XML_PARSE_NOENT"]
-- ["Ps13OptionSetType", "XML_PARSE_NOERROR"]
-- ["Ps13OptionSetType", "XML_PARSE_NONET"]
-- ["Ps13OptionSetType", "XML_PARSE_NOWARNING"]
-- ["Ps13OptionSetType", "XML_PARSE_NOXINCNODE"]
-- ["Ps13OptionSetType", "XML_PARSE_NSCLEAN"]
-- ["Ps13OptionSetType", "XML_PARSE_OLD10"]
-- ["Ps13OptionSetType", "XML_PARSE_OLDSAX"]
-- ["Ps13OptionSetType", "XML_PARSE_PEDANTIC"]
-- ["Ps13OptionSetType", "XML_PARSE_RECOVER"]
-- ["Ps13OptionSetType", "XML_PARSE_SAX1"]
-- ["Ps13OptionSetType", "XML_PARSE_XINCLUDE"]
-- ["Ps13OptionSetType", "contains"]
-- ["Ps13OptionSetType", "element"]
-- ["Ps13OptionSetType", "exclusiveOr"]
-- ["Ps13OptionSetType", "exclusiveOrInPlace"]
-- ["Ps13OptionSetType", "init"]
-- ["Ps13OptionSetType", "insert"]
-- ["Ps13OptionSetType", "intersect"]
-- ["Ps13OptionSetType", "intersectInPlace"]
-- ["Ps13OptionSetType", "isDisjointWith"]
-- ["Ps13OptionSetType", "isEmpty"]
-- ["Ps13OptionSetType", "isSubsetOf"]
-- ["Ps13OptionSetType", "isSupersetOf"]
-- ["Ps13OptionSetType", "rawValue"]
-- ["Ps13OptionSetType", "remove"]
-- ["Ps13OptionSetType", "subtract"]
-- ["Ps13OptionSetType", "subtractInPlace"]
-- ["Ps13OptionSetType", "union"]
-- ["Ps13OptionSetType", "unionInPlace"]
-- !private ["Ps13OptionSetType", "value"]
-- ["Ps13OptionSetType", ""]
-- !private ["Ps21RandomAccessIndexType", "init"]
+- ["Ps25LosslessStringConvertible", "Iterator"]
+- ["Ps9OptionSet", "Element"]
+- ["Ps9OptionSet", "HTML_PARSE_COMPACT"]
+- ["Ps9OptionSet", "HTML_PARSE_IGNORE_ENC"]
+- ["Ps9OptionSet", "HTML_PARSE_NOBLANKS"]
+- ["Ps9OptionSet", "HTML_PARSE_NODEFDTD"]
+- ["Ps9OptionSet", "HTML_PARSE_NOERROR"]
+- ["Ps9OptionSet", "HTML_PARSE_NOIMPLIED"]
+- ["Ps9OptionSet", "HTML_PARSE_NONET"]
+- ["Ps9OptionSet", "HTML_PARSE_NOWARNING"]
+- ["Ps9OptionSet", "HTML_PARSE_PEDANTIC"]
+- ["Ps9OptionSet", "HTML_PARSE_RECOVER"]
+- ["Ps9OptionSet", "Libxml2HTMLParserOptions"]
+- ["Ps9OptionSet", "Libxml2XMLParserOptions"]
+- ["Ps9OptionSet", "RawValue"]
+- !private ["Ps9OptionSet", "UInt"]
+- ["Ps9OptionSet", "XML_PARSE_BIG_LINES"]
+- ["Ps9OptionSet", "XML_PARSE_COMPACT"]
+- ["Ps9OptionSet", "XML_PARSE_DTDATTR"]
+- ["Ps9OptionSet", "XML_PARSE_DTDLOAD"]
+- ["Ps9OptionSet", "XML_PARSE_DTDVALID"]
+- ["Ps9OptionSet", "XML_PARSE_HUGE"]
+- ["Ps9OptionSet", "XML_PARSE_IGNORE_ENC"]
+- ["Ps9OptionSet", "XML_PARSE_NOBASEFIX"]
+- ["Ps9OptionSet", "XML_PARSE_NOBLANKS"]
+- ["Ps9OptionSet", "XML_PARSE_NOCDATA"]
+- ["Ps9OptionSet", "XML_PARSE_NODICT"]
+- ["Ps9OptionSet", "XML_PARSE_NOENT"]
+- ["Ps9OptionSet", "XML_PARSE_NOERROR"]
+- ["Ps9OptionSet", "XML_PARSE_NONET"]
+- ["Ps9OptionSet", "XML_PARSE_NOWARNING"]
+- ["Ps9OptionSet", "XML_PARSE_NOXINCNODE"]
+- ["Ps9OptionSet", "XML_PARSE_NSCLEAN"]
+- ["Ps9OptionSet", "XML_PARSE_OLD10"]
+- ["Ps9OptionSet", "XML_PARSE_OLDSAX"]
+- ["Ps9OptionSet", "XML_PARSE_PEDANTIC"]
+- ["Ps9OptionSet", "XML_PARSE_RECOVER"]
+- ["Ps9OptionSet", "XML_PARSE_SAX1"]
+- ["Ps9OptionSet", "XML_PARSE_XINCLUDE"]
+- ["Ps9OptionSet", "contains"]
+- ["Ps9OptionSet", "formIntersection"]
+- ["Ps9OptionSet", "formSymmetricDifference"]
+- ["Ps9OptionSet", "formUnion"]
+- ["Ps9OptionSet", "init"]
+- ["Ps9OptionSet", "insert"]
+- ["Ps9OptionSet", "intersection"]
+- ["Ps9OptionSet", "isDisjoint"]
+- ["Ps9OptionSet", "isEmpty"]
+- ["Ps9OptionSet", "isSubset"]
+- ["Ps9OptionSet", "isSuperset"]
+- ["Ps9OptionSet", "rawValue"]
+- ["Ps9OptionSet", "remove"]
+- ["Ps9OptionSet", "subtract"]
+- ["Ps9OptionSet", "subtracting"]
+- ["Ps9OptionSet", "symmetricDifference"]
+- ["Ps9OptionSet", "union"]
+- ["Ps9OptionSet", "update"]
+- !private ["Ps9OptionSet", "value"]
+- ["Ps9OptionSet", ""]
 - ["Ps16RawRepresentable", "Element"]
 - ["Ps16RawRepresentable", "HTML_PARSE_COMPACT"]
 - ["Ps16RawRepresentable", "HTML_PARSE_IGNORE_ENC"]
@@ -405,150 +416,170 @@ depends-member:
 - ["Ps16RawRepresentable", "XML_PARSE_SAX1"]
 - ["Ps16RawRepresentable", "XML_PARSE_XINCLUDE"]
 - ["Ps16RawRepresentable", "contains"]
-- ["Ps16RawRepresentable", "element"]
-- ["Ps16RawRepresentable", "exclusiveOr"]
-- ["Ps16RawRepresentable", "exclusiveOrInPlace"]
+- ["Ps16RawRepresentable", "formIntersection"]
+- ["Ps16RawRepresentable", "formSymmetricDifference"]
+- ["Ps16RawRepresentable", "formUnion"]
 - ["Ps16RawRepresentable", "init"]
 - ["Ps16RawRepresentable", "insert"]
-- ["Ps16RawRepresentable", "intersect"]
-- ["Ps16RawRepresentable", "intersectInPlace"]
-- ["Ps16RawRepresentable", "isDisjointWith"]
+- ["Ps16RawRepresentable", "intersection"]
+- ["Ps16RawRepresentable", "isDisjoint"]
 - ["Ps16RawRepresentable", "isEmpty"]
-- ["Ps16RawRepresentable", "isSubsetOf"]
-- ["Ps16RawRepresentable", "isSupersetOf"]
+- ["Ps16RawRepresentable", "isSubset"]
+- ["Ps16RawRepresentable", "isSuperset"]
 - ["Ps16RawRepresentable", "rawValue"]
 - ["Ps16RawRepresentable", "remove"]
 - ["Ps16RawRepresentable", "subtract"]
-- ["Ps16RawRepresentable", "subtractInPlace"]
+- ["Ps16RawRepresentable", "subtracting"]
+- ["Ps16RawRepresentable", "symmetricDifference"]
 - ["Ps16RawRepresentable", "union"]
-- ["Ps16RawRepresentable", "unionInPlace"]
+- ["Ps16RawRepresentable", "update"]
 - !private ["Ps16RawRepresentable", "value"]
 - ["Ps16RawRepresentable", ""]
-- ["Ps12SequenceType", "Generator"]
-- ["Ps14SetAlgebraType", "Element"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_COMPACT"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_IGNORE_ENC"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NOBLANKS"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NODEFDTD"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NOERROR"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NOIMPLIED"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NONET"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_NOWARNING"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_PEDANTIC"]
-- ["Ps14SetAlgebraType", "HTML_PARSE_RECOVER"]
-- ["Ps14SetAlgebraType", "Libxml2HTMLParserOptions"]
-- ["Ps14SetAlgebraType", "Libxml2XMLParserOptions"]
-- ["Ps14SetAlgebraType", "RawValue"]
-- !private ["Ps14SetAlgebraType", "UInt"]
-- ["Ps14SetAlgebraType", "XML_PARSE_BIG_LINES"]
-- ["Ps14SetAlgebraType", "XML_PARSE_COMPACT"]
-- ["Ps14SetAlgebraType", "XML_PARSE_DTDATTR"]
-- ["Ps14SetAlgebraType", "XML_PARSE_DTDLOAD"]
-- ["Ps14SetAlgebraType", "XML_PARSE_DTDVALID"]
-- ["Ps14SetAlgebraType", "XML_PARSE_HUGE"]
-- ["Ps14SetAlgebraType", "XML_PARSE_IGNORE_ENC"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOBASEFIX"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOBLANKS"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOCDATA"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NODICT"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOENT"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOERROR"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NONET"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOWARNING"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NOXINCNODE"]
-- ["Ps14SetAlgebraType", "XML_PARSE_NSCLEAN"]
-- ["Ps14SetAlgebraType", "XML_PARSE_OLD10"]
-- ["Ps14SetAlgebraType", "XML_PARSE_OLDSAX"]
-- ["Ps14SetAlgebraType", "XML_PARSE_PEDANTIC"]
-- ["Ps14SetAlgebraType", "XML_PARSE_RECOVER"]
-- ["Ps14SetAlgebraType", "XML_PARSE_SAX1"]
-- ["Ps14SetAlgebraType", "XML_PARSE_XINCLUDE"]
-- ["Ps14SetAlgebraType", "contains"]
-- ["Ps14SetAlgebraType", "element"]
-- ["Ps14SetAlgebraType", "exclusiveOr"]
-- ["Ps14SetAlgebraType", "exclusiveOrInPlace"]
-- ["Ps14SetAlgebraType", "init"]
-- ["Ps14SetAlgebraType", "insert"]
-- ["Ps14SetAlgebraType", "intersect"]
-- ["Ps14SetAlgebraType", "intersectInPlace"]
-- ["Ps14SetAlgebraType", "isDisjointWith"]
-- ["Ps14SetAlgebraType", "isEmpty"]
-- ["Ps14SetAlgebraType", "isSubsetOf"]
-- ["Ps14SetAlgebraType", "isSupersetOf"]
-- ["Ps14SetAlgebraType", "rawValue"]
-- ["Ps14SetAlgebraType", "remove"]
-- ["Ps14SetAlgebraType", "subtract"]
-- ["Ps14SetAlgebraType", "subtractInPlace"]
-- ["Ps14SetAlgebraType", "union"]
-- ["Ps14SetAlgebraType", "unionInPlace"]
-- !private ["Ps14SetAlgebraType", "value"]
-- ["Ps14SetAlgebraType", ""]
+- ["Ps8Sequence", "Iterator"]
+- ["Ps10SetAlgebra", "Element"]
+- ["Ps10SetAlgebra", "HTML_PARSE_COMPACT"]
+- ["Ps10SetAlgebra", "HTML_PARSE_IGNORE_ENC"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NOBLANKS"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NODEFDTD"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NOERROR"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NOIMPLIED"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NONET"]
+- ["Ps10SetAlgebra", "HTML_PARSE_NOWARNING"]
+- ["Ps10SetAlgebra", "HTML_PARSE_PEDANTIC"]
+- ["Ps10SetAlgebra", "HTML_PARSE_RECOVER"]
+- ["Ps10SetAlgebra", "Libxml2HTMLParserOptions"]
+- ["Ps10SetAlgebra", "Libxml2XMLParserOptions"]
+- ["Ps10SetAlgebra", "RawValue"]
+- !private ["Ps10SetAlgebra", "UInt"]
+- ["Ps10SetAlgebra", "XML_PARSE_BIG_LINES"]
+- ["Ps10SetAlgebra", "XML_PARSE_COMPACT"]
+- ["Ps10SetAlgebra", "XML_PARSE_DTDATTR"]
+- ["Ps10SetAlgebra", "XML_PARSE_DTDLOAD"]
+- ["Ps10SetAlgebra", "XML_PARSE_DTDVALID"]
+- ["Ps10SetAlgebra", "XML_PARSE_HUGE"]
+- ["Ps10SetAlgebra", "XML_PARSE_IGNORE_ENC"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOBASEFIX"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOBLANKS"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOCDATA"]
+- ["Ps10SetAlgebra", "XML_PARSE_NODICT"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOENT"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOERROR"]
+- ["Ps10SetAlgebra", "XML_PARSE_NONET"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOWARNING"]
+- ["Ps10SetAlgebra", "XML_PARSE_NOXINCNODE"]
+- ["Ps10SetAlgebra", "XML_PARSE_NSCLEAN"]
+- ["Ps10SetAlgebra", "XML_PARSE_OLD10"]
+- ["Ps10SetAlgebra", "XML_PARSE_OLDSAX"]
+- ["Ps10SetAlgebra", "XML_PARSE_PEDANTIC"]
+- ["Ps10SetAlgebra", "XML_PARSE_RECOVER"]
+- ["Ps10SetAlgebra", "XML_PARSE_SAX1"]
+- ["Ps10SetAlgebra", "XML_PARSE_XINCLUDE"]
+- ["Ps10SetAlgebra", "contains"]
+- ["Ps10SetAlgebra", "formIntersection"]
+- ["Ps10SetAlgebra", "formSymmetricDifference"]
+- ["Ps10SetAlgebra", "formUnion"]
+- ["Ps10SetAlgebra", "init"]
+- ["Ps10SetAlgebra", "insert"]
+- ["Ps10SetAlgebra", "intersection"]
+- ["Ps10SetAlgebra", "isDisjoint"]
+- ["Ps10SetAlgebra", "isEmpty"]
+- ["Ps10SetAlgebra", "isSubset"]
+- ["Ps10SetAlgebra", "isSuperset"]
+- ["Ps10SetAlgebra", "rawValue"]
+- ["Ps10SetAlgebra", "remove"]
+- ["Ps10SetAlgebra", "subtract"]
+- ["Ps10SetAlgebra", "subtracting"]
+- ["Ps10SetAlgebra", "symmetricDifference"]
+- ["Ps10SetAlgebra", "union"]
+- ["Ps10SetAlgebra", "update"]
+- !private ["Ps10SetAlgebra", "value"]
+- ["Ps10SetAlgebra", ""]
+- ["Ps12SignedNumber", "Iterator"]
+- ["Ps10Strideable", "Iterator"]
 - !private ["Ps10Strideable", "init"]
-- !private ["Su", "deinit"]
+- ["Su", "deinit"]
 - !private ["Su", "init"]
-- !private ["Ps19UnsignedIntegerType", "init"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Ps15UnsignedInteger", "init"]
+- ["Ps15_CVarArgAligned", "Iterator"]
+- ["Ps22_CVarArgPassedAsDouble", "Iterator"]
 - !private ["Ps28_DisallowMixedSignArithmetic", "init"]
+- ["Ps33_ExpressibleByBuiltinFloatLiteral", "Iterator"]
+- ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Iterator"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- ["Ps9_Hashable", "Iterator"]
+- !private ["Ps9_Hashable", "init"]
 - !private ["Ps14_Incrementable", "init"]
-- !private ["Ps22_IntegerArithmeticType", "init"]
-- !private ["Ps12_IntegerType", "init"]
+- !private ["Ps8_Integer", "init"]
+- !private ["Ps18_IntegerArithmetic", "init"]
+- ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps22_RandomAccessAmbiguity", "init"]
-- !private ["Ps12_Reflectable", "init"]
+- ["Ps11_Strideable", "Iterator"]
+- !private ["Ps11_Strideable", "init"]
 - ["VSC16htmlParserOption", "deinit"]
 - !private ["VSC16htmlParserOption", "rawValue"]
 - ["VSC15xmlParserOption", "deinit"]
 - !private ["VSC15xmlParserOption", "rawValue"]
 depends-nominal:
-- "Ps23ArrayLiteralConvertible"
-- !private "Ps22BidirectionalIndexType"
-- !private "Ps21BitwiseOperationsType"
-- !private "Ps11CVarArgType"
-- !private "Ps10Comparable"
-- !private "Ps23CustomStringConvertible"
+- "Ps16AbsoluteValuable"
+- "Ps19BinaryFloatingPoint"
+- !private "Ps17BitwiseOperations"
+- "Ps7CVarArg"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
 - "Sd"
 - "Ps9Equatable"
-- !private "Ps16ForwardIndexType"
-- "Ps13GeneratorType"
-- !private "Ps8Hashable"
+- "Ps25ExpressibleByArrayLiteral"
+- "Ps25ExpressibleByFloatLiteral"
+- "Ps27ExpressibleByIntegerLiteral"
+- "Ps13FloatingPoint"
+- "Ps8Hashable"
 - "Si"
-- !private "Ps21IntegerArithmeticType"
-- !private "Ps25IntegerLiteralConvertible"
-- !private "Ps11IntegerType"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- "Ps16IteratorProtocol"
 - "V5Kanna24Libxml2HTMLParserOptions"
 - "V5Kanna23Libxml2XMLParserOptions"
-- "CSo8NSNumber"
-- "CSo8NSObject"
-- "CSo7NSValue"
-- "Ps13OptionSetType"
-- !private "Ps21RandomAccessIndexType"
+- "Ps25LosslessStringConvertible"
+- "Ps9OptionSet"
 - "Ps16RawRepresentable"
-- "Ps12SequenceType"
-- "Ps14SetAlgebraType"
-- !private "Ps10Strideable"
-- !private "Su"
-- !private "Ps19UnsignedIntegerType"
-- !private "Ps33_BuiltinIntegerLiteralConvertible"
+- "Ps8Sequence"
+- "Ps10SetAlgebra"
+- "Ps12SignedNumber"
+- "Ps10Strideable"
+- "Su"
+- !private "Vs6UInt32"
+- !private "Ps15UnsignedInteger"
+- "Ps15_CVarArgAligned"
+- "Ps22_CVarArgPassedAsDouble"
 - !private "Ps28_DisallowMixedSignArithmetic"
+- "Ps33_ExpressibleByBuiltinFloatLiteral"
+- "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps9_Hashable"
 - !private "Ps14_Incrementable"
-- !private "Ps22_IntegerArithmeticType"
-- !private "Ps12_IntegerType"
-- !private "Ps21_ObjectiveCBridgeable"
-- !private "Ps22_RandomAccessAmbiguity"
-- !private "Ps12_Reflectable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps11_Strideable"
 - "VSC16htmlParserOption"
 - "VSC15xmlParserOption"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-interface-hash: "adad391c025ea8ac00ac1c857a094191"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "3fdca0ec6aedf99d2e9defe3acff6fb9"

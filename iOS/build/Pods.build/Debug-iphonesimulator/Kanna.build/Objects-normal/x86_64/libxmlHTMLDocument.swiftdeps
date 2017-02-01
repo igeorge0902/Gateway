@@ -10,105 +10,167 @@ provides-member:
 - ["C5Kanna17libxmlXMLDocument", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "libxmlXMLDocument"
-- !private "CFStringConvertNSStringEncodingToEncoding"
-- "HTMLDocument"
-- "String"
-- !private "StringLiteralType"
-- !private "libxmlHTMLNode"
-- !private "xmlReadDoc"
-- !private "UnsafePointer"
-- !private "CFStringEncoding"
-- !private "xmlChar"
-- "XMLElement"
-- !private "xmlFreeDoc"
-- "htmlDocPtr"
-- !private "??"
-- !private "CFStringConvertEncodingToIANACharSetName"
-- !private "<="
-- "UInt"
-- "XMLNodeSet"
 - "libxmlHTMLDocument"
-- !private "CInt"
-- !private "htmlReadDoc"
+- "XPathObject"
+- !private "StringLiteralType"
+- !private "CFStringEncoding"
+- !private "libxmlHTMLNode"
+- !private "htmlDocContentDumpOutput"
 - "XMLDocument"
+- !private "xmlBufferFree"
+- !private "xmlChar"
+- !private "xmlDocDumpMemory"
+- "XMLElement"
+- "String"
+- !private "Int32"
+- !private "htmlReadDoc"
 - "xmlDocPtr"
+- !private "CFStringConvertNSStringEncodingToEncoding"
+- !private "CInt"
+- !private "xmlBufferCreate"
+- !private "UnsafeRawPointer"
+- !private "<="
+- !private "xmlFreeDoc"
+- !private "xmlReadDoc"
+- !private "CFStringConvertEncodingToIANACharSetName"
+- "AssignmentPrecedence"
+- !private "??"
+- "libxmlXMLDocument"
+- "HTMLDocument"
+- "UInt"
+- !private "xmlOutputBufferCreateBuffer"
+- !private "xmlOutputBufferGetContent"
+- !private "UnsafeMutablePointer"
+- !private "xmlFree"
+- "htmlDocPtr"
+- !private "UnsafePointer"
 depends-member:
 - !private ["Ps9AnyObject", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["Ps9AnyObject", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["Ps9AnyObject", "CInt"]
 - !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UnsafePointer"]
-- !private ["Ps9AnyObject", "XMLNodeSet"]
+- !private ["Ps9AnyObject", "UnsafeRawPointer"]
+- !private ["Ps9AnyObject", "XPathObject"]
 - ["Ps9AnyObject", "at_css"]
 - ["Ps9AnyObject", "at_xpath"]
 - ["Ps9AnyObject", "body"]
-- !private ["Ps9AnyObject", "cStringUsingEncoding"]
+- !private ["Ps9AnyObject", "cString"]
 - ["Ps9AnyObject", "className"]
+- ["Ps9AnyObject", "content"]
 - ["Ps9AnyObject", "css"]
 - !private ["Ps9AnyObject", "docPtr"]
 - !private ["Ps9AnyObject", "encoding"]
 - ["Ps9AnyObject", "head"]
 - !private ["Ps9AnyObject", "html"]
+- !private ["Ps9AnyObject", "htmlDocContentDumpOutput"]
 - !private ["Ps9AnyObject", "htmlReadDoc"]
 - !private ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", "innerHTML"]
-- !private ["Ps9AnyObject", "lengthOfBytesUsingEncoding"]
+- !private ["Ps9AnyObject", "lengthOfBytes"]
 - !private ["Ps9AnyObject", "libxmlHTMLNode"]
 - !private ["Ps9AnyObject", "rootNode"]
 - ["Ps9AnyObject", "tagName"]
 - ["Ps9AnyObject", "text"]
 - ["Ps9AnyObject", "title"]
 - ["Ps9AnyObject", "toHTML"]
+- ["Ps9AnyObject", "toXML"]
 - !private ["Ps9AnyObject", "url"]
 - !private ["Ps9AnyObject", "xml"]
+- !private ["Ps9AnyObject", "xmlBufferCreate"]
+- !private ["Ps9AnyObject", "xmlBufferFree"]
+- !private ["Ps9AnyObject", "xmlChar"]
+- !private ["Ps9AnyObject", "xmlDocDumpMemory"]
+- !private ["Ps9AnyObject", "xmlFree"]
 - !private ["Ps9AnyObject", "xmlFreeDoc"]
+- !private ["Ps9AnyObject", "xmlOutputBufferCreateBuffer"]
+- !private ["Ps9AnyObject", "xmlOutputBufferGetContent"]
 - !private ["Ps9AnyObject", "xmlReadDoc"]
 - ["Ps9AnyObject", "xpath"]
 - ["Ps9AnyObject", ""]
-- !private ["Ps22BidirectionalIndexType", "init"]
-- !private ["Ps21BitwiseOperationsType", "init"]
+- ["Sa", "deinit"]
+- !private ["Ps17BitwiseOperations", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
-- !private ["CSo8CFString", "deinit"]
-- !private ["Ps11CVarArgType", "cStringUsingEncoding"]
-- !private ["Ps11CVarArgType", "init"]
-- !private ["Ps11CVarArgType", "lengthOfBytesUsingEncoding"]
-- !private ["Ps10Comparable", "cStringUsingEncoding"]
+- ["Sb", "deinit"]
+- ["CSo8CFString", "deinit"]
+- ["Ps7CVarArg", "Encoding"]
+- !private ["Ps7CVarArg", "cString"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "lengthOfBytes"]
+- ["Ps10Comparable", "Encoding"]
+- !private ["Ps10Comparable", "assumingMemoryBound"]
+- !private ["Ps10Comparable", "cString"]
 - !private ["Ps10Comparable", "init"]
-- !private ["Ps10Comparable", "lengthOfBytesUsingEncoding"]
-- ["Ps28CustomDebugStringConvertible", "Some"]
-- !private ["Ps28CustomDebugStringConvertible", "cStringUsingEncoding"]
+- !private ["Ps10Comparable", "lengthOfBytes"]
+- ["Ps28CustomDebugStringConvertible", "Encoding"]
+- !private ["Ps28CustomDebugStringConvertible", "assumingMemoryBound"]
+- !private ["Ps28CustomDebugStringConvertible", "cString"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps28CustomDebugStringConvertible", "lengthOfBytes"]
+- ["Ps29CustomPlaygroundQuickLookable", "Encoding"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "assumingMemoryBound"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "cString"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "lengthOfBytes"]
+- ["Ps17CustomReflectable", "Encoding"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "assumingMemoryBound"]
+- !private ["Ps17CustomReflectable", "cString"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "lengthOfBytes"]
+- ["Ps23CustomStringConvertible", "Encoding"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps23CustomStringConvertible", "cStringUsingEncoding"]
+- !private ["Ps23CustomStringConvertible", "cString"]
 - !private ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["Ps23CustomStringConvertible", "lengthOfBytes"]
+- !private ["Ps23CustomStringConvertible", "rawValue"]
+- ["VE10FoundationSS8Encoding", "deinit"]
+- !private ["VE10FoundationSS8Encoding", "rawValue"]
+- ["Ps9Equatable", "Encoding"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
-- !private ["Ps9Equatable", "cStringUsingEncoding"]
+- !private ["Ps9Equatable", "assumingMemoryBound"]
+- !private ["Ps9Equatable", "cString"]
 - !private ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "lengthOfBytesUsingEncoding"]
-- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
-- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps16ForwardIndexType", "init"]
+- !private ["Ps9Equatable", "lengthOfBytes"]
+- !private ["Ps9Equatable", "rawValue"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Encoding"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "cString"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "lengthOfBytes"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
+- !private ["Ps23ExpressibleByNilLiteral", "assumingMemoryBound"]
+- ["Ps32ExpressibleByStringInterpolation", "Encoding"]
+- !private ["Ps32ExpressibleByStringInterpolation", "cString"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "lengthOfBytes"]
+- ["Ps26ExpressibleByStringLiteral", "Encoding"]
+- !private ["Ps26ExpressibleByStringLiteral", "cString"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "lengthOfBytes"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "Encoding"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "cString"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "lengthOfBytes"]
 - !private ["P5Kanna12HTMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["P5Kanna12HTMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["P5Kanna12HTMLDocument", "CInt"]
 - !private ["P5Kanna12HTMLDocument", "String"]
 - !private ["P5Kanna12HTMLDocument", "UnsafePointer"]
-- !private ["P5Kanna12HTMLDocument", "XMLNodeSet"]
+- !private ["P5Kanna12HTMLDocument", "UnsafeRawPointer"]
+- !private ["P5Kanna12HTMLDocument", "XPathObject"]
 - ["P5Kanna12HTMLDocument", "at_css"]
 - ["P5Kanna12HTMLDocument", "at_xpath"]
 - ["P5Kanna12HTMLDocument", "body"]
 - ["P5Kanna12HTMLDocument", "className"]
+- ["P5Kanna12HTMLDocument", "content"]
 - ["P5Kanna12HTMLDocument", "css"]
 - !private ["P5Kanna12HTMLDocument", "docPtr"]
 - !private ["P5Kanna12HTMLDocument", "encoding"]
 - ["P5Kanna12HTMLDocument", "head"]
 - !private ["P5Kanna12HTMLDocument", "html"]
+- !private ["P5Kanna12HTMLDocument", "htmlDocContentDumpOutput"]
 - !private ["P5Kanna12HTMLDocument", "htmlReadDoc"]
 - ["P5Kanna12HTMLDocument", "innerHTML"]
 - !private ["P5Kanna12HTMLDocument", "libxmlHTMLNode"]
@@ -117,59 +179,82 @@ depends-member:
 - ["P5Kanna12HTMLDocument", "text"]
 - ["P5Kanna12HTMLDocument", "title"]
 - ["P5Kanna12HTMLDocument", "toHTML"]
+- ["P5Kanna12HTMLDocument", "toXML"]
 - !private ["P5Kanna12HTMLDocument", "url"]
+- !private ["P5Kanna12HTMLDocument", "xmlBufferCreate"]
+- !private ["P5Kanna12HTMLDocument", "xmlBufferFree"]
+- !private ["P5Kanna12HTMLDocument", "xmlChar"]
+- !private ["P5Kanna12HTMLDocument", "xmlDocDumpMemory"]
+- !private ["P5Kanna12HTMLDocument", "xmlFree"]
 - !private ["P5Kanna12HTMLDocument", "xmlFreeDoc"]
+- !private ["P5Kanna12HTMLDocument", "xmlOutputBufferCreateBuffer"]
+- !private ["P5Kanna12HTMLDocument", "xmlOutputBufferGetContent"]
 - ["P5Kanna12HTMLDocument", "xpath"]
 - ["P5Kanna12HTMLDocument", ""]
+- ["Ps8Hashable", "Encoding"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps8Hashable", "cStringUsingEncoding"]
+- !private ["Ps8Hashable", "assumingMemoryBound"]
+- !private ["Ps8Hashable", "cString"]
 - !private ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "lengthOfBytesUsingEncoding"]
-- !private ["SQ", "deinit"]
+- !private ["Ps8Hashable", "lengthOfBytes"]
+- !private ["Ps8Hashable", "rawValue"]
+- ["SQ", "deinit"]
+- ["Si", "deinit"]
+- ["Vs5Int32", "deinit"]
 - !private ["Vs5Int32", "init"]
-- !private ["Ps21IntegerArithmeticType", "init"]
-- !private ["Ps25IntegerLiteralConvertible", "init"]
-- !private ["Ps11IntegerType", "init"]
-- !private ["Ps14MirrorPathType", "cStringUsingEncoding"]
-- !private ["Ps14MirrorPathType", "init"]
-- !private ["Ps14MirrorPathType", "lengthOfBytesUsingEncoding"]
-- !private ["PSo8NSCoding", "cStringUsingEncoding"]
-- !private ["PSo8NSCoding", "lengthOfBytesUsingEncoding"]
-- !private ["PSo9NSCopying", "cStringUsingEncoding"]
-- !private ["PSo9NSCopying", "lengthOfBytesUsingEncoding"]
-- !private ["PSo16NSMutableCopying", "cStringUsingEncoding"]
-- !private ["PSo16NSMutableCopying", "lengthOfBytesUsingEncoding"]
-- !private ["CSo8NSObject", "cStringUsingEncoding"]
-- !private ["CSo8NSObject", "lengthOfBytesUsingEncoding"]
-- !private ["PSo16NSObjectProtocol", "cStringUsingEncoding"]
-- !private ["PSo16NSObjectProtocol", "lengthOfBytesUsingEncoding"]
-- !private ["PSo14NSSecureCoding", "cStringUsingEncoding"]
-- !private ["PSo14NSSecureCoding", "lengthOfBytesUsingEncoding"]
-- !private ["CSo8NSString", "cStringUsingEncoding"]
-- !private ["CSo8NSString", "lengthOfBytesUsingEncoding"]
-- ["Ps21NilLiteralConvertible", "Some"]
-- !private ["Ps21NilLiteralConvertible", "init"]
-- ["Sq", "Some"]
-- !private ["Sq", "deinit"]
-- !private ["Ps16OutputStreamType", "cStringUsingEncoding"]
-- !private ["Ps16OutputStreamType", "init"]
-- !private ["Ps16OutputStreamType", "lengthOfBytesUsingEncoding"]
-- !private ["Ps21RandomAccessIndexType", "init"]
+- !private ["Ps7Integer", "init"]
+- !private ["Ps17IntegerArithmetic", "init"]
+- ["Ps25LosslessStringConvertible", "Encoding"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "cString"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps25LosslessStringConvertible", "lengthOfBytes"]
+- ["Ps10MirrorPath", "Encoding"]
+- !private ["Ps10MirrorPath", "cString"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["Ps10MirrorPath", "lengthOfBytes"]
+- !private ["PSo8NSCoding", "cString"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "lengthOfBytes"]
+- !private ["PSo9NSCopying", "cString"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "lengthOfBytes"]
+- !private ["PSo16NSMutableCopying", "cString"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "lengthOfBytes"]
+- !private ["CSo8NSObject", "cString"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "lengthOfBytes"]
+- !private ["PSo16NSObjectProtocol", "cString"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "lengthOfBytes"]
+- !private ["PSo14NSSecureCoding", "cString"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "lengthOfBytes"]
+- !private ["CSo8NSString", "cString"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "lengthOfBytes"]
+- !private ["Sq", "assumingMemoryBound"]
+- ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "rawValue"]
 - !private ["P5Kanna10Searchable", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["P5Kanna10Searchable", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["P5Kanna10Searchable", "CInt"]
 - !private ["P5Kanna10Searchable", "String"]
 - !private ["P5Kanna10Searchable", "UnsafePointer"]
-- !private ["P5Kanna10Searchable", "XMLNodeSet"]
+- !private ["P5Kanna10Searchable", "UnsafeRawPointer"]
+- !private ["P5Kanna10Searchable", "XPathObject"]
 - ["P5Kanna10Searchable", "at_css"]
 - ["P5Kanna10Searchable", "at_xpath"]
 - ["P5Kanna10Searchable", "body"]
 - ["P5Kanna10Searchable", "className"]
+- ["P5Kanna10Searchable", "content"]
 - ["P5Kanna10Searchable", "css"]
 - !private ["P5Kanna10Searchable", "docPtr"]
 - !private ["P5Kanna10Searchable", "encoding"]
 - ["P5Kanna10Searchable", "head"]
 - !private ["P5Kanna10Searchable", "html"]
+- !private ["P5Kanna10Searchable", "htmlDocContentDumpOutput"]
 - !private ["P5Kanna10Searchable", "htmlReadDoc"]
 - !private ["P5Kanna10Searchable", "init"]
 - ["P5Kanna10Searchable", "innerHTML"]
@@ -179,9 +264,17 @@ depends-member:
 - ["P5Kanna10Searchable", "text"]
 - ["P5Kanna10Searchable", "title"]
 - ["P5Kanna10Searchable", "toHTML"]
+- ["P5Kanna10Searchable", "toXML"]
 - !private ["P5Kanna10Searchable", "url"]
 - !private ["P5Kanna10Searchable", "xml"]
+- !private ["P5Kanna10Searchable", "xmlBufferCreate"]
+- !private ["P5Kanna10Searchable", "xmlBufferFree"]
+- !private ["P5Kanna10Searchable", "xmlChar"]
+- !private ["P5Kanna10Searchable", "xmlDocDumpMemory"]
+- !private ["P5Kanna10Searchable", "xmlFree"]
 - !private ["P5Kanna10Searchable", "xmlFreeDoc"]
+- !private ["P5Kanna10Searchable", "xmlOutputBufferCreateBuffer"]
+- !private ["P5Kanna10Searchable", "xmlOutputBufferGetContent"]
 - !private ["P5Kanna10Searchable", "xmlReadDoc"]
 - ["P5Kanna10Searchable", "xpath"]
 - ["P5Kanna10Searchable", ""]
@@ -190,16 +283,19 @@ depends-member:
 - !private ["P5Kanna14SearchableNode", "CInt"]
 - !private ["P5Kanna14SearchableNode", "String"]
 - !private ["P5Kanna14SearchableNode", "UnsafePointer"]
-- !private ["P5Kanna14SearchableNode", "XMLNodeSet"]
+- !private ["P5Kanna14SearchableNode", "UnsafeRawPointer"]
+- !private ["P5Kanna14SearchableNode", "XPathObject"]
 - ["P5Kanna14SearchableNode", "at_css"]
 - ["P5Kanna14SearchableNode", "at_xpath"]
 - ["P5Kanna14SearchableNode", "body"]
 - ["P5Kanna14SearchableNode", "className"]
+- ["P5Kanna14SearchableNode", "content"]
 - ["P5Kanna14SearchableNode", "css"]
 - !private ["P5Kanna14SearchableNode", "docPtr"]
 - !private ["P5Kanna14SearchableNode", "encoding"]
 - ["P5Kanna14SearchableNode", "head"]
 - !private ["P5Kanna14SearchableNode", "html"]
+- !private ["P5Kanna14SearchableNode", "htmlDocContentDumpOutput"]
 - !private ["P5Kanna14SearchableNode", "htmlReadDoc"]
 - !private ["P5Kanna14SearchableNode", "init"]
 - ["P5Kanna14SearchableNode", "innerHTML"]
@@ -209,47 +305,63 @@ depends-member:
 - ["P5Kanna14SearchableNode", "text"]
 - ["P5Kanna14SearchableNode", "title"]
 - ["P5Kanna14SearchableNode", "toHTML"]
+- ["P5Kanna14SearchableNode", "toXML"]
 - !private ["P5Kanna14SearchableNode", "url"]
 - !private ["P5Kanna14SearchableNode", "xml"]
+- !private ["P5Kanna14SearchableNode", "xmlBufferCreate"]
+- !private ["P5Kanna14SearchableNode", "xmlBufferFree"]
+- !private ["P5Kanna14SearchableNode", "xmlChar"]
+- !private ["P5Kanna14SearchableNode", "xmlDocDumpMemory"]
+- !private ["P5Kanna14SearchableNode", "xmlFree"]
 - !private ["P5Kanna14SearchableNode", "xmlFreeDoc"]
+- !private ["P5Kanna14SearchableNode", "xmlOutputBufferCreateBuffer"]
+- !private ["P5Kanna14SearchableNode", "xmlOutputBufferGetContent"]
 - !private ["P5Kanna14SearchableNode", "xmlReadDoc"]
 - ["P5Kanna14SearchableNode", "xpath"]
 - ["P5Kanna14SearchableNode", ""]
-- !private ["Ps12SequenceType", "init"]
-- !private ["Ps17SignedIntegerType", "init"]
-- !private ["Ps16SignedNumberType", "init"]
-- !private ["Ps10Streamable", "cStringUsingEncoding"]
-- !private ["Ps10Streamable", "init"]
-- !private ["Ps10Streamable", "lengthOfBytesUsingEncoding"]
+- !private ["Ps8Sequence", "none"]
+- !private ["Ps13SignedInteger", "init"]
+- !private ["Ps12SignedNumber", "init"]
+- !private ["Ps10Strideable", "assumingMemoryBound"]
 - !private ["Ps10Strideable", "init"]
-- !private ["SS", "cStringUsingEncoding"]
+- ["SS", "Encoding"]
+- !private ["SS", "cString"]
+- ["SS", "deinit"]
 - !private ["SS", "init"]
-- !private ["SS", "lengthOfBytesUsingEncoding"]
-- !private ["Ps30StringInterpolationConvertible", "cStringUsingEncoding"]
-- !private ["Ps30StringInterpolationConvertible", "init"]
-- !private ["Ps30StringInterpolationConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps24StringLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps24StringLiteralConvertible", "init"]
-- !private ["Ps24StringLiteralConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps31UnicodeScalarLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
-- !private ["Ps31UnicodeScalarLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- !private ["SS", "lengthOfBytes"]
+- ["Ps16TextOutputStream", "Encoding"]
+- !private ["Ps16TextOutputStream", "cString"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps16TextOutputStream", "lengthOfBytes"]
+- ["Ps20TextOutputStreamable", "Encoding"]
+- !private ["Ps20TextOutputStreamable", "cString"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["Ps20TextOutputStreamable", "lengthOfBytes"]
+- ["Su", "deinit"]
+- ["Vs6UInt32", "deinit"]
+- ["SP", "deinit"]
 - !private ["SP", "init"]
+- !private ["SV", "assumingMemoryBound"]
+- ["SV", "deinit"]
+- !private ["SV", "init"]
 - !private ["P5Kanna11XMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["P5Kanna11XMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["P5Kanna11XMLDocument", "CInt"]
 - !private ["P5Kanna11XMLDocument", "String"]
 - !private ["P5Kanna11XMLDocument", "UnsafePointer"]
-- !private ["P5Kanna11XMLDocument", "XMLNodeSet"]
+- !private ["P5Kanna11XMLDocument", "UnsafeRawPointer"]
+- !private ["P5Kanna11XMLDocument", "XPathObject"]
 - ["P5Kanna11XMLDocument", "at_css"]
 - ["P5Kanna11XMLDocument", "at_xpath"]
 - ["P5Kanna11XMLDocument", "body"]
 - ["P5Kanna11XMLDocument", "className"]
+- ["P5Kanna11XMLDocument", "content"]
 - ["P5Kanna11XMLDocument", "css"]
 - !private ["P5Kanna11XMLDocument", "docPtr"]
 - !private ["P5Kanna11XMLDocument", "encoding"]
 - ["P5Kanna11XMLDocument", "head"]
 - !private ["P5Kanna11XMLDocument", "html"]
+- !private ["P5Kanna11XMLDocument", "htmlDocContentDumpOutput"]
 - !private ["P5Kanna11XMLDocument", "htmlReadDoc"]
 - ["P5Kanna11XMLDocument", "innerHTML"]
 - !private ["P5Kanna11XMLDocument", "libxmlHTMLNode"]
@@ -258,68 +370,97 @@ depends-member:
 - ["P5Kanna11XMLDocument", "text"]
 - ["P5Kanna11XMLDocument", "title"]
 - ["P5Kanna11XMLDocument", "toHTML"]
+- ["P5Kanna11XMLDocument", "toXML"]
 - !private ["P5Kanna11XMLDocument", "url"]
 - !private ["P5Kanna11XMLDocument", "xml"]
+- !private ["P5Kanna11XMLDocument", "xmlBufferCreate"]
+- !private ["P5Kanna11XMLDocument", "xmlBufferFree"]
+- !private ["P5Kanna11XMLDocument", "xmlChar"]
+- !private ["P5Kanna11XMLDocument", "xmlDocDumpMemory"]
+- !private ["P5Kanna11XMLDocument", "xmlFree"]
 - !private ["P5Kanna11XMLDocument", "xmlFreeDoc"]
+- !private ["P5Kanna11XMLDocument", "xmlOutputBufferCreateBuffer"]
+- !private ["P5Kanna11XMLDocument", "xmlOutputBufferGetContent"]
 - !private ["P5Kanna11XMLDocument", "xmlReadDoc"]
 - ["P5Kanna11XMLDocument", "xpath"]
 - ["P5Kanna11XMLDocument", ""]
 - !private ["P5Kanna10XMLElement", "at_css"]
 - !private ["P5Kanna10XMLElement", "at_xpath"]
+- !private ["P5Kanna10XMLElement", "content"]
 - !private ["P5Kanna10XMLElement", "css"]
+- ["P5Kanna10XMLElement", "deinit"]
 - !private ["P5Kanna10XMLElement", "init"]
 - !private ["P5Kanna10XMLElement", "innerHTML"]
 - !private ["P5Kanna10XMLElement", "text"]
 - !private ["P5Kanna10XMLElement", "xpath"]
-- !private ["C5Kanna10XMLNodeSet", "init"]
-- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
-- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
-- !private ["Ps32_BuiltinStringLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
-- !private ["Ps32_BuiltinStringLiteralConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
-- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "lengthOfBytesUsingEncoding"]
-- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "cStringUsingEncoding"]
-- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
-- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "lengthOfBytesUsingEncoding"]
+- ["O5Kanna11XPathObject", "deinit"]
+- !private ["O5Kanna11XPathObject", "none"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "cString"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "lengthOfBytes"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "Encoding"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "cString"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "lengthOfBytes"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "Encoding"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "cString"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "lengthOfBytes"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "Encoding"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "cString"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "lengthOfBytes"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "cString"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "lengthOfBytes"]
+- ["Ps9_Hashable", "Encoding"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "assumingMemoryBound"]
+- !private ["Ps9_Hashable", "cString"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "lengthOfBytes"]
+- !private ["Ps9_Hashable", "rawValue"]
 - !private ["Ps14_Incrementable", "init"]
-- !private ["Ps22_IntegerArithmeticType", "init"]
-- !private ["Ps12_IntegerType", "init"]
+- !private ["Ps8_Integer", "init"]
+- !private ["Ps18_IntegerArithmetic", "init"]
+- ["Ps21_ObjectiveCBridgeable", "Encoding"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
-- !private ["Ps21_ObjectiveCBridgeable", "cStringUsingEncoding"]
+- !private ["Ps21_ObjectiveCBridgeable", "assumingMemoryBound"]
+- !private ["Ps21_ObjectiveCBridgeable", "cString"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "lengthOfBytesUsingEncoding"]
-- !private ["Ps12_PointerType", "init"]
-- !private ["Ps22_RandomAccessAmbiguity", "init"]
-- ["Ps12_Reflectable", "Some"]
-- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
-- !private ["Ps12_Reflectable", "cStringUsingEncoding"]
-- !private ["Ps12_Reflectable", "init"]
-- !private ["Ps12_Reflectable", "lengthOfBytesUsingEncoding"]
-- !private ["Ps18_SignedIntegerType", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "lengthOfBytes"]
+- !private ["Ps8_Pointer", "assumingMemoryBound"]
+- !private ["Ps8_Pointer", "init"]
+- !private ["Ps14_SignedInteger", "init"]
+- !private ["Ps11_Strideable", "assumingMemoryBound"]
+- !private ["Ps11_Strideable", "init"]
 - !private ["C5Kanna18libxmlHTMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["C5Kanna18libxmlHTMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["C5Kanna18libxmlHTMLDocument", "CFStringEncoding"]
 - !private ["C5Kanna18libxmlHTMLDocument", "CInt"]
+- !private ["C5Kanna18libxmlHTMLDocument", "Int32"]
 - ["C5Kanna18libxmlHTMLDocument", "String"]
 - ["C5Kanna18libxmlHTMLDocument", "UInt"]
+- !private ["C5Kanna18libxmlHTMLDocument", "UnsafeMutablePointer"]
 - !private ["C5Kanna18libxmlHTMLDocument", "UnsafePointer"]
+- !private ["C5Kanna18libxmlHTMLDocument", "UnsafeRawPointer"]
 - ["C5Kanna18libxmlHTMLDocument", "XMLElement"]
-- ["C5Kanna18libxmlHTMLDocument", "XMLNodeSet"]
+- ["C5Kanna18libxmlHTMLDocument", "XPathObject"]
 - ["C5Kanna18libxmlHTMLDocument", "at_css"]
 - ["C5Kanna18libxmlHTMLDocument", "at_xpath"]
 - ["C5Kanna18libxmlHTMLDocument", "body"]
 - ["C5Kanna18libxmlHTMLDocument", "className"]
+- ["C5Kanna18libxmlHTMLDocument", "content"]
 - ["C5Kanna18libxmlHTMLDocument", "css"]
 - ["C5Kanna18libxmlHTMLDocument", "deinit"]
 - !private ["C5Kanna18libxmlHTMLDocument", "docPtr"]
 - !private ["C5Kanna18libxmlHTMLDocument", "encoding"]
 - ["C5Kanna18libxmlHTMLDocument", "head"]
 - !private ["C5Kanna18libxmlHTMLDocument", "html"]
+- !private ["C5Kanna18libxmlHTMLDocument", "htmlDocContentDumpOutput"]
 - ["C5Kanna18libxmlHTMLDocument", "htmlDocPtr"]
 - !private ["C5Kanna18libxmlHTMLDocument", "htmlReadDoc"]
 - ["C5Kanna18libxmlHTMLDocument", "init"]
@@ -330,28 +471,40 @@ depends-member:
 - ["C5Kanna18libxmlHTMLDocument", "text"]
 - ["C5Kanna18libxmlHTMLDocument", "title"]
 - ["C5Kanna18libxmlHTMLDocument", "toHTML"]
+- ["C5Kanna18libxmlHTMLDocument", "toXML"]
 - !private ["C5Kanna18libxmlHTMLDocument", "url"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlBufferCreate"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlBufferFree"]
 - !private ["C5Kanna18libxmlHTMLDocument", "xmlChar"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlDocDumpMemory"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlFree"]
 - !private ["C5Kanna18libxmlHTMLDocument", "xmlFreeDoc"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlOutputBufferCreateBuffer"]
+- !private ["C5Kanna18libxmlHTMLDocument", "xmlOutputBufferGetContent"]
 - ["C5Kanna18libxmlHTMLDocument", "xpath"]
-- !private ["C5Kanna14libxmlHTMLNode", "deinit"]
+- ["C5Kanna14libxmlHTMLNode", "deinit"]
 - !private ["C5Kanna14libxmlHTMLNode", "init"]
 - !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
 - !private ["C5Kanna17libxmlXMLDocument", "CFStringEncoding"]
 - !private ["C5Kanna17libxmlXMLDocument", "CInt"]
+- !private ["C5Kanna17libxmlXMLDocument", "Int32"]
 - ["C5Kanna17libxmlXMLDocument", "String"]
 - ["C5Kanna17libxmlXMLDocument", "UInt"]
+- !private ["C5Kanna17libxmlXMLDocument", "UnsafeMutablePointer"]
 - !private ["C5Kanna17libxmlXMLDocument", "UnsafePointer"]
+- !private ["C5Kanna17libxmlXMLDocument", "UnsafeRawPointer"]
 - ["C5Kanna17libxmlXMLDocument", "XMLElement"]
-- ["C5Kanna17libxmlXMLDocument", "XMLNodeSet"]
+- ["C5Kanna17libxmlXMLDocument", "XPathObject"]
 - ["C5Kanna17libxmlXMLDocument", "at_css"]
 - ["C5Kanna17libxmlXMLDocument", "at_xpath"]
 - ["C5Kanna17libxmlXMLDocument", "className"]
+- ["C5Kanna17libxmlXMLDocument", "content"]
 - ["C5Kanna17libxmlXMLDocument", "css"]
 - ["C5Kanna17libxmlXMLDocument", "deinit"]
 - !private ["C5Kanna17libxmlXMLDocument", "docPtr"]
 - !private ["C5Kanna17libxmlXMLDocument", "encoding"]
+- !private ["C5Kanna17libxmlXMLDocument", "htmlDocContentDumpOutput"]
 - ["C5Kanna17libxmlXMLDocument", "init"]
 - ["C5Kanna17libxmlXMLDocument", "innerHTML"]
 - !private ["C5Kanna17libxmlXMLDocument", "libxmlHTMLNode"]
@@ -359,35 +512,50 @@ depends-member:
 - ["C5Kanna17libxmlXMLDocument", "tagName"]
 - ["C5Kanna17libxmlXMLDocument", "text"]
 - ["C5Kanna17libxmlXMLDocument", "toHTML"]
+- ["C5Kanna17libxmlXMLDocument", "toXML"]
 - !private ["C5Kanna17libxmlXMLDocument", "url"]
 - !private ["C5Kanna17libxmlXMLDocument", "xml"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlBufferCreate"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlBufferFree"]
 - !private ["C5Kanna17libxmlXMLDocument", "xmlChar"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlDocDumpMemory"]
 - ["C5Kanna17libxmlXMLDocument", "xmlDocPtr"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlFree"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlFreeDoc"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlOutputBufferCreateBuffer"]
+- !private ["C5Kanna17libxmlXMLDocument", "xmlOutputBufferGetContent"]
 - !private ["C5Kanna17libxmlXMLDocument", "xmlReadDoc"]
 - ["C5Kanna17libxmlXMLDocument", "xpath"]
 depends-nominal:
 - "Ps9AnyObject"
-- !private "Ps22BidirectionalIndexType"
-- !private "Ps21BitwiseOperationsType"
-- !private "Sb"
-- !private "Ps25BooleanLiteralConvertible"
-- !private "Ps11BooleanType"
-- !private "CSo8CFString"
-- !private "Ps11CVarArgType"
-- !private "Ps10Comparable"
+- "Sa"
+- !private "Ps17BitwiseOperations"
+- "Sb"
+- "CSo8CFString"
+- "Ps7CVarArg"
+- "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
-- !private "Ps23CustomStringConvertible"
-- !private "Ps9Equatable"
-- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
-- !private "Ps16ForwardIndexType"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "VE10FoundationSS8Encoding"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- !private "Ps23ExpressibleByNilLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
 - "P5Kanna12HTMLDocument"
-- !private "Ps8Hashable"
-- !private "SQ"
-- !private "Vs5Int32"
-- !private "Ps21IntegerArithmeticType"
-- !private "Ps25IntegerLiteralConvertible"
-- !private "Ps11IntegerType"
-- !private "Ps14MirrorPathType"
+- "Ps8Hashable"
+- "SQ"
+- "Si"
+- "Vs5Int32"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - !private "PSo16NSMutableCopying"
@@ -395,53 +563,56 @@ depends-nominal:
 - !private "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
-- "Ps21NilLiteralConvertible"
 - "Sq"
-- !private "Ps16OutputStreamType"
-- !private "Ps21RandomAccessIndexType"
+- !private "Ps16RawRepresentable"
 - "P5Kanna10Searchable"
 - "P5Kanna14SearchableNode"
-- !private "Ps12SequenceType"
-- !private "Ps17SignedIntegerType"
-- !private "Ps16SignedNumberType"
-- !private "Ps10Streamable"
+- !private "Ps8Sequence"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
 - !private "Ps10Strideable"
-- !private "SS"
-- !private "Ps30StringInterpolationConvertible"
-- !private "Ps24StringLiteralConvertible"
-- !private "Ps31UnicodeScalarLiteralConvertible"
-- !private "SP"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "Su"
+- "Vs6UInt32"
+- "SP"
+- "SV"
 - "P5Kanna11XMLDocument"
-- !private "P5Kanna10XMLElement"
-- !private "C5Kanna10XMLNodeSet"
-- !private "Ps33_BuiltinBooleanLiteralConvertible"
-- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
-- !private "Ps33_BuiltinIntegerLiteralConvertible"
-- !private "Ps32_BuiltinStringLiteralConvertible"
-- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
-- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- "P5Kanna10XMLElement"
+- "O5Kanna11XPathObject"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
 - !private "Ps14_Incrementable"
-- !private "Ps22_IntegerArithmeticType"
-- !private "Ps12_IntegerType"
-- !private "Ps21_ObjectiveCBridgeable"
-- !private "Ps12_PointerType"
-- !private "Ps22_RandomAccessAmbiguity"
-- "Ps12_Reflectable"
-- !private "Ps18_SignedIntegerType"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- "Ps21_ObjectiveCBridgeable"
+- !private "Ps8_Pointer"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
 - "C5Kanna18libxmlHTMLDocument"
-- !private "C5Kanna14libxmlHTMLNode"
+- "C5Kanna14libxmlHTMLNode"
 - "C5Kanna17libxmlXMLDocument"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/Swift_2.3.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-interface-hash: "dd33bf067b1b7cb1b52ac3180765b26e"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "8ea367bdddee3a5e3589123657f1ddcd"

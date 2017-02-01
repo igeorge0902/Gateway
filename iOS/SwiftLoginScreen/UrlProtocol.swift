@@ -16,44 +16,44 @@ var requestCount = 0
 var pattern_ = "https://([^/]+)(/example/tabularasa.jsp.*?)(/$|$)"
 var pattern_rs = "https://([^/]+)(/example/tabularasa.jsp.*?JSESSIONID=)"
 
-class MyURLProtocol: NSURLProtocol {
+class MyURLProtocol: URLProtocol {
 
     var connection: NSURLConnection!
     var mutableData: NSMutableData!
-    var response: NSURLResponse!
-    var httpresponse: NSHTTPURLResponse!
+    var response: URLResponse!
+    var httpresponse: HTTPURLResponse!
     var newRequest:NSMutableURLRequest!
     
-    override class func canInitWithRequest(request: NSURLRequest) -> Bool {
+    override class func canInit(with request: URLRequest) -> Bool {
     
-        if NSURLProtocol.propertyForKey("MyURLProtocolHandledKey", inRequest: request) != nil {
+        if URLProtocol.property(forKey: "MyURLProtocolHandledKey", in: request) != nil {
             return false
         }
         
-        if NSURLProtocol.propertyForKey("MyRedirectHandledKey", inRequest: request) != nil {
+        if URLProtocol.property(forKey: "MyRedirectHandledKey", in: request) != nil {
             return false
         }
         
-        print("Request #\(requestCount+=1): URL = \(request.URL!.absoluteString)")
-        NSLog("Relative path ==> %@", request.URL!.relativePath!)
+        print("Request #\(requestCount+=1): URL = \(request.url!.absoluteString)")
+        NSLog("Relative path ==> %@", request.url!.relativePath)
 
 
         return true
         
     }
     
-    override class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
     
-    override class func requestIsCacheEquivalent(aRequest: NSURLRequest,toRequest bRequest: NSURLRequest) -> Bool {
-            return super.requestIsCacheEquivalent(aRequest, toRequest:bRequest)
+    override class func requestIsCacheEquivalent(_ aRequest: URLRequest,to bRequest: URLRequest) -> Bool {
+            return super.requestIsCacheEquivalent(aRequest, to:bRequest)
     }
     
     override func startLoading() {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        if AFNetworkReachabilityManager.sharedManager().reachable {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        if AFNetworkReachabilityManager.shared().isReachable {
             NSLog("AFNetwork is reachable...")
             
             // 1
@@ -62,17 +62,17 @@ class MyURLProtocol: NSURLProtocol {
         if let cachedResponse = possibleCachedResponse {
 
             // 2
-            let data = cachedResponse.valueForKey("data") as! NSData
-            let mimeType = cachedResponse.valueForKey("mimeType") as! String
-            let encoding = cachedResponse.valueForKey("encoding") as? String?
+            let data = cachedResponse.value(forKey: "data") as! Data
+            let mimeType = cachedResponse.value(forKey: "mimeType") as! String
+            let encoding = cachedResponse.value(forKey: "encoding") as? String?
             
             // 3
-            let response = NSURLResponse(URL: self.request.URL!, MIMEType: mimeType, expectedContentLength: data.length, textEncodingName: encoding!)
+            let response = URLResponse(url: self.request.url!, mimeType: mimeType, expectedContentLength: data.count, textEncodingName: encoding!)
             
             // 4
-            self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
-            self.client!.URLProtocol(self, didLoadData: data)
-            self.client!.URLProtocolDidFinishLoading(self)
+            self.client!.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            self.client!.urlProtocol(self, didLoad: data)
+            self.client!.urlProtocolDidFinishLoading(self)
             
             
         
@@ -82,28 +82,28 @@ class MyURLProtocol: NSURLProtocol {
            // NSLog("Serving response from NSURLConnection url == %@", self.request.URL!.absoluteString)
             
             
-            if request.URL!.relativePath == "/login/HelloWorld" {
+            if request.url!.relativePath == "/login/HelloWorld" {
                 
-                newRequest = self.request.mutableCopy() as! NSMutableURLRequest
-                NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", inRequest: newRequest)
+                newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+                URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
                 /* We set the headerfield and value that the Apache webserver will accept */
   
-                let ciphertext = cipherText.getCipherText(deviceId)
+                let ciphertext = cipherText!.getCipherText(deviceId)
                 newRequest.setValue(ciphertext, forHTTPHeaderField: "M-Device")
                 
                 newRequest.setValue("M", forHTTPHeaderField: "M")
-                self.connection = NSURLConnection(request: newRequest, delegate: self)
+                self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
                 
             }
             
-            if request.URL!.relativePath != "/example/tabularasa.jsp" && request.URL!.relativePath != "/login/HelloWorld"{
+            if request.url!.relativePath != "/example/tabularasa.jsp" && request.url!.relativePath != "/login/HelloWorld"{
              
-            newRequest = self.request.mutableCopy() as! NSMutableURLRequest
-            NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", inRequest: newRequest)
+            newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+            URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
             /* We set the headerfield and value that the Apache webserver will accept */
             
             newRequest.setValue("M", forHTTPHeaderField: "M")
-            self.connection = NSURLConnection(request: newRequest, delegate: self)
+            self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
                 
                 }
             
@@ -113,11 +113,11 @@ class MyURLProtocol: NSURLProtocol {
             
             NSLog("AFNetwork failed to respond......")
             
-            let failedResponse = NSHTTPURLResponse(URL: self.request.URL!, statusCode: 0, HTTPVersion: nil, headerFields: nil)
+            let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: nil, headerFields: nil)
             
-            self.client?.URLProtocol(self, didReceiveResponse: failedResponse!, cacheStoragePolicy: .NotAllowed)
+            self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
             
-            self.client?.URLProtocolDidFinishLoading(self)
+            self.client?.urlProtocolDidFinishLoading(self)
             
             var errorOnLogin:RequestManager?
             
@@ -132,41 +132,41 @@ class MyURLProtocol: NSURLProtocol {
             self.connection.cancel()
         }
         self.connection = nil
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
 
     }
     
     
-    func connection(connection: NSURLConnection!, willSendRequest request: NSURLRequest, redirectResponse response: NSURLResponse?) -> NSURLRequest? {
+    func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
         
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        var xtoken = prefs.valueForKey("X-Token")
+        let prefs:UserDefaults = UserDefaults.standard
+        var xtoken = prefs.value(forKey: "X-Token")
 
-        if let httpResponse = response as? NSHTTPURLResponse {
+        if let httpResponse = response as? HTTPURLResponse {
         
         if httpResponse.statusCode == 302 {
 
-                let newRequest = self.request.mutableCopy() as! NSMutableURLRequest
-                NSURLProtocol.setProperty(true, forKey: "MyRedirectHandledKey", inRequest: newRequest)
+                let newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+                URLProtocol.setProperty(true, forKey: "MyRedirectHandledKey", in: newRequest)
            //   self.client?.URLProtocol(self, wasRedirectedToRequest: newRequest, redirectResponse: response!)
                 
-                let jsonHeaders:NSDictionary = httpResponse.allHeaderFields
+                let jsonHeaders:NSDictionary = httpResponse.allHeaderFields as NSDictionary
                 
-                xtoken = jsonHeaders.valueForKey("X-Token") as! NSString
+                xtoken = jsonHeaders.value(forKey: "X-Token") as! NSString
                 NSLog("X-Token: ", xtoken as! NSString);
 
                 prefs.setValue(xtoken, forKey: "X-Token")
-                NSLog("Sending Request from %@ to %@", response!.URL!, request.URL!);
+                //NSLog("Sending Request from %@ to %@", response!.url!, request.url!);
                 
             
                 let match = RegEx()
-                let url = request.URL!.absoluteString
+                let url = request.url!.absoluteString
                 var requestLogin:RequestManager?
                 
-                if match.containsMatch(pattern_, inString: url!) {
+                if match.containsMatch(pattern_, inString: url) {
                     
-                    let adminUrl = match.replaceMatches(pattern_rs, inString: url!, withString:"https://milo.crabdance.com/login/admin?JSESSIONID=")
-                    let sessionID = match.replaceMatches(pattern_rs, inString: url!, withString:"")
+                    let adminUrl = match.replaceMatches(pattern_rs, inString: url, withString:"https://milo.crabdance.com/login/admin?JSESSIONID=")
+                    let sessionID = match.replaceMatches(pattern_rs, inString: url, withString:"")
                     
                     prefs.setValue(sessionID, forKey: "JSESSIONID")
                     NSLog("SessionId ==> %@", sessionID!)
@@ -193,31 +193,31 @@ class MyURLProtocol: NSURLProtocol {
         
     }
     
-    func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
-        self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
+    func connection(_ connection: NSURLConnection!, didReceiveResponse response: URLResponse!) {
+        self.client!.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
         
         self.response = response
         self.mutableData = NSMutableData()
-        self.httpresponse = response as? NSHTTPURLResponse!
+        self.httpresponse = response as? HTTPURLResponse!
 
         
     }
     
-    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+    func connection(_ connection: NSURLConnection!, didReceiveData data: Data!) {
         
-        self.client!.URLProtocol(self, didLoadData: data)
-        self.mutableData.appendData(data)
+        self.client!.urlProtocol(self, didLoad: data)
+        self.mutableData.append(data)
         
     }
     
-    func connectionDidFinishLoading(connection: NSURLConnection!) {
-        self.client!.URLProtocolDidFinishLoading(self)
+    func connectionDidFinishLoading(_ connection: NSURLConnection!) {
+        self.client!.urlProtocolDidFinishLoading(self)
         self.saveCachedResponse()
     }
     
     // It sends a call to RequestManager to present an alert view about the error
-    func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
-        self.client!.URLProtocol(self, didFailWithError: error)
+    func connection(_ connection: NSURLConnection!, didFailWithError error: NSError!) {
+        self.client!.urlProtocol(self, didFailWithError: error)
 
         if (newRequest != nil) {
         var errorOnLogin:RequestManager?
@@ -234,7 +234,7 @@ class MyURLProtocol: NSURLProtocol {
       //  NSLog("Saving cached response url == %@", self.request.URL!.absoluteString)
         
         // 1
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         
         // Create a private NSManagedObjectContext with private queue concurrency type and use it to access CoreData whenever operating on a background thread.
         let context = delegate.managedObjectContext
@@ -243,31 +243,31 @@ class MyURLProtocol: NSURLProtocol {
         //privateMOC.parentContext = context
         
         // 2
-        let cachedResponse = NSEntityDescription.insertNewObjectForEntityForName("CachedURLResponse", inManagedObjectContext: context) as NSManagedObject
+        let cachedResponse = NSEntityDescription.insertNewObject(forEntityName: "CachedURLResponse", into: context) as NSManagedObject
         
-        if let httpResponse = response as? NSHTTPURLResponse {
+        if let httpResponse = response as? HTTPURLResponse {
         
             switch(httpResponse.statusCode) {
             case 200:
                
-                if request.URL!.relativePath != "/login/HelloWorld" {
+                if request.url!.relativePath != "/login/HelloWorld" {
                     
                 cachedResponse.setValue(self.mutableData, forKey: "data")
-                cachedResponse.setValue(self.request.URL!.absoluteString, forKey: "url")
-                cachedResponse.setValue(NSDate(), forKey: "timestamp")
-                cachedResponse.setValue(self.response.MIMEType, forKey: "mimeType")
+                cachedResponse.setValue(self.request.url!.absoluteString, forKey: "url")
+                cachedResponse.setValue(Date(), forKey: "timestamp")
+                cachedResponse.setValue(self.response.mimeType, forKey: "mimeType")
                 cachedResponse.setValue(self.response.textEncodingName, forKey: "encoding")
                 cachedResponse.setValue(self.httpresponse.statusCode, forKey: "statusCode")
                     
                     
-                    if request.URL!.relativePath == "/example/jsR/app.js" {
+                    if request.url!.relativePath == "/example/jsR/app.js" {
 
-                    let urldata:NSData = self.mutableData
-                    let convertedString = NSString(data: urldata, encoding: NSUTF8StringEncoding)
+                    let urldata:Data = self.mutableData as Data
+                    let convertedString = NSString(data: urldata, encoding: String.Encoding.utf8.rawValue)
                     
-                        let newString:NSString = convertedString!.stringByReplacingOccurrencesOfString("(uuid)", withString: "("+("\"\((deviceId))\"")+")")
-                        let newurldata:NSData = newString.dataUsingEncoding(NSASCIIStringEncoding)!
-                        self.mutableData.appendData(newurldata)
+                        let newString:NSString = convertedString!.replacingOccurrences(of: "(uuid)", with: "("+("\"\((deviceId))\"")+")") as NSString
+                        let newurldata:Data = newString.data(using: String.Encoding.ascii.rawValue)!
+                        self.mutableData.append(newurldata)
                         cachedResponse.setValue(self.mutableData, forKey: "data")
                         
                     }
@@ -276,15 +276,15 @@ class MyURLProtocol: NSURLProtocol {
                 
             case 502:
                 
-                if request.URL!.relativePath == "/login/HelloWorld" {
-                    let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                    prefs.setInteger(0, forKey: "ISWEBLOGGEDIN")
+                if request.url!.relativePath == "/login/HelloWorld" {
+                    let prefs:UserDefaults = UserDefaults.standard
+                    prefs.set(0, forKey: "ISWEBLOGGEDIN")
                     
                     var errorOnLogin:RequestManager?
                     
-                        let data: NSData = self.mutableData
+                        let data: Data = self.mutableData as Data
                         
-                        if let jsonData:NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers )) as? Dictionary<String, AnyObject> {
+                        if let jsonData:NSDictionary = (try? JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.mutableContainers )) as? Dictionary<String, AnyObject> as NSDictionary? {
                             
                             let errmsg = jsonData["Session creation"] as! String
                             errorOnLogin = RequestManager(url: "https://milo.crabdance.com/login/HelloWorld", errors: errmsg)
@@ -297,17 +297,17 @@ class MyURLProtocol: NSURLProtocol {
                 
             case 503:
 
-                if request.URL!.relativePath == "/login/HelloWorld" {
-                    let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                    prefs.setInteger(0, forKey: "ISWEBLOGGEDIN")
+                if request.url!.relativePath == "/login/HelloWorld" {
+                    let prefs:UserDefaults = UserDefaults.standard
+                    prefs.set(0, forKey: "ISWEBLOGGEDIN")
                     
                     var errorOnLogin:RequestManager?
                     
-                    let data: NSData = self.mutableData
-                
-                    if let result = (NSString(data: data, encoding: NSASCIIStringEncoding)) as? String {
+                    let data: Data = self.mutableData as Data
+                    
+                    if let result = (NSString(data: data, encoding: String.Encoding.ascii.rawValue)) as? String {
                         
-                        if let doc = Kanna.HTML(html: result, encoding: NSASCIIStringEncoding) {
+                        if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
                             errorOnLogin = RequestManager(url: "https://milo.crabdance.com/login/HelloWorld", errors: doc.title!)
                             errorOnLogin?.getResponse { _ in }
                             
@@ -341,21 +341,21 @@ class MyURLProtocol: NSURLProtocol {
     // FIXMES: app.js is modified and stored in cache like this, however, it won't take effect untill app restart, because still the original app.js is loaded. 
     func cachedResponseForCurrentRequest() -> NSManagedObject? {
         // 1
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.managedObjectContext
         
         // 2
-        let fetchRequest = NSFetchRequest()
-        let entity = NSEntityDescription.entityForName("CachedURLResponse", inManagedObjectContext: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        let entity = NSEntityDescription.entity(forEntityName: "CachedURLResponse", in: context)
         fetchRequest.entity = entity
         
         // 3
-        let predicate = NSPredicate(format:"url == %@", self.request.URL!.absoluteString!)
+        let predicate = NSPredicate(format:"url == %@", self.request.url!.absoluteString)
         fetchRequest.predicate = predicate
         
         
         // 4
-        let possibleResult = try?context.executeFetchRequest(fetchRequest) as! Array<NSManagedObject>
+        let possibleResult = try?context.fetch(fetchRequest) as! Array<NSManagedObject>
         /*
         let fetchRequests = NSFetchRequest(entityName: "CachedURLResponse")
         let results = try?context.executeFetchRequest(fetchRequests) as! [CachedURLResponse]

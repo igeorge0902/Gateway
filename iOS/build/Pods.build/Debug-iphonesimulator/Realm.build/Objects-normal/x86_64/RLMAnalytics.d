@@ -2,18 +2,17 @@ dependencies: \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/Realm/RLMAnalytics.mm \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target\ Support\ Files/Realm/Realm-prefix.pch \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMAnalytics.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealm.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMDefines.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMRealm.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMConstants.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMUtil.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMConstants.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMOptionalBase.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMOptionalBase.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/meta.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/assert.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/features.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/config.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/terminate.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/inspect.hpp \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/to_string.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/version.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file_mapper.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file.hpp \
@@ -33,5 +32,7 @@ dependencies: \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/unicode.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/binary_data.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/column_fwd.hpp \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array_direct.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/realm_nmmintrin.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/datetime.hpp
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/timestamp.hpp \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/sync/version.hpp

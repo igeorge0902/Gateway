@@ -15,14 +15,14 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
 
     static let sharedInstance = RestApiManager()
     
-    func alertView(View: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+    func alertView(_ View: UIAlertView, clickedButtonAt buttonIndex: Int){
         
         switch buttonIndex{
             
         case 0:
             
-            let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            let user = prefs.valueForKey("USERNAME")
+            let prefs:UserDefaults = UserDefaults.standard
+            let user = prefs.value(forKey: "USERNAME")
             
             var errorOnLogin:GeneralRequestManager?
             
@@ -49,11 +49,11 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
 
     var running = false
 
-    func getRandomUser(onCompletion: (JSON, NSError?) -> Void) {
+    func getRandomUser(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
         
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let prefs:UserDefaults = UserDefaults.standard
         
-        let sessionId:NSString = prefs.valueForKey("JSESSIONID") as! NSString
+        let sessionId:NSString = prefs.value(forKey: "JSESSIONID") as! NSString
         
         let route = baseURL+(sessionId as String)
        // let route = baseURL
@@ -63,27 +63,27 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
         })
     }
     
-    func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
+    func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
         
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let xtoken = prefs.valueForKey("X-Token")
+        let prefs:UserDefaults = UserDefaults.standard
+        let xtoken = prefs.value(forKey: "X-Token")
 
-        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
+        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20)
 
-        let session = NSURLSession.sharedCustomSession
+        let session = URLSession.sharedCustomSession
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+        let task = session.dataTask(with: request, completionHandler: {data, response, sessionError -> Void in
             
             var error = sessionError
 
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
                     
                     let description = "HTTP response was \(httpResponse.statusCode)"
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
+                    NSLog(error!.localizedDescription)
                     
                 }
             }
@@ -92,21 +92,21 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                 
                 let alertView:UIAlertView = UIAlertView()
                 
-                if let httpResponse = response as? NSHTTPURLResponse {
+                if let httpResponse = response as? HTTPURLResponse {
                     
                     if httpResponse.statusCode == 300 {
                         
-                        let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                        let jsonData:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
                             
-                            NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                            JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
                         
-                        let message:NSString = jsonData.valueForKey("Activation") as! NSString
+                        let message:NSString = jsonData.value(forKey: "Activation") as! NSString
                         
                         alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
                         alertView.message = "Voucher is active: \(message)"
                         alertView.delegate = self
-                        alertView.addButtonWithTitle("Okay")
-                        alertView.addButtonWithTitle("Cancel")
+                        alertView.addButton(withTitle: "Okay")
+                        alertView.addButton(withTitle: "Cancel")
                         alertView.cancelButtonIndex = 1
                         alertView.show()
                         
@@ -117,7 +117,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                         alertView.title = "Connection Failure!"
                         alertView.message = error!.localizedDescription
                         alertView.delegate = self
-                        alertView.addButtonWithTitle("OK")
+                        alertView.addButton(withTitle: "OK")
                         alertView.show()
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                         
@@ -128,7 +128,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             } else {
             
             let json:JSON = JSON(data: data!)
-                onCompletion(json, error)
+                onCompletion(json, error as NSError?)
             }
         })
         running = true
@@ -136,26 +136,25 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
     }
     
     //MARK: Perform a POST Request
-    func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) {
+    func makeHTTPPostRequest(_ path: String, body: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
+        var request = URLRequest(url: URL(string: path)!)
         
         // Set the method to POST
-        request.HTTPMethod = "POST"
+        request.httpMethod = "POST"
 
-        let body = body as? NSData
+        let body = body as? Data
         
         // Set the POST body for the request
-        request.HTTPBody = (try! NSJSONSerialization.JSONObjectWithData(body!, options:NSJSONReadingOptions.MutableContainers)) as? NSData
+        request.httpBody = (try! JSONSerialization.jsonObject(with: body!, options:JSONSerialization.ReadingOptions.mutableContainers)) as? Data
         
         //NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &err)
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+        let task = session.dataTask(with: request, completionHandler: {(data, response, sessionError)  in
             let json:JSON = JSON(data: data!)
-            let err = error
 
-            onCompletion(json, err)
+            onCompletion(json, sessionError as NSError?)
         })
         task.resume()
     }

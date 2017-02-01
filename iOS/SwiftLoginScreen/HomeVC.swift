@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
 //    lazy var config = NSURLSessionConfiguration.defaultSessionConfiguration()
 //    lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
    
-    lazy var session = NSURLSession.sharedCustomSession
+    lazy var session = URLSession.sharedCustomSession
 
     var running = false
     
@@ -33,25 +33,25 @@ class HomeVC: UIViewController {
     var collectionView: UICollectionView!
 
     // Retreive the managedObjectContext from AppDelegate
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
         // COREDATA:
-        let newItem = NSEntityDescription.insertNewObjectForEntityForName("LogItem", inManagedObjectContext: self.managedObjectContext) as! LogItem
+        let newItem = NSEntityDescription.insertNewObject(forEntityName: "LogItem", into: self.managedObjectContext) as! LogItem
         
         newItem.title = "Wrote Core Data Tutorial"
         newItem.itemText = "Wrote and post a tutorial on the basics of Core Data to blog."
 
         backgroundDict = ["Background1":"background1"]
         
-        let view:UIView = UIView(frame: CGRectMake(-25, 0, self.view.frame.size.width * 0.7, self.view.frame.size.height));
+        let view:UIView = UIView(frame: CGRect(x: -25, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height));
         
         self.view.addSubview(view)
-        self.view.sendSubviewToBack(view)
+        self.view.sendSubview(toBack: view)
 
         
         let backgroundImage:UIImage? = UIImage(named: backgroundDict["Background1"]!)
@@ -65,17 +65,17 @@ class HomeVC: UIViewController {
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        let isFirstLaunch = NSUserDefaults.isFirstLaunch()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        let isFirstLaunch = UserDefaults.isFirstLaunch()
         
         // Create a new fetch request using the LogItem entity
-        let fetchRequest = NSFetchRequest(entityName: "LogItem")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
         
         // Execute the fetch request, and cast the results to an array of LogItem objects
-        if let fetchResults = (try? managedObjectContext.executeFetchRequest(fetchRequest)) as? [LogItem] {
+        if let fetchResults = (try? managedObjectContext.fetch(fetchRequest)) as? [LogItem] {
             
             /*
             // Create an Alert, and set it's message to whatever the itemText is
@@ -96,17 +96,17 @@ class HomeVC: UIViewController {
                 completion: nil)
         }*/
         
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        let prefs:UserDefaults = UserDefaults.standard
+        let isLoggedIn:Int = prefs.integer(forKey: "ISLOGGEDIN") as Int
         
         if (isLoggedIn != 1) {
         
-            self.performSegueWithIdentifier("goto_login", sender: self)
+            self.performSegue(withIdentifier: "goto_login", sender: self)
         
         } else {
         
-            self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
-            self.sessionIDLabel.text = prefs.valueForKey("JSESSIONID") as? String
+            self.usernameLabel.text = prefs.value(forKey: "USERNAME") as? String
+            self.sessionIDLabel.text = prefs.value(forKey: "JSESSIONID") as? String
 
         }
         
@@ -121,29 +121,29 @@ class HomeVC: UIViewController {
     }
     
     
-    let url:NSURL = NSURL(string:"https://milo.crabdance.com/login/logout")!
+    let url:URL = URL(string:"https://milo.crabdance.com/login/logout")!
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
-    func dataTask(onCompletion: ServiceResponse) {
+    func dataTask(_ onCompletion: ServiceResponse) {
         
-        let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        var request:URLRequest = URLRequest(url: url)
         
-        request.HTTPMethod = "GET"
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("", forHTTPHeaderField: "Referer")
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+        let task = session.dataTask(with: request, completionHandler: {(data, response, sessionError)  in
 
             var error = sessionError
             
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
                     
                     let description = "HTTP response was \(httpResponse.statusCode)"
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
+                    NSLog(error!.localizedDescription)
                     
                 }
             }
@@ -155,13 +155,13 @@ class HomeVC: UIViewController {
                 alertView.title = self.title!
                 alertView.message = "Connection Failure: \(error!.localizedDescription)"
                 alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
+                alertView.addButton(withTitle: "OK")
                 alertView.show()
                 
                 
             } else {
                 
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 NSLog("got some data")
                 
                 switch(httpResponse.statusCode) {
@@ -169,19 +169,19 @@ class HomeVC: UIViewController {
                     
                     NSLog("got a 200")
                     
-                    let jsonData:NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers )) as! NSDictionary
+                    let jsonData:NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.mutableContainers )) as! NSDictionary
                     
-                    let success:NSString = jsonData.valueForKey("Success") as! NSString
+                    let success:NSString = jsonData.value(forKey: "Success") as! NSString
                     
                     if(success == "true")
                     {
                         NSLog("LogOut SUCCESS");
                         
-                        let appDomain = NSBundle.mainBundle().bundleIdentifier
-                        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
+                        let appDomain = Bundle.main.bundleIdentifier
+                        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
 
                     }
-                    self.performSegueWithIdentifier("goto_login", sender: self)
+                    self.performSegue(withIdentifier: "goto_login", sender: self)
                     
                 default:
                     
@@ -189,7 +189,7 @@ class HomeVC: UIViewController {
                     alertView.title = "Server error!"
                     alertView.message = "Server error \(httpResponse.statusCode)"
                     alertView.delegate = self
-                    alertView.addButtonWithTitle("OK")
+                    alertView.addButton(withTitle: "OK")
                     alertView.show()
                     NSLog("Got an HTTP \(httpResponse.statusCode)")
                     
@@ -203,7 +203,7 @@ class HomeVC: UIViewController {
                 alertView.message = "Connection Failure"
                 
                 alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
+                alertView.addButton(withTitle: "OK")
                 alertView.show()
                 NSLog("Connection Failure")
             }
@@ -220,7 +220,7 @@ class HomeVC: UIViewController {
     }
     
 
-    @IBAction func logoutTapped(sender : UIButton) {
+    @IBAction func logoutTapped(_ sender : UIButton) {
         
         self.dataTask() {
             (resultString, error) -> Void in
@@ -234,14 +234,14 @@ class HomeVC: UIViewController {
     }
     
     
-    @IBAction func NearbyVenues(sender: UIButton) {
+    @IBAction func NearbyVenues(_ sender: UIButton) {
         
-        self.performSegueWithIdentifier("goto_map", sender: self)
+        self.performSegue(withIdentifier: "goto_map", sender: self)
 
         
     }
     
-    @IBAction func Navigation(sender : UIButton) {
+    @IBAction func Navigation(_ sender : UIButton) {
         
        /*
         let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
@@ -249,7 +249,7 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vcs, animated: true)
         */
         
-        self.performSegueWithIdentifier("goto_menu", sender: self)
+        self.performSegue(withIdentifier: "goto_menu", sender: self)
 
         /*
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
@@ -257,7 +257,7 @@ class HomeVC: UIViewController {
         */
     }
     
-    @IBAction func WebView(sender : UIButton) {
+    @IBAction func WebView(_ sender : UIButton) {
         
         /*
         let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
@@ -265,14 +265,14 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vcs, animated: true)
         */
         
-        self.performSegueWithIdentifier("goto_webview", sender: self)
+        self.performSegue(withIdentifier: "goto_webview", sender: self)
         
 
     }
     
-    @IBAction func Movies(sender: UIButton) {
+    @IBAction func Movies(_ sender: UIButton) {
         
-        self.performSegueWithIdentifier("goto_movies", sender: self)
+        self.performSegue(withIdentifier: "goto_movies", sender: self)
 
     }
     
@@ -280,37 +280,37 @@ class HomeVC: UIViewController {
 
 extension UIView {
     
-    func addConstraintswithFormat(format: String, views: UIView...) {
+    func addConstraintswithFormat(_ format: String, views: UIView...) {
         
         var ViewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerate() {
+        for (index, view) in views.enumerated() {
             let key = "v\(index)"
             ViewsDictionary[key] = view
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(), metrics: nil, views: ViewsDictionary))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: ViewsDictionary))
     }
     
 }
 
-extension NSUserDefaults {
+extension UserDefaults {
     // check for is first launch - only true on first invocation after app install, false on all further invocations
     static func isFirstLaunch() -> NSString {
        
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let prefs:UserDefaults = UserDefaults.standard
         prefs.setValue("nil", forKey: "FirstLaunchFlag")
         
-        let isFirstLaunch:NSString = prefs.valueForKey("FirstLaunchFlag") as! NSString
+        let isFirstLaunch:NSString = prefs.value(forKey: "FirstLaunchFlag") as! NSString
         
         if (isFirstLaunch == "nil") {
-            NSUserDefaults.standardUserDefaults().setObject("true", forKey: "FirstLaunchFlag")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set("true", forKey: "FirstLaunchFlag")
+            UserDefaults.standard.synchronize()
         } else {
         
         //if (isFirstLaunch == "true") {
-            NSUserDefaults.standardUserDefaults().setObject("false", forKey: "FirstLaunchFlag")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set("false", forKey: "FirstLaunchFlag")
+            UserDefaults.standard.synchronize()
         }
 
         return isFirstLaunch

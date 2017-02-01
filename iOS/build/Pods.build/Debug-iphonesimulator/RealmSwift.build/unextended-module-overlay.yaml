@@ -3,7 +3,7 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift.framework/Modules'
+    'name': '/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',

@@ -9,9 +9,9 @@
 import Foundation
 import SwiftyJSON
 
-class URLSessionManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
+class URLSessionManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
-    typealias CallbackBlock = (result: String, error: String?) -> ()
+    typealias CallbackBlock = (_ result: String, _ error: NSError?) -> ()
     
     
     var callback: CallbackBlock = {
@@ -19,26 +19,24 @@ class URLSessionManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         if error == nil {
             print(resultString)
         } else {
-            print(error)
+            print(error!)
         }
     }
     
-    func httpGet(request: NSMutableURLRequest!, callback: (String, String?) -> Void) {
+    func httpGet(_ request: URLRequest!, callback: @escaping (String, String?) -> Void) {
         
-        let session = NSURLSession.sharedCustomSession
+        let session = Foundation.URLSession.sharedCustomSession
         
-        let task = session.dataTaskWithRequest(request){
-            
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let task = session.dataTask(with: request, completionHandler: {(data, response, error)  in
             if error != nil {
                 callback("", error!.localizedDescription)
                 
             } else {
-                let result = NSString(data: data!, encoding: NSASCIIStringEncoding)!
+                let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue)!
                 
                 callback(result as String, nil)
             }
-        }
+        })
         task.resume()
     }
     /*
@@ -52,10 +50,10 @@ class URLSessionManager: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
     }*/
     
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-        newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
+        newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
             
-            let newRequest : NSURLRequest? = request
+            let newRequest : URLRequest? = request
             
             print(newRequest?.description);
             completionHandler(newRequest)

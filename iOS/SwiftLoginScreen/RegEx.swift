@@ -10,17 +10,17 @@ import Foundation
 
 class RegEx {
     
-    func containsMatch(pattern: String, inString string: String) -> Bool {
+    func containsMatch(_ pattern: String, inString string: String) -> Bool {
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
         let range = NSMakeRange(0, string.characters.count)
-        return regex?.firstMatchInString(string, options: [], range: range) != nil
+        return regex?.firstMatch(in: string, options: [], range: range) != nil
     }
     
-    func replaceMatches(pattern: String, inString string: String, withString replacementString: String) -> String? {
+    func replaceMatches(_ pattern: String, inString string: String, withString replacementString: String) -> String? {
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
         let range = NSMakeRange(0, string.characters.count)
         
-        return regex?.stringByReplacingMatchesInString(string, options: [], range: range, withTemplate: replacementString)
+        return regex?.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: replacementString)
     }
     
 }

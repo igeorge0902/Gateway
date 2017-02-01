@@ -16,16 +16,16 @@ extension Int64 {
     
      func getCurrentMillis()->Int64{
         
-        let time = Int64(NSDate().timeIntervalSince1970 * 1000)
+        let time = Int64(Date().timeIntervalSince1970 * 1000)
 
         return  time
     }
     
 }
 
-extension SequenceType {
+extension Sequence {
     var minimalDescrption: String {
-        return map { String($0) }.joinWithSeparator(" ")
+        return map { String(describing: $0) }.joined(separator: " ")
     }
 }
 

@@ -1,21 +1,23 @@
 PODS:
-  - Kanna (1.0.5)
-  - Realm (0.98.5):
-    - Realm/Headers (= 0.98.5)
-  - Realm/Headers (0.98.5)
-  - RealmSwift (0.98.5):
-    - Realm (= 0.98.5)
-  - SwiftyJSON (2.3.1)
+  - Kanna (2.1.1)
+  - Realm (2.4.1):
+    - Realm/Headers (= 2.4.1)
+  - Realm/Headers (2.4.1)
+  - RealmSwift (2.4.1):
+    - Realm (= 2.4.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Kanna (~> 1.0)
-  - RealmSwift (~> 0.98)
-  - SwiftyJSON (~> 2.3)
+  - Kanna (~> 2.1.0)
+  - RealmSwift (~> 2.4)
+  - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
-  Kanna: 1df5cd995dc1f3a282e3dcf7521cfef2f069ac4d
-  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
-  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  Realm: 37a5198a197598d9ec0e4d1ae2f64924c86eeb9a
+  RealmSwift: d69e431b79a41acdf14c404b868ae1c2458916e1
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 4e0aef542e821ba246e152de968a47c5e5d6725e
+
+COCOAPODS: 1.2.0

@@ -14,20 +14,20 @@ import Realm
 let serverURL = "https://milo.crabdance.com"
 class GeneralRequestManager: NSObject {
     
-    private var urlResponse:NSURLResponse?
+    fileprivate var urlResponse:URLResponse?
 
-    var url: NSURL!
+    var url: URL!
     var errors: String!
     var method: String!
     var queryParameters: [String:String]?
     var bodyParameters: [String:String]?
     var isCacheable: String?
 
-    var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var prefs:UserDefaults = UserDefaults.standard
     
     init?(url: String, errors: String, method: String, queryParameters: [String:String]?, bodyParameters: [String:String]?, isCacheable: String?) {
         super.init()
-        self.url = NSURL(string: url)!
+        self.url = URL(string: url)!
         self.errors = errors
         self.method = method
         self.queryParameters = queryParameters
@@ -47,11 +47,11 @@ class GeneralRequestManager: NSObject {
     }
 
     
-    lazy var session: NSURLSession = NSURLSession.sharedCustomSession
+    lazy var session: URLSession = URLSession.sharedCustomSession
     
     var running = false
     
-    func getResponse(onCompletion: (JSON, NSError?) -> Void) {
+    func getResponse(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
         
         if self.isCacheable == "1" {
         
@@ -59,7 +59,7 @@ class GeneralRequestManager: NSObject {
             
             var headerFields:[String : String] = [:]
             
-            headerFields["Content-Length"] = String(format:"%d", data.length)
+            headerFields["Content-Length"] = String(format:"%d", data.count)
             
             if let mimeType = localResponse.mimeType {
                 headerFields["Content-Type"] = mimeType as String
@@ -89,33 +89,33 @@ class GeneralRequestManager: NSObject {
     }
     
     // INFO: use this class for every dataTask operation
-    func dataTask(onCompletion: ServiceResponses) {
+    func dataTask(_ onCompletion: @escaping ServiceResponses) {
         
         // TODO: temp solution
-        var xtoken = prefs.valueForKey("X-Token")
+        var xtoken = prefs.value(forKey: "X-Token")
         if xtoken == nil {
             
             xtoken = ""
         }
 
         
-        let request = NSMutableURLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 30)
+        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
                 
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+        let task = session.dataTask(with: request, completionHandler: {data, response, sessionError -> Void in
 
            // dispatch_async(dispatch_get_main_queue(), { () -> Void in
             
             //  if  let json:JSON = try! JSON(data: data!) {
             var error = sessionError
             
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
                     
                     let description = "HTTP response was \(httpResponse.statusCode)"
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
+                    NSLog(error!.localizedDescription)
                     
                 }
             }
@@ -127,7 +127,7 @@ class GeneralRequestManager: NSObject {
                 alertView.title = self.errors
                 alertView.message = "Connection Failure: \(error!.localizedDescription)"
                 alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
+                alertView.addButton(withTitle: "OK")
                 alertView.show()
                 
                 
@@ -148,7 +148,7 @@ class GeneralRequestManager: NSObject {
                 NSLog("got a 200")
                 
                 self.running = false
-                onCompletion(json, error)
+                onCompletion(json, error as NSError?)
                 
                 }
             
@@ -165,9 +165,9 @@ class GeneralRequestManager: NSObject {
     /**
      Save the current response in local storage for use when offline.
      */
-    private func saveCachedResponse(data: NSData) {
+    fileprivate func saveCachedResponse(_ data: Data) {
         
-        let realm = RLMRealm.defaultRealm()
+        let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         
         var cachedResponse = cachedResponseForCurrentRequest()
@@ -176,19 +176,19 @@ class GeneralRequestManager: NSObject {
             cachedResponse = CachedResponse()
         }
         
-        if let data_:NSData = data {
+        if let data_:Data = data {
             cachedResponse!.data = data_
         }
         
-        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
+        if let url:URL? = url, let absoluteString = url?.absoluteString {
             cachedResponse!.url = absoluteString
         }
         
-        cachedResponse!.timestamp = NSDate()
+        cachedResponse!.timestamp = Date()
         if let response = self.urlResponse {
             
-            if let mimeType = response.MIMEType {
-                cachedResponse!.mimeType = mimeType
+            if let mimeType = response.mimeType {
+                cachedResponse!.mimeType = mimeType as NSString!
             }
             
             if let encoding = response.textEncodingName {
@@ -196,7 +196,7 @@ class GeneralRequestManager: NSObject {
             }
         }
         
-        realm.addObject(cachedResponse!)
+        realm.add(cachedResponse!)
         
         do {
             try realm.commitWriteTransaction()
@@ -211,15 +211,15 @@ class GeneralRequestManager: NSObject {
      
      :returns: A CachedResponse optional object.
      */
-    private func cachedResponseForCurrentRequest() -> CachedResponse? {
-        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
+    fileprivate func cachedResponseForCurrentRequest() -> CachedResponse? {
+        if let url:URL? = url, let absoluteString = url?.absoluteString {
             let p:NSPredicate = NSPredicate(format: "url == %@", argumentArray: [ absoluteString ])
             
             // Query
-            let results = CachedResponse.objectsWithPredicate(p)
+            let results = CachedResponse.objects(with: p)
             
             if results.count > 0 {
-                return results.objectAtIndex(0) as? CachedResponse
+                return results.object(at: 0) as? CachedResponse
             }
         }
         

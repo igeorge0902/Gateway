@@ -23,8 +23,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.scrollView.bounces = true
         webView.scalesPageToFit = true
 
-        let requestURL = NSURL(string: "https://milo.crabdance.com/example/index.html")
-        let request = NSURLRequest.requestWithURL(requestURL!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["hello" : "hello"], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 15)
+        let requestURL = URL(string: "https://milo.crabdance.com/example/index.html")
+        let request = URLRequest.requestWithURL(requestURL!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["hello" : "hello"], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
         
         webView.loadRequest(request)
         view.addSubview(webView)
@@ -32,47 +32,47 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     }
 
     
-    func reloadPage(sender: AnyObject) {
+    func reloadPage(_ sender: AnyObject) {
         webView.reload()
     }
     
     func webViewDidStartLoad(_: UIWebView) {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         NSLog("WebView started loading...")
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
         NSLog("WebView finished loading...")
 
     }
     
-    func webView(_: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        if request.URL!.relativePath == "/example/tabularasa.jsp" {
+        if request.url!.relativePath == "/example/tabularasa.jsp" {
                 webView = nil
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
         }
         
         return true;
     }
     
     
-    @IBAction func close(sender : UIButton) {
+    @IBAction func close(_ sender : UIButton) {
         
         webView = nil
-        self.dismissViewControllerAnimated(true, completion: {
+        self.dismiss(animated: true, completion: {
             print(self);
         })
         
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError){
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error){
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
         /*
         let alertView:UIAlertView = UIAlertView()

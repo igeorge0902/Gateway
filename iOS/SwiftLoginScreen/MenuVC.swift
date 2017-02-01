@@ -31,7 +31,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         let frame:CGRect = CGRect(x: 0, y: 100, width: self.view.frame.width, height: self.view.frame.height-100)
         self.tableView = UITableView(frame: frame)
@@ -41,14 +41,14 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.view.addSubview(self.tableView!)
         
         let btnData = UIButton(frame: CGRect(x: self.view.frame.width / 2, y: 25, width: self.view.frame.width / 2, height: 20))
-        btnData.backgroundColor = UIColor.blackColor()
-        btnData.setTitle("Profile", forState: UIControlState.Normal)
-        btnData.addTarget(self, action: #selector(MenuVC.addData), forControlEvents: UIControlEvents.TouchUpInside)
+        btnData.backgroundColor = UIColor.black
+        btnData.setTitle("Profile", for: UIControlState())
+        btnData.addTarget(self, action: #selector(MenuVC.addData), for: UIControlEvents.touchUpInside)
         
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: self.view.frame.width / 2, height: 20))
-        btnNav.backgroundColor = UIColor.blackColor()
-        btnNav.setTitle("Back", forState: UIControlState.Normal)
-        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), forControlEvents: UIControlEvents.TouchUpInside)
+        btnNav.backgroundColor = UIColor.black
+        btnNav.setTitle("Back", for: UIControlState())
+        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(btnData)
         self.view.addSubview(btnNav)
@@ -57,7 +57,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func navigateBack() {
 
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
@@ -67,24 +67,24 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             (json: JSON, error: NSError?) in
             
             // Get the appropiate part of the JSON object (then iterate over it), or just get the whole if it is of one level
-                let users: AnyObject = json["user"].object
-                self.items.addObject(users)
-                dispatch_async(dispatch_get_main_queue(), { self.tableView?.reloadData()})
+                let users: AnyObject = json["user"].object as AnyObject
+                self.items.add(users)
+                DispatchQueue.main.async(execute: { self.tableView?.reloadData()})
         }
         
         //TODO: save some data to coredata
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as UITableViewCell?
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as UITableViewCell?
         
        // if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "CELL")
        // }
         
         let user:JSON =  JSON(self.items[indexPath.row])

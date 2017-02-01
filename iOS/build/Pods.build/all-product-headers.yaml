@@ -4,23 +4,28 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Kanna-Swift.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Headers/Kanna-Swift.h"
+          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
         },
         {
           'type': 'file',
           'name': "Kanna-umbrella.h",
           'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Kanna.h",
+          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna.framework/Modules",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules",
       'contents': [
         {
           'type': 'file',
@@ -58,113 +63,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers",
       'contents': [
         {
           'type': 'file',
-          'name': "RLMArray.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMArray.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMCollection.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMCollection.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMConstants.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMConstants.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMDefines.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMDefines.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMListBase.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMListBase.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMMigration.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMMigration.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObject.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObject.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObjectBase.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectBase.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObjectBase_Dynamic.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectBase_Dynamic.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObjectSchema.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectSchema.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMOptionalBase.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMOptionalBase.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMPlatform.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMPlatform.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMProperty.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMProperty.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMRealm.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealm.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMRealmConfiguration.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealmConfiguration.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMRealm_Dynamic.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealm_Dynamic.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMResults.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMResults.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMSchema.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMSchema.h"
-        },
-        {
-          'type': 'file',
           'name': "Realm-Swift.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Headers/Realm-Swift.h"
-        },
-        {
-          'type': 'file',
-          'name': "Realm.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/Realm.h"
+          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/Modules",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules",
       'contents': [
         {
           'type': 'file',
@@ -175,73 +85,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm.framework/PrivateHeaders",
-      'contents': [
-        {
-          'type': 'file',
-          'name': "RLMAccessor.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMAccessor.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMArray_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMArray_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMMigration_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMMigration_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObjectSchema_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectSchema_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObjectStore.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectStore.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMObject_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObject_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMProperty_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMProperty_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMRealmConfiguration_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealmConfiguration_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMRealm_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMRealm_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMResults_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMResults_Private.h"
-        },
-        {
-          'type': 'file',
-          'name': "RLMSchema_Private.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMSchema_Private.h"
-        }
-      ]
-    },
-    {
-      'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift.framework/Headers",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "RealmSwift-Swift.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift.framework/Headers/RealmSwift-Swift.h"
+          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-Swift.h"
         },
         {
           'type': 'file',
@@ -252,7 +101,7 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift.framework/Modules",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules",
       'contents': [
         {
           'type': 'file',
@@ -263,12 +112,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "SwiftyJSON-Swift.h",
-          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+          'external-contents': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
         },
         {
           'type': 'file',
@@ -279,7 +128,7 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON.framework/Modules",
+      'name': "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules",
       'contents': [
         {
           'type': 'file',

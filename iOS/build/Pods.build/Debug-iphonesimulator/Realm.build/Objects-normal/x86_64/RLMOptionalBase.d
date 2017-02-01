@@ -1,15 +1,17 @@
 dependencies: \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/Realm/RLMOptionalBase.mm \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target\ Support\ Files/Realm/Realm-prefix.pch \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMAccessor.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMDefines.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMOptionalBase.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMConstants.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObject_Private.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMObject.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Headers/Private/Realm/Realm/RLMObjectBase.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMObjectStore.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/Realm/RLMProperty.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMAccessor.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMOptionalBase.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMConstants.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObject_Private.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectBase_Dynamic.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObject.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectBase.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMThreadSafeReference.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectStore.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMProperty_Private.h \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMProperty.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMUtil.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/meta.hpp \
@@ -17,7 +19,7 @@ dependencies: \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/features.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/config.h \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/terminate.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/inspect.hpp \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/to_string.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/version.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file_mapper.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file.hpp \
@@ -37,5 +39,6 @@ dependencies: \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/unicode.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/binary_data.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/column_fwd.hpp \
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array_direct.hpp \
   /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/realm_nmmintrin.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/datetime.hpp
+  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/timestamp.hpp
