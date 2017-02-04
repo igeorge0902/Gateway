@@ -12,6 +12,11 @@ Update
 - Registration is considered to be finished combined with voucher activation
 - native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
 
+# New
+WebSocket and rabbitMQ
+----
+- WebSocket connection servlet and rabbitMQ send / recieve classes are included. The corresponding sample html and js file is included in the WWW app. You have to use a different secure port number on your AS for the wss connection, otherwise all the common servlet and JKMount configuration apply.
+
 Description
 ----
 

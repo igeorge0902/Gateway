@@ -1,8 +1,8 @@
 # Gateway
 General Authentication Service
 
-# Updated to Swift 2.3 
-- Refactored
+# Swift
+- updated to Swift 3.0!;)
 
 # Notes on iOS build:
 - You should run 'POD install' to install the pods into your local environment. After installing the pods you must run the project with SwiftLoginScreen.xcworkspace!
@@ -10,9 +10,9 @@ General Authentication Service
 - AFNetwork is an Objective-C dependency that is supposed to be re-installed as the official Objective-C class bridging into Swift code describes it, if any problem occurs. 
 - Check also the Other Linker Flags for consistency
 - Take care of the App Transport Security Exceptions: it needs to be set accordingly to run on https
-----
 - If you use self-signed certs with the server, you must install your custom cerificate authority file onto your server and device/simulator  (You must use certificate authority format - I use it with Apache http server with mod_jk AJP connector on GlassFish or TomCat).
 - strictly follow the instructions at https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/ and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA). You will have two choices, however: either you import the CA on the server, or install it on the device.
+
 
 Update your hostnames in CustomURLSessionDelegate.swift file!
 ----
