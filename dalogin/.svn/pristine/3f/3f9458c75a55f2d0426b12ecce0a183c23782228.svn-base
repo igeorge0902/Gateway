@@ -1,0 +1,37 @@
+package com.dalogin;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
+import org.apache.log4j.Logger;
+
+import com.rabbitmq.client.Channel;
+
+public class MQAccess {
+
+	private static Channel chanel;
+	
+	private static Logger log = Logger.getLogger(Logger.class.getName());
+
+	  public synchronized static Channel connect() throws IOException, TimeoutException {
+
+          if (chanel == null) {
+      		MQConnectionManager mqManager = new MQConnectionManager("localhost");
+      		mqManager.getConnection();
+      		log.info("MQ connection aquired...");
+      		
+          	}
+          
+	  return chanel;         
+	  }
+	  
+	  public synchronized static String sendMQmessage(String message) throws IOException, TimeoutException {
+		  
+		   int x = chanel.getChannelNumber();
+		   log.info("MQ channel nr: " + x);
+		    connect().basicPublish("", "hello", null, message.getBytes());
+		    log.info(" [x] Sent '" + message + "'");
+		    
+		  return "msgSent";
+	  }
+}
