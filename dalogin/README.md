@@ -12,6 +12,11 @@ Update
 - Registration is considered to be finished combined with voucher activation
 - native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
 
+RoadMap
+----
+- adding outsourced session storage so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
+[Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
+
 # New
 WebSocket and rabbitMQ
 ----
