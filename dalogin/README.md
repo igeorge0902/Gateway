@@ -36,9 +36,11 @@ AES encryption - decryption is available across all platforms, except for Angula
 
 The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client and can assign it the session object, too, but you would be best off by adding another column into the table where you store your tokens and you can place your cookie value string to the corresponding row identified by the deviceId. Then you wish to read this value for each API calls and match the value of this cookie sent by the request with the one you have on the server. Since you can define and use multiple datastore for a given JPA - Hibernate project, it's not a big deal to use this authentication and authorization for separate datastores. Don't forget to overwrite the cookie value string when the session gets invalidated.
 
-For more information on how it works: https://stormpath.com/blog/angular-xsrf
+For more information on how it works: [Angular’s XSRF: How It Works](https://stormpath.com/blog/angular-xsrf)
 
-You can also add your own request / response filters to do the dirty job: https://dzone.com/articles/preventing-csrf-java-web-apps
+You can also add your own request / response filters to do the dirty job: 
+- [CSRF For Java Web Apps](https://dzone.com/articles/preventing-csrf-java-web-apps)
+- and see also [Anti cross-site scripting (XSS) filter for Java web apps](https://www.javacodegeeks.com/2012/07/anti-cross-site-scripting-xss-filter.html)
 
 # Unix epoch time
 The universal implementation of Unix epoch time in all used languages made it available that all parts of the system can and does align to the elapsed time since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970 in the same format - LONG:
@@ -80,7 +82,7 @@ that will be called by the following code in AdminServlet.java at line 169
 RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 ```
 
-The appName (or application context, which is also the base URI you define for JkMount) is defined in the pom.xml with artifactId and version nr (or finalName tag - https://maven.apache.org/pom.html, if you prefer it that way), and contextPath is what you set up in your web.xml
+The appName (or application context, which is also the base URI you define for JkMount) is defined in the pom.xml with artifactId and version nr (or finalName tag - [POM Reference](https://maven.apache.org/pom.html), if you prefer it that way), and contextPath is what you set up in your web.xml
 
 ```xml
   <context-param>
@@ -107,7 +109,9 @@ Important:
 - configure your links according to your environment setup (server, webApp, iOS)!
 - make sure you place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! If you happened to forget to put the dtd file into the right folder upon the first corresponding request that will throw exception you will find the path you must place it to. 
 - make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
-- as of Apple requirements https is required for server connections and it will be enforced as of 1st Jan 2017. Read more about app transport security: https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html, http://www.techrepublic.com/google-amp/article/how-to-migrate-to-https-using-app-transport-security-when-developing-ios-apps/?client=safari
+- as of Apple requirements https is required for server connections and it will be enforced as of 1st Jan 2017. Read more about app transport security: 
+[What's new in iOS 9](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html), 
+[How to migrate to HTTPS using App Transport Security when developing iOS apps](http://www.techrepublic.com/google-amp/article/how-to-migrate-to-https-using-app-transport-security-when-developing-ios-apps/?client=safari)
 
 
 Documentation will be coming soon!!
@@ -123,7 +127,7 @@ The structure:
 - TOMCAT 7 or GlassFish 4 servlet container as middleware component (Tomcat with crossContext enabled (required))
 - APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing, otherwise you are supposed to use a webserver to properly access the header fields) 
 
-Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
+Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> [Using Self-Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
 The webserver and the application server is configured not to use cache, but it worked for me without cache settings, too!
 
@@ -131,11 +135,17 @@ Apache HTTPD configuration
 ----
 
 - config files are included that you should use to get started. 
-- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation! - http://tomcat.apache.org/connectors-doc/ and http://tomcat.apache.org/connectors-doc/webserver_howto/apache.html)
+- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation! 
+- [Apache Connectors](http://tomcat.apache.org/connectors-doc/) 
+and 
+- [The Apache Tomcat Connectors - Web Server HowTo](http://tomcat.apache.org/connectors-doc/webserver_howto/apache.html)
 
 # setup
 - install openssl - for macOs you can use homebrew: brew install openssl
-- build your Apache HTTP server with openssl and optionally apr included (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) - https://httpd.apache.org/docs/2.4/install.html, http://httpd.apache.org/docs/current/platform/win_compiling.html, https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL
+- build your Apache HTTP server with openssl and optionally apr included (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) 
+- [Apache Install](https://httpd.apache.org/docs/2.4/install.html), 
+- [Compiling Apache for Microsoft Windows](http://httpd.apache.org/docs/current/platform/win_compiling.html), 
+- [Manual install on Windows 7 with Apache and MySQL](https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL)
 
 ```shell
 ./configure \
@@ -147,20 +157,22 @@ Apache HTTPD configuration
     --enable-mods-static=ssl
 ```
 
-- enable mod_ssl - http://www.thegeekstuff.com/2011/03/install-apache2-ssl
+- install and enable mod_ssl - [How To Install Apache 2 with SSL](http://www.thegeekstuff.com/2011/03/install-apache2-ssl)
+or
+- install openssl with homebrew on macOs
 - add your SSL Certificate in httpd-ssl.conf (example included)
 - add (compile/build/install) mod_jk pointing to your Apache installation like --with-apxs=/usr/sbin/apxs
-- configure your mod_jk config file and include it in your httpd.conf file - https://www.mulesoft.com/tcat/apache-tomcat-mod-jk-connector-configuration, https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/clustering-http-modjk.html
+- configure your mod_jk config file and include it in your httpd.conf file - [Apache Tomcat mod_jk Connector Configuration ](https://www.mulesoft.com/tcat/apache-tomcat-mod-jk-connector-configuration), [Configure Apache to load mod_jk](https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/clustering-http-modjk.html)
 - reference your uriworkermap.properties in mod_jk config file (that is necesary, but actually we won't make use of it in this configuration)
 - reference your workers.properties file in mod_jk config file and set up your workers
 - the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf in this configuration
-- create your AJP listner with the same port in your AS (Tomcat, GlassFish - https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-server-xml-configuration-example/, https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html, https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
+- create your AJP listner with the same port in your AS (Tomcat, GlassFish - [Tomcat server.xml Configuration Example](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-server-xml-configuration-example/), [To Enable mod_jk on GlassFish](https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html), [Enable SSL Between the mod_jk Load Balancer and GlassFish Server](https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
 
 # HTTP Strict Transport Security (HSTS)
 - HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
 
 # More information on security headers:
-https://www.keycdn.com/blog/http-security-headers/
+[Hardening Your HTTP Security Headers](https://www.keycdn.com/blog/http-security-headers/)
 
 Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
 - CORS settings have no effect in this project according the single domain environment.
@@ -196,7 +208,7 @@ Clustering:
 ----
 - The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
 - GlassFish and Wildfly settings are under construction
-- https://people.apache.org/~mturk/docs/article/ftwai.html
+- [Running cluster of Tomcat servers behind the Web server](https://people.apache.org/~mturk/docs/article/ftwai.html)
 
 Session handling:
 ----
@@ -205,14 +217,14 @@ Session handling:
 
 ##Related links:
 ######@TomCat
-- http://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Persistence_Across_Restarts
+- [Persistence Across Restarts](http://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Persistence_Across_Restarts)
 
 ######@GlassFish
-- https://docs.oracle.com/cd/E18930_01/html/821-2418/beaha.html#beahh
+- [Persistence Types on GlassFish](https://docs.oracle.com/cd/E18930_01/html/821-2418/beaha.html#beahh)
 
 ######@WildFly
-- https://docs.jboss.org/author/display/WFLY8/Undertow+subsystem+configuration
-- https://wildscribe.github.io/Wildfly/8.2.0.Final/%2Fsubsystem%2Fundertow%2Fservlet-container%2Findex.html
+- [Undertow subsystem configuration for wildFly 10.*](https://docs.jboss.org/author/display/WFLY10/Undertow+subsystem+configuration)
+- [Wildfly 8.2.0.Final Model Reference](https://wildscribe.github.io/Wildfly/8.2.0.Final/%2Fsubsystem%2Fundertow%2Fservlet-container%2Findex.html)
 
 <br>
 > The project uses and needs Java JDK 1.8.x 
@@ -222,8 +234,8 @@ Session handling:
 Notes on Windows:
 ----
 There are several solutions for Windows to use GlassFish or TomCat instance behind the IIS (Please note the how-to may differ based on the version of Windows. The links I supplied worked for me on Windows 10).
-- The Apache Tomcat Connectors to IIS: https://tomcat.apache.org/connectors-doc/webserver_howto/iis.html
-- Integrate Glassfish with IIS: https://jstoup.wordpress.com/2012/04/25/how-to-integrate-glassfish-with-iis/
+- The Apache Tomcat Connectors to IIS: [ISAPI redirector for Micrsoft IIS HowTo](https://tomcat.apache.org/connectors-doc/webserver_howto/iis.html)
+- Integrate Glassfish with IIS: [How to Integrate Glassfish with IIS](https://jstoup.wordpress.com/2012/04/25/how-to-integrate-glassfish-with-iis/)
 - NHibernate is available as an object-relational mapping (ORM) solution for the Microsoft .NET platform. 
 
 Notes on GlassFish
