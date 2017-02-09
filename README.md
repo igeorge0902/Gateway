@@ -82,13 +82,13 @@ If you have still issues, pls do not hesitate to contact me!
 You can find various analytics services for web and mobile, as well. Please check out one of them if you want to track app events like app start, login, logout, registration, etc.
 
 ######@Facebook
-- https://developers.facebook.com/docs/analytics
+- [Facebook Analytics](https://developers.facebook.com/docs/analytics)
 
 ######@Google
-- https://developers.google.com/analytics/devguides/collection/
+- [Google Analytics](https://developers.google.com/analytics/devguides/collection)
 
 ######@Amazon (mobile only)
-- https://www.google.com/aclk?sa=L&ai=DChcSEwi2_eufh9jRAhXLDxgKHQTlDzwYABAA&sig=AOD64_3iKzYsiGgpp5iPc06DrgFf6d6LJA&q=&ved=0ahUKEwidl-afh9jRAhXEDpoKHd8yA2oQ0QwIGA&adurl=
+- [Amazon Mobile Analytics](https://www.google.com/aclk?sa=L&ai=DChcSEwi2_eufh9jRAhXLDxgKHQTlDzwYABAA&sig=AOD64_3iKzYsiGgpp5iPc06DrgFf6d6LJA&q=&ved=0ahUKEwidl-afh9jRAhXEDpoKHd8yA2oQ0QwIGA&adurl=)
 
 
 # Contacts:
