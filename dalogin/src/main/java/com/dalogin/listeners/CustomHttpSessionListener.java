@@ -52,6 +52,7 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	private static volatile SetMultimap<String, String> sessions;
 	private static volatile TreeMap<String,String> attributes = new TreeMap<String, String>();
 	private static volatile TreeMap<String,String> attributes_ = new TreeMap<String, String>();
+	private static volatile Set<String> sessionData;
 	private static volatile String id;
 	private static volatile String name;
 	private static volatile String value;
@@ -157,11 +158,13 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
      // last step - we check if we have the deviceId already. If so, we try to remove its sessionId, if not yet concluded.
       if (sessions.containsKey(D)) {
  
-     Set<String> sessionData = sessions.get(D);
+     sessionData = sessions.get(D);
      
   // Synchronizing on multimap, not values!
      synchronized (sessions) {  
     	 
+    	// TODO: the set is not ordered, it is relevant only if we want to use an ordered set.
+         // the value g might not be always the sessionId
     	g = sessionData.toArray()[1].toString();
     	try {
     	
@@ -272,11 +275,13 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	         
 	         else {
 	        	 
-	             Set<String> sessionData = sessions.get(D);
+	             sessionData = sessions.get(D);
 	             
 	             // Synchronizing on multimap, not values!
 	                synchronized (sessions) {  
 	               	 
+	                // TODO: the set is not ordered, it is relevant only if we want to use an ordered set.
+	                // the value g might not be always the sessionId	
 	               	g = sessionData.toArray()[1].toString();
 		        	log.info("sessionId to remove in event context: " + g);
 
