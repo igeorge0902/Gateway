@@ -13,6 +13,8 @@ Feature set:
 </Context>
 ```
 
+[Common Attributes of context.xml](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-context-xml-configuration-example/)
+
 Build from Eclipse:
 - import as Maven project
 - maven install
