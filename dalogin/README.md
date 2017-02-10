@@ -1,7 +1,7 @@
 #General Authentication Service @George Gaspar
 (Release Candidate)
 
-#Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
+#Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
 - Mac OS X using TomCat and GlassFish behind Apache through WWW and on mobile with iPhone 5C
 - Windows 10 using TomCat and GlassFish behind IIS through WWW only
 - If you think it's a joke or simulation, first prove it, then pay your bill! ;)
