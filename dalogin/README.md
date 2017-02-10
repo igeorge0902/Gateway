@@ -207,8 +207,12 @@ Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd
 Clustering:
 ----
 - The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
-- GlassFish and Wildfly settings are under construction
+- GlassFish and Wildfly settings will be included soon, but you can use a search engine to find it out
 - [Running cluster of Tomcat servers behind the Web server](https://people.apache.org/~mturk/docs/article/ftwai.html)
+- [TomCat clustering](https://www.mulesoft.com/tcat/tomcat-clustering)
+and
+- [TomCat clustering](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-clustering-session-replication-tutorial/)
+- [TomCat Clustering How To](http://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)
 
 Session handling:
 ----
