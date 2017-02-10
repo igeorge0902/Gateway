@@ -287,7 +287,7 @@ Usage:
 Authentication process:
 ----
 - authentication will happen with user supplied and system generated data on the front-end that will have to match on the server where these data will be re-generated and validated. For this purpose HMAC (hashed message authentication) is used. The hmac signature will be generated on the fly before the client sends out the request. Basically the hmac will take all the necessary arguments and then will create the signature that will be regenerated on the server with the same arguments. Because the server has fix string parameters along with the supplied arguments, it can work as a secure tool to verify the request and the integrity of the data in the request the came through the internet. 
-- For more information on hmac interoperabilty: http://www.jokecamp.com/blog/examples-of-creating-base64-hashes-using-hmac-sha256-in-different-languages/#js.
+- For more information on hmac interoperabilty: [hmac interoperability for multiple systems](http://www.jokecamp.com/blog/examples-of-creating-base64-hashes-using-hmac-sha256-in-different-languages/#js).
 
 - With great effort put into work on iOS the deviceId will be the real ID of the iPhone device. This is a very important step in providing the ability to have the actual device ID that we can track in all cases regardless the user logs in through native authentication, or the webview from the native app. To track a WWW and mobile WWW device login state have never been in scope.
 
