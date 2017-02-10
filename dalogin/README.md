@@ -2,7 +2,8 @@
 (Release Candidate)
 
 
-#Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
+#Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
+- for full description see the master branch
 
 Questions:
 igeorge1982@gmail.com
