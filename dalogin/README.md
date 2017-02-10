@@ -7,11 +7,11 @@
 - If you think it's a joke or simulation, first prove it, then pay your bill! ;)
 ----
 
-Known issues:
+Known issues (for most recent version see the update branch!):
 ----
 - I forgot to add the user parameter to the password check that causes user can login with any available password
 FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.
-- In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine.
+- In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
 - On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
@@ -244,13 +244,13 @@ There are several solutions for Windows to use GlassFish or TomCat instance behi
 
 Notes on GlassFish
 ----
-- you will need to replace the jBoss logging jar to the newest version because the Hibernate is dependent on it, but there are GlassFish versions that do not include to correct version. You will find this particular jar here in GLASSFISH_HOME/glassfish/modules, and then also insert a new logger at the server console referencing this logger. You may need to restart your computer for the changes to take effect.
+- you will need to replace the jBoss logging jar to the newest version because the Hibernate is dependent on it, but there are GlassFish versions that do not include to correct version. You will find this particular jar here in GLASSFISH_HOME/glassfish/modules, and then also insert a new logger at the server console referencing this logger [NoSuchMethodError](https://medium.com/@mertcal/using-hibernate-5-on-payara-cc242212a5d6#.586d31jq2). You may need to restart your computer for the changes to take effect. 
 
 Deploy description:
 ----
 - as for the server part can be deployed as it is, just take care of the web.xml. The current configuration shall work without modification.
 - as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only)
-- as for iOS build the project and you can use the registration/login service in native way or through webview, too. The registration is not implemented yet fully, but will work the same way as the login.
+- as for iOS build the project and you can use the registration/login service in native way or through webview, too. The registration without voucher is not implemented yet fully, but will work the same way as the login, just skip the related parts.
 
 
 The project contains the source code of the whole system in the dedicated branches.
@@ -317,8 +317,8 @@ Please note, I try to maintain the most recent working version, but for any issu
 RoadMap:
 ----
 - Angular JS update to the most newest possible version
-- DONE:I will update the project with configs for Wildfly 10.1.0 soon. The mobile part is already done. Stay tuned!
-- DONE:only for mbook-1: upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
+- DONE -> I will update the project with configs for Wildfly 10.1.0 soon. The mobile part is already done. Stay tuned!
+- DONE -> only for the API upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
 
 Note:
 ----
