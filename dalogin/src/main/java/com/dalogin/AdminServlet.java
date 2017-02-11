@@ -34,6 +34,8 @@ public class AdminServlet extends HttpServlet {
 	
 	private static Logger log = Logger.getLogger(Logger.class.getName());
 	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
+	private static volatile HashMap<String, String> error = new HashMap<>();
+
 
 
     public void init() throws ServletException
@@ -75,19 +77,10 @@ public class AdminServlet extends HttpServlet {
 			response.setContentType("application/json"); 
 			response.setCharacterEncoding("utf-8"); 
 			response.setStatus(502);
-
-			PrintWriter out = response.getWriter(); 
-			
-			//create Json Object 
-			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
-			json.put("SQLAccess", "failed"); 
-			json.put("Success", "false"); 
-			
-			// finally output the json string 
-			out.print(json.toString());
-			out.flush();
+			error.put("SQLAccess", "failed"); 
+			error.put("Success", "false"); 
 			
 		}
 		
@@ -96,19 +89,10 @@ public class AdminServlet extends HttpServlet {
 			response.setContentType("application/json"); 
 			response.setCharacterEncoding("utf-8"); 
 			response.setStatus(502);
-
-			PrintWriter out = response.getWriter(); 
-			
-			//create Json Object 
-			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
-			json.put("deviceId", "null"); 
-			json.put("user", "null"); 
-			
-			// finally output the json string 
-			out.print(json.toString());
-			out.flush();
+			error.put("deviceId", deviceId); 
+			error.put("user", user); 
 
 		}
 		
@@ -140,9 +124,10 @@ public class AdminServlet extends HttpServlet {
 				JSONObject json = new JSONObject(); 
 				
 				// put some value pairs into the JSON object . 				
-				json.put("Activation", "false"); 
-				json.put("Success", "false");
-				json.put("deviceId", deviceId);
+				error.put("Activation", "false"); 
+				error.put("Success", "false");
+				error.put("deviceId", deviceId);
+				json.put("Error Details", error);
 				
 				// finally output the json string 
 				out.print(json.toString());
@@ -151,7 +136,7 @@ public class AdminServlet extends HttpServlet {
 			}
 		
 		// Get user entity using API GET method, with user and token as request params
-		else if(token_ != null && session != null /*&& request.isRequestedSessionIdValid()*/) {			
+		else if(token_ != null && session != null && deviceId != null && user != null /*&& request.isRequestedSessionIdValid()*/) {			
 			
 			String webApiContext = context.getInitParameter("webApiContext");
 			String webApiContextUrl = context.getInitParameter("webApiContextUrl");
@@ -182,7 +167,8 @@ public class AdminServlet extends HttpServlet {
 			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
-			json.put("Success", "false"); 
+			error.put("Error:", "User does not bear valid paramteres."); 
+			json.put("Error Details", error); 
 			
 			// finally output the json string 
 			out.print(json.toString());
@@ -207,7 +193,6 @@ public class AdminServlet extends HttpServlet {
 		session = request.getSession();		
     	
         // Check session for user attribute
-		// TODO: refactor!
     	if(session.getAttribute("user") == null){
     	
             if (sessionId != null) {
@@ -231,34 +216,27 @@ public class AdminServlet extends HttpServlet {
     			response.setCharacterEncoding("utf-8"); 
     			response.setStatus(502);
 
-    			session.invalidate();
-
-    			PrintWriter out = response.getWriter(); 
-    			
-    			//create Json Object 
-    			JSONObject json = new JSONObject(); 
+    			if (session != null) {
+    				session.invalidate();				
+    			}
     			
     			// put some value pairs into the JSON object . 				
-    			json.put("acticeUsers", "failed"); 
-    			json.put("Success", "false"); 
-    			
-    			// finally output the json string 
-    			out.print(json.toString());
-    			out.flush();
+    			error.put("acticeUsers", "failed"); 
+    			error.put("Success", "false"); 
     			
             }
     	
     	}
     	
-    	if (session == null || session.getAttribute("user") == null) {
+    	if (session == null ) {
         	
 			response.setContentType("application/json"); 
 			response.setCharacterEncoding("utf-8"); 
 			response.setStatus(502);
 
-			if (session != null) {
-			session.invalidate();				
-			}
+		//	if (session != null) {
+		//	session.invalidate();				
+		//	}
 			
 			PrintWriter out = response.getWriter(); 
 			

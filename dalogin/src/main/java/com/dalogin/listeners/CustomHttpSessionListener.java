@@ -313,12 +313,12 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
         ServletContext context = session.getServletContext();
         activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
         sessions = (SetMultimap<String, String>)context.getAttribute("sessions");
-        
+        try {
         D_ = session.getAttribute("deviceId").toString();
         id = session.getId();
         log.info("deviceId_ at destroy: "+D_);
         
-        try {
+       // try {
         	SQLAccess.logout(id, context);
 	        log.info("SessionID destroyed: " + id.toString());          
 			
