@@ -82,6 +82,7 @@ public class Loggingout extends HttpServlet {
 					JSONObject json = new JSONObject(); 
 					
 					// put some value pairs into the JSON object .
+					json.put("isAlreadyLoggedOut", "true"); 
 					json.put("Success", "true"); 
 					
 					// finally output the json string 

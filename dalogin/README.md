@@ -2,8 +2,7 @@
 (Release Candidate)
 
 
-##Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
-- for full description see the master branch
+#Tested (with Apache httpd fronting Tomcat or GlassFish): OK!
 
 Questions:
 igeorge1982@gmail.com
@@ -12,21 +11,6 @@ Update
 ----
 - Registration is considered to be finished combined with voucher activation
 - native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
-
-RoadMap
-----
-- adding outsourced session storage so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
-[Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
-
-# New
-###WebSocket and rabbitMQ
-----
-WebSocket is a full-duplex chanel for communication between client and server.
-- WebSocket connection servlet and rabbitMQ send / recieve classes are included. The corresponding sample html and js file is included in the WWW app. You have to use a different secure port number on your AS for the wss connection, otherwise all the common servlet and JKMount configuration apply. 
-- WebSocket for iOS Swift: [Starscream](https://github.com/daltoniam/Starscream)
-
-rabbitMQ is a message publishing and subscribing system (or you can include the Apache Kafka Java clients, instead, or use both for your needs).
-- [rabbitMQ](https://www.rabbitmq.com/getstarted.html)
 
 Description
 ----

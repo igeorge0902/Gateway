@@ -244,9 +244,10 @@ public class AdminServlet extends HttpServlet {
 			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
-			json.put("acticeUsers", "failed"); 
-			json.put("Success", "false");
-			json.put("ErrorMsg", "no valid session");
+			error.put("acticeUsers", "failed"); 
+			error.put("Success", "false");
+			error.put("ErrorMsg", "no valid session");
+			json.put("Error Details", error); 
 			
 			// finally output the json string 
 			out.print(json.toString());

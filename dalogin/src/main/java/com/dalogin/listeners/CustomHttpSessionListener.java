@@ -310,10 +310,10 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	public void sessionDestroyed(HttpSessionEvent event){
         
     	HttpSession session = event.getSession();
+    	try {
         ServletContext context = session.getServletContext();
         activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
         sessions = (SetMultimap<String, String>)context.getAttribute("sessions");
-        try {
         D_ = session.getAttribute("deviceId").toString();
         id = session.getId();
         log.info("deviceId_ at destroy: "+D_);
