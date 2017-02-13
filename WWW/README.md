@@ -36,12 +36,13 @@ When the user initiates a login or registration through the WWW app, the outgoin
 
 @Swift:
 - Gateway/iOS/SwiftLoginScreen/ciphertext.swift
+- Gateway/iOS/SwiftLoginScreen/UrlProtocol.swift
 
 @Java:
 - Gateway/API/src/main/java/com/jeet/utils/AesUtil.java
 and
 - Gateway/dalogin/src/main/java/com/dalogin/utils/AesUtil.java
-
+- Gateway/dalogin/src/main/java/com/dalogin/HelloWorld.java
 
 ```javascript
 function userApi($http) {
@@ -68,6 +69,9 @@ var salt = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
     };
 }
 ```
+
+## Recommendation:
+- you probably would like to use some variables for the passphrase and plaintext. The server and client let you take advantage on generated data linked to a user, or the UNIX epoch time so that they can be used to replace the static values. If you deal with aes encryption / decryption in the WWW app it advised to use request transformator to tighten the security. 
 
 # Features:
 - login and registration is tested on WWW
