@@ -77,11 +77,11 @@ public Logins getUser(String user){
 , like as follows:
 
 ```java
-		if (list_.isEmpty()) {
+		if (list.isEmpty()) {
 		
-		return list_.size();
+		return // add something here;
 	} else {
-		return list.size(); }
+		return list.get(0); }
 	}
 ```
 
