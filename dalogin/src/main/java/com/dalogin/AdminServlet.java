@@ -228,7 +228,7 @@ public class AdminServlet extends HttpServlet {
     	
     	}
     	
-    	if (session == null ) {
+    	if (session == null || !request.isRequestedSessionIdValid() ) {
         	
 			response.setContentType("application/json"); 
 			response.setCharacterEncoding("utf-8"); 

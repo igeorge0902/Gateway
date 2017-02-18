@@ -17,15 +17,20 @@ public class CustomNotFoundException extends WebApplicationException implements 
 	  * Create a HTTP 404 (Not Found) exception.
 	  */
 	  public CustomNotFoundException() {
-	    super(Response.noContent().build());
+	    
+		  super(Response.noContent().build());
+	  
 	  }
 	 
 	  /**
-	  * Create a HTTP 404 (Not Found) exception.
-	  * @param message the String that is the entity of the 404 response.
+	  * Create a HTTP 401 (Unauthorized) exception.
+	  * @param message the String that is the entity of the 401 response.
 	  */
 	  public CustomNotFoundException(String message) {
-	    super(Response.status(Status.NOT_FOUND).
-	    entity(message).type("text/plain").build());
-	  }
+	    
+		  super(Response.status(Status.UNAUTHORIZED).
+				  
+				  entity(message).type("text/plain").build());
+	  	
+	  	}
 	}

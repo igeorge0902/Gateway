@@ -3,6 +3,9 @@ package com.jeet.rest;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.activation.MimetypesFileTypeMap;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
@@ -11,13 +14,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
@@ -41,7 +45,6 @@ public class BookController {
     private static final int ITERATIONCOUNT = 1000;
     
     private static AesUtil aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
-
 	
 	
 	@GET
@@ -49,18 +52,18 @@ public class BookController {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response getDevice(@PathParam(value = "uuid") String uuid) {
 		
+		List<Devices> device = new BookingHandlerImpl().getDevice(uuid);
+		GenericEntity<List<Devices>> entity = new GenericEntity<List<Devices>>(device) {};
 		
-		Devices device = new BookingHandlerImpl().getDevice(uuid);
-
-		if (device != null) {
+		if (device.get(0).getId() != 0) {
 			
-			return Response.ok().status(200).entity(device).header("Device", device.getDevice()).build();
+			return Response.ok().status(200).entity(entity).header("Device", device.get(0).getDevice()).build();
 		
 		}
 		
 		else {
 			
-			return Response.status(404).build();
+			return Response.status(404).entity(device.get(0)).build();
 
 		}
 	}
@@ -70,11 +73,10 @@ public class BookController {
 	
 	public Response getUser(@Context HttpHeaders headers, @PathParam(value = "user") String user, @PathParam(value = "token1") String token1) {
 		
-		// ArrayList<Logins> userarray = new ArrayList<>();
 		Logins user_ = new BookingHandlerImpl().getUser(user);
 		Tokens token2 = new BookingHandlerImpl().getToken2(token1);
 		
-		if (headers.getRequestHeader("Ciphertext") == null) {	         
+		if (headers.getRequestHeader("Ciphertext").isEmpty()) {	         
 			throw new CustomNotFoundException("User is not authorized!");
 		}
 		
@@ -82,15 +84,13 @@ public class BookController {
 
 		if (ciphertext.equals(token2.getToken2())) {
 	        
-				if (user_ != null) {
-			
-				//	userarray.add(user_);
-					
+				if (user_.getId() != 0) {
+								
 						return Response.ok().status(200).entity(user_).header("User", user_.getUuid()).build();		
 					
 					} else {
 				
-						return Response.ok().status(Status.PRECONDITION_FAILED).entity("User is not found!").build();
+						return Response.ok().status(Status.PRECONDITION_FAILED).entity(user_).build();
 			
 					}		        			
 		} else {
@@ -111,19 +111,14 @@ public class BookController {
 		for(String header : headers.getRequestHeaders().keySet()){
 			System.out.println(header);
 		}
-
-		   JSONObject myObject = new JSONObject();
-		   
-		   myObject.put("name", "Agamemnon");
-		   myObject.put("age", 32);
 		   
 			if (newuser_ > 0) {
 
-					return Response.ok().status(412).entity(myObject.toString()).type(MediaType.APPLICATION_JSON).build();		
+					return Response.ok().status(412).build();		
 				
 				} else {
 			
-					return Response.status(200).entity(myObject.toString()).build();
+					return Response.status(200).build();
 		
 				}		
     
@@ -136,19 +131,14 @@ public class BookController {
 	public Response getNewEmail(@Context HttpHeaders headers, @PathParam(value = "newemail") String newemail) throws JSONException {
 		
 		int newuser_ = new BookingHandlerImpl().getNewUser(newemail);
-
-		   JSONObject myObject = new JSONObject();
-		   
-		   myObject.put("name", "Agamemnon");
-		   myObject.put("age", 32);
 		   
 			if (newuser_ > 0) {
 
-					return Response.ok().status(412).entity(myObject.toString()).type(MediaType.APPLICATION_JSON).build();		
+					return Response.ok().status(412).build();		
 				
 				} else {
 			
-					return Response.status(200).entity(myObject.toString()).build();
+					return Response.status(200).build();
 		
 				}		
     
@@ -167,7 +157,7 @@ public class BookController {
       File f = new File("/Users/georgegaspar/Pictures/Exports/" + image);
       
       if (f.exists() == false) 
-          throw new CustomNotFoundException("Image not found");
+          throw new CustomNotFoundException();
       
       BufferedImage img = ImageIO.read(f);
           

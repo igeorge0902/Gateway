@@ -60,5 +60,13 @@ public class ObjectFactory {
     public Tokens createTokens() {
         return new Tokens();
     }
+    
+    /**
+     * Create an instance of {@link Exceptions }
+     * 
+     */
+    public Exceptions createExceptions() {
+        return new Exceptions();
+    }
 
 }

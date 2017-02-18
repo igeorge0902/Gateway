@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
+import org.hibernate.search.FullTextSession;
 import org.hibernate.stat.Statistics;
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
@@ -55,7 +56,7 @@ public class DAO {
 		return instance;
 	}
 	
-	public Devices getDevices(String uuid){
+	public List<Devices> getDevices(String uuid){
 		
 		session = factory.getCurrentSession();
 		
@@ -74,7 +75,18 @@ public class DAO {
 		@SuppressWarnings("unchecked")
 		List<Devices> list = query.list();
 		
-		return list.get(0);
+		if (list.isEmpty()) {
+			
+			Devices dev = new Devices();
+			dev.setDevice("The user does not have devices");
+			dev.setId(0);
+			dev.setUuid(uuid);
+			
+			list.add(dev);
+			
+		}
+		
+		return list;
 	}
 	
 	public Logins getUser(String user){
@@ -93,13 +105,21 @@ public class DAO {
 		Query query = session.createQuery(hql);
 		query.setParameter("mUser", user);
 		
-		@SuppressWarnings("unchecked")
-		List<Logins> list = query.list();
+		Logins user_ = (Logins) query.uniqueResult();
 		
-		ArrayList<Logins> elements = new ArrayList<>();
-		elements.add(list.get(0));
+		if (user_ == null) {
+			
+			Logins ls = new Logins();
+			ls.setId(0);
+			ls.setUser(user);
+			ls.setUuid("no UUID");	
+			ls.setEmail("no email");
+			
+			return ls; 
+			
+		} else
 		
-		return list.get(0);
+		return user_;
 	}
 	
 	public int getNewUser(String newuser){
@@ -182,10 +202,9 @@ public class DAO {
 		Query query = session.createQuery(hql);
 		query.setParameter("mUuid", uuid);
 		
-		@SuppressWarnings("unchecked")
-		List<Logins> list = query.list();
+		Logins ilu = (Logins) query.uniqueResult();
 		
-		return list.get(0);
+		return ilu;
 	}
 	
 	public Tokens getToken(String token1){
@@ -204,10 +223,9 @@ public class DAO {
 		Query query = session.createQuery(hql);
 		query.setParameter("mToken1", token1);
 		
-		@SuppressWarnings("unchecked")
-		List<Tokens> list = query.list();
+		Tokens token_taylor = (Tokens) query.uniqueResult();
 		
-		return list.get(0);
+		return token_taylor;
 	}
 	
 	public Tokens getToken2(String token1){
@@ -226,10 +244,9 @@ public class DAO {
 		Query query = session.createQuery(hql);
 		query.setParameter("mToken1", token1);
 		
-		@SuppressWarnings("unchecked")
-		List<Tokens> list_ = query.list();
+		Tokens token_swift = (Tokens) query.uniqueResult();
 		
-		return list_.get(0);
+		return token_swift;
 	}
 
 }
