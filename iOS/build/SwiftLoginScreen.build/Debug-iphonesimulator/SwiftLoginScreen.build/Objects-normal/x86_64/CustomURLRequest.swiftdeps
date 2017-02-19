@@ -6,21 +6,21 @@ provides-member:
 - ["V10Foundation10URLRequest", "requestWithURL"]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "Foundation"
-- !private "NSMutableURLRequest"
-- "URL"
-- "NSDictionary"
-- "CastingPrecedence"
-- "AssignmentPrecedence"
-- !private "URLComponents"
-- !private "StringLiteralType"
-- "String"
 - !private "URLQueryItem"
-- "TimeInterval"
-- !private "JSONSerialization"
 - "URLRequest"
-- !private "BooleanLiteralType"
+- "AssignmentPrecedence"
+- "String"
 - !private "Array"
+- "TimeInterval"
+- "CastingPrecedence"
+- !private "JSONSerialization"
+- !private "Foundation"
+- "NSDictionary"
+- !private "BooleanLiteralType"
+- "URL"
+- !private "StringLiteralType"
+- !private "URLComponents"
+- !private "NSMutableURLRequest"
 depends-member:
 - !private ["Ps9AnyObject", "addValue"]
 - !private ["Ps9AnyObject", "data"]

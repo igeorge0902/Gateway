@@ -7,10 +7,10 @@ provides-member:
 provides-dynamic-lookup:
 - "sharedCustomSession"
 depends-top-level:
-- "URLSession"
-- !private "URLSessionConfiguration"
 - !private "OperationQueue"
+- "URLSession"
 - !private "CustomURLSessionDelegate"
+- !private "URLSessionConfiguration"
 depends-member:
 - !private ["Ps9AnyObject", "CustomSessionConfiguration"]
 - !private ["Ps9AnyObject", "CustomURLSessionDelegate"]

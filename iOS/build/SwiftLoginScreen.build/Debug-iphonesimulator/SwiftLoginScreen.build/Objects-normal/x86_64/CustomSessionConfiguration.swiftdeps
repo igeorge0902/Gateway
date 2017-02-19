@@ -7,11 +7,11 @@ provides-member:
 provides-dynamic-lookup:
 - "CustomSessionConfiguration"
 depends-top-level:
-- !private "StringLiteralType"
 - !private "Dictionary"
 - !private "BooleanLiteralType"
-- "URLSessionConfiguration"
+- !private "StringLiteralType"
 - "AssignmentPrecedence"
+- "URLSessionConfiguration"
 depends-member:
 - !private ["Vs11AnyHashable", "deinit"]
 - ["Ps9AnyObject", "CustomSessionConfiguration"]

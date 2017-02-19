@@ -10,18 +10,18 @@ provides-member:
 - ["C16SwiftLoginScreen17CachedURLResponse", "timestamp"]
 - ["C16SwiftLoginScreen17CachedURLResponse", "url"]
 provides-dynamic-lookup:
-- "encoding"
-- "mimeType"
 - "timestamp"
-- "data"
-- "statusCode"
+- "mimeType"
 - "url"
+- "statusCode"
+- "data"
+- "encoding"
 depends-top-level:
-- "NSNumber"
-- "Data"
 - "Date"
-- "String"
+- "Data"
 - "CachedURLResponse"
+- "String"
+- "NSNumber"
 depends-member:
 - ["Ps9AnyObject", "data"]
 - ["Ps9AnyObject", "encoding"]

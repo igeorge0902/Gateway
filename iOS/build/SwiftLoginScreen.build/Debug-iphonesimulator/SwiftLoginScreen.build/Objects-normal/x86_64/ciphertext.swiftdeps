@@ -8,11 +8,11 @@ provides-member:
 - ["SS", "getCipherText"]
 provides-dynamic-lookup:
 depends-top-level:
-- "cipherText"
-- "String"
-- !private "CryptoJS"
-- "StringLiteralType"
 - "cipher"
+- !private "CryptoJS"
+- "String"
+- "cipherText"
+- "StringLiteralType"
 depends-member:
 - ["CC16SwiftLoginScreen8CryptoJS3AES", "deinit"]
 - !private ["CC16SwiftLoginScreen8CryptoJS3AES", "encrypt_"]

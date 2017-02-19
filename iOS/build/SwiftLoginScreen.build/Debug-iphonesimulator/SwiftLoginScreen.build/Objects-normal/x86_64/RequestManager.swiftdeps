@@ -7,43 +7,39 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen14RequestManager", ""]
 provides-dynamic-lookup:
+- "session"
+- "url"
+- "prefs"
 - "running"
 - "errors"
-- "url"
-- "session"
-- "prefs"
 depends-top-level:
-- !private "print"
-- "Void"
-- !private "!"
-- !private "NSString"
-- !private "NSLocalizedDescriptionKey"
-- !private "JSONSerialization"
-- !private "URLRequest"
-- "BooleanLiteralType"
-- !private "Dictionary"
-- !private "||"
-- !private "UIAlertView"
+- "CastingPrecedence"
 - "RequestManager"
-- !private "StringLiteralType"
-- "NSError"
-- "ServiceResponses"
-- !private "NSLog"
-- "NSObject"
-- !private ">="
-- !private "~="
 - "AssignmentPrecedence"
 - !private "=="
-- "CastingPrecedence"
-- "UserDefaults"
-- "String"
-- "URL"
-- !private "HTTPURLResponse"
-- "URLSession"
-- !private "<"
-- !private "NSDictionary"
-- "JSON"
 - !private "!="
+- !private "Dictionary"
+- !private "HTTPURLResponse"
+- !private "UIAlertView"
+- "NSObject"
+- "UserDefaults"
+- !private "AnyObject"
+- "String"
+- !private "NSDictionary"
+- !private "URLRequest"
+- "Void"
+- "URLSession"
+- "JSON"
+- !private "print"
+- "BooleanLiteralType"
+- "NSError"
+- "ServiceResponses"
+- !private "StringLiteralType"
+- !private "NSLocalizedDescriptionKey"
+- !private "JSONSerialization"
+- "URL"
+- !private "NSString"
+- !private "NSLog"
 depends-member:
 - !private ["Ps9AnyObject", "JSON"]
 - !private ["Ps9AnyObject", "JSONSerialization"]
@@ -59,6 +55,7 @@ depends-member:
 - !private ["Ps9AnyObject", "addButton"]
 - !private ["Ps9AnyObject", "allHeaderFields"]
 - ["Ps9AnyObject", "dataTask"]
+- !private ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "delegate"]
 - ["Ps9AnyObject", "errors"]
 - ["Ps9AnyObject", "getResponse"]
@@ -84,7 +81,6 @@ depends-member:
 - !private ["Ps9AnyObject", "value"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "deinit"]
-- !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
 - !private ["PSo15CALayerDelegate", "addButton"]
@@ -100,7 +96,6 @@ depends-member:
 - !private ["Ps7CVarArg", "NSLocalizedDescriptionKey"]
 - !private ["Ps7CVarArg", "NSLog"]
 - !private ["Ps7CVarArg", "ReadingOptions"]
-- !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "UIAlertView"]
 - !private ["Ps7CVarArg", "URL"]
 - !private ["Ps7CVarArg", "URLRequest"]
@@ -137,7 +132,6 @@ depends-member:
 - ["Ps7CVarArg", ""]
 - !private ["OCSo12NSURLRequest11CachePolicy", "useProtocolCachePolicy"]
 - !private ["Vs9Character", "deinit"]
-- !private ["Vs11ClosedRange", "deinit"]
 - !private ["Ps10Collection", "Index"]
 - !private ["Ps10Collection", "IndexDistance"]
 - !private ["Ps10Collection", "Iterator"]
@@ -151,7 +145,6 @@ depends-member:
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "Index"]
 - !private ["Ps10Comparable", "IndexDistance"]
-- !private ["Ps10Comparable", "Stride"]
 - !private ["Ps10Comparable", "SubSequence"]
 - !private ["Ps10Comparable", "_Element"]
 - !private ["Ps10Comparable", "error"]
@@ -159,8 +152,6 @@ depends-member:
 - !private ["Ps10Comparable", "isEmpty"]
 - !private ["Ps10Comparable", "string"]
 - !private ["Ps10Comparable", "subscript"]
-- !private ["Vs20CountableClosedRange", "deinit"]
-- !private ["Vs14CountableRange", "deinit"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "JSON"]
@@ -210,12 +201,10 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "useProtocolCachePolicy"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
 - ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "isEmpty"]
 - !private ["Ps17CustomReflectable", "Key"]
-- !private ["Ps17CustomReflectable", "Stride"]
 - !private ["Ps17CustomReflectable", "Value"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "init"]
@@ -232,7 +221,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSLocalizedDescriptionKey"]
 - !private ["Ps23CustomStringConvertible", "NSLog"]
 - !private ["Ps23CustomStringConvertible", "ReadingOptions"]
-- !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "UIAlertView"]
 - !private ["Ps23CustomStringConvertible", "URL"]
@@ -286,7 +274,6 @@ depends-member:
 - !private ["Ps9Equatable", "NSLocalizedDescriptionKey"]
 - !private ["Ps9Equatable", "NSLog"]
 - !private ["Ps9Equatable", "ReadingOptions"]
-- !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "SubSequence"]
 - !private ["Ps9Equatable", "UIAlertView"]
 - !private ["Ps9Equatable", "URL"]
@@ -379,7 +366,6 @@ depends-member:
 - !private ["Ps25ExpressibleByFloatLiteral", "subscript"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "Index"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "IndexDistance"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "SubSequence"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "_Element"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "error"]
@@ -425,7 +411,6 @@ depends-member:
 - !private ["Ps8Hashable", "NSLocalizedDescriptionKey"]
 - !private ["Ps8Hashable", "NSLog"]
 - !private ["Ps8Hashable", "ReadingOptions"]
-- !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "UIAlertView"]
 - !private ["Ps8Hashable", "URL"]
 - !private ["Ps8Hashable", "URLRequest"]
@@ -486,14 +471,11 @@ depends-member:
 - !private ["Ps13IndexableBase", "string"]
 - !private ["Ps13IndexableBase", "subscript"]
 - !private ["Vs16IndexingIterator", "Element"]
-- !private ["Si", "Stride"]
 - !private ["Si", "deinit"]
 - !private ["Vs5Int16", "deinit"]
 - !private ["Vs5Int32", "deinit"]
 - !private ["Vs5Int64", "deinit"]
 - !private ["Vs4Int8", "deinit"]
-- !private ["Ps7Integer", "Stride"]
-- !private ["Ps17IntegerArithmetic", "Stride"]
 - !private ["Ps16IteratorProtocol", "Element"]
 - !private ["V10SwiftyJSON4JSON", "Index"]
 - !private ["V10SwiftyJSON4JSON", "IndexDistance"]
@@ -506,14 +488,12 @@ depends-member:
 - !private ["V10SwiftyJSON4JSON", "subscript"]
 - !private ["CSo17JSONSerialization", "ReadingOptions"]
 - !private ["CSo17JSONSerialization", "jsonObject"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "Stride"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "deinit"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "init"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "isEmpty"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps25LosslessStringConvertible", "isEmpty"]
-- !private ["Ps10MirrorPath", "Stride"]
 - !private ["Ps10MirrorPath", "init"]
 - !private ["Ps10MirrorPath", "isEmpty"]
 - !private ["PSo8NSCoding", "addButton"]
@@ -544,6 +524,7 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "isEmpty"]
 - !private ["PSo16NSMutableCopying", "value"]
+- !private ["CSo8NSObject", "AnyObject"]
 - !private ["CSo8NSObject", "HTTPURLResponse"]
 - !private ["CSo8NSObject", "JSON"]
 - !private ["CSo8NSObject", "JSONSerialization"]
@@ -640,7 +621,6 @@ depends-member:
 - !private ["Ps9OptionSet", "mutableContainers"]
 - ["Sq", "deinit"]
 - !private ["Sq", "useProtocolCachePolicy"]
-- !private ["Vs5Range", "deinit"]
 - !private ["Ps16RawRepresentable", "Index"]
 - !private ["Ps16RawRepresentable", "IndexDistance"]
 - !private ["Ps16RawRepresentable", "SubSequence"]
@@ -655,6 +635,7 @@ depends-member:
 - !private ["VCSo17JSONSerialization14ReadingOptions", "mutableContainers"]
 - !private ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "requestWithURL"]
+- !private ["C16SwiftLoginScreen14RequestManager", "AnyObject"]
 - !private ["C16SwiftLoginScreen14RequestManager", "HTTPURLResponse"]
 - !private ["C16SwiftLoginScreen14RequestManager", "JSON"]
 - !private ["C16SwiftLoginScreen14RequestManager", "JSONSerialization"]
@@ -696,8 +677,6 @@ depends-member:
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps8Sequence", "value"]
 - !private ["Ps10SetAlgebra", "mutableContainers"]
-- !private ["Ps13SignedInteger", "Stride"]
-- !private ["Ps12SignedNumber", "Stride"]
 - !private ["Vs5Slice", "Index"]
 - !private ["Vs5Slice", "Iterator"]
 - !private ["Vs5Slice", "SubSequence"]
@@ -706,7 +685,6 @@ depends-member:
 - !private ["Vs5Slice", "string"]
 - ["Vs12StaticString", "deinit"]
 - !private ["Vs12StaticString", "init"]
-- !private ["Ps10Strideable", "Stride"]
 - ["SS", "deinit"]
 - !private ["SS", "init"]
 - !private ["SS", "isEmpty"]
@@ -819,7 +797,6 @@ depends-member:
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "isEmpty"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "isEmpty"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
@@ -835,7 +812,6 @@ depends-member:
 - !private ["Ps9_Hashable", "NSLocalizedDescriptionKey"]
 - !private ["Ps9_Hashable", "NSLog"]
 - !private ["Ps9_Hashable", "ReadingOptions"]
-- !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "UIAlertView"]
 - !private ["Ps9_Hashable", "URL"]
 - !private ["Ps9_Hashable", "URLRequest"]
@@ -871,11 +847,7 @@ depends-member:
 - !private ["Ps9_Hashable", "useProtocolCachePolicy"]
 - !private ["Ps9_Hashable", "value"]
 - ["Ps9_Hashable", ""]
-- !private ["Ps14_Incrementable", "Stride"]
-- !private ["Ps8_Integer", "Stride"]
-- !private ["Ps18_IntegerArithmetic", "Stride"]
 - !private ["Ps21_ObjectiveCBridgeable", "Key"]
-- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
@@ -883,22 +855,16 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "requestWithURL"]
 - !private ["Ps21_ObjectiveCBridgeable", "useProtocolCachePolicy"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
-- !private ["Ps14_SignedInteger", "Stride"]
-- !private ["Ps11_Strideable", "Stride"]
 depends-nominal:
 - "Ps9AnyObject"
 - !private "Sa"
-- !private "Ps17BitwiseOperations"
 - "Sb"
 - !private "PSo15CALayerDelegate"
 - "Ps7CVarArg"
 - !private "OCSo12NSURLRequest11CachePolicy"
 - !private "Vs9Character"
-- !private "Vs11ClosedRange"
 - !private "Ps10Collection"
 - !private "Ps10Comparable"
-- !private "Vs20CountableClosedRange"
-- !private "Vs14CountableRange"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
 - !private "Ps17CustomReflectable"
@@ -931,8 +897,6 @@ depends-nominal:
 - !private "Vs5Int32"
 - !private "Vs5Int64"
 - !private "Vs4Int8"
-- !private "Ps7Integer"
-- !private "Ps17IntegerArithmetic"
 - !private "Ps16IteratorProtocol"
 - !private "V10SwiftyJSON4JSON"
 - !private "CSo17JSONSerialization"
@@ -953,18 +917,14 @@ depends-nominal:
 - "Os5Never"
 - !private "Ps9OptionSet"
 - "Sq"
-- !private "Vs5Range"
 - !private "Ps16RawRepresentable"
 - !private "VCSo17JSONSerialization14ReadingOptions"
 - !private "P10Foundation20ReferenceConvertible"
 - "C16SwiftLoginScreen14RequestManager"
 - !private "Ps8Sequence"
 - !private "Ps10SetAlgebra"
-- !private "Ps13SignedInteger"
-- !private "Ps12SignedNumber"
 - !private "Vs5Slice"
 - "Vs12StaticString"
-- !private "Ps10Strideable"
 - "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
@@ -996,21 +956,16 @@ depends-nominal:
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - !private "Ps34_ExpressibleByBuiltinStringLiteral"
 - !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
 - !private "Ps34_ExpressibleByFileReferenceLiteral"
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
-- !private "Ps14_Incrementable"
-- !private "Ps8_Integer"
-- !private "Ps18_IntegerArithmetic"
 - !private "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
-- !private "Ps14_SignedInteger"
-- !private "Ps11_Strideable"
 depends-dynamic-lookup:
+- !private "value"
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"

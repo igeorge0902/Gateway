@@ -156,11 +156,11 @@ class SignupVC: UIViewController {
                 
                 
                 if let httpResponse = response as? HTTPURLResponse {
-                    
-                    if httpResponse.statusCode == 412 {
+
+                    if httpResponse.statusCode == 400 {
                     
                         alertView.title = "SignUp Failed!"
-                        alertView.message = "Voucher is already used!"
+                        alertView.message = "Invalid data was used!"
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()
@@ -200,7 +200,7 @@ class SignupVC: UIViewController {
                         do {
                             
                                 self.dataTask(request, username: username, onCompletion: { (json) in
-                                    //
+                                    print(json)
                                 })
                         }
                         

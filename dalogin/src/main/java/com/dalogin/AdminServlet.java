@@ -34,9 +34,7 @@ public class AdminServlet extends HttpServlet {
 	
 	private static Logger log = Logger.getLogger(Logger.class.getName());
 	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
-	private static volatile HashMap<String, String> error = new HashMap<>();
-
-
+	//private static volatile HashMap<String, String> error = new HashMap<>();
 
     public void init() throws ServletException
     {
@@ -52,6 +50,8 @@ public class AdminServlet extends HttpServlet {
 
 	private synchronized void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException {	
+
+		HashMap<String, String> error = new HashMap<>();
 
 			//session = request.getSession();
     		ServletContext context = session.getServletContext();
@@ -181,6 +181,8 @@ public class AdminServlet extends HttpServlet {
     @SuppressWarnings("unchecked")
 	public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+
+		HashMap<String, String> error = new HashMap<>();
 
     	// Set the response message's MIME type
         response.setContentType("text/html;charset=UTF-8");

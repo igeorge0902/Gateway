@@ -63,22 +63,22 @@ class RequestManager: NSObject {
 
             if let httpResponse = response as? HTTPURLResponse {
                 
-                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
+                if httpResponse.statusCode == 300 {
                     
                     let headers:NSDictionary = httpResponse.allHeaderFields as NSDictionary
                     
                     if let xtoken:NSString = headers.value(forKey: "X-Token") as? NSString {
                         
                         self.prefs.set(xtoken, forKey: "X-Token")
-                 
+                        
                     }
                     
-                    if let user:NSString = headers.value(forKey: "user") as? NSString {
+                    if let user:NSString = headers.value(forKey: "User") as? NSString {
                         
                         self.prefs.set(user, forKey: "USERNAME")
                         
                     }
-                
+                    
                     let description = "HTTP response was \(httpResponse.statusCode)"
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
@@ -97,7 +97,8 @@ class RequestManager: NSObject {
                         
                         JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
                     
-                    let activation:NSString = jsonData.value(forKey: "Activation") as! NSString
+                     guard let message = jsonData.value(forKey: "Error Details"),
+                     let activation = (message as AnyObject).value(forKey: "Activation") else { return }
                     
                     self.prefs.setValue(activation, forKey: "Activation")
                     self.prefs.set(1, forKey: "ISWEBLOGGEDIN")
@@ -105,7 +106,7 @@ class RequestManager: NSObject {
                     let alertView:UIAlertView = UIAlertView()
                     
                     alertView.title = "Warning!"
-                    alertView.message = "Your account is not activated yet: \(error!.localizedDescription)"
+                    alertView.message = "Your account is not activated yet: \(message)"
                     alertView.delegate = self
                     alertView.addButton(withTitle: "OK")
                     alertView.show()
@@ -129,30 +130,16 @@ class RequestManager: NSObject {
                 
                 let json:JSON = JSON(data: data!)
                 let prefs:UserDefaults = UserDefaults.standard
-
-                if let httpResponse = response as? HTTPURLResponse {
-                    
+                
                 print("got some data")
                     
-                switch(httpResponse.statusCode) {
-                
-                case 300:
-                        
-                do {
-
-                    print("Case 300")
-                
-                }
-                
-                default:
-                        
                     let alertView:UIAlertView = UIAlertView()
                     
                     NSLog("got a 200")
                     
-                    if let user = json["user"].string {
+                    if let user = json["user"].string, let uuid = json["uuid"].string {
                         
-                        if !user.isEmpty {
+                        if uuid != "no UUID" {
                             
                             prefs.set(user, forKey: "USERNAME")
                             prefs.set(1, forKey: "ISWEBLOGGEDIN")
@@ -188,7 +175,6 @@ class RequestManager: NSObject {
                         
                         NSLog("User does not exist")
                     }
-            }
             
                 
             self.running = false            
@@ -196,7 +182,6 @@ class RequestManager: NSObject {
                 
                     }
             
-              }
         })
         
         running = true

@@ -7,17 +7,17 @@ provides-member:
 - ["V16SwiftLoginScreen9Responses", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "URLResponse"
-- "Responses"
-- "AnyObject"
-- !private "Array"
-- !private "NSString"
-- "String"
 - "NSError"
-- "CastingPrecedence"
+- "URLResponse"
+- !private "NSString"
 - "Data"
-- !private "JSONSerialization"
 - "HTTPURLResponse"
+- "AnyObject"
+- "CastingPrecedence"
+- "Responses"
+- !private "Array"
+- !private "JSONSerialization"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "Encoding"]
 - !private ["Ps9AnyObject", "init"]

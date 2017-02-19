@@ -7,13 +7,13 @@ provides-member:
 - ["C16SwiftLoginScreen5RegEx", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- !private "NSRegularExpression"
-- "RegEx"
-- !private "NSMakeRange"
-- !private "Array"
-- "Bool"
 - !private "!="
+- !private "NSMakeRange"
+- "RegEx"
+- !private "NSRegularExpression"
+- !private "Array"
+- "String"
+- "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "NSMakeRange"]
 - !private ["Ps9AnyObject", "NSRegularExpression"]

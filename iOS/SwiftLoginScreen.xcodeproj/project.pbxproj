@@ -193,6 +193,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A404DBE91E5A247000F088A3 /* RequestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A48D62C31CD3F5C1002A5E0A /* GeneralRequestManager.swift */,
+				A4BBC52E1BF14AE200CDD365 /* RestApiManager.swift */,
+				A41942021BF264B7003EFC0E /* RequestManager.swift */,
+			);
+			name = RequestUtils;
+			sourceTree = "<group>";
+		};
 		A42E84D31CAC32210043C320 /* Temp */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 			children = (
 				A4F5D5B61BF88548002850B2 /* CachedURLResponse+CoreDataProperties.swift */,
 				A4F5D5B71BF88548002850B2 /* CachedURLResponse.swift */,
+				A46A6DCF1BFA139300F4EB6F /* CachedResponse.swift */,
 			);
 			name = CachedURLResponse;
 			sourceTree = "<group>";
@@ -329,7 +340,7 @@
 		EA62FD521989F6AC00469896 /* SwiftLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A48D62C31CD3F5C1002A5E0A /* GeneralRequestManager.swift */,
+				A404DBE91E5A247000F088A3 /* RequestUtils */,
 				A4F34F691CB0366B0034CFE8 /* PopOvers */,
 				A42E84D31CAC32210043C320 /* Temp */,
 				A46BF1DE1C9DAF1E00046FD9 /* Screens */,
@@ -345,11 +356,8 @@
 				EA62FD531989F6AC00469896 /* Supporting Files */,
 				EA62FD6E1989F6E300469896 /* Storyboard.storyboard */,
 				A49F831C1BEF5ABA00572CC5 /* UrlProtocol.swift */,
-				A4BBC52E1BF14AE200CDD365 /* RestApiManager.swift */,
 				A41942001BF263F8003EFC0E /* RegEx.swift */,
-				A41942021BF264B7003EFC0E /* RequestManager.swift */,
 				A4743E4C1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld */,
-				A46A6DCF1BFA139300F4EB6F /* CachedResponse.swift */,
 				A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */,
 				A407DE071C31DFA300D3CAD1 /* Time.swift */,
 				A4CC2C441C33E07A0015546C /* ciphertext.swift */,

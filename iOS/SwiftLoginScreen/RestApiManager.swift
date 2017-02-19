@@ -100,7 +100,8 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                             
                             JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
                         
-                        let message:NSString = jsonData.value(forKey: "Activation") as! NSString
+                        guard let message_ = jsonData.value(forKey: "Error Details"),
+                            let message = (message_ as AnyObject).value(forKey: "Activation") else { return }
                         
                         alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
                         alertView.message = "Voucher is active: \(message)"
