@@ -102,23 +102,23 @@ public class BookController {
 	
 	@GET
 	@Path("/newuser/{newuser}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	
-	public Response getNewUser(@Context HttpHeaders headers, @PathParam(value = "newuser") String newuser) throws JSONException {
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
+	public Response getNewUser(@PathParam(value = "newuser") String newuser) {
 		
 		int newuser_ = new BookingHandlerImpl().getNewUser(newuser);
-		
-		for(String header : headers.getRequestHeaders().keySet()){
-			System.out.println(header);
-		}
+		   
+		   JSONObject myObject = new JSONObject();
+		   
+		   myObject.put("name", "Agamemnon");
+		   myObject.put("age", 32);
 		   
 			if (newuser_ > 0) {
 
-					return Response.ok().status(412).build();		
+					return Response.ok().status(412).entity(myObject.toString()).type(MediaType.APPLICATION_JSON).build();		
 				
 				} else {
 			
-					return Response.status(200).build();
+					return Response.status(200).entity(myObject.toString()).build();
 		
 				}		
     
@@ -126,19 +126,23 @@ public class BookController {
 	
 	@GET
 	@Path("/newemail/{newemail}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	
-	public Response getNewEmail(@Context HttpHeaders headers, @PathParam(value = "newemail") String newemail) throws JSONException {
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
+	public Response getNewEmail(@PathParam(value = "newemail") String newemail) {
 		
-		int newuser_ = new BookingHandlerImpl().getNewUser(newemail);
+		int newuser_ = new BookingHandlerImpl().getNewEmail(newemail);
+		   
+		   JSONObject myObject = new JSONObject();
+		   
+		   myObject.put("name", "Agamemnon");
+		   myObject.put("age", 32);
 		   
 			if (newuser_ > 0) {
 
-					return Response.ok().status(412).build();		
+					return Response.ok().status(412).entity(myObject.toString()).type(MediaType.APPLICATION_JSON).build();		
 				
 				} else {
 			
-					return Response.status(200).build();
+					return Response.status(200).entity(myObject.toString()).build();
 		
 				}		
     

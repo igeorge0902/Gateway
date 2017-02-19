@@ -10,9 +10,9 @@ import com.jeet.db.DAO;
 public class BookingHandlerImpl {
 
 	
-	public Devices getDevice(String uuid) {
+	public List<Devices> getDevice(String uuid) {
 		
-		Devices device = DAO.instance().getDevices(uuid);
+		List<Devices> device = DAO.instance().getDevices(uuid);
 
 		return device;
 	}
@@ -33,7 +33,7 @@ public class BookingHandlerImpl {
 	
 	public int getNewEmail(String newemail) {
 		
-		int newemail_ = DAO.instance().getNewUser(newemail);
+		int newemail_ = DAO.instance().getNewEmail(newemail);
 
 		return newemail_;
 	}

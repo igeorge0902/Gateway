@@ -134,7 +134,7 @@ class SignupVC: UIViewController {
         
         
         
-        let taskV = session.dataTask(with: request, completionHandler: { (data, response, sessionError) in
+        let taskV = session.dataTask(with: requestV, completionHandler: { (data, response, sessionError) in
             
             var error = sessionError
             
@@ -157,10 +157,10 @@ class SignupVC: UIViewController {
                 
                 if let httpResponse = response as? HTTPURLResponse {
 
-                    if httpResponse.statusCode == 400 {
+                    if httpResponse.statusCode == 412 {
                     
                         alertView.title = "SignUp Failed!"
-                        alertView.message = "Invalid data was used!"
+                        alertView.message = "Voucher is already used!"
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()
