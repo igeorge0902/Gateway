@@ -75,6 +75,8 @@ public class DAO {
 		@SuppressWarnings("unchecked")
 		List<Devices> list = query.list();
 		
+		trans.commit();
+
 		if (list.isEmpty()) {
 			
 			Devices dev = new Devices();
@@ -106,6 +108,8 @@ public class DAO {
 		query.setParameter("mUser", user);
 		
 		Logins user_ = (Logins) query.uniqueResult();
+		
+		trans.commit();
 		
 		if (user_ == null) {
 			
@@ -146,6 +150,8 @@ public class DAO {
 		List<Logins> list = query.list();
 		@SuppressWarnings("unchecked")
 		List<Logins> list_ = query_.list();
+		
+		trans.commit();
 
 		if (list_.isEmpty()) {
 		
@@ -178,7 +184,9 @@ public class DAO {
 		List<Logins> list = query.list();
 		@SuppressWarnings("unchecked")
 		List<Logins> list_ = query_.list();
-
+		
+		trans.commit();
+		
 		if (list_.isEmpty()) {
 		
 		return list_.size();
@@ -204,6 +212,8 @@ public class DAO {
 		
 		Logins ilu = (Logins) query.uniqueResult();
 		
+		trans.commit();
+		
 		return ilu;
 	}
 	
@@ -225,6 +235,8 @@ public class DAO {
 		
 		Tokens token_taylor = (Tokens) query.uniqueResult();
 		
+		trans.commit();
+		
 		return token_taylor;
 	}
 	
@@ -245,6 +257,8 @@ public class DAO {
 		query.setParameter("mToken1", token1);
 		
 		Tokens token_swift = (Tokens) query.uniqueResult();
+		
+		trans.commit();
 		
 		return token_swift;
 	}
