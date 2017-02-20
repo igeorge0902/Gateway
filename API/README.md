@@ -14,6 +14,7 @@ Features:
 - aesUtil is ready to use, only config is necessary
 - ciphertext is to be verified upon user request
 - it's able to check if the new user, or email is used in system or not, but upon result no further action is enforced
+- direct dB modifications are instantly reflected due to session is always flushed before queries.
 
 Build from Eclipse:
 - import as Maven project
