@@ -14,7 +14,7 @@ Update
 
 RoadMap
 ----
-- adding outsourced session storage so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
+- adding outsourced session storage for swapped-out - sessions with idle time greater than ... - sessions so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
 [Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
 
 # New
@@ -333,6 +333,7 @@ After the redirect has beed carried out successfully the iOS app has recieved th
 RoadMap:
 ----
 - Angular JS update to the most newest possible version
+- deployment pipeline. For consideration: [Automated deploying pipeline integrated with githib](https://github.com/integrations/feature/deployment)
 - DONE -> I will update the project with configs for Wildfly 10.1.0 soon. The mobile part is already done. Stay tuned!
 - DONE -> only for the API upgrade instructions to Hibernate 5.x with c3p0 connection pool library (independent from AS container)
 
