@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
--- Host: 127.0.0.1    Database: login
+-- Host: localhost    Database: login
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.7.12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `Last_seen` (
   `TIME_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`deviceId`),
   KEY `deviceId` (`deviceId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `Last_seen` (
 
 LOCK TABLES `Last_seen` WRITE;
 /*!40000 ALTER TABLE `Last_seen` DISABLE KEYS */;
-INSERT INTO `Last_seen` VALUES (1,'88F7A2D8-25C5-4085-A5C1-28F425F61431','1459356745374','2016-03-30 16:52:25'),(2,'D9840B2C-D08C-4232-827C-196A73CDFCFB','1461192406871','2016-04-20 22:46:46'),(3,'0509360114613237056832032','1459356868155','2016-03-30 16:54:28'),(4,'75010114537364902623110537365900144024','1460370633515','2016-04-11 10:30:33'),(5,'75010114537364902623112537365900144024','1460819512876','2016-04-16 15:11:52');
 /*!40000 ALTER TABLE `Last_seen` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -109,7 +108,7 @@ CREATE TABLE `Tokens` (
   UNIQUE KEY `token1` (`token1`),
   UNIQUE KEY `token2` (`token2`),
   KEY `token2_2` (`token2`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +117,6 @@ CREATE TABLE `Tokens` (
 
 LOCK TABLES `Tokens` WRITE;
 /*!40000 ALTER TABLE `Tokens` DISABLE KEYS */;
-INSERT INTO `Tokens` VALUES (1,'88F7A2D8-25C5-4085-A5C1-28F425F61431','cf1244b4-f697-11e5-ad08-198d77b00c29','0.8424547657765958','2016-03-30 16:52:37'),(2,'D9840B2C-D08C-4232-827C-196A73CDFCFB','3c4b88bc-074e-11e6-a879-71297cf1447e','0.45933999909026546','2016-04-20 23:18:48'),(3,'0509360114613237056832032','13ced32e-f698-11e5-ad08-198d77b00c29','0.9291308763708276','2016-03-30 16:54:33'),(4,'75010114537364902623110537365900144024','a511e79c-ffd3-11e5-95b7-dafd64fecafc','0.7369539791130963','2016-04-11 10:53:37'),(5,'75010114537364902623112537365900144024','9ca584ae-03ea-11e6-8ded-b86cf27c977e','0.7819692369382542','2016-04-16 15:48:06');
 /*!40000 ALTER TABLE `Tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -169,16 +167,17 @@ DROP TABLE IF EXISTS `device_states`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `device_states` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `deviceId` char(255) COLLATE utf8_bin DEFAULT NULL,
+  `deviceId` char(255) CHARACTER SET utf8 DEFAULT NULL,
   `state` enum('logged_in','playing','logged_out','deleted') COLLATE utf8_bin DEFAULT NULL,
   `SessionID` char(255) COLLATE utf8_bin DEFAULT NULL,
   `TIME_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `uuid` char(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `state` (`state`),
   KEY `deviceId` (`deviceId`),
   KEY `time` (`TIME_`),
   KEY `sessionID` (`SessionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +186,6 @@ CREATE TABLE `device_states` (
 
 LOCK TABLES `device_states` WRITE;
 /*!40000 ALTER TABLE `device_states` DISABLE KEYS */;
-INSERT INTO `device_states` VALUES (1,'88F7A2D8-25C5-4085-A5C1-28F425F61431','logged_out','870be9ef309070f23991d3ba5d34','2016-03-30 16:52:37'),(3,'0509360114613237056832032','logged_out','8729e3b296b2087b6b29d946a16b','2016-03-30 16:54:33'),(5,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_in','67082cf673a4213d475b8324dc5d','2016-04-11 17:48:37'),(6,'75010114537364902623110537365900144024','logged_out','4df732b19216475271b5af9f20b7','2016-04-11 12:11:03'),(7,'75010114537364902623110537365900144024','logged_out','4df732b19216475271b5af9f20b7','2016-04-11 12:11:03'),(8,'75010114537364902623112537365900144024','logged_in',NULL,'2016-04-12 23:44:52'),(9,'75010114537364902623112537365900144024','logged_out','fa0ce2d1c824d69026cd4a39dd4b','2016-04-16 15:48:06'),(10,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_in','0588fe548dc8fecd9d3424257eb2','2016-04-16 18:34:21'),(11,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_out','5dab757d0f56b7c11ef6ba8001bc','2016-04-20 23:18:48'),(12,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_in','44b0983dc076a6e1dfd3241499f0','2016-04-17 15:55:54'),(13,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_in','4ee3eeec73e9378d2d36680f9a9d','2016-04-17 15:55:54'),(14,'D9840B2C-D08C-4232-827C-196A73CDFCFB','logged_in','562165d55b140fba2141564abc95','2016-04-17 19:25:09');
 /*!40000 ALTER TABLE `device_states` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +203,7 @@ CREATE TABLE `devices` (
   `TIME_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,7 +212,6 @@ CREATE TABLE `devices` (
 
 LOCK TABLES `devices` WRITE;
 /*!40000 ALTER TABLE `devices` DISABLE KEYS */;
-INSERT INTO `devices` VALUES (1,'88F7A2D8-25C5-4085-A5C1-28F425F61431','9f394dd6-6de0-11e5-8441-71caa0c5f788','2016-03-30 16:52:11'),(2,'D9840B2C-D08C-4232-827C-196A73CDFCFB','65f63602-6ddf-11e5-8441-71caa0c5f788','2016-03-30 16:53:36'),(3,'0509360114613237056832032','65f63602-6ddf-11e5-8441-71caa0c5f788','2016-03-30 16:54:28'),(4,'D9840B2C-D08C-4232-827C-196A73CDFCFB','ab36ff88-6de1-11e5-8441-71caa0c5f788','2016-03-30 17:00:48'),(5,'D9840B2C-D08C-4232-827C-196A73CDFCFB','9f394dd6-6de0-11e5-8441-71caa0c5f788','2016-04-04 06:32:56'),(6,'75010114537364902623110537365900144024','6c073e32-ffd0-11e5-95b7-dafd64fecafc','2016-04-11 10:30:33'),(7,'75010114537364902623110537365900144024','a50d723e-ffd3-11e5-95b7-dafd64fecafc','2016-04-11 10:53:37'),(8,'75010114537364902623112537365900144024','65f63602-6ddf-11e5-8441-71caa0c5f788','2016-04-12 23:44:52'),(9,'75010114537364902623112537365900144024','eefcfe1a-0284-11e6-b3c9-cce30c92baea','2016-04-14 21:07:45'),(10,'D9840B2C-D08C-4232-827C-196A73CDFCFB','6b9b21fa-03fb-11e6-8ded-b86cf27c977e','2016-04-16 17:48:25'),(11,'D9840B2C-D08C-4232-827C-196A73CDFCFB','eefcfe1a-0284-11e6-b3c9-cce30c92baea','2016-04-16 18:33:06'),(12,'D9840B2C-D08C-4232-827C-196A73CDFCFB','d7d0cbd6-049b-11e6-8ded-b86cf27c977e','2016-04-17 12:56:46'),(13,'D9840B2C-D08C-4232-827C-196A73CDFCFB','d4969b4e-04b4-11e6-8ded-b86cf27c977e','2016-04-17 15:55:38'),(14,'D9840B2C-D08C-4232-827C-196A73CDFCFB','6b8e6034-04c6-11e6-8ded-b86cf27c977e','2016-04-17 18:01:33');
 /*!40000 ALTER TABLE `devices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -224,7 +221,7 @@ UNLOCK TABLES;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`sqluser`@`localhost`*/ /*!50003 TRIGGER deviceId_uuid 
 AFTER INSERT ON devices 
@@ -232,9 +229,10 @@ FOR EACH ROW
 
 BEGIN
        DECLARE deviceId_ char(255);
-	   select deviceId into deviceId_ from devices where last_insert_id() = last_insert_id() ORDER by ID DESC LIMIT 1;
+       DECLARE uuid_ char(255);
+	   select deviceId, uuid into deviceId_, uuid_ from devices where last_insert_id() = last_insert_id() ORDER by ID DESC LIMIT 1;
 
-  INSERT INTO device_states (deviceId, state) values (deviceId_, 'logged_in');
+  INSERT INTO device_states (deviceId, state, uuid) values (deviceId_, 'logged_in', uuid_);
   
 END */;;
 DELIMITER ;
@@ -263,7 +261,7 @@ CREATE TABLE `logins` (
   KEY `user` (`user`),
   KEY `hash_` (`hash_`),
   FULLTEXT KEY `user_2` (`user`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,7 +270,7 @@ CREATE TABLE `logins` (
 
 LOCK TABLES `logins` WRITE;
 /*!40000 ALTER TABLE `logins` DISABLE KEYS */;
-INSERT INTO `logins` VALUES (1,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GG','65f63602-6ddf-11e5-8441-71caa0c5f788','igeorge1982@yahoo.com'),(2,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GA','9f394dd6-6de0-11e5-8441-71caa0c5f788','ga@ga.com'),(3,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GI','ab36ff88-6de1-11e5-8441-71caa0c5f788','gi@gi.com'),(4,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Lilla','37bd295e-6de3-11e5-8441-71caa0c5f788','lilla@lilla.hu'),(5,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Milo','81e84d10-6de3-11e5-8441-71caa0c5f788','milo@milo.hu'),(13,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KI','ce118410-b7bf-11e5-ab38-d9d1883983e4','ki@ki.hu'),(14,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KK','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','kk@kk.hu'),(37,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','George','eefcfe1a-0284-11e6-b3c9-cce30c92baea','igeorge1982@hotmail.com'),(60,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','AA','d4969b4e-04b4-11e6-8ded-b86cf27c977e','aa@aa.hu'),(62,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','CC','6b8e6034-04c6-11e6-8ded-b86cf27c977e','igeorge1982@gmail.com');
+INSERT INTO `logins` VALUES (1,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GG','65f63602-6ddf-11e5-8441-71caa0c5f788','igeorge0902@yahoo.com'),(2,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GA','9f394dd6-6de0-11e5-8441-71caa0c5f788','ga@ga.com'),(3,'02a43a9688ca677d9d145232c48be9b7b99f6745bb70bafb6d4f30d92d3277f3d5593eab808539da34eade7acd354f0e1a5146da598241771946f26df743f236','GI','ab36ff88-6de1-11e5-8441-71caa0c5f788','gi@gi.com'),(4,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Lilla','37bd295e-6de3-11e5-8441-71caa0c5f788','lilla@lilla.hu'),(5,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Milo','81e84d10-6de3-11e5-8441-71caa0c5f788','milo@milo.hu'),(13,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KI','ce118410-b7bf-11e5-ab38-d9d1883983e4','ki@ki.hu'),(14,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KK','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','kk@kk.hu'),(37,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','George','eefcfe1a-0284-11e6-b3c9-cce30c92baea','igeorge1982@hotmail.com'),(60,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','AA','d4969b4e-04b4-11e6-8ded-b86cf27c977e','aa@aa.hu'),(62,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','CC','6b8e6034-04c6-11e6-8ded-b86cf27c977e','igeorge1982@gmail.com'),(63,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','CD','a08d4212-3d4e-11e6-b703-b68b964fca08','igeorge1982@yahoo.com');
 /*!40000 ALTER TABLE `logins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -348,7 +346,7 @@ CREATE TABLE `voucher_states` (
 
 LOCK TABLES `voucher_states` WRITE;
 /*!40000 ALTER TABLE `voucher_states` DISABLE KEYS */;
-INSERT INTO `voucher_states` VALUES (8,'registered','12345',NULL,0,1,'2016-03-10 20:25:44',NULL),(9,'registered','12346',NULL,0,1,'2016-03-10 20:41:30',NULL),(10,'registered','12347',NULL,0,1,'2016-03-10 20:41:30',NULL),(11,'registered','12348',NULL,0,1,'2016-03-10 20:40:42',NULL),(12,'registered','12349',NULL,0,1,'2016-03-10 20:40:51',NULL),(13,'registered','12350',NULL,0,1,'2016-03-10 20:41:00',NULL),(14,'registered','12351',NULL,0,1,'2016-03-10 20:41:07',NULL),(15,'registered','12352',NULL,1,0,'2016-04-20 22:48:32','0.32044395554852105'),(16,'free','12353',NULL,1,0,'2016-04-20 22:25:45',''),(17,'registered','12354',NULL,1,0,'2016-04-17 18:01:58','0.32044395554852106'),(18,'registered','12355',NULL,1,0,'2016-04-14 21:17:11','0.09055326235532134'),(19,'free','12356',NULL,1,0,'2016-04-16 18:15:12',NULL);
+INSERT INTO `voucher_states` VALUES (8,'registered','12345',NULL,0,1,'2016-03-10 20:25:44',NULL),(9,'registered','12346',NULL,0,1,'2016-03-10 20:41:30',NULL),(10,'registered','12347',NULL,0,1,'2016-03-10 20:41:30',NULL),(11,'registered','12348',NULL,0,1,'2016-03-10 20:40:42',NULL),(12,'registered','12349',NULL,0,1,'2016-03-10 20:40:51',NULL),(13,'registered','12350',NULL,0,1,'2016-03-10 20:41:00',NULL),(14,'registered','12351',NULL,0,1,'2016-03-10 20:41:07',NULL),(15,'registered','12352',NULL,1,0,'2016-04-20 22:48:32','0.32044395554852105'),(16,'free','12353',NULL,1,0,'2017-02-20 01:52:33',''),(17,'registered','12354',NULL,1,0,'2016-04-17 18:01:58','0.32044395554852106'),(18,'registered','12355',NULL,1,0,'2016-04-14 21:17:11','0.09055326235532134'),(19,'registered','12356',NULL,1,0,'2016-06-28 16:37:39','0.554701955574287');
 /*!40000 ALTER TABLE `voucher_states` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -367,7 +365,7 @@ CREATE TABLE `vouchers` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`),
   KEY `uuid_2` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -376,7 +374,7 @@ CREATE TABLE `vouchers` (
 
 LOCK TABLES `vouchers` WRITE;
 /*!40000 ALTER TABLE `vouchers` DISABLE KEYS */;
-INSERT INTO `vouchers` VALUES (2,'12346','9f394dd6-6de0-11e5-8441-71caa0c5f788','2015-10-08 17:18:41'),(3,'12347','ab36ff88-6de1-11e5-8441-71caa0c5f788','2015-10-08 17:26:11'),(4,'12348','37bd295e-6de3-11e5-8441-71caa0c5f788','2015-10-08 17:37:16'),(9,'12350','ce118410-b7bf-11e5-ab38-d9d1883983e4','2016-01-10 17:30:12'),(10,'12351','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','2016-01-10 17:39:07'),(21,'12349','437266ba-d03f-11e5-bf8d-12c4a3e48e1b','2016-02-10 21:43:03'),(24,'12355','eefcfe1a-0284-11e6-b3c9-cce30c92baea','2016-04-14 21:07:44'),(26,'12345','65f63602-6ddf-11e5-8441-71caa0c5f788','2016-04-16 20:32:36'),(28,'12354','d4969b4e-04b4-11e6-8ded-b86cf27c977e','2016-04-17 15:55:38'),(29,'12352','6b8e6034-04c6-11e6-8ded-b86cf27c977e','2016-04-17 18:01:33');
+INSERT INTO `vouchers` VALUES (2,'12346','9f394dd6-6de0-11e5-8441-71caa0c5f788','2015-10-08 17:18:41'),(3,'12347','ab36ff88-6de1-11e5-8441-71caa0c5f788','2015-10-08 17:26:11'),(4,'12348','37bd295e-6de3-11e5-8441-71caa0c5f788','2015-10-08 17:37:16'),(9,'12350','ce118410-b7bf-11e5-ab38-d9d1883983e4','2016-01-10 17:30:12'),(10,'12351','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','2016-01-10 17:39:07'),(21,'12349','437266ba-d03f-11e5-bf8d-12c4a3e48e1b','2016-02-10 21:43:03'),(24,'12355','eefcfe1a-0284-11e6-b3c9-cce30c92baea','2016-04-14 21:07:44'),(26,'12345','65f63602-6ddf-11e5-8441-71caa0c5f788','2016-04-16 20:32:36'),(28,'12354','d4969b4e-04b4-11e6-8ded-b86cf27c977e','2016-04-17 15:55:38'),(29,'12352','6b8e6034-04c6-11e6-8ded-b86cf27c977e','2016-04-17 18:01:33'),(30,'12356','a08d4212-3d4e-11e6-b703-b68b964fca08','2016-06-28 16:37:39');
 /*!40000 ALTER TABLE `vouchers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -574,7 +572,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `insert_device`(IN deviceId_ char(255), IN user_ varchar(255))
 BEGIN
@@ -601,33 +599,34 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `insert_device_`(IN deviceId_ char(255), IN user_ varchar(255))
 BEGIN
 
 declare uuid_ char(255);
 declare devices_ char(255);
+#declare id_ int(11);
+#declare idS_ int(11);
 
 select uuid into uuid_ from logins
 where logins.user = user_ ;
 
 #join devices with logins table to check device for user
-#select deviceId into devices_ from devices where deviceId = deviceId_;
-
-select a.deviceId into devices_ from devices a left join logins b on a.uuid = b.uuid where a.deviceId = deviceId_ and b.user = user_;
-
+#select id into id_ from devices_states where deviceId = deviceId_;
+select deviceId into devices_ from devices where devices.deviceId = deviceId_ and devices.uuid = uuid_;
 
 if deviceId_ != devices_ or devices_ is null then
-
 insert into devices (deviceId, uuid) values (deviceId_,uuid_);
 
-else 
+else
+
 update device_states 
 set device_states.state = 'logged_in' 
 where device_states.deviceId = deviceId_;
 
 end if;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -837,4 +836,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-25  3:24:07
+-- Dump completed on 2017-02-22 23:58:06
