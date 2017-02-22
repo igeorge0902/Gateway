@@ -33,7 +33,6 @@ Known issues (for most recent version see the update branch!):
 - I forgot to add the user parameter to the password check that causes user can login with any available password
 FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
-- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
 - Please note you would like to report issues you may find so that I can fix that I might have missed.
@@ -62,6 +61,8 @@ For more information on how it works: [Angular’s XSRF: How It Works](https://s
 You can also add your own request / response filters to do the dirty job: 
 - [CSRF For Java Web Apps](https://dzone.com/articles/preventing-csrf-java-web-apps)
 - and see also [Anti cross-site scripting (XSS) filter for Java web apps](https://www.javacodegeeks.com/2012/07/anti-cross-site-scripting-xss-filter.html)
+
+Regarding the database column types I used in general char(255). You can easily fine-tune the storage to allocate longer strings like with TEXT.
 
 # Unix epoch time
 The universal implementation of Unix epoch time in all used languages made it available that all parts of the system can and does align to the elapsed time since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970 in the same format - LONG:
