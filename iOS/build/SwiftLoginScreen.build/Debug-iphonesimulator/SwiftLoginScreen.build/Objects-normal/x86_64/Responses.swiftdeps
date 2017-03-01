@@ -7,17 +7,17 @@ provides-member:
 - ["V16SwiftLoginScreen9Responses", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- !private "Array"
+- "Responses"
+- "CastingPrecedence"
 - "NSError"
-- "URLResponse"
 - !private "NSString"
+- "String"
+- !private "JSONSerialization"
+- "URLResponse"
 - "Data"
 - "HTTPURLResponse"
 - "AnyObject"
-- "CastingPrecedence"
-- "Responses"
-- !private "Array"
-- !private "JSONSerialization"
-- "String"
 depends-member:
 - !private ["Ps9AnyObject", "Encoding"]
 - !private ["Ps9AnyObject", "init"]
@@ -261,4 +261,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "ab0e6fa64dfdbd159442ee788b3b21a0"

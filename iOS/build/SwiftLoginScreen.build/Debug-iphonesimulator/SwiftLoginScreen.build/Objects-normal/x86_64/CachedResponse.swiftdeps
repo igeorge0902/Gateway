@@ -6,20 +6,20 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen14CachedResponse", ""]
 provides-dynamic-lookup:
-- "url"
-- "mimeType"
-- "data"
 - "encoding"
+- "mimeType"
 - "timestamp"
+- "url"
+- "data"
 depends-top-level:
-- !private "StringLiteralType"
-- "CachedResponse"
-- "RLMObject"
-- "Date"
-- "Data"
-- "String"
 - "NSString"
+- "RLMObject"
+- "CachedResponse"
 - "AssignmentPrecedence"
+- "String"
+- "Data"
+- "Date"
+- !private "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "Data"]
 - !private ["Ps9AnyObject", "Date"]
@@ -328,4 +328,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "aa48dc248126228a188645b86deaa6d1"

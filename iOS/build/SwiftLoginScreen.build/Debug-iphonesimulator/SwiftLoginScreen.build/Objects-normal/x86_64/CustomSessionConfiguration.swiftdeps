@@ -8,10 +8,10 @@ provides-dynamic-lookup:
 - "CustomSessionConfiguration"
 depends-top-level:
 - !private "Dictionary"
-- !private "BooleanLiteralType"
-- !private "StringLiteralType"
 - "AssignmentPrecedence"
+- !private "StringLiteralType"
 - "URLSessionConfiguration"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Vs11AnyHashable", "deinit"]
 - ["Ps9AnyObject", "CustomSessionConfiguration"]
@@ -250,4 +250,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "81d2ada4449bc80848e3ec4c44deef3e"

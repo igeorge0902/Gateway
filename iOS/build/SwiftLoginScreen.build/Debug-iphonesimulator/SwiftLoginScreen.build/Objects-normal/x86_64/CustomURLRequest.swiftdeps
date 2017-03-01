@@ -7,20 +7,20 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "URLQueryItem"
-- "URLRequest"
+- !private "URLComponents"
+- !private "Foundation"
+- "URL"
 - "AssignmentPrecedence"
-- "String"
-- !private "Array"
-- "TimeInterval"
 - "CastingPrecedence"
 - !private "JSONSerialization"
-- !private "Foundation"
-- "NSDictionary"
-- !private "BooleanLiteralType"
-- "URL"
 - !private "StringLiteralType"
-- !private "URLComponents"
+- "String"
+- "NSDictionary"
 - !private "NSMutableURLRequest"
+- "TimeInterval"
+- !private "BooleanLiteralType"
+- "URLRequest"
+- !private "Array"
 depends-member:
 - !private ["Ps9AnyObject", "addValue"]
 - !private ["Ps9AnyObject", "data"]
@@ -388,4 +388,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "339721d3fb9f51b981f14a76e096a2b7"

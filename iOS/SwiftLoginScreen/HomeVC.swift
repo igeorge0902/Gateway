@@ -9,9 +9,10 @@ import UIKit
 import SwiftyJSON
 import CoreData
 import WebKit
+import Starscream
 
 @available(iOS 9.0, *)
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, WebSocketDelegate {
 
     deinit {
         print(#function, "\(self)")
@@ -31,6 +32,7 @@ class HomeVC: UIViewController {
     @IBOutlet var sessionIDLabel : UILabel!
     
     var collectionView: UICollectionView!
+    var socket: WebSocket!
 
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
@@ -69,7 +71,14 @@ class HomeVC: UIViewController {
         super.viewDidAppear(true)
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        let isFirstLaunch = UserDefaults.isFirstLaunch()
+        
+        //TODO: keep the connection open with a wrapped method returning a boolean value, for example 
+        socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
+        socket.delegate = self
+        socket.connect()
+        
+        // let isFirstLaunch = UserDefaults.isFirstLaunch()
+        // print(isFirstLaunch)
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
@@ -276,6 +285,22 @@ class HomeVC: UIViewController {
 
     }
     
+    func websocketDidConnect(socket: WebSocket) {
+        print("websocket is connected")
+    }
+    
+    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("websocket is disconnected: \(error?.localizedDescription)")
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+        print("got some text: \(text)")
+    }
+    
+    func websocketDidReceiveData(socket: WebSocket, data: Data) {
+        print("got some data: \(data.count)")
+    }
+    
 }
 
 extension UIView {
@@ -299,21 +324,22 @@ extension UserDefaults {
     static func isFirstLaunch() -> NSString {
        
         let prefs:UserDefaults = UserDefaults.standard
-        prefs.setValue("nil", forKey: "FirstLaunchFlag")
-        
-        let isFirstLaunch:NSString = prefs.value(forKey: "FirstLaunchFlag") as! NSString
-        
-        if (isFirstLaunch == "nil") {
-            UserDefaults.standard.set("true", forKey: "FirstLaunchFlag")
-            UserDefaults.standard.synchronize()
+        let isFirstLaunch_:NSString?
+        //TODO: replace with coreData
+        if let isFirstLaunch = prefs.value(forKey: "FirstLaunchFlag") as? NSString {
+            
+            isFirstLaunch_ = isFirstLaunch;
+            
         } else {
-        
-        //if (isFirstLaunch == "true") {
-            UserDefaults.standard.set("false", forKey: "FirstLaunchFlag")
-            UserDefaults.standard.synchronize()
+            isFirstLaunch_ = "true";
+            prefs.setValue("false", forKey: "FirstLaunchFlag")
+            prefs.synchronize()
         }
 
-        return isFirstLaunch
+           // prefs.synchronize()
+        
+
+        return isFirstLaunch_!
     }
 }
 

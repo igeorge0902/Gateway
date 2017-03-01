@@ -49,20 +49,20 @@ provides-member:
 - ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "Array"
-- "Int"
-- "StringLiteralType"
 - !private "!="
-- !private "cryptoJScontext"
-- "String"
 - "AnyObject"
 - "CryptoJS"
-- !private "&&"
 - "AssignmentPrecedence"
-- "JSValue"
-- !private "print"
-- "JSContext"
+- "String"
+- !private "Array"
+- !private "cryptoJScontext"
 - !private "Bundle"
+- "StringLiteralType"
+- "JSContext"
+- !private "print"
+- !private "&&"
+- "JSValue"
+- "Int"
 depends-member:
 - ["CC16SwiftLoginScreen8CryptoJS3AES", "AnyObject"]
 - !private ["CC16SwiftLoginScreen8CryptoJS3AES", "Bundle"]
@@ -723,4 +723,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "e133d80a9bb69623096eb6f07c2134eb"

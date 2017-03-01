@@ -7,10 +7,10 @@ provides-member:
 provides-dynamic-lookup:
 - "sharedCustomSession"
 depends-top-level:
-- !private "OperationQueue"
+- !private "URLSessionConfiguration"
 - "URLSession"
 - !private "CustomURLSessionDelegate"
-- !private "URLSessionConfiguration"
+- !private "OperationQueue"
 depends-member:
 - !private ["Ps9AnyObject", "CustomSessionConfiguration"]
 - !private ["Ps9AnyObject", "CustomURLSessionDelegate"]
@@ -196,4 +196,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "832ab52f90b1459b685881e7d41cd4a7"

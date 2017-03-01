@@ -26,7 +26,7 @@
 		</data>
 		<key>Frameworks/Kanna.framework/Kanna</key>
 		<data>
-		u4vWRm+V5gMGVbWpVm9OoYmTV1I=
+		7DCQu8NAYlOvriNnIVPptoi3BoA=
 		</data>
 		<key>Frameworks/Kanna.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/Realm.framework/Realm</key>
 		<data>
-		ExShVyzd7eBNN4J8sC+Fh60fW1M=
+		AC5N3tL4Rt0bb2y5Zr7kCcJUD5U=
 		</data>
 		<key>Frameworks/Realm.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -50,11 +50,23 @@
 		</data>
 		<key>Frameworks/RealmSwift.framework/RealmSwift</key>
 		<data>
-		VlECVJLTufou9UInK2KhJXm7x/o=
+		SMWNw36XAwgCJjq0KOyPQXm8PAc=
 		</data>
 		<key>Frameworks/RealmSwift.framework/_CodeSignature/CodeResources</key>
 		<data>
 		oKz/2nT5NWfsSYilna4PEWCRD/4=
+		</data>
+		<key>Frameworks/Starscream.framework/Info.plist</key>
+		<data>
+		LUs9SAGrEIwV2f+PslOt9ZYQXhQ=
+		</data>
+		<key>Frameworks/Starscream.framework/Starscream</key>
+		<data>
+		fqiKc/dkismHK83crW+aqext8yA=
+		</data>
+		<key>Frameworks/Starscream.framework/_CodeSignature/CodeResources</key>
+		<data>
+		+pCtSIKnUUlS94wKlaVV66lCOcw=
 		</data>
 		<key>Frameworks/SwiftyJSON.framework/Info.plist</key>
 		<data>
@@ -62,7 +74,7 @@
 		</data>
 		<key>Frameworks/SwiftyJSON.framework/SwiftyJSON</key>
 		<data>
-		VvyeGW+cgorOHKfwZ0UEeaEvy2c=
+		4uL1KkLinZAruG8uBzeFiLnskus=
 		</data>
 		<key>Frameworks/SwiftyJSON.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -390,11 +402,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u4vWRm+V5gMGVbWpVm9OoYmTV1I=
+			7DCQu8NAYlOvriNnIVPptoi3BoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			2a6Uv5rvCwl+7t7Rk6W94vchZH9PgRV4T1lkW6AQLt0=
+			HbwqFNFLKm0yhIy/C/0MD3kcAeZKaueXTOUY1xzVCe8=
 			</data>
 		</dict>
 		<key>Frameworks/Kanna.framework/_CodeSignature/CodeResources</key>
@@ -423,11 +435,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ExShVyzd7eBNN4J8sC+Fh60fW1M=
+			AC5N3tL4Rt0bb2y5Zr7kCcJUD5U=
 			</data>
 			<key>hash2</key>
 			<data>
-			CciL10vf/+PLjGhLiCiglOSvCUfggDEVlQ1bkJgGhec=
+			x7M3CaMXw2i6sZvy+qM2ncna8pXC0bJCjM0hJZMYjxM=
 			</data>
 		</dict>
 		<key>Frameworks/Realm.framework/_CodeSignature/CodeResources</key>
@@ -456,11 +468,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VlECVJLTufou9UInK2KhJXm7x/o=
+			SMWNw36XAwgCJjq0KOyPQXm8PAc=
 			</data>
 			<key>hash2</key>
 			<data>
-			k7pxqPtkzNBeXdJD2uyxP9RDUi0t4c+T2VoCkNd7Fzc=
+			jUrOy4FfpOYaJ3A0sfe6D0dNpuLSsTCEorD11Jz88cM=
 			</data>
 		</dict>
 		<key>Frameworks/RealmSwift.framework/_CodeSignature/CodeResources</key>
@@ -472,6 +484,39 @@
 			<key>hash2</key>
 			<data>
 			tze7+YMaFfRqrxz0CYKAgESTmA1nln548tiMrbIJWvU=
+			</data>
+		</dict>
+		<key>Frameworks/Starscream.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LUs9SAGrEIwV2f+PslOt9ZYQXhQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			jL0HVu/D83xnptcp1/k3PUzb/dabG7PDBwIZTgo5T0s=
+			</data>
+		</dict>
+		<key>Frameworks/Starscream.framework/Starscream</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fqiKc/dkismHK83crW+aqext8yA=
+			</data>
+			<key>hash2</key>
+			<data>
+			4H5loQKPHyUGwv4KDkV2LZ92maLtcJMxvWy+6wRCGiM=
+			</data>
+		</dict>
+		<key>Frameworks/Starscream.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+pCtSIKnUUlS94wKlaVV66lCOcw=
+			</data>
+			<key>hash2</key>
+			<data>
+			d570vPOTNf9KuF5505Gu0H/uFANSpSTh67yqjIdJASw=
 			</data>
 		</dict>
 		<key>Frameworks/SwiftyJSON.framework/Info.plist</key>
@@ -489,11 +534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VvyeGW+cgorOHKfwZ0UEeaEvy2c=
+			4uL1KkLinZAruG8uBzeFiLnskus=
 			</data>
 			<key>hash2</key>
 			<data>
-			B9FrrUgM59zMT5BULs7uyZymhi3Y4ZMlhVj0PKcXSn4=
+			E9L5gSLucFgUj29RUzcA+0MArNFv1eNUAri+8C/qhck=
 			</data>
 		</dict>
 		<key>Frameworks/SwiftyJSON.framework/_CodeSignature/CodeResources</key>

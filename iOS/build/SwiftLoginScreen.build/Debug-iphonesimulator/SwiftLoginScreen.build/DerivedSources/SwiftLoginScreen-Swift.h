@@ -231,7 +231,9 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen21GeneralRequestManager")
 @class UIImageView;
 @class UILabel;
 @class UICollectionView;
+@class WebSocket;
 @class UIButton;
+@class NSError;
 @class NSBundle;
 @class NSCoder;
 
@@ -244,6 +246,7 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen6HomeVC")
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified usernameLabel;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified sessionIDLabel;
 @property (nonatomic, strong) UICollectionView * _Null_unspecified collectionView;
+@property (nonatomic, strong) WebSocket * _Null_unspecified socket;
 @property (nonatomic, readonly, strong) NSManagedObjectContext * _Nonnull managedObjectContext;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
@@ -254,6 +257,10 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen6HomeVC")
 - (IBAction)Navigation:(UIButton * _Nonnull)sender;
 - (IBAction)WebView:(UIButton * _Nonnull)sender;
 - (IBAction)Movies:(UIButton * _Nonnull)sender;
+- (void)websocketDidConnectWithSocket:(WebSocket * _Nonnull)socket;
+- (void)websocketDidDisconnectWithSocket:(WebSocket * _Nonnull)socket error:(NSError * _Nullable)error;
+- (void)websocketDidReceiveMessageWithSocket:(WebSocket * _Nonnull)socket text:(NSString * _Nonnull)text;
+- (void)websocketDidReceiveDataWithSocket:(WebSocket * _Nonnull)socket data:(NSData * _Nonnull)data;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -313,7 +320,6 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen6MenuVC")
 @class NSURLConnection;
 @class NSMutableData;
 @class NSMutableURLRequest;
-@class NSError;
 
 SWIFT_CLASS("_TtC16SwiftLoginScreen13MyURLProtocol")
 @interface MyURLProtocol : NSURLProtocol

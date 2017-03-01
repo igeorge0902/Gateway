@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "8b6b463569eaf2fba7e3fc379f90cebe"
-build_time: [540846376, 154642000]
+build_time: [541244470, 30400000]
 inputs:
   "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/CSS.swift": [540372711, 0]
   "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.swift": [540372711, 0]

@@ -11,20 +11,20 @@ provides-member:
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "dismissKeyboard"]
 provides-dynamic-lookup:
-- "dismissKeyboard"
 - "hideKeyboardWhenTappedAround"
+- "dismissKeyboard"
 depends-top-level:
-- "Int64"
-- "zeroTime"
-- !private "UITapGestureRecognizer"
-- "UIViewController"
 - !private "StringLiteralType"
 - !private "Date"
+- !private "UnicodeScalarType"
 - "Sequence"
 - !private "*"
+- "UIViewController"
 - !private "BooleanLiteralType"
 - "String"
-- !private "UnicodeScalarType"
+- !private "UITapGestureRecognizer"
+- "zeroTime"
+- "Int64"
 depends-member:
 - !private ["Ps9AnyObject", "UITapGestureRecognizer"]
 - !private ["Ps9AnyObject", "UIViewController"]
@@ -520,4 +520,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
 interface-hash: "5528366ca76b5177d7649386510f10be"

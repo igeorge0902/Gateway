@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "d9d05c79ff988e3d1a97bc54655f9c72"
-build_time: [540849112, 406124000]
+build_time: [541244472, 896328000]
 inputs:
   "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Aliases.swift": [9223372036854775807, 0]
   "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/RealmSwift/RealmSwift/Error.swift": [9223372036854775807, 0]

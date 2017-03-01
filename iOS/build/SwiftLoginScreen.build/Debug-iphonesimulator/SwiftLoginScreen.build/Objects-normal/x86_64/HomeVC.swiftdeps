@@ -10,74 +10,82 @@ provides-member:
 - ["CSo6UIView", "addConstraintswithFormat"]
 - ["CSo12UserDefaults", "isFirstLaunch"]
 provides-dynamic-lookup:
+- "websocketDidReceiveMessage"
 - "WebView"
-- "Movies"
-- "session"
-- "didReceiveMemoryWarning"
-- "sessionIDLabel"
-- "imageView"
-- "isFirstLaunch"
-- "logoutTapped"
-- "url"
-- "NearbyVenues"
-- "collectionView"
-- "viewDidLoad"
 - "viewDidAppear"
 - "Navigation"
+- "viewDidLoad"
+- "Movies"
+- "isFirstLaunch"
+- "sessionIDLabel"
 - "running"
-- "backgroundDict"
-- "usernameLabel"
 - "managedObjectContext"
+- "NearbyVenues"
+- "backgroundDict"
+- "websocketDidConnect"
+- "collectionView"
+- "websocketDidDisconnect"
+- "didReceiveMemoryWarning"
+- "session"
+- "websocketDidReceiveData"
+- "logoutTapped"
+- "url"
+- "socket"
+- "usernameLabel"
+- "imageView"
 depends-top-level:
-- "UIView"
-- !private "Int"
-- !private "UnicodeScalarType"
-- !private "NSLayoutConstraint"
+- "BooleanLiteralType"
+- "UIApplication"
+- !private "Bundle"
+- "Dictionary"
 - !private "NSEntityDescription"
-- !private "NSLocalizedDescriptionKey"
-- "UIImageView"
-- !private "*"
-- "Void"
-- "NSError"
-- !private "URLRequest"
 - !private "!="
-- !private "NSLog"
-- !private "print"
+- !private "Int"
+- "UIView"
+- "WebSocket"
+- "WebSocketDelegate"
+- "String"
+- !private ">="
+- "UIButton"
+- "UILabel"
+- !private "URLRequest"
+- !private "NSFetchRequestResult"
+- !private "||"
+- !private "NSFetchRequest"
 - !private "NSLayoutFormatOptions"
 - "UICollectionView"
-- "UIViewController"
-- !private "NSDictionary"
 - !private "UIImage"
-- "String"
-- "URL"
-- !private ">="
-- "URLSession"
-- "StringLiteralType"
-- "UILabel"
-- "NSString"
-- !private "||"
-- "HomeVC"
-- "BooleanLiteralType"
-- !private "JSONSerialization"
-- "UIButton"
-- !private "Bundle"
-- "UserDefaults"
-- !private "LogItem"
 - "AppDelegate"
-- !private "UIAlertView"
-- "Dictionary"
-- "JSON"
-- "Bool"
-- !private "NSFetchRequestResult"
-- !private "HTTPURLResponse"
-- !private "CGRect"
-- "UIApplication"
-- !private "<"
-- "CastingPrecedence"
-- !private "NSFetchRequest"
-- !private "=="
+- "Data"
+- !private "*"
+- !private "NSLocalizedDescriptionKey"
+- "UIImageView"
+- "Void"
+- !private "LogItem"
 - "AssignmentPrecedence"
+- !private "=="
 - !private "~="
+- "CastingPrecedence"
+- "Bool"
+- !private "UnicodeScalarType"
+- !private "print"
+- !private "NSDictionary"
+- !private "NSLayoutConstraint"
+- !private "<"
+- "StringLiteralType"
+- "UserDefaults"
+- "URLSession"
+- "NSString"
+- "UIViewController"
+- !private "UIAlertView"
+- !private "NSLog"
+- "JSON"
+- !private "CGRect"
+- "HomeVC"
+- !private "HTTPURLResponse"
+- "URL"
+- "NSError"
+- !private "JSONSerialization"
 depends-member:
 - !private ["Ps9AnyObject", "Bundle"]
 - !private ["Ps9AnyObject", "CGRect"]
@@ -105,6 +113,7 @@ depends-member:
 - !private ["Ps9AnyObject", "URLRequest"]
 - ["Ps9AnyObject", "URLSession"]
 - !private ["Ps9AnyObject", "UserDefaults"]
+- !private ["Ps9AnyObject", "WebSocket"]
 - ["Ps9AnyObject", "WebView"]
 - !private ["Ps9AnyObject", "addButton"]
 - !private ["Ps9AnyObject", "addConstraints"]
@@ -113,6 +122,7 @@ depends-member:
 - ["Ps9AnyObject", "backgroundDict"]
 - !private ["Ps9AnyObject", "bundleIdentifier"]
 - ["Ps9AnyObject", "collectionView"]
+- !private ["Ps9AnyObject", "connect"]
 - !private ["Ps9AnyObject", "constraints"]
 - ["Ps9AnyObject", "dataTask"]
 - ["Ps9AnyObject", "delegate"]
@@ -128,6 +138,7 @@ depends-member:
 - !private ["Ps9AnyObject", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9AnyObject", "itemText"]
 - !private ["Ps9AnyObject", "jsonObject"]
+- !private ["Ps9AnyObject", "localizedDescription"]
 - ["Ps9AnyObject", "logoutTapped"]
 - !private ["Ps9AnyObject", "main"]
 - ["Ps9AnyObject", "managedObjectContext"]
@@ -141,11 +152,11 @@ depends-member:
 - ["Ps9AnyObject", "session"]
 - ["Ps9AnyObject", "session.storage"]
 - ["Ps9AnyObject", "sessionIDLabel"]
-- !private ["Ps9AnyObject", "set"]
 - !private ["Ps9AnyObject", "setValue"]
 - ["Ps9AnyObject", "shared"]
 - ["Ps9AnyObject", "sharedCustomSession"]
 - !private ["Ps9AnyObject", "show"]
+- ["Ps9AnyObject", "socket"]
 - !private ["Ps9AnyObject", "standard"]
 - !private ["Ps9AnyObject", "statusCode"]
 - !private ["Ps9AnyObject", "synchronize"]
@@ -158,6 +169,10 @@ depends-member:
 - !private ["Ps9AnyObject", "view"]
 - ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
+- ["Ps9AnyObject", "websocketDidConnect"]
+- ["Ps9AnyObject", "websocketDidDisconnect"]
+- ["Ps9AnyObject", "websocketDidReceiveData"]
+- ["Ps9AnyObject", "websocketDidReceiveMessage"]
 - ["Ps9AnyObject", ""]
 - ["C16SwiftLoginScreen11AppDelegate", "deinit"]
 - ["C16SwiftLoginScreen11AppDelegate", "managedObjectContext"]
@@ -165,11 +180,15 @@ depends-member:
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
 - !private ["Sa", "enumerated"]
+- !private ["Ps23BidirectionalCollection", "IndexDistance"]
 - !private ["Ps23BidirectionalCollection", "Iterator"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
+- !private ["Ps23BidirectionalCollection", "count"]
 - !private ["Ps23BidirectionalCollection", "enumerated"]
+- !private ["Ps22BidirectionalIndexable", "IndexDistance"]
 - !private ["Ps22BidirectionalIndexable", "Iterator"]
 - !private ["Ps22BidirectionalIndexable", "_Element"]
+- !private ["Ps22BidirectionalIndexable", "count"]
 - !private ["Ps22BidirectionalIndexable", "enumerated"]
 - !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Sb", "_getBuiltinLogicValue"]
@@ -230,6 +249,7 @@ depends-member:
 - ["Ps7CVarArg", "URLSession"]
 - !private ["Ps7CVarArg", "UserDefaults"]
 - !private ["Ps7CVarArg", "Value"]
+- !private ["Ps7CVarArg", "WebSocket"]
 - ["Ps7CVarArg", "WebView"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "addButton"]
@@ -239,6 +259,7 @@ depends-member:
 - ["Ps7CVarArg", "backgroundDict"]
 - !private ["Ps7CVarArg", "bundleIdentifier"]
 - ["Ps7CVarArg", "collectionView"]
+- !private ["Ps7CVarArg", "connect"]
 - !private ["Ps7CVarArg", "constraints"]
 - ["Ps7CVarArg", "dataTask"]
 - ["Ps7CVarArg", "delegate"]
@@ -255,6 +276,7 @@ depends-member:
 - !private ["Ps7CVarArg", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps7CVarArg", "itemText"]
 - !private ["Ps7CVarArg", "jsonObject"]
+- !private ["Ps7CVarArg", "localizedDescription"]
 - ["Ps7CVarArg", "logoutTapped"]
 - !private ["Ps7CVarArg", "main"]
 - ["Ps7CVarArg", "managedObjectContext"]
@@ -268,11 +290,11 @@ depends-member:
 - ["Ps7CVarArg", "session"]
 - ["Ps7CVarArg", "session.storage"]
 - ["Ps7CVarArg", "sessionIDLabel"]
-- !private ["Ps7CVarArg", "set"]
 - !private ["Ps7CVarArg", "setValue"]
 - ["Ps7CVarArg", "shared"]
 - ["Ps7CVarArg", "sharedCustomSession"]
 - !private ["Ps7CVarArg", "show"]
+- ["Ps7CVarArg", "socket"]
 - !private ["Ps7CVarArg", "standard"]
 - !private ["Ps7CVarArg", "statusCode"]
 - !private ["Ps7CVarArg", "subscript"]
@@ -286,15 +308,21 @@ depends-member:
 - !private ["Ps7CVarArg", "view"]
 - ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
+- ["Ps7CVarArg", "websocketDidConnect"]
+- ["Ps7CVarArg", "websocketDidDisconnect"]
+- ["Ps7CVarArg", "websocketDidReceiveData"]
+- ["Ps7CVarArg", "websocketDidReceiveMessage"]
 - ["Ps7CVarArg", ""]
 - !private ["Vs9Character", "deinit"]
 - !private ["Vs11ClosedRange", "deinit"]
 - !private ["Ps10Collection", "Index"]
+- !private ["Ps10Collection", "IndexDistance"]
 - !private ["Ps10Collection", "Iterator"]
 - !private ["Ps10Collection", "Key"]
 - !private ["Ps10Collection", "SubSequence"]
 - !private ["Ps10Collection", "Value"]
 - !private ["Ps10Collection", "_Element"]
+- !private ["Ps10Collection", "count"]
 - !private ["Ps10Collection", "enumerated"]
 - ["Ps10Collection", "init"]
 - !private ["Ps10Collection", "subscript"]
@@ -305,6 +333,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Bundle"]
 - !private ["Ps28CustomDebugStringConvertible", "CGRect"]
 - ["Ps28CustomDebugStringConvertible", "Dictionary"]
+- !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
@@ -331,6 +360,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "URLSession"]
 - !private ["Ps28CustomDebugStringConvertible", "UserDefaults"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
+- !private ["Ps28CustomDebugStringConvertible", "WebSocket"]
 - ["Ps28CustomDebugStringConvertible", "WebView"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "addButton"]
@@ -340,7 +370,9 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "backgroundDict"]
 - !private ["Ps28CustomDebugStringConvertible", "bundleIdentifier"]
 - ["Ps28CustomDebugStringConvertible", "collectionView"]
+- !private ["Ps28CustomDebugStringConvertible", "connect"]
 - !private ["Ps28CustomDebugStringConvertible", "constraints"]
+- !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "dataTask"]
 - ["Ps28CustomDebugStringConvertible", "delegate"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
@@ -358,6 +390,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps28CustomDebugStringConvertible", "itemText"]
 - !private ["Ps28CustomDebugStringConvertible", "jsonObject"]
+- !private ["Ps28CustomDebugStringConvertible", "localizedDescription"]
 - ["Ps28CustomDebugStringConvertible", "logoutTapped"]
 - !private ["Ps28CustomDebugStringConvertible", "main"]
 - ["Ps28CustomDebugStringConvertible", "managedObjectContext"]
@@ -371,12 +404,12 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "session"]
 - ["Ps28CustomDebugStringConvertible", "session.storage"]
 - ["Ps28CustomDebugStringConvertible", "sessionIDLabel"]
-- !private ["Ps28CustomDebugStringConvertible", "set"]
 - !private ["Ps28CustomDebugStringConvertible", "setValue"]
 - ["Ps28CustomDebugStringConvertible", "shared"]
 - ["Ps28CustomDebugStringConvertible", "sharedCustomSession"]
 - !private ["Ps28CustomDebugStringConvertible", "show"]
 - !private ["Ps28CustomDebugStringConvertible", "size"]
+- ["Ps28CustomDebugStringConvertible", "socket"]
 - !private ["Ps28CustomDebugStringConvertible", "standard"]
 - !private ["Ps28CustomDebugStringConvertible", "statusCode"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
@@ -390,6 +423,10 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "view"]
 - ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
+- ["Ps28CustomDebugStringConvertible", "websocketDidConnect"]
+- ["Ps28CustomDebugStringConvertible", "websocketDidDisconnect"]
+- ["Ps28CustomDebugStringConvertible", "websocketDidReceiveData"]
+- ["Ps28CustomDebugStringConvertible", "websocketDidReceiveMessage"]
 - !private ["Ps28CustomDebugStringConvertible", "width"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
@@ -398,12 +435,14 @@ depends-member:
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "size"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "width"]
+- !private ["Ps17CustomReflectable", "IndexDistance"]
 - !private ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "Key"]
 - !private ["Ps17CustomReflectable", "Stride"]
 - !private ["Ps17CustomReflectable", "Value"]
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "count"]
 - !private ["Ps17CustomReflectable", "enumerated"]
 - !private ["Ps17CustomReflectable", "height"]
 - !private ["Ps17CustomReflectable", "httpMethod"]
@@ -416,6 +455,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Bundle"]
 - !private ["Ps23CustomStringConvertible", "CGRect"]
 - ["Ps23CustomStringConvertible", "Dictionary"]
+- !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "JSONSerialization"]
 - !private ["Ps23CustomStringConvertible", "Key"]
@@ -443,6 +483,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "URLSession"]
 - !private ["Ps23CustomStringConvertible", "UserDefaults"]
 - !private ["Ps23CustomStringConvertible", "Value"]
+- !private ["Ps23CustomStringConvertible", "WebSocket"]
 - ["Ps23CustomStringConvertible", "WebView"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
@@ -453,7 +494,9 @@ depends-member:
 - ["Ps23CustomStringConvertible", "backgroundDict"]
 - !private ["Ps23CustomStringConvertible", "bundleIdentifier"]
 - ["Ps23CustomStringConvertible", "collectionView"]
+- !private ["Ps23CustomStringConvertible", "connect"]
 - !private ["Ps23CustomStringConvertible", "constraints"]
+- !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "dataTask"]
 - ["Ps23CustomStringConvertible", "delegate"]
 - ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
@@ -470,6 +513,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps23CustomStringConvertible", "itemText"]
 - !private ["Ps23CustomStringConvertible", "jsonObject"]
+- !private ["Ps23CustomStringConvertible", "localizedDescription"]
 - ["Ps23CustomStringConvertible", "logoutTapped"]
 - !private ["Ps23CustomStringConvertible", "main"]
 - ["Ps23CustomStringConvertible", "managedObjectContext"]
@@ -483,11 +527,11 @@ depends-member:
 - ["Ps23CustomStringConvertible", "session"]
 - ["Ps23CustomStringConvertible", "session.storage"]
 - ["Ps23CustomStringConvertible", "sessionIDLabel"]
-- !private ["Ps23CustomStringConvertible", "set"]
 - !private ["Ps23CustomStringConvertible", "setValue"]
 - ["Ps23CustomStringConvertible", "shared"]
 - ["Ps23CustomStringConvertible", "sharedCustomSession"]
 - !private ["Ps23CustomStringConvertible", "show"]
+- ["Ps23CustomStringConvertible", "socket"]
 - !private ["Ps23CustomStringConvertible", "standard"]
 - !private ["Ps23CustomStringConvertible", "statusCode"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
@@ -501,8 +545,14 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "view"]
 - ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
+- ["Ps23CustomStringConvertible", "websocketDidConnect"]
+- ["Ps23CustomStringConvertible", "websocketDidDisconnect"]
+- ["Ps23CustomStringConvertible", "websocketDidReceiveData"]
+- ["Ps23CustomStringConvertible", "websocketDidReceiveMessage"]
 - ["Ps23CustomStringConvertible", ""]
-- !private ["V10Foundation4Data", "deinit"]
+- !private ["V10Foundation4Data", "IndexDistance"]
+- !private ["V10Foundation4Data", "count"]
+- ["V10Foundation4Data", "deinit"]
 - !private ["Vs10Dictionary", "Key"]
 - !private ["Vs10Dictionary", "Value"]
 - ["Vs10Dictionary", "deinit"]
@@ -516,6 +566,7 @@ depends-member:
 - !private ["Ps9Equatable", "CGRect"]
 - ["Ps9Equatable", "Dictionary"]
 - !private ["Ps9Equatable", "Element"]
+- !private ["Ps9Equatable", "IndexDistance"]
 - !private ["Ps9Equatable", "JSONSerialization"]
 - ["Ps9Equatable", "Movies"]
 - !private ["Ps9Equatable", "NSEntityDescription"]
@@ -540,6 +591,7 @@ depends-member:
 - !private ["Ps9Equatable", "URLRequest"]
 - ["Ps9Equatable", "URLSession"]
 - !private ["Ps9Equatable", "UserDefaults"]
+- !private ["Ps9Equatable", "WebSocket"]
 - ["Ps9Equatable", "WebView"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "addButton"]
@@ -549,7 +601,9 @@ depends-member:
 - ["Ps9Equatable", "backgroundDict"]
 - !private ["Ps9Equatable", "bundleIdentifier"]
 - ["Ps9Equatable", "collectionView"]
+- !private ["Ps9Equatable", "connect"]
 - !private ["Ps9Equatable", "constraints"]
+- !private ["Ps9Equatable", "count"]
 - ["Ps9Equatable", "dataTask"]
 - ["Ps9Equatable", "delegate"]
 - ["Ps9Equatable", "didReceiveMemoryWarning"]
@@ -566,6 +620,7 @@ depends-member:
 - !private ["Ps9Equatable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9Equatable", "itemText"]
 - !private ["Ps9Equatable", "jsonObject"]
+- !private ["Ps9Equatable", "localizedDescription"]
 - ["Ps9Equatable", "logoutTapped"]
 - !private ["Ps9Equatable", "main"]
 - ["Ps9Equatable", "managedObjectContext"]
@@ -580,12 +635,12 @@ depends-member:
 - ["Ps9Equatable", "session"]
 - ["Ps9Equatable", "session.storage"]
 - ["Ps9Equatable", "sessionIDLabel"]
-- !private ["Ps9Equatable", "set"]
 - !private ["Ps9Equatable", "setValue"]
 - ["Ps9Equatable", "shared"]
 - ["Ps9Equatable", "sharedCustomSession"]
 - !private ["Ps9Equatable", "show"]
 - !private ["Ps9Equatable", "size"]
+- ["Ps9Equatable", "socket"]
 - !private ["Ps9Equatable", "standard"]
 - !private ["Ps9Equatable", "statusCode"]
 - !private ["Ps9Equatable", "synchronize"]
@@ -598,6 +653,10 @@ depends-member:
 - !private ["Ps9Equatable", "view"]
 - ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
+- ["Ps9Equatable", "websocketDidConnect"]
+- ["Ps9Equatable", "websocketDidDisconnect"]
+- ["Ps9Equatable", "websocketDidReceiveData"]
+- ["Ps9Equatable", "websocketDidReceiveMessage"]
 - !private ["Ps9Equatable", "width"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
@@ -627,6 +686,7 @@ depends-member:
 - !private ["Ps8Hashable", "Bundle"]
 - !private ["Ps8Hashable", "CGRect"]
 - ["Ps8Hashable", "Dictionary"]
+- !private ["Ps8Hashable", "IndexDistance"]
 - !private ["Ps8Hashable", "JSONSerialization"]
 - ["Ps8Hashable", "Movies"]
 - !private ["Ps8Hashable", "NSEntityDescription"]
@@ -651,6 +711,7 @@ depends-member:
 - !private ["Ps8Hashable", "URLRequest"]
 - ["Ps8Hashable", "URLSession"]
 - !private ["Ps8Hashable", "UserDefaults"]
+- !private ["Ps8Hashable", "WebSocket"]
 - ["Ps8Hashable", "WebView"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "addButton"]
@@ -660,7 +721,9 @@ depends-member:
 - ["Ps8Hashable", "backgroundDict"]
 - !private ["Ps8Hashable", "bundleIdentifier"]
 - ["Ps8Hashable", "collectionView"]
+- !private ["Ps8Hashable", "connect"]
 - !private ["Ps8Hashable", "constraints"]
+- !private ["Ps8Hashable", "count"]
 - ["Ps8Hashable", "dataTask"]
 - ["Ps8Hashable", "delegate"]
 - ["Ps8Hashable", "didReceiveMemoryWarning"]
@@ -676,6 +739,7 @@ depends-member:
 - !private ["Ps8Hashable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps8Hashable", "itemText"]
 - !private ["Ps8Hashable", "jsonObject"]
+- !private ["Ps8Hashable", "localizedDescription"]
 - ["Ps8Hashable", "logoutTapped"]
 - !private ["Ps8Hashable", "main"]
 - ["Ps8Hashable", "managedObjectContext"]
@@ -689,11 +753,11 @@ depends-member:
 - ["Ps8Hashable", "session"]
 - ["Ps8Hashable", "session.storage"]
 - ["Ps8Hashable", "sessionIDLabel"]
-- !private ["Ps8Hashable", "set"]
 - !private ["Ps8Hashable", "setValue"]
 - ["Ps8Hashable", "shared"]
 - ["Ps8Hashable", "sharedCustomSession"]
 - !private ["Ps8Hashable", "show"]
+- ["Ps8Hashable", "socket"]
 - !private ["Ps8Hashable", "standard"]
 - !private ["Ps8Hashable", "statusCode"]
 - !private ["Ps8Hashable", "synchronize"]
@@ -706,11 +770,16 @@ depends-member:
 - !private ["Ps8Hashable", "view"]
 - ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
+- ["Ps8Hashable", "websocketDidConnect"]
+- ["Ps8Hashable", "websocketDidDisconnect"]
+- ["Ps8Hashable", "websocketDidReceiveData"]
+- ["Ps8Hashable", "websocketDidReceiveMessage"]
 - ["Ps8Hashable", ""]
 - ["C16SwiftLoginScreen6HomeVC", "AppDelegate"]
 - ["C16SwiftLoginScreen6HomeVC", "Bool"]
 - !private ["C16SwiftLoginScreen6HomeVC", "Bundle"]
 - !private ["C16SwiftLoginScreen6HomeVC", "CGRect"]
+- ["C16SwiftLoginScreen6HomeVC", "Data"]
 - ["C16SwiftLoginScreen6HomeVC", "Dictionary"]
 - !private ["C16SwiftLoginScreen6HomeVC", "HTTPURLResponse"]
 - !private ["C16SwiftLoginScreen6HomeVC", "Int"]
@@ -743,6 +812,7 @@ depends-member:
 - ["C16SwiftLoginScreen6HomeVC", "URLSession"]
 - !private ["C16SwiftLoginScreen6HomeVC", "UserDefaults"]
 - ["C16SwiftLoginScreen6HomeVC", "Void"]
+- ["C16SwiftLoginScreen6HomeVC", "WebSocket"]
 - ["C16SwiftLoginScreen6HomeVC", "WebView"]
 - ["C16SwiftLoginScreen6HomeVC", "backgroundDict"]
 - ["C16SwiftLoginScreen6HomeVC", "collectionView"]
@@ -759,28 +829,37 @@ depends-member:
 - ["C16SwiftLoginScreen6HomeVC", "session"]
 - !private ["C16SwiftLoginScreen6HomeVC", "session.storage"]
 - ["C16SwiftLoginScreen6HomeVC", "sessionIDLabel"]
+- ["C16SwiftLoginScreen6HomeVC", "socket"]
 - !private ["C16SwiftLoginScreen6HomeVC", "title"]
 - ["C16SwiftLoginScreen6HomeVC", "url"]
 - ["C16SwiftLoginScreen6HomeVC", "usernameLabel"]
 - !private ["C16SwiftLoginScreen6HomeVC", "view"]
 - ["C16SwiftLoginScreen6HomeVC", "viewDidAppear"]
 - ["C16SwiftLoginScreen6HomeVC", "viewDidLoad"]
+- ["C16SwiftLoginScreen6HomeVC", "websocketDidConnect"]
+- ["C16SwiftLoginScreen6HomeVC", "websocketDidDisconnect"]
+- ["C16SwiftLoginScreen6HomeVC", "websocketDidReceiveData"]
+- ["C16SwiftLoginScreen6HomeVC", "websocketDidReceiveMessage"]
 - ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Index"]
+- !private ["Ps9Indexable", "IndexDistance"]
 - !private ["Ps9Indexable", "Iterator"]
 - !private ["Ps9Indexable", "Key"]
 - !private ["Ps9Indexable", "SubSequence"]
 - !private ["Ps9Indexable", "Value"]
 - !private ["Ps9Indexable", "_Element"]
+- !private ["Ps9Indexable", "count"]
 - !private ["Ps9Indexable", "enumerated"]
 - ["Ps9Indexable", "init"]
 - !private ["Ps9Indexable", "subscript"]
 - !private ["Ps13IndexableBase", "Index"]
+- !private ["Ps13IndexableBase", "IndexDistance"]
 - !private ["Ps13IndexableBase", "Iterator"]
 - !private ["Ps13IndexableBase", "Key"]
 - !private ["Ps13IndexableBase", "SubSequence"]
 - !private ["Ps13IndexableBase", "Value"]
 - !private ["Ps13IndexableBase", "_Element"]
+- !private ["Ps13IndexableBase", "count"]
 - !private ["Ps13IndexableBase", "enumerated"]
 - ["Ps13IndexableBase", "init"]
 - !private ["Ps13IndexableBase", "subscript"]
@@ -806,11 +885,15 @@ depends-member:
 - ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "Stride"]
 - ["Ps10MirrorPath", "init"]
+- !private ["Ps17MutableCollection", "IndexDistance"]
 - !private ["Ps17MutableCollection", "Iterator"]
 - !private ["Ps17MutableCollection", "_Element"]
+- !private ["Ps17MutableCollection", "count"]
 - !private ["Ps17MutableCollection", "enumerated"]
+- !private ["Ps16MutableIndexable", "IndexDistance"]
 - !private ["Ps16MutableIndexable", "Iterator"]
 - !private ["Ps16MutableIndexable", "_Element"]
+- !private ["Ps16MutableIndexable", "count"]
 - !private ["Ps16MutableIndexable", "enumerated"]
 - ["CSo7NSCoder", "deinit"]
 - !private ["PSo8NSCoding", "Bundle"]
@@ -837,6 +920,7 @@ depends-member:
 - !private ["PSo8NSCoding", "URLRequest"]
 - ["PSo8NSCoding", "URLSession"]
 - !private ["PSo8NSCoding", "UserDefaults"]
+- !private ["PSo8NSCoding", "WebSocket"]
 - ["PSo8NSCoding", "WebView"]
 - !private ["PSo8NSCoding", "addButton"]
 - !private ["PSo8NSCoding", "addConstraints"]
@@ -852,6 +936,7 @@ depends-member:
 - ["PSo8NSCoding", "imageView"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "insertNewObject"]
+- !private ["PSo8NSCoding", "localizedDescription"]
 - ["PSo8NSCoding", "logoutTapped"]
 - ["PSo8NSCoding", "managedObjectContext"]
 - !private ["PSo8NSCoding", "message"]
@@ -863,6 +948,7 @@ depends-member:
 - ["PSo8NSCoding", "session.storage"]
 - ["PSo8NSCoding", "sessionIDLabel"]
 - !private ["PSo8NSCoding", "show"]
+- ["PSo8NSCoding", "socket"]
 - !private ["PSo8NSCoding", "statusCode"]
 - !private ["PSo8NSCoding", "text"]
 - !private ["PSo8NSCoding", "title"]
@@ -873,17 +959,23 @@ depends-member:
 - !private ["PSo8NSCoding", "view"]
 - ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
+- ["PSo8NSCoding", "websocketDidConnect"]
+- ["PSo8NSCoding", "websocketDidDisconnect"]
+- ["PSo8NSCoding", "websocketDidReceiveData"]
+- ["PSo8NSCoding", "websocketDidReceiveMessage"]
 - ["PSo8NSCoding", ""]
 - ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "insertNewObject"]
+- !private ["PSo9NSCopying", "localizedDescription"]
 - !private ["PSo9NSCopying", "resume"]
 - !private ["PSo9NSCopying", "statusCode"]
 - !private ["PSo9NSCopying", "value"]
 - !private ["CSo12NSDictionary", "deinit"]
 - !private ["CSo12NSDictionary", "value"]
 - !private ["CSo19NSEntityDescription", "insertNewObject"]
-- !private ["CSo7NSError", "deinit"]
+- ["CSo7NSError", "deinit"]
 - !private ["CSo7NSError", "init"]
+- !private ["CSo7NSError", "localizedDescription"]
 - !private ["PSo26NSExtensionRequestHandling", "Bundle"]
 - !private ["PSo26NSExtensionRequestHandling", "CGRect"]
 - ["PSo26NSExtensionRequestHandling", "Dictionary"]
@@ -905,6 +997,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "URLRequest"]
 - ["PSo26NSExtensionRequestHandling", "URLSession"]
 - !private ["PSo26NSExtensionRequestHandling", "UserDefaults"]
+- !private ["PSo26NSExtensionRequestHandling", "WebSocket"]
 - ["PSo26NSExtensionRequestHandling", "WebView"]
 - ["PSo26NSExtensionRequestHandling", "backgroundDict"]
 - ["PSo26NSExtensionRequestHandling", "collectionView"]
@@ -920,12 +1013,17 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "session"]
 - ["PSo26NSExtensionRequestHandling", "session.storage"]
 - ["PSo26NSExtensionRequestHandling", "sessionIDLabel"]
+- ["PSo26NSExtensionRequestHandling", "socket"]
 - !private ["PSo26NSExtensionRequestHandling", "title"]
 - ["PSo26NSExtensionRequestHandling", "url"]
 - ["PSo26NSExtensionRequestHandling", "usernameLabel"]
 - !private ["PSo26NSExtensionRequestHandling", "view"]
 - ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", "websocketDidConnect"]
+- ["PSo26NSExtensionRequestHandling", "websocketDidDisconnect"]
+- ["PSo26NSExtensionRequestHandling", "websocketDidReceiveData"]
+- ["PSo26NSExtensionRequestHandling", "websocketDidReceiveMessage"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "insertNewObject"]
 - !private ["PSo17NSFastEnumeration", "value"]
@@ -952,6 +1050,7 @@ depends-member:
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "Bundle"]
 - !private ["CSo8NSObject", "CGRect"]
+- ["CSo8NSObject", "Data"]
 - ["CSo8NSObject", "Dictionary"]
 - !private ["CSo8NSObject", "HTTPURLResponse"]
 - !private ["CSo8NSObject", "Int"]
@@ -988,6 +1087,7 @@ depends-member:
 - ["CSo8NSObject", "URLSession"]
 - !private ["CSo8NSObject", "UserDefaults"]
 - ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "WebSocket"]
 - ["CSo8NSObject", "WebView"]
 - !private ["CSo8NSObject", "addButton"]
 - !private ["CSo8NSObject", "addConstraints"]
@@ -996,6 +1096,7 @@ depends-member:
 - ["CSo8NSObject", "backgroundDict"]
 - !private ["CSo8NSObject", "bundleIdentifier"]
 - ["CSo8NSObject", "collectionView"]
+- !private ["CSo8NSObject", "connect"]
 - !private ["CSo8NSObject", "constraints"]
 - ["CSo8NSObject", "dataTask"]
 - !private ["CSo8NSObject", "deinit"]
@@ -1012,6 +1113,7 @@ depends-member:
 - !private ["CSo8NSObject", "isNetworkActivityIndicatorVisible"]
 - !private ["CSo8NSObject", "itemText"]
 - !private ["CSo8NSObject", "jsonObject"]
+- !private ["CSo8NSObject", "localizedDescription"]
 - ["CSo8NSObject", "logoutTapped"]
 - !private ["CSo8NSObject", "main"]
 - ["CSo8NSObject", "managedObjectContext"]
@@ -1025,11 +1127,11 @@ depends-member:
 - ["CSo8NSObject", "session"]
 - ["CSo8NSObject", "session.storage"]
 - ["CSo8NSObject", "sessionIDLabel"]
-- !private ["CSo8NSObject", "set"]
 - !private ["CSo8NSObject", "setValue"]
 - ["CSo8NSObject", "shared"]
 - ["CSo8NSObject", "sharedCustomSession"]
 - !private ["CSo8NSObject", "show"]
+- ["CSo8NSObject", "socket"]
 - !private ["CSo8NSObject", "standard"]
 - !private ["CSo8NSObject", "statusCode"]
 - !private ["CSo8NSObject", "synchronize"]
@@ -1042,6 +1144,10 @@ depends-member:
 - !private ["CSo8NSObject", "view"]
 - ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
+- ["CSo8NSObject", "websocketDidConnect"]
+- ["CSo8NSObject", "websocketDidDisconnect"]
+- ["CSo8NSObject", "websocketDidReceiveData"]
+- ["CSo8NSObject", "websocketDidReceiveMessage"]
 - !private ["PSo16NSObjectProtocol", "Bundle"]
 - !private ["PSo16NSObjectProtocol", "CGRect"]
 - ["PSo16NSObjectProtocol", "Dictionary"]
@@ -1068,6 +1174,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "URLRequest"]
 - ["PSo16NSObjectProtocol", "URLSession"]
 - !private ["PSo16NSObjectProtocol", "UserDefaults"]
+- !private ["PSo16NSObjectProtocol", "WebSocket"]
 - ["PSo16NSObjectProtocol", "WebView"]
 - !private ["PSo16NSObjectProtocol", "addButton"]
 - !private ["PSo16NSObjectProtocol", "addConstraints"]
@@ -1076,6 +1183,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "backgroundDict"]
 - !private ["PSo16NSObjectProtocol", "bundleIdentifier"]
 - ["PSo16NSObjectProtocol", "collectionView"]
+- !private ["PSo16NSObjectProtocol", "connect"]
 - !private ["PSo16NSObjectProtocol", "constraints"]
 - ["PSo16NSObjectProtocol", "dataTask"]
 - ["PSo16NSObjectProtocol", "delegate"]
@@ -1091,6 +1199,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "isNetworkActivityIndicatorVisible"]
 - !private ["PSo16NSObjectProtocol", "itemText"]
 - !private ["PSo16NSObjectProtocol", "jsonObject"]
+- !private ["PSo16NSObjectProtocol", "localizedDescription"]
 - ["PSo16NSObjectProtocol", "logoutTapped"]
 - !private ["PSo16NSObjectProtocol", "main"]
 - ["PSo16NSObjectProtocol", "managedObjectContext"]
@@ -1104,11 +1213,11 @@ depends-member:
 - ["PSo16NSObjectProtocol", "session"]
 - ["PSo16NSObjectProtocol", "session.storage"]
 - ["PSo16NSObjectProtocol", "sessionIDLabel"]
-- !private ["PSo16NSObjectProtocol", "set"]
 - !private ["PSo16NSObjectProtocol", "setValue"]
 - ["PSo16NSObjectProtocol", "shared"]
 - ["PSo16NSObjectProtocol", "sharedCustomSession"]
 - !private ["PSo16NSObjectProtocol", "show"]
+- ["PSo16NSObjectProtocol", "socket"]
 - !private ["PSo16NSObjectProtocol", "standard"]
 - !private ["PSo16NSObjectProtocol", "statusCode"]
 - !private ["PSo16NSObjectProtocol", "synchronize"]
@@ -1121,8 +1230,13 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "view"]
 - ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", "websocketDidConnect"]
+- ["PSo16NSObjectProtocol", "websocketDidDisconnect"]
+- ["PSo16NSObjectProtocol", "websocketDidReceiveData"]
+- ["PSo16NSObjectProtocol", "websocketDidReceiveMessage"]
 - ["PSo16NSObjectProtocol", ""]
 - ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "localizedDescription"]
 - !private ["PSo14NSSecureCoding", "statusCode"]
 - !private ["PSo14NSSecureCoding", "value"]
 - ["CSo8NSString", "deinit"]
@@ -1132,18 +1246,26 @@ depends-member:
 - !private ["Ps9OptionSet", "init"]
 - !private ["Ps9OptionSet", "mutableContainers"]
 - ["Sq", "deinit"]
+- !private ["Ps22RandomAccessCollection", "IndexDistance"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
 - !private ["Ps22RandomAccessCollection", "_Element"]
+- !private ["Ps22RandomAccessCollection", "count"]
 - !private ["Ps22RandomAccessCollection", "enumerated"]
+- !private ["Ps21RandomAccessIndexable", "IndexDistance"]
 - !private ["Ps21RandomAccessIndexable", "Iterator"]
 - !private ["Ps21RandomAccessIndexable", "_Element"]
+- !private ["Ps21RandomAccessIndexable", "count"]
 - !private ["Ps21RandomAccessIndexable", "enumerated"]
 - !private ["Vs5Range", "deinit"]
+- !private ["Ps26RangeReplaceableCollection", "IndexDistance"]
 - !private ["Ps26RangeReplaceableCollection", "Iterator"]
 - !private ["Ps26RangeReplaceableCollection", "_Element"]
+- !private ["Ps26RangeReplaceableCollection", "count"]
 - !private ["Ps26RangeReplaceableCollection", "enumerated"]
+- !private ["Ps25RangeReplaceableIndexable", "IndexDistance"]
 - !private ["Ps25RangeReplaceableIndexable", "Iterator"]
 - !private ["Ps25RangeReplaceableIndexable", "_Element"]
+- !private ["Ps25RangeReplaceableIndexable", "count"]
 - !private ["Ps25RangeReplaceableIndexable", "enumerated"]
 - !private ["Ps16RawRepresentable", "Element"]
 - !private ["Ps16RawRepresentable", "RawValue"]
@@ -1151,16 +1273,20 @@ depends-member:
 - !private ["Ps16RawRepresentable", "mutableContainers"]
 - !private ["VCSo17JSONSerialization14ReadingOptions", "deinit"]
 - !private ["VCSo17JSONSerialization14ReadingOptions", "mutableContainers"]
+- !private ["P10Foundation20ReferenceConvertible", "IndexDistance"]
+- !private ["P10Foundation20ReferenceConvertible", "count"]
 - !private ["P10Foundation20ReferenceConvertible", "httpMethod"]
 - ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "setValue"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Index"]
+- !private ["Ps8Sequence", "IndexDistance"]
 - !private ["Ps8Sequence", "Iterator"]
 - !private ["Ps8Sequence", "Key"]
 - !private ["Ps8Sequence", "SubSequence"]
 - !private ["Ps8Sequence", "Value"]
 - !private ["Ps8Sequence", "_Element"]
+- !private ["Ps8Sequence", "count"]
 - !private ["Ps8Sequence", "enumerated"]
 - ["Ps8Sequence", "init"]
 - !private ["Ps8Sequence", "subscript"]
@@ -1176,6 +1302,9 @@ depends-member:
 - !private ["Vs5Slice", "SubSequence"]
 - !private ["Vs5Slice", "_Element"]
 - !private ["Vs12StaticString", "init"]
+- !private ["PSo14StreamDelegate", "connect"]
+- !private ["PSo14StreamDelegate", "delegate"]
+- !private ["PSo14StreamDelegate", "init"]
 - !private ["Ps10Strideable", "Stride"]
 - ["SS", "deinit"]
 - ["SS", "init"]
@@ -1246,6 +1375,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "URLRequest"]
 - ["PSo21UIAppearanceContainer", "URLSession"]
 - !private ["PSo21UIAppearanceContainer", "UserDefaults"]
+- !private ["PSo21UIAppearanceContainer", "WebSocket"]
 - ["PSo21UIAppearanceContainer", "WebView"]
 - !private ["PSo21UIAppearanceContainer", "addButton"]
 - !private ["PSo21UIAppearanceContainer", "addConstraints"]
@@ -1270,6 +1400,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "session.storage"]
 - ["PSo21UIAppearanceContainer", "sessionIDLabel"]
 - !private ["PSo21UIAppearanceContainer", "show"]
+- ["PSo21UIAppearanceContainer", "socket"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - !private ["PSo21UIAppearanceContainer", "title"]
 - !private ["PSo21UIAppearanceContainer", "translatesAutoresizingMaskIntoConstraints"]
@@ -1278,6 +1409,10 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "view"]
 - ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", "websocketDidConnect"]
+- ["PSo21UIAppearanceContainer", "websocketDidDisconnect"]
+- ["PSo21UIAppearanceContainer", "websocketDidReceiveData"]
+- ["PSo21UIAppearanceContainer", "websocketDidReceiveMessage"]
 - ["PSo21UIAppearanceContainer", ""]
 - ["CSo13UIApplication", "deinit"]
 - ["CSo13UIApplication", "delegate"]
@@ -1305,6 +1440,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "URLRequest"]
 - ["PSo18UIContentContainer", "URLSession"]
 - !private ["PSo18UIContentContainer", "UserDefaults"]
+- !private ["PSo18UIContentContainer", "WebSocket"]
 - ["PSo18UIContentContainer", "WebView"]
 - ["PSo18UIContentContainer", "backgroundDict"]
 - ["PSo18UIContentContainer", "collectionView"]
@@ -1320,12 +1456,17 @@ depends-member:
 - ["PSo18UIContentContainer", "session"]
 - ["PSo18UIContentContainer", "session.storage"]
 - ["PSo18UIContentContainer", "sessionIDLabel"]
+- ["PSo18UIContentContainer", "socket"]
 - !private ["PSo18UIContentContainer", "title"]
 - ["PSo18UIContentContainer", "url"]
 - ["PSo18UIContentContainer", "usernameLabel"]
 - !private ["PSo18UIContentContainer", "view"]
 - ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", "websocketDidConnect"]
+- ["PSo18UIContentContainer", "websocketDidDisconnect"]
+- ["PSo18UIContentContainer", "websocketDidReceiveData"]
+- ["PSo18UIContentContainer", "websocketDidReceiveMessage"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["PSo17UICoordinateSpace", "NSLayoutConstraint"]
@@ -1386,6 +1527,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "URLRequest"]
 - ["PSo18UIFocusEnvironment", "URLSession"]
 - !private ["PSo18UIFocusEnvironment", "UserDefaults"]
+- !private ["PSo18UIFocusEnvironment", "WebSocket"]
 - ["PSo18UIFocusEnvironment", "WebView"]
 - !private ["PSo18UIFocusEnvironment", "addButton"]
 - !private ["PSo18UIFocusEnvironment", "addConstraints"]
@@ -1410,6 +1552,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "session.storage"]
 - ["PSo18UIFocusEnvironment", "sessionIDLabel"]
 - !private ["PSo18UIFocusEnvironment", "show"]
+- ["PSo18UIFocusEnvironment", "socket"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - !private ["PSo18UIFocusEnvironment", "title"]
 - !private ["PSo18UIFocusEnvironment", "translatesAutoresizingMaskIntoConstraints"]
@@ -1418,6 +1561,10 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "view"]
 - ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", "websocketDidConnect"]
+- ["PSo18UIFocusEnvironment", "websocketDidDisconnect"]
+- ["PSo18UIFocusEnvironment", "websocketDidReceiveData"]
+- ["PSo18UIFocusEnvironment", "websocketDidReceiveMessage"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "NSLayoutConstraint"]
 - !private ["PSo11UIFocusItem", "NSLayoutFormatOptions"]
@@ -1445,6 +1592,7 @@ depends-member:
 - ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "Bundle"]
 - !private ["CSo11UIResponder", "CGRect"]
+- ["CSo11UIResponder", "Data"]
 - ["CSo11UIResponder", "Dictionary"]
 - !private ["CSo11UIResponder", "HTTPURLResponse"]
 - !private ["CSo11UIResponder", "Int"]
@@ -1479,6 +1627,7 @@ depends-member:
 - ["CSo11UIResponder", "URLSession"]
 - !private ["CSo11UIResponder", "UserDefaults"]
 - ["CSo11UIResponder", "Void"]
+- ["CSo11UIResponder", "WebSocket"]
 - ["CSo11UIResponder", "WebView"]
 - !private ["CSo11UIResponder", "addButton"]
 - !private ["CSo11UIResponder", "addConstraints"]
@@ -1506,6 +1655,7 @@ depends-member:
 - ["CSo11UIResponder", "sessionIDLabel"]
 - ["CSo11UIResponder", "shared"]
 - !private ["CSo11UIResponder", "show"]
+- ["CSo11UIResponder", "socket"]
 - !private ["CSo11UIResponder", "text"]
 - !private ["CSo11UIResponder", "title"]
 - !private ["CSo11UIResponder", "translatesAutoresizingMaskIntoConstraints"]
@@ -1514,6 +1664,10 @@ depends-member:
 - !private ["CSo11UIResponder", "view"]
 - ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
+- ["CSo11UIResponder", "websocketDidConnect"]
+- ["CSo11UIResponder", "websocketDidDisconnect"]
+- ["CSo11UIResponder", "websocketDidReceiveData"]
+- ["CSo11UIResponder", "websocketDidReceiveMessage"]
 - !private ["PSo30UIResponderStandardEditActions", "Bundle"]
 - !private ["PSo30UIResponderStandardEditActions", "CGRect"]
 - ["PSo30UIResponderStandardEditActions", "Dictionary"]
@@ -1538,6 +1692,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "URLRequest"]
 - ["PSo30UIResponderStandardEditActions", "URLSession"]
 - !private ["PSo30UIResponderStandardEditActions", "UserDefaults"]
+- !private ["PSo30UIResponderStandardEditActions", "WebSocket"]
 - ["PSo30UIResponderStandardEditActions", "WebView"]
 - !private ["PSo30UIResponderStandardEditActions", "addButton"]
 - !private ["PSo30UIResponderStandardEditActions", "addConstraints"]
@@ -1565,6 +1720,7 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "sessionIDLabel"]
 - ["PSo30UIResponderStandardEditActions", "shared"]
 - !private ["PSo30UIResponderStandardEditActions", "show"]
+- ["PSo30UIResponderStandardEditActions", "socket"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - !private ["PSo30UIResponderStandardEditActions", "title"]
 - !private ["PSo30UIResponderStandardEditActions", "translatesAutoresizingMaskIntoConstraints"]
@@ -1573,6 +1729,10 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "view"]
 - ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", "websocketDidConnect"]
+- ["PSo30UIResponderStandardEditActions", "websocketDidDisconnect"]
+- ["PSo30UIResponderStandardEditActions", "websocketDidReceiveData"]
+- ["PSo30UIResponderStandardEditActions", "websocketDidReceiveMessage"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["PSo16UIStateRestoring", "Bundle"]
 - !private ["PSo16UIStateRestoring", "CGRect"]
@@ -1595,6 +1755,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "URLRequest"]
 - ["PSo16UIStateRestoring", "URLSession"]
 - !private ["PSo16UIStateRestoring", "UserDefaults"]
+- !private ["PSo16UIStateRestoring", "WebSocket"]
 - ["PSo16UIStateRestoring", "WebView"]
 - ["PSo16UIStateRestoring", "backgroundDict"]
 - ["PSo16UIStateRestoring", "collectionView"]
@@ -1610,12 +1771,17 @@ depends-member:
 - ["PSo16UIStateRestoring", "session"]
 - ["PSo16UIStateRestoring", "session.storage"]
 - ["PSo16UIStateRestoring", "sessionIDLabel"]
+- ["PSo16UIStateRestoring", "socket"]
 - !private ["PSo16UIStateRestoring", "title"]
 - ["PSo16UIStateRestoring", "url"]
 - ["PSo16UIStateRestoring", "usernameLabel"]
 - !private ["PSo16UIStateRestoring", "view"]
 - ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", "websocketDidConnect"]
+- ["PSo16UIStateRestoring", "websocketDidDisconnect"]
+- ["PSo16UIStateRestoring", "websocketDidReceiveData"]
+- ["PSo16UIStateRestoring", "websocketDidReceiveMessage"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["PSo18UITraitEnvironment", "Bundle"]
 - !private ["PSo18UITraitEnvironment", "CGRect"]
@@ -1641,6 +1807,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "URLRequest"]
 - ["PSo18UITraitEnvironment", "URLSession"]
 - !private ["PSo18UITraitEnvironment", "UserDefaults"]
+- !private ["PSo18UITraitEnvironment", "WebSocket"]
 - ["PSo18UITraitEnvironment", "WebView"]
 - !private ["PSo18UITraitEnvironment", "addButton"]
 - !private ["PSo18UITraitEnvironment", "addConstraints"]
@@ -1665,6 +1832,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "session.storage"]
 - ["PSo18UITraitEnvironment", "sessionIDLabel"]
 - !private ["PSo18UITraitEnvironment", "show"]
+- ["PSo18UITraitEnvironment", "socket"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - !private ["PSo18UITraitEnvironment", "title"]
 - !private ["PSo18UITraitEnvironment", "translatesAutoresizingMaskIntoConstraints"]
@@ -1673,6 +1841,10 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "view"]
 - ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", "websocketDidConnect"]
+- ["PSo18UITraitEnvironment", "websocketDidDisconnect"]
+- ["PSo18UITraitEnvironment", "websocketDidReceiveData"]
+- ["PSo18UITraitEnvironment", "websocketDidReceiveMessage"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "NSLayoutConstraint"]
 - !private ["CSo6UIView", "NSLayoutFormatOptions"]
@@ -1697,6 +1869,7 @@ depends-member:
 - ["CSo16UIViewController", "Bool"]
 - !private ["CSo16UIViewController", "Bundle"]
 - !private ["CSo16UIViewController", "CGRect"]
+- ["CSo16UIViewController", "Data"]
 - ["CSo16UIViewController", "Dictionary"]
 - !private ["CSo16UIViewController", "HTTPURLResponse"]
 - !private ["CSo16UIViewController", "Int"]
@@ -1729,6 +1902,7 @@ depends-member:
 - ["CSo16UIViewController", "URLSession"]
 - !private ["CSo16UIViewController", "UserDefaults"]
 - ["CSo16UIViewController", "Void"]
+- ["CSo16UIViewController", "WebSocket"]
 - ["CSo16UIViewController", "WebView"]
 - ["CSo16UIViewController", "backgroundDict"]
 - ["CSo16UIViewController", "collectionView"]
@@ -1745,12 +1919,17 @@ depends-member:
 - ["CSo16UIViewController", "session"]
 - ["CSo16UIViewController", "session.storage"]
 - ["CSo16UIViewController", "sessionIDLabel"]
+- ["CSo16UIViewController", "socket"]
 - !private ["CSo16UIViewController", "title"]
 - ["CSo16UIViewController", "url"]
 - ["CSo16UIViewController", "usernameLabel"]
 - !private ["CSo16UIViewController", "view"]
 - ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
+- ["CSo16UIViewController", "websocketDidConnect"]
+- ["CSo16UIViewController", "websocketDidDisconnect"]
+- ["CSo16UIViewController", "websocketDidReceiveData"]
+- ["CSo16UIViewController", "websocketDidReceiveMessage"]
 - ["CSo16UIViewController", ""]
 - !private ["Su", "deinit"]
 - !private ["Vs6UInt16", "deinit"]
@@ -1777,11 +1956,52 @@ depends-member:
 - !private ["CSo12UserDefaults", "integer"]
 - ["CSo12UserDefaults", "isFirstLaunch"]
 - !private ["CSo12UserDefaults", "removePersistentDomain"]
-- !private ["CSo12UserDefaults", "set"]
 - !private ["CSo12UserDefaults", "setValue"]
 - !private ["CSo12UserDefaults", "standard"]
 - !private ["CSo12UserDefaults", "synchronize"]
 - !private ["CSo12UserDefaults", "value"]
+- !private ["C10Starscream9WebSocket", "connect"]
+- ["C10Starscream9WebSocket", "deinit"]
+- !private ["C10Starscream9WebSocket", "delegate"]
+- !private ["C10Starscream9WebSocket", "init"]
+- !private ["P10Starscream17WebSocketDelegate", "Bundle"]
+- !private ["P10Starscream17WebSocketDelegate", "CGRect"]
+- ["P10Starscream17WebSocketDelegate", "Dictionary"]
+- !private ["P10Starscream17WebSocketDelegate", "JSONSerialization"]
+- !private ["P10Starscream17WebSocketDelegate", "NSEntityDescription"]
+- !private ["P10Starscream17WebSocketDelegate", "NSError"]
+- !private ["P10Starscream17WebSocketDelegate", "NSFetchRequest"]
+- !private ["P10Starscream17WebSocketDelegate", "NSLocalizedDescriptionKey"]
+- !private ["P10Starscream17WebSocketDelegate", "NSLog"]
+- !private ["P10Starscream17WebSocketDelegate", "UIAlertView"]
+- ["P10Starscream17WebSocketDelegate", "UIApplication"]
+- !private ["P10Starscream17WebSocketDelegate", "UIImage"]
+- ["P10Starscream17WebSocketDelegate", "UIImageView"]
+- !private ["P10Starscream17WebSocketDelegate", "UIView"]
+- ["P10Starscream17WebSocketDelegate", "URL"]
+- !private ["P10Starscream17WebSocketDelegate", "URLRequest"]
+- ["P10Starscream17WebSocketDelegate", "URLSession"]
+- !private ["P10Starscream17WebSocketDelegate", "UserDefaults"]
+- !private ["P10Starscream17WebSocketDelegate", "WebSocket"]
+- !private ["P10Starscream17WebSocketDelegate", "backgroundDict"]
+- !private ["P10Starscream17WebSocketDelegate", "dataTask"]
+- !private ["P10Starscream17WebSocketDelegate", "imageView"]
+- !private ["P10Starscream17WebSocketDelegate", "managedObjectContext"]
+- !private ["P10Starscream17WebSocketDelegate", "performSegue"]
+- !private ["P10Starscream17WebSocketDelegate", "print"]
+- !private ["P10Starscream17WebSocketDelegate", "running"]
+- !private ["P10Starscream17WebSocketDelegate", "session"]
+- !private ["P10Starscream17WebSocketDelegate", "sessionIDLabel"]
+- !private ["P10Starscream17WebSocketDelegate", "socket"]
+- !private ["P10Starscream17WebSocketDelegate", "title"]
+- !private ["P10Starscream17WebSocketDelegate", "url"]
+- !private ["P10Starscream17WebSocketDelegate", "usernameLabel"]
+- !private ["P10Starscream17WebSocketDelegate", "view"]
+- ["P10Starscream17WebSocketDelegate", "websocketDidConnect"]
+- ["P10Starscream17WebSocketDelegate", "websocketDidDisconnect"]
+- ["P10Starscream17WebSocketDelegate", "websocketDidReceiveData"]
+- ["P10Starscream17WebSocketDelegate", "websocketDidReceiveMessage"]
+- ["P10Starscream17WebSocketDelegate", ""]
 - !private ["Ps14_ArrayProtocol", "Iterator"]
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "enumerated"]
@@ -1817,6 +2037,7 @@ depends-member:
 - !private ["Ps9_Hashable", "Bundle"]
 - !private ["Ps9_Hashable", "CGRect"]
 - ["Ps9_Hashable", "Dictionary"]
+- !private ["Ps9_Hashable", "IndexDistance"]
 - !private ["Ps9_Hashable", "JSONSerialization"]
 - ["Ps9_Hashable", "Movies"]
 - !private ["Ps9_Hashable", "NSEntityDescription"]
@@ -1841,6 +2062,7 @@ depends-member:
 - !private ["Ps9_Hashable", "URLRequest"]
 - ["Ps9_Hashable", "URLSession"]
 - !private ["Ps9_Hashable", "UserDefaults"]
+- !private ["Ps9_Hashable", "WebSocket"]
 - ["Ps9_Hashable", "WebView"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "addButton"]
@@ -1850,7 +2072,9 @@ depends-member:
 - ["Ps9_Hashable", "backgroundDict"]
 - !private ["Ps9_Hashable", "bundleIdentifier"]
 - ["Ps9_Hashable", "collectionView"]
+- !private ["Ps9_Hashable", "connect"]
 - !private ["Ps9_Hashable", "constraints"]
+- !private ["Ps9_Hashable", "count"]
 - ["Ps9_Hashable", "dataTask"]
 - ["Ps9_Hashable", "delegate"]
 - ["Ps9_Hashable", "didReceiveMemoryWarning"]
@@ -1866,6 +2090,7 @@ depends-member:
 - !private ["Ps9_Hashable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9_Hashable", "itemText"]
 - !private ["Ps9_Hashable", "jsonObject"]
+- !private ["Ps9_Hashable", "localizedDescription"]
 - ["Ps9_Hashable", "logoutTapped"]
 - !private ["Ps9_Hashable", "main"]
 - ["Ps9_Hashable", "managedObjectContext"]
@@ -1879,11 +2104,11 @@ depends-member:
 - ["Ps9_Hashable", "session"]
 - ["Ps9_Hashable", "session.storage"]
 - ["Ps9_Hashable", "sessionIDLabel"]
-- !private ["Ps9_Hashable", "set"]
 - !private ["Ps9_Hashable", "setValue"]
 - ["Ps9_Hashable", "shared"]
 - ["Ps9_Hashable", "sharedCustomSession"]
 - !private ["Ps9_Hashable", "show"]
+- ["Ps9_Hashable", "socket"]
 - !private ["Ps9_Hashable", "standard"]
 - !private ["Ps9_Hashable", "statusCode"]
 - !private ["Ps9_Hashable", "synchronize"]
@@ -1896,16 +2121,24 @@ depends-member:
 - !private ["Ps9_Hashable", "view"]
 - ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
+- ["Ps9_Hashable", "websocketDidConnect"]
+- ["Ps9_Hashable", "websocketDidDisconnect"]
+- ["Ps9_Hashable", "websocketDidReceiveData"]
+- ["Ps9_Hashable", "websocketDidReceiveMessage"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps14_Incrementable", "Stride"]
 - !private ["Ps8_Integer", "Stride"]
 - !private ["Ps18_IntegerArithmetic", "Stride"]
+- !private ["P10Foundation18_MutablePairBoxing", "IndexDistance"]
+- !private ["P10Foundation18_MutablePairBoxing", "count"]
+- !private ["Ps21_ObjectiveCBridgeable", "IndexDistance"]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "Key"]
 - !private ["Ps21_ObjectiveCBridgeable", "Stride"]
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "count"]
 - !private ["Ps21_ObjectiveCBridgeable", "enumerated"]
 - !private ["Ps21_ObjectiveCBridgeable", "height"]
 - !private ["Ps21_ObjectiveCBridgeable", "httpMethod"]
@@ -1941,7 +2174,7 @@ depends-nominal:
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- !private "V10Foundation4Data"
+- "V10Foundation4Data"
 - "Vs10Dictionary"
 - !private "Sd"
 - !private "Vs18EnumeratedIterator"
@@ -1985,7 +2218,7 @@ depends-nominal:
 - "PSo9NSCopying"
 - !private "CSo12NSDictionary"
 - !private "CSo19NSEntityDescription"
-- !private "CSo7NSError"
+- "CSo7NSError"
 - "PSo26NSExtensionRequestHandling"
 - !private "PSo17NSFastEnumeration"
 - "CSo14NSFetchRequest"
@@ -2016,6 +2249,7 @@ depends-nominal:
 - !private "Ps12SignedNumber"
 - !private "Vs5Slice"
 - !private "Vs12StaticString"
+- !private "PSo14StreamDelegate"
 - !private "Ps10Strideable"
 - "SS"
 - "Ps16TextOutputStream"
@@ -2054,6 +2288,8 @@ depends-nominal:
 - !private "CSo14URLSessionTask"
 - !private "Sc"
 - "CSo12UserDefaults"
+- "C10Starscream9WebSocket"
+- "P10Starscream17WebSocketDelegate"
 - !private "Ps14_ArrayProtocol"
 - "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps24_DestructorSafeContainer"
@@ -2070,6 +2306,7 @@ depends-nominal:
 - !private "Ps14_Incrementable"
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
+- !private "P10Foundation18_MutablePairBoxing"
 - "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
@@ -2150,4 +2387,8 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
-interface-hash: "ad796a9b6ea4dadef61ff0feb5f175a7"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
+interface-hash: "30892c90e1c1c5410cdd4ecdaf841117"

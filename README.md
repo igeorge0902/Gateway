@@ -62,7 +62,6 @@ Have a look at the following snipet. The data object will change if the headerFi
  	headersGetter()['X-HMAC-HASH'] = hashInBase64;
 ```
 
-
 # Error on retrieving the user object through the AdminServlet
 The server will handle two error cases once the login has succeeded. 
 
@@ -81,14 +80,18 @@ If you have still issues, pls do not hesitate to contact me!
 # Analytics
 You can find various analytics services for web and mobile, as well. Please check out one of them if you want to track app events like app start, login, logout, registration, etc.
 
+######@Google
+- [Google Analytics](https://developers.google.com/analytics/devguides/collection/)
+
+######@Amazon (mobile only)
+- [Amazon Mobile Analytics](https://aws.amazon.com/mobileanalytics/)
+
 ######@Facebook
 - https://developers.facebook.com/docs/analytics
 
-######@Google
-- https://developers.google.com/analytics/devguides/collection/
-
-######@Amazon (mobile only)
-- https://www.google.com/aclk?sa=L&ai=DChcSEwi2_eufh9jRAhXLDxgKHQTlDzwYABAA&sig=AOD64_3iKzYsiGgpp5iPc06DrgFf6d6LJA&q=&ved=0ahUKEwidl-afh9jRAhXEDpoKHd8yA2oQ0QwIGA&adurl=
+# Cloud
+You can find various cloud solutions where you can deploy the system. I think the Google Cloud Platform offers a good headstart with its Cloud Launcher:
+[wildFly](https://console.cloud.google.com/launcher/details/bitnami-launchpad/wildfly?cat=INFRASTRUCTURE)
 
 
 # Contacts:

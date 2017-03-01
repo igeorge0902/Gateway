@@ -103,13 +103,19 @@ class RequestManager: NSObject {
                     self.prefs.setValue(activation, forKey: "Activation")
                     self.prefs.set(1, forKey: "ISWEBLOGGEDIN")
                     
-                    let alertView:UIAlertView = UIAlertView()
+  
                     
-                    alertView.title = "Warning!"
-                    alertView.message = "Your account is not activated yet: \(message)"
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
+  
+                    
+                    
+                    let alertController = UIAlertController(title: "<your title>", message: "<your message>", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: nil))
+                    
+                    let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+                    alertWindow.rootViewController = UIViewController()
+                    alertWindow.windowLevel = UIWindowLevelAlert + 1;
+                    alertWindow.makeKeyAndVisible()
+                    alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
                     
                 } else {
                     
