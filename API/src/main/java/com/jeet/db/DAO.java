@@ -53,11 +53,18 @@ public class DAO {
 		return instance;
 	}
 	
-	public List<Devices> getDevices(String uuid){
+	public synchronized List<Devices> getDevices(String uuid){
 		
-		session = factory.getCurrentSession();
+		if(!session.isOpen()) {			
+			session = factory.openSession();
 		
-	    trans = session.getTransaction();
+		} else {
+		
+			session = factory.getCurrentSession();
+		
+		}
+	    
+		trans = session.getTransaction();
 		
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
@@ -73,6 +80,10 @@ public class DAO {
 		List<Devices> list = query.list();
 		
 		trans.commit();
+		
+		if(session.isOpen()) {			
+			session.close();
+		} 
 
 		if (list.isEmpty()) {
 			
@@ -88,7 +99,7 @@ public class DAO {
 		return list;
 	}
 	
-	public Logins getUser(String user){
+	public synchronized Logins getUser(String user){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -112,6 +123,10 @@ public class DAO {
 		
 		trans.commit();
 		
+		if(session.isOpen()) {			
+			session.close();
+		} 
+		
 		if (user_ == null) {
 			
 			Logins ls = new Logins();
@@ -127,7 +142,7 @@ public class DAO {
 		return user_;
 	}
 	
-	public int getNewUser(String newuser){
+	public synchronized int getNewUser(String newuser){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -157,6 +172,10 @@ public class DAO {
 		List<Logins> list_ = query_.list();
 		
 		trans.commit();
+		
+		if(session.isOpen()) {			
+			session.close();
+		} 
 
 		if (list_.isEmpty()) {
 		
@@ -165,7 +184,7 @@ public class DAO {
 		return list.size(); }
 	}
 	
-	public int getNewEmail(String newemail){
+	public synchronized int getNewEmail(String newemail){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -196,6 +215,10 @@ public class DAO {
 		
 		trans.commit();
 		
+		if(session.isOpen()) {			
+			session.close();
+		} 
+		
 		if (list_.isEmpty()) {
 		
 		return list_.size();
@@ -203,7 +226,11 @@ public class DAO {
 		return list.size(); }
 	}
 	
-	public Logins getUuid(String uuid){
+	public synchronized Logins getUuid(String uuid){
+		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
 		
 		session = factory.getCurrentSession();
 		
@@ -223,10 +250,18 @@ public class DAO {
 		
 		trans.commit();
 		
+		if(session.isOpen()) {			
+			session.close();
+		} 
+		
 		return ilu;
 	}
 	
-	public Tokens getToken(String token1){
+	public synchronized Tokens getToken(String token1){
+		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
 		
 		session = factory.getCurrentSession();
 		
@@ -246,10 +281,18 @@ public class DAO {
 		
 		trans.commit();
 		
+		if(session.isOpen()) {			
+			session.close();
+		} 
+		
 		return token_taylor;
 	}
 	
-	public Tokens getToken2(String token1){
+	public synchronized Tokens getToken2(String token1){
+		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
 		
 		session = factory.getCurrentSession();
 		
@@ -268,6 +311,10 @@ public class DAO {
 		Tokens token_swift = (Tokens) query.uniqueResult();
 		
 		trans.commit();
+		
+		if(session.isOpen()) {			
+			session.close();
+		} 
 		
 		return token_swift;
 	}
