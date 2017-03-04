@@ -1,15 +1,12 @@
 package com.jeet.db;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.FlushMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
-import org.hibernate.search.FullTextSession;
 import org.hibernate.stat.Statistics;
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
@@ -93,6 +90,10 @@ public class DAO {
 	
 	public Logins getUser(String user){
 		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
+		
 		session = factory.getCurrentSession();
 		
 	    trans = session.getTransaction();
@@ -128,6 +129,10 @@ public class DAO {
 	
 	public int getNewUser(String newuser){
 		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
+		
 		session = factory.getCurrentSession();
 		
 	    trans = session.getTransaction();
@@ -162,6 +167,10 @@ public class DAO {
 	
 	public int getNewEmail(String newemail){
 		
+		if(!session.isOpen()) {			
+			session = factory.openSession();
+		}
+		
 		session = factory.getCurrentSession();
 		
 	    trans = session.getTransaction();
@@ -170,7 +179,7 @@ public class DAO {
 			
 			trans.begin();
 		}
-		
+
 		String hql = "from Logins where email like :mEmail";
 		String hql_ = "from Logins where email = :mEmail";
 

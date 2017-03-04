@@ -82,7 +82,7 @@ myRegController.config(function ($httpProvider) {
 
 myRegController.controller('SearchCtrl', ['$scope','$http',
    function ($scope, $http) {
-    $scope.url = 'https://milo.crabdance.com/mbook-1/rest/newuser';
+    $scope.url = '/mbook-1/rest/newuser';
     $scope.username = '';
     $scope.errorMessage = '';
        
@@ -114,9 +114,10 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     $scope.password = '';
     $scope.email = '';
     $scope.voucher_ = '';
-    $scope.e_url = 'https://milo.crabdance.com/mbook-1/rest/newemail';
-    $scope.url = 'https://milo.crabdance.com/mbook-1/rest/newuser';
-    $scope.errorMessage = '';
+    $scope.e_url = '/mbook-1/rest/newemail';
+    $scope.url = '/mbook-1/rest/newuser';
+    $scope.successMsg_User = '';
+    $scope.errorMsg_User = '';
     
     // The function that will be executed on button click (ng-click="search()")
     $scope.search = function() {
@@ -127,14 +128,16 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     $http.get($scope.url+'/'+$scope.username)
             .success(function(data, status) {
                 $scope.status = status;
-                $scope.errorMessage = data;
+                $scope.successMsg_User = data;
+                $scope.errorMsg_User = '';
                 $scope.data = data;
                 $scope.result = data; // Result
      })
             .error(function(data, status) {
                 $scope.data = data || "Request failed";
                 $scope.status = status;
-                $scope.errorMessage = "Username is already taken!";
+                $scope.successMsg_User = ''; 
+                $scope.errorMsg_User = "Username is already taken!";
 
             });
     }
@@ -148,14 +151,16 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     $http.get($scope.e_url+'/'+$scope.email)
             .success(function(data, status) {
                 $scope.status = status;
-                $scope.errorMessage = data;
+                $scope.successMsg = data;
+                $scope.errorMsg = '';
                 $scope.data = data;
                 $scope.result = data; // Result
      })
             .error(function(data, status) {
                 $scope.data = data || "Request failed";
                 $scope.status = status;
-                $scope.errorMessage = "Email is already taken!";
+                $scope.successMsg = '';
+                $scope.errorMsg = "Email is already taken!";
 
             });
     }
