@@ -234,7 +234,7 @@ class HomeVC: UIViewController, WebSocketDelegate {
         self.dataTask() {
             (resultString, error) -> Void in
     
-            print(error)
+            print(error!)
             print(resultString)
             
         }

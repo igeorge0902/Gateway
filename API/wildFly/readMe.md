@@ -1,4 +1,4 @@
-wildFly specific files
+# wildFly specific files
 
 - jboss-deployment-structure.xml
 - web.xml
@@ -6,7 +6,10 @@ wildFly specific files
 
 Substitute the following files for the originally included ones to make the build be able to run on wildFly application server. Don't forget to rebuild the project with the new pom.xml. Place the jboss-deployment-structure.xml to the WEB-INF directory. You may need to manually upgrade certain wildFly dependencies, as well as replace the jboss-logging.jar file, which is a dependency for Hibernate 5.x. Check your versions carefully!
 
-- tested on wildFly 10.x
+## Deploy the WWW app 
+- You must create an unmanaged deployment for the WWW app because it runs JSP files: set the absolute path of your WWW app, which includes the WEB-INF sub-folder already, the add the Name and Runtime Name, which should be the context (location) name with war extension like example.war.
+
+### tested on wildFly 10.x
 
 Edit your wildFly xml configuration file (${wildFly_HOME}/standalone/configuration/standalone.xml) to add the AJP listening port and to serve the WWW app, as well: 
 

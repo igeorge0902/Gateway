@@ -2,7 +2,7 @@ WWW component for the Gateway
 ----
 
 # Deploy
-- You do not need to build anything, just deploy the app. For proper usage this web app must be served through the Application Server of your choose, and the Apache web server fronting the AS will handle the headers. For TomCat just place it inside the {TOMCAT_HOME}/webapps folder, for GlassFish deploy it as "Other" pointing to your web app directory, and it will create the application context. For wildFly see the instructions at https://github.com/igeorge0902/Gateway/tree/master/API/wildFly.
+- You do not need to build anything, just deploy the app. For proper usage this web app must be served through the Application Server of your choose, and the Apache web server fronting the AS will handle the headers. For TomCat just place it inside the {TOMCAT_HOME}/webapps folder, for GlassFish deploy it as "Other" pointing to your web app directory, and it will create the application context. For wildFly see the instructions at [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly).
 
 # WebSocket
 - Secure WebSocket connection is included. See it in websocket.js and wensocketecho.html file.
@@ -14,16 +14,17 @@ You might get a response in the form of a white page. It means your environment 
 - make sure you have setup the AJP ports in Apache settings and your choosen AS for the same ports. To create the AJP listeners at AS level pls visit the official sites for instructions.
 
 @ TomCat
-- the server.xml file provides default settings, you just need point your Apache to it. See also: https://tomcat.apache.org/tomcat-9.0-doc/config/ajp.html
+- the server.xml file provides default settings, you just need point your Apache to it. See also: [TomCat ajp](https://tomcat.apache.org/tomcat-9.0-doc/config/ajp.html)
 
 @ GlassFish
-- http://www.codefactorycr.com/glassfish-behind-apache.html
-- https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html
+- [GlassFish behind Apache](http://www.codefactorycr.com/glassfish-behind-apache.html)
+- [To Enable mod_jk on GlassFish](https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html)
 
 - make sure the JSESSIONID is passing through the Apache and is not cached at all. See mod_jk connector instructions: http://tomcat.apache.org/connectors-doc/reference/apache.html
 
 @ wildFly
-- see instructions https://github.com/igeorge0902/Gateway/tree/master/API/wildFly.
+- WEB-INF/jboss-web.xml contains the context information of the WWW app for wildFly, which has to match the location of name of the handler. 
+- see instructions [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly).
 
 # Notes on request header transformation: 
 When the user initiates a login or registration through the WWW app, the outgoing request will go through a transformation before the actual call to the server will be made. It means all the corresponding data will be altered before making the request, and the request will happen once the transformation has finished. This mechanism also helps tighten the security since for the same data, which the user sends with the client request, the final data may be different when reaching the server, however containing the same information, which the server is aware of. There is no other way around.  
