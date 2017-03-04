@@ -118,6 +118,7 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     $scope.url = '/mbook-1/rest/newuser';
     $scope.successMsg_User = '';
     $scope.errorMsg_User = '';
+    localStorage.hmacSecret = 'undefined';
     
     // The function that will be executed on button click (ng-click="search()")
     $scope.search = function() {
@@ -166,9 +167,7 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     }
     
     $scope.register = function () {
-        
         var voucheR = $scope.voucher_;
-        
         var encodedString_voucheR = 'voucher=' +
             encodeURIComponent(voucheR);
        
@@ -180,7 +179,7 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
         }).
-        success(function (data, status, headers, config) {
+        success(function () {
             
         // Hash password
         var hash = CryptoJS.SHA3($scope.password, {

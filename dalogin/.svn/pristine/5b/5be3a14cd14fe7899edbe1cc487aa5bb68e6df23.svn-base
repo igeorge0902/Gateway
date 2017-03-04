@@ -105,7 +105,6 @@ public class Registration extends HttpServlet {
         if (voucher != null) voucher = voucher.trim();
         if (email != null) email = email.trim();
         
-        //TODO: add password policy
         if (voucher != null && !voucher.equals("") && !user.equals("") && user.length() > 0 && EmailValidator.validate(email)) {
         	
         	hmacHash = hmac512.getRegHmac512(user, email, pass, deviceId, voucher, time, contentLength);
@@ -155,11 +154,8 @@ public class Registration extends HttpServlet {
 				    .append(serverName).append(servletContext).append("/activation")
 				    .append("?").append("activation=").append(aesUtil.encrypt(SALT, IV, activationToken, activationData));
 				    
-				    if(!SendHtmlEmail.generateAndSendEmail(email, url.toString())) {
-
-				    	throw new ServletException("Huston, we got a problem!");
-
-				    }
+				    SendHtmlEmail.generateAndSendEmail(email, url.toString());
+					
 					
 				}
 			
@@ -173,105 +169,72 @@ public class Registration extends HttpServlet {
 		        
 				ServletContext otherContext = getServletContext().getContext(homePage);
 								
-				// X-Token should be sent as json response I guess
-				// native mobile
-						if (ios != null) {
-						try {
-						log.info("1");
-						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
-						c.setSecure(true);
-						c.setMaxAge(session.getMaxInactiveInterval());
-						
-						response.addCookie(c);
-						response.setContentType("application/json"); 
-						response.setCharacterEncoding("utf-8"); 
-						response.setStatus(200);
-		
-						session.setAttribute(c.getName(), c.getValue());
+				if (ios != null) {
+					
+					response.setContentType("application/json"); 
+					response.setCharacterEncoding("utf-8"); 
+					response.setStatus(200);
 
-						PrintWriter out = response.getWriter(); 
+					token2 = SQLAccess.token2(deviceId, context);
+					
+					c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+					response.addCookie(c);
+					
+					PrintWriter out = response.getWriter(); 
+					
+					JSONObject json = new JSONObject(); 
+					
+					json.put("success", 1);
+					json.put("JSESSIONID", sessionID);
+					json.put("X-Token", token2);
+					
+					out.print(json.toString());
+					out.flush();
+					
+					} else if (WebView.contains("Mobile") && M.equals("M")){ 
 						
-						JSONObject json = new JSONObject(); 
-						
-						json.put("success", 1);
-						json.put("JSESSIONID", sessionID);
-						json.put("X-Token", token2);
-						
-						out.print(json.toString());
-						out.flush();
-						
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-						
-						// mobile webview (there is no session in iOS simulator in normal webview with GlassFish. Interesting.)
-						} else if (WebView.contains("Mobile") && M.equals("M")){ 
+							token2 = SQLAccess.token2(deviceId, context);
 							
-							try {
-								log.info("2");
-								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
-								c.setSecure(true);
-								c.setMaxAge(session.getMaxInactiveInterval());
+							c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+							response.addCookie(c);
+							// The token2 will be used as key-salt-whatever as originally planned.
+							response.addHeader("X-Token", token2);
+							
+							JSONObject json = new JSONObject(); 
+							
+							json.put("Session", "raked"); 
+							json.put("Success", "true"); 
+							
+							// this is necessary because the X-Token header did not appear in the native mobile app
+							json.put("X-Token", token2);
+			
+							response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
 
-								response.addCookie(c);
-								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2);
-												
-								session.setAttribute(c.getName(), c.getValue());
+					
+					} else {
 
-								JSONObject json = new JSONObject(); 
-								
-								json.put("Session", "raked"); 
-								json.put("Success", "true");
-								json.put("JSESSIONID", sessionID);
+							response.setContentType("application/json"); 
 
-								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
-								
-								response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
+							token2 = SQLAccess.token2(deviceId, context);
+							
+							c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+							response.addCookie(c);
+	
+							// The token2 will be used as key-salt-whatever as originally planned.
+							response.addHeader("X-Token", token2);
+							
+							PrintWriter out = response.getWriter(); 
+				
+							JSONObject json = new JSONObject(); 
+							
+							json.put("Session", "raked"); 
+							json.put("Success", "true"); 
+							json.put("X-Token", token2);
 
-								
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						
-						} 
-						// standard path
-						else {
-							try {
-								log.info("3");
-								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
-								c.setSecure(true);
-								c.setMaxAge(session.getMaxInactiveInterval());
-
-								response.addCookie(c);
-								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2);
-								
-								// TODO: finish cross-site request forgery protection
-								session.setAttribute(c.getName(), c.getValue());
-								
-								PrintWriter out = response.getWriter(); 
-								
-								JSONObject json = new JSONObject(); 
-								
-								json.put("Session", "raked"); 
-								json.put("Success", "true"); 
-								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
-								
-								out.print(json.toString());
-								out.flush();
-								
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-
-		
-						}
+							out.print(json.toString());
+							out.flush();
+	
+					}
 					
 				  }	else {
 					  
