@@ -30,9 +30,14 @@ public class ExceptionHandler extends HttpServlet {
         Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
+        String message = (String) request.getAttribute("javax.servlet.error.message");
         
         if (servletName == null) {
             servletName = "Unknown";
+        }
+        
+        if (message == null) {
+        	message = "Unknown";
         }
         
         String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
@@ -55,10 +60,13 @@ public class ExceptionHandler extends HttpServlet {
 			error.put("Requested URI:", requestUri);
 			
 			} else {
-				error.put("Servlet Name:", statusCode.toString());
+				error.put("Servlet Name:", servletName);
 				error.put("Exception name:", throwable.getClass().getName());
 				error.put("Requested URI:", requestUri);
 				error.put("Exception Message:", throwable.getMessage());
+				error.put("Error Message:", message);
+				error.put("Info:", "Check the corresponding server logs!");
+
 			}
 			// put some value pairs into the JSON object . 				
 			json.put("Error Details", error); 

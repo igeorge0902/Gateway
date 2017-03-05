@@ -20,15 +20,27 @@ import org.json.JSONObject;
 import com.dalogin.utils.AesUtil;
 import com.dalogin.utils.hmac512;
 
-//Extend HttpServlet class
+/**
+ * 
+ *
+ */
 public class HelloWorld extends HttpServlet {
-    /**
-    *
-    */
+
     private static final long serialVersionUID = 1L;
-	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
+	
+	/**
+	 * User password received from the request as parameter.
+	 */
 	private volatile static String pass;
+	
+	/**
+	 * Username received from the request as parameter.
+	 */
 	private volatile static String user;
+	
+	/**
+	 * User password value retrieved from the dB.
+	 */
 	private volatile static String hash1;
 	private volatile static String deviceId;
 	private volatile static String deviceId_;
@@ -55,12 +67,21 @@ public class HelloWorld extends HttpServlet {
 
 	private static Logger log = Logger.getLogger(Logger.class.getName());
 
-    public void init() throws ServletException
-    {
+	/**
+	 * {@link AesUtil}
+	 * 
+	 */
+    public void init() throws ServletException {
+    
     	aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
     }
     
-    // performance test combined with API only possible with unique deviceIds due to the logic that the session is tied to device
+    /**
+     * Receive a POST request to do the authentication.
+     *     
+     * FYI: 
+     * good performance test combined with API is advised to run with multiple deviceIds due to the logic that the session is tied to a device
+     */
     public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
     	
@@ -118,7 +139,7 @@ public class HelloWorld extends HttpServlet {
 		
 		} catch (Exception e) {
 			
-    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "There is a big problem!");
+			throw new ServletException();
 
 		}
         	/*
@@ -198,7 +219,9 @@ public class HelloWorld extends HttpServlet {
 						out.flush();
 						
 						} catch (Exception e) {
-							e.printStackTrace();
+							
+							throw new ServletException();
+							
 						}
 						
 						// mobile webview (there is no session in iOS simulator in normal webview with GlassFish. Interesting.)
@@ -230,7 +253,9 @@ public class HelloWorld extends HttpServlet {
 
 								
 							} catch (Exception e) {
-								e.printStackTrace();
+								
+								throw new ServletException();
+								
 							}
 						
 						} 
@@ -263,7 +288,9 @@ public class HelloWorld extends HttpServlet {
 								out.flush();
 								
 							} catch (Exception e) {
-								e.printStackTrace();
+								
+								throw new ServletException();
+								
 							}
 
 		

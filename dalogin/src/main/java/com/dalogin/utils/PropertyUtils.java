@@ -44,7 +44,6 @@ public class PropertyUtils {
 
 		p.load(br);
 		log.info(propertyFileName + " is loaded.");
-		log.info(propertyFileName + " is loaded.");
 		in.close();
 		br.close();
 	}
@@ -54,7 +53,8 @@ public class PropertyUtils {
 
 		if (propertyValue == null || propertyValue.trim().length() == 0)
 
-		{
+		{	
+			propertyValue = "";
 			String workingDir = System.getProperty("user.dir");
 			log.info("The property key: " + propertyKey + " is missing!");
 			log.info(workingDir + File.separator + "properties.properties was not found");

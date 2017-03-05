@@ -62,6 +62,8 @@ public class Registration extends HttpServlet {
     private static volatile String new_hash;
     private static volatile String activationData;
     private static final String activationToken = "G";
+    private static volatile boolean SessionInsert;
+    private static volatile boolean ActivationToken;
 
 
     public void init() throws ServletException
@@ -125,9 +127,13 @@ public class Registration extends HttpServlet {
         // Try - catch is necessary anyways, and will catch user names that have become used in the meantime
         try {
 			if (SQLAccess.register_voucher(voucher, context) && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())) {
-                  
-              if ((new_hash_(pass, user, email, context) == "I") && SQLAccess.insert_voucher(voucher, user, pass, context) && SQLAccess.insert_device(deviceId, user, context)) {
-				
+			
+              if (new_hash_(pass, user, email, context) == "I") {
+									
+				JSONObject json = new JSONObject();
+            	SQLAccess.insert_voucher(voucher, user, pass, context);
+            	SQLAccess.insert_device(deviceId, user, context);
+            	 
 				session.setAttribute("user", user);				
 				session.setAttribute("deviceId", deviceId);
 				
@@ -137,9 +143,9 @@ public class Registration extends HttpServlet {
 				sessionID = session.getId();
 				
 				// insert sessionId for the device, then, if success, we can copy the token2
-				if(SQLAccess.insert_sessionCreated(deviceId, SessionCreated, sessionID, context)){
-					
-					SQLAccess.copy_token2(voucher, context);
+				SessionInsert = SQLAccess.insert_sessionCreated(deviceId, SessionCreated, sessionID, context);
+				ActivationToken = SQLAccess.copy_token2(voucher, context);
+				if(SessionInsert && ActivationToken){
 					
 					// send email for activation 
 				    String scheme = request.getScheme();             
@@ -160,15 +166,37 @@ public class Registration extends HttpServlet {
 				    
 				    if(!SendHtmlEmail.generateAndSendEmail(email, url.toString())) {
 
-				    	throw new ServletException("Huston, we got a problem!");
-
+				    	response.setContentType("application/json"); 
+						response.setCharacterEncoding("utf-8"); 
+						response.setStatus(502);
+						
+						json.put("Email Error:", "Email could not be sent!"); 
+						
 				    }
 					
 				}
 			
 				else{
 					
-					throw new ServletException("Huston, we got a problem!");
+					response.setContentType("application/json"); 
+					response.setCharacterEncoding("utf-8"); 
+					response.setStatus(502);
+					
+					json.put("Session Creation Error:", String.valueOf(SessionInsert)); 
+					json.put("Activation Token Error:", String.valueOf(ActivationToken)); 
+					
+					try {
+						
+						//TODO: add procedure to cleanup after user (foregin keys would be nice to work with now)
+						SQLAccess.reset_voucher(voucher, context);
+						
+					} catch (Exception e1) {
+
+						log.info("Voucher reset FAILED for vouchet:" + voucher + "!");
+
+						throw new ServletException();
+						
+							}
 			
 				}
 				
@@ -192,9 +220,7 @@ public class Registration extends HttpServlet {
 						session.setAttribute(c.getName(), c.getValue());
 
 						PrintWriter out = response.getWriter(); 
-						
-						JSONObject json = new JSONObject(); 
-						
+												
 						json.put("success", 1);
 						json.put("JSESSIONID", sessionID);
 						json.put("X-Token", token2);
@@ -203,7 +229,7 @@ public class Registration extends HttpServlet {
 						out.flush();
 						
 						} catch (Exception e) {
-							e.printStackTrace();
+							throw new ServletException();
 						}
 						
 						// mobile webview (there is no session in iOS simulator in normal webview with GlassFish. Interesting.)
@@ -221,8 +247,6 @@ public class Registration extends HttpServlet {
 								response.addHeader("X-Token", token2);
 												
 								session.setAttribute(c.getName(), c.getValue());
-
-								JSONObject json = new JSONObject(); 
 								
 								json.put("Session", "raked"); 
 								json.put("Success", "true");
@@ -235,7 +259,7 @@ public class Registration extends HttpServlet {
 
 								
 							} catch (Exception e) {
-								e.printStackTrace();
+								throw new ServletException();
 							}
 						
 						} 
@@ -256,9 +280,7 @@ public class Registration extends HttpServlet {
 								session.setAttribute(c.getName(), c.getValue());
 								
 								PrintWriter out = response.getWriter(); 
-								
-								JSONObject json = new JSONObject(); 
-								
+																
 								json.put("Session", "raked"); 
 								json.put("Success", "true"); 
 								// this is necessary because the X-Token header did not appear in the native mobile app
@@ -268,7 +290,7 @@ public class Registration extends HttpServlet {
 								out.flush();
 								
 							} catch (Exception e) {
-								e.printStackTrace();
+								throw new ServletException();
 							}		
 						}
 					
@@ -288,7 +310,7 @@ public class Registration extends HttpServlet {
 	           } else {
 
 	        	   // hmac error
-	        	   response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Line 255");
+	        	   throw new ServletException();
 	           }
 		
 		} catch (Exception e) {
@@ -358,11 +380,11 @@ public class Registration extends HttpServlet {
             deviceId = request.getParameter("deviceId");
 			
 			if (voucher.trim().isEmpty() || user.trim().isEmpty() || pass.trim().isEmpty() || deviceId.trim().isEmpty()) {
-	    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Line 325");
+	    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Line 361");
 			}
 					
 		} catch (Exception e) {			
-    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Line 329");
+    		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Line 365");
 
 		}
         

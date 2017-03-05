@@ -79,7 +79,7 @@ public class SQLAccess {
 
 		connect = dbManager.getConnection();
 		
-			String sql = "insert into  login.logins values (default, ?, ?, default, ?)";
+			String sql = "insert into  login.logins values (default, ?, ?, default, ?, default)";
 		
 			InputStream ps = IOUtils.toInputStream(pass, "UTF-8");
 		    readerP = new BufferedReader(new InputStreamReader(ps));
@@ -116,6 +116,13 @@ public class SQLAccess {
 			return "I";
 	}
 	
+	/**
+	 * It does nothing.
+	 * 
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
 	public synchronized static boolean sessionId(ServletContext context) throws Exception {
 		
 		// Setup the connection with the DB
@@ -340,18 +347,17 @@ public class SQLAccess {
 				
 				
 			dbManager.closeConnection();
-			
-				return true;
-			
+						
 		} catch (SQLException ex) {
 		      SQLAccess.printSQLException(ex);
+				return false;
 		      
 		} finally {
 			
 			dbManager.closeConnection();
 
 		}
-		return false;
+		return true;
 	}
 	
 	/**
@@ -429,7 +435,7 @@ public class SQLAccess {
 	}
 	
 	/**
-	 *  Updates (finalizes) the voucher state in the last step of registration process.
+	 *  Updates (finalizes) the voucher state during the last step of registration process.
 	 * 
 	 * @param voucher
 	 * @return true
@@ -793,6 +799,12 @@ public class SQLAccess {
 		    }
 		  }
 	  
+	  /**
+	   * SQL error state ignore method.
+	   * 
+	   * @param sqlState
+	   * @return
+	   */
 	  public static boolean ignoreSQLException(String sqlState) {
 		    if (sqlState == null) {
 		      System.out.println("The SQL state is not defined!");
