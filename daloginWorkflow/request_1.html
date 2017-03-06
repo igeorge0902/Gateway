@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>request</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/request_1/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/request_1/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u338" class="ax_default box_1">
+        <div id="u338_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u339" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u340" class="ax_default flow_shape">
+        <div id="u340_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u341" class="text">
+          <p><span>&#149; username</span></p><p><span>&#149; password</span></p><p><span>&#149; deviceId</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u342" class="ax_default flow_shape">
+        <div id="u342_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u343" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Request transformation</span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; request URI</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; request data</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; microTime</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; request data length</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; hmacSecret</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Request transformation happens before the actual request will be made. At this point the input parameters will be chained, separated by colon and a hashed output will be created. This will be the actual </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">data</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"> to be sent by the request. This data will be then regenerated at the server knowing some of the inputs upfront.</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">HmacSHA512 algorythm is responsible for the high level data integrity. The output then will be encoded.</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u344" class="ax_default flow_shape">
+        <div id="u344_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u345" class="text">
+          <p style="text-align:center;"><span>Add headers</span></p><p style="text-align:left;"><span><br></span></p><p><span>&#149; headerField X-HMAC-HASH</span></p><p><span>&#149; headerField X-MICRO-TIME</span></p><p><span>&#149; headerField M</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u346" class="ax_default connector">
+        <img id="u346_seg0" class="img " src="images/request/u170_seg0.png" alt="u346_seg0"/>
+        <img id="u346_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u346_seg1"/>
+        <img id="u346_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u346_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u347" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u348" class="ax_default flow_shape">
+        <div id="u348_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u349" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Generate </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hmacSecret</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; username</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hashed password</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u350" class="ax_default flow_shape">
+        <div id="u350_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u351" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">store </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hmacSecret</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">localStorage.hmacSecret</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">hmacSecret will be stored in the browser's localStorage</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u352" class="ax_default flow_shape">
+        <div id="u352_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u353" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">hash </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">password</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; password</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">HmacSHA512 algorythm</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u354" class="ax_default flow_shape">
+        <div id="u354_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u355" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">retrieve </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">deviceId</span></p><p style="text-align:left;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Generate or retrieve the actual deviceId</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u356" class="ax_default flow_shape">
+        <div id="u356_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u357" class="text">
+          <p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">create encoded request </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">data</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; username</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hashed password</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; deviceId</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u358" class="ax_default flow_shape">
+        <div id="u358_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u359" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Create </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">request</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; headerField Content Type:</span></p><p><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">'application/x-www-form-urlencoded; charset=UTF-8'</span></p><p><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">&#149; data</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u360" class="ax_default flow_shape">
+        <div id="u360_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u361" class="text">
+          <p style="text-align:center;"><span>Request interceptor</span></p><p style="text-align:left;"><span><br></span></p><p><span>&#149; headerField X-URL</span></p><p><span><br></span></p><p><span>An X-URL will be set that reflects the request URI.</span></p><p><span><br></span></p><p><span>Note: it can be whatever you want, until the server is aware of the same value.</span></p><p><span><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u362" class="ax_default connector">
+        <img id="u362_seg0" class="img " src="images/request_1/u362_seg0.png" alt="u362_seg0"/>
+        <img id="u362_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u362_seg1"/>
+        <img id="u362_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u362_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u363" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u364" class="ax_default connector">
+        <img id="u364_seg0" class="img " src="images/request/u188_seg0.png" alt="u364_seg0"/>
+        <img id="u364_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u364_seg1"/>
+        <img id="u364_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u364_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u365" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u366" class="ax_default connector">
+        <img id="u366_seg0" class="img " src="images/registration/u116_seg0.png" alt="u366_seg0"/>
+        <img id="u366_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u366_seg1"/>
+        <img id="u366_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u366_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u367" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u368" class="ax_default connector">
+        <img id="u368_seg0" class="img " src="images/request_1/u368_seg0.png" alt="u368_seg0"/>
+        <img id="u368_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u368_seg1"/>
+        <img id="u368_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u368_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u369" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u370" class="ax_default connector">
+        <img id="u370_seg0" class="img " src="images/request_1/u370_seg0.png" alt="u370_seg0"/>
+        <img id="u370_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u370_seg1"/>
+        <img id="u370_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u370_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u371" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u372" class="ax_default connector">
+        <img id="u372_seg0" class="img " src="images/request/u196_seg0.png" alt="u372_seg0"/>
+        <img id="u372_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u372_seg1"/>
+        <img id="u372_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u372_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u373" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Diamond) -->
+      <div id="u374" class="ax_default flow_shape">
+        <img id="u374_img" class="img " src="images/request/u200.png"/>
+        <!-- Unnamed () -->
+        <div id="u375" class="text">
+          <p><span>Is there any request error?</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Bracket) -->
+      <div id="u376" class="ax_default flow_shape">
+        <img id="u376_img" class="img " src="images/request/u202.png"/>
+        <!-- Unnamed () -->
+        <div id="u377" class="text">
+          <p><span>End</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u378" class="ax_default connector">
+        <img id="u378_seg0" class="img " src="images/request_1/u378_seg0.png" alt="u378_seg0"/>
+        <img id="u378_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u378_seg1"/>
+        <img id="u378_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u378_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u379" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u380" class="ax_default connector">
+        <img id="u380_seg0" class="img " src="images/request/u206_seg0.png" alt="u380_seg0"/>
+        <img id="u380_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u380_seg1"/>
+        <img id="u380_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u380_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u381" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u382" class="ax_default connector">
+        <img id="u382_seg0" class="img " src="images/request/u208_seg0.png" alt="u382_seg0"/>
+        <img id="u382_seg1" class="img " src="images/request/u208_seg1.png" alt="u382_seg1"/>
+        <img id="u382_seg2" class="img " src="images/registration/u124_seg2.png" alt="u382_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u383" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Stacked Rectangle) -->
+      <div id="u384" class="ax_default flow_shape">
+        <img id="u384_img" class="img " src="images/request/u210.png"/>
+        <!-- Unnamed () -->
+        <div id="u385" class="text">
+          <p><span>Request sent</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u386" class="ax_default connector">
+        <img id="u386_seg0" class="img " src="images/request_1/u386_seg0.png" alt="u386_seg0"/>
+        <img id="u386_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u386_seg1"/>
+        <img id="u386_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u386_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u387" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Vertical Line) -->
+      <div id="u388" class="ax_default arrow">
+        <img id="u388_img" class="img " src="images/voucher/u58.png"/>
+        <!-- Unnamed () -->
+        <div id="u389" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u390" class="ax_default connector">
+        <img id="u390_seg0" class="img " src="images/request_1/u390_seg0.png" alt="u390_seg0"/>
+        <img id="u390_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u390_seg1"/>
+        <img id="u390_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u390_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u391" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Diamond) -->
+      <div id="u392" class="ax_default flow_shape">
+        <img id="u392_img" class="img " src="images/registration_workflow/u22.png"/>
+        <!-- Unnamed () -->
+        <div id="u393" class="text">
+          <p><span>Is web?</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u394" class="ax_default connector">
+        <img id="u394_seg0" class="img " src="images/request_1/u394_seg0.png" alt="u394_seg0"/>
+        <img id="u394_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u394_seg1"/>
+        <img id="u394_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u394_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u395" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u396" class="ax_default connector">
+        <img id="u396_seg0" class="img " src="images/request_1/u396_seg0.png" alt="u396_seg0"/>
+        <img id="u396_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u396_seg1"/>
+        <img id="u396_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u396_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u397" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Stacked Rectangle) -->
+      <div id="u398" class="ax_default flow_shape">
+        <img id="u398_img" class="img " src="images/request/u224.png"/>
+        <!-- Unnamed () -->
+        <div id="u399" class="text">
+          <p><span>mobileRequest</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Horizontal Line) -->
+      <div id="u400" class="ax_default arrow">
+        <img id="u400_img" class="img " src="images/request/u226.png"/>
+        <!-- Unnamed () -->
+        <div id="u401" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u402" class="ax_default connector">
+        <img id="u402_seg0" class="img " src="images/request/u228_seg0.png" alt="u402_seg0"/>
+        <img id="u402_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u402_seg1"/>
+        <img id="u402_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u402_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u403" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u404" class="ax_default connector">
+        <img id="u404_seg0" class="img " src="images/request/u230_seg0.png" alt="u404_seg0"/>
+        <img id="u404_seg1" class="img " src="images/registration_workflow/u32_seg1.png" alt="u404_seg1"/>
+        <img id="u404_seg2" class="img " src="images/registration_workflow/u32_seg2.png" alt="u404_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u405" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u406" class="ax_default icon">
+        <img id="u406_img" class="img " src="images/voucher/u92.png"/>
+        <!-- Unnamed () -->
+        <div id="u407" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u408" class="ax_default icon">
+        <img id="u408_img" class="img " src="images/voucher/u92.png"/>
+        <!-- Unnamed () -->
+        <div id="u409" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
