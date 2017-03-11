@@ -1,0 +1,89 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:699px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#u690_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:208px;
+  height:66px;
+  background:-webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(255, 255, 255, 1) 100%);
+  background:-moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(255, 255, 255, 1) 100%);
+  background:linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(255, 255, 255, 1) 100%);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#u690 {
+  border-width:0px;
+  position:absolute;
+  left:191px;
+  top:113px;
+  width:208px;
+  height:66px;
+}
+#u691 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:26px;
+  width:204px;
+  word-wrap:break-word;
+}
+#u692_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:555px;
+  height:56px;
+  background:-webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
+  background:-moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
+  background:linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'Kefa-Bold', 'Kefa Bold', 'Kefa';
+  font-weight:700;
+  font-style:normal;
+  font-size:20px;
+}
+#u692 {
+  border-width:0px;
+  position:absolute;
+  left:144px;
+  top:30px;
+  width:555px;
+  height:56px;
+  font-family:'Kefa-Bold', 'Kefa Bold', 'Kefa';
+  font-weight:700;
+  font-style:normal;
+  font-size:20px;
+}
+#u693 {
+  border-width:0px;
+  position:absolute;
+  left:2px;
+  top:16px;
+  width:551px;
+  word-wrap:break-word;
+}
