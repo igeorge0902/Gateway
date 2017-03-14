@@ -1,0 +1,120 @@
+\hypertarget{classcom_1_1dalogin_1_1_admin_servlet}{}\section{com.\+dalogin.\+Admin\+Servlet Class Reference}
+\label{classcom_1_1dalogin_1_1_admin_servlet}\index{com.\+dalogin.\+Admin\+Servlet@{com.\+dalogin.\+Admin\+Servlet}}
+
+
+Inheritance diagram for com.\+dalogin.\+Admin\+Servlet\+:
+% FIG 0
+
+
+Collaboration diagram for com.\+dalogin.\+Admin\+Servlet\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a137077179bae1f39857b40f2773e0b53}{init} ()  throws Servlet\+Exception     
+\item 
+synchronized void \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a32dbeed81a26e2d94d4ac52abe06572d}{do\+Post} (Http\+Servlet\+Request request, Http\+Servlet\+Response response, Filter\+Chain chain)  throws Servlet\+Exception, I\+O\+Exception     
+\item 
+synchronized void \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a10dd391e1ee2f3c57106f4378d27b212}{do\+Get} (Http\+Servlet\+Request request, Http\+Servlet\+Response response)  throws Servlet\+Exception, I\+O\+Exception     
+\item 
+void \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a4b180328a4753b4434bc3eb0e83060d6}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static volatile Http\+Session \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_aaa503321a6eae198b8035a43ead54a53}{session} = null
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a1fabd6fcb74f67eb253624c29ceb4f5c}{session\+Id} = null
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_admin_servlet_a1bae4bc3e34819f4fdcaabbfe0f2897b}{session\+Id\+\_\+} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file Admin\+Servlet.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a4b180328a4753b4434bc3eb0e83060d6}\label{classcom_1_1dalogin_1_1_admin_servlet_a4b180328a4753b4434bc3eb0e83060d6}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!destroy@{destroy}}
+\index{destroy@{destroy}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void com.\+dalogin.\+Admin\+Servlet.\+destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 268 of file Admin\+Servlet.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a10dd391e1ee2f3c57106f4378d27b212}\label{classcom_1_1dalogin_1_1_admin_servlet_a10dd391e1ee2f3c57106f4378d27b212}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!do\+Get@{do\+Get}}
+\index{do\+Get@{do\+Get}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Get()}{doGet()}}
+{\footnotesize\ttfamily synchronized void com.\+dalogin.\+Admin\+Servlet.\+do\+Get (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request,  }\item[{Http\+Servlet\+Response}]{response }\end{DoxyParamCaption}) throws Servlet\+Exception, I\+O\+Exception}
+
+
+
+Definition at line 182 of file Admin\+Servlet.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a32dbeed81a26e2d94d4ac52abe06572d}\label{classcom_1_1dalogin_1_1_admin_servlet_a32dbeed81a26e2d94d4ac52abe06572d}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!do\+Post@{do\+Post}}
+\index{do\+Post@{do\+Post}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Post()}{doPost()}}
+{\footnotesize\ttfamily synchronized void com.\+dalogin.\+Admin\+Servlet.\+do\+Post (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request,  }\item[{Http\+Servlet\+Response}]{response,  }\item[{Filter\+Chain}]{chain }\end{DoxyParamCaption}) throws Servlet\+Exception, I\+O\+Exception}
+
+
+
+Definition at line 45 of file Admin\+Servlet.\+java.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a137077179bae1f39857b40f2773e0b53}\label{classcom_1_1dalogin_1_1_admin_servlet_a137077179bae1f39857b40f2773e0b53}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!init@{init}}
+\index{init@{init}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void com.\+dalogin.\+Admin\+Servlet.\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Servlet\+Exception}
+
+
+
+Definition at line 39 of file Admin\+Servlet.\+java.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_aaa503321a6eae198b8035a43ead54a53}\label{classcom_1_1dalogin_1_1_admin_servlet_aaa503321a6eae198b8035a43ead54a53}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!session@{session}}
+\index{session@{session}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{session}{session}}
+{\footnotesize\ttfamily volatile Http\+Session com.\+dalogin.\+Admin\+Servlet.\+session = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file Admin\+Servlet.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a1fabd6fcb74f67eb253624c29ceb4f5c}\label{classcom_1_1dalogin_1_1_admin_servlet_a1fabd6fcb74f67eb253624c29ceb4f5c}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!session\+Id@{session\+Id}}
+\index{session\+Id@{session\+Id}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{session\+Id}{sessionId}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+Admin\+Servlet.\+session\+Id = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 30 of file Admin\+Servlet.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_admin_servlet_a1bae4bc3e34819f4fdcaabbfe0f2897b}\label{classcom_1_1dalogin_1_1_admin_servlet_a1bae4bc3e34819f4fdcaabbfe0f2897b}} 
+\index{com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}!session\+Id\+\_\+@{session\+Id\+\_\+}}
+\index{session\+Id\+\_\+@{session\+Id\+\_\+}!com\+::dalogin\+::\+Admin\+Servlet@{com\+::dalogin\+::\+Admin\+Servlet}}
+\subsubsection{\texorpdfstring{session\+Id\+\_\+}{sessionId\_}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+Admin\+Servlet.\+session\+Id\+\_\+ = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file Admin\+Servlet.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/\hyperlink{_admin_servlet_8java}{Admin\+Servlet.\+java}\end{DoxyCompactItemize}

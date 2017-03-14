@@ -1,0 +1,44 @@
+\hypertarget{classcom_1_1dalogin_1_1utils_1_1_email_validator}{}\section{com.\+dalogin.\+utils.\+Email\+Validator Class Reference}
+\label{classcom_1_1dalogin_1_1utils_1_1_email_validator}\index{com.\+dalogin.\+utils.\+Email\+Validator@{com.\+dalogin.\+utils.\+Email\+Validator}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \hyperlink{classcom_1_1dalogin_1_1utils_1_1_email_validator_abeddfefc4274d669443c65b47ded0161}{validate} (final String hex)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Email\+Validator.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_email_validator_abeddfefc4274d669443c65b47ded0161}\label{classcom_1_1dalogin_1_1utils_1_1_email_validator_abeddfefc4274d669443c65b47ded0161}} 
+\index{com\+::dalogin\+::utils\+::\+Email\+Validator@{com\+::dalogin\+::utils\+::\+Email\+Validator}!validate@{validate}}
+\index{validate@{validate}!com\+::dalogin\+::utils\+::\+Email\+Validator@{com\+::dalogin\+::utils\+::\+Email\+Validator}}
+\subsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily static boolean com.\+dalogin.\+utils.\+Email\+Validator.\+validate (\begin{DoxyParamCaption}\item[{final String}]{hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Validate hex with regular expression
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex} & hex for validation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true valid hex, false invalid hex 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Email\+Validator.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/utils/\hyperlink{_email_validator_8java}{Email\+Validator.\+java}\end{DoxyCompactItemize}

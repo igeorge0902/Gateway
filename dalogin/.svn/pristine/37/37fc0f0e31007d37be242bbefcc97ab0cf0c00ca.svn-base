@@ -1,0 +1,63 @@
+\hypertarget{classcom_1_1dalogin_1_1_d_b_connection_manager}{}\section{com.\+dalogin.\+D\+B\+Connection\+Manager Class Reference}
+\label{classcom_1_1dalogin_1_1_d_b_connection_manager}\index{com.\+dalogin.\+D\+B\+Connection\+Manager@{com.\+dalogin.\+D\+B\+Connection\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1dalogin_1_1_d_b_connection_manager_ababd94588891ef6b9ba6ce6aa06b87e7}{D\+B\+Connection\+Manager} (String url, String u, String p)
+\item 
+Connection \hyperlink{classcom_1_1dalogin_1_1_d_b_connection_manager_a36917ade7183181ab00d32c126915db7}{get\+Connection} ()  throws S\+Q\+L\+Exception, Class\+Not\+Found\+Exception
+\item 
+void \hyperlink{classcom_1_1dalogin_1_1_d_b_connection_manager_a525be4a64e02f21c1b4bd1d53ca73cc0}{close\+Connection} ()  throws S\+Q\+L\+Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file D\+B\+Connection\+Manager.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_d_b_connection_manager_ababd94588891ef6b9ba6ce6aa06b87e7}\label{classcom_1_1dalogin_1_1_d_b_connection_manager_ababd94588891ef6b9ba6ce6aa06b87e7}} 
+\index{com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}!D\+B\+Connection\+Manager@{D\+B\+Connection\+Manager}}
+\index{D\+B\+Connection\+Manager@{D\+B\+Connection\+Manager}!com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}}
+\subsubsection{\texorpdfstring{D\+B\+Connection\+Manager()}{DBConnectionManager()}}
+{\footnotesize\ttfamily com.\+dalogin.\+D\+B\+Connection\+Manager.\+D\+B\+Connection\+Manager (\begin{DoxyParamCaption}\item[{String}]{url,  }\item[{String}]{u,  }\item[{String}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file D\+B\+Connection\+Manager.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_d_b_connection_manager_a525be4a64e02f21c1b4bd1d53ca73cc0}\label{classcom_1_1dalogin_1_1_d_b_connection_manager_a525be4a64e02f21c1b4bd1d53ca73cc0}} 
+\index{com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}!close\+Connection@{close\+Connection}}
+\index{close\+Connection@{close\+Connection}!com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}}
+\subsubsection{\texorpdfstring{close\+Connection()}{closeConnection()}}
+{\footnotesize\ttfamily void com.\+dalogin.\+D\+B\+Connection\+Manager.\+close\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+
+
+Definition at line 39 of file D\+B\+Connection\+Manager.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_d_b_connection_manager_a36917ade7183181ab00d32c126915db7}\label{classcom_1_1dalogin_1_1_d_b_connection_manager_a36917ade7183181ab00d32c126915db7}} 
+\index{com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}!get\+Connection@{get\+Connection}}
+\index{get\+Connection@{get\+Connection}!com\+::dalogin\+::\+D\+B\+Connection\+Manager@{com\+::dalogin\+::\+D\+B\+Connection\+Manager}}
+\subsubsection{\texorpdfstring{get\+Connection()}{getConnection()}}
+{\footnotesize\ttfamily Connection com.\+dalogin.\+D\+B\+Connection\+Manager.\+get\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception, Class\+Not\+Found\+Exception}
+
+
+
+Definition at line 28 of file D\+B\+Connection\+Manager.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/\hyperlink{_d_b_connection_manager_8java}{D\+B\+Connection\+Manager.\+java}\end{DoxyCompactItemize}

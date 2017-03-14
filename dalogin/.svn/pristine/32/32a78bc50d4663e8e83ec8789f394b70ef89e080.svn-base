@@ -1,0 +1,136 @@
+\hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util}{}\section{com.\+dalogin.\+utils.\+Aes\+Util Class Reference}
+\label{classcom_1_1dalogin_1_1utils_1_1_aes_util}\index{com.\+dalogin.\+utils.\+Aes\+Util@{com.\+dalogin.\+utils.\+Aes\+Util}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_a3a1069c84aa9358b759fff51aed06928}{Aes\+Util} (int key\+Size, int iteration\+Count)
+\item 
+String \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_aed0eaf87eea8a6c844f62873bd810802}{encrypt} (String salt, String iv, String passphrase, String plaintext)
+\item 
+String \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_a6cce54b59c5cc4df12cdfe1649918a28}{decrypt} (String salt, String iv, String passphrase, String ciphertext)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_a9499a4ab9152d01e043b77f29c6daaf5}{random} (int length)
+\item 
+static String \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_abf9788d9b22764a48f2b42061952ac20}{base64} (byte\mbox{[}$\,$\mbox{]} bytes)
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_ae84ca963c2b9528e8f57e791d4d7676e}{base64} (String str)
+\item 
+static String \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_a849abfa314406f87a48a6c004f74ae75}{hex} (byte\mbox{[}$\,$\mbox{]} bytes)
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1dalogin_1_1utils_1_1_aes_util_adf6994c7cf7238af506971fc5b3b2e0b}{hex} (String str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file Aes\+Util.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_a3a1069c84aa9358b759fff51aed06928}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_a3a1069c84aa9358b759fff51aed06928}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!Aes\+Util@{Aes\+Util}}
+\index{Aes\+Util@{Aes\+Util}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{Aes\+Util()}{AesUtil()}}
+{\footnotesize\ttfamily com.\+dalogin.\+utils.\+Aes\+Util.\+Aes\+Util (\begin{DoxyParamCaption}\item[{int}]{key\+Size,  }\item[{int}]{iteration\+Count }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Aes\+Util.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_abf9788d9b22764a48f2b42061952ac20}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_abf9788d9b22764a48f2b42061952ac20}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!base64@{base64}}
+\index{base64@{base64}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{base64()}{base64()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static String com.\+dalogin.\+utils.\+Aes\+Util.\+base64 (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 95 of file Aes\+Util.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_ae84ca963c2b9528e8f57e791d4d7676e}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_ae84ca963c2b9528e8f57e791d4d7676e}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!base64@{base64}}
+\index{base64@{base64}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{base64()}{base64()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} com.\+dalogin.\+utils.\+Aes\+Util.\+base64 (\begin{DoxyParamCaption}\item[{String}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 99 of file Aes\+Util.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_a6cce54b59c5cc4df12cdfe1649918a28}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_a6cce54b59c5cc4df12cdfe1649918a28}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily String com.\+dalogin.\+utils.\+Aes\+Util.\+decrypt (\begin{DoxyParamCaption}\item[{String}]{salt,  }\item[{String}]{iv,  }\item[{String}]{passphrase,  }\item[{String}]{ciphertext }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file Aes\+Util.\+java.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_aed0eaf87eea8a6c844f62873bd810802}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_aed0eaf87eea8a6c844f62873bd810802}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily String com.\+dalogin.\+utils.\+Aes\+Util.\+encrypt (\begin{DoxyParamCaption}\item[{String}]{salt,  }\item[{String}]{iv,  }\item[{String}]{passphrase,  }\item[{String}]{plaintext }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Aes\+Util.\+java.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_a849abfa314406f87a48a6c004f74ae75}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_a849abfa314406f87a48a6c004f74ae75}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!hex@{hex}}
+\index{hex@{hex}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{hex()}{hex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static String com.\+dalogin.\+utils.\+Aes\+Util.\+hex (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 103 of file Aes\+Util.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_adf6994c7cf7238af506971fc5b3b2e0b}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_adf6994c7cf7238af506971fc5b3b2e0b}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!hex@{hex}}
+\index{hex@{hex}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{hex()}{hex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} com.\+dalogin.\+utils.\+Aes\+Util.\+hex (\begin{DoxyParamCaption}\item[{String}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 107 of file Aes\+Util.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_aes_util_a9499a4ab9152d01e043b77f29c6daaf5}\label{classcom_1_1dalogin_1_1utils_1_1_aes_util_a9499a4ab9152d01e043b77f29c6daaf5}} 
+\index{com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}!random@{random}}
+\index{random@{random}!com\+::dalogin\+::utils\+::\+Aes\+Util@{com\+::dalogin\+::utils\+::\+Aes\+Util}}
+\subsubsection{\texorpdfstring{random()}{random()}}
+{\footnotesize\ttfamily static String com.\+dalogin.\+utils.\+Aes\+Util.\+random (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 89 of file Aes\+Util.\+java.
+
+Here is the call graph for this function\+:
+% FIG 6
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/utils/\hyperlink{_aes_util_8java}{Aes\+Util.\+java}\end{DoxyCompactItemize}

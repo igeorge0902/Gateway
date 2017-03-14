@@ -1,0 +1,130 @@
+\hypertarget{classcom_1_1dalogin_1_1_loggingout}{}\section{com.\+dalogin.\+Loggingout Class Reference}
+\label{classcom_1_1dalogin_1_1_loggingout}\index{com.\+dalogin.\+Loggingout@{com.\+dalogin.\+Loggingout}}
+
+
+Inheritance diagram for com.\+dalogin.\+Loggingout\+:
+% FIG 0
+
+
+Collaboration diagram for com.\+dalogin.\+Loggingout\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1dalogin_1_1_loggingout_a6d5de76157cc1cd86ce4584be1770ea0}{init} ()  throws Servlet\+Exception 	  
+\item 
+synchronized void \hyperlink{classcom_1_1dalogin_1_1_loggingout_a8a2b3425799aff2fe737844345bc48da}{process\+Request} (Http\+Servlet\+Request request, Http\+Servlet\+Response response)  throws Exception 
+\item 
+synchronized void \hyperlink{classcom_1_1dalogin_1_1_loggingout_a6136baa87bf33f3405f1560b8261e85b}{do\+Post} (Http\+Servlet\+Request request, Http\+Servlet\+Response response)  throws Servlet\+Exception, I\+O\+Exception 	  
+\item 
+synchronized void \hyperlink{classcom_1_1dalogin_1_1_loggingout_a53a1ba0e21d298c5d1cc4a0bbed4d575}{do\+Get} (Http\+Servlet\+Request request, Http\+Servlet\+Response response)  throws Servlet\+Exception, I\+O\+Exception 	  
+\item 
+void \hyperlink{classcom_1_1dalogin_1_1_loggingout_a4d14146520d207a39b32b09ca6f346ee}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_loggingout_abf244ba3efc4816ad0427112009b631a}{user}
+\item 
+static volatile Http\+Session \hyperlink{classcom_1_1dalogin_1_1_loggingout_a819b6765610e89eddfc440731da97c5b}{session}
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_loggingout_a976c5dd63eeb11a8614887dccb1ca982}{device\+Id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Loggingout.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a4d14146520d207a39b32b09ca6f346ee}\label{classcom_1_1dalogin_1_1_loggingout_a4d14146520d207a39b32b09ca6f346ee}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!destroy@{destroy}}
+\index{destroy@{destroy}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void com.\+dalogin.\+Loggingout.\+destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a53a1ba0e21d298c5d1cc4a0bbed4d575}\label{classcom_1_1dalogin_1_1_loggingout_a53a1ba0e21d298c5d1cc4a0bbed4d575}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!do\+Get@{do\+Get}}
+\index{do\+Get@{do\+Get}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{do\+Get()}{doGet()}}
+{\footnotesize\ttfamily synchronized void com.\+dalogin.\+Loggingout.\+do\+Get (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request,  }\item[{Http\+Servlet\+Response}]{response }\end{DoxyParamCaption}) throws Servlet\+Exception, I\+O\+Exception}
+
+
+
+Definition at line 41 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a6136baa87bf33f3405f1560b8261e85b}\label{classcom_1_1dalogin_1_1_loggingout_a6136baa87bf33f3405f1560b8261e85b}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!do\+Post@{do\+Post}}
+\index{do\+Post@{do\+Post}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{do\+Post()}{doPost()}}
+{\footnotesize\ttfamily synchronized void com.\+dalogin.\+Loggingout.\+do\+Post (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request,  }\item[{Http\+Servlet\+Response}]{response }\end{DoxyParamCaption}) throws Servlet\+Exception, I\+O\+Exception}
+
+
+
+Definition at line 36 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a6d5de76157cc1cd86ce4584be1770ea0}\label{classcom_1_1dalogin_1_1_loggingout_a6d5de76157cc1cd86ce4584be1770ea0}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!init@{init}}
+\index{init@{init}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void com.\+dalogin.\+Loggingout.\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Servlet\+Exception}
+
+
+
+Definition at line 26 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a8a2b3425799aff2fe737844345bc48da}\label{classcom_1_1dalogin_1_1_loggingout_a8a2b3425799aff2fe737844345bc48da}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!process\+Request@{process\+Request}}
+\index{process\+Request@{process\+Request}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{process\+Request()}{processRequest()}}
+{\footnotesize\ttfamily synchronized void com.\+dalogin.\+Loggingout.\+process\+Request (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request,  }\item[{Http\+Servlet\+Response}]{response }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Definition at line 31 of file Loggingout.\+java.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a976c5dd63eeb11a8614887dccb1ca982}\label{classcom_1_1dalogin_1_1_loggingout_a976c5dd63eeb11a8614887dccb1ca982}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!device\+Id@{device\+Id}}
+\index{device\+Id@{device\+Id}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{device\+Id}{deviceId}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+Loggingout.\+device\+Id\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 23 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_a819b6765610e89eddfc440731da97c5b}\label{classcom_1_1dalogin_1_1_loggingout_a819b6765610e89eddfc440731da97c5b}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!session@{session}}
+\index{session@{session}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{session}{session}}
+{\footnotesize\ttfamily volatile Http\+Session com.\+dalogin.\+Loggingout.\+session\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 22 of file Loggingout.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_loggingout_abf244ba3efc4816ad0427112009b631a}\label{classcom_1_1dalogin_1_1_loggingout_abf244ba3efc4816ad0427112009b631a}} 
+\index{com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}!user@{user}}
+\index{user@{user}!com\+::dalogin\+::\+Loggingout@{com\+::dalogin\+::\+Loggingout}}
+\subsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+Loggingout.\+user\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 21 of file Loggingout.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/\hyperlink{_loggingout_8java}{Loggingout.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\hypertarget{classcom_1_1dalogin_1_1utils_1_1_memory}{}\section{com.\+dalogin.\+utils.\+Memory Class Reference}
+\label{classcom_1_1dalogin_1_1utils_1_1_memory}\index{com.\+dalogin.\+utils.\+Memory@{com.\+dalogin.\+utils.\+Memory}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static long \hyperlink{classcom_1_1dalogin_1_1utils_1_1_memory_a8d329f13031034168f6dc9a233e38d63}{bytes\+To\+Megabytes} (long bytes)
+\item 
+static void \hyperlink{classcom_1_1dalogin_1_1utils_1_1_memory_af2e3afdc219d69338f1301fee6081a35}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Memory.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_memory_a8d329f13031034168f6dc9a233e38d63}\label{classcom_1_1dalogin_1_1utils_1_1_memory_a8d329f13031034168f6dc9a233e38d63}} 
+\index{com\+::dalogin\+::utils\+::\+Memory@{com\+::dalogin\+::utils\+::\+Memory}!bytes\+To\+Megabytes@{bytes\+To\+Megabytes}}
+\index{bytes\+To\+Megabytes@{bytes\+To\+Megabytes}!com\+::dalogin\+::utils\+::\+Memory@{com\+::dalogin\+::utils\+::\+Memory}}
+\subsubsection{\texorpdfstring{bytes\+To\+Megabytes()}{bytesToMegabytes()}}
+{\footnotesize\ttfamily static long com.\+dalogin.\+utils.\+Memory.\+bytes\+To\+Megabytes (\begin{DoxyParamCaption}\item[{long}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 7 of file Memory.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_memory_af2e3afdc219d69338f1301fee6081a35}\label{classcom_1_1dalogin_1_1utils_1_1_memory_af2e3afdc219d69338f1301fee6081a35}} 
+\index{com\+::dalogin\+::utils\+::\+Memory@{com\+::dalogin\+::utils\+::\+Memory}!main@{main}}
+\index{main@{main}!com\+::dalogin\+::utils\+::\+Memory@{com\+::dalogin\+::utils\+::\+Memory}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void com.\+dalogin.\+utils.\+Memory.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 11 of file Memory.\+java.
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/utils/\hyperlink{_memory_8java}{Memory.\+java}\end{DoxyCompactItemize}

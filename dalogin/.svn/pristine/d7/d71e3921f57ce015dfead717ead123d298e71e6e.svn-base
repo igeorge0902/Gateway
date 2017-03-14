@@ -1,0 +1,603 @@
+\hypertarget{classcom_1_1dalogin_1_1_s_q_l_access}{}\section{com.\+dalogin.\+S\+Q\+L\+Access Class Reference}
+\label{classcom_1_1dalogin_1_1_s_q_l_access}\index{com.\+dalogin.\+S\+Q\+L\+Access@{com.\+dalogin.\+S\+Q\+L\+Access}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+synchronized static final U\+U\+ID \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_aacb151b38bdb068523f10a75a2069149}{uu\+Id} ()
+\item 
+static synchronized Connection \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_aaf49ea97dbc3ae15a9db020070c6c915}{connect} (Servlet\+Context context)  throws Class\+Not\+Found\+Exception, S\+Q\+L\+Exception
+\item 
+static synchronized String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ac1bccabf13fc7e4268eb1a169aec2aac}{new\+\_\+hash} (String pass, String user, String email, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ade5ec7d23b3cc42804c39af135eb1551}{session\+Id} (Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ace6682e8e095aa1d589a181c3ec37cb0}{voucher} (String voucher\+\_\+, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_aea1ff7f91ae3168de8d06a78e9500cec}{insert\+\_\+voucher} (String voucher\+\_\+, String user, String pass, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a45cc8de9b6d3bfbd1ad9142c285fd6c4}{insert\+\_\+device} (String device\+Id, String user, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_afbe8ec045fac97fdc76c62648c9bb648}{insert\+\_\+session\+Created} (String device\+Id, long session\+Created, String session\+ID, Servlet\+Context context)  throws Class\+Not\+Found\+Exception, I\+O\+Exception, S\+Q\+L\+Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ae784394432104d42f855a9ee1e8be8ee}{copy\+\_\+token2} (String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ace6682e8e095aa1d589a181c3ec37cb0}{voucher}, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ac4363153109eee19fab9866da32a6506}{reset\+\_\+voucher} (String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ace6682e8e095aa1d589a181c3ec37cb0}{voucher}, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a4d094b31a83bdfb9628975fc81c2f7da}{register\+\_\+voucher} (String voucher\+\_\+, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a4c5ad585b42f9e6268720993d790e9f9}{hash} (String pass, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a1c2a8450e2e4f051017b6b42a7de1b87}{is\+Activated} (String user, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a99e9cb8ca2d123adec597e0b4cd063f7}{token} (String device\+Id, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_aefba2c4140aa1a1f287c44aaedcad345}{token2} (String device\+Id, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized List$<$ String $>$ \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a6b6e51a792e4ba4e57a625f04f277db4}{activation\+\_\+token} (String user, Servlet\+Context context)  throws Exception 
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ac5350ae5f221b5ea02852f6c59fd7124}{logout} (String session\+ID, Servlet\+Context context)  throws Exception 
+\item 
+static void \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_af8b3800dccdc19311562efdb7bc1564d}{print\+S\+Q\+L\+Exception} (S\+Q\+L\+Exception ex)
+\item 
+static boolean \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_a294bf0428542df2a5015774d5b3a8585}{ignore\+S\+Q\+L\+Exception} (String sql\+State)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ae23b949fc74966a8c7dd9e3a888b76c0}{hash}
+\item 
+static volatile String \hyperlink{classcom_1_1dalogin_1_1_s_q_l_access_ac34e9644bffccef034598dd30c5f6d80}{token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file S\+Q\+L\+Access.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a6b6e51a792e4ba4e57a625f04f277db4}\label{classcom_1_1dalogin_1_1_s_q_l_access_a6b6e51a792e4ba4e57a625f04f277db4}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!activation\+\_\+token@{activation\+\_\+token}}
+\index{activation\+\_\+token@{activation\+\_\+token}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{activation\+\_\+token()}{activation\_token()}}
+{\footnotesize\ttfamily static synchronized List$<$String$>$ com.\+dalogin.\+S\+Q\+L\+Access.\+activation\+\_\+token (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Get activation token and email for user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+token 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 679 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_aaf49ea97dbc3ae15a9db020070c6c915}\label{classcom_1_1dalogin_1_1_s_q_l_access_aaf49ea97dbc3ae15a9db020070c6c915}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!connect@{connect}}
+\index{connect@{connect}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily static synchronized Connection com.\+dalogin.\+S\+Q\+L\+Access.\+connect (\begin{DoxyParamCaption}\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Class\+Not\+Found\+Exception, S\+Q\+L\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 52 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ae784394432104d42f855a9ee1e8be8ee}\label{classcom_1_1dalogin_1_1_s_q_l_access_ae784394432104d42f855a9ee1e8be8ee}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!copy\+\_\+token2@{copy\+\_\+token2}}
+\index{copy\+\_\+token2@{copy\+\_\+token2}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{copy\+\_\+token2()}{copy\_token2()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+copy\+\_\+token2 (\begin{DoxyParamCaption}\item[{String}]{voucher,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Copies token2 for registration activation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voucher} & \\
+\hline
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 371 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a4c5ad585b42f9e6268720993d790e9f9}\label{classcom_1_1dalogin_1_1_s_q_l_access_a4c5ad585b42f9e6268720993d790e9f9}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!hash@{hash}}
+\index{hash@{hash}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily static synchronized String com.\+dalogin.\+S\+Q\+L\+Access.\+hash (\begin{DoxyParamCaption}\item[{String}]{pass,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks user password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pass} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 505 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a294bf0428542df2a5015774d5b3a8585}\label{classcom_1_1dalogin_1_1_s_q_l_access_a294bf0428542df2a5015774d5b3a8585}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!ignore\+S\+Q\+L\+Exception@{ignore\+S\+Q\+L\+Exception}}
+\index{ignore\+S\+Q\+L\+Exception@{ignore\+S\+Q\+L\+Exception}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{ignore\+S\+Q\+L\+Exception()}{ignoreSQLException()}}
+{\footnotesize\ttfamily static boolean com.\+dalogin.\+S\+Q\+L\+Access.\+ignore\+S\+Q\+L\+Exception (\begin{DoxyParamCaption}\item[{String}]{sql\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+S\+QL error state ignore method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql\+State} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 808 of file S\+Q\+L\+Access.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a45cc8de9b6d3bfbd1ad9142c285fd6c4}\label{classcom_1_1dalogin_1_1_s_q_l_access_a45cc8de9b6d3bfbd1ad9142c285fd6c4}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!insert\+\_\+device@{insert\+\_\+device}}
+\index{insert\+\_\+device@{insert\+\_\+device}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{insert\+\_\+device()}{insert\_device()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+insert\+\_\+device (\begin{DoxyParamCaption}\item[{String}]{device\+Id,  }\item[{String}]{user,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Inserts a device\+Id for the current user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & \\
+\hline
+{\em user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 275 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_afbe8ec045fac97fdc76c62648c9bb648}\label{classcom_1_1dalogin_1_1_s_q_l_access_afbe8ec045fac97fdc76c62648c9bb648}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!insert\+\_\+session\+Created@{insert\+\_\+session\+Created}}
+\index{insert\+\_\+session\+Created@{insert\+\_\+session\+Created}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{insert\+\_\+session\+Created()}{insert\_sessionCreated()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+insert\+\_\+session\+Created (\begin{DoxyParamCaption}\item[{String}]{device\+Id,  }\item[{long}]{session\+Created,  }\item[{String}]{session\+ID,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Class\+Not\+Found\+Exception, I\+O\+Exception, S\+Q\+L\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Inserts session creation time for device\+Id. This insert also triggers tokens into the Tokens table for the device (user), that can be used for A\+PI calls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & \\
+\hline
+{\em session\+Created} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em I\+O\+Exception} & \\
+\hline
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 324 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_aea1ff7f91ae3168de8d06a78e9500cec}\label{classcom_1_1dalogin_1_1_s_q_l_access_aea1ff7f91ae3168de8d06a78e9500cec}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!insert\+\_\+voucher@{insert\+\_\+voucher}}
+\index{insert\+\_\+voucher@{insert\+\_\+voucher}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{insert\+\_\+voucher()}{insert\_voucher()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+insert\+\_\+voucher (\begin{DoxyParamCaption}\item[{String}]{voucher\+\_\+,  }\item[{String}]{user,  }\item[{String}]{pass,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classcom_1_1dalogin_1_1_voucher}{Voucher} will be tied to registering user at this step of registration process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voucher\+\_\+} & \\
+\hline
+{\em user} & \\
+\hline
+{\em pass} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, otherwise false 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 230 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a1c2a8450e2e4f051017b6b42a7de1b87}\label{classcom_1_1dalogin_1_1_s_q_l_access_a1c2a8450e2e4f051017b6b42a7de1b87}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!is\+Activated@{is\+Activated}}
+\index{is\+Activated@{is\+Activated}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{is\+Activated()}{isActivated()}}
+{\footnotesize\ttfamily static synchronized String com.\+dalogin.\+S\+Q\+L\+Access.\+is\+Activated (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks if the voucher needs activation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \\
+\hline
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily S {\ttfamily  if the voucher is required to be activated. }}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & {\ttfamily {\ttfamily }}\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 548 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ac5350ae5f221b5ea02852f6c59fd7124}\label{classcom_1_1dalogin_1_1_s_q_l_access_ac5350ae5f221b5ea02852f6c59fd7124}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!logout@{logout}}
+\index{logout@{logout}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+logout (\begin{DoxyParamCaption}\item[{String}]{session\+ID,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Logs out the device by session\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em session\+ID} & \\
+\hline
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 726 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ac1bccabf13fc7e4268eb1a169aec2aac}\label{classcom_1_1dalogin_1_1_s_q_l_access_ac1bccabf13fc7e4268eb1a169aec2aac}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!new\+\_\+hash@{new\+\_\+hash}}
+\index{new\+\_\+hash@{new\+\_\+hash}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{new\+\_\+hash()}{new\_hash()}}
+{\footnotesize\ttfamily static synchronized String com.\+dalogin.\+S\+Q\+L\+Access.\+new\+\_\+hash (\begin{DoxyParamCaption}\item[{String}]{pass,  }\item[{String}]{user,  }\item[{String}]{email,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Inserts user and password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pass} & \\
+\hline
+{\em user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 69 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_af8b3800dccdc19311562efdb7bc1564d}\label{classcom_1_1dalogin_1_1_s_q_l_access_af8b3800dccdc19311562efdb7bc1564d}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!print\+S\+Q\+L\+Exception@{print\+S\+Q\+L\+Exception}}
+\index{print\+S\+Q\+L\+Exception@{print\+S\+Q\+L\+Exception}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{print\+S\+Q\+L\+Exception()}{printSQLException()}}
+{\footnotesize\ttfamily static void com.\+dalogin.\+S\+Q\+L\+Access.\+print\+S\+Q\+L\+Exception (\begin{DoxyParamCaption}\item[{S\+Q\+L\+Exception}]{ex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Prints S\+QL errors in catalina.\+out.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 784 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a4d094b31a83bdfb9628975fc81c2f7da}\label{classcom_1_1dalogin_1_1_s_q_l_access_a4d094b31a83bdfb9628975fc81c2f7da}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!register\+\_\+voucher@{register\+\_\+voucher}}
+\index{register\+\_\+voucher@{register\+\_\+voucher}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{register\+\_\+voucher()}{register\_voucher()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+register\+\_\+voucher (\begin{DoxyParamCaption}\item[{String}]{voucher\+\_\+,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates (finalizes) the voucher state during the last step of registration process.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voucher} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 444 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ac4363153109eee19fab9866da32a6506}\label{classcom_1_1dalogin_1_1_s_q_l_access_ac4363153109eee19fab9866da32a6506}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!reset\+\_\+voucher@{reset\+\_\+voucher}}
+\index{reset\+\_\+voucher@{reset\+\_\+voucher}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{reset\+\_\+voucher()}{reset\_voucher()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+reset\+\_\+voucher (\begin{DoxyParamCaption}\item[{String}]{voucher,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Resets the voucher to the first enum state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voucher} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 408 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 22
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ade5ec7d23b3cc42804c39af135eb1551}\label{classcom_1_1dalogin_1_1_s_q_l_access_ade5ec7d23b3cc42804c39af135eb1551}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!session\+Id@{session\+Id}}
+\index{session\+Id@{session\+Id}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{session\+Id()}{sessionId()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+session\+Id (\begin{DoxyParamCaption}\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+It does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 126 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_a99e9cb8ca2d123adec597e0b4cd063f7}\label{classcom_1_1dalogin_1_1_s_q_l_access_a99e9cb8ca2d123adec597e0b4cd063f7}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!token@{token}}
+\index{token@{token}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{token()}{token()}}
+{\footnotesize\ttfamily static synchronized String com.\+dalogin.\+S\+Q\+L\+Access.\+token (\begin{DoxyParamCaption}\item[{String}]{device\+Id,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Get token1 for current device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+token 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 596 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 25
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_aefba2c4140aa1a1f287c44aaedcad345}\label{classcom_1_1dalogin_1_1_s_q_l_access_aefba2c4140aa1a1f287c44aaedcad345}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!token2@{token2}}
+\index{token2@{token2}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{token2()}{token2()}}
+{\footnotesize\ttfamily static synchronized String com.\+dalogin.\+S\+Q\+L\+Access.\+token2 (\begin{DoxyParamCaption}\item[{String}]{device\+Id,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Get token2 for current device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+token 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 637 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 26
+Here is the caller graph for this function\+:
+% FIG 27
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_aacb151b38bdb068523f10a75a2069149}\label{classcom_1_1dalogin_1_1_s_q_l_access_aacb151b38bdb068523f10a75a2069149}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!uu\+Id@{uu\+Id}}
+\index{uu\+Id@{uu\+Id}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{uu\+Id()}{uuId()}}
+{\footnotesize\ttfamily synchronized static final U\+U\+ID com.\+dalogin.\+S\+Q\+L\+Access.\+uu\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 44 of file S\+Q\+L\+Access.\+java.
+
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ace6682e8e095aa1d589a181c3ec37cb0}\label{classcom_1_1dalogin_1_1_s_q_l_access_ace6682e8e095aa1d589a181c3ec37cb0}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!voucher@{voucher}}
+\index{voucher@{voucher}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{voucher()}{voucher()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+S\+Q\+L\+Access.\+voucher (\begin{DoxyParamCaption}\item[{String}]{voucher\+\_\+,  }\item[{Servlet\+Context}]{context }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+First checks the voucher state, and depending on the state of the voucher a \begin{DoxyReturn}{Returns}
+will be set. It returns always true, if the voucher is available.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em voucher\+\_\+} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 171 of file S\+Q\+L\+Access.\+java.
+
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ae23b949fc74966a8c7dd9e3a888b76c0}\label{classcom_1_1dalogin_1_1_s_q_l_access_ae23b949fc74966a8c7dd9e3a888b76c0}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!hash@{hash}}
+\index{hash@{hash}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{hash}{hash}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+S\+Q\+L\+Access.\+hash\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 33 of file S\+Q\+L\+Access.\+java.
+
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1_s_q_l_access_ac34e9644bffccef034598dd30c5f6d80}\label{classcom_1_1dalogin_1_1_s_q_l_access_ac34e9644bffccef034598dd30c5f6d80}} 
+\index{com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}!token@{token}}
+\index{token@{token}!com\+::dalogin\+::\+S\+Q\+L\+Access@{com\+::dalogin\+::\+S\+Q\+L\+Access}}
+\subsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily volatile String com.\+dalogin.\+S\+Q\+L\+Access.\+token\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 34 of file S\+Q\+L\+Access.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/\hyperlink{_s_q_l_access_8java}{S\+Q\+L\+Access.\+java}\end{DoxyCompactItemize}

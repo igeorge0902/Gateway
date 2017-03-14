@@ -1,0 +1,40 @@
+\hypertarget{classcom_1_1dalogin_1_1utils_1_1_send_html_email}{}\section{com.\+dalogin.\+utils.\+Send\+Html\+Email Class Reference}
+\label{classcom_1_1dalogin_1_1utils_1_1_send_html_email}\index{com.\+dalogin.\+utils.\+Send\+Html\+Email@{com.\+dalogin.\+utils.\+Send\+Html\+Email}}
+
+
+Collaboration diagram for com.\+dalogin.\+utils.\+Send\+Html\+Email\+:
+% FIG 0
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized boolean \hyperlink{classcom_1_1dalogin_1_1utils_1_1_send_html_email_a76be7765874e35afe159baef34fdccc9}{generate\+And\+Send\+Email} (String email, String url)  throws Address\+Exception, Messaging\+Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Send\+Html\+Email.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1dalogin_1_1utils_1_1_send_html_email_a76be7765874e35afe159baef34fdccc9}\label{classcom_1_1dalogin_1_1utils_1_1_send_html_email_a76be7765874e35afe159baef34fdccc9}} 
+\index{com\+::dalogin\+::utils\+::\+Send\+Html\+Email@{com\+::dalogin\+::utils\+::\+Send\+Html\+Email}!generate\+And\+Send\+Email@{generate\+And\+Send\+Email}}
+\index{generate\+And\+Send\+Email@{generate\+And\+Send\+Email}!com\+::dalogin\+::utils\+::\+Send\+Html\+Email@{com\+::dalogin\+::utils\+::\+Send\+Html\+Email}}
+\subsubsection{\texorpdfstring{generate\+And\+Send\+Email()}{generateAndSendEmail()}}
+{\footnotesize\ttfamily static synchronized boolean com.\+dalogin.\+utils.\+Send\+Html\+Email.\+generate\+And\+Send\+Email (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{url }\end{DoxyParamCaption}) throws Address\+Exception, Messaging\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 24 of file Send\+Html\+Email.\+java.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dalogin/src/main/java/com/dalogin/utils/\hyperlink{_send_html_email_8java}{Send\+Html\+Email.\+java}\end{DoxyCompactItemize}
