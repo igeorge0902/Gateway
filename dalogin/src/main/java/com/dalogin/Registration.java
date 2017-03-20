@@ -273,6 +273,7 @@ public class Registration extends HttpServlet implements Serializable {
 				    .append(serverName).append(servletContext).append("/activation")
 				    .append("?").append("activation=").append(aesUtil.encrypt(SALT, IV, activationToken, activationData));
 				    
+				    //TODO: start it in a new thread
 				    SendHtmlEmail.generateAndSendEmail(email, url.toString());
 					
 				}
@@ -295,7 +296,7 @@ public class Registration extends HttpServlet implements Serializable {
 
 						log.info("User delete(reset) FAILED for voucher:" + voucher + "!");
 
-						throw new ServletException();
+						throw new ServletException(e1.getCause().toString());
 						
 							}
 
@@ -333,7 +334,7 @@ public class Registration extends HttpServlet implements Serializable {
 						out.flush();
 						
 						} catch (Exception e) {
-							throw new ServletException();
+							throw new ServletException(e.getCause().toString());
 						}
 						
 						// mobile webview
@@ -363,7 +364,7 @@ public class Registration extends HttpServlet implements Serializable {
 
 								
 							} catch (Exception e) {
-								throw new ServletException();
+								throw new ServletException(e.getCause().toString());
 							}
 						
 						} 
@@ -394,7 +395,7 @@ public class Registration extends HttpServlet implements Serializable {
 								out.flush();
 								
 							} catch (Exception e) {
-								throw new ServletException();
+								throw new ServletException(e.getCause().toString());
 							}		
 						}
 					
@@ -414,7 +415,7 @@ public class Registration extends HttpServlet implements Serializable {
 	           } else {
 
 	        	   // hmac error
-	        	   throw new ServletException();
+	        	   throw new ServletException("Error in registration!");
 	           }
 		
 		} catch (Exception e) {
@@ -429,7 +430,7 @@ public class Registration extends HttpServlet implements Serializable {
 
 				log.info("Voucher reset FAILED for vouchet:" + voucher + "!");
 
-				throw new ServletException();
+				throw new ServletException(e1.getCause().toString());
 				
 					}
 		
@@ -448,7 +449,7 @@ public class Registration extends HttpServlet implements Serializable {
 
 				log.info("Voucher reset FAILED for vouchet:" + voucher + "!");
 
-				throw new ServletException();
+				throw new ServletException(e1.getCause().toString());
 				
 				}
 			

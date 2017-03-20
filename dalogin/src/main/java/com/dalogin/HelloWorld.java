@@ -105,12 +105,12 @@ public class HelloWorld extends HttpServlet implements Serializable {
         try {
         	
         	// hmac is not encrypted, just the password inside
-        	hmac = request.getHeader("X-HMAC-HASH");
+        	hmac = request.getHeader("X-HMAC-HASH").trim();
         	contentLength = request.getHeader("Content-Length");
-        	time = request.getHeader("X-MICRO-TIME");
-    		pass = request.getParameter("pswrd");	
-    		user = request.getParameter("user");	
-    		deviceId = request.getParameter("deviceId");
+        	time = request.getHeader("X-MICRO-TIME").trim();
+    		pass = request.getParameter("pswrd").trim();	
+    		user = request.getParameter("user").trim();	
+    		deviceId = request.getParameter("deviceId").trim();
     		ios = request.getParameter("ios");
     		WebView = request.getHeader("User-Agent");
     		M = request.getHeader("M");
@@ -135,12 +135,12 @@ public class HelloWorld extends HttpServlet implements Serializable {
             	
             }
             
-			hash1 = SQLAccess.hash(pass, context);
+			hash1 = SQLAccess.hash(pass, user, context);
 			devices = SQLAccess.insert_device(deviceId, user, context);
 		
 		} catch (Exception e) {
 			
-			throw new ServletException();
+			throw new ServletException(e.getCause().toString());
 
 		}
         	/*
@@ -182,7 +182,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 				try {
 					SQLAccess.insert_sessionCreated(deviceId, SessionCreated, sessionID, context);
 				} catch (Exception e) {	
-					throw new ServletException();
+					throw new ServletException(e.getCause().toString());
 				}
 
 				//setting session to expiry in 30 mins
@@ -221,7 +221,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						
 						} catch (Exception e) {
 							
-							throw new ServletException();
+							throw new ServletException(e.getCause().toString());
 							
 						}
 						
@@ -255,7 +255,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								
 							} catch (Exception e) {
 								
-								throw new ServletException();
+								throw new ServletException(e.getCause().toString());
 								
 							}
 						
@@ -290,7 +290,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								
 							} catch (Exception e) {
 								
-								throw new ServletException();
+								throw new ServletException(e.getCause().toString());
 								
 							}
 

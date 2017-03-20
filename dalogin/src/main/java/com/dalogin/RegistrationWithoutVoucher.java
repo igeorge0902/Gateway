@@ -276,7 +276,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 					out.flush();
 					
 					} catch (Exception e) {
-						throw new ServletException();
+						throw new ServletException(e.getCause().toString());
 				}
 				
 				// mobile webview
@@ -309,7 +309,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 
 						
 					} catch (Exception e) {
-						throw new ServletException();
+						throw new ServletException(e.getCause().toString());
 					}
 				
 				} 
@@ -345,7 +345,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 						
 					} catch (Exception e) {
 						
-						throw new ServletException();
+						throw new ServletException(e.getCause().toString());
 						
 					}		
 				}
@@ -370,7 +370,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 	
 	  						log.info("User delete(reset) FAILED for voucher:" + voucher + "!");
 	
-	  						throw new ServletException();
+	  						throw new ServletException(e1.getCause().toString());
 	  						
 	  							}
 	
@@ -411,7 +411,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 
 					log.info("Voucher reset FAILED for vouchet:" + voucher + "!");
 
-					throw new ServletException();
+					throw new ServletException(e1.getCause().toString());
 					
 						}
 			
@@ -430,7 +430,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 
 					log.info("Voucher reset FAILED for vouchet:" + voucher + "!");
 
-					throw new ServletException();
+					throw new ServletException(e1.getCause().toString());
 					
 					}
 				

@@ -105,6 +105,16 @@ myAppControllers.controller('GetUser', ['$scope', 'userApi', function ($scope, u
         $scope.errorMessage = '';
         $scope.successMessage = '';
     // $scope.refreshUser = refreshUser;
+        
+        var keySize = 128;
+        var iterationCount = 1000;
+        var plaintext = "G";
+        var passphrase = "SP"
+        var iv = "F27D5C9927726BCEFE7510B1BDD3D137";
+        var salt = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
+        
+        var aesUtil = new AesUtil(keySize, iterationCount);
+        var text = aesUtil.encrypt(salt,iv,passphrase,plaintext);
    
         userApi.getUser()
             .success(function (data, status, headers) {
@@ -124,7 +134,7 @@ myAppControllers.controller('GetUser', ['$scope', 'userApi', function ($scope, u
                 // This section uses the directives.js to display the modal in index.jsp. This modal doesn't use controller.
                 $scope.showModal = true;
                 $scope.toggleModal = function () {
-                    $scope.showModal = !$scope.showModal;
+                $scope.showModal = !$scope.showModal;
                 };
             });
     }

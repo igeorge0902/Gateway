@@ -160,6 +160,30 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
         <servlet-name>RegActivation</servlet-name>
         <url-pattern>/activation</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ChangePassword</servlet-name>
+        <servlet-class>com.dalogin.ChangePassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePassword</servlet-name>
+        <url-pattern>/forgotPSw</url-pattern>
+    </servlet-mapping>
+       <servlet>
+        <servlet-name>ChangePasswordCode</servlet-name>
+        <servlet-class>com.dalogin.ChangePasswordCode</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordCode</servlet-name>
+        <url-pattern>/forgotPSwCode</url-pattern>
+    </servlet-mapping>   
+    <servlet>
+        <servlet-name>ChangePasswordNewPassword</servlet-name>
+        <servlet-class>com.dalogin.ChangePasswordNewPassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordNewPassword</servlet-name>
+        <url-pattern>/forgotPSwNewPSw</url-pattern>
+    </servlet-mapping>
     <description>MySQL Test App</description>
     <resource-ref>
         <description>DB Connection</description>

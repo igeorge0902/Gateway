@@ -50,6 +50,22 @@ public class SQLAccess {
 	/**
 	 * 
 	 */
+	public static volatile String forgot_psw_token;
+	/**
+	 * 
+	 */
+	public static volatile List<String> forgot_psw_confirmationCode;
+	/**
+	 * 
+	 */
+	public static volatile String forgotRequestToken;
+	/**
+	 * 
+	 */
+	public static volatile String forgotRequestTime;
+	/**
+	 * 
+	 */
 	private static volatile String email;
 	/**
 	 * 
@@ -163,6 +179,50 @@ public class SQLAccess {
 	
 		}
 			return "I";
+	}
+	
+	
+	/**
+	 */
+	public synchronized static boolean change_hash(String pass, String email, ServletContext context) throws Exception {
+		
+		// Setup the connection with the DB
+		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
+		
+		Reader readerP = null;
+		Reader readerE = null;
+		
+		try {
+
+		connect = dbManager.getConnection();
+				
+			InputStream ps = IOUtils.toInputStream(pass, "UTF-8");
+		    readerP = new BufferedReader(new InputStreamReader(ps));
+		    
+			InputStream es = IOUtils.toInputStream(email, "UTF-8");
+		    readerE = new BufferedReader(new InputStreamReader(es));
+    
+			callableStatement = connect.prepareCall("{call `update_password`(?, ?)}");
+			callableStatement.setCharacterStream(1, readerP);
+			callableStatement.setCharacterStream(2, readerE);
+			
+			callableStatement.executeUpdate();
+			callableStatement.closeOnCompletion();
+	
+			} catch (SQLException ex) {
+				SQLAccess.printSQLException(ex);
+					
+				return false;
+					
+				} finally {		
+					
+			readerP.close();
+			readerE.close();
+					
+			dbManager.closeConnection();
+	
+		}
+			return true;
 	}
 	
 	
@@ -670,7 +730,6 @@ public class SQLAccess {
 			InputStream in_ = IOUtils.toInputStream(voucher, "UTF-8");
 		    Reader reader_ = new BufferedReader(new InputStreamReader(in_));
 		    
-		    connect.setCatalog("login");
 			callableStatement = connect.prepareCall("{call `register_voucher`(?)}");
 
 			callableStatement.setCharacterStream(1, reader_);
@@ -705,8 +764,10 @@ public class SQLAccess {
 	 * @return hash
 	 * @throws Exception
 	 */
-	public synchronized static String hash(String pass, ServletContext context) throws Exception {
+	public synchronized static String hash(String pass, String user, ServletContext context) throws Exception {
 
+		hash = "";
+		
 		// Setup the connection with the DB
 		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
 		
@@ -716,16 +777,89 @@ public class SQLAccess {
 			InputStream in = IOUtils.toInputStream(pass, "UTF-8");
 		    Reader reader = new BufferedReader(new InputStreamReader(in));
 		    
-			callableStatement = connect.prepareCall("{call `get_hash`(?)}");
+		    InputStream in_ = IOUtils.toInputStream(user, "UTF-8");
+		    Reader reader_ = new BufferedReader(new InputStreamReader(in_));
+		    
+			callableStatement = connect.prepareCall("{call `get_hash`(?, ?)}");
 
 			callableStatement.setCharacterStream(1, reader);
+			callableStatement.setCharacterStream(2, reader_);
 							
+			ResultSet rs = callableStatement.executeQuery();
+			callableStatement.closeOnCompletion();
+			reader.close();
+			reader_.close();
+			
+			while (rs.next()) {
+				
+				hash =rs.getString(1);
+			}
+			
+		} catch (SQLException ex) {
+		      SQLAccess.printSQLException(ex);
+		      
+		} finally {
+			
+			dbManager.closeConnection();
+
+		}
+		return hash;
+	}
+	
+	
+	/**
+	 * Returns a forgotRequestToken for the requester or an error message, if the email is not registered for any user.
+	 * 
+	 * @param email
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
+	public synchronized static String forgot_psw_token(String email_, long time, ServletContext context) throws Exception {
+
+		// Setup the connection with the DB
+		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
+		
+		forgot_psw_token = "ILT";
+		
+		try {
+    		connect = dbManager.getConnection();
+								
+			InputStream in = IOUtils.toInputStream(email_, "UTF-8");
+		    Reader reader = new BufferedReader(new InputStreamReader(in));
+		    
+			callableStatement = connect.prepareCall("{call `find_email`(?)}");
+
+			callableStatement.setCharacterStream(1, reader);
+
 			ResultSet rs = callableStatement.executeQuery();
 			callableStatement.closeOnCompletion();
 			reader.close();
 			while (rs.next()) {
 				
-				hash =rs.getString(1);
+				email =rs.getString(1);
+				rs.close();
+				
+				if (email.equals(email_)) {
+					
+			InputStream in_ = IOUtils.toInputStream(email, "UTF-8");
+		    Reader reader_ = new BufferedReader(new InputStreamReader(in_));
+		    
+			callableStatement = connect.prepareCall("{call `forgot_password`(?, ?)}");
+
+			callableStatement.setCharacterStream(1, reader_);
+			callableStatement.setLong(2, time);
+							
+			rs = callableStatement.executeQuery();
+			while (rs.next()) {
+				
+				forgot_psw_token =rs.getString(1);
+			}
+			
+			callableStatement.closeOnCompletion();
+			reader.close();
+	
+				} 
 			}
 			
 		} catch (SQLException ex) {
@@ -736,7 +870,54 @@ public class SQLAccess {
 			dbManager.closeConnection();
 
 		}
-		return hash;
+		return forgot_psw_token;
+	}
+	
+	/**
+	 * Returns the email which requested the password reset.
+	 * 
+	 * @param email_
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
+	public synchronized static List<String> forgot_psw_confirmationCode(String email_, ServletContext context) throws Exception {
+
+		forgot_psw_confirmationCode = new ArrayList<String>();
+		
+		// Setup the connection with the DB
+		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
+				
+		try {
+    		connect = dbManager.getConnection();
+								
+			InputStream in = IOUtils.toInputStream(email_, "UTF-8");
+		    Reader reader = new BufferedReader(new InputStreamReader(in));
+		    
+			callableStatement = connect.prepareCall("{call `find_email2`(?)}");
+
+			callableStatement.setCharacterStream(1, reader);
+
+			ResultSet rs = callableStatement.executeQuery();
+			callableStatement.closeOnCompletion();
+			reader.close();
+			while (rs.next()) {
+				
+				forgotRequestToken =rs.getString(1);
+				forgotRequestTime = rs.getString(2);
+				forgot_psw_confirmationCode.add(0, forgotRequestToken);
+				forgot_psw_confirmationCode.add(1, forgotRequestTime);
+			}
+			
+		} catch (SQLException ex) {
+		      SQLAccess.printSQLException(ex);
+
+		} finally {
+			
+			dbManager.closeConnection();
+
+		}
+		return forgot_psw_confirmationCode;
 	}
 	
 	/**

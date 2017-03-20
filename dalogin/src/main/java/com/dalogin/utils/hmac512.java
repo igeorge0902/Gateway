@@ -3,6 +3,7 @@ package com.dalogin.utils;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.log4j.Logger;
 
 public class hmac512 {
 	
@@ -28,8 +29,18 @@ public class hmac512 {
 	
 	/**
 	 * 
-	 * The method parameters will form a string that will be hashed to match against what was received.
-	 * TODO: content length and more constants has to be added yet.
+	 */
+	private static volatile String hashed_email;
+	
+	/**
+	 * 
+	 */
+	private static volatile String hashed_code;
+	
+	private static Logger log = Logger.getLogger(Logger.class.getName());
+	
+	/**
+	 * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received from the request.
 	 * 
 	 * @param user
 	 * @param pswrd
@@ -57,7 +68,7 @@ public class hmac512 {
     	}
     
     	catch (Exception e){
-    		System.out.println("1 Error");
+    		log.error("1 Error");
     	}
     
     return hmachHash;
@@ -66,8 +77,7 @@ public class hmac512 {
 	
 	
 	/**
-	 * The method parameters will form a string that will be hashed to match against what was received.
-	 * TODO: content length and more constants has to be added yet.
+	 * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received.
 	 * 
 	 * @param user
 	 * @param email
@@ -97,7 +107,7 @@ public class hmac512 {
     	}
     
     	catch (Exception e){
-    		System.out.println("1 Error");
+    		log.error("1 Error");
     	}
     
     return hmachHash;
@@ -106,7 +116,7 @@ public class hmac512 {
 	
 	
 	/**
-	 * 
+	 * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received.
 	 * 
 	 * @param user
 	 * @param email
@@ -135,7 +145,118 @@ public class hmac512 {
     	}
     
     	catch (Exception e){
-    		System.out.println("1 Error");
+    		log.error("1 Error");
+    	}
+    
+    return hmachHash;
+    
+   }
+	
+	
+	/**
+	 * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received.
+	 * 
+	 * @param email
+	 * @param deviceId
+	 * @param time
+	 * @param contentLength
+	 * @return
+	 */
+    public static String getEmail_ForgetPSW_Hmac512(String email, String deviceId, String time, String contentLength) {
+		  
+    	hashed_email = sha512.string_hash(email); 
+    	secret_ = hmacSecret(email, hashed_email); 
+
+    try {
+    	//TODO: match full URL with hostname (absolute path), 
+    	// and more generated constants, like the url that we'll use for hash only
+	    message_ = "/login/forgotPSw:email="+email+"&deviceId="+deviceId+":"+time+":"+contentLength;
+
+     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
+     sha256_HMAC.init(secret_key);
+
+//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+
+    	}
+    
+    	catch (Exception e){
+    		log.error("1 Error");
+    	}
+    
+    return hmachHash;
+    
+   }
+    
+    /**
+     * 
+     * @param email
+     * @param code
+     * @param deviceId
+     * @param time
+     * @param contentLength
+     * @return
+     */
+    public static String getCode_ForgetPSW_Hmac512(String email, String code, String deviceId, String time, String contentLength) {
+		  
+    	hashed_code = sha512.string_hash(code); 
+    	secret_ = hmacSecret(email, hashed_code); 
+
+    try {
+    	//TODO: match full URL with hostname (absolute path), 
+    	// and more generated constants, like the url that we'll use for hash only
+	    message_ = "/login/forgotPSwCode:email="+email+"&cC="+hashed_code+"&deviceId="+deviceId+":"+time+":"+contentLength;
+
+     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
+     sha256_HMAC.init(secret_key);
+
+//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+
+    	}
+    
+    	catch (Exception e){
+    		log.error("1 Error");
+    	}
+    
+    return hmachHash;
+    
+   }
+    
+    /**
+     * 
+     * 
+     * @param email
+     * @param pass
+     * @param code
+     * @param deviceId
+     * @param time
+     * @param contentLength
+     * @return
+     */
+    public static String getPass_ForgetPSW_Hmac512(String email, String pass, String code, String deviceId, String time, String contentLength) {
+		  
+    	//hashed_code = sha512.string_hash(code); 
+    	secret_ = hmacSecret(email, pass); 
+
+    try {
+    	//TODO: match full URL with hostname (absolute path), 
+    	// and more generated constants, like the url that we'll use for hash only
+	    message_ = "/login/forgotPSwNewPSw:email="+email+"&cC="+code+"&pass="+pass+"&deviceId="+deviceId+":"+time+":"+contentLength;
+
+     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
+     sha256_HMAC.init(secret_key);
+
+//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+
+    	}
+    
+    	catch (Exception e){
+    		log.error("1 Error");
     	}
     
     return hmachHash;
@@ -143,12 +264,13 @@ public class hmac512 {
    }
 	
 	/**
+	 * Generate hmacSecret as payload for hmac512 hash.
 	 * 
 	 * @param message
 	 * @param secret
 	 * @return
 	 */
-	  private static String hmacSecret(String message, String secret) {
+	 private static String hmacSecret(String message, String secret) {
 		  
 		    try {
 
@@ -162,7 +284,7 @@ public class hmac512 {
 		     
 		    }
 		    catch (Exception e){
-		     System.out.println("2 Error");
+	    		log.error(e.getCause().toString());
 		    }
 		    
 		    return strEncoded;

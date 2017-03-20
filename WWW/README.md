@@ -32,8 +32,20 @@ When the user initiates a login or registration through the WWW app, the outgoin
 - the WWW app is split into two parts due to the fact that I have implemented the requesr header transformation in 1.3.x version of angular js, and Google changed the implementation for versions above 1.3.x, but I plan to upgrade it to newer version when I'll time for it!
 - the js/AesUtil.js works with at least Angular Js 1.4.x
 
-# Usage of the Aesutil
+# Usage of the AesUtil
 - with the same identical setup it is interoperable with the Java and Swift implementation:
+
+## Initialize the AesUtil
+- load the following js libraries to use the AesUtil (tested against Java and Swift implementation, with the same configuration):
+
+```javascript
+    <script type="text/javascript" src="js/lib/aes.js"></script>
+    <script type="text/javascript" src="js/lib/pbkdf2.js"></script>
+    <script type="text/javascript" src="js/AesUtil.js"></script>
+```
+
+## Known Issues
+- I have been struggling to get it work with other Crypto JS libraries like sha3.js and hmac512.js.
 
 @Swift:
 - Gateway/iOS/SwiftLoginScreen/ciphertext.swift
