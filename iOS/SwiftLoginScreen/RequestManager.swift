@@ -52,7 +52,11 @@ class RequestManager: NSObject {
     
     func dataTask(_ onCompletion: @escaping ServiceResponses) {
        
-        let xtoken = prefs.value(forKey: "X-Token")
+        var xtoken = prefs.value(forKey: "X-Token")
+        
+        if xtoken == nil {
+            xtoken = ""
+        }
         
         let request = URLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20)
         
@@ -90,46 +94,27 @@ class RequestManager: NSObject {
             if error != nil {
                 
                 if let httpResponse = response as? HTTPURLResponse {
-            
-                if httpResponse.statusCode == 300 {
                     
-                    let jsonData:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
+                    if httpResponse.statusCode == 300 {
                         
-                        JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
-                    
-                     guard let message = jsonData.value(forKey: "Error Details"),
-                     let activation = (message as AnyObject).value(forKey: "Activation") else { return }
-                    
-                    self.prefs.setValue(activation, forKey: "Activation")
-                    self.prefs.set(1, forKey: "ISWEBLOGGEDIN")
-                    
-  
-                    
-  
-                    
-                    
-                    let alertController = UIAlertController(title: "<your title>", message: "<your message>", preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: nil))
-                    
-                    let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-                    alertWindow.rootViewController = UIViewController()
-                    alertWindow.windowLevel = UIWindowLevelAlert + 1;
-                    alertWindow.makeKeyAndVisible()
-                    alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
-                    
-                } else {
-                    
-                    let alertView:UIAlertView = UIAlertView()
-                    
-                    alertView.title = self.errors
-                    alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
-                    
+                        let jsonData:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
+                            
+                            JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
+                        
+                        guard let message = jsonData.value(forKey: "Error Details"),
+                            let activation = (message as AnyObject).value(forKey: "Activation") else { return }
+                        
+                        self.prefs.setValue(activation, forKey: "Activation")
+                        self.prefs.set(1, forKey: "ISWEBLOGGEDIN")
+                        
+                        _ = UIAlertController.popUp(title: "Warning", message: "Your account is not activated yet: \(message)")
+                        
+                    } else {
+                        
+                        _ = UIAlertController.popUp(title: self.errors, message: "Connection Failure: \(error!.localizedDescription)")
                     }
                 }
-
+                
             }
 
             else {
@@ -174,7 +159,7 @@ class RequestManager: NSObject {
                     } else {
                         
                         alertView.title = "Hmmm..."
-                        alertView.message = "Something went wrong... \(json["user"].error?.localizedDescription)" as String
+                        alertView.message = "Something went wrong... "
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()

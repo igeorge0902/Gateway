@@ -122,13 +122,9 @@ class GeneralRequestManager: NSObject {
             
             if error != nil {
                 
-                let alertView:UIAlertView = UIAlertView()
+                let json:JSON = JSON(data: data!)
                 
-                alertView.title = self.errors
-                alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                alertView.delegate = self
-                alertView.addButton(withTitle: "OK")
-                alertView.show()
+                _ = UIAlertController.popUp(title: "Error:", message: error!.localizedDescription + ", " + json.rawString()!)
                 
                 
             }
@@ -143,7 +139,15 @@ class GeneralRequestManager: NSObject {
                 
                 let json:JSON = JSON(data: data!)
                 
-                //self.saveCachedResponse(data!)
+                if json["movies"].object is NSArray {
+                    
+                    NSLog("movies are loaded...")
+                    
+                } else {
+                    
+                    _ = UIAlertController.popUp(title: "Hello!", message: json.rawString()!)
+                    
+                }
                 
                 NSLog("got a 200")
                 
@@ -224,6 +228,22 @@ class GeneralRequestManager: NSObject {
         }
         
         return nil
+    }
+    
+}
+
+extension UIAlertController {
+    
+    static func popUp(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
     }
     
 }

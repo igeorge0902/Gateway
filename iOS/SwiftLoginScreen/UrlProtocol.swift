@@ -57,73 +57,99 @@ class MyURLProtocol: URLProtocol {
             NSLog("AFNetwork is reachable...")
             
             // 1
-        let possibleCachedResponse = self.cachedResponseForCurrentRequest()
-        
-        if let cachedResponse = possibleCachedResponse {
-
-            // 2
-            let data = cachedResponse.value(forKey: "data") as! Data
-            let mimeType = cachedResponse.value(forKey: "mimeType") as! String
-            let encoding = cachedResponse.value(forKey: "encoding") as? String?
+            let possibleCachedResponse = self.cachedResponseForCurrentRequest()
             
-            // 3
-            let response = URLResponse(url: self.request.url!, mimeType: mimeType, expectedContentLength: data.count, textEncodingName: encoding!)
-            
-            // 4
-            self.client!.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            self.client!.urlProtocol(self, didLoad: data)
-            self.client!.urlProtocolDidFinishLoading(self)
-            
-            
-        
-        } else {
-            
-            // 5
-           // NSLog("Serving response from NSURLConnection url == %@", self.request.URL!.absoluteString)
-            
-            
-            if request.url!.relativePath == "/login/HelloWorld" {
+            if let cachedResponse = possibleCachedResponse {
                 
-                newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
-                URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
-                /* We set the headerfield and value that the Apache webserver will accept */
-  
-                let ciphertext = cipherText!.getCipherText(deviceId)
-                newRequest.setValue(ciphertext, forHTTPHeaderField: "M-Device")
+                NSLog("Serving response from Cache. url == %@", self.request.url!.absoluteString)
                 
-                newRequest.setValue("M", forHTTPHeaderField: "M")
-                self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
+                // 2
+                let data = cachedResponse.value(forKey: "data") as! Data
+                let mimeType = cachedResponse.value(forKey: "mimeType") as! String
+                let encoding = cachedResponse.value(forKey: "encoding") as? String?
                 
-            }
-            
-            if request.url!.relativePath != "/example/tabularasa.jsp" && request.url!.relativePath != "/login/HelloWorld"{
-             
-            newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
-            URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
-            /* We set the headerfield and value that the Apache webserver will accept */
-            
-            newRequest.setValue("M", forHTTPHeaderField: "M")
-            self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
+                // 3
+                let response = URLResponse(url: self.request.url!, mimeType: mimeType, expectedContentLength: data.count, textEncodingName: encoding!)
                 
+                // 4
+                self.client!.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+                self.client!.urlProtocol(self, didLoad: data)
+                self.client!.urlProtocolDidFinishLoading(self)
+                
+                
+                
+            } else {
+                
+                // 5
+                NSLog("Serving response from NSURLConnection. url == %@", self.request.url!.absoluteString)
+                
+                
+                if request.url!.relativePath == "/login/HelloWorld" {
+                    
+                    newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+                    URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
+                    /* We set the headerfield and value that the Apache webserver will accept */
+                    
+                    let ciphertext = cipherText!.getCipherText(deviceId)
+                    newRequest.setValue(ciphertext, forHTTPHeaderField: "M-Device")
+                    
+                    newRequest.setValue("M", forHTTPHeaderField: "M")
+                    self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
+                    
                 }
-            
+                
+                if request.url!.relativePath != "/example/tabularasa.jsp" && request.url!.relativePath != "/login/HelloWorld"{
+                    
+                    newRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+                    URLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey", in: newRequest)
+                    /* We set the headerfield and value that the Apache webserver will accept */
+                    
+                    newRequest.setValue("M", forHTTPHeaderField: "M")
+                    self.connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
+                    
+                }
+                
             }
-        
+            
         } else {
             
             NSLog("AFNetwork failed to respond......")
             
-            let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: nil, headerFields: nil)
+            // 1
+            let possibleCachedResponse = self.cachedResponseForCurrentRequest()
             
-            self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
+            if let cachedResponse = possibleCachedResponse {
+                
+                NSLog("Serving response from Cache. url == %@", self.request.url!.absoluteString)
+                
+                // 2
+                let data = cachedResponse.value(forKey: "data") as! Data
+                let mimeType = cachedResponse.value(forKey: "mimeType") as! String
+                let encoding = cachedResponse.value(forKey: "encoding") as? String?
+                
+                // 3
+                let response = URLResponse(url: self.request.url!, mimeType: mimeType, expectedContentLength: data.count, textEncodingName: encoding!)
+                
+                // 4
+                self.client!.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+                self.client!.urlProtocol(self, didLoad: data)
+                self.client!.urlProtocolDidFinishLoading(self)
+                
+            } else {
+                
+                let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: nil, headerFields: nil)
+                
+                self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
+                
+                self.client?.urlProtocolDidFinishLoading(self)
+                
+                var errorOnLogin:RequestManager?
+                
+                errorOnLogin = RequestManager(url: "https://milo.crabdance.com/login/HelloWorld", errors: "No internet connection!")
+                errorOnLogin!.getResponse { _ in }
+                
+            }
             
-            self.client?.urlProtocolDidFinishLoading(self)
-            
-            var errorOnLogin:RequestManager?
-            
-                    errorOnLogin = RequestManager(url: "https://milo.crabdance.com/login/HelloWorld", errors: "No internet connection!")
-                    errorOnLogin!.getResponse { _ in }
-                     
         }
     }
     
