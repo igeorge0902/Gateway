@@ -1,5 +1,7 @@
-# Gateway
+# iOS component for the Gateway
 General Authentication Service
+
+Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 # Swift
 - updated to Swift 3.0!;)
@@ -11,16 +13,17 @@ General Authentication Service
 - Check also the Other Linker Flags for consistency
 - Take care of the App Transport Security Exceptions: it needs to be set accordingly to run on https
 - If you use self-signed certs with the server, you must install your custom cerificate authority file onto your server and device/simulator  (You must use certificate authority format - I use it with Apache http server with mod_jk AJP connector on GlassFish or TomCat).
-- strictly follow the instructions at https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/ and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA). You will have two choices, however: either you import the CA on the server, or install it on the device.
+- strictly follow the instructions at [Using Self Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/) and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA). You will have two choices, however: either you import the CA on the server, or install it on the device.
 
 
-Update your hostnames in CustomURLSessionDelegate.swift file!
+Update your hostnames in CustomURLSessionDelegate.swift file, if you use hostname constrains with your URL Session delegate!
 ----
 
 
 Usefull links:
 ----
 Web Debugging tool for iOS, web:
-- https://www.charlesproxy.com/documentation/welcome/ (to use Charles you may need to modify your app transport security settings)
+- [Charles Web Proxy Debugging](https://www.charlesproxy.com/documentation/welcome/) - to use Charles you may need to modify your app transport security settings to allow traffic.
 - if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
 
+Copyright © 2015-2017 George Gaspar. All rights reserved.
