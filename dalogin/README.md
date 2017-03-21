@@ -11,7 +11,7 @@ igeorge1982@gmail.com
 Update
 ----
 - Password reset as of 2017.03.20.
-- For you password may notice a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
+- For the first step of the password reset may have noticed a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
 
 RoadMap
 ----
