@@ -1,6 +1,7 @@
-#General Authentication Service @George Gaspar
+#General Authentication Service
 (Release Candidate)
 
+Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 ##Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
 
@@ -9,8 +10,7 @@ igeorge1982@gmail.com
 
 Update
 ----
-- Registration is considered to be finished combined with voucher activation
-- native, mobile web &webView login, registration are considered to be complete (session object is going to be attached any time and request/response headers carry the necessary key/values to communicate with the server in specific occasions, over all the three platforms)
+- Password reset as of 2017.03.20.
 
 RoadMap
 ----
@@ -18,7 +18,7 @@ RoadMap
 [Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
 
 # New
-###WebSocket and rabbitMQ
+### WebSocket and rabbitMQ
 ----
 WebSocket is a full-duplex chanel for communication between client and server.
 - WebSocket connection servlet and rabbitMQ send / recieve classes are included. The corresponding sample html and js file is included in the WWW app. You have to use a different secure port number on your AS for the wss connection, otherwise all the common servlet and JKMount configuration apply. 
@@ -31,12 +31,10 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 Known issues (for most recent version see the update branch!):
 ----
 - if the properties.properties file is not copied up-front to its place under your Application Server directory, then unexpected behavior may occur. I still am working on it.
-- FIXED: I forgot to add the user parameter to the password check that causes user can login with any available password
-(FIX: the designated stored procedure needs to be extended with the user parameter, which also has to be passed to the corresponding method (SQLAccess.hash(pass, context) and line 114 in HelloWorld.class for example). If it is implemented correctly this method is goint to verify the incoming user with the password, altogether. Unique username must be maintained.)
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
-- On Windows using MySQL (which is the only tested dB) there is an issue that the deviceId will not be overwritten in the device_states table for the first time when user re-logs. If you delete the corresponding rows thereafter it shall work fine.
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
+
 - Please note you would like to report issues you may find so that I can fix that I might have missed.
 
 Donation
@@ -54,11 +52,11 @@ The iOS swift code contains both type of login method from the native app, where
 
 The complete service system consists of several parts, layers that makes it easy to alter or extend the functionalities. The scope of the project is to demonstrate how the whole system works, starting from a user registration, user login, user accessing restricted data through authenticated API call, logout, timeout, simultenous user logins on different platforms, device login state tracking for native mobile app.
 
-AES encryption - decryption is available across all platforms, except for Angular JS 1.3.x.
+AES encryption - decryption is available across all platforms. For client specific instructions see the [WWW](https://github.com/igeorge0902/Gateway/tree/update/WWW) readMe.
 
-The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms. The implemented behaviour is just an example as to how you are to send it, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client and can assign it the session object, too, but you would be best off by adding another column into the table where you store your tokens and you can place your cookie value string to the corresponding row identified by the deviceId. Then you wish to read this value for each API calls and match the value of this cookie sent by the request with the one you have on the server. Since you can define and use multiple datastore for a given JPA - Hibernate project, it's not a big deal to use this authentication and authorization for separate datastores. Don't forget to overwrite the cookie value string when the session gets invalidated.
+The server is also able verify the client's identity, as the most important thing to know is that who rings the bell on the door! :) For this purpose XSRF-TOKEN cookie is used on all platforms, which is generated on-the-fly with a data set that unanimously binds the client. The implemented behaviour is just an example as to how you are to send the cookie with the response, and there is no verification mechanism implemented because how it shall work for one has the utmost unique requirements. For example you may wish to store such informations in the cookie that comes with the initial request of the client and can assign it the session object, too, but you would be best off by adding another column into the table where you store your tokens and you can place your cookie value string to the corresponding row identified by the deviceId. Then you wish to read this value for each API calls and match the value of this cookie sent by the request with the one you have on the server. Since you can define and use multiple datastore for a given JPA - Hibernate project, it's not a big deal to use this authentication and authorization for separate datastores. Don't forget to overwrite the cookie value string when the session gets invalidated.
 
-For more information on how it works: [Angular’s XSRF: How It Works](https://stormpath.com/blog/angular-xsrf)
+For more information on how it works: [Angular’s XSRF: How It Works](https://stormpath.com/blog/angular-xsrf) The most important thing is the Angular JS has a built-in support for the XSRF-Token meaning that with such name the cookie will be automatically sent by sub-sequent requests.
 
 You can also add your own request / response filters to do the dirty job: 
 - [CSRF For Java Web Apps](https://dzone.com/articles/preventing-csrf-java-web-apps)
@@ -129,8 +127,21 @@ User has to provide the second key (token2) of tokens by a client request, which
 Important:
 ----
 - configure your links according to your environment setup (server, webApp, iOS)!
-- for the APIs make sure you place the 'hibernate-configuration-3.0.dtd' file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project - or alternatively you can obtain one from the internet [hibernate dtd](http://hibernate.org/dtd/) -, to the configuration folder of your As. The 'hibernate.cfg.xml' is configured to search for it locally. Please refer to the Hibernate configurations! If you happened to forget to put the dtd file into the right folder upon the first corresponding request an exception  will be thrown showing the path you must place the file to. 
-- make sure you will use your own application password for Google mail. The one is supplied in the SendHtmlEmail.java at line 56 is my revoked one. 
+- for the APIs make sure you place the 'hibernate-configuration-3.0.dtd' file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project - or alternatively you can obtain one from the internet [hibernate dtd](http://hibernate.org/dtd/) -, to the configuration folder of your As. The 'hibernate.cfg.xml' can be configured to search for it locally or publically. Please refer to the Hibernate configurations! If you happened to forget to put the dtd file into the right folder upon the first corresponding request an exception  will be thrown showing the path you must place the file to. 
+
+Public:
+```xml
+<<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+										 "hibernate-configuration-3.0.dtd">
+```
+
+Local:
+```xml
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+```
+
+- make sure you will use your own application password for mail sending. You can set up your configuration in the properties.properties file, now.
 - as of Apple requirements https is required for server connections and it will be enforced as of 1st Jan 2017. Read more about app transport security: 
 [What's new in iOS 9](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html), 
 [How to migrate to HTTPS using App Transport Security when developing iOS apps](http://www.techrepublic.com/google-amp/article/how-to-migrate-to-https-using-app-transport-security-when-developing-ios-apps/?client=safari)
@@ -144,10 +155,10 @@ The structure:
 - dB layer (MySQL 5.x)
 - (ORM) service model with Hibernate 5.x
 - Data Access Object layer
-- RESTful service methods that passes the DAO objects to the controller
-- RESTful controller layer to provide HTTP methods
-- TOMCAT 7 or GlassFish 4 servlet container as middleware component (Tomcat with crossContext enabled (required))
-- APACHE httpd 2.2 server with mod_jk connector to front TOMCAT or GlassFish with AJP (optional for load-balancing, otherwise you are supposed to use a webserver to properly access the header fields) 
+- service methods that passes the DAO objects to the controller
+- JAX-RS controller layer to provide HTTP methods
+- TOMCAT 7, GlassFish 4 or wildFly 10.x servlet container as middleware component (Tomcat with crossContext enabled (required))
+- APACHE httpd 2.2 server with mod_jk connector to front the application server with AJP (optional for load-balancing, otherwise you are supposed to use a webserver to properly access the header fields) -> alternatively you can use the Apache proxy modules, but I have not tested it.
 
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> [Using Self-Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
@@ -196,8 +207,7 @@ or
 # More information on security headers:
 [Hardening Your HTTP Security Headers](https://www.keycdn.com/blog/http-security-headers/)
 
-Sample cache and CORS settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
-- CORS settings have no effect in this project according the single domain environment.
+Sample cache and header settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
 
 ```xml
  <IfModule mod_headers.c>
@@ -241,14 +251,14 @@ Session handling:
 - the main config is set in the web.xml
 - AS dependent settings (TomCat, GlassFish, Wildfly) must be implemented separately, with which you also have the ability to scale the resources needed for your system (only Tomcat provides built-in session persistence if you make your session attributes serializable). Please read through carefully the official documentations when configuring the ways of your session management. Basically, you can have three main options: in-memory, file store and database session persistance.
 
-##Related links:
-######@TomCat
+## Related links:
+###### TomCat
 - [Persistence Across Restarts](http://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Persistence_Across_Restarts)
 
-######@GlassFish
+###### GlassFish
 - [Persistence Types on GlassFish](https://docs.oracle.com/cd/E18930_01/html/821-2418/beaha.html#beahh)
 
-######@WildFly
+###### WildFly
 - [Undertow subsystem configuration for wildFly 10.*](https://docs.jboss.org/author/display/WFLY10/Undertow+subsystem+configuration)
 - [Wildfly 8.2.0.Final Model Reference](https://wildscribe.github.io/Wildfly/8.2.0.Final/%2Fsubsystem%2Fundertow%2Fservlet-container%2Findex.html)
 
@@ -271,11 +281,11 @@ Notes on GlassFish
 Deploy description:
 ----
 - as for the server part can be deployed as it is, just take care of the web.xml. The current configuration shall work without modification.
-- as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only)
+- as for WWW platform deploy directly the angular js web app onto TOMCAT or GlassFish to your preferred context (Note: the AngularJS is the preferred and tested, only). If you use wildFly then you must deploy the application with Create an unmanaged deployment option. For wildFly see the [wildFly instructions](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly)
 - as for iOS build the project and you can use the registration/login service in native way or through webview, too. The registration without voucher is not implemented yet fully, but will work the same way as the login, just skip the related parts.
 
 
-The project contains the source code of the whole system in the dedicated branches.
+The project contains the source code of the whole system in the dedicated branch leaf.
 
 Import the project as Existing Maven project into your Java IDE (Eclipse) and run Maven Install.
 
@@ -284,17 +294,17 @@ If you just want to compile, and don't make a war, use the following command:
 > mvn dependency:copy-dependencies -Dmaven.test.skip=true compile
 
 
-- Run the dB scripts to create the dB schema necessary to operate.
+- Create your schema first if neccessary, the run the dB scripts to create the dB schema necessary to operate.
 - Create the dB user for the application
-- Check the web.xml if the configuration is correct, and every class is defined correctly
-- place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet and use it with the default configuration that needs web access. Please refer to the Hibernate configuration! 
+- Check the web.xml if the configuration for the dB connection is correct, and every class is defined correctly
+- place the hibernate-configuration-3.0.dtd file, found in dalogin (Gateway/dalogin/src/main/resources/) or API branch (Gateway/API/src/main/java/) of the project, to the configuration folder, which is the TOMCAT_BASE/bin or your GLASSFISH_DOMAIN/config, or alternatively you can obtain one from the internet, if you use local dtd access in your hibernate.cfg.xml. Please refer to the Hibernate configuration! 
 - Listeners are initialized with annotations, but you can change it back to use them directly using the web.xml (Please refer to the Java Http Servlet documentation for it)
-- Place the required log configuration file into the right class folder, and configure it for your needs!
-- Insert initial vouchers with activation flags set into the voucher_states table, if you want to have registration, or just put a username and a hashed password (with the same hashing algorithm that you selected in your client apps - if you had made any changes to the code base) into the logins table. 
-- Registration workflow is implemented with or without voucher activation, but servlets must be configured in the web.xml!
-- Unique username and email checking is not implemented yet fully, but the supplied API will perform the check
-- The servlet context also makes it available to check the active users with a designated API call  (There is one supplied I have used that will make good use of on GlassFish where there is no detaild active sessions list apart from Tomcat)
-- Remove the three unnecessary request overloads from the iOS app ("isCachable").
+- Place the required log configuration files into the right class folder, and configure it for your needs, if neccessary! This will be changed to be taken care of by the deployment.
+- Insert initial vouchers, with activation flags set, into the voucher_states table, if you want to have registration, or just put a username and a hashed password (with the same hashing algorithm that you selected in your client apps - if you had made any changes to the code base) into the logins table. 
+- Registration workflow is implemented with or without voucher and activation, but servlets and URI paths must be configured in the web.xml as to which one to use!
+- Unique username and email checking is done by the underlying dB, and the supplied API will perform the check, only, without enforcement.
+- The servlet context also makes it available to check the active users with a designated API call. You can found it in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/update/simple-service-webapp) 
+- Remove the three unnecessary request overloads from the iOS app ("isCachable"), if needed.
 
 After you have built and deployed all parts (web app, iOS) of the service, you have to be able to access the site and use the system. Start registration process and the login through WWW (mobile, too), native iOS and iOS webview from the app.
 
@@ -339,4 +349,6 @@ RoadMap:
 
 Note:
 ----
-Last update: 2017.02.10.
+Last update: 2017.03.21.
+
+Copyright © 2015-2017 George Gaspar. All rights reserved.
