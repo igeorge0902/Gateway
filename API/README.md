@@ -1,5 +1,8 @@
 RESTful API component for the Gateway project
 ----
+General Authentication Service
+
+Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 - standard JAX-RS implementation for TomCat, GlassFish and wildFly 
 - make sure you configure your container for servlets 3.0
@@ -10,8 +13,9 @@ RESTful API component for the Gateway project
 
 Features:
 ----
-- right now it is placed upon the Gateway dB, solely, only to access the login table for authentication (Please refer to AdminServlet.java class for usage. #Line 139)
-- aesUtil is ready to use, only config is necessary
+- provides authenticated access to the user's "profile"
+- aesUtil is ready to use, only config is necessary. For more info see it at [WWW](https://github.com/igeorge0902/Gateway/tree/update/WWW)
+- you may want to verify the XSRF-Token during the API calls, which is available after a successful login
 - ciphertext is to be verified upon user request
 - it's able to check if the new user, or email is used in system or not, but upon result no further action is enforced
 - direct dB modifications are instantly reflected due to session is always flushed before queries.
@@ -25,3 +29,5 @@ Useful links:
 ----
 Hibernate's C3P0ConnectionProvider settings
 - http://www.mchange.com/projects/c3p0/#hibernate-specific
+
+Copyright © 2015-2017 George Gaspar. All rights reserved.
