@@ -1,6 +1,8 @@
 WWW component for the Gateway
 ----
 
+Copyright © 2015-2017 George Gaspar. All rights reserved.
+
 # Deploy
 - You do not need to build anything, just deploy the app. For proper usage this web app must be served through the Application Server of your choose, and the Apache web server fronting the AS will handle the headers. For TomCat just place it inside the {TOMCAT_HOME}/webapps folder, for GlassFish deploy it as "Other" pointing to your web app directory, and it will create the application context. For wildFly see the instructions at [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly).
 
@@ -101,4 +103,4 @@ The hmac authentication was implemented by the following example:
 - https://github.com/Monofraps/angular-node-hmac-example
 - http://www.devblogrbmz.com/angular-default-request-headers-and-interceptors/
 
-Appology for the "place-holder" files!
+Copyright © 2015-2017 George Gaspar. All rights reserved.
