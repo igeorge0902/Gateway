@@ -48,6 +48,10 @@ public class hmac512 {
 	 * @param time
 	 * @param contentLength
 	 * @return
+	 * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
 	 */
 	public static String getLoginHmac512(String user, String pswrd, String deviceId, String time, String contentLength) {
 	  
@@ -58,12 +62,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/HelloWorld:user="+user+"&pswrd="+pswrd+"&deviceId="+deviceId+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -87,6 +91,10 @@ public class hmac512 {
 	 * @param time
 	 * @param contentLength
 	 * @return
+	 * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
 	 */
 	public static String getRegHmac512(String user, String email, String pswrd, String deviceId, String voucher, String time, String contentLength) {
 		  
@@ -97,12 +105,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/register:user="+user+"&email="+email+"&pswrd="+pswrd+"&deviceId="+deviceId+"&voucher_="+voucher+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -125,6 +133,10 @@ public class hmac512 {
 	 * @param time
 	 * @param contentLength
 	 * @return
+	 * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
 	 */
 	public static String getRegWithoutVoucherHmac512(String user, String email, String pswrd, String deviceId, String time, String contentLength) {
 		  
@@ -135,12 +147,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/register:user="+user+"&email="+email+"&pswrd="+pswrd+"&deviceId="+deviceId+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -161,6 +173,10 @@ public class hmac512 {
 	 * @param time
 	 * @param contentLength
 	 * @return
+	 * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
 	 */
     public static String getEmail_ForgetPSW_Hmac512(String email, String deviceId, String time, String contentLength) {
 		  
@@ -172,12 +188,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/forgotPSw:email="+email+"&deviceId="+deviceId+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -190,6 +206,7 @@ public class hmac512 {
    }
     
     /**
+     * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received.
      * 
      * @param email
      * @param code
@@ -197,6 +214,10 @@ public class hmac512 {
      * @param time
      * @param contentLength
      * @return
+     * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
      */
     public static String getCode_ForgetPSW_Hmac512(String email, String code, String deviceId, String time, String contentLength) {
 		  
@@ -208,12 +229,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/forgotPSwCode:email="+email+"&cC="+hashed_code+"&deviceId="+deviceId+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -226,7 +247,7 @@ public class hmac512 {
    }
     
     /**
-     * 
+     * Returns the final hmac string to validate the client request. The method parameters will form a string that will be hashed to match against what was received.
      * 
      * @param email
      * @param pass
@@ -235,6 +256,10 @@ public class hmac512 {
      * @param time
      * @param contentLength
      * @return
+     * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
      */
     public static String getPass_ForgetPSW_Hmac512(String email, String pass, String code, String deviceId, String time, String contentLength) {
 		  
@@ -246,12 +271,12 @@ public class hmac512 {
     	// and more generated constants, like the url that we'll use for hash only
 	    message_ = "/login/forgotPSwNewPSw:email="+email+"&cC="+code+"&pass="+pass+"&deviceId="+deviceId+":"+time+":"+contentLength;
 
-     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+     Mac HMAC = Mac.getInstance("HmacSHA512");
      SecretKeySpec secret_key = new SecretKeySpec(secret_.getBytes(), "HmacSHA512");
-     sha256_HMAC.init(secret_key);
+     HMAC.init(secret_key);
 
-//     hmachHash = Base64.encodeBase64String(sha256_HMAC.doFinal(message_.getBytes()));
-     hmachHash = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message_.getBytes())));
+//     hmachHash = Base64.encodeBase64String(HMAC.doFinal(message_.getBytes()));
+     hmachHash = new String(Base64.encodeBase64(HMAC.doFinal(message_.getBytes())));
 
     	}
     
@@ -269,17 +294,21 @@ public class hmac512 {
 	 * @param message
 	 * @param secret
 	 * @return
+	 * 
+	 * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
 	 */
 	 private static String hmacSecret(String message, String secret) {
 		  
 		    try {
 
-		     Mac sha256_HMAC = Mac.getInstance("HmacSHA512");
+		     Mac HMAC = Mac.getInstance("HmacSHA512");
 		     SecretKeySpec secret_key = new SecretKeySpec(secret.getBytes(), "HmacSHA512");
-		     sha256_HMAC.init(secret_key);
+		     HMAC.init(secret_key);
 
-//		     hmacSecret_ = Base64.encodeBase64String(sha256_HMAC.doFinal(message.getBytes()));
-		     strEncoded = new String(Base64.encodeBase64(sha256_HMAC.doFinal(message.getBytes())));
+//		     hmacSecret_ = Base64.encodeBase64String(HMAC.doFinal(message.getBytes()));
+		     strEncoded = new String(Base64.encodeBase64(HMAC.doFinal(message.getBytes())));
 
 		     
 		    }

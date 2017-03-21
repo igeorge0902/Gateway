@@ -49,7 +49,8 @@ public class ChangePasswordNewPassword extends HttpServlet implements Serializab
 	private volatile static String encrypted_token;
 	
 	/**
-	 * 
+	 * The text hashed with SHA-512 algorithm.  {@link com.dalogin.utils.sha512#string_hash(String)} 
+	 * @see com.dalogin.utils.sha512
 	 */
 	private volatile static String string_hash;
 	
@@ -215,7 +216,7 @@ public class ChangePasswordNewPassword extends HttpServlet implements Serializab
     		} else {
     			throw new ServletException("There is no valid XSRF-TOKEN");
     		}
-    		
+    		//TODO: add password policy
     		if (pass.length() < 1) {
     			
 				PrintWriter out = response.getWriter(); 

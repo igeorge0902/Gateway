@@ -181,8 +181,14 @@ public class SQLAccess {
 			return "I";
 	}
 	
-	
 	/**
+	 * Resets password.
+	 * 
+	 * @param pass
+	 * @param email
+	 * @param context
+	 * @return
+	 * @throws Exception
 	 */
 	public synchronized static boolean change_hash(String pass, String email, ServletContext context) throws Exception {
 		

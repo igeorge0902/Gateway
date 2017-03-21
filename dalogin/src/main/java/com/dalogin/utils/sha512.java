@@ -39,10 +39,13 @@ public class sha512 {
         
     
     /**
-     * Returns the hashed email.
+     * Returns the text hashed with SHA-512 algorithm. 
      * 
      * @param email_
-     * @return
+     * @return hashedText
+     * <br>
+     * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest">Java Cryptography Architecture
+Standard Algorithm Name Documentation for JDK 8</a>
      */
     public static String string_hash (String text_) {
     	    	
