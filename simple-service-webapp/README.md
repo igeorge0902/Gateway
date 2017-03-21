@@ -1,5 +1,7 @@
 RESTful API component for the Gateway project
 
+Copyright © 2015-2017 George Gaspar. All rights reserved.
+
 - standard JAX-RS implementation 
 - make sure you configure your container for servlets 3.0
 - web.xml is configured for GlassFish. [TomCat](https://github.com/igeorge0902/Gateway/tree/update/API/src/main/webapp/WEB-INF), [wildFly](https://github.com/igeorge0902/Gateway/tree/update/API/wildFly)
@@ -7,7 +9,7 @@ RESTful API component for the Gateway project
 Feature set:
 - it checks the active user sessions in the /login context on the server. 
 For more info on it: [ServletContext class info](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/ServletContext.html)
-- in TomCat clustered setup the app listening on the /admin URI can read the /login context on all nodes. You may need to set crossContext flag in context.xml:
+- in TomCat clustered setup the app listening on the ../simple-service-webapp/webapi/myresource/admin URI can read the /login context on all nodes. You may need to set crossContext flag in context.xml:
 
 ```xml
 <Context crossContext="true">     
@@ -45,3 +47,5 @@ We pass the retrieved sessions from the context as a Set to the DAO class, which
 Build from Eclipse:
 - import as Maven project
 - maven install
+
+Copyright © 2015-2017 George Gaspar. All rights reserved.
