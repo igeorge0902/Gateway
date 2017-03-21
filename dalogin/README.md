@@ -1,9 +1,9 @@
-#General Authentication Service
+# General Authentication Service
 (Release Candidate)
 
 Copyright © 2015-2017 George Gaspar. All rights reserved.
 
-##Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
+## Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
 
 Questions:
 igeorge1982@gmail.com
