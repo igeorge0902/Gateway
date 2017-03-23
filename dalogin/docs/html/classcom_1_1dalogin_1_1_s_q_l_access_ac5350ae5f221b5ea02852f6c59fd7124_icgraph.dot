@@ -1,9 +1,0 @@
-digraph "com.dalogin.SQLAccess.logout"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node87 [label="com.dalogin.SQLAccess.logout",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node87 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node88 [label="com.dalogin.listeners.Custom\lHttpSessionListener.sessionDestroyed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1dalogin_1_1listeners_1_1_custom_http_session_listener.html#a764740ee9030536b11e91101a7599546"];
-}
