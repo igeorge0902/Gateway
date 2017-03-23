@@ -1,6 +1,4 @@
 	var webSocket;
-	//var connectBtn = document.getElementById("connectBtn");
-	//var sendBtn = document.getElementById("sendBtn");
 
 	function connect() {
 	    // oprn the connection if one does not exist
@@ -8,14 +6,13 @@
 	        return;
 	    }
 	    // Create a websocket - it shall be rather excluded from the dalogin into a separate project, with rabbitMQ
-	    webSocket = new WebSocket("wss://milo.crabdance.com:28181/login/jsr356toUpper");
+	    webSocket = new WebSocket("wss://milo.crabdance.com:8444/login/jsr356toUpper");
 
 	    webSocket.onopen = function (event) {
             webSocket.send("Message to send");
             console.log("Connected!")
 	        updateOutput("Connected!");
-	        //connectBtn.disabled = true;
-	        //sendBtn.disabled = false;
+            document.getElementById('send').disabled = false;
 
 	    };
 
@@ -26,18 +23,21 @@
 
 	    webSocket.onclose = function (event) {
 	       // updateOutput("Connection Closed");
-	        connectBtn.disabled = false;
-	        sendBtn.disabled = true;
+	        document.getElementById('send').disabled = true;
 	    };
 	}
 
 	function send() {
 	    var text = document.getElementById("input").value;
 	    webSocket.send(text);
+        console.log("Message sent: " + text)
+	    updateOutput("Message sent: " + text);
 	}
 
 	function closeSocket() {
 	    webSocket.close();
+        console.log("DisConnected!")
+	    updateOutput("DisConnected!");
 	}
 
 	function updateOutput(text) {
@@ -54,6 +54,7 @@
 	// specific elements when it triggers.
 	document.addEventListener('DOMContentLoaded', function () {
 	    document.querySelector('button').addEventListener('click', connect);
-        document.querySelector('button').addEventListener('send', send);
+        document.getElementById('send').addEventListener('click', send);
+        document.getElementById('close').addEventListener('click', closeSocket);
 	    main();
 	});
