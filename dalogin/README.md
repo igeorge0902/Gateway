@@ -240,12 +240,21 @@ Sample cache and header settings for Apache (put it inside httpd.conf or the htt
 Clustering:
 ----
 - The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
-- GlassFish and Wildfly settings will be included soon, but you can use a search engine to find it out
+- GlassFish and Wildfly settings will be included soon, but you can use a search engine to find it out!
+
 - [Running cluster of Tomcat servers behind the Web server](https://people.apache.org/~mturk/docs/article/ftwai.html)
+- [Official TomCat Clustering How To](http://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)
+
+And see also:
 - [TomCat clustering](https://www.mulesoft.com/tcat/tomcat-clustering)
-and
-- [TomCat clustering](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-clustering-session-replication-tutorial/)
-- [TomCat Clustering How To](http://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)
+- [TomCat clustering example](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-clustering-session-replication-tutorial/)
+
+### On TomCat you must add the following configuration for multicast to work:
+
+```bin
+export JAVA_OPTS="$JAVA_OPTS\
+ -Djava.net.preferIPv4Stack=true"
+ ```
 
 Session handling:
 ----
