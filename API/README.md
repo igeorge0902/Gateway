@@ -8,7 +8,7 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - make sure you configure your container for servlets 3.0
 - it uses Hibernate 5.x
 - make sure to replace the jBoss logging library in the GlassFish installation to the newest version if you use GlassFish 4.x (it's because Hibernate is dependent on it and the container may attempt to use its own) [NoSuchMethodError](https://medium.com/@mertcal/using-hibernate-5-on-payara-cc242212a5d6#.n537odinq)
-- it is not a mistake that the web.xml is configured for TomCat. You can find the GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
+- it is not a mistake that the web.xml is configured for Jersey on TomCat. You can find the Jersey on TomCat and GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
 - [wildFly settings](https://github.com/igeorge0902/Gateway/tree/update/API/wildFly)
 
 Features:
