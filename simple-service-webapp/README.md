@@ -4,7 +4,7 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 - standard JAX-RS implementation 
 - make sure you configure your container for servlets 3.0
-- web.xml is configured for GlassFish. [TomCat](https://github.com/igeorge0902/Gateway/tree/update/API/src/main/webapp/WEB-INF), [wildFly](https://github.com/igeorge0902/Gateway/tree/update/API/wildFly)
+- this web.xml is configured for Jersey on GlassFish, but it works on TomCat, also. [TomCat](https://github.com/igeorge0902/Gateway/tree/update/API/src/main/webapp/WEB-INF), [wildFly](https://github.com/igeorge0902/Gateway/tree/update/API/wildFly)
 
 Feature set:
 - it checks the active user sessions in the /login context on the server. 
