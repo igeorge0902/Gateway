@@ -27,6 +27,14 @@ Build from Eclipse:
 
 Useful links:
 ----
+
+For TomCat and GlassFish you can use the Jersey implementation of the JAX-RS:
+[Jersey REST API](https://jersey.java.net/documentation/latest/jaxrs-resources.html#d0e2822)
+
+For wildFly you are better off to use the RESTEasy implementation:
+[RESTEasy](https://docs.jboss.org/resteasy/2.0.0.GA/userguide/html_single/#_Context)
+-> see the pre-confiured web.xml [wildFly](https://github.com/igeorge0902/Gateway/blob/master/API/wildFly/web.xml)
+
 Hibernate's C3P0ConnectionProvider settings
 - http://www.mchange.com/projects/c3p0/#hibernate-specific
 
