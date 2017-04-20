@@ -19,15 +19,16 @@ public class Sessions {
   @GeneratedValue(strategy=GenerationType.AUTO)
   private String id;
   private String session;
-  private String description;
+  private String deviceId;
   
   public Sessions(){
     
   }
   
-  public Sessions (String id, String session){
+  public Sessions (String id, String sessionId, String deviceId){
     this.id = id;
-    this.session = session;
+    this.session = sessionId;
+    this.deviceId = deviceId;
   }
   
   public String getId() {
@@ -45,14 +46,21 @@ public class Sessions {
   public void setSessions(String session) {
     this.session = session;
   }
+
+/**
+ * @return the deviceId
+ */
+public String getDeviceId() {
+	return deviceId;
+}
+
+/**
+ * @param deviceId the deviceId to set
+ */
+public void setDeviceId(String deviceId) {
+	this.deviceId = deviceId;
+}
   
-  public String getDescription() {
-    return description;
-  }
-  
-  public void setDescription(String description) {
-    this.description = description;
-  }
   
   
 } 

@@ -6,86 +6,83 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen6HomeVC", ""]
 - ["CSo6UIView", ""]
-- ["CSo12UserDefaults", ""]
 - ["CSo6UIView", "addConstraintswithFormat"]
-- ["CSo12UserDefaults", "isFirstLaunch"]
 provides-dynamic-lookup:
-- "logoutTapped"
-- "viewDidAppear"
+- "Movies"
+- "collectionView"
+- "viewDidLoad"
+- "running"
+- "WebView"
+- "backgroundDict"
+- "sessionIDLabel"
+- "websocketDidReceiveMessage"
+- "managedObjectContext"
+- "socket"
 - "NearbyVenues"
 - "usernameLabel"
-- "socket"
-- "websocketDidDisconnect"
-- "isFirstLaunch"
-- "imageView"
-- "Navigation"
 - "session"
-- "collectionView"
 - "url"
-- "websocketDidReceiveData"
-- "running"
-- "backgroundDict"
-- "WebView"
-- "sessionIDLabel"
-- "websocketDidConnect"
+- "logoutTapped"
 - "didReceiveMemoryWarning"
-- "managedObjectContext"
-- "Movies"
-- "websocketDidReceiveMessage"
-- "viewDidLoad"
+- "Navigation"
+- "websocketDidConnect"
+- "websocketDidDisconnect"
+- "imageView"
+- "websocketDidReceiveData"
+- "viewDidAppear"
 depends-top-level:
-- "HomeVC"
-- "UIView"
-- "UIApplication"
+- !private "NSLocalizedDescriptionKey"
+- !private "LogItem"
+- !private "NSDictionary"
+- !private "CGRect"
 - !private "~="
-- "WebSocket"
-- "CastingPrecedence"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "CGRect"
-- "URL"
-- "UILabel"
-- !private "*"
+- "CastingPrecedence"
 - "Void"
-- !private "!="
-- !private "Bundle"
-- !private "NSLocalizedDescriptionKey"
+- !private "NSFetchRequest"
+- !private "UnicodeScalarType"
+- "UIView"
 - "UIButton"
 - !private "UIAlertView"
-- "BooleanLiteralType"
-- "UserDefaults"
-- !private "LogItem"
-- "Dictionary"
-- !private "NSFetchRequestResult"
-- !private "Int"
-- "Bool"
-- !private "NSLog"
-- "NSError"
+- !private "print"
+- "UILabel"
 - "StringLiteralType"
+- "WebSocket"
+- !private "NSFetchRequestResult"
 - "Data"
+- "UIApplication"
+- !private "*"
+- "BooleanLiteralType"
+- "HomeVC"
+- !private "Bundle"
+- "Dictionary"
+- "AppDelegate"
+- !private "NSLayoutConstraint"
+- !private "!="
+- !private ">="
+- "WebSocketDelegate"
+- !private "Int"
+- !private "NSEntityDescription"
+- !private "URLRequest"
+- "NSError"
+- !private "||"
+- "UICollectionView"
+- "URLSession"
+- "Bool"
+- !private "<"
+- !private "NSLog"
+- !private "NSLayoutFormatOptions"
+- "JSON"
+- !private "NSString"
 - "UIImageView"
+- !private "UserDefaults"
+- !private "JSONSerialization"
 - "UIViewController"
 - !private "HTTPURLResponse"
-- "AppDelegate"
-- "UICollectionView"
-- !private "<"
-- "NSString"
-- !private "NSLayoutConstraint"
-- "URLSession"
-- "String"
-- "JSON"
-- !private ">="
-- !private "URLRequest"
-- !private "NSDictionary"
-- !private "JSONSerialization"
-- !private "print"
-- !private "||"
-- !private "UnicodeScalarType"
-- "WebSocketDelegate"
 - !private "UIImage"
-- !private "NSEntityDescription"
-- !private "NSLayoutFormatOptions"
-- !private "NSFetchRequest"
+- "URL"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "Bundle"]
 - !private ["Ps9AnyObject", "CGRect"]
@@ -134,7 +131,7 @@ depends-member:
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "insertNewObject"]
 - !private ["Ps9AnyObject", "integer"]
-- ["Ps9AnyObject", "isFirstLaunch"]
+- !private ["Ps9AnyObject", "isConnected"]
 - !private ["Ps9AnyObject", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9AnyObject", "itemText"]
 - !private ["Ps9AnyObject", "jsonObject"]
@@ -152,14 +149,12 @@ depends-member:
 - ["Ps9AnyObject", "session"]
 - ["Ps9AnyObject", "session.storage"]
 - ["Ps9AnyObject", "sessionIDLabel"]
-- !private ["Ps9AnyObject", "setValue"]
 - ["Ps9AnyObject", "shared"]
 - ["Ps9AnyObject", "sharedCustomSession"]
 - !private ["Ps9AnyObject", "show"]
 - ["Ps9AnyObject", "socket"]
 - !private ["Ps9AnyObject", "standard"]
 - !private ["Ps9AnyObject", "statusCode"]
-- !private ["Ps9AnyObject", "synchronize"]
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "title"]
 - !private ["Ps9AnyObject", "translatesAutoresizingMaskIntoConstraints"]
@@ -173,6 +168,7 @@ depends-member:
 - ["Ps9AnyObject", "websocketDidDisconnect"]
 - ["Ps9AnyObject", "websocketDidReceiveData"]
 - ["Ps9AnyObject", "websocketDidReceiveMessage"]
+- !private ["Ps9AnyObject", "write"]
 - ["Ps9AnyObject", ""]
 - ["C16SwiftLoginScreen11AppDelegate", "deinit"]
 - ["C16SwiftLoginScreen11AppDelegate", "managedObjectContext"]
@@ -272,7 +268,7 @@ depends-member:
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "insertNewObject"]
 - !private ["Ps7CVarArg", "integer"]
-- ["Ps7CVarArg", "isFirstLaunch"]
+- !private ["Ps7CVarArg", "isConnected"]
 - !private ["Ps7CVarArg", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps7CVarArg", "itemText"]
 - !private ["Ps7CVarArg", "jsonObject"]
@@ -290,7 +286,6 @@ depends-member:
 - ["Ps7CVarArg", "session"]
 - ["Ps7CVarArg", "session.storage"]
 - ["Ps7CVarArg", "sessionIDLabel"]
-- !private ["Ps7CVarArg", "setValue"]
 - ["Ps7CVarArg", "shared"]
 - ["Ps7CVarArg", "sharedCustomSession"]
 - !private ["Ps7CVarArg", "show"]
@@ -298,7 +293,6 @@ depends-member:
 - !private ["Ps7CVarArg", "standard"]
 - !private ["Ps7CVarArg", "statusCode"]
 - !private ["Ps7CVarArg", "subscript"]
-- !private ["Ps7CVarArg", "synchronize"]
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "title"]
 - !private ["Ps7CVarArg", "translatesAutoresizingMaskIntoConstraints"]
@@ -312,6 +306,7 @@ depends-member:
 - ["Ps7CVarArg", "websocketDidDisconnect"]
 - ["Ps7CVarArg", "websocketDidReceiveData"]
 - ["Ps7CVarArg", "websocketDidReceiveMessage"]
+- !private ["Ps7CVarArg", "write"]
 - ["Ps7CVarArg", ""]
 - !private ["Vs9Character", "deinit"]
 - !private ["Vs11ClosedRange", "deinit"]
@@ -386,7 +381,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insertNewObject"]
 - !private ["Ps28CustomDebugStringConvertible", "integer"]
-- ["Ps28CustomDebugStringConvertible", "isFirstLaunch"]
+- !private ["Ps28CustomDebugStringConvertible", "isConnected"]
 - !private ["Ps28CustomDebugStringConvertible", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps28CustomDebugStringConvertible", "itemText"]
 - !private ["Ps28CustomDebugStringConvertible", "jsonObject"]
@@ -413,7 +408,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "standard"]
 - !private ["Ps28CustomDebugStringConvertible", "statusCode"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
-- !private ["Ps28CustomDebugStringConvertible", "synchronize"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "title"]
 - !private ["Ps28CustomDebugStringConvertible", "translatesAutoresizingMaskIntoConstraints"]
@@ -428,6 +422,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "websocketDidReceiveData"]
 - ["Ps28CustomDebugStringConvertible", "websocketDidReceiveMessage"]
 - !private ["Ps28CustomDebugStringConvertible", "width"]
+- !private ["Ps28CustomDebugStringConvertible", "write"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
@@ -509,7 +504,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insertNewObject"]
 - !private ["Ps23CustomStringConvertible", "integer"]
-- ["Ps23CustomStringConvertible", "isFirstLaunch"]
+- !private ["Ps23CustomStringConvertible", "isConnected"]
 - !private ["Ps23CustomStringConvertible", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps23CustomStringConvertible", "itemText"]
 - !private ["Ps23CustomStringConvertible", "jsonObject"]
@@ -535,7 +530,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "standard"]
 - !private ["Ps23CustomStringConvertible", "statusCode"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
-- !private ["Ps23CustomStringConvertible", "synchronize"]
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "title"]
 - !private ["Ps23CustomStringConvertible", "translatesAutoresizingMaskIntoConstraints"]
@@ -549,6 +543,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "websocketDidDisconnect"]
 - ["Ps23CustomStringConvertible", "websocketDidReceiveData"]
 - ["Ps23CustomStringConvertible", "websocketDidReceiveMessage"]
+- !private ["Ps23CustomStringConvertible", "write"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["V10Foundation4Data", "IndexDistance"]
 - !private ["V10Foundation4Data", "count"]
@@ -616,7 +611,7 @@ depends-member:
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "insertNewObject"]
 - !private ["Ps9Equatable", "integer"]
-- ["Ps9Equatable", "isFirstLaunch"]
+- !private ["Ps9Equatable", "isConnected"]
 - !private ["Ps9Equatable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9Equatable", "itemText"]
 - !private ["Ps9Equatable", "jsonObject"]
@@ -643,7 +638,6 @@ depends-member:
 - ["Ps9Equatable", "socket"]
 - !private ["Ps9Equatable", "standard"]
 - !private ["Ps9Equatable", "statusCode"]
-- !private ["Ps9Equatable", "synchronize"]
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "title"]
 - !private ["Ps9Equatable", "translatesAutoresizingMaskIntoConstraints"]
@@ -658,6 +652,7 @@ depends-member:
 - ["Ps9Equatable", "websocketDidReceiveData"]
 - ["Ps9Equatable", "websocketDidReceiveMessage"]
 - !private ["Ps9Equatable", "width"]
+- !private ["Ps9Equatable", "write"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
 - !private ["Ps5Error", "init"]
@@ -735,7 +730,7 @@ depends-member:
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "insertNewObject"]
 - !private ["Ps8Hashable", "integer"]
-- ["Ps8Hashable", "isFirstLaunch"]
+- !private ["Ps8Hashable", "isConnected"]
 - !private ["Ps8Hashable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps8Hashable", "itemText"]
 - !private ["Ps8Hashable", "jsonObject"]
@@ -760,7 +755,6 @@ depends-member:
 - ["Ps8Hashable", "socket"]
 - !private ["Ps8Hashable", "standard"]
 - !private ["Ps8Hashable", "statusCode"]
-- !private ["Ps8Hashable", "synchronize"]
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "title"]
 - !private ["Ps8Hashable", "translatesAutoresizingMaskIntoConstraints"]
@@ -774,6 +768,7 @@ depends-member:
 - ["Ps8Hashable", "websocketDidDisconnect"]
 - ["Ps8Hashable", "websocketDidReceiveData"]
 - ["Ps8Hashable", "websocketDidReceiveMessage"]
+- !private ["Ps8Hashable", "write"]
 - ["Ps8Hashable", ""]
 - ["C16SwiftLoginScreen6HomeVC", "AppDelegate"]
 - ["C16SwiftLoginScreen6HomeVC", "Bool"]
@@ -1067,7 +1062,7 @@ depends-member:
 - !private ["CSo8NSObject", "NSLayoutFormatOptions"]
 - !private ["CSo8NSObject", "NSLocalizedDescriptionKey"]
 - !private ["CSo8NSObject", "NSLog"]
-- ["CSo8NSObject", "NSString"]
+- !private ["CSo8NSObject", "NSString"]
 - ["CSo8NSObject", "Navigation"]
 - ["CSo8NSObject", "NearbyVenues"]
 - !private ["CSo8NSObject", "RawValue"]
@@ -1109,7 +1104,7 @@ depends-member:
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "insertNewObject"]
 - !private ["CSo8NSObject", "integer"]
-- ["CSo8NSObject", "isFirstLaunch"]
+- !private ["CSo8NSObject", "isConnected"]
 - !private ["CSo8NSObject", "isNetworkActivityIndicatorVisible"]
 - !private ["CSo8NSObject", "itemText"]
 - !private ["CSo8NSObject", "jsonObject"]
@@ -1127,14 +1122,12 @@ depends-member:
 - ["CSo8NSObject", "session"]
 - ["CSo8NSObject", "session.storage"]
 - ["CSo8NSObject", "sessionIDLabel"]
-- !private ["CSo8NSObject", "setValue"]
 - ["CSo8NSObject", "shared"]
 - ["CSo8NSObject", "sharedCustomSession"]
 - !private ["CSo8NSObject", "show"]
 - ["CSo8NSObject", "socket"]
 - !private ["CSo8NSObject", "standard"]
 - !private ["CSo8NSObject", "statusCode"]
-- !private ["CSo8NSObject", "synchronize"]
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "title"]
 - !private ["CSo8NSObject", "translatesAutoresizingMaskIntoConstraints"]
@@ -1148,6 +1141,7 @@ depends-member:
 - ["CSo8NSObject", "websocketDidDisconnect"]
 - ["CSo8NSObject", "websocketDidReceiveData"]
 - ["CSo8NSObject", "websocketDidReceiveMessage"]
+- !private ["CSo8NSObject", "write"]
 - !private ["PSo16NSObjectProtocol", "Bundle"]
 - !private ["PSo16NSObjectProtocol", "CGRect"]
 - ["PSo16NSObjectProtocol", "Dictionary"]
@@ -1195,7 +1189,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "insertNewObject"]
 - !private ["PSo16NSObjectProtocol", "integer"]
-- ["PSo16NSObjectProtocol", "isFirstLaunch"]
+- !private ["PSo16NSObjectProtocol", "isConnected"]
 - !private ["PSo16NSObjectProtocol", "isNetworkActivityIndicatorVisible"]
 - !private ["PSo16NSObjectProtocol", "itemText"]
 - !private ["PSo16NSObjectProtocol", "jsonObject"]
@@ -1213,14 +1207,12 @@ depends-member:
 - ["PSo16NSObjectProtocol", "session"]
 - ["PSo16NSObjectProtocol", "session.storage"]
 - ["PSo16NSObjectProtocol", "sessionIDLabel"]
-- !private ["PSo16NSObjectProtocol", "setValue"]
 - ["PSo16NSObjectProtocol", "shared"]
 - ["PSo16NSObjectProtocol", "sharedCustomSession"]
 - !private ["PSo16NSObjectProtocol", "show"]
 - ["PSo16NSObjectProtocol", "socket"]
 - !private ["PSo16NSObjectProtocol", "standard"]
 - !private ["PSo16NSObjectProtocol", "statusCode"]
-- !private ["PSo16NSObjectProtocol", "synchronize"]
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "title"]
 - !private ["PSo16NSObjectProtocol", "translatesAutoresizingMaskIntoConstraints"]
@@ -1234,12 +1226,13 @@ depends-member:
 - ["PSo16NSObjectProtocol", "websocketDidDisconnect"]
 - ["PSo16NSObjectProtocol", "websocketDidReceiveData"]
 - ["PSo16NSObjectProtocol", "websocketDidReceiveMessage"]
+- !private ["PSo16NSObjectProtocol", "write"]
 - ["PSo16NSObjectProtocol", ""]
 - ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "localizedDescription"]
 - !private ["PSo14NSSecureCoding", "statusCode"]
 - !private ["PSo14NSSecureCoding", "value"]
-- ["CSo8NSString", "deinit"]
+- !private ["CSo8NSString", "deinit"]
 - ["CSo8NSString", "init"]
 - !private ["Ps9OptionSet", "Element"]
 - !private ["Ps9OptionSet", "RawValue"]
@@ -1305,6 +1298,8 @@ depends-member:
 - !private ["PSo14StreamDelegate", "connect"]
 - !private ["PSo14StreamDelegate", "delegate"]
 - !private ["PSo14StreamDelegate", "init"]
+- !private ["PSo14StreamDelegate", "isConnected"]
+- !private ["PSo14StreamDelegate", "write"]
 - !private ["Ps10Strideable", "Stride"]
 - ["SS", "deinit"]
 - ["SS", "init"]
@@ -1950,20 +1945,17 @@ depends-member:
 - !private ["CSo18URLSessionDataTask", "resume"]
 - !private ["CSo14URLSessionTask", "resume"]
 - !private ["Sc", "deinit"]
-- ["CSo12UserDefaults", "NSString"]
-- !private ["CSo12UserDefaults", "UserDefaults"]
 - ["CSo12UserDefaults", "deinit"]
 - !private ["CSo12UserDefaults", "integer"]
-- ["CSo12UserDefaults", "isFirstLaunch"]
 - !private ["CSo12UserDefaults", "removePersistentDomain"]
-- !private ["CSo12UserDefaults", "setValue"]
 - !private ["CSo12UserDefaults", "standard"]
-- !private ["CSo12UserDefaults", "synchronize"]
 - !private ["CSo12UserDefaults", "value"]
 - !private ["C10Starscream9WebSocket", "connect"]
 - ["C10Starscream9WebSocket", "deinit"]
 - !private ["C10Starscream9WebSocket", "delegate"]
 - !private ["C10Starscream9WebSocket", "init"]
+- !private ["C10Starscream9WebSocket", "isConnected"]
+- !private ["C10Starscream9WebSocket", "write"]
 - !private ["P10Starscream17WebSocketDelegate", "Bundle"]
 - !private ["P10Starscream17WebSocketDelegate", "CGRect"]
 - ["P10Starscream17WebSocketDelegate", "Dictionary"]
@@ -2086,7 +2078,7 @@ depends-member:
 - ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "insertNewObject"]
 - !private ["Ps9_Hashable", "integer"]
-- ["Ps9_Hashable", "isFirstLaunch"]
+- !private ["Ps9_Hashable", "isConnected"]
 - !private ["Ps9_Hashable", "isNetworkActivityIndicatorVisible"]
 - !private ["Ps9_Hashable", "itemText"]
 - !private ["Ps9_Hashable", "jsonObject"]
@@ -2111,7 +2103,6 @@ depends-member:
 - ["Ps9_Hashable", "socket"]
 - !private ["Ps9_Hashable", "standard"]
 - !private ["Ps9_Hashable", "statusCode"]
-- !private ["Ps9_Hashable", "synchronize"]
 - !private ["Ps9_Hashable", "text"]
 - !private ["Ps9_Hashable", "title"]
 - !private ["Ps9_Hashable", "translatesAutoresizingMaskIntoConstraints"]
@@ -2125,6 +2116,7 @@ depends-member:
 - ["Ps9_Hashable", "websocketDidDisconnect"]
 - ["Ps9_Hashable", "websocketDidReceiveData"]
 - ["Ps9_Hashable", "websocketDidReceiveMessage"]
+- !private ["Ps9_Hashable", "write"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps14_Incrementable", "Stride"]
 - !private ["Ps8_Integer", "Stride"]
@@ -2391,4 +2383,4 @@ depends-external:
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
-interface-hash: "30892c90e1c1c5410cdd4ecdaf841117"
+interface-hash: "54e52e5ad454d8a7dce3104ae8a16a9a"

@@ -1,6 +1,8 @@
 package com.example.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,25 +13,27 @@ import com.example.api.Sessions;
 	private static DAO instance;
 	
 	
-	public static synchronized DAO instance(Set<String> sessions) {
+	public static synchronized DAO instance(Set<String> sessions, List<String> deviceId) {
 	//	if (instance == null) {
-			instance = new DAO(sessions);
+			instance = new DAO(sessions, deviceId);
 	//	}
 		return instance;
 	}
 	
 	private Map<String, Sessions> sessionProvider = new HashMap<>();
 	
-	private DAO(Set<String> sessions) {
+	private DAO(Set<String> sessions, List<String> deviceId) {
 		
-		Integer i = new Integer( 1 );
+		List <String> sessionIds = new ArrayList<String>();
+		sessionIds.addAll(sessions);
 		
-		for (String session : sessions) {
-		    Sessions session_ = new Sessions(Integer.toString(i++), session);
-			sessionProvider.put(Integer.toString(i++), session_);
+		for(int i = 0; i < sessionIds.size(); i++) {
+
+				Sessions session_ = new Sessions(Integer.toString(i), sessionIds.get(i), deviceId.get(i));
+				sessionProvider.put(Integer.toString(i), session_);
+			}
 		}
 		
-	}
 	
 	public Map<String, Sessions> getModel(){
 	    return sessionProvider;

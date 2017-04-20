@@ -76,6 +76,10 @@ public class AdminServlet extends HttpServlet implements Serializable {
 	 */
 	private static volatile ConcurrentHashMap<String, HttpSession> activeUsers;
 
+    /**
+     * An array initialized to contain the request cookies.
+     */
+    private static volatile Cookie[] cookies;
 	/**
 	 * 
 	 */
@@ -89,11 +93,92 @@ public class AdminServlet extends HttpServlet implements Serializable {
      * 
      * @param request
      * @param response
-     * @param chain
      * @throws ServletException
+     * @throws IOException 
      */
-    public synchronized void doPost(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException
+    @SuppressWarnings("unchecked")
+	public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+    	
+    	HashMap<String, String> error = new HashMap<>();
+
+    	// Set the response message's MIME type
+        response.setContentType("text/html;charset=UTF-8");
+               
+        // Get JSESSION url parameter. Later it needs to be sent as header
+        sessionId = request.getParameter("JSESSIONID");			
+        log.info("SessionId from request parameter: " + sessionId);
+       
+        // Return current session
+		session = request.getSession();		
+    	
+        // Check session for user attribute
+    	if(session.getAttribute("user") == null){
+    	
+            if (sessionId != null) {
+                
+                // Get the existing session and creates a new one
+            	session = request.getSession(true);
+            	
+            	// Get ServletContext
+                ServletContext context = session.getServletContext();
+                
+                // Init HashMap that stores session objects
+                activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
+                
+                // Get session with sessionId
+                session = activeUsers.get(sessionId);
+
+                
+            } else {
+            	
+    			response.setContentType("application/json"); 
+    			response.setCharacterEncoding("utf-8"); 
+    			response.setStatus(502);
+
+    			if (session != null) {
+    				session.invalidate();				
+    			}
+    			
+    			// put some value pairs into the JSON object . 				
+    			error.put("acticeUsers", "failed"); 
+    			error.put("Success", "false"); 
+    			
+            }
+    	
+    	}
+    	
+    	if (session == null || !request.isRequestedSessionIdValid() ) {
+        	
+			response.setContentType("application/json"); 
+			response.setCharacterEncoding("utf-8"); 
+			response.setStatus(502);
+
+		//	if (session != null) {
+		//	session.invalidate();				
+		//	}
+			
+			PrintWriter out = response.getWriter(); 
+			
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			
+			// put some value pairs into the JSON object . 				
+			error.put("acticeUsers", "failed"); 
+			error.put("Success", "false");
+			error.put("ErrorMsg", "no valid session");
+			json.put("Error Details", error); 
+			
+			// finally output the json string 
+			out.print(json.toString());
+			out.flush();
+        	
+
+        } else {
+    		
+		            performTask(request, response);
+    			//	log.info("CurrentUserSessionId: " + session.getId());
+        	}
 
     }
     
@@ -208,7 +293,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			 * Token pair will be overwritten upon logout to prevent malicious usage.
 			 */
 			RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
-
+			log.info(request.getContentType());
 			rd.forward(request, response); 
 			}
 		else {
@@ -256,6 +341,19 @@ public class AdminServlet extends HttpServlet implements Serializable {
        
         // Return current session
 		session = request.getSession();		
+		cookies = request.getCookies();
+
+        // check if the original response cookie for the same client is present
+		if (cookies != null) {
+		 for (Cookie cookie : cookies) {
+			 
+			 //TODO: validate XSRF-TOKEN
+			   log.info("Sent cookies: " + cookie.getName());
+
+		  }
+		} else {
+			throw new ServletException("There is no valid XSRF-TOKEN");
+		}
     	
         // Check session for user attribute
     	if(session.getAttribute("user") == null){

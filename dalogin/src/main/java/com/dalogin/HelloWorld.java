@@ -106,7 +106,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
         	
         	// hmac is not encrypted, just the password inside
         	hmac = request.getHeader("X-HMAC-HASH").trim();
-        	contentLength = request.getHeader("Content-Length");
+        	contentLength = request.getHeader("Content-Length").trim();
         	time = request.getHeader("X-MICRO-TIME").trim();
     		pass = request.getParameter("pswrd").trim();	
     		user = request.getParameter("user").trim();	

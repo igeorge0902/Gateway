@@ -12,6 +12,7 @@ package com.dalogin.listeners;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -77,7 +78,7 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	/**
 	 * 
 	 */
-	private static volatile Set<String> sessionData;
+	private static volatile SortedSet<String> sessionData;
 	
 	/**
 	 * 
@@ -225,23 +226,11 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
      // last step - we check if we have the deviceId already. If so, we try to remove its sessionId, if not yet concluded.
       if (sessions.containsKey(D)) {
  
-     sessionData = sessions.get(D);
+     sessionData = (SortedSet<String>) sessions.get(D);
      
   // Synchronizing on multimap, not values!
      synchronized (sessions) {  
     	 
-    	// TODO: the set is not ordered, it is relevant only if we want to use an ordered set.
-         // the value g might not be always the sessionId
-    	g = sessionData.toArray()[1].toString();
-    	try {
-    	
-    		activeUsers.remove(g);
-    		
-    	} catch (Exception e) {
-    	    log.info("SessionId "+g+" does not exist anymore.");		
-
-    		}
-  		
     	sessionData.clear();
   		sessionData.add(useR);
   		sessionData.add(id);
@@ -249,9 +238,7 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
      }
       
           } else {
-        	  
-            activeUsers.put(id, session);
-            
+        	              
             // It will be null at first time. 
             try {
             	sessions.put(D, useR);
@@ -345,17 +332,16 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	         
 	         else {
 	        	 
-	             sessionData = sessions.get(D);
+	             sessionData = (SortedSet<String>) sessions.get(D);
 	             
 	             // Synchronizing on multimap, not values!
 	                synchronized (sessions) {  
-	               	 
-	                // TODO: the set is not ordered, it is relevant only if we want to use an ordered set.
-	                // the value g might not be always the sessionId	
-	               	g = sessionData.toArray()[1].toString();
-		        	log.info("sessionId to remove in event context: " + g);
 
-	               	activeUsers.remove(g);
+	                       	g = sessionData.toArray()[1].toString();
+	    		        	log.info("sessionId to remove in event context: " + g);
+
+	    	               	activeUsers.remove(g);
+	
 
 	                }
 

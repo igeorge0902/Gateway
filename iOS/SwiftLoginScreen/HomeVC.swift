@@ -64,6 +64,10 @@ class HomeVC: UIViewController, WebSocketDelegate {
         
         print(managedObjectContext)
         
+        //TODO: keep the connection open with a wrapped method returning a boolean value, for example
+        socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
+        socket.delegate = self
+        socket.connect()
 
     }
     
@@ -71,14 +75,6 @@ class HomeVC: UIViewController, WebSocketDelegate {
         super.viewDidAppear(true)
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        
-        //TODO: keep the connection open with a wrapped method returning a boolean value, for example 
-        socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
-        socket.delegate = self
-        socket.connect()
-        
-        // let isFirstLaunch = UserDefaults.isFirstLaunch()
-        // print(isFirstLaunch)
         
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
@@ -116,7 +112,13 @@ class HomeVC: UIViewController, WebSocketDelegate {
         
             self.usernameLabel.text = prefs.value(forKey: "USERNAME") as? String
             self.sessionIDLabel.text = prefs.value(forKey: "JSESSIONID") as? String
-
+            
+            if (socket.isConnected) {
+            
+            socket.write(string: "hello!", completion: {
+                print("hello!")
+                })
+            }
         }
         
         }
@@ -317,30 +319,6 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: ViewsDictionary))
     }
     
-}
-
-extension UserDefaults {
-    // check for is first launch - only true on first invocation after app install, false on all further invocations
-    static func isFirstLaunch() -> NSString {
-       
-        let prefs:UserDefaults = UserDefaults.standard
-        let isFirstLaunch_:NSString?
-        //TODO: replace with coreData
-        if let isFirstLaunch = prefs.value(forKey: "FirstLaunchFlag") as? NSString {
-            
-            isFirstLaunch_ = isFirstLaunch;
-            
-        } else {
-            isFirstLaunch_ = "true";
-            prefs.setValue("false", forKey: "FirstLaunchFlag")
-            prefs.synchronize()
-        }
-
-           // prefs.synchronize()
-        
-
-        return isFirstLaunch_!
-    }
 }
 
 

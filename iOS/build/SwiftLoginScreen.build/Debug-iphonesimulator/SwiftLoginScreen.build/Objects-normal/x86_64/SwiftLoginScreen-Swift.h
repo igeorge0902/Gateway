@@ -405,6 +405,11 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen8SignupVC")
 @end
 
 
+@interface UIAlertController (SWIFT_EXTENSION(SwiftLoginScreen))
++ (void)popUpWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message;
+@end
+
+
 @interface UIView (SWIFT_EXTENSION(SwiftLoginScreen))
 @end
 
@@ -439,11 +444,6 @@ SWIFT_CLASS("_TtC16SwiftLoginScreen17URLSessionManager")
 - (void)httpGet:(NSURLRequest * _Null_unspecified)request callback:(void (^ _Nonnull)(NSString * _Nonnull, NSString * _Nullable))callback;
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task willPerformHTTPRedirection:(NSHTTPURLResponse * _Nonnull)response newRequest:(NSURLRequest * _Nonnull)request completionHandler:(void (^ _Nonnull)(NSURLRequest * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface NSUserDefaults (SWIFT_EXTENSION(SwiftLoginScreen))
-+ (NSString * _Nonnull)isFirstLaunch;
 @end
 
 @class UIWebView;
