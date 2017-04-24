@@ -82,7 +82,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
     }
     
     
-    let url:URL = URL(string:"https://milo.crabdance.com/login/HelloWorld")!
+    let url:URL = URL(string:serverURL + "/login/HelloWorld")!
     
     typealias ServiceResponse = (JSON, NSError?) -> Void
     

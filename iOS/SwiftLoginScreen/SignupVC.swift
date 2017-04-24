@@ -73,8 +73,8 @@ class SignupVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    let url:URL = URL(string:"https://milo.crabdance.com/login/voucher")!
-    let urlR:URL = URL(string:"https://milo.crabdance.com/login/register")!
+    let url:URL = URL(string:serverURL + "/login/voucher")!
+    let urlR:URL = URL(string:serverURL + "/login/register")!
 
     typealias ServiceResponse = (JSON, NSError?) -> Void
     

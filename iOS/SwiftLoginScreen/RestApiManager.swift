@@ -30,7 +30,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             
             //let stringRepresentation = i.joinWithSeparator("-")
             
-            errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil)
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil)
             
             errorOnLogin?.getResponse {
                 
@@ -45,7 +45,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
     }
 
     //let baseURL = "http://api.randomuser.me/"
-    let baseURL = "https://milo.crabdance.com/login/admin?JSESSIONID="
+    let baseURL = serverURL + "/login/admin?JSESSIONID="
 
     var running = false
 

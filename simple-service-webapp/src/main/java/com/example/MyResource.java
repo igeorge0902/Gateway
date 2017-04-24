@@ -155,13 +155,19 @@ public class MyResource {
         
         for (String sessionId : sessions) {
 
-        	session = activeUsers.get(sessionId);
-            devices.add(session.getAttribute("deviceId").toString());
+        	session = activeUsers.get(sessionId);          
+        	
+        	try {
+            	
+        		devices.add(session.getAttribute("deviceId").toString());
+                sessions_.addAll(DAO.instance(sessions, devices).getModel().values());
 
-        }
-        
-        sessions_.addAll(DAO.instance(sessions, devices).getModel().values());
-        
+        	} catch (Exception e) {
+        		
+        		}
+        	
+        	}
+                
 		return Response.ok().status(200).entity(sessions_).build();
     }
     

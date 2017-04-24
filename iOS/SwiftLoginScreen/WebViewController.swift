@@ -23,8 +23,9 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.scrollView.bounces = true
         webView.scalesPageToFit = true
 
-        let requestURL = URL(string: "https://milo.crabdance.com/example/index.html")
-        let request = URLRequest.requestWithURL(requestURL!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["hello" : "hello"], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
+        let ciphertext = cipherText?.getCipherText(deviceId)
+        let requestURL = URL(string: serverURL + "/example/index.html")
+        let request = URLRequest.requestWithURL(requestURL!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["M-Device" : ciphertext!], cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 20)
         
         webView.loadRequest(request)
         view.addSubview(webView)

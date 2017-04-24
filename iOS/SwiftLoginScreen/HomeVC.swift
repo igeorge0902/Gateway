@@ -132,7 +132,7 @@ class HomeVC: UIViewController, WebSocketDelegate {
     }
     
     
-    let url:URL = URL(string:"https://milo.crabdance.com/login/logout")!
+    let url:URL = URL(string:serverURL + "/login/logout")!
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
     func dataTask(_ onCompletion: ServiceResponse) {
