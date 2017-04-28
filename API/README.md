@@ -15,7 +15,22 @@ Features:
 ----
 - provides authenticated access to the user's "profile"
 - aesUtil is ready to use, only config is necessary. For more info see it at [WWW](https://github.com/igeorge0902/Gateway/tree/update/WWW)
-- you may want to verify the XSRF-Token during the API calls, which is available after a successful login
+- you may want to verify the XSRF-Token during the API calls, which is available after a successful login. Place the code snipet below into your method:
+
+```Java
+Cookie[] cookies = request.getCookies();
+
+// check if the original response cookie for the same client is present
+if (cookies != null && headers.getRequestHeader("Ciphertext").isEmpty()) {
+	 for (Cookie cookie : cookies) {
+				 
+//TODO: validate XSRF-TOKEN && Ciphertext
+   System.out.println("Sent cookies: " + cookie.getName() + ", " + cookie.getValue());
+        }
+			} else {
+		          throw new CustomNotFoundException("User is not authorized!");
+			}
+```
 - ciphertext is to be verified upon user request
 - it's able to check if the new user, or email is used in system or not, but upon result no further action is enforced
 - direct dB modifications are instantly reflected due to session is always flushed before queries.
