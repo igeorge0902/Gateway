@@ -43,6 +43,8 @@ Build from Eclipse:
 Useful links:
 ----
 
+This is a standard JAX-RS method, and the @Context annotation allows you to inject instances of javax.ws.rs.core.HttpHeaders, javax.ws.rs.core.UriInfo, javax.ws.rs.core.Request, javax.servlet.HttpServletRequest, javax.servlet.HttpServletResponse, javax.servlet.ServletConfig, javax.servlet.ServletContext, and javax.ws.rs.core.SecurityContext objects, as well.
+
 For TomCat and GlassFish you can use the Jersey implementation of the JAX-RS:
 [Jersey REST API](https://jersey.java.net/documentation/latest/jaxrs-resources.html#d0e2822)
 
