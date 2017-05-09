@@ -15,7 +15,7 @@ Features:
 ----
 - provides authenticated access to the user's "profile"
 - aesUtil is ready to use, only config is necessary. For more info see it at [WWW](https://github.com/igeorge0902/Gateway/tree/update/WWW)
-- you may want to verify the XSRF-Token during the API calls, which is available after a successful login. Even though this call is originating from an inner redirect by dispatching the server request (forward), you must ensure that this endpoint will be accessible for authenticated user requests, only. By leveraging the RequestDispatcher you can also set attributes for the request then later can be retrieved by the same name, by passing arguments for the API, if needed. Pls check the available request methods in the JAX-RS documentation! Place the code snipet below into your method:
+- you may want to verify the XSRF-Token during the API calls, which is available after a successful login. Even though this call is originating from an inner redirect by dispatching the server request (forward), you must ensure that this endpoint will be accessible for authenticated user requests, only. By leveraging the RequestDispatcher you can also set attributes for the request then later can be retrieved by the same name, by passing arguments for the API, if needed. For such requests to succeed to must use "application/x-www-form-urlencoded" and on both sides you must use the same method. - I tried other application types, but not succeeded with application/json, yet. Pls check the available request methods in the JAX-RS documentation! Place the code snipet below into your method:
 
 ```Java
 Cookie[] cookies = request.getCookies();
