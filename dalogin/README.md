@@ -31,7 +31,7 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 
 Known issues (for most recent version see the update branch!):
 ----
-- if the properties.properties file is not copied up-front to its place under your Application Server directory, then unexpected behavior may occur. I still am working on it.
+- In the insert_device_ procedure there is a missing premise: "and device_states.uuid = uuid_". This premise is responsible to update the state for device, on which the user is logging in, only.
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
