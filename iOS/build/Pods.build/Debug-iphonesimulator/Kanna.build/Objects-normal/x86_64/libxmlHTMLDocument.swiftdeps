@@ -10,40 +10,40 @@ provides-member:
 - ["C5Kanna17libxmlXMLDocument", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "CFStringConvertNSStringEncodingToEncoding"
+- !private "<="
 - !private "??"
 - "AssignmentPrecedence"
-- !private "htmlReadDoc"
-- "XMLDocument"
-- !private "htmlDocContentDumpOutput"
+- !private "CFStringConvertEncodingToIANACharSetName"
+- !private "CFStringConvertNSStringEncodingToEncoding"
+- !private "CFStringEncoding"
 - !private "CInt"
 - "HTMLDocument"
 - !private "Int32"
-- !private "libxmlHTMLNode"
-- !private "CFStringEncoding"
-- !private "xmlBufferFree"
-- !private "xmlReadDoc"
-- !private "xmlOutputBufferCreateBuffer"
-- !private "xmlDocDumpMemory"
-- !private "xmlFreeDoc"
-- "xmlDocPtr"
-- "XMLElement"
-- "libxmlHTMLDocument"
-- !private "UnsafePointer"
-- !private "CFStringConvertEncodingToIANACharSetName"
-- "libxmlXMLDocument"
-- !private "xmlOutputBufferGetContent"
-- "htmlDocPtr"
-- !private "UnsafeRawPointer"
 - "String"
-- !private "UnsafeMutablePointer"
-- !private "xmlChar"
-- !private "<="
 - !private "StringLiteralType"
-- "XPathObject"
-- !private "xmlBufferCreate"
-- !private "xmlFree"
 - "UInt"
+- !private "UnsafeMutablePointer"
+- !private "UnsafePointer"
+- !private "UnsafeRawPointer"
+- "XMLDocument"
+- "XMLElement"
+- "XPathObject"
+- !private "htmlDocContentDumpOutput"
+- "htmlDocPtr"
+- !private "htmlReadDoc"
+- "libxmlHTMLDocument"
+- !private "libxmlHTMLNode"
+- "libxmlXMLDocument"
+- !private "xmlBufferCreate"
+- !private "xmlBufferFree"
+- !private "xmlChar"
+- !private "xmlDocDumpMemory"
+- "xmlDocPtr"
+- !private "xmlFree"
+- !private "xmlFreeDoc"
+- !private "xmlOutputBufferCreateBuffer"
+- !private "xmlOutputBufferGetContent"
+- !private "xmlReadDoc"
 depends-member:
 - !private ["Ps9AnyObject", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["Ps9AnyObject", "CFStringConvertNSStringEncodingToEncoding"]
@@ -88,11 +88,8 @@ depends-member:
 - !private ["Ps9AnyObject", "xmlReadDoc"]
 - ["Ps9AnyObject", "xpath"]
 - ["Ps9AnyObject", ""]
-- ["Sa", "deinit"]
 - !private ["Ps17BitwiseOperations", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
-- ["CSo8CFString", "deinit"]
 - ["Ps7CVarArg", "Encoding"]
 - !private ["Ps7CVarArg", "cString"]
 - !private ["Ps7CVarArg", "init"]
@@ -125,7 +122,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "lengthOfBytes"]
 - !private ["Ps23CustomStringConvertible", "rawValue"]
-- ["VE10FoundationSS8Encoding", "deinit"]
 - !private ["VE10FoundationSS8Encoding", "rawValue"]
 - ["Ps9Equatable", "Encoding"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
@@ -141,10 +137,6 @@ depends-member:
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "lengthOfBytes"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
 - !private ["Ps23ExpressibleByNilLiteral", "assumingMemoryBound"]
-- ["Ps32ExpressibleByStringInterpolation", "Encoding"]
-- !private ["Ps32ExpressibleByStringInterpolation", "cString"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "lengthOfBytes"]
 - ["Ps26ExpressibleByStringLiteral", "Encoding"]
 - !private ["Ps26ExpressibleByStringLiteral", "cString"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
@@ -198,9 +190,6 @@ depends-member:
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "lengthOfBytes"]
 - !private ["Ps8Hashable", "rawValue"]
-- ["SQ", "deinit"]
-- ["Si", "deinit"]
-- ["Vs5Int32", "deinit"]
 - !private ["Vs5Int32", "init"]
 - !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "init"]
@@ -223,7 +212,6 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "lengthOfBytes"]
 - !private ["CSo8NSObject", "cString"]
-- !private ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "lengthOfBytes"]
 - !private ["PSo16NSObjectProtocol", "cString"]
 - !private ["PSo16NSObjectProtocol", "init"]
@@ -235,7 +223,6 @@ depends-member:
 - !private ["CSo8NSString", "init"]
 - !private ["CSo8NSString", "lengthOfBytes"]
 - !private ["Sq", "assumingMemoryBound"]
-- ["Sq", "deinit"]
 - !private ["Ps16RawRepresentable", "rawValue"]
 - !private ["P5Kanna10Searchable", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["P5Kanna10Searchable", "CFStringConvertNSStringEncodingToEncoding"]
@@ -326,7 +313,6 @@ depends-member:
 - !private ["Ps10Strideable", "init"]
 - ["SS", "Encoding"]
 - !private ["SS", "cString"]
-- ["SS", "deinit"]
 - !private ["SS", "init"]
 - !private ["SS", "lengthOfBytes"]
 - ["Ps16TextOutputStream", "Encoding"]
@@ -337,12 +323,8 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "cString"]
 - !private ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "lengthOfBytes"]
-- ["Su", "deinit"]
-- ["Vs6UInt32", "deinit"]
-- ["SP", "deinit"]
 - !private ["SP", "init"]
 - !private ["SV", "assumingMemoryBound"]
-- ["SV", "deinit"]
 - !private ["SV", "init"]
 - !private ["P5Kanna11XMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["P5Kanna11XMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
@@ -388,12 +370,10 @@ depends-member:
 - !private ["P5Kanna10XMLElement", "at_xpath"]
 - !private ["P5Kanna10XMLElement", "content"]
 - !private ["P5Kanna10XMLElement", "css"]
-- ["P5Kanna10XMLElement", "deinit"]
 - !private ["P5Kanna10XMLElement", "init"]
 - !private ["P5Kanna10XMLElement", "innerHTML"]
 - !private ["P5Kanna10XMLElement", "text"]
 - !private ["P5Kanna10XMLElement", "xpath"]
-- ["O5Kanna11XPathObject", "deinit"]
 - !private ["O5Kanna11XPathObject", "none"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
@@ -413,6 +393,10 @@ depends-member:
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "cString"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "lengthOfBytes"]
+- ["Ps33_ExpressibleByStringInterpolation", "Encoding"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "cString"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "lengthOfBytes"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "cString"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "lengthOfBytes"]
@@ -482,7 +466,7 @@ depends-member:
 - !private ["C5Kanna18libxmlHTMLDocument", "xmlOutputBufferCreateBuffer"]
 - !private ["C5Kanna18libxmlHTMLDocument", "xmlOutputBufferGetContent"]
 - ["C5Kanna18libxmlHTMLDocument", "xpath"]
-- ["C5Kanna14libxmlHTMLNode", "deinit"]
+- !private ["C5Kanna14libxmlHTMLNode", "deinit"]
 - !private ["C5Kanna14libxmlHTMLNode", "init"]
 - !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertEncodingToIANACharSetName"]
 - !private ["C5Kanna17libxmlXMLDocument", "CFStringConvertNSStringEncodingToEncoding"]
@@ -528,30 +512,25 @@ depends-member:
 - ["C5Kanna17libxmlXMLDocument", "xpath"]
 depends-nominal:
 - "Ps9AnyObject"
-- "Sa"
 - !private "Ps17BitwiseOperations"
-- "Sb"
-- "CSo8CFString"
+- !private "Sb"
 - "Ps7CVarArg"
 - "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "VE10FoundationSS8Encoding"
+- !private "VE10FoundationSS8Encoding"
 - "Ps9Equatable"
 - !private "Ps27ExpressibleByBooleanLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
 - !private "Ps23ExpressibleByNilLiteral"
-- "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
 - "P5Kanna12HTMLDocument"
 - "Ps8Hashable"
-- "SQ"
-- "Si"
-- "Vs5Int32"
+- !private "Vs5Int32"
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - "Ps25LosslessStringConvertible"
@@ -563,7 +542,7 @@ depends-nominal:
 - !private "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
-- "Sq"
+- !private "Sq"
 - !private "Ps16RawRepresentable"
 - "P5Kanna10Searchable"
 - "P5Kanna14SearchableNode"
@@ -574,19 +553,18 @@ depends-nominal:
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
-- "Su"
-- "Vs6UInt32"
-- "SP"
-- "SV"
+- !private "SP"
+- !private "SV"
 - "P5Kanna11XMLDocument"
-- "P5Kanna10XMLElement"
-- "O5Kanna11XPathObject"
+- !private "P5Kanna10XMLElement"
+- !private "O5Kanna11XPathObject"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "Ps14_Incrementable"
@@ -597,22 +575,28 @@ depends-nominal:
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
 - "C5Kanna18libxmlHTMLDocument"
-- "C5Kanna14libxmlHTMLNode"
+- !private "C5Kanna14libxmlHTMLNode"
 - "C5Kanna17libxmlXMLDocument"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 interface-hash: "8ea367bdddee3a5e3589123657f1ddcd"

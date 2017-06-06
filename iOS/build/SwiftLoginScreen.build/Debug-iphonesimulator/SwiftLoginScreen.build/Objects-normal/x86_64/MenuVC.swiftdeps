@@ -6,45 +6,43 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen6MenuVC", ""]
 provides-dynamic-lookup:
-- "tableView"
-- "tableView"
-- "tableView"
-- "viewWillAppear"
-- "refreshControl"
-- "items"
 - "addData"
-- "viewDidLoad"
+- "items"
 - "navigateBack"
+- "refreshControl"
+- "tableView"
+- "viewDidLoad"
+- "viewWillAppear"
 depends-top-level:
-- !private "JSON"
-- "AssignmentPrecedence"
-- "CastingPrecedence"
-- !private "UIControlState"
-- !private "DispatchQueue"
-- "UITableViewCell"
-- "Int"
-- "UIViewController"
-- !private "UITableViewCellStyle"
-- !private "UIColor"
-- "UITableViewDelegate"
-- "UITableViewDataSource"
-- !private "UIControlEvents"
-- "NSMutableArray"
-- !private "CGRect"
-- "UIRefreshControl"
-- !private "AnyObject"
-- !private "/"
-- !private "UIButton"
-- !private "print"
-- !private "BooleanLiteralType"
-- "Bool"
-- !private "NSError"
-- "MenuVC"
-- !private "StringLiteralType"
-- !private "RestApiManager"
 - !private "-"
-- "UITableView"
+- !private "/"
+- !private "AnyObject"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- !private "CGRect"
+- "CastingPrecedence"
+- !private "DispatchQueue"
 - "IndexPath"
+- "Int"
+- !private "JSON"
+- "MenuVC"
+- !private "NSError"
+- "NSMutableArray"
+- !private "RestApiManager"
+- !private "StringLiteralType"
+- !private "UIButton"
+- !private "UIColor"
+- !private "UIControlEvents"
+- !private "UIControlState"
+- "UIRefreshControl"
+- "UITableView"
+- "UITableViewCell"
+- !private "UITableViewCellStyle"
+- "UITableViewDataSource"
+- "UITableViewDelegate"
+- "UIViewController"
+- !private "print"
 depends-member:
 - !private ["Ps9AnyObject", "CGRect"]
 - !private ["Ps9AnyObject", "DispatchQueue"]
@@ -61,7 +59,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UITableViewCell"]
 - !private ["Ps9AnyObject", "UITableViewCellStyle"]
 - !private ["Ps9AnyObject", "add"]
-- ["Ps9AnyObject", "addData"]
+- !private ["Ps9AnyObject", "addData"]
 - !private ["Ps9AnyObject", "addSubview"]
 - !private ["Ps9AnyObject", "addTarget"]
 - !private ["Ps9AnyObject", "async"]
@@ -69,7 +67,6 @@ depends-member:
 - !private ["Ps9AnyObject", "black"]
 - !private ["Ps9AnyObject", "count"]
 - !private ["Ps9AnyObject", "dataSource"]
-- !private ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
 - !private ["Ps9AnyObject", "dismiss"]
@@ -78,13 +75,13 @@ depends-member:
 - ["Ps9AnyObject", "indexPathForPreferredFocusedView"]
 - ["Ps9AnyObject", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps9AnyObject", "init"]
-- ["Ps9AnyObject", "items"]
+- !private ["Ps9AnyObject", "items"]
 - !private ["Ps9AnyObject", "main"]
-- ["Ps9AnyObject", "navigateBack"]
+- !private ["Ps9AnyObject", "navigateBack"]
 - ["Ps9AnyObject", "numberOfSections"]
 - ["Ps9AnyObject", "numberOfSectionsInTableView"]
 - !private ["Ps9AnyObject", "print"]
-- ["Ps9AnyObject", "refreshControl"]
+- !private ["Ps9AnyObject", "refreshControl"]
 - !private ["Ps9AnyObject", "reloadData"]
 - ["Ps9AnyObject", "scrollViewDidEndDecelerating"]
 - ["Ps9AnyObject", "scrollViewDidEndDragging"]
@@ -107,15 +104,11 @@ depends-member:
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "textLabel"]
 - !private ["Ps9AnyObject", "view"]
-- ["Ps9AnyObject", "viewDidLoad"]
+- !private ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", "viewForZooming"]
 - ["Ps9AnyObject", "viewForZoomingInScrollView"]
-- ["Ps9AnyObject", "viewWillAppear"]
 - ["Ps9AnyObject", ""]
-- !private ["Sa", "deinit"]
 - !private ["Ps23BidirectionalCollection", "row"]
-- !private ["Ps22BidirectionalIndexable", "row"]
-- ["Sb", "deinit"]
 - !private ["PSo15CALayerDelegate", "addSubview"]
 - !private ["PSo15CALayerDelegate", "addTarget"]
 - !private ["PSo15CALayerDelegate", "backgroundColor"]
@@ -128,8 +121,6 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "setTitle"]
 - !private ["PSo15CALayerDelegate", "text"]
 - !private ["PSo15CALayerDelegate", "textLabel"]
-- ["V12CoreGraphics7CGFloat", "deinit"]
-- ["VSC6CGRect", "deinit"]
 - !private ["VSC6CGRect", "height"]
 - !private ["VSC6CGRect", "init"]
 - !private ["VSC6CGRect", "width"]
@@ -148,7 +139,7 @@ depends-member:
 - !private ["Ps7CVarArg", "UITableViewCell"]
 - !private ["Ps7CVarArg", "UITableViewCellStyle"]
 - !private ["Ps7CVarArg", "add"]
-- ["Ps7CVarArg", "addData"]
+- !private ["Ps7CVarArg", "addData"]
 - !private ["Ps7CVarArg", "addSubview"]
 - !private ["Ps7CVarArg", "addTarget"]
 - !private ["Ps7CVarArg", "async"]
@@ -164,13 +155,13 @@ depends-member:
 - ["Ps7CVarArg", "indexPathForPreferredFocusedView"]
 - ["Ps7CVarArg", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps7CVarArg", "init"]
-- ["Ps7CVarArg", "items"]
+- !private ["Ps7CVarArg", "items"]
 - !private ["Ps7CVarArg", "main"]
-- ["Ps7CVarArg", "navigateBack"]
+- !private ["Ps7CVarArg", "navigateBack"]
 - ["Ps7CVarArg", "numberOfSections"]
 - ["Ps7CVarArg", "numberOfSectionsInTableView"]
 - !private ["Ps7CVarArg", "print"]
-- ["Ps7CVarArg", "refreshControl"]
+- !private ["Ps7CVarArg", "refreshControl"]
 - !private ["Ps7CVarArg", "reloadData"]
 - ["Ps7CVarArg", "scrollViewDidEndDecelerating"]
 - ["Ps7CVarArg", "scrollViewDidEndDragging"]
@@ -193,26 +184,15 @@ depends-member:
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "textLabel"]
 - !private ["Ps7CVarArg", "view"]
-- ["Ps7CVarArg", "viewDidLoad"]
+- !private ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", "viewForZooming"]
 - ["Ps7CVarArg", "viewForZoomingInScrollView"]
-- ["Ps7CVarArg", "viewWillAppear"]
 - ["Ps7CVarArg", ""]
-- !private ["Vs9Character", "deinit"]
-- !private ["Ps10Collection", "Index"]
-- !private ["Ps10Collection", "IndexDistance"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "SubSequence"]
-- !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "init"]
 - !private ["Ps10Collection", "object"]
 - !private ["Ps10Collection", "row"]
 - !private ["Ps10Collection", "string"]
 - !private ["Ps10Collection", "subscript"]
-- !private ["Ps10Comparable", "Index"]
-- !private ["Ps10Comparable", "IndexDistance"]
-- !private ["Ps10Comparable", "SubSequence"]
-- !private ["Ps10Comparable", "_Element"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "object"]
 - !private ["Ps10Comparable", "row"]
@@ -220,13 +200,10 @@ depends-member:
 - !private ["Ps10Comparable", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "CGRect"]
 - !private ["Ps28CustomDebugStringConvertible", "DispatchQueue"]
-- !private ["Ps28CustomDebugStringConvertible", "Index"]
-- !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "JSON"]
 - !private ["Ps28CustomDebugStringConvertible", "MenuVC"]
 - ["Ps28CustomDebugStringConvertible", "NSMutableArray"]
 - !private ["Ps28CustomDebugStringConvertible", "RestApiManager"]
-- !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "UIButton"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
 - !private ["Ps28CustomDebugStringConvertible", "UIControlEvents"]
@@ -235,9 +212,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UITableView"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCell"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCellStyle"]
-- !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "add"]
-- ["Ps28CustomDebugStringConvertible", "addData"]
+- !private ["Ps28CustomDebugStringConvertible", "addData"]
 - !private ["Ps28CustomDebugStringConvertible", "addSubview"]
 - !private ["Ps28CustomDebugStringConvertible", "addTarget"]
 - !private ["Ps28CustomDebugStringConvertible", "async"]
@@ -254,14 +230,14 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps28CustomDebugStringConvertible", "init"]
-- ["Ps28CustomDebugStringConvertible", "items"]
+- !private ["Ps28CustomDebugStringConvertible", "items"]
 - !private ["Ps28CustomDebugStringConvertible", "main"]
-- ["Ps28CustomDebugStringConvertible", "navigateBack"]
+- !private ["Ps28CustomDebugStringConvertible", "navigateBack"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSections"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps28CustomDebugStringConvertible", "object"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
-- ["Ps28CustomDebugStringConvertible", "refreshControl"]
+- !private ["Ps28CustomDebugStringConvertible", "refreshControl"]
 - !private ["Ps28CustomDebugStringConvertible", "reloadData"]
 - !private ["Ps28CustomDebugStringConvertible", "row"]
 - ["Ps28CustomDebugStringConvertible", "scrollViewDidEndDecelerating"]
@@ -286,10 +262,9 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "textLabel"]
 - !private ["Ps28CustomDebugStringConvertible", "view"]
-- ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
+- !private ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", "viewForZooming"]
 - ["Ps28CustomDebugStringConvertible", "viewForZoomingInScrollView"]
-- ["Ps28CustomDebugStringConvertible", "viewWillAppear"]
 - !private ["Ps28CustomDebugStringConvertible", "width"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "height"]
@@ -304,13 +279,10 @@ depends-member:
 - !private ["Ps17CustomReflectable", "width"]
 - !private ["Ps23CustomStringConvertible", "CGRect"]
 - !private ["Ps23CustomStringConvertible", "DispatchQueue"]
-- !private ["Ps23CustomStringConvertible", "Index"]
-- !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "JSON"]
 - !private ["Ps23CustomStringConvertible", "MenuVC"]
 - ["Ps23CustomStringConvertible", "NSMutableArray"]
 - !private ["Ps23CustomStringConvertible", "RestApiManager"]
-- !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "UIButton"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
 - !private ["Ps23CustomStringConvertible", "UIControlEvents"]
@@ -319,9 +291,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UITableView"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCell"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCellStyle"]
-- !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "add"]
-- ["Ps23CustomStringConvertible", "addData"]
+- !private ["Ps23CustomStringConvertible", "addData"]
 - !private ["Ps23CustomStringConvertible", "addSubview"]
 - !private ["Ps23CustomStringConvertible", "addTarget"]
 - !private ["Ps23CustomStringConvertible", "async"]
@@ -337,14 +308,14 @@ depends-member:
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps23CustomStringConvertible", "init"]
-- ["Ps23CustomStringConvertible", "items"]
+- !private ["Ps23CustomStringConvertible", "items"]
 - !private ["Ps23CustomStringConvertible", "main"]
-- ["Ps23CustomStringConvertible", "navigateBack"]
+- !private ["Ps23CustomStringConvertible", "navigateBack"]
 - ["Ps23CustomStringConvertible", "numberOfSections"]
 - ["Ps23CustomStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps23CustomStringConvertible", "object"]
 - !private ["Ps23CustomStringConvertible", "print"]
-- ["Ps23CustomStringConvertible", "refreshControl"]
+- !private ["Ps23CustomStringConvertible", "refreshControl"]
 - !private ["Ps23CustomStringConvertible", "reloadData"]
 - !private ["Ps23CustomStringConvertible", "row"]
 - ["Ps23CustomStringConvertible", "scrollViewDidEndDecelerating"]
@@ -369,28 +340,20 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "textLabel"]
 - !private ["Ps23CustomStringConvertible", "view"]
-- ["Ps23CustomStringConvertible", "viewDidLoad"]
+- !private ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", "viewForZooming"]
 - ["Ps23CustomStringConvertible", "viewForZoomingInScrollView"]
-- ["Ps23CustomStringConvertible", "viewWillAppear"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["CSo14DispatchObject", "async"]
 - !private ["CSo14DispatchObject", "main"]
 - !private ["CSo13DispatchQueue", "async"]
-- !private ["CSo13DispatchQueue", "deinit"]
 - !private ["CSo13DispatchQueue", "main"]
-- !private ["Sd", "deinit"]
 - !private ["Ps9Equatable", "CGRect"]
 - !private ["Ps9Equatable", "DispatchQueue"]
-- !private ["Ps9Equatable", "Element"]
-- !private ["Ps9Equatable", "Index"]
-- !private ["Ps9Equatable", "IndexDistance"]
 - !private ["Ps9Equatable", "JSON"]
 - !private ["Ps9Equatable", "MenuVC"]
 - ["Ps9Equatable", "NSMutableArray"]
-- !private ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "RestApiManager"]
-- !private ["Ps9Equatable", "SubSequence"]
 - !private ["Ps9Equatable", "UIButton"]
 - !private ["Ps9Equatable", "UIColor"]
 - !private ["Ps9Equatable", "UIControlEvents"]
@@ -399,9 +362,8 @@ depends-member:
 - !private ["Ps9Equatable", "UITableView"]
 - !private ["Ps9Equatable", "UITableViewCell"]
 - !private ["Ps9Equatable", "UITableViewCellStyle"]
-- !private ["Ps9Equatable", "_Element"]
 - !private ["Ps9Equatable", "add"]
-- ["Ps9Equatable", "addData"]
+- !private ["Ps9Equatable", "addData"]
 - !private ["Ps9Equatable", "addSubview"]
 - !private ["Ps9Equatable", "addTarget"]
 - !private ["Ps9Equatable", "async"]
@@ -418,14 +380,14 @@ depends-member:
 - ["Ps9Equatable", "indexPathForPreferredFocusedView"]
 - ["Ps9Equatable", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps9Equatable", "init"]
-- ["Ps9Equatable", "items"]
+- !private ["Ps9Equatable", "items"]
 - !private ["Ps9Equatable", "main"]
-- ["Ps9Equatable", "navigateBack"]
+- !private ["Ps9Equatable", "navigateBack"]
 - ["Ps9Equatable", "numberOfSections"]
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
 - !private ["Ps9Equatable", "object"]
 - !private ["Ps9Equatable", "print"]
-- ["Ps9Equatable", "refreshControl"]
+- !private ["Ps9Equatable", "refreshControl"]
 - !private ["Ps9Equatable", "reloadData"]
 - !private ["Ps9Equatable", "row"]
 - ["Ps9Equatable", "scrollViewDidEndDecelerating"]
@@ -452,18 +414,11 @@ depends-member:
 - !private ["Ps9Equatable", "touchUpInside"]
 - !private ["Ps9Equatable", "value1"]
 - !private ["Ps9Equatable", "view"]
-- ["Ps9Equatable", "viewDidLoad"]
+- !private ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", "viewForZooming"]
 - ["Ps9Equatable", "viewForZoomingInScrollView"]
-- ["Ps9Equatable", "viewWillAppear"]
 - !private ["Ps9Equatable", "width"]
 - ["Ps9Equatable", ""]
-- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Index"]
-- !private ["Ps25ExpressibleByArrayLiteral", "IndexDistance"]
-- !private ["Ps25ExpressibleByArrayLiteral", "RawValue"]
-- !private ["Ps25ExpressibleByArrayLiteral", "SubSequence"]
-- !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "add"]
 - !private ["Ps25ExpressibleByArrayLiteral", "count"]
 - ["Ps25ExpressibleByArrayLiteral", "init"]
@@ -472,72 +427,38 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "string"]
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
 - !private ["Ps25ExpressibleByArrayLiteral", "touchUpInside"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "Index"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "IndexDistance"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "SubSequence"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "_Element"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "init"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "object"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "string"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "subscript"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "Index"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "IndexDistance"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "SubSequence"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "_Element"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "init"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "object"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "string"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Index"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "IndexDistance"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "SubSequence"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "_Element"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "object"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "string"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "subscript"]
-- !private ["Ps25ExpressibleByFloatLiteral", "Index"]
-- !private ["Ps25ExpressibleByFloatLiteral", "IndexDistance"]
-- !private ["Ps25ExpressibleByFloatLiteral", "SubSequence"]
-- !private ["Ps25ExpressibleByFloatLiteral", "_Element"]
 - !private ["Ps25ExpressibleByFloatLiteral", "init"]
 - !private ["Ps25ExpressibleByFloatLiteral", "object"]
 - !private ["Ps25ExpressibleByFloatLiteral", "string"]
 - !private ["Ps25ExpressibleByFloatLiteral", "subscript"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "Index"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "IndexDistance"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "SubSequence"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "_Element"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "object"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "string"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "subscript"]
-- !private ["Ps23ExpressibleByNilLiteral", "Index"]
-- !private ["Ps23ExpressibleByNilLiteral", "IndexDistance"]
-- !private ["Ps23ExpressibleByNilLiteral", "SubSequence"]
-- !private ["Ps23ExpressibleByNilLiteral", "_Element"]
 - !private ["Ps23ExpressibleByNilLiteral", "init"]
 - !private ["Ps23ExpressibleByNilLiteral", "object"]
 - !private ["Ps23ExpressibleByNilLiteral", "string"]
 - !private ["Ps23ExpressibleByNilLiteral", "subscript"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps26ExpressibleByStringLiteral", "Index"]
-- !private ["Ps26ExpressibleByStringLiteral", "IndexDistance"]
-- !private ["Ps26ExpressibleByStringLiteral", "SubSequence"]
-- !private ["Ps26ExpressibleByStringLiteral", "_Element"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "object"]
 - !private ["Ps26ExpressibleByStringLiteral", "string"]
 - !private ["Ps26ExpressibleByStringLiteral", "subscript"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "Index"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "IndexDistance"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "SubSequence"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "_Element"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "object"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "string"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "subscript"]
-- !private ["Sf", "deinit"]
 - !private ["Ps8Hashable", "CGRect"]
 - !private ["Ps8Hashable", "DispatchQueue"]
 - !private ["Ps8Hashable", "JSON"]
@@ -553,7 +474,7 @@ depends-member:
 - !private ["Ps8Hashable", "UITableViewCell"]
 - !private ["Ps8Hashable", "UITableViewCellStyle"]
 - !private ["Ps8Hashable", "add"]
-- ["Ps8Hashable", "addData"]
+- !private ["Ps8Hashable", "addData"]
 - !private ["Ps8Hashable", "addSubview"]
 - !private ["Ps8Hashable", "addTarget"]
 - !private ["Ps8Hashable", "async"]
@@ -569,13 +490,13 @@ depends-member:
 - ["Ps8Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps8Hashable", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps8Hashable", "init"]
-- ["Ps8Hashable", "items"]
+- !private ["Ps8Hashable", "items"]
 - !private ["Ps8Hashable", "main"]
-- ["Ps8Hashable", "navigateBack"]
+- !private ["Ps8Hashable", "navigateBack"]
 - ["Ps8Hashable", "numberOfSections"]
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps8Hashable", "print"]
-- ["Ps8Hashable", "refreshControl"]
+- !private ["Ps8Hashable", "refreshControl"]
 - !private ["Ps8Hashable", "reloadData"]
 - !private ["Ps8Hashable", "row"]
 - ["Ps8Hashable", "scrollViewDidEndDecelerating"]
@@ -600,52 +521,15 @@ depends-member:
 - !private ["Ps8Hashable", "textLabel"]
 - !private ["Ps8Hashable", "value1"]
 - !private ["Ps8Hashable", "view"]
-- ["Ps8Hashable", "viewDidLoad"]
+- !private ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", "viewForZooming"]
 - ["Ps8Hashable", "viewForZoomingInScrollView"]
-- ["Ps8Hashable", "viewWillAppear"]
 - ["Ps8Hashable", ""]
-- ["SQ", "deinit"]
-- !private ["O10SwiftyJSON5Index", "deinit"]
-- ["V10Foundation9IndexPath", "deinit"]
 - !private ["V10Foundation9IndexPath", "row"]
-- !private ["Ps9Indexable", "Index"]
-- !private ["Ps9Indexable", "IndexDistance"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "SubSequence"]
-- !private ["Ps9Indexable", "_Element"]
-- !private ["Ps9Indexable", "init"]
-- !private ["Ps9Indexable", "object"]
-- !private ["Ps9Indexable", "row"]
-- !private ["Ps9Indexable", "string"]
-- !private ["Ps9Indexable", "subscript"]
-- !private ["Ps13IndexableBase", "Index"]
-- !private ["Ps13IndexableBase", "IndexDistance"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "SubSequence"]
-- !private ["Ps13IndexableBase", "_Element"]
-- !private ["Ps13IndexableBase", "init"]
-- !private ["Ps13IndexableBase", "object"]
-- !private ["Ps13IndexableBase", "row"]
-- !private ["Ps13IndexableBase", "string"]
-- !private ["Ps13IndexableBase", "subscript"]
-- !private ["Vs16IndexingIterator", "Element"]
-- ["Si", "deinit"]
-- !private ["Vs5Int16", "deinit"]
-- !private ["Vs5Int32", "deinit"]
-- !private ["Vs5Int64", "deinit"]
-- !private ["Vs4Int8", "deinit"]
-- !private ["Ps16IteratorProtocol", "Element"]
-- !private ["V10SwiftyJSON4JSON", "Index"]
-- !private ["V10SwiftyJSON4JSON", "IndexDistance"]
-- !private ["V10SwiftyJSON4JSON", "SubSequence"]
-- !private ["V10SwiftyJSON4JSON", "_Element"]
-- ["V10SwiftyJSON4JSON", "deinit"]
 - !private ["V10SwiftyJSON4JSON", "init"]
 - !private ["V10SwiftyJSON4JSON", "object"]
 - !private ["V10SwiftyJSON4JSON", "string"]
 - !private ["V10SwiftyJSON4JSON", "subscript"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "deinit"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "init"]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["C16SwiftLoginScreen6MenuVC", "AnyObject"]
@@ -701,12 +585,10 @@ depends-member:
 - ["C16SwiftLoginScreen6MenuVC", "viewWillAppear"]
 - !private ["Ps10MirrorPath", "init"]
 - !private ["Ps17MutableCollection", "row"]
-- !private ["Ps16MutableIndexable", "row"]
 - !private ["CSo7NSArray", "add"]
 - !private ["CSo7NSArray", "count"]
 - ["CSo7NSArray", "init"]
 - !private ["CSo7NSArray", "subscript"]
-- ["CSo7NSCoder", "deinit"]
 - !private ["PSo8NSCoding", "CGRect"]
 - !private ["PSo8NSCoding", "DispatchQueue"]
 - !private ["PSo8NSCoding", "JSON"]
@@ -722,7 +604,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UITableViewCell"]
 - !private ["PSo8NSCoding", "UITableViewCellStyle"]
 - !private ["PSo8NSCoding", "add"]
-- ["PSo8NSCoding", "addData"]
+- !private ["PSo8NSCoding", "addData"]
 - !private ["PSo8NSCoding", "addSubview"]
 - !private ["PSo8NSCoding", "addTarget"]
 - !private ["PSo8NSCoding", "backgroundColor"]
@@ -736,12 +618,12 @@ depends-member:
 - ["PSo8NSCoding", "indexPathForPreferredFocusedView"]
 - ["PSo8NSCoding", "indexPathForPreferredFocusedViewInTableView"]
 - ["PSo8NSCoding", "init"]
-- ["PSo8NSCoding", "items"]
-- ["PSo8NSCoding", "navigateBack"]
+- !private ["PSo8NSCoding", "items"]
+- !private ["PSo8NSCoding", "navigateBack"]
 - ["PSo8NSCoding", "numberOfSections"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
 - !private ["PSo8NSCoding", "print"]
-- ["PSo8NSCoding", "refreshControl"]
+- !private ["PSo8NSCoding", "refreshControl"]
 - !private ["PSo8NSCoding", "reloadData"]
 - ["PSo8NSCoding", "scrollViewDidEndDecelerating"]
 - ["PSo8NSCoding", "scrollViewDidEndDragging"]
@@ -763,10 +645,9 @@ depends-member:
 - !private ["PSo8NSCoding", "text"]
 - !private ["PSo8NSCoding", "textLabel"]
 - !private ["PSo8NSCoding", "view"]
-- ["PSo8NSCoding", "viewDidLoad"]
+- !private ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", "viewForZooming"]
 - ["PSo8NSCoding", "viewForZoomingInScrollView"]
-- ["PSo8NSCoding", "viewWillAppear"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "add"]
 - !private ["PSo9NSCopying", "black"]
@@ -787,17 +668,17 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UITableView"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCell"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCellStyle"]
-- ["PSo26NSExtensionRequestHandling", "addData"]
+- !private ["PSo26NSExtensionRequestHandling", "addData"]
 - !private ["PSo26NSExtensionRequestHandling", "dismiss"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedView"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
-- ["PSo26NSExtensionRequestHandling", "items"]
-- ["PSo26NSExtensionRequestHandling", "navigateBack"]
+- !private ["PSo26NSExtensionRequestHandling", "items"]
+- !private ["PSo26NSExtensionRequestHandling", "navigateBack"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSections"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
-- ["PSo26NSExtensionRequestHandling", "refreshControl"]
+- !private ["PSo26NSExtensionRequestHandling", "refreshControl"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndDecelerating"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndDragging"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndScrollingAnimation"]
@@ -814,10 +695,9 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "sectionIndexTitlesForTableView"]
 - ["PSo26NSExtensionRequestHandling", "tableView"]
 - !private ["PSo26NSExtensionRequestHandling", "view"]
-- ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- !private ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", "viewForZooming"]
 - ["PSo26NSExtensionRequestHandling", "viewForZoomingInScrollView"]
-- ["PSo26NSExtensionRequestHandling", "viewWillAppear"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "add"]
 - !private ["PSo17NSFastEnumeration", "count"]
@@ -825,7 +705,6 @@ depends-member:
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["CSo14NSMutableArray", "add"]
 - !private ["CSo14NSMutableArray", "count"]
-- ["CSo14NSMutableArray", "deinit"]
 - ["CSo14NSMutableArray", "init"]
 - !private ["CSo14NSMutableArray", "subscript"]
 - !private ["PSo16NSMutableCopying", "add"]
@@ -916,7 +795,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UITableViewCell"]
 - !private ["PSo16NSObjectProtocol", "UITableViewCellStyle"]
 - !private ["PSo16NSObjectProtocol", "add"]
-- ["PSo16NSObjectProtocol", "addData"]
+- !private ["PSo16NSObjectProtocol", "addData"]
 - !private ["PSo16NSObjectProtocol", "addSubview"]
 - !private ["PSo16NSObjectProtocol", "addTarget"]
 - !private ["PSo16NSObjectProtocol", "async"]
@@ -932,13 +811,13 @@ depends-member:
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedView"]
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedViewInTableView"]
 - ["PSo16NSObjectProtocol", "init"]
-- ["PSo16NSObjectProtocol", "items"]
+- !private ["PSo16NSObjectProtocol", "items"]
 - !private ["PSo16NSObjectProtocol", "main"]
-- ["PSo16NSObjectProtocol", "navigateBack"]
+- !private ["PSo16NSObjectProtocol", "navigateBack"]
 - ["PSo16NSObjectProtocol", "numberOfSections"]
 - ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
 - !private ["PSo16NSObjectProtocol", "print"]
-- ["PSo16NSObjectProtocol", "refreshControl"]
+- !private ["PSo16NSObjectProtocol", "refreshControl"]
 - !private ["PSo16NSObjectProtocol", "reloadData"]
 - ["PSo16NSObjectProtocol", "scrollViewDidEndDecelerating"]
 - ["PSo16NSObjectProtocol", "scrollViewDidEndDragging"]
@@ -961,10 +840,9 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "textLabel"]
 - !private ["PSo16NSObjectProtocol", "view"]
-- ["PSo16NSObjectProtocol", "viewDidLoad"]
+- !private ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", "viewForZooming"]
 - ["PSo16NSObjectProtocol", "viewForZoomingInScrollView"]
-- ["PSo16NSObjectProtocol", "viewWillAppear"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "add"]
 - !private ["PSo14NSSecureCoding", "black"]
@@ -974,19 +852,9 @@ depends-member:
 - !private ["CSo8NSString", "init"]
 - !private ["CSo9OS_object", "async"]
 - !private ["CSo9OS_object", "main"]
-- !private ["Ps9OptionSet", "Element"]
-- !private ["Ps9OptionSet", "RawValue"]
 - !private ["Ps9OptionSet", "init"]
 - !private ["Ps9OptionSet", "touchUpInside"]
-- ["Sq", "deinit"]
 - !private ["Ps22RandomAccessCollection", "row"]
-- !private ["Ps21RandomAccessIndexable", "row"]
-- !private ["Ps16RawRepresentable", "Element"]
-- !private ["Ps16RawRepresentable", "Index"]
-- !private ["Ps16RawRepresentable", "IndexDistance"]
-- !private ["Ps16RawRepresentable", "RawValue"]
-- !private ["Ps16RawRepresentable", "SubSequence"]
-- !private ["Ps16RawRepresentable", "_Element"]
 - !private ["Ps16RawRepresentable", "init"]
 - !private ["Ps16RawRepresentable", "object"]
 - !private ["Ps16RawRepresentable", "string"]
@@ -994,16 +862,8 @@ depends-member:
 - !private ["Ps16RawRepresentable", "touchUpInside"]
 - !private ["Ps16RawRepresentable", "value1"]
 - !private ["P10Foundation20ReferenceConvertible", "row"]
-- ["C16SwiftLoginScreen14RestApiManager", "deinit"]
 - !private ["C16SwiftLoginScreen14RestApiManager", "getRandomUser"]
 - !private ["C16SwiftLoginScreen14RestApiManager", "sharedInstance"]
-- ["V10ObjectiveC8Selector", "deinit"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Index"]
-- !private ["Ps8Sequence", "IndexDistance"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "SubSequence"]
-- !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "add"]
 - !private ["Ps8Sequence", "count"]
 - ["Ps8Sequence", "init"]
@@ -1011,16 +871,9 @@ depends-member:
 - !private ["Ps8Sequence", "row"]
 - !private ["Ps8Sequence", "string"]
 - !private ["Ps8Sequence", "subscript"]
-- !private ["Ps10SetAlgebra", "Element"]
-- !private ["Ps10SetAlgebra", "RawValue"]
 - !private ["Ps10SetAlgebra", "init"]
 - !private ["Ps10SetAlgebra", "touchUpInside"]
-- !private ["Vs5Slice", "Index"]
-- !private ["Vs5Slice", "Iterator"]
-- !private ["Vs5Slice", "SubSequence"]
-- !private ["Vs5Slice", "_Element"]
 - !private ["Vs5Slice", "object"]
-- ["SS", "deinit"]
 - !private ["SS", "init"]
 - !private ["Ps16TextOutputStream", "init"]
 - !private ["Ps20TextOutputStreamable", "init"]
@@ -1064,7 +917,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UITableView"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCell"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCellStyle"]
-- ["PSo21UIAppearanceContainer", "addData"]
+- !private ["PSo21UIAppearanceContainer", "addData"]
 - !private ["PSo21UIAppearanceContainer", "addSubview"]
 - !private ["PSo21UIAppearanceContainer", "addTarget"]
 - !private ["PSo21UIAppearanceContainer", "backgroundColor"]
@@ -1076,12 +929,12 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "indexPathForPreferredFocusedView"]
 - ["PSo21UIAppearanceContainer", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo21UIAppearanceContainer", "init"]
-- ["PSo21UIAppearanceContainer", "items"]
-- ["PSo21UIAppearanceContainer", "navigateBack"]
+- !private ["PSo21UIAppearanceContainer", "items"]
+- !private ["PSo21UIAppearanceContainer", "navigateBack"]
 - ["PSo21UIAppearanceContainer", "numberOfSections"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
 - !private ["PSo21UIAppearanceContainer", "print"]
-- ["PSo21UIAppearanceContainer", "refreshControl"]
+- !private ["PSo21UIAppearanceContainer", "refreshControl"]
 - !private ["PSo21UIAppearanceContainer", "reloadData"]
 - ["PSo21UIAppearanceContainer", "scrollViewDidEndDecelerating"]
 - ["PSo21UIAppearanceContainer", "scrollViewDidEndDragging"]
@@ -1102,18 +955,15 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "text"]
 - !private ["PSo21UIAppearanceContainer", "textLabel"]
 - !private ["PSo21UIAppearanceContainer", "view"]
-- ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- !private ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", "viewForZooming"]
 - ["PSo21UIAppearanceContainer", "viewForZoomingInScrollView"]
-- ["PSo21UIAppearanceContainer", "viewWillAppear"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["CSo8UIButton", "addTarget"]
 - !private ["CSo8UIButton", "backgroundColor"]
-- ["CSo8UIButton", "deinit"]
 - !private ["CSo8UIButton", "init"]
 - !private ["CSo8UIButton", "setTitle"]
 - !private ["CSo7UIColor", "black"]
-- ["CSo7UIColor", "deinit"]
 - !private ["PSo18UIContentContainer", "CGRect"]
 - !private ["PSo18UIContentContainer", "DispatchQueue"]
 - !private ["PSo18UIContentContainer", "JSON"]
@@ -1128,17 +978,17 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UITableView"]
 - !private ["PSo18UIContentContainer", "UITableViewCell"]
 - !private ["PSo18UIContentContainer", "UITableViewCellStyle"]
-- ["PSo18UIContentContainer", "addData"]
+- !private ["PSo18UIContentContainer", "addData"]
 - !private ["PSo18UIContentContainer", "dismiss"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedView"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UIContentContainer", "init"]
-- ["PSo18UIContentContainer", "items"]
-- ["PSo18UIContentContainer", "navigateBack"]
+- !private ["PSo18UIContentContainer", "items"]
+- !private ["PSo18UIContentContainer", "navigateBack"]
 - ["PSo18UIContentContainer", "numberOfSections"]
 - ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
 - !private ["PSo18UIContentContainer", "print"]
-- ["PSo18UIContentContainer", "refreshControl"]
+- !private ["PSo18UIContentContainer", "refreshControl"]
 - ["PSo18UIContentContainer", "scrollViewDidEndDecelerating"]
 - ["PSo18UIContentContainer", "scrollViewDidEndDragging"]
 - ["PSo18UIContentContainer", "scrollViewDidEndScrollingAnimation"]
@@ -1155,21 +1005,16 @@ depends-member:
 - ["PSo18UIContentContainer", "sectionIndexTitlesForTableView"]
 - ["PSo18UIContentContainer", "tableView"]
 - !private ["PSo18UIContentContainer", "view"]
-- ["PSo18UIContentContainer", "viewDidLoad"]
+- !private ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", "viewForZooming"]
 - ["PSo18UIContentContainer", "viewForZoomingInScrollView"]
-- ["PSo18UIContentContainer", "viewWillAppear"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["CSo9UIControl", "addTarget"]
 - !private ["CSo9UIControl", "backgroundColor"]
 - !private ["CSo9UIControl", "init"]
 - !private ["CSo9UIControl", "setTitle"]
-- ["VSC15UIControlEvents", "deinit"]
 - !private ["VSC15UIControlEvents", "touchUpInside"]
-- !private ["VSC14UIControlState", "Element"]
-- !private ["VSC14UIControlState", "RawValue"]
-- ["VSC14UIControlState", "deinit"]
 - !private ["VSC14UIControlState", "init"]
 - !private ["PSo17UICoordinateSpace", "addSubview"]
 - !private ["PSo17UICoordinateSpace", "addTarget"]
@@ -1209,7 +1054,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UITableView"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCell"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCellStyle"]
-- ["PSo18UIFocusEnvironment", "addData"]
+- !private ["PSo18UIFocusEnvironment", "addData"]
 - !private ["PSo18UIFocusEnvironment", "addSubview"]
 - !private ["PSo18UIFocusEnvironment", "addTarget"]
 - !private ["PSo18UIFocusEnvironment", "backgroundColor"]
@@ -1221,12 +1066,12 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "indexPathForPreferredFocusedView"]
 - ["PSo18UIFocusEnvironment", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UIFocusEnvironment", "init"]
-- ["PSo18UIFocusEnvironment", "items"]
-- ["PSo18UIFocusEnvironment", "navigateBack"]
+- !private ["PSo18UIFocusEnvironment", "items"]
+- !private ["PSo18UIFocusEnvironment", "navigateBack"]
 - ["PSo18UIFocusEnvironment", "numberOfSections"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
 - !private ["PSo18UIFocusEnvironment", "print"]
-- ["PSo18UIFocusEnvironment", "refreshControl"]
+- !private ["PSo18UIFocusEnvironment", "refreshControl"]
 - !private ["PSo18UIFocusEnvironment", "reloadData"]
 - ["PSo18UIFocusEnvironment", "scrollViewDidEndDecelerating"]
 - ["PSo18UIFocusEnvironment", "scrollViewDidEndDragging"]
@@ -1247,10 +1092,9 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "text"]
 - !private ["PSo18UIFocusEnvironment", "textLabel"]
 - !private ["PSo18UIFocusEnvironment", "view"]
-- ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- !private ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", "viewForZooming"]
 - ["PSo18UIFocusEnvironment", "viewForZoomingInScrollView"]
-- ["PSo18UIFocusEnvironment", "viewWillAppear"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "addSubview"]
 - !private ["PSo11UIFocusItem", "addTarget"]
@@ -1266,9 +1110,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "textLabel"]
 - !private ["PSo27UIGestureRecognizerDelegate", "init"]
 - !private ["PSo27UIGestureRecognizerDelegate", "textLabel"]
-- ["CSo7UILabel", "deinit"]
 - !private ["CSo7UILabel", "text"]
-- ["CSo16UIRefreshControl", "deinit"]
 - !private ["CSo16UIRefreshControl", "init"]
 - !private ["CSo11UIResponder", "AnyObject"]
 - ["CSo11UIResponder", "Bool"]
@@ -1345,7 +1187,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UITableView"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewCell"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewCellStyle"]
-- ["PSo30UIResponderStandardEditActions", "addData"]
+- !private ["PSo30UIResponderStandardEditActions", "addData"]
 - !private ["PSo30UIResponderStandardEditActions", "addSubview"]
 - !private ["PSo30UIResponderStandardEditActions", "addTarget"]
 - !private ["PSo30UIResponderStandardEditActions", "backgroundColor"]
@@ -1357,12 +1199,12 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "indexPathForPreferredFocusedView"]
 - ["PSo30UIResponderStandardEditActions", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
-- ["PSo30UIResponderStandardEditActions", "items"]
-- ["PSo30UIResponderStandardEditActions", "navigateBack"]
+- !private ["PSo30UIResponderStandardEditActions", "items"]
+- !private ["PSo30UIResponderStandardEditActions", "navigateBack"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSections"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSectionsInTableView"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
-- ["PSo30UIResponderStandardEditActions", "refreshControl"]
+- !private ["PSo30UIResponderStandardEditActions", "refreshControl"]
 - !private ["PSo30UIResponderStandardEditActions", "reloadData"]
 - ["PSo30UIResponderStandardEditActions", "scrollViewDidEndDecelerating"]
 - ["PSo30UIResponderStandardEditActions", "scrollViewDidEndDragging"]
@@ -1383,10 +1225,9 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - !private ["PSo30UIResponderStandardEditActions", "textLabel"]
 - !private ["PSo30UIResponderStandardEditActions", "view"]
-- ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- !private ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", "viewForZooming"]
 - ["PSo30UIResponderStandardEditActions", "viewForZoomingInScrollView"]
-- ["PSo30UIResponderStandardEditActions", "viewWillAppear"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo12UIScrollView", "addSubview"]
 - !private ["CSo12UIScrollView", "dataSource"]
@@ -1451,17 +1292,17 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UITableView"]
 - !private ["PSo16UIStateRestoring", "UITableViewCell"]
 - !private ["PSo16UIStateRestoring", "UITableViewCellStyle"]
-- ["PSo16UIStateRestoring", "addData"]
+- !private ["PSo16UIStateRestoring", "addData"]
 - !private ["PSo16UIStateRestoring", "dismiss"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedView"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo16UIStateRestoring", "init"]
-- ["PSo16UIStateRestoring", "items"]
-- ["PSo16UIStateRestoring", "navigateBack"]
+- !private ["PSo16UIStateRestoring", "items"]
+- !private ["PSo16UIStateRestoring", "navigateBack"]
 - ["PSo16UIStateRestoring", "numberOfSections"]
 - ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
 - !private ["PSo16UIStateRestoring", "print"]
-- ["PSo16UIStateRestoring", "refreshControl"]
+- !private ["PSo16UIStateRestoring", "refreshControl"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndDecelerating"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndDragging"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndScrollingAnimation"]
@@ -1478,22 +1319,18 @@ depends-member:
 - ["PSo16UIStateRestoring", "sectionIndexTitlesForTableView"]
 - ["PSo16UIStateRestoring", "tableView"]
 - !private ["PSo16UIStateRestoring", "view"]
-- ["PSo16UIStateRestoring", "viewDidLoad"]
+- !private ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", "viewForZooming"]
 - ["PSo16UIStateRestoring", "viewForZoomingInScrollView"]
-- ["PSo16UIStateRestoring", "viewWillAppear"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["CSo11UITableView", "addSubview"]
 - !private ["CSo11UITableView", "dataSource"]
-- ["CSo11UITableView", "deinit"]
 - !private ["CSo11UITableView", "delegate"]
 - !private ["CSo11UITableView", "dequeueReusableCell"]
 - !private ["CSo11UITableView", "init"]
 - !private ["CSo11UITableView", "reloadData"]
-- ["CSo15UITableViewCell", "deinit"]
 - !private ["CSo15UITableViewCell", "init"]
 - !private ["CSo15UITableViewCell", "textLabel"]
-- ["OSC20UITableViewCellStyle", "deinit"]
 - !private ["OSC20UITableViewCellStyle", "value1"]
 - !private ["PSo21UITableViewDataSource", "CGRect"]
 - !private ["PSo21UITableViewDataSource", "DispatchQueue"]
@@ -1595,7 +1432,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UITableView"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCell"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCellStyle"]
-- ["PSo18UITraitEnvironment", "addData"]
+- !private ["PSo18UITraitEnvironment", "addData"]
 - !private ["PSo18UITraitEnvironment", "addSubview"]
 - !private ["PSo18UITraitEnvironment", "addTarget"]
 - !private ["PSo18UITraitEnvironment", "backgroundColor"]
@@ -1607,12 +1444,12 @@ depends-member:
 - ["PSo18UITraitEnvironment", "indexPathForPreferredFocusedView"]
 - ["PSo18UITraitEnvironment", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UITraitEnvironment", "init"]
-- ["PSo18UITraitEnvironment", "items"]
-- ["PSo18UITraitEnvironment", "navigateBack"]
+- !private ["PSo18UITraitEnvironment", "items"]
+- !private ["PSo18UITraitEnvironment", "navigateBack"]
 - ["PSo18UITraitEnvironment", "numberOfSections"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
 - !private ["PSo18UITraitEnvironment", "print"]
-- ["PSo18UITraitEnvironment", "refreshControl"]
+- !private ["PSo18UITraitEnvironment", "refreshControl"]
 - !private ["PSo18UITraitEnvironment", "reloadData"]
 - ["PSo18UITraitEnvironment", "scrollViewDidEndDecelerating"]
 - ["PSo18UITraitEnvironment", "scrollViewDidEndDragging"]
@@ -1633,10 +1470,9 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "text"]
 - !private ["PSo18UITraitEnvironment", "textLabel"]
 - !private ["PSo18UITraitEnvironment", "view"]
-- ["PSo18UITraitEnvironment", "viewDidLoad"]
+- !private ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", "viewForZooming"]
 - ["PSo18UITraitEnvironment", "viewForZoomingInScrollView"]
-- ["PSo18UITraitEnvironment", "viewWillAppear"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "addSubview"]
 - !private ["CSo6UIView", "addTarget"]
@@ -1670,7 +1506,6 @@ depends-member:
 - ["CSo16UIViewController", "UITableViewCell"]
 - !private ["CSo16UIViewController", "UITableViewCellStyle"]
 - ["CSo16UIViewController", "addData"]
-- ["CSo16UIViewController", "deinit"]
 - !private ["CSo16UIViewController", "dismiss"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedView"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedViewInTableView"]
@@ -1702,12 +1537,7 @@ depends-member:
 - ["CSo16UIViewController", "viewForZoomingInScrollView"]
 - ["CSo16UIViewController", "viewWillAppear"]
 - ["CSo16UIViewController", ""]
-- !private ["Su", "deinit"]
-- !private ["Vs6UInt16", "deinit"]
-- !private ["Vs6UInt32", "deinit"]
-- !private ["Vs6UInt64", "deinit"]
-- !private ["Vs5UInt8", "deinit"]
-- !private ["Sc", "deinit"]
+- !private ["Ps23_BidirectionalIndexable", "row"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addSubview"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addTarget"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "backgroundColor"]
@@ -1725,6 +1555,7 @@ depends-member:
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps26_ExpressibleByColorLiteral", "black"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "CGRect"]
 - !private ["Ps9_Hashable", "DispatchQueue"]
@@ -1741,7 +1572,7 @@ depends-member:
 - !private ["Ps9_Hashable", "UITableViewCell"]
 - !private ["Ps9_Hashable", "UITableViewCellStyle"]
 - !private ["Ps9_Hashable", "add"]
-- ["Ps9_Hashable", "addData"]
+- !private ["Ps9_Hashable", "addData"]
 - !private ["Ps9_Hashable", "addSubview"]
 - !private ["Ps9_Hashable", "addTarget"]
 - !private ["Ps9_Hashable", "async"]
@@ -1757,13 +1588,13 @@ depends-member:
 - ["Ps9_Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps9_Hashable", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps9_Hashable", "init"]
-- ["Ps9_Hashable", "items"]
+- !private ["Ps9_Hashable", "items"]
 - !private ["Ps9_Hashable", "main"]
-- ["Ps9_Hashable", "navigateBack"]
+- !private ["Ps9_Hashable", "navigateBack"]
 - ["Ps9_Hashable", "numberOfSections"]
 - ["Ps9_Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps9_Hashable", "print"]
-- ["Ps9_Hashable", "refreshControl"]
+- !private ["Ps9_Hashable", "refreshControl"]
 - !private ["Ps9_Hashable", "reloadData"]
 - !private ["Ps9_Hashable", "row"]
 - ["Ps9_Hashable", "scrollViewDidEndDecelerating"]
@@ -1788,26 +1619,32 @@ depends-member:
 - !private ["Ps9_Hashable", "textLabel"]
 - !private ["Ps9_Hashable", "value1"]
 - !private ["Ps9_Hashable", "view"]
-- ["Ps9_Hashable", "viewDidLoad"]
+- !private ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", "viewForZooming"]
 - ["Ps9_Hashable", "viewForZoomingInScrollView"]
-- ["Ps9_Hashable", "viewWillAppear"]
 - ["Ps9_Hashable", ""]
+- !private ["Ps10_Indexable", "init"]
+- !private ["Ps10_Indexable", "object"]
+- !private ["Ps10_Indexable", "row"]
+- !private ["Ps10_Indexable", "string"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "init"]
+- !private ["Ps14_IndexableBase", "object"]
+- !private ["Ps14_IndexableBase", "row"]
+- !private ["Ps14_IndexableBase", "string"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps17_MutableIndexable", "row"]
 - !private ["Ps21_ObjectiveCBridgeable", "height"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "row"]
 - !private ["Ps21_ObjectiveCBridgeable", "width"]
+- !private ["Ps22_RandomAccessIndexable", "row"]
 depends-nominal:
 - "Ps9AnyObject"
-- !private "Sa"
 - !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
-- "Sb"
 - !private "PSo15CALayerDelegate"
-- "V12CoreGraphics7CGFloat"
-- "VSC6CGRect"
+- !private "VSC6CGRect"
 - "Ps7CVarArg"
-- !private "Vs9Character"
 - !private "Ps10Collection"
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
@@ -1816,7 +1653,6 @@ depends-nominal:
 - "Ps23CustomStringConvertible"
 - !private "CSo14DispatchObject"
 - !private "CSo13DispatchQueue"
-- !private "Sd"
 - "Ps9Equatable"
 - "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
@@ -1825,32 +1661,17 @@ depends-nominal:
 - !private "Ps25ExpressibleByFloatLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
 - !private "Ps23ExpressibleByNilLiteral"
-- !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
-- !private "Sf"
 - "Ps8Hashable"
-- "SQ"
-- !private "O10SwiftyJSON5Index"
-- "V10Foundation9IndexPath"
-- !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
-- "Si"
-- !private "Vs5Int16"
-- !private "Vs5Int32"
-- !private "Vs5Int64"
-- !private "Vs4Int8"
-- !private "Ps16IteratorProtocol"
-- "V10SwiftyJSON4JSON"
+- !private "V10Foundation9IndexPath"
+- !private "V10SwiftyJSON4JSON"
 - !private "P10SwiftyJSON17JSONSubscriptType"
 - !private "Ps25LosslessStringConvertible"
 - "C16SwiftLoginScreen6MenuVC"
 - !private "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
-- !private "Ps16MutableIndexable"
 - "CSo7NSArray"
-- "CSo7NSCoder"
 - "PSo8NSCoding"
 - "PSo9NSCopying"
 - "PSo26NSExtensionRequestHandling"
@@ -1863,143 +1684,141 @@ depends-nominal:
 - !private "CSo8NSString"
 - !private "CSo9OS_object"
 - !private "Ps9OptionSet"
-- "Sq"
 - !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
 - !private "Ps16RawRepresentable"
 - !private "P10Foundation20ReferenceConvertible"
-- "C16SwiftLoginScreen14RestApiManager"
-- "V10ObjectiveC8Selector"
+- !private "C16SwiftLoginScreen14RestApiManager"
 - "Ps8Sequence"
 - !private "Ps10SetAlgebra"
 - !private "Vs5Slice"
-- "SS"
+- !private "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
 - !private "PSo29UIAccessibilityIdentification"
 - !private "PSo19UIAlertViewDelegate"
 - !private "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
-- "CSo8UIButton"
-- "CSo7UIColor"
+- !private "CSo8UIButton"
+- !private "CSo7UIColor"
 - "PSo18UIContentContainer"
 - !private "PSo30UIContentSizeCategoryAdjusting"
 - !private "CSo9UIControl"
-- "VSC15UIControlEvents"
-- "VSC14UIControlState"
+- !private "VSC15UIControlEvents"
+- !private "VSC14UIControlState"
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
 - !private "PSo11UIFocusItem"
 - !private "PSo27UIGestureRecognizerDelegate"
-- "CSo7UILabel"
-- "CSo16UIRefreshControl"
+- !private "CSo7UILabel"
+- !private "CSo16UIRefreshControl"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
 - !private "CSo12UIScrollView"
 - "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
-- "CSo11UITableView"
-- "CSo15UITableViewCell"
-- "OSC20UITableViewCellStyle"
+- !private "CSo11UITableView"
+- !private "CSo15UITableViewCell"
+- !private "OSC20UITableViewCellStyle"
 - "PSo21UITableViewDataSource"
 - "PSo19UITableViewDelegate"
 - "PSo18UITraitEnvironment"
 - !private "CSo6UIView"
 - "CSo16UIViewController"
-- !private "Su"
-- !private "Vs6UInt16"
-- !private "Vs6UInt32"
-- !private "Vs6UInt64"
-- !private "Vs5UInt8"
-- !private "Sc"
+- !private "Ps23_BidirectionalIndexable"
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps34_ExpressibleByBuiltinStringLiteral"
 - !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
 - !private "Ps26_ExpressibleByColorLiteral"
+- !private "Ps33_ExpressibleByStringInterpolation"
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps17_MutableIndexable"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps22_RandomAccessIndexable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
 interface-hash: "3fddd90d39313f090a7f5180fe21fc4a"

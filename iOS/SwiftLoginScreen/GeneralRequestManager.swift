@@ -33,7 +33,6 @@ class GeneralRequestManager: NSObject {
         self.queryParameters = queryParameters
         self.bodyParameters = bodyParameters
         self.isCacheable = isCacheable
-        if url.isEmpty { }
         if errors.isEmpty { }
         
     }

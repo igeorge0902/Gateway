@@ -50,19 +50,19 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "!="
-- "AnyObject"
-- "CryptoJS"
-- "AssignmentPrecedence"
-- "String"
-- !private "Array"
-- !private "cryptoJScontext"
-- !private "Bundle"
-- "StringLiteralType"
-- "JSContext"
-- !private "print"
 - !private "&&"
-- "JSValue"
+- "AnyObject"
+- !private "Array"
+- "AssignmentPrecedence"
+- !private "Bundle"
+- "CryptoJS"
 - "Int"
+- "JSContext"
+- "JSValue"
+- "String"
+- "StringLiteralType"
+- !private "cryptoJScontext"
+- !private "print"
 depends-member:
 - ["CC16SwiftLoginScreen8CryptoJS3AES", "AnyObject"]
 - !private ["CC16SwiftLoginScreen8CryptoJS3AES", "Bundle"]
@@ -86,43 +86,36 @@ depends-member:
 - ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "deinit"]
 - ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "init"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "print"]
-- ["Ps9AnyObject", "AnsiX923"]
+- !private ["Ps9AnyObject", "AnsiX923"]
 - !private ["Ps9AnyObject", "Bundle"]
-- ["Ps9AnyObject", "CFB"]
-- ["Ps9AnyObject", "CTR"]
+- !private ["Ps9AnyObject", "CFB"]
+- !private ["Ps9AnyObject", "CTR"]
 - !private ["Ps9AnyObject", "CryptoJS"]
-- ["Ps9AnyObject", "ECB"]
+- !private ["Ps9AnyObject", "ECB"]
 - !private ["Ps9AnyObject", "Encoding"]
-- ["Ps9AnyObject", "Iso10126"]
-- ["Ps9AnyObject", "Iso97971"]
-- ["Ps9AnyObject", "MD5"]
-- ["Ps9AnyObject", "NoPadding"]
-- ["Ps9AnyObject", "OFB"]
-- ["Ps9AnyObject", "RIPEMD160"]
-- ["Ps9AnyObject", "SHA1"]
-- ["Ps9AnyObject", "SHA224"]
-- ["Ps9AnyObject", "SHA256"]
-- ["Ps9AnyObject", "SHA3"]
-- ["Ps9AnyObject", "SHA384"]
-- ["Ps9AnyObject", "SHA512"]
+- !private ["Ps9AnyObject", "Iso10126"]
+- !private ["Ps9AnyObject", "Iso97971"]
+- !private ["Ps9AnyObject", "MD5"]
+- !private ["Ps9AnyObject", "NoPadding"]
+- !private ["Ps9AnyObject", "OFB"]
+- !private ["Ps9AnyObject", "RIPEMD160"]
+- !private ["Ps9AnyObject", "SHA1"]
+- !private ["Ps9AnyObject", "SHA224"]
+- !private ["Ps9AnyObject", "SHA256"]
+- !private ["Ps9AnyObject", "SHA3"]
+- !private ["Ps9AnyObject", "SHA384"]
+- !private ["Ps9AnyObject", "SHA512"]
 - !private ["Ps9AnyObject", "String"]
-- ["Ps9AnyObject", "ZeroPadding"]
+- !private ["Ps9AnyObject", "ZeroPadding"]
 - !private ["Ps9AnyObject", "call"]
 - !private ["Ps9AnyObject", "cryptoJScontext"]
-- ["Ps9AnyObject", "decrypt"]
-- ["Ps9AnyObject", "decryptFunction"]
-- ["Ps9AnyObject", "deinit"]
-- ["Ps9AnyObject", "encrypt"]
-- ["Ps9AnyObject", "encryptFunction"]
-- ["Ps9AnyObject", "encryptFunction_"]
-- ["Ps9AnyObject", "encrypt_"]
+- !private ["Ps9AnyObject", "decryptFunction"]
+- !private ["Ps9AnyObject", "encryptFunction"]
+- !private ["Ps9AnyObject", "encryptFunction_"]
 - !private ["Ps9AnyObject", "evaluateScript"]
 - !private ["Ps9AnyObject", "exceptionHandler"]
-- ["Ps9AnyObject", "hash"]
-- ["Ps9AnyObject", "hmac"]
-- ["Ps9AnyObject", "hmacSHA512"]
-- ["Ps9AnyObject", "hmacSHA512_"]
-- ["Ps9AnyObject", "hmac_"]
+- !private ["Ps9AnyObject", "hmacSHA512"]
+- !private ["Ps9AnyObject", "hmacSHA512_"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "lowercased"]
 - !private ["Ps9AnyObject", "main"]
@@ -132,13 +125,7 @@ depends-member:
 - !private ["Ps9AnyObject", "path"]
 - !private ["Ps9AnyObject", "print"]
 - ["Ps9AnyObject", ""]
-- !private ["Sa", "Element"]
-- ["Sa", "deinit"]
-- !private ["Ps23BidirectionalCollection", "Element"]
-- !private ["Ps22BidirectionalIndexable", "Element"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
-- ["CSo6Bundle", "deinit"]
 - !private ["CSo6Bundle", "main"]
 - !private ["CSo6Bundle", "path"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "Bundle"]
@@ -155,7 +142,6 @@ depends-member:
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "deinit"]
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "init"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "print"]
-- !private ["Ps7CVarArg", "Element"]
 - !private ["Ps7CVarArg", "Encoding"]
 - !private ["Ps7CVarArg", "call"]
 - !private ["Ps7CVarArg", "evaluateScript"]
@@ -165,8 +151,6 @@ depends-member:
 - !private ["Ps7CVarArg", "main"]
 - !private ["Ps7CVarArg", "objectForKeyedSubscript"]
 - !private ["Ps7CVarArg", "path"]
-- !private ["Vs9Character", "deinit"]
-- !private ["Ps10Collection", "Element"]
 - !private ["Ps10Comparable", "Encoding"]
 - ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "lowercased"]
@@ -212,7 +196,6 @@ depends-member:
 - ["C16SwiftLoginScreen8CryptoJS", "pad"]
 - !private ["C16SwiftLoginScreen8CryptoJS", "print"]
 - ["C16SwiftLoginScreen8CryptoJS", ""]
-- !private ["Ps28CustomDebugStringConvertible", "Element"]
 - !private ["Ps28CustomDebugStringConvertible", "Encoding"]
 - !private ["Ps28CustomDebugStringConvertible", "call"]
 - !private ["Ps28CustomDebugStringConvertible", "evaluateScript"]
@@ -226,12 +209,10 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "lowercased"]
-- !private ["Ps17CustomReflectable", "Element"]
 - !private ["Ps17CustomReflectable", "Encoding"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "lowercased"]
-- !private ["Ps23CustomStringConvertible", "Element"]
 - !private ["Ps23CustomStringConvertible", "Encoding"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "call"]
@@ -243,7 +224,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "objectForKeyedSubscript"]
 - !private ["Ps23CustomStringConvertible", "path"]
 - !private ["Ps23CustomStringConvertible", "utf8"]
-- !private ["Sd", "deinit"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "Bundle"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "CryptoJS"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "String"]
@@ -251,7 +231,6 @@ depends-member:
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "deinit"]
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "init"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "print"]
-- ["VE10FoundationSS8Encoding", "deinit"]
 - !private ["VE10FoundationSS8Encoding", "utf8"]
 - !private ["Ps9Equatable", "Encoding"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
@@ -264,21 +243,16 @@ depends-member:
 - !private ["Ps9Equatable", "objectForKeyedSubscript"]
 - !private ["Ps9Equatable", "path"]
 - !private ["Ps9Equatable", "utf8"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Encoding"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "lowercased"]
-- !private ["Ps32ExpressibleByStringInterpolation", "Encoding"]
-- ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "lowercased"]
 - !private ["Ps26ExpressibleByStringLiteral", "Encoding"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "lowercased"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "Encoding"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "lowercased"]
-- !private ["Sf", "deinit"]
 - !private ["Ps8Hashable", "Encoding"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "call"]
@@ -290,14 +264,6 @@ depends-member:
 - !private ["Ps8Hashable", "objectForKeyedSubscript"]
 - !private ["Ps8Hashable", "path"]
 - !private ["Ps8Hashable", "utf8"]
-- ["SQ", "deinit"]
-- !private ["Ps9Indexable", "Element"]
-- !private ["Ps13IndexableBase", "Element"]
-- ["Si", "deinit"]
-- !private ["Vs5Int16", "deinit"]
-- !private ["Vs5Int32", "deinit"]
-- !private ["Vs5Int64", "deinit"]
-- !private ["Vs4Int8", "deinit"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "Bundle"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "CryptoJS"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "String"]
@@ -320,7 +286,6 @@ depends-member:
 - ["P10SwiftyJSON17JSONSubscriptType", "init"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "lowercased"]
 - !private ["CSo7JSValue", "call"]
-- ["CSo7JSValue", "deinit"]
 - !private ["Ps25LosslessStringConvertible", "Encoding"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps25LosslessStringConvertible", "init"]
@@ -337,8 +302,6 @@ depends-member:
 - !private ["Ps10MirrorPath", "Encoding"]
 - ["Ps10MirrorPath", "init"]
 - !private ["Ps10MirrorPath", "lowercased"]
-- !private ["Ps17MutableCollection", "Element"]
-- !private ["Ps16MutableIndexable", "Element"]
 - !private ["PSo8NSCoding", "Encoding"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "lowercased"]
@@ -386,7 +349,6 @@ depends-member:
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "deinit"]
 - ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "init"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "print"]
-- ["Sq", "deinit"]
 - !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "Bundle"]
 - ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "Int"]
 - ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "JSValue"]
@@ -397,10 +359,6 @@ depends-member:
 - ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "hash"]
 - ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "init"]
 - !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "print"]
-- !private ["Ps22RandomAccessCollection", "Element"]
-- !private ["Ps21RandomAccessIndexable", "Element"]
-- !private ["Ps26RangeReplaceableCollection", "Element"]
-- !private ["Ps25RangeReplaceableIndexable", "Element"]
 - !private ["Ps16RawRepresentable", "utf8"]
 - !private ["CC16SwiftLoginScreen8CryptoJS4SHA1", "Bundle"]
 - ["CC16SwiftLoginScreen8CryptoJS4SHA1", "JSValue"]
@@ -457,9 +415,7 @@ depends-member:
 - ["CC16SwiftLoginScreen8CryptoJS6SHA512", "hash"]
 - ["CC16SwiftLoginScreen8CryptoJS6SHA512", "init"]
 - !private ["CC16SwiftLoginScreen8CryptoJS6SHA512", "print"]
-- !private ["Ps8Sequence", "Element"]
 - !private ["SS", "Encoding"]
-- ["SS", "deinit"]
 - ["SS", "init"]
 - !private ["SS", "lowercased"]
 - !private ["Ps16TextOutputStream", "Encoding"]
@@ -468,12 +424,6 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "Encoding"]
 - ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "lowercased"]
-- !private ["Su", "deinit"]
-- !private ["Vs6UInt16", "deinit"]
-- !private ["Vs6UInt32", "deinit"]
-- !private ["Vs6UInt64", "deinit"]
-- !private ["Vs5UInt8", "deinit"]
-- !private ["Sc", "deinit"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "Bundle"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "CryptoJS"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "String"]
@@ -481,8 +431,6 @@ depends-member:
 - ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "deinit"]
 - ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "init"]
 - !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "print"]
-- !private ["Ps14_ArrayProtocol", "Element"]
-- !private ["Ps24_DestructorSafeContainer", "Element"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
@@ -496,6 +444,9 @@ depends-member:
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "Encoding"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "lowercased"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "Encoding"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "lowercased"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Encoding"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "lowercased"]
@@ -510,12 +461,10 @@ depends-member:
 - !private ["Ps9_Hashable", "objectForKeyedSubscript"]
 - !private ["Ps9_Hashable", "path"]
 - !private ["Ps9_Hashable", "utf8"]
-- !private ["Ps21_ObjectiveCBridgeable", "Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "Encoding"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "lowercased"]
-- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "Bundle"]
 - ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "JSValue"]
 - ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "String"]
@@ -554,52 +503,33 @@ depends-nominal:
 - "CC16SwiftLoginScreen8CryptoJS3AES"
 - "CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923"
 - "Ps9AnyObject"
-- "Sa"
-- !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
-- "Sb"
-- "CSo6Bundle"
+- !private "Sb"
+- !private "CSo6Bundle"
 - "CCC16SwiftLoginScreen8CryptoJS4mode3CFB"
 - "CCC16SwiftLoginScreen8CryptoJS4mode3CTR"
 - "Ps7CVarArg"
-- !private "Vs9Character"
-- !private "Ps10Collection"
 - "Ps10Comparable"
 - "C16SwiftLoginScreen8CryptoJS"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- !private "Sd"
 - "CCC16SwiftLoginScreen8CryptoJS4mode3ECB"
-- "VE10FoundationSS8Encoding"
+- !private "VE10FoundationSS8Encoding"
 - "Ps9Equatable"
-- !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
-- !private "Sf"
 - "Ps8Hashable"
-- "SQ"
-- !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- "Si"
-- !private "Vs5Int16"
-- !private "Vs5Int32"
-- !private "Vs5Int64"
-- !private "Vs4Int8"
 - "CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126"
 - "CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971"
 - "CSo9JSContext"
 - "P10SwiftyJSON17JSONSubscriptType"
-- "CSo7JSValue"
+- !private "CSo7JSValue"
 - "Ps25LosslessStringConvertible"
 - "CC16SwiftLoginScreen8CryptoJS3MD5"
 - "Ps10MirrorPath"
-- !private "Ps17MutableCollection"
-- !private "Ps16MutableIndexable"
 - "PSo8NSCoding"
 - "PSo9NSCopying"
 - "PSo16NSMutableCopying"
@@ -609,12 +539,7 @@ depends-nominal:
 - "CSo8NSString"
 - "CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding"
 - "CCC16SwiftLoginScreen8CryptoJS4mode3OFB"
-- "Sq"
 - "CC16SwiftLoginScreen8CryptoJS9RIPEMD160"
-- !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
-- !private "Ps26RangeReplaceableCollection"
-- !private "Ps25RangeReplaceableIndexable"
 - !private "Ps16RawRepresentable"
 - "CC16SwiftLoginScreen8CryptoJS4SHA1"
 - "CC16SwiftLoginScreen8CryptoJS6SHA224"
@@ -622,109 +547,101 @@ depends-nominal:
 - "CC16SwiftLoginScreen8CryptoJS4SHA3"
 - "CC16SwiftLoginScreen8CryptoJS6SHA384"
 - "CC16SwiftLoginScreen8CryptoJS6SHA512"
-- !private "Ps8Sequence"
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
-- !private "Su"
-- !private "Vs6UInt16"
-- !private "Vs6UInt32"
-- !private "Vs6UInt64"
-- !private "Vs5UInt8"
-- !private "Sc"
 - "CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding"
-- !private "Ps14_ArrayProtocol"
-- !private "Ps24_DestructorSafeContainer"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
 - "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - "Ps21_ObjectiveCBridgeable"
-- !private "Vs26_OptionalNilComparisonType"
 - "CC16SwiftLoginScreen8CryptoJS10hmacSHA512"
 - "CC16SwiftLoginScreen8CryptoJS4mode"
 - "CC16SwiftLoginScreen8CryptoJS3pad"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
 interface-hash: "e133d80a9bb69623096eb6f07c2134eb"

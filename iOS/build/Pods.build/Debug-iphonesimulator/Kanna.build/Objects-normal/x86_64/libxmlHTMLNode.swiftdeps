@@ -8,54 +8,53 @@ provides-member:
 - ["C5Kanna14libxmlHTMLNode", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "=="
-- "entities"
-- !private "xmlNodeSetContent"
-- !private "xmlUnsetProp"
-- !private "CChar"
-- "StringLiteralType"
-- "Dictionary"
-- !private "xmlAddPrevSibling"
-- "String"
-- "AssignmentPrecedence"
-- !private "xmlFree"
-- !private "xmlXPathRegisterNs"
 - !private "!="
-- !private "xmlXPathFreeContext"
-- !private "xmlAddNextSibling"
-- !private "escape"
-- !private "xmlBufferFree"
-- !private "xmlNodeSetName"
-- !private "libxmlGetNodeContent"
-- "Bool"
-- !private "UnsafeRawPointer"
-- !private "xmlXPathNewContext"
-- !private "xmlXPathEvalExpression"
-- !private "xmlUnlinkNode"
-- "BooleanLiteralType"
-- !private "xmlNodeGetContent"
-- !private "xmlDocGetRootElement"
-- !private "xmlNodeDump"
 - !private "+"
-- !private "htmlNodeDump"
-- "htmlDocPtr"
-- "libxmlHTMLNode"
+- !private "=="
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- !private "CChar"
 - !private "CSS"
-- !private "UnsafePointer"
-- !private "xmlBufferCreate"
-- !private "xmlXPathFreeObject"
-- "XPathObject"
 - "CastingPrecedence"
-- !private "xmlAddChild"
-- "xmlNodePtr"
-- "xmlDocPtr"
-- !private "xmlSetProp"
-- "XMLElement"
+- "Dictionary"
+- "String"
+- "StringLiteralType"
 - "UnicodeScalarType"
+- !private "UnsafePointer"
+- !private "UnsafeRawPointer"
+- "XMLElement"
+- "XPathObject"
+- "entities"
+- !private "escape"
+- "htmlDocPtr"
+- !private "htmlNodeDump"
+- !private "libxmlGetNodeContent"
+- "libxmlHTMLNode"
+- !private "xmlAddChild"
+- !private "xmlAddNextSibling"
+- !private "xmlAddPrevSibling"
+- !private "xmlBufferCreate"
+- !private "xmlBufferFree"
+- !private "xmlDocGetRootElement"
+- "xmlDocPtr"
+- !private "xmlFree"
+- !private "xmlNodeDump"
+- !private "xmlNodeGetContent"
+- "xmlNodePtr"
+- !private "xmlNodeSetContent"
+- !private "xmlNodeSetName"
+- !private "xmlSetProp"
+- !private "xmlUnlinkNode"
+- !private "xmlUnsetProp"
+- !private "xmlXPathEvalExpression"
+- !private "xmlXPathFreeContext"
+- !private "xmlXPathFreeObject"
+- !private "xmlXPathNewContext"
+- !private "xmlXPathRegisterNs"
 depends-member:
 - !private ["Ps9AnyObject", "CChar"]
 - !private ["Ps9AnyObject", "CSS"]
-- !private ["Ps9AnyObject", "Iterator"]
 - !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UnsafePointer"]
 - !private ["Ps9AnyObject", "UnsafeRawPointer"]
@@ -107,28 +106,17 @@ depends-member:
 - ["Ps9AnyObject", "xpath"]
 - ["Ps9AnyObject", ""]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
 - !private ["V5Kanna3CSS", "toXPath"]
-- !private ["Ps7CVarArg", "Iterator"]
-- ["Ps7CVarArg", "Key"]
-- ["Ps7CVarArg", "Value"]
 - !private ["Ps7CVarArg", "deallocate"]
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "pointee"]
 - !private ["Ps7CVarArg", "replacingOccurrences"]
-- !private ["Ps10Collection", "Iterator"]
-- ["Ps10Collection", "Key"]
-- ["Ps10Collection", "Value"]
 - !private ["Ps10Comparable", "assumingMemoryBound"]
 - !private ["Ps10Comparable", "deallocate"]
 - ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "pointee"]
 - !private ["Ps10Comparable", "replacingOccurrences"]
-- ["VCSo8NSString14CompareOptions", "deinit"]
 - !private ["VCSo8NSString14CompareOptions", "regularExpression"]
-- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
-- ["Ps28CustomDebugStringConvertible", "Key"]
-- ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "assumingMemoryBound"]
 - !private ["Ps28CustomDebugStringConvertible", "deallocate"]
 - ["Ps28CustomDebugStringConvertible", "init"]
@@ -140,27 +128,15 @@ depends-member:
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "pointee"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "replacingOccurrences"]
-- !private ["Ps17CustomReflectable", "Element"]
-- !private ["Ps17CustomReflectable", "Iterator"]
-- ["Ps17CustomReflectable", "Key"]
-- ["Ps17CustomReflectable", "Value"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "assumingMemoryBound"]
 - !private ["Ps17CustomReflectable", "deallocate"]
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "pointee"]
 - !private ["Ps17CustomReflectable", "replacingOccurrences"]
-- !private ["Ps23CustomStringConvertible", "Iterator"]
-- ["Ps23CustomStringConvertible", "Key"]
-- ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "replacingOccurrences"]
-- !private ["Vs10Dictionary", "Iterator"]
-- ["Vs10Dictionary", "Key"]
-- ["Vs10Dictionary", "Value"]
-- ["Vs10Dictionary", "deinit"]
-- !private ["Vs18DictionaryIterator", "Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "assumingMemoryBound"]
 - !private ["Ps9Equatable", "deallocate"]
@@ -170,14 +146,9 @@ depends-member:
 - !private ["Ps9Equatable", "replacingOccurrences"]
 - !private ["Ps25ExpressibleByArrayLiteral", "regularExpression"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "Iterator"]
-- ["Ps30ExpressibleByDictionaryLiteral", "Key"]
-- ["Ps30ExpressibleByDictionaryLiteral", "Value"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "replacingOccurrences"]
 - !private ["Ps23ExpressibleByNilLiteral", "assumingMemoryBound"]
-- ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "replacingOccurrences"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "replacingOccurrences"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
@@ -188,16 +159,6 @@ depends-member:
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "pointee"]
 - !private ["Ps8Hashable", "replacingOccurrences"]
-- ["SQ", "deinit"]
-- !private ["Ps9Indexable", "Iterator"]
-- ["Ps9Indexable", "Key"]
-- ["Ps9Indexable", "Value"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- ["Ps13IndexableBase", "Key"]
-- ["Ps13IndexableBase", "Value"]
-- !private ["Si", "deinit"]
-- ["Vs5Int32", "deinit"]
-- !private ["Ps16IteratorProtocol", "Element"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps25LosslessStringConvertible", "replacingOccurrences"]
@@ -209,7 +170,6 @@ depends-member:
 - !private ["PSo9NSCopying", "replacingOccurrences"]
 - ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "replacingOccurrences"]
-- ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "replacingOccurrences"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "replacingOccurrences"]
@@ -219,7 +179,6 @@ depends-member:
 - !private ["CSo8NSString", "replacingOccurrences"]
 - !private ["Ps9OptionSet", "regularExpression"]
 - !private ["Sq", "assumingMemoryBound"]
-- ["Sq", "deinit"]
 - !private ["Ps16RawRepresentable", "regularExpression"]
 - !private ["P5Kanna10Searchable", "CChar"]
 - !private ["P5Kanna10Searchable", "CSS"]
@@ -321,9 +280,6 @@ depends-member:
 - !private ["P5Kanna14SearchableNode", "xmlXPathRegisterNs"]
 - ["P5Kanna14SearchableNode", "xpath"]
 - ["P5Kanna14SearchableNode", ""]
-- !private ["Ps8Sequence", "Iterator"]
-- ["Ps8Sequence", "Key"]
-- ["Ps8Sequence", "Value"]
 - !private ["Ps8Sequence", "first"]
 - !private ["Ps8Sequence", "init"]
 - !private ["Ps8Sequence", "nodeSetValue"]
@@ -333,7 +289,6 @@ depends-member:
 - !private ["Ps10Strideable", "deallocate"]
 - !private ["Ps10Strideable", "init"]
 - !private ["Ps10Strideable", "pointee"]
-- ["SS", "deinit"]
 - ["SS", "init"]
 - !private ["SS", "replacingOccurrences"]
 - ["Ps16TextOutputStream", "init"]
@@ -341,12 +296,9 @@ depends-member:
 - ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "replacingOccurrences"]
 - !private ["Sp", "deallocate"]
-- ["Sp", "deinit"]
 - !private ["Sp", "pointee"]
-- ["SP", "deinit"]
 - !private ["SP", "init"]
 - !private ["SV", "assumingMemoryBound"]
-- ["SV", "deinit"]
 - !private ["SV", "init"]
 - !private ["P5Kanna10XMLElement", "CChar"]
 - !private ["P5Kanna10XMLElement", "CSS"]
@@ -362,7 +314,6 @@ depends-member:
 - ["P5Kanna10XMLElement", "className"]
 - ["P5Kanna10XMLElement", "content"]
 - ["P5Kanna10XMLElement", "css"]
-- ["P5Kanna10XMLElement", "deinit"]
 - !private ["P5Kanna10XMLElement", "docPtr"]
 - !private ["P5Kanna10XMLElement", "escape"]
 - !private ["P5Kanna10XMLElement", "htmlNodeDump"]
@@ -399,10 +350,8 @@ depends-member:
 - !private ["P5Kanna10XMLElement", "xmlXPathRegisterNs"]
 - ["P5Kanna10XMLElement", "xpath"]
 - ["P5Kanna10XMLElement", ""]
-- !private ["C5Kanna10XMLNodeSet", "Iterator"]
-- ["C5Kanna10XMLNodeSet", "deinit"]
+- !private ["C5Kanna10XMLNodeSet", "deinit"]
 - !private ["C5Kanna10XMLNodeSet", "first"]
-- ["O5Kanna11XPathObject", "deinit"]
 - !private ["O5Kanna11XPathObject", "init"]
 - !private ["O5Kanna11XPathObject", "nodeSetValue"]
 - !private ["O5Kanna11XPathObject", "none"]
@@ -415,6 +364,8 @@ depends-member:
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "replacingOccurrences"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "replacingOccurrences"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "replacingOccurrences"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "replacingOccurrences"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
@@ -423,14 +374,10 @@ depends-member:
 - ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "pointee"]
 - !private ["Ps9_Hashable", "replacingOccurrences"]
-- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
-- ["Ps21_ObjectiveCBridgeable", "Key"]
-- ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "assumingMemoryBound"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "replacingOccurrences"]
-- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps8_Pointer", "assumingMemoryBound"]
 - !private ["Ps8_Pointer", "deallocate"]
 - !private ["Ps8_Pointer", "init"]
@@ -440,7 +387,6 @@ depends-member:
 - !private ["Ps11_Strideable", "init"]
 - !private ["Ps11_Strideable", "pointee"]
 - !private ["VSC8_xmlAttr", "children"]
-- ["VSC8_xmlAttr", "deinit"]
 - !private ["VSC8_xmlAttr", "name"]
 - !private ["VSC8_xmlAttr", "next"]
 - !private ["VSC10_xmlBuffer", "content"]
@@ -505,90 +451,85 @@ depends-member:
 - ["C5Kanna14libxmlHTMLNode", "xpath"]
 depends-nominal:
 - "Ps9AnyObject"
-- "Sb"
+- !private "Sb"
 - !private "V5Kanna3CSS"
 - "Ps7CVarArg"
-- "Ps10Collection"
 - "Ps10Comparable"
-- "VCSo8NSString14CompareOptions"
+- !private "VCSo8NSString14CompareOptions"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "Vs10Dictionary"
-- !private "Vs18DictionaryIterator"
 - "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
-- "Ps30ExpressibleByDictionaryLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps23ExpressibleByNilLiteral"
-- "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
 - "Ps8Hashable"
-- "SQ"
-- "Ps9Indexable"
-- "Ps13IndexableBase"
-- !private "Si"
-- "Vs5Int32"
-- !private "Ps16IteratorProtocol"
 - "Ps25LosslessStringConvertible"
 - "Ps10MirrorPath"
 - "PSo8NSCoding"
 - "PSo9NSCopying"
 - "PSo16NSMutableCopying"
-- "CSo8NSObject"
+- !private "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
 - !private "Ps9OptionSet"
-- "Sq"
+- !private "Sq"
 - !private "Ps16RawRepresentable"
 - "P5Kanna10Searchable"
 - "P5Kanna14SearchableNode"
-- "Ps8Sequence"
+- !private "Ps8Sequence"
 - !private "Ps10SetAlgebra"
 - !private "Ps10Strideable"
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
-- "Sp"
-- "SP"
-- "SV"
+- !private "Sp"
+- !private "SP"
+- !private "SV"
 - "P5Kanna10XMLElement"
-- "C5Kanna10XMLNodeSet"
-- "O5Kanna11XPathObject"
+- !private "C5Kanna10XMLNodeSet"
+- !private "O5Kanna11XPathObject"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
 - "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - "Ps21_ObjectiveCBridgeable"
-- !private "Vs26_OptionalNilComparisonType"
 - !private "Ps8_Pointer"
 - !private "Ps11_Strideable"
-- "VSC8_xmlAttr"
+- !private "VSC8_xmlAttr"
 - !private "VSC10_xmlBuffer"
 - !private "VSC8_xmlNode"
 - !private "VSC16_xmlXPathContext"
 - "C5Kanna14libxmlHTMLNode"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 interface-hash: "1c55438e43a7c638b87ad85fe92e2dda"

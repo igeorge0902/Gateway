@@ -159,12 +159,12 @@ class RequestManager: NSObject {
                     } else {
                         
                         alertView.title = "Hmmm..."
-                        alertView.message = "Something went wrong... "
+                        alertView.message = self.errors
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()
                         
-                        NSLog("User does not exist")
+                        //NSLog("User does not exist")
                     }
             
                 

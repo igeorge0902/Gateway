@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate, NSURLConnectionDelegate {
     
     @IBOutlet weak var close: UIButton!
     @IBOutlet weak var webView: UIWebView!

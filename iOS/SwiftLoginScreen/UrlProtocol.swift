@@ -16,7 +16,7 @@ var requestCount = 0
 var pattern_ = "https://([^/]+)(/example/tabularasa.jsp.*?)(/$|$)"
 var pattern_rs = "https://([^/]+)(/example/tabularasa.jsp.*?JSESSIONID=)"
 
-class MyURLProtocol: URLProtocol {
+class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
     
     var connection: NSURLConnection!
     var mutableData: NSMutableData!
@@ -41,7 +41,7 @@ class MyURLProtocol: URLProtocol {
         return true
         
     }
-    
+        
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
@@ -136,7 +136,7 @@ class MyURLProtocol: URLProtocol {
                 self.client!.urlProtocolDidFinishLoading(self)
                 
             } else {
-                
+
                 let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: nil, headerFields: nil)
                 
                 self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
@@ -144,7 +144,6 @@ class MyURLProtocol: URLProtocol {
                 self.client?.urlProtocolDidFinishLoading(self)
                 
                 var errorOnLogin:RequestManager?
-                
                 errorOnLogin = RequestManager(url: serverURL + "/login/HelloWorld", errors: "No internet connection!")
                 errorOnLogin!.getResponse { _ in }
                 
@@ -243,7 +242,7 @@ class MyURLProtocol: URLProtocol {
     }
     
     // It sends a call to RequestManager to present an alert view about the error
-    func connection(_ connection: NSURLConnection!, didFailWithError error: NSError!) {
+    func connection(_ connection: NSURLConnection, didFailWithError error: Error) {
         self.client!.urlProtocol(self, didFailWithError: error)
         
         if (newRequest != nil) {
@@ -255,6 +254,27 @@ class MyURLProtocol: URLProtocol {
             
         }
         
+    }
+    
+    func connection(_ connection: NSURLConnection, canAuthenticateAgainstProtectionSpace protectionSpace: URLProtectionSpace) -> Bool{
+        print("canAuthenticateAgainstProtectionSpace method Returning True")
+        return true
+    }
+    
+    
+    func connection(_ connection: NSURLConnection, didReceive challenge: URLAuthenticationChallenge){
+        
+        print("did autherntcationchallenge = \(challenge.protectionSpace.authenticationMethod)")
+        
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust  {
+            print("send credential Server Trust")
+
+            let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+            challenge.sender!.use(credential, for: challenge)
+            
+        } else{
+            challenge.sender!.performDefaultHandling!(for: challenge)
+        }
     }
     
     func saveCachedResponse () {
@@ -336,7 +356,7 @@ class MyURLProtocol: URLProtocol {
                 
                 let data: Data = self.mutableData as Data
                 
-                if let result = (NSString(data: data, encoding: String.Encoding.ascii.rawValue)) as? String {
+                if let result = (NSString(data: data, encoding: String.Encoding.ascii.rawValue)) as String? {
                     
                     if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
                         errorOnLogin = RequestManager(url: serverURL + "/login/HelloWorld", errors: doc.title!)

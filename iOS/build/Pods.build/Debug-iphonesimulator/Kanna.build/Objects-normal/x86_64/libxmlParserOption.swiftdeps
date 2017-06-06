@@ -10,66 +10,56 @@ provides-member:
 - ["V5Kanna23Libxml2XMLParserOptions", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "XML_PARSE_DTDLOAD"
-- "XML_PARSE_DTDVALID"
-- "HTML_PARSE_NOBLANKS"
-- "HTML_PARSE_NOIMPLIED"
-- "XML_PARSE_RECOVER"
-- "HTML_PARSE_IGNORE_ENC"
-- "XML_PARSE_NOWARNING"
-- "XML_PARSE_NOBLANKS"
-- "XML_PARSE_XINCLUDE"
-- "XML_PARSE_HUGE"
-- !private "xmlParserOption"
-- "XML_PARSE_OLD10"
-- "HTML_PARSE_NODEFDTD"
-- "HTML_PARSE_NOWARNING"
-- "XML_PARSE_NOCDATA"
-- "XML_PARSE_NOXINCNODE"
-- "XML_PARSE_NODICT"
-- "XML_PARSE_IGNORE_ENC"
+- "=="
 - "AssignmentPrecedence"
-- "HTML_PARSE_PEDANTIC"
-- "HTML_PARSE_NONET"
+- "FloatLiteralType"
 - "HTML_PARSE_COMPACT"
-- "XML_PARSE_NOERROR"
-- "XML_PARSE_NOENT"
+- "HTML_PARSE_IGNORE_ENC"
+- "HTML_PARSE_NOBLANKS"
+- "HTML_PARSE_NODEFDTD"
+- "HTML_PARSE_NOERROR"
+- "HTML_PARSE_NOIMPLIED"
+- "HTML_PARSE_NONET"
+- "HTML_PARSE_NOWARNING"
+- "HTML_PARSE_PEDANTIC"
+- "HTML_PARSE_RECOVER"
+- "IntegerLiteralType"
+- "Libxml2HTMLParserOptions"
+- "Libxml2XMLParserOptions"
 - "OptionSet"
 - "UInt"
-- !private "htmlParserOption"
-- "XML_PARSE_DTDATTR"
-- "Libxml2HTMLParserOptions"
-- "HTML_PARSE_RECOVER"
-- "XML_PARSE_SAX1"
-- "XML_PARSE_COMPACT"
-- "HTML_PARSE_NOERROR"
-- "FloatLiteralType"
-- "Libxml2XMLParserOptions"
-- "XML_PARSE_NOBASEFIX"
-- "XML_PARSE_PEDANTIC"
-- "XML_PARSE_NONET"
-- "XML_PARSE_OLDSAX"
-- "XML_PARSE_NSCLEAN"
-- "IntegerLiteralType"
-- "=="
 - "XML_PARSE_BIG_LINES"
+- "XML_PARSE_COMPACT"
+- "XML_PARSE_DTDATTR"
+- "XML_PARSE_DTDLOAD"
+- "XML_PARSE_DTDVALID"
+- "XML_PARSE_HUGE"
+- "XML_PARSE_IGNORE_ENC"
+- "XML_PARSE_NOBASEFIX"
+- "XML_PARSE_NOBLANKS"
+- "XML_PARSE_NOCDATA"
+- "XML_PARSE_NODICT"
+- "XML_PARSE_NOENT"
+- "XML_PARSE_NOERROR"
+- "XML_PARSE_NONET"
+- "XML_PARSE_NOWARNING"
+- "XML_PARSE_NOXINCNODE"
+- "XML_PARSE_NSCLEAN"
+- "XML_PARSE_OLD10"
+- "XML_PARSE_OLDSAX"
+- "XML_PARSE_PEDANTIC"
+- "XML_PARSE_RECOVER"
+- "XML_PARSE_SAX1"
+- "XML_PARSE_XINCLUDE"
+- !private "htmlParserOption"
+- !private "xmlParserOption"
 depends-member:
-- ["Ps16AbsoluteValuable", "Iterator"]
-- ["Ps19BinaryFloatingPoint", "Iterator"]
 - !private ["Ps17BitwiseOperations", "init"]
-- ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "init"]
-- ["Ps10Comparable", "Iterator"]
 - !private ["Ps10Comparable", "init"]
-- ["Ps28CustomDebugStringConvertible", "Iterator"]
-- ["Ps29CustomPlaygroundQuickLookable", "Iterator"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
-- ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "init"]
-- ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "init"]
-- ["Sd", "Iterator"]
-- ["Ps9Equatable", "Element"]
 - ["Ps9Equatable", "HTML_PARSE_COMPACT"]
 - ["Ps9Equatable", "HTML_PARSE_IGNORE_ENC"]
 - ["Ps9Equatable", "HTML_PARSE_NOBLANKS"]
@@ -80,10 +70,8 @@ depends-member:
 - ["Ps9Equatable", "HTML_PARSE_NOWARNING"]
 - ["Ps9Equatable", "HTML_PARSE_PEDANTIC"]
 - ["Ps9Equatable", "HTML_PARSE_RECOVER"]
-- ["Ps9Equatable", "Iterator"]
 - ["Ps9Equatable", "Libxml2HTMLParserOptions"]
 - ["Ps9Equatable", "Libxml2XMLParserOptions"]
-- ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "UInt"]
 - ["Ps9Equatable", "XML_PARSE_BIG_LINES"]
 - ["Ps9Equatable", "XML_PARSE_COMPACT"]
@@ -128,7 +116,6 @@ depends-member:
 - ["Ps9Equatable", "update"]
 - !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", ""]
-- ["Ps25ExpressibleByArrayLiteral", "Element"]
 - ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_COMPACT"]
 - ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_IGNORE_ENC"]
 - ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_NOBLANKS"]
@@ -141,7 +128,6 @@ depends-member:
 - ["Ps25ExpressibleByArrayLiteral", "HTML_PARSE_RECOVER"]
 - ["Ps25ExpressibleByArrayLiteral", "Libxml2HTMLParserOptions"]
 - ["Ps25ExpressibleByArrayLiteral", "Libxml2XMLParserOptions"]
-- ["Ps25ExpressibleByArrayLiteral", "RawValue"]
 - !private ["Ps25ExpressibleByArrayLiteral", "UInt"]
 - ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_BIG_LINES"]
 - ["Ps25ExpressibleByArrayLiteral", "XML_PARSE_COMPACT"]
@@ -186,16 +172,10 @@ depends-member:
 - ["Ps25ExpressibleByArrayLiteral", "update"]
 - !private ["Ps25ExpressibleByArrayLiteral", "value"]
 - ["Ps25ExpressibleByArrayLiteral", ""]
-- ["Ps25ExpressibleByFloatLiteral", "Iterator"]
-- ["Ps27ExpressibleByIntegerLiteral", "Iterator"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
-- ["Ps13FloatingPoint", "Iterator"]
-- ["Ps8Hashable", "Iterator"]
 - !private ["Ps8Hashable", "init"]
-- ["Si", "deinit"]
 - !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "init"]
-- ["Ps16IteratorProtocol", "Element"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "COMPACT"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "Element"]
 - ["V5Kanna24Libxml2HTMLParserOptions", "HTML_PARSE_COMPACT"]
@@ -318,8 +298,6 @@ depends-member:
 - ["V5Kanna23Libxml2XMLParserOptions", "update"]
 - !private ["V5Kanna23Libxml2XMLParserOptions", "value"]
 - !private ["V5Kanna23Libxml2XMLParserOptions", "xmlParserOption"]
-- ["Ps25LosslessStringConvertible", "Iterator"]
-- ["Ps9OptionSet", "Element"]
 - ["Ps9OptionSet", "HTML_PARSE_COMPACT"]
 - ["Ps9OptionSet", "HTML_PARSE_IGNORE_ENC"]
 - ["Ps9OptionSet", "HTML_PARSE_NOBLANKS"]
@@ -332,7 +310,6 @@ depends-member:
 - ["Ps9OptionSet", "HTML_PARSE_RECOVER"]
 - ["Ps9OptionSet", "Libxml2HTMLParserOptions"]
 - ["Ps9OptionSet", "Libxml2XMLParserOptions"]
-- ["Ps9OptionSet", "RawValue"]
 - !private ["Ps9OptionSet", "UInt"]
 - ["Ps9OptionSet", "XML_PARSE_BIG_LINES"]
 - ["Ps9OptionSet", "XML_PARSE_COMPACT"]
@@ -377,7 +354,6 @@ depends-member:
 - ["Ps9OptionSet", "update"]
 - !private ["Ps9OptionSet", "value"]
 - ["Ps9OptionSet", ""]
-- ["Ps16RawRepresentable", "Element"]
 - ["Ps16RawRepresentable", "HTML_PARSE_COMPACT"]
 - ["Ps16RawRepresentable", "HTML_PARSE_IGNORE_ENC"]
 - ["Ps16RawRepresentable", "HTML_PARSE_NOBLANKS"]
@@ -390,7 +366,6 @@ depends-member:
 - ["Ps16RawRepresentable", "HTML_PARSE_RECOVER"]
 - ["Ps16RawRepresentable", "Libxml2HTMLParserOptions"]
 - ["Ps16RawRepresentable", "Libxml2XMLParserOptions"]
-- ["Ps16RawRepresentable", "RawValue"]
 - !private ["Ps16RawRepresentable", "UInt"]
 - ["Ps16RawRepresentable", "XML_PARSE_BIG_LINES"]
 - ["Ps16RawRepresentable", "XML_PARSE_COMPACT"]
@@ -435,8 +410,6 @@ depends-member:
 - ["Ps16RawRepresentable", "update"]
 - !private ["Ps16RawRepresentable", "value"]
 - ["Ps16RawRepresentable", ""]
-- ["Ps8Sequence", "Iterator"]
-- ["Ps10SetAlgebra", "Element"]
 - ["Ps10SetAlgebra", "HTML_PARSE_COMPACT"]
 - ["Ps10SetAlgebra", "HTML_PARSE_IGNORE_ENC"]
 - ["Ps10SetAlgebra", "HTML_PARSE_NOBLANKS"]
@@ -449,7 +422,6 @@ depends-member:
 - ["Ps10SetAlgebra", "HTML_PARSE_RECOVER"]
 - ["Ps10SetAlgebra", "Libxml2HTMLParserOptions"]
 - ["Ps10SetAlgebra", "Libxml2XMLParserOptions"]
-- ["Ps10SetAlgebra", "RawValue"]
 - !private ["Ps10SetAlgebra", "UInt"]
 - ["Ps10SetAlgebra", "XML_PARSE_BIG_LINES"]
 - ["Ps10SetAlgebra", "XML_PARSE_COMPACT"]
@@ -494,92 +466,70 @@ depends-member:
 - ["Ps10SetAlgebra", "update"]
 - !private ["Ps10SetAlgebra", "value"]
 - ["Ps10SetAlgebra", ""]
-- ["Ps12SignedNumber", "Iterator"]
-- ["Ps10Strideable", "Iterator"]
 - !private ["Ps10Strideable", "init"]
-- ["Su", "deinit"]
 - !private ["Su", "init"]
-- !private ["Vs6UInt32", "deinit"]
 - !private ["Ps15UnsignedInteger", "init"]
-- ["Ps15_CVarArgAligned", "Iterator"]
-- ["Ps22_CVarArgPassedAsDouble", "Iterator"]
 - !private ["Ps28_DisallowMixedSignArithmetic", "init"]
-- ["Ps33_ExpressibleByBuiltinFloatLiteral", "Iterator"]
-- ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Iterator"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
-- ["Ps9_Hashable", "Iterator"]
 - !private ["Ps9_Hashable", "init"]
 - !private ["Ps14_Incrementable", "init"]
 - !private ["Ps8_Integer", "init"]
 - !private ["Ps18_IntegerArithmetic", "init"]
-- ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
-- ["Ps11_Strideable", "Iterator"]
 - !private ["Ps11_Strideable", "init"]
-- ["VSC16htmlParserOption", "deinit"]
 - !private ["VSC16htmlParserOption", "rawValue"]
-- ["VSC15xmlParserOption", "deinit"]
 - !private ["VSC15xmlParserOption", "rawValue"]
 depends-nominal:
-- "Ps16AbsoluteValuable"
-- "Ps19BinaryFloatingPoint"
 - !private "Ps17BitwiseOperations"
-- "Ps7CVarArg"
-- "Ps10Comparable"
-- "Ps28CustomDebugStringConvertible"
-- "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
-- "Ps23CustomStringConvertible"
-- "Sd"
+- !private "Ps7CVarArg"
+- !private "Ps10Comparable"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
 - "Ps9Equatable"
 - "Ps25ExpressibleByArrayLiteral"
-- "Ps25ExpressibleByFloatLiteral"
-- "Ps27ExpressibleByIntegerLiteral"
-- "Ps13FloatingPoint"
-- "Ps8Hashable"
-- "Si"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- !private "Ps8Hashable"
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
-- "Ps16IteratorProtocol"
 - "V5Kanna24Libxml2HTMLParserOptions"
 - "V5Kanna23Libxml2XMLParserOptions"
-- "Ps25LosslessStringConvertible"
 - "Ps9OptionSet"
 - "Ps16RawRepresentable"
-- "Ps8Sequence"
 - "Ps10SetAlgebra"
-- "Ps12SignedNumber"
-- "Ps10Strideable"
-- "Su"
-- !private "Vs6UInt32"
+- !private "Ps10Strideable"
+- !private "Su"
 - !private "Ps15UnsignedInteger"
-- "Ps15_CVarArgAligned"
-- "Ps22_CVarArgPassedAsDouble"
 - !private "Ps28_DisallowMixedSignArithmetic"
-- "Ps33_ExpressibleByBuiltinFloatLiteral"
-- "Ps35_ExpressibleByBuiltinIntegerLiteral"
-- "Ps9_Hashable"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- !private "Ps9_Hashable"
 - !private "Ps14_Incrementable"
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
-- "Ps21_ObjectiveCBridgeable"
-- "Ps11_Strideable"
-- "VSC16htmlParserOption"
-- "VSC15xmlParserOption"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps11_Strideable"
+- !private "VSC16htmlParserOption"
+- !private "VSC15xmlParserOption"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target Support Files/Kanna/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Sources/Kanna/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
 interface-hash: "3fdca0ec6aedf99d2e9defe3acff6fb9"

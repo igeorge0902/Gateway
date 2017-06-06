@@ -9,78 +9,81 @@ provides-nominal:
 provides-member:
 - ["C16SwiftLoginScreen13MyURLProtocol", ""]
 provides-dynamic-lookup:
-- "response"
-- "httpresponse"
 - "cachedResponseForCurrentRequest"
-- "saveCachedResponse"
-- "newRequest"
-- "canonicalRequest"
-- "connectionDidFinishLoading"
 - "canInit"
+- "canonicalRequest"
 - "connection"
-- "connection"
-- "connection"
-- "connection"
-- "connection"
-- "startLoading"
-- "requestIsCacheEquivalent"
+- "connectionDidFinishLoading"
+- "httpresponse"
 - "mutableData"
+- "newRequest"
+- "requestIsCacheEquivalent"
+- "response"
+- "saveCachedResponse"
+- "startLoading"
 - "stopLoading"
 depends-top-level:
-- !private "print"
-- "Bool"
-- !private "AFNetworkReachabilityManager"
-- "HTTPURLResponse"
-- !private "NSFetchRequestResult"
-- !private "UnicodeScalarType"
-- "CastingPrecedence"
-- "NSURLConnection"
-- "NSMutableURLRequest"
-- "MyURLProtocol"
-- !private "~="
-- "AssignmentPrecedence"
-- !private "=="
-- !private "NSEntityDescription"
-- !private "!="
-- !private "NSPredicate"
-- "pattern_rs"
-- !private "UIApplication"
-- "StringLiteralType"
-- !private "NSFetchRequest"
-- "URLProtocol"
-- !private "+="
-- !private "JSON"
-- !private "Date"
-- !private "BooleanLiteralType"
-- "Data"
-- !private "cipherText"
-- !private "RequestManager"
-- "requestCount"
-- !private "NSURLRequest"
-- !private "String"
-- !private "Array"
-- !private "+"
-- !private "Dictionary"
-- !private "AppDelegate"
-- !private "AnyObject"
-- !private "Kanna"
 - !private "!"
-- "pattern_"
-- "NSError"
-- !private "UserDefaults"
-- !private "RegEx"
-- !private "NSDictionary"
-- !private "deviceId"
+- !private "!="
 - !private "&&"
-- "URLResponse"
-- "NSMutableData"
-- "NSManagedObject"
-- !private "NSString"
+- !private "+"
+- !private "+="
+- !private "<"
+- !private "=="
+- !private "AFNetworkReachabilityManager"
+- !private "AnyObject"
+- !private "AppDelegate"
+- !private "Array"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "Data"
+- !private "Date"
+- !private "Dictionary"
+- "Error"
+- "HTTPURLResponse"
+- !private "JSON"
 - !private "JSONSerialization"
-- "URLRequest"
+- !private "Kanna"
+- "MyURLProtocol"
+- !private "NSDictionary"
+- !private "NSEntityDescription"
+- !private "NSError"
+- !private "NSFetchRequest"
+- !private "NSFetchRequestResult"
 - !private "NSLog"
+- "NSManagedObject"
+- "NSMutableData"
+- "NSMutableURLRequest"
+- !private "NSPredicate"
+- !private "NSString"
+- !private "NSURLAuthenticationMethodServerTrust"
+- "NSURLConnection"
+- "NSURLConnectionDelegate"
+- !private "NSURLRequest"
+- !private "RegEx"
+- !private "RequestManager"
+- !private "String"
+- "StringLiteralType"
+- !private "UIApplication"
+- "URLAuthenticationChallenge"
+- !private "URLCredential"
+- "URLProtectionSpace"
+- "URLProtocol"
+- "URLRequest"
+- "URLResponse"
+- !private "UnicodeScalarType"
+- !private "UserDefaults"
+- !private "cipherText"
+- !private "deviceId"
+- "pattern_"
+- "pattern_rs"
+- !private "print"
+- "requestCount"
+- !private "serverURL"
+- !private "~="
 depends-member:
-- ["CSo28AFNetworkReachabilityManager", "deinit"]
 - !private ["CSo28AFNetworkReachabilityManager", "isReachable"]
 - !private ["CSo28AFNetworkReachabilityManager", "shared"]
 - !private ["Ps9AnyObject", "AFNetworkReachabilityManager"]
@@ -95,35 +98,38 @@ depends-member:
 - !private ["Ps9AnyObject", "NSMutableData"]
 - !private ["Ps9AnyObject", "NSPredicate"]
 - !private ["Ps9AnyObject", "NSString"]
+- !private ["Ps9AnyObject", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps9AnyObject", "NSURLConnection"]
 - !private ["Ps9AnyObject", "ReadingOptions"]
 - !private ["Ps9AnyObject", "RegEx"]
 - !private ["Ps9AnyObject", "RequestManager"]
 - !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UIApplication"]
+- !private ["Ps9AnyObject", "URLCredential"]
 - !private ["Ps9AnyObject", "URLProtocol"]
 - !private ["Ps9AnyObject", "URLResponse"]
 - !private ["Ps9AnyObject", "UserDefaults"]
 - !private ["Ps9AnyObject", "allHeaderFields"]
 - !private ["Ps9AnyObject", "append"]
-- ["Ps9AnyObject", "cachedResponseForCurrentRequest"]
-- ["Ps9AnyObject", "canInit"]
+- !private ["Ps9AnyObject", "authenticationMethod"]
+- !private ["Ps9AnyObject", "cachedResponseForCurrentRequest"]
 - !private ["Ps9AnyObject", "cancel"]
-- ["Ps9AnyObject", "canonicalRequest"]
 - !private ["Ps9AnyObject", "cipherText"]
 - !private ["Ps9AnyObject", "client"]
 - ["Ps9AnyObject", "connection"]
-- ["Ps9AnyObject", "connectionDidFinishLoading"]
+- ["Ps9AnyObject", "connectionShouldUseCredentialStorage"]
+- !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "containsMatch"]
 - !private ["Ps9AnyObject", "data"]
 - !private ["Ps9AnyObject", "delegate"]
+- !private ["Ps9AnyObject", "delete"]
 - !private ["Ps9AnyObject", "deviceId"]
 - !private ["Ps9AnyObject", "entity"]
 - !private ["Ps9AnyObject", "fetch"]
 - !private ["Ps9AnyObject", "getCipherText"]
 - !private ["Ps9AnyObject", "getResponse"]
 - !private ["Ps9AnyObject", "hasChanges"]
-- ["Ps9AnyObject", "httpresponse"]
+- !private ["Ps9AnyObject", "httpresponse"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "insertNewObject"]
 - !private ["Ps9AnyObject", "isNetworkActivityIndicatorVisible"]
@@ -132,76 +138,47 @@ depends-member:
 - !private ["Ps9AnyObject", "managedObjectContext"]
 - !private ["Ps9AnyObject", "mimeType"]
 - !private ["Ps9AnyObject", "mutableCopy"]
-- ["Ps9AnyObject", "mutableData"]
-- ["Ps9AnyObject", "newRequest"]
+- !private ["Ps9AnyObject", "mutableData"]
+- !private ["Ps9AnyObject", "newRequest"]
 - !private ["Ps9AnyObject", "pattern_"]
 - !private ["Ps9AnyObject", "pattern_rs"]
 - !private ["Ps9AnyObject", "predicate"]
 - !private ["Ps9AnyObject", "print"]
 - !private ["Ps9AnyObject", "property"]
+- !private ["Ps9AnyObject", "protectionSpace"]
 - !private ["Ps9AnyObject", "replaceMatches"]
 - !private ["Ps9AnyObject", "replacingOccurrences"]
 - !private ["Ps9AnyObject", "request"]
 - !private ["Ps9AnyObject", "requestCount"]
-- ["Ps9AnyObject", "requestIsCacheEquivalent"]
-- ["Ps9AnyObject", "response"]
+- !private ["Ps9AnyObject", "requestIsCacheEquivalent"]
+- !private ["Ps9AnyObject", "response"]
 - !private ["Ps9AnyObject", "save"]
-- ["Ps9AnyObject", "saveCachedResponse"]
+- !private ["Ps9AnyObject", "saveCachedResponse"]
+- !private ["Ps9AnyObject", "sender"]
+- !private ["Ps9AnyObject", "serverTrust"]
+- !private ["Ps9AnyObject", "serverURL"]
 - !private ["Ps9AnyObject", "set"]
 - !private ["Ps9AnyObject", "setProperty"]
 - !private ["Ps9AnyObject", "setValue"]
 - !private ["Ps9AnyObject", "shared"]
 - !private ["Ps9AnyObject", "standard"]
-- ["Ps9AnyObject", "startLoading"]
 - !private ["Ps9AnyObject", "statusCode"]
-- ["Ps9AnyObject", "stopLoading"]
 - !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "textEncodingName"]
 - !private ["Ps9AnyObject", "userInfo"]
 - !private ["Ps9AnyObject", "value"]
 - ["Ps9AnyObject", ""]
-- ["C16SwiftLoginScreen11AppDelegate", "deinit"]
 - !private ["C16SwiftLoginScreen11AppDelegate", "managedObjectContext"]
-- !private ["Sa", "Index"]
-- !private ["Sa", "SubSequence"]
-- ["Sa", "deinit"]
 - !private ["Sa", "isEmpty"]
 - !private ["Sa", "subscript"]
-- !private ["Ps23BidirectionalCollection", "Index"]
-- !private ["Ps23BidirectionalCollection", "IndexDistance"]
-- !private ["Ps23BidirectionalCollection", "Indices"]
-- !private ["Ps23BidirectionalCollection", "Iterator"]
-- !private ["Ps23BidirectionalCollection", "SubSequence"]
-- !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "count"]
 - !private ["Ps23BidirectionalCollection", "isEmpty"]
 - !private ["Ps23BidirectionalCollection", "subscript"]
-- !private ["Ps22BidirectionalIndexable", "Index"]
-- !private ["Ps22BidirectionalIndexable", "IndexDistance"]
-- !private ["Ps22BidirectionalIndexable", "Indices"]
-- !private ["Ps22BidirectionalIndexable", "Iterator"]
-- !private ["Ps22BidirectionalIndexable", "SubSequence"]
-- !private ["Ps22BidirectionalIndexable", "_Element"]
-- !private ["Ps22BidirectionalIndexable", "count"]
-- !private ["Ps22BidirectionalIndexable", "isEmpty"]
-- !private ["Ps22BidirectionalIndexable", "subscript"]
-- !private ["Vs18BidirectionalSlice", "Index"]
-- !private ["Vs18BidirectionalSlice", "IndexDistance"]
-- !private ["Vs18BidirectionalSlice", "Indices"]
-- !private ["Vs18BidirectionalSlice", "Iterator"]
-- !private ["Vs18BidirectionalSlice", "SubSequence"]
-- !private ["Vs18BidirectionalSlice", "_Element"]
-- !private ["Ps17BitwiseOperations", "IntegerLiteralType"]
-- !private ["Ps17BitwiseOperations", "Stride"]
-- !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "AFNetworkReachabilityManager"]
 - !private ["Ps7CVarArg", "Date"]
 - !private ["Ps7CVarArg", "Encoding"]
 - !private ["Ps7CVarArg", "HTTPURLResponse"]
-- !private ["Ps7CVarArg", "Index"]
-- !private ["Ps7CVarArg", "IntegerLiteralType"]
 - !private ["Ps7CVarArg", "JSONSerialization"]
 - !private ["Ps7CVarArg", "Kanna"]
 - !private ["Ps7CVarArg", "NSEntityDescription"]
@@ -210,37 +187,37 @@ depends-member:
 - !private ["Ps7CVarArg", "NSMutableData"]
 - !private ["Ps7CVarArg", "NSPredicate"]
 - !private ["Ps7CVarArg", "NSString"]
+- !private ["Ps7CVarArg", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps7CVarArg", "NSURLConnection"]
 - !private ["Ps7CVarArg", "ReadingOptions"]
 - !private ["Ps7CVarArg", "RegEx"]
 - !private ["Ps7CVarArg", "RequestManager"]
-- !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "String"]
-- !private ["Ps7CVarArg", "SubSequence"]
 - !private ["Ps7CVarArg", "UIApplication"]
+- !private ["Ps7CVarArg", "URLCredential"]
 - !private ["Ps7CVarArg", "URLProtocol"]
 - !private ["Ps7CVarArg", "URLResponse"]
 - !private ["Ps7CVarArg", "UserDefaults"]
-- !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - !private ["Ps7CVarArg", "allHeaderFields"]
 - !private ["Ps7CVarArg", "append"]
-- ["Ps7CVarArg", "cachedResponseForCurrentRequest"]
-- ["Ps7CVarArg", "canInit"]
+- !private ["Ps7CVarArg", "authenticationMethod"]
+- !private ["Ps7CVarArg", "cachedResponseForCurrentRequest"]
 - !private ["Ps7CVarArg", "cancel"]
-- ["Ps7CVarArg", "canonicalRequest"]
 - !private ["Ps7CVarArg", "cipherText"]
 - !private ["Ps7CVarArg", "client"]
 - ["Ps7CVarArg", "connection"]
-- ["Ps7CVarArg", "connectionDidFinishLoading"]
+- ["Ps7CVarArg", "connectionShouldUseCredentialStorage"]
+- !private ["Ps7CVarArg", "contains"]
 - !private ["Ps7CVarArg", "data"]
 - !private ["Ps7CVarArg", "delegate"]
+- !private ["Ps7CVarArg", "delete"]
 - !private ["Ps7CVarArg", "deviceId"]
 - !private ["Ps7CVarArg", "entity"]
 - !private ["Ps7CVarArg", "fetch"]
 - !private ["Ps7CVarArg", "getCipherText"]
 - !private ["Ps7CVarArg", "getResponse"]
 - !private ["Ps7CVarArg", "hasChanges"]
-- ["Ps7CVarArg", "httpresponse"]
+- !private ["Ps7CVarArg", "httpresponse"]
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "insertNewObject"]
 - !private ["Ps7CVarArg", "isEmpty"]
@@ -250,58 +227,47 @@ depends-member:
 - !private ["Ps7CVarArg", "managedObjectContext"]
 - !private ["Ps7CVarArg", "mimeType"]
 - !private ["Ps7CVarArg", "mutableCopy"]
-- ["Ps7CVarArg", "mutableData"]
-- ["Ps7CVarArg", "newRequest"]
+- !private ["Ps7CVarArg", "mutableData"]
+- !private ["Ps7CVarArg", "newRequest"]
 - !private ["Ps7CVarArg", "pattern_"]
 - !private ["Ps7CVarArg", "pattern_rs"]
 - !private ["Ps7CVarArg", "predicate"]
 - !private ["Ps7CVarArg", "print"]
 - !private ["Ps7CVarArg", "property"]
+- !private ["Ps7CVarArg", "protectionSpace"]
 - !private ["Ps7CVarArg", "replacingOccurrences"]
 - !private ["Ps7CVarArg", "request"]
 - !private ["Ps7CVarArg", "requestCount"]
-- ["Ps7CVarArg", "requestIsCacheEquivalent"]
-- ["Ps7CVarArg", "response"]
+- !private ["Ps7CVarArg", "requestIsCacheEquivalent"]
+- !private ["Ps7CVarArg", "response"]
 - !private ["Ps7CVarArg", "save"]
-- ["Ps7CVarArg", "saveCachedResponse"]
+- !private ["Ps7CVarArg", "saveCachedResponse"]
+- !private ["Ps7CVarArg", "sender"]
+- !private ["Ps7CVarArg", "serverTrust"]
+- !private ["Ps7CVarArg", "serverURL"]
 - !private ["Ps7CVarArg", "set"]
 - !private ["Ps7CVarArg", "setProperty"]
 - !private ["Ps7CVarArg", "setValue"]
 - !private ["Ps7CVarArg", "shared"]
 - !private ["Ps7CVarArg", "standard"]
-- ["Ps7CVarArg", "startLoading"]
 - !private ["Ps7CVarArg", "statusCode"]
-- ["Ps7CVarArg", "stopLoading"]
 - !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "textEncodingName"]
 - !private ["Ps7CVarArg", "userInfo"]
 - !private ["Ps7CVarArg", "value"]
 - ["Ps7CVarArg", ""]
-- !private ["Vs9Character", "deinit"]
-- !private ["Vs11ClosedRange", "deinit"]
-- !private ["Ps10Collection", "Index"]
-- !private ["Ps10Collection", "IndexDistance"]
-- !private ["Ps10Collection", "Indices"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "SubSequence"]
-- !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "count"]
 - !private ["Ps10Collection", "isEmpty"]
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "Encoding"]
-- !private ["Ps10Comparable", "IntegerLiteralType"]
-- !private ["Ps10Comparable", "Stride"]
-- !private ["Ps10Comparable", "_DisabledRangeIndex"]
+- !private ["Ps10Comparable", "addingTimeInterval"]
+- !private ["Ps10Comparable", "contains"]
 - !private ["Ps10Comparable", "getCipherText"]
 - ["Ps10Comparable", "init"]
-- !private ["Vs20CountableClosedRange", "deinit"]
-- !private ["Vs14CountableRange", "deinit"]
 - !private ["Ps28CustomDebugStringConvertible", "AFNetworkReachabilityManager"]
 - !private ["Ps28CustomDebugStringConvertible", "Date"]
 - !private ["Ps28CustomDebugStringConvertible", "Encoding"]
 - !private ["Ps28CustomDebugStringConvertible", "HTTPURLResponse"]
-- !private ["Ps28CustomDebugStringConvertible", "Index"]
-- !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
 - !private ["Ps28CustomDebugStringConvertible", "Kanna"]
 - !private ["Ps28CustomDebugStringConvertible", "NSEntityDescription"]
@@ -310,37 +276,40 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableData"]
 - !private ["Ps28CustomDebugStringConvertible", "NSPredicate"]
 - !private ["Ps28CustomDebugStringConvertible", "NSString"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps28CustomDebugStringConvertible", "NSURLConnection"]
 - !private ["Ps28CustomDebugStringConvertible", "ReadingOptions"]
 - !private ["Ps28CustomDebugStringConvertible", "RegEx"]
 - !private ["Ps28CustomDebugStringConvertible", "RequestManager"]
 - !private ["Ps28CustomDebugStringConvertible", "String"]
-- !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "URLCredential"]
 - !private ["Ps28CustomDebugStringConvertible", "URLProtocol"]
 - !private ["Ps28CustomDebugStringConvertible", "URLResponse"]
 - !private ["Ps28CustomDebugStringConvertible", "UserDefaults"]
 - !private ["Ps28CustomDebugStringConvertible", "absoluteString"]
+- !private ["Ps28CustomDebugStringConvertible", "addingTimeInterval"]
 - !private ["Ps28CustomDebugStringConvertible", "allHeaderFields"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
-- ["Ps28CustomDebugStringConvertible", "cachedResponseForCurrentRequest"]
-- ["Ps28CustomDebugStringConvertible", "canInit"]
+- !private ["Ps28CustomDebugStringConvertible", "authenticationMethod"]
+- !private ["Ps28CustomDebugStringConvertible", "cachedResponseForCurrentRequest"]
 - !private ["Ps28CustomDebugStringConvertible", "cancel"]
-- ["Ps28CustomDebugStringConvertible", "canonicalRequest"]
 - !private ["Ps28CustomDebugStringConvertible", "cipherText"]
 - !private ["Ps28CustomDebugStringConvertible", "client"]
 - ["Ps28CustomDebugStringConvertible", "connection"]
-- ["Ps28CustomDebugStringConvertible", "connectionDidFinishLoading"]
+- ["Ps28CustomDebugStringConvertible", "connectionShouldUseCredentialStorage"]
+- !private ["Ps28CustomDebugStringConvertible", "contains"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - !private ["Ps28CustomDebugStringConvertible", "data"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
+- !private ["Ps28CustomDebugStringConvertible", "delete"]
 - !private ["Ps28CustomDebugStringConvertible", "deviceId"]
 - !private ["Ps28CustomDebugStringConvertible", "entity"]
 - !private ["Ps28CustomDebugStringConvertible", "fetch"]
 - !private ["Ps28CustomDebugStringConvertible", "getCipherText"]
 - !private ["Ps28CustomDebugStringConvertible", "getResponse"]
 - !private ["Ps28CustomDebugStringConvertible", "hasChanges"]
-- ["Ps28CustomDebugStringConvertible", "httpresponse"]
+- !private ["Ps28CustomDebugStringConvertible", "httpresponse"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insertNewObject"]
 - !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
@@ -350,29 +319,31 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "managedObjectContext"]
 - !private ["Ps28CustomDebugStringConvertible", "mimeType"]
 - !private ["Ps28CustomDebugStringConvertible", "mutableCopy"]
-- ["Ps28CustomDebugStringConvertible", "mutableData"]
-- ["Ps28CustomDebugStringConvertible", "newRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "mutableData"]
+- !private ["Ps28CustomDebugStringConvertible", "newRequest"]
 - !private ["Ps28CustomDebugStringConvertible", "pattern_"]
 - !private ["Ps28CustomDebugStringConvertible", "pattern_rs"]
 - !private ["Ps28CustomDebugStringConvertible", "predicate"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - !private ["Ps28CustomDebugStringConvertible", "property"]
+- !private ["Ps28CustomDebugStringConvertible", "protectionSpace"]
 - !private ["Ps28CustomDebugStringConvertible", "relativePath"]
 - !private ["Ps28CustomDebugStringConvertible", "replacingOccurrences"]
 - !private ["Ps28CustomDebugStringConvertible", "request"]
 - !private ["Ps28CustomDebugStringConvertible", "requestCount"]
-- ["Ps28CustomDebugStringConvertible", "requestIsCacheEquivalent"]
-- ["Ps28CustomDebugStringConvertible", "response"]
+- !private ["Ps28CustomDebugStringConvertible", "requestIsCacheEquivalent"]
+- !private ["Ps28CustomDebugStringConvertible", "response"]
 - !private ["Ps28CustomDebugStringConvertible", "save"]
-- ["Ps28CustomDebugStringConvertible", "saveCachedResponse"]
+- !private ["Ps28CustomDebugStringConvertible", "saveCachedResponse"]
+- !private ["Ps28CustomDebugStringConvertible", "sender"]
+- !private ["Ps28CustomDebugStringConvertible", "serverTrust"]
+- !private ["Ps28CustomDebugStringConvertible", "serverURL"]
 - !private ["Ps28CustomDebugStringConvertible", "set"]
 - !private ["Ps28CustomDebugStringConvertible", "setProperty"]
 - !private ["Ps28CustomDebugStringConvertible", "setValue"]
 - !private ["Ps28CustomDebugStringConvertible", "shared"]
 - !private ["Ps28CustomDebugStringConvertible", "standard"]
-- ["Ps28CustomDebugStringConvertible", "startLoading"]
 - !private ["Ps28CustomDebugStringConvertible", "statusCode"]
-- ["Ps28CustomDebugStringConvertible", "stopLoading"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "textEncodingName"]
 - !private ["Ps28CustomDebugStringConvertible", "url"]
@@ -380,24 +351,19 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "value"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Encoding"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "IntegerLiteralType"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "_DisabledRangeIndex"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "absoluteString"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "addingTimeInterval"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "contains"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "data"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "getCipherText"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "relativePath"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "replacingOccurrences"]
 - !private ["Ps17CustomReflectable", "Encoding"]
-- !private ["Ps17CustomReflectable", "Index"]
-- !private ["Ps17CustomReflectable", "IndexDistance"]
-- !private ["Ps17CustomReflectable", "IntegerLiteralType"]
-- !private ["Ps17CustomReflectable", "Stride"]
-- !private ["Ps17CustomReflectable", "SubSequence"]
-- !private ["Ps17CustomReflectable", "_DisabledRangeIndex"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "addingTimeInterval"]
+- !private ["Ps17CustomReflectable", "contains"]
 - !private ["Ps17CustomReflectable", "count"]
 - !private ["Ps17CustomReflectable", "getCipherText"]
 - ["Ps17CustomReflectable", "init"]
@@ -409,9 +375,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Date"]
 - !private ["Ps23CustomStringConvertible", "Encoding"]
 - !private ["Ps23CustomStringConvertible", "HTTPURLResponse"]
-- !private ["Ps23CustomStringConvertible", "Index"]
-- !private ["Ps23CustomStringConvertible", "IndexDistance"]
-- !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "JSONSerialization"]
 - !private ["Ps23CustomStringConvertible", "Kanna"]
 - !private ["Ps23CustomStringConvertible", "NSEntityDescription"]
@@ -420,41 +383,42 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSMutableData"]
 - !private ["Ps23CustomStringConvertible", "NSPredicate"]
 - !private ["Ps23CustomStringConvertible", "NSString"]
+- !private ["Ps23CustomStringConvertible", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps23CustomStringConvertible", "NSURLConnection"]
 - !private ["Ps23CustomStringConvertible", "ReadingOptions"]
 - !private ["Ps23CustomStringConvertible", "RegEx"]
 - !private ["Ps23CustomStringConvertible", "RequestManager"]
-- !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "String"]
-- !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "UIApplication"]
+- !private ["Ps23CustomStringConvertible", "URLCredential"]
 - !private ["Ps23CustomStringConvertible", "URLProtocol"]
 - !private ["Ps23CustomStringConvertible", "URLResponse"]
 - !private ["Ps23CustomStringConvertible", "UserDefaults"]
-- !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "absoluteString"]
+- !private ["Ps23CustomStringConvertible", "addingTimeInterval"]
 - !private ["Ps23CustomStringConvertible", "allHeaderFields"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "ascii"]
-- ["Ps23CustomStringConvertible", "cachedResponseForCurrentRequest"]
-- ["Ps23CustomStringConvertible", "canInit"]
+- !private ["Ps23CustomStringConvertible", "authenticationMethod"]
+- !private ["Ps23CustomStringConvertible", "cachedResponseForCurrentRequest"]
 - !private ["Ps23CustomStringConvertible", "cancel"]
-- ["Ps23CustomStringConvertible", "canonicalRequest"]
 - !private ["Ps23CustomStringConvertible", "cipherText"]
 - !private ["Ps23CustomStringConvertible", "client"]
 - ["Ps23CustomStringConvertible", "connection"]
-- ["Ps23CustomStringConvertible", "connectionDidFinishLoading"]
+- ["Ps23CustomStringConvertible", "connectionShouldUseCredentialStorage"]
+- !private ["Ps23CustomStringConvertible", "contains"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - !private ["Ps23CustomStringConvertible", "data"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
+- !private ["Ps23CustomStringConvertible", "delete"]
 - !private ["Ps23CustomStringConvertible", "deviceId"]
 - !private ["Ps23CustomStringConvertible", "entity"]
 - !private ["Ps23CustomStringConvertible", "fetch"]
 - !private ["Ps23CustomStringConvertible", "getCipherText"]
 - !private ["Ps23CustomStringConvertible", "getResponse"]
 - !private ["Ps23CustomStringConvertible", "hasChanges"]
-- ["Ps23CustomStringConvertible", "httpresponse"]
+- !private ["Ps23CustomStringConvertible", "httpresponse"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insertNewObject"]
 - !private ["Ps23CustomStringConvertible", "isEmpty"]
@@ -464,30 +428,32 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "managedObjectContext"]
 - !private ["Ps23CustomStringConvertible", "mimeType"]
 - !private ["Ps23CustomStringConvertible", "mutableCopy"]
-- ["Ps23CustomStringConvertible", "mutableData"]
-- ["Ps23CustomStringConvertible", "newRequest"]
+- !private ["Ps23CustomStringConvertible", "mutableData"]
+- !private ["Ps23CustomStringConvertible", "newRequest"]
 - !private ["Ps23CustomStringConvertible", "pattern_"]
 - !private ["Ps23CustomStringConvertible", "pattern_rs"]
 - !private ["Ps23CustomStringConvertible", "predicate"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - !private ["Ps23CustomStringConvertible", "property"]
+- !private ["Ps23CustomStringConvertible", "protectionSpace"]
 - !private ["Ps23CustomStringConvertible", "rawValue"]
 - !private ["Ps23CustomStringConvertible", "relativePath"]
 - !private ["Ps23CustomStringConvertible", "replacingOccurrences"]
 - !private ["Ps23CustomStringConvertible", "request"]
 - !private ["Ps23CustomStringConvertible", "requestCount"]
-- ["Ps23CustomStringConvertible", "requestIsCacheEquivalent"]
-- ["Ps23CustomStringConvertible", "response"]
+- !private ["Ps23CustomStringConvertible", "requestIsCacheEquivalent"]
+- !private ["Ps23CustomStringConvertible", "response"]
 - !private ["Ps23CustomStringConvertible", "save"]
-- ["Ps23CustomStringConvertible", "saveCachedResponse"]
+- !private ["Ps23CustomStringConvertible", "saveCachedResponse"]
+- !private ["Ps23CustomStringConvertible", "sender"]
+- !private ["Ps23CustomStringConvertible", "serverTrust"]
+- !private ["Ps23CustomStringConvertible", "serverURL"]
 - !private ["Ps23CustomStringConvertible", "set"]
 - !private ["Ps23CustomStringConvertible", "setProperty"]
 - !private ["Ps23CustomStringConvertible", "setValue"]
 - !private ["Ps23CustomStringConvertible", "shared"]
 - !private ["Ps23CustomStringConvertible", "standard"]
-- ["Ps23CustomStringConvertible", "startLoading"]
 - !private ["Ps23CustomStringConvertible", "statusCode"]
-- ["Ps23CustomStringConvertible", "stopLoading"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "textEncodingName"]
 - !private ["Ps23CustomStringConvertible", "url"]
@@ -495,33 +461,16 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "utf8"]
 - !private ["Ps23CustomStringConvertible", "value"]
 - ["Ps23CustomStringConvertible", ""]
-- !private ["V10Foundation4Data", "IndexDistance"]
 - !private ["V10Foundation4Data", "count"]
-- ["V10Foundation4Data", "deinit"]
-- ["V10Foundation4Date", "deinit"]
+- !private ["V10Foundation4Date", "addingTimeInterval"]
 - !private ["V10Foundation4Date", "init"]
-- !private ["Vs27DefaultBidirectionalIndices", "Index"]
-- !private ["Vs27DefaultBidirectionalIndices", "Iterator"]
-- !private ["Vs27DefaultBidirectionalIndices", "SubSequence"]
-- !private ["Vs27DefaultBidirectionalIndices", "_Element"]
-- !private ["Vs26DefaultRandomAccessIndices", "Index"]
-- !private ["Vs26DefaultRandomAccessIndices", "IndexDistance"]
-- !private ["Vs26DefaultRandomAccessIndices", "Indices"]
-- !private ["Vs26DefaultRandomAccessIndices", "Iterator"]
-- !private ["Vs26DefaultRandomAccessIndices", "SubSequence"]
-- !private ["Vs26DefaultRandomAccessIndices", "_Element"]
-- ["Vs10Dictionary", "deinit"]
-- !private ["Sd", "deinit"]
 - !private ["VE10FoundationSS8Encoding", "ascii"]
-- ["VE10FoundationSS8Encoding", "deinit"]
 - !private ["VE10FoundationSS8Encoding", "rawValue"]
 - !private ["VE10FoundationSS8Encoding", "utf8"]
 - !private ["Ps9Equatable", "AFNetworkReachabilityManager"]
 - !private ["Ps9Equatable", "Date"]
 - !private ["Ps9Equatable", "Encoding"]
 - !private ["Ps9Equatable", "HTTPURLResponse"]
-- !private ["Ps9Equatable", "IndexDistance"]
-- !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "JSONSerialization"]
 - !private ["Ps9Equatable", "Kanna"]
 - !private ["Ps9Equatable", "NSEntityDescription"]
@@ -530,40 +479,42 @@ depends-member:
 - !private ["Ps9Equatable", "NSMutableData"]
 - !private ["Ps9Equatable", "NSPredicate"]
 - !private ["Ps9Equatable", "NSString"]
+- !private ["Ps9Equatable", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps9Equatable", "NSURLConnection"]
 - !private ["Ps9Equatable", "ReadingOptions"]
 - !private ["Ps9Equatable", "RegEx"]
 - !private ["Ps9Equatable", "RequestManager"]
-- !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "UIApplication"]
+- !private ["Ps9Equatable", "URLCredential"]
 - !private ["Ps9Equatable", "URLProtocol"]
 - !private ["Ps9Equatable", "URLResponse"]
 - !private ["Ps9Equatable", "UserDefaults"]
-- !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "absoluteString"]
+- !private ["Ps9Equatable", "addingTimeInterval"]
 - !private ["Ps9Equatable", "allHeaderFields"]
 - !private ["Ps9Equatable", "append"]
 - !private ["Ps9Equatable", "ascii"]
-- ["Ps9Equatable", "cachedResponseForCurrentRequest"]
-- ["Ps9Equatable", "canInit"]
+- !private ["Ps9Equatable", "authenticationMethod"]
+- !private ["Ps9Equatable", "cachedResponseForCurrentRequest"]
 - !private ["Ps9Equatable", "cancel"]
-- ["Ps9Equatable", "canonicalRequest"]
 - !private ["Ps9Equatable", "cipherText"]
 - !private ["Ps9Equatable", "client"]
 - ["Ps9Equatable", "connection"]
-- ["Ps9Equatable", "connectionDidFinishLoading"]
+- ["Ps9Equatable", "connectionShouldUseCredentialStorage"]
+- !private ["Ps9Equatable", "contains"]
 - !private ["Ps9Equatable", "count"]
 - !private ["Ps9Equatable", "data"]
 - !private ["Ps9Equatable", "delegate"]
+- !private ["Ps9Equatable", "delete"]
 - !private ["Ps9Equatable", "deviceId"]
 - !private ["Ps9Equatable", "entity"]
 - !private ["Ps9Equatable", "fetch"]
 - !private ["Ps9Equatable", "getCipherText"]
 - !private ["Ps9Equatable", "getResponse"]
 - !private ["Ps9Equatable", "hasChanges"]
-- ["Ps9Equatable", "httpresponse"]
+- !private ["Ps9Equatable", "httpresponse"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "insertNewObject"]
 - !private ["Ps9Equatable", "isNetworkActivityIndicatorVisible"]
@@ -573,31 +524,33 @@ depends-member:
 - !private ["Ps9Equatable", "mimeType"]
 - !private ["Ps9Equatable", "mutableContainers"]
 - !private ["Ps9Equatable", "mutableCopy"]
-- ["Ps9Equatable", "mutableData"]
-- ["Ps9Equatable", "newRequest"]
+- !private ["Ps9Equatable", "mutableData"]
+- !private ["Ps9Equatable", "newRequest"]
 - !private ["Ps9Equatable", "notAllowed"]
 - !private ["Ps9Equatable", "pattern_"]
 - !private ["Ps9Equatable", "pattern_rs"]
 - !private ["Ps9Equatable", "predicate"]
 - !private ["Ps9Equatable", "print"]
 - !private ["Ps9Equatable", "property"]
+- !private ["Ps9Equatable", "protectionSpace"]
 - !private ["Ps9Equatable", "rawValue"]
 - !private ["Ps9Equatable", "relativePath"]
 - !private ["Ps9Equatable", "replacingOccurrences"]
 - !private ["Ps9Equatable", "request"]
 - !private ["Ps9Equatable", "requestCount"]
-- ["Ps9Equatable", "requestIsCacheEquivalent"]
-- ["Ps9Equatable", "response"]
+- !private ["Ps9Equatable", "requestIsCacheEquivalent"]
+- !private ["Ps9Equatable", "response"]
 - !private ["Ps9Equatable", "save"]
-- ["Ps9Equatable", "saveCachedResponse"]
+- !private ["Ps9Equatable", "saveCachedResponse"]
+- !private ["Ps9Equatable", "sender"]
+- !private ["Ps9Equatable", "serverTrust"]
+- !private ["Ps9Equatable", "serverURL"]
 - !private ["Ps9Equatable", "set"]
 - !private ["Ps9Equatable", "setProperty"]
 - !private ["Ps9Equatable", "setValue"]
 - !private ["Ps9Equatable", "shared"]
 - !private ["Ps9Equatable", "standard"]
-- ["Ps9Equatable", "startLoading"]
 - !private ["Ps9Equatable", "statusCode"]
-- ["Ps9Equatable", "stopLoading"]
 - !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "textEncodingName"]
 - !private ["Ps9Equatable", "url"]
@@ -605,10 +558,7 @@ depends-member:
 - !private ["Ps9Equatable", "utf8"]
 - !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", ""]
-- ["Ps5Error", "deinit"]
 - !private ["Ps5Error", "userInfo"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Index"]
-- !private ["Ps25ExpressibleByArrayLiteral", "SubSequence"]
 - !private ["Ps25ExpressibleByArrayLiteral", "isEmpty"]
 - !private ["Ps25ExpressibleByArrayLiteral", "mutableContainers"]
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
@@ -616,39 +566,31 @@ depends-member:
 - !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "value"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Encoding"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "contains"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "data"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "getCipherText"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "replacingOccurrences"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
-- !private ["Ps32ExpressibleByStringInterpolation", "Encoding"]
-- !private ["Ps32ExpressibleByStringInterpolation", "getCipherText"]
-- ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "Encoding"]
+- !private ["Ps26ExpressibleByStringLiteral", "contains"]
 - !private ["Ps26ExpressibleByStringLiteral", "data"]
 - !private ["Ps26ExpressibleByStringLiteral", "getCipherText"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "replacingOccurrences"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "Encoding"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "contains"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "data"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "getCipherText"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "replacingOccurrences"]
-- !private ["Sf", "deinit"]
-- ["P5Kanna12HTMLDocument", "deinit"]
 - !private ["P5Kanna12HTMLDocument", "title"]
 - !private ["CSo15HTTPURLResponse", "allHeaderFields"]
-- ["CSo15HTTPURLResponse", "deinit"]
 - !private ["CSo15HTTPURLResponse", "init"]
 - !private ["CSo15HTTPURLResponse", "statusCode"]
 - !private ["Ps8Hashable", "AFNetworkReachabilityManager"]
 - !private ["Ps8Hashable", "Date"]
 - !private ["Ps8Hashable", "Encoding"]
 - !private ["Ps8Hashable", "HTTPURLResponse"]
-- !private ["Ps8Hashable", "IndexDistance"]
-- !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "JSONSerialization"]
 - !private ["Ps8Hashable", "Kanna"]
 - !private ["Ps8Hashable", "NSEntityDescription"]
@@ -657,40 +599,42 @@ depends-member:
 - !private ["Ps8Hashable", "NSMutableData"]
 - !private ["Ps8Hashable", "NSPredicate"]
 - !private ["Ps8Hashable", "NSString"]
+- !private ["Ps8Hashable", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps8Hashable", "NSURLConnection"]
 - !private ["Ps8Hashable", "ReadingOptions"]
 - !private ["Ps8Hashable", "RegEx"]
 - !private ["Ps8Hashable", "RequestManager"]
-- !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "UIApplication"]
+- !private ["Ps8Hashable", "URLCredential"]
 - !private ["Ps8Hashable", "URLProtocol"]
 - !private ["Ps8Hashable", "URLResponse"]
 - !private ["Ps8Hashable", "UserDefaults"]
-- !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "absoluteString"]
+- !private ["Ps8Hashable", "addingTimeInterval"]
 - !private ["Ps8Hashable", "allHeaderFields"]
 - !private ["Ps8Hashable", "append"]
 - !private ["Ps8Hashable", "ascii"]
-- ["Ps8Hashable", "cachedResponseForCurrentRequest"]
-- ["Ps8Hashable", "canInit"]
+- !private ["Ps8Hashable", "authenticationMethod"]
+- !private ["Ps8Hashable", "cachedResponseForCurrentRequest"]
 - !private ["Ps8Hashable", "cancel"]
-- ["Ps8Hashable", "canonicalRequest"]
 - !private ["Ps8Hashable", "cipherText"]
 - !private ["Ps8Hashable", "client"]
 - ["Ps8Hashable", "connection"]
-- ["Ps8Hashable", "connectionDidFinishLoading"]
+- ["Ps8Hashable", "connectionShouldUseCredentialStorage"]
+- !private ["Ps8Hashable", "contains"]
 - !private ["Ps8Hashable", "count"]
 - !private ["Ps8Hashable", "data"]
 - !private ["Ps8Hashable", "delegate"]
+- !private ["Ps8Hashable", "delete"]
 - !private ["Ps8Hashable", "deviceId"]
 - !private ["Ps8Hashable", "entity"]
 - !private ["Ps8Hashable", "fetch"]
 - !private ["Ps8Hashable", "getCipherText"]
 - !private ["Ps8Hashable", "getResponse"]
 - !private ["Ps8Hashable", "hasChanges"]
-- ["Ps8Hashable", "httpresponse"]
+- !private ["Ps8Hashable", "httpresponse"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "insertNewObject"]
 - !private ["Ps8Hashable", "isNetworkActivityIndicatorVisible"]
@@ -699,31 +643,33 @@ depends-member:
 - !private ["Ps8Hashable", "managedObjectContext"]
 - !private ["Ps8Hashable", "mimeType"]
 - !private ["Ps8Hashable", "mutableCopy"]
-- ["Ps8Hashable", "mutableData"]
-- ["Ps8Hashable", "newRequest"]
+- !private ["Ps8Hashable", "mutableData"]
+- !private ["Ps8Hashable", "newRequest"]
 - !private ["Ps8Hashable", "notAllowed"]
 - !private ["Ps8Hashable", "pattern_"]
 - !private ["Ps8Hashable", "pattern_rs"]
 - !private ["Ps8Hashable", "predicate"]
 - !private ["Ps8Hashable", "print"]
 - !private ["Ps8Hashable", "property"]
+- !private ["Ps8Hashable", "protectionSpace"]
 - !private ["Ps8Hashable", "rawValue"]
 - !private ["Ps8Hashable", "relativePath"]
 - !private ["Ps8Hashable", "replacingOccurrences"]
 - !private ["Ps8Hashable", "request"]
 - !private ["Ps8Hashable", "requestCount"]
-- ["Ps8Hashable", "requestIsCacheEquivalent"]
-- ["Ps8Hashable", "response"]
+- !private ["Ps8Hashable", "requestIsCacheEquivalent"]
+- !private ["Ps8Hashable", "response"]
 - !private ["Ps8Hashable", "save"]
-- ["Ps8Hashable", "saveCachedResponse"]
+- !private ["Ps8Hashable", "saveCachedResponse"]
+- !private ["Ps8Hashable", "sender"]
+- !private ["Ps8Hashable", "serverTrust"]
+- !private ["Ps8Hashable", "serverURL"]
 - !private ["Ps8Hashable", "set"]
 - !private ["Ps8Hashable", "setProperty"]
 - !private ["Ps8Hashable", "setValue"]
 - !private ["Ps8Hashable", "shared"]
 - !private ["Ps8Hashable", "standard"]
-- ["Ps8Hashable", "startLoading"]
 - !private ["Ps8Hashable", "statusCode"]
-- ["Ps8Hashable", "stopLoading"]
 - !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "textEncodingName"]
 - !private ["Ps8Hashable", "url"]
@@ -731,72 +677,24 @@ depends-member:
 - !private ["Ps8Hashable", "utf8"]
 - !private ["Ps8Hashable", "value"]
 - ["Ps8Hashable", ""]
-- ["SQ", "deinit"]
-- !private ["Ps9Indexable", "Index"]
-- !private ["Ps9Indexable", "IndexDistance"]
-- !private ["Ps9Indexable", "Indices"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "SubSequence"]
-- !private ["Ps9Indexable", "_Element"]
-- !private ["Ps9Indexable", "count"]
-- !private ["Ps9Indexable", "isEmpty"]
-- !private ["Ps9Indexable", "subscript"]
-- !private ["Ps13IndexableBase", "Index"]
-- !private ["Ps13IndexableBase", "IndexDistance"]
-- !private ["Ps13IndexableBase", "Indices"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "SubSequence"]
-- !private ["Ps13IndexableBase", "_Element"]
-- !private ["Ps13IndexableBase", "count"]
-- !private ["Ps13IndexableBase", "isEmpty"]
-- !private ["Ps13IndexableBase", "subscript"]
-- !private ["Vs16IndexingIterator", "Element"]
-- !private ["Si", "IntegerLiteralType"]
-- !private ["Si", "Stride"]
-- !private ["Si", "_DisabledRangeIndex"]
-- ["Si", "deinit"]
-- !private ["Vs5Int16", "deinit"]
-- !private ["Vs5Int32", "deinit"]
-- !private ["Vs5Int64", "deinit"]
-- !private ["Vs4Int8", "deinit"]
-- !private ["Ps7Integer", "IntegerLiteralType"]
-- !private ["Ps7Integer", "Stride"]
-- !private ["Ps7Integer", "_DisabledRangeIndex"]
-- !private ["Ps17IntegerArithmetic", "IntegerLiteralType"]
-- !private ["Ps17IntegerArithmetic", "Stride"]
-- !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
-- !private ["Ps16IteratorProtocol", "Element"]
-- !private ["V10SwiftyJSON4JSON", "deinit"]
 - !private ["CSo17JSONSerialization", "ReadingOptions"]
 - !private ["CSo17JSONSerialization", "jsonObject"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "Encoding"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "IntegerLiteralType"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "Stride"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "_DisabledRangeIndex"]
+- !private ["P10SwiftyJSON17JSONSubscriptType", "contains"]
 - !private ["P10SwiftyJSON17JSONSubscriptType", "getCipherText"]
 - ["P10SwiftyJSON17JSONSubscriptType", "init"]
 - !private ["Ps25LosslessStringConvertible", "Encoding"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "contains"]
 - !private ["Ps25LosslessStringConvertible", "getCipherText"]
 - ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "Encoding"]
-- !private ["Ps10MirrorPath", "IntegerLiteralType"]
-- !private ["Ps10MirrorPath", "Stride"]
-- !private ["Ps10MirrorPath", "_DisabledRangeIndex"]
+- !private ["Ps10MirrorPath", "contains"]
 - !private ["Ps10MirrorPath", "getCipherText"]
 - ["Ps10MirrorPath", "init"]
-- !private ["Ps17MutableCollection", "Index"]
-- !private ["Ps17MutableCollection", "IndexDistance"]
-- !private ["Ps17MutableCollection", "SubSequence"]
 - !private ["Ps17MutableCollection", "count"]
 - !private ["Ps17MutableCollection", "isEmpty"]
 - !private ["Ps17MutableCollection", "subscript"]
-- !private ["Ps16MutableIndexable", "Index"]
-- !private ["Ps16MutableIndexable", "IndexDistance"]
-- !private ["Ps16MutableIndexable", "SubSequence"]
-- !private ["Ps16MutableIndexable", "count"]
-- !private ["Ps16MutableIndexable", "isEmpty"]
-- !private ["Ps16MutableIndexable", "subscript"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "AFNetworkReachabilityManager"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "AnyObject"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "AppDelegate"]
@@ -805,13 +703,14 @@ depends-member:
 - ["C16SwiftLoginScreen13MyURLProtocol", "Data"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "Date"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "Dictionary"]
+- ["C16SwiftLoginScreen13MyURLProtocol", "Error"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "HTTPURLResponse"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "JSON"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "JSONSerialization"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "Kanna"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSDictionary"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSEntityDescription"]
-- ["C16SwiftLoginScreen13MyURLProtocol", "NSError"]
+- !private ["C16SwiftLoginScreen13MyURLProtocol", "NSError"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSFetchRequest"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSFetchRequestResult"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSLog"]
@@ -820,12 +719,16 @@ depends-member:
 - ["C16SwiftLoginScreen13MyURLProtocol", "NSMutableURLRequest"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSPredicate"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSString"]
+- !private ["C16SwiftLoginScreen13MyURLProtocol", "NSURLAuthenticationMethodServerTrust"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "NSURLConnection"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "NSURLRequest"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "RegEx"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "RequestManager"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "String"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "UIApplication"]
+- ["C16SwiftLoginScreen13MyURLProtocol", "URLAuthenticationChallenge"]
+- !private ["C16SwiftLoginScreen13MyURLProtocol", "URLCredential"]
+- ["C16SwiftLoginScreen13MyURLProtocol", "URLProtectionSpace"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "URLProtocol"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "URLRequest"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "URLResponse"]
@@ -837,6 +740,7 @@ depends-member:
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "client"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "connection"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "connectionDidFinishLoading"]
+- ["C16SwiftLoginScreen13MyURLProtocol", "connectionShouldUseCredentialStorage"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "deinit"]
 - !private ["C16SwiftLoginScreen13MyURLProtocol", "deviceId"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "httpresponse"]
@@ -851,12 +755,16 @@ depends-member:
 - ["C16SwiftLoginScreen13MyURLProtocol", "requestIsCacheEquivalent"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "response"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "saveCachedResponse"]
+- !private ["C16SwiftLoginScreen13MyURLProtocol", "serverURL"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "startLoading"]
 - ["C16SwiftLoginScreen13MyURLProtocol", "stopLoading"]
 - !private ["PSo8NSCoding", "Encoding"]
 - !private ["PSo8NSCoding", "allHeaderFields"]
 - !private ["PSo8NSCoding", "append"]
+- !private ["PSo8NSCoding", "authenticationMethod"]
+- !private ["PSo8NSCoding", "contains"]
 - !private ["PSo8NSCoding", "data"]
+- !private ["PSo8NSCoding", "delete"]
 - !private ["PSo8NSCoding", "entity"]
 - !private ["PSo8NSCoding", "fetch"]
 - !private ["PSo8NSCoding", "getCipherText"]
@@ -866,8 +774,11 @@ depends-member:
 - !private ["PSo8NSCoding", "mimeType"]
 - !private ["PSo8NSCoding", "mutableCopy"]
 - !private ["PSo8NSCoding", "predicate"]
+- !private ["PSo8NSCoding", "protectionSpace"]
 - !private ["PSo8NSCoding", "replacingOccurrences"]
 - !private ["PSo8NSCoding", "save"]
+- !private ["PSo8NSCoding", "sender"]
+- !private ["PSo8NSCoding", "serverTrust"]
 - !private ["PSo8NSCoding", "setValue"]
 - !private ["PSo8NSCoding", "statusCode"]
 - !private ["PSo8NSCoding", "subscript"]
@@ -877,8 +788,9 @@ depends-member:
 - !private ["PSo9NSCopying", "Encoding"]
 - !private ["PSo9NSCopying", "allHeaderFields"]
 - !private ["PSo9NSCopying", "append"]
+- !private ["PSo9NSCopying", "authenticationMethod"]
+- !private ["PSo9NSCopying", "contains"]
 - !private ["PSo9NSCopying", "data"]
-- !private ["PSo9NSCopying", "deinit"]
 - !private ["PSo9NSCopying", "entity"]
 - !private ["PSo9NSCopying", "getCipherText"]
 - ["PSo9NSCopying", "init"]
@@ -887,6 +799,7 @@ depends-member:
 - !private ["PSo9NSCopying", "mutableCopy"]
 - !private ["PSo9NSCopying", "predicate"]
 - !private ["PSo9NSCopying", "replacingOccurrences"]
+- !private ["PSo9NSCopying", "serverTrust"]
 - !private ["PSo9NSCopying", "setValue"]
 - !private ["PSo9NSCopying", "statusCode"]
 - !private ["PSo9NSCopying", "subscript"]
@@ -895,37 +808,34 @@ depends-member:
 - !private ["PSo9NSCopying", "value"]
 - !private ["CSo6NSData", "append"]
 - !private ["CSo6NSData", "init"]
-- ["CSo12NSDictionary", "deinit"]
 - !private ["CSo12NSDictionary", "subscript"]
 - !private ["CSo12NSDictionary", "value"]
 - !private ["CSo19NSEntityDescription", "entity"]
 - !private ["CSo19NSEntityDescription", "insertNewObject"]
-- ["CSo7NSError", "deinit"]
 - !private ["CSo7NSError", "userInfo"]
 - !private ["PSo17NSFastEnumeration", "entity"]
 - !private ["PSo17NSFastEnumeration", "insertNewObject"]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo17NSFastEnumeration", "value"]
-- ["CSo14NSFetchRequest", "deinit"]
 - !private ["CSo14NSFetchRequest", "entity"]
 - !private ["CSo14NSFetchRequest", "init"]
 - !private ["CSo14NSFetchRequest", "predicate"]
-- ["PSo20NSFetchRequestResult", "deinit"]
 - !private ["PSo20NSFetchRequestResult", "setValue"]
 - !private ["PSo20NSFetchRequestResult", "subscript"]
 - !private ["PSo20NSFetchRequestResult", "value"]
+- !private ["PSo9NSLocking", "delete"]
 - !private ["PSo9NSLocking", "fetch"]
 - !private ["PSo9NSLocking", "hasChanges"]
 - !private ["PSo9NSLocking", "save"]
-- ["CSo15NSManagedObject", "deinit"]
 - !private ["CSo15NSManagedObject", "setValue"]
 - !private ["CSo15NSManagedObject", "value"]
-- ["CSo22NSManagedObjectContext", "deinit"]
+- !private ["CSo22NSManagedObjectContext", "delete"]
 - !private ["CSo22NSManagedObjectContext", "fetch"]
 - !private ["CSo22NSManagedObjectContext", "hasChanges"]
 - !private ["CSo22NSManagedObjectContext", "save"]
 - !private ["PSo16NSMutableCopying", "Encoding"]
 - !private ["PSo16NSMutableCopying", "append"]
+- !private ["PSo16NSMutableCopying", "contains"]
 - !private ["PSo16NSMutableCopying", "data"]
 - !private ["PSo16NSMutableCopying", "getCipherText"]
 - ["PSo16NSMutableCopying", "init"]
@@ -935,9 +845,7 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "subscript"]
 - !private ["PSo16NSMutableCopying", "value"]
 - !private ["CSo13NSMutableData", "append"]
-- ["CSo13NSMutableData", "deinit"]
 - !private ["CSo13NSMutableData", "init"]
-- ["CSo19NSMutableURLRequest", "deinit"]
 - !private ["CSo19NSMutableURLRequest", "setValue"]
 - !private ["CSo8NSObject", "AFNetworkReachabilityManager"]
 - !private ["CSo8NSObject", "AnyObject"]
@@ -948,13 +856,14 @@ depends-member:
 - !private ["CSo8NSObject", "Date"]
 - !private ["CSo8NSObject", "Dictionary"]
 - !private ["CSo8NSObject", "Encoding"]
+- ["CSo8NSObject", "Error"]
 - ["CSo8NSObject", "HTTPURLResponse"]
 - !private ["CSo8NSObject", "JSON"]
 - !private ["CSo8NSObject", "JSONSerialization"]
 - !private ["CSo8NSObject", "Kanna"]
 - !private ["CSo8NSObject", "NSDictionary"]
 - !private ["CSo8NSObject", "NSEntityDescription"]
-- ["CSo8NSObject", "NSError"]
+- !private ["CSo8NSObject", "NSError"]
 - !private ["CSo8NSObject", "NSFetchRequest"]
 - !private ["CSo8NSObject", "NSFetchRequestResult"]
 - !private ["CSo8NSObject", "NSLog"]
@@ -963,6 +872,7 @@ depends-member:
 - ["CSo8NSObject", "NSMutableURLRequest"]
 - !private ["CSo8NSObject", "NSPredicate"]
 - !private ["CSo8NSObject", "NSString"]
+- !private ["CSo8NSObject", "NSURLAuthenticationMethodServerTrust"]
 - ["CSo8NSObject", "NSURLConnection"]
 - !private ["CSo8NSObject", "NSURLRequest"]
 - !private ["CSo8NSObject", "ReadingOptions"]
@@ -970,12 +880,16 @@ depends-member:
 - !private ["CSo8NSObject", "RequestManager"]
 - !private ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "UIApplication"]
+- ["CSo8NSObject", "URLAuthenticationChallenge"]
+- !private ["CSo8NSObject", "URLCredential"]
+- ["CSo8NSObject", "URLProtectionSpace"]
 - !private ["CSo8NSObject", "URLProtocol"]
 - ["CSo8NSObject", "URLRequest"]
 - ["CSo8NSObject", "URLResponse"]
 - !private ["CSo8NSObject", "UserDefaults"]
 - !private ["CSo8NSObject", "allHeaderFields"]
 - !private ["CSo8NSObject", "append"]
+- !private ["CSo8NSObject", "authenticationMethod"]
 - ["CSo8NSObject", "cachedResponseForCurrentRequest"]
 - ["CSo8NSObject", "canInit"]
 - !private ["CSo8NSObject", "cancel"]
@@ -984,8 +898,11 @@ depends-member:
 - !private ["CSo8NSObject", "client"]
 - ["CSo8NSObject", "connection"]
 - ["CSo8NSObject", "connectionDidFinishLoading"]
+- ["CSo8NSObject", "connectionShouldUseCredentialStorage"]
+- !private ["CSo8NSObject", "contains"]
 - !private ["CSo8NSObject", "data"]
 - !private ["CSo8NSObject", "delegate"]
+- !private ["CSo8NSObject", "delete"]
 - !private ["CSo8NSObject", "deviceId"]
 - !private ["CSo8NSObject", "entity"]
 - !private ["CSo8NSObject", "fetch"]
@@ -1008,6 +925,7 @@ depends-member:
 - !private ["CSo8NSObject", "predicate"]
 - !private ["CSo8NSObject", "print"]
 - !private ["CSo8NSObject", "property"]
+- !private ["CSo8NSObject", "protectionSpace"]
 - !private ["CSo8NSObject", "replacingOccurrences"]
 - !private ["CSo8NSObject", "request"]
 - !private ["CSo8NSObject", "requestCount"]
@@ -1015,6 +933,9 @@ depends-member:
 - ["CSo8NSObject", "response"]
 - !private ["CSo8NSObject", "save"]
 - ["CSo8NSObject", "saveCachedResponse"]
+- !private ["CSo8NSObject", "sender"]
+- !private ["CSo8NSObject", "serverTrust"]
+- !private ["CSo8NSObject", "serverURL"]
 - !private ["CSo8NSObject", "set"]
 - !private ["CSo8NSObject", "setProperty"]
 - !private ["CSo8NSObject", "setValue"]
@@ -1039,34 +960,37 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "NSMutableData"]
 - !private ["PSo16NSObjectProtocol", "NSPredicate"]
 - !private ["PSo16NSObjectProtocol", "NSString"]
+- !private ["PSo16NSObjectProtocol", "NSURLAuthenticationMethodServerTrust"]
 - !private ["PSo16NSObjectProtocol", "NSURLConnection"]
 - !private ["PSo16NSObjectProtocol", "ReadingOptions"]
 - !private ["PSo16NSObjectProtocol", "RegEx"]
 - !private ["PSo16NSObjectProtocol", "RequestManager"]
 - !private ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "UIApplication"]
+- !private ["PSo16NSObjectProtocol", "URLCredential"]
 - !private ["PSo16NSObjectProtocol", "URLProtocol"]
 - !private ["PSo16NSObjectProtocol", "URLResponse"]
 - !private ["PSo16NSObjectProtocol", "UserDefaults"]
 - !private ["PSo16NSObjectProtocol", "allHeaderFields"]
 - !private ["PSo16NSObjectProtocol", "append"]
-- ["PSo16NSObjectProtocol", "cachedResponseForCurrentRequest"]
-- ["PSo16NSObjectProtocol", "canInit"]
+- !private ["PSo16NSObjectProtocol", "authenticationMethod"]
+- !private ["PSo16NSObjectProtocol", "cachedResponseForCurrentRequest"]
 - !private ["PSo16NSObjectProtocol", "cancel"]
-- ["PSo16NSObjectProtocol", "canonicalRequest"]
 - !private ["PSo16NSObjectProtocol", "cipherText"]
 - !private ["PSo16NSObjectProtocol", "client"]
 - ["PSo16NSObjectProtocol", "connection"]
-- ["PSo16NSObjectProtocol", "connectionDidFinishLoading"]
+- ["PSo16NSObjectProtocol", "connectionShouldUseCredentialStorage"]
+- !private ["PSo16NSObjectProtocol", "contains"]
 - !private ["PSo16NSObjectProtocol", "data"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
+- !private ["PSo16NSObjectProtocol", "delete"]
 - !private ["PSo16NSObjectProtocol", "deviceId"]
 - !private ["PSo16NSObjectProtocol", "entity"]
 - !private ["PSo16NSObjectProtocol", "fetch"]
 - !private ["PSo16NSObjectProtocol", "getCipherText"]
 - !private ["PSo16NSObjectProtocol", "getResponse"]
 - !private ["PSo16NSObjectProtocol", "hasChanges"]
-- ["PSo16NSObjectProtocol", "httpresponse"]
+- !private ["PSo16NSObjectProtocol", "httpresponse"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "insertNewObject"]
 - !private ["PSo16NSObjectProtocol", "isNetworkActivityIndicatorVisible"]
@@ -1075,48 +999,56 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "managedObjectContext"]
 - !private ["PSo16NSObjectProtocol", "mimeType"]
 - !private ["PSo16NSObjectProtocol", "mutableCopy"]
-- ["PSo16NSObjectProtocol", "mutableData"]
-- ["PSo16NSObjectProtocol", "newRequest"]
+- !private ["PSo16NSObjectProtocol", "mutableData"]
+- !private ["PSo16NSObjectProtocol", "newRequest"]
 - !private ["PSo16NSObjectProtocol", "pattern_"]
 - !private ["PSo16NSObjectProtocol", "pattern_rs"]
+- !private ["PSo16NSObjectProtocol", "performDefaultHandling"]
 - !private ["PSo16NSObjectProtocol", "predicate"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - !private ["PSo16NSObjectProtocol", "property"]
+- !private ["PSo16NSObjectProtocol", "protectionSpace"]
 - !private ["PSo16NSObjectProtocol", "replacingOccurrences"]
 - !private ["PSo16NSObjectProtocol", "request"]
 - !private ["PSo16NSObjectProtocol", "requestCount"]
-- ["PSo16NSObjectProtocol", "requestIsCacheEquivalent"]
-- ["PSo16NSObjectProtocol", "response"]
+- !private ["PSo16NSObjectProtocol", "requestIsCacheEquivalent"]
+- !private ["PSo16NSObjectProtocol", "response"]
 - !private ["PSo16NSObjectProtocol", "save"]
-- ["PSo16NSObjectProtocol", "saveCachedResponse"]
+- !private ["PSo16NSObjectProtocol", "saveCachedResponse"]
+- !private ["PSo16NSObjectProtocol", "sender"]
+- !private ["PSo16NSObjectProtocol", "serverTrust"]
+- !private ["PSo16NSObjectProtocol", "serverURL"]
 - !private ["PSo16NSObjectProtocol", "set"]
 - !private ["PSo16NSObjectProtocol", "setProperty"]
 - !private ["PSo16NSObjectProtocol", "setValue"]
 - !private ["PSo16NSObjectProtocol", "shared"]
 - !private ["PSo16NSObjectProtocol", "standard"]
-- ["PSo16NSObjectProtocol", "startLoading"]
 - !private ["PSo16NSObjectProtocol", "statusCode"]
-- ["PSo16NSObjectProtocol", "stopLoading"]
 - !private ["PSo16NSObjectProtocol", "subscript"]
 - !private ["PSo16NSObjectProtocol", "textEncodingName"]
 - !private ["PSo16NSObjectProtocol", "urlProtocol"]
 - !private ["PSo16NSObjectProtocol", "urlProtocolDidFinishLoading"]
+- !private ["PSo16NSObjectProtocol", "use"]
 - !private ["PSo16NSObjectProtocol", "userInfo"]
 - !private ["PSo16NSObjectProtocol", "value"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["CSo24NSPersistentStoreRequest", "entity"]
 - !private ["CSo24NSPersistentStoreRequest", "predicate"]
-- ["CSo11NSPredicate", "deinit"]
 - !private ["CSo11NSPredicate", "init"]
 - !private ["PSo14NSSecureCoding", "Encoding"]
 - !private ["PSo14NSSecureCoding", "allHeaderFields"]
 - !private ["PSo14NSSecureCoding", "append"]
+- !private ["PSo14NSSecureCoding", "authenticationMethod"]
+- !private ["PSo14NSSecureCoding", "contains"]
 - !private ["PSo14NSSecureCoding", "data"]
 - !private ["PSo14NSSecureCoding", "getCipherText"]
 - ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "mimeType"]
 - !private ["PSo14NSSecureCoding", "mutableCopy"]
+- !private ["PSo14NSSecureCoding", "protectionSpace"]
 - !private ["PSo14NSSecureCoding", "replacingOccurrences"]
+- !private ["PSo14NSSecureCoding", "sender"]
+- !private ["PSo14NSSecureCoding", "serverTrust"]
 - !private ["PSo14NSSecureCoding", "setValue"]
 - !private ["PSo14NSSecureCoding", "statusCode"]
 - !private ["PSo14NSSecureCoding", "subscript"]
@@ -1124,114 +1056,98 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "userInfo"]
 - !private ["PSo14NSSecureCoding", "value"]
 - !private ["CSo8NSString", "Encoding"]
+- !private ["CSo8NSString", "contains"]
 - !private ["CSo8NSString", "data"]
-- ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "getCipherText"]
 - ["CSo8NSString", "init"]
 - !private ["CSo8NSString", "replacingOccurrences"]
 - !private ["CSo15NSURLConnection", "cancel"]
 - !private ["CSo15NSURLConnection", "init"]
-- ["CSo12NSURLRequest", "deinit"]
+- !private ["PSo23NSURLConnectionDelegate", "AFNetworkReachabilityManager"]
+- !private ["PSo23NSURLConnectionDelegate", "Date"]
+- !private ["PSo23NSURLConnectionDelegate", "HTTPURLResponse"]
+- !private ["PSo23NSURLConnectionDelegate", "JSONSerialization"]
+- !private ["PSo23NSURLConnectionDelegate", "Kanna"]
+- !private ["PSo23NSURLConnectionDelegate", "NSEntityDescription"]
+- !private ["PSo23NSURLConnectionDelegate", "NSFetchRequest"]
+- !private ["PSo23NSURLConnectionDelegate", "NSLog"]
+- !private ["PSo23NSURLConnectionDelegate", "NSMutableData"]
+- !private ["PSo23NSURLConnectionDelegate", "NSPredicate"]
+- !private ["PSo23NSURLConnectionDelegate", "NSString"]
+- !private ["PSo23NSURLConnectionDelegate", "NSURLAuthenticationMethodServerTrust"]
+- !private ["PSo23NSURLConnectionDelegate", "NSURLConnection"]
+- !private ["PSo23NSURLConnectionDelegate", "RegEx"]
+- !private ["PSo23NSURLConnectionDelegate", "RequestManager"]
+- !private ["PSo23NSURLConnectionDelegate", "String"]
+- !private ["PSo23NSURLConnectionDelegate", "UIApplication"]
+- !private ["PSo23NSURLConnectionDelegate", "URLCredential"]
+- !private ["PSo23NSURLConnectionDelegate", "URLProtocol"]
+- !private ["PSo23NSURLConnectionDelegate", "URLResponse"]
+- !private ["PSo23NSURLConnectionDelegate", "UserDefaults"]
+- !private ["PSo23NSURLConnectionDelegate", "cachedResponseForCurrentRequest"]
+- !private ["PSo23NSURLConnectionDelegate", "cipherText"]
+- !private ["PSo23NSURLConnectionDelegate", "client"]
+- ["PSo23NSURLConnectionDelegate", "connection"]
+- ["PSo23NSURLConnectionDelegate", "connectionShouldUseCredentialStorage"]
+- !private ["PSo23NSURLConnectionDelegate", "deviceId"]
+- !private ["PSo23NSURLConnectionDelegate", "httpresponse"]
+- !private ["PSo23NSURLConnectionDelegate", "mutableData"]
+- !private ["PSo23NSURLConnectionDelegate", "newRequest"]
+- !private ["PSo23NSURLConnectionDelegate", "pattern_"]
+- !private ["PSo23NSURLConnectionDelegate", "pattern_rs"]
+- !private ["PSo23NSURLConnectionDelegate", "print"]
+- !private ["PSo23NSURLConnectionDelegate", "request"]
+- !private ["PSo23NSURLConnectionDelegate", "requestCount"]
+- !private ["PSo23NSURLConnectionDelegate", "response"]
+- !private ["PSo23NSURLConnectionDelegate", "saveCachedResponse"]
+- !private ["PSo23NSURLConnectionDelegate", "serverURL"]
+- ["PSo23NSURLConnectionDelegate", ""]
 - !private ["CSo12NSURLRequest", "mutableCopy"]
 - !private ["CSo12NSURLRequest", "setValue"]
 - !private ["Ps9OptionSet", "mutableContainers"]
-- ["Sq", "deinit"]
-- !private ["Ps22RandomAccessCollection", "Index"]
-- !private ["Ps22RandomAccessCollection", "IndexDistance"]
-- !private ["Ps22RandomAccessCollection", "Indices"]
-- !private ["Ps22RandomAccessCollection", "Iterator"]
-- !private ["Ps22RandomAccessCollection", "SubSequence"]
-- !private ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "count"]
 - !private ["Ps22RandomAccessCollection", "isEmpty"]
 - !private ["Ps22RandomAccessCollection", "subscript"]
-- !private ["Ps21RandomAccessIndexable", "Index"]
-- !private ["Ps21RandomAccessIndexable", "IndexDistance"]
-- !private ["Ps21RandomAccessIndexable", "Indices"]
-- !private ["Ps21RandomAccessIndexable", "Iterator"]
-- !private ["Ps21RandomAccessIndexable", "SubSequence"]
-- !private ["Ps21RandomAccessIndexable", "_Element"]
-- !private ["Ps21RandomAccessIndexable", "count"]
-- !private ["Ps21RandomAccessIndexable", "isEmpty"]
-- !private ["Ps21RandomAccessIndexable", "subscript"]
-- !private ["Vs17RandomAccessSlice", "Index"]
-- !private ["Vs17RandomAccessSlice", "IndexDistance"]
-- !private ["Vs17RandomAccessSlice", "Indices"]
-- !private ["Vs17RandomAccessSlice", "Iterator"]
-- !private ["Vs17RandomAccessSlice", "SubSequence"]
-- !private ["Vs17RandomAccessSlice", "_Element"]
-- !private ["Vs5Range", "deinit"]
-- !private ["Ps26RangeReplaceableCollection", "Index"]
-- !private ["Ps26RangeReplaceableCollection", "IndexDistance"]
-- !private ["Ps26RangeReplaceableCollection", "SubSequence"]
 - !private ["Ps26RangeReplaceableCollection", "count"]
 - !private ["Ps26RangeReplaceableCollection", "isEmpty"]
 - !private ["Ps26RangeReplaceableCollection", "subscript"]
-- !private ["Ps25RangeReplaceableIndexable", "Index"]
-- !private ["Ps25RangeReplaceableIndexable", "IndexDistance"]
-- !private ["Ps25RangeReplaceableIndexable", "SubSequence"]
-- !private ["Ps25RangeReplaceableIndexable", "count"]
-- !private ["Ps25RangeReplaceableIndexable", "isEmpty"]
-- !private ["Ps25RangeReplaceableIndexable", "subscript"]
 - !private ["Ps16RawRepresentable", "ascii"]
 - !private ["Ps16RawRepresentable", "mutableContainers"]
 - !private ["Ps16RawRepresentable", "notAllowed"]
 - !private ["Ps16RawRepresentable", "rawValue"]
 - !private ["Ps16RawRepresentable", "utf8"]
-- ["VCSo17JSONSerialization14ReadingOptions", "deinit"]
 - !private ["VCSo17JSONSerialization14ReadingOptions", "mutableContainers"]
-- !private ["P10Foundation20ReferenceConvertible", "IndexDistance"]
 - !private ["P10Foundation20ReferenceConvertible", "absoluteString"]
+- !private ["P10Foundation20ReferenceConvertible", "addingTimeInterval"]
 - !private ["P10Foundation20ReferenceConvertible", "count"]
 - !private ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "relativePath"]
 - !private ["P10Foundation20ReferenceConvertible", "url"]
 - !private ["C16SwiftLoginScreen5RegEx", "containsMatch"]
-- ["C16SwiftLoginScreen5RegEx", "deinit"]
 - !private ["C16SwiftLoginScreen5RegEx", "init"]
 - !private ["C16SwiftLoginScreen5RegEx", "replaceMatches"]
 - !private ["C16SwiftLoginScreen14RequestManager", "getResponse"]
 - !private ["C16SwiftLoginScreen14RequestManager", "init"]
 - !private ["P5Kanna10Searchable", "title"]
 - !private ["P5Kanna14SearchableNode", "title"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Index"]
-- !private ["Ps8Sequence", "IndexDistance"]
-- !private ["Ps8Sequence", "Indices"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "SubSequence"]
-- !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "count"]
 - !private ["Ps8Sequence", "isEmpty"]
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps8Sequence", "value"]
 - !private ["Ps10SetAlgebra", "mutableContainers"]
-- !private ["Ps13SignedInteger", "IntegerLiteralType"]
-- !private ["Ps13SignedInteger", "Stride"]
-- !private ["Ps13SignedInteger", "_DisabledRangeIndex"]
-- !private ["Ps12SignedNumber", "IntegerLiteralType"]
-- !private ["Ps12SignedNumber", "Stride"]
-- !private ["Ps12SignedNumber", "_DisabledRangeIndex"]
-- !private ["Vs5Slice", "Index"]
-- !private ["Vs5Slice", "Iterator"]
-- !private ["Vs5Slice", "SubSequence"]
-- !private ["Vs5Slice", "_Element"]
-- ["OCSo8URLCache13StoragePolicy", "deinit"]
 - !private ["OCSo8URLCache13StoragePolicy", "notAllowed"]
-- !private ["Ps10Strideable", "IntegerLiteralType"]
-- !private ["Ps10Strideable", "Stride"]
-- !private ["Ps10Strideable", "_DisabledRangeIndex"]
 - !private ["SS", "Encoding"]
-- ["SS", "deinit"]
+- !private ["SS", "contains"]
 - !private ["SS", "getCipherText"]
 - ["SS", "init"]
 - !private ["Ps16TextOutputStream", "Encoding"]
+- !private ["Ps16TextOutputStream", "contains"]
 - !private ["Ps16TextOutputStream", "getCipherText"]
 - ["Ps16TextOutputStream", "init"]
 - !private ["Ps20TextOutputStreamable", "Encoding"]
+- !private ["Ps20TextOutputStreamable", "contains"]
 - !private ["Ps20TextOutputStreamable", "getCipherText"]
 - ["Ps20TextOutputStreamable", "init"]
-- ["CSo13UIApplication", "deinit"]
 - !private ["CSo13UIApplication", "delegate"]
 - !private ["CSo13UIApplication", "isNetworkActivityIndicatorVisible"]
 - !private ["CSo13UIApplication", "shared"]
@@ -1244,14 +1160,15 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "isNetworkActivityIndicatorVisible"]
 - !private ["PSo30UIResponderStandardEditActions", "managedObjectContext"]
 - !private ["PSo30UIResponderStandardEditActions", "shared"]
-- ["Su", "deinit"]
-- !private ["Vs6UInt16", "deinit"]
-- !private ["Vs6UInt32", "deinit"]
-- !private ["Vs6UInt64", "deinit"]
-- !private ["Vs5UInt8", "deinit"]
 - !private ["V10Foundation3URL", "absoluteString"]
-- ["V10Foundation3URL", "deinit"]
 - !private ["V10Foundation3URL", "relativePath"]
+- !private ["CSo26URLAuthenticationChallenge", "protectionSpace"]
+- !private ["CSo26URLAuthenticationChallenge", "sender"]
+- !private ["PSo32URLAuthenticationChallengeSender", "performDefaultHandling"]
+- !private ["PSo32URLAuthenticationChallengeSender", "use"]
+- !private ["CSo13URLCredential", "init"]
+- !private ["CSo18URLProtectionSpace", "authenticationMethod"]
+- !private ["CSo18URLProtectionSpace", "serverTrust"]
 - !private ["CSo11URLProtocol", "AFNetworkReachabilityManager"]
 - !private ["CSo11URLProtocol", "AnyObject"]
 - !private ["CSo11URLProtocol", "AppDelegate"]
@@ -1260,13 +1177,14 @@ depends-member:
 - ["CSo11URLProtocol", "Data"]
 - !private ["CSo11URLProtocol", "Date"]
 - !private ["CSo11URLProtocol", "Dictionary"]
+- ["CSo11URLProtocol", "Error"]
 - ["CSo11URLProtocol", "HTTPURLResponse"]
 - !private ["CSo11URLProtocol", "JSON"]
 - !private ["CSo11URLProtocol", "JSONSerialization"]
 - !private ["CSo11URLProtocol", "Kanna"]
 - !private ["CSo11URLProtocol", "NSDictionary"]
 - !private ["CSo11URLProtocol", "NSEntityDescription"]
-- ["CSo11URLProtocol", "NSError"]
+- !private ["CSo11URLProtocol", "NSError"]
 - !private ["CSo11URLProtocol", "NSFetchRequest"]
 - !private ["CSo11URLProtocol", "NSFetchRequestResult"]
 - !private ["CSo11URLProtocol", "NSLog"]
@@ -1275,12 +1193,16 @@ depends-member:
 - ["CSo11URLProtocol", "NSMutableURLRequest"]
 - !private ["CSo11URLProtocol", "NSPredicate"]
 - !private ["CSo11URLProtocol", "NSString"]
+- !private ["CSo11URLProtocol", "NSURLAuthenticationMethodServerTrust"]
 - ["CSo11URLProtocol", "NSURLConnection"]
 - !private ["CSo11URLProtocol", "NSURLRequest"]
 - !private ["CSo11URLProtocol", "RegEx"]
 - !private ["CSo11URLProtocol", "RequestManager"]
 - !private ["CSo11URLProtocol", "String"]
 - !private ["CSo11URLProtocol", "UIApplication"]
+- ["CSo11URLProtocol", "URLAuthenticationChallenge"]
+- !private ["CSo11URLProtocol", "URLCredential"]
+- ["CSo11URLProtocol", "URLProtectionSpace"]
 - !private ["CSo11URLProtocol", "URLProtocol"]
 - ["CSo11URLProtocol", "URLRequest"]
 - ["CSo11URLProtocol", "URLResponse"]
@@ -1292,7 +1214,7 @@ depends-member:
 - !private ["CSo11URLProtocol", "client"]
 - ["CSo11URLProtocol", "connection"]
 - ["CSo11URLProtocol", "connectionDidFinishLoading"]
-- ["CSo11URLProtocol", "deinit"]
+- ["CSo11URLProtocol", "connectionShouldUseCredentialStorage"]
 - !private ["CSo11URLProtocol", "deviceId"]
 - ["CSo11URLProtocol", "httpresponse"]
 - ["CSo11URLProtocol", "init"]
@@ -1307,56 +1229,56 @@ depends-member:
 - ["CSo11URLProtocol", "requestIsCacheEquivalent"]
 - ["CSo11URLProtocol", "response"]
 - ["CSo11URLProtocol", "saveCachedResponse"]
+- !private ["CSo11URLProtocol", "serverURL"]
 - !private ["CSo11URLProtocol", "setProperty"]
 - ["CSo11URLProtocol", "startLoading"]
 - ["CSo11URLProtocol", "stopLoading"]
 - ["CSo11URLProtocol", ""]
-- ["PSo17URLProtocolClient", "deinit"]
 - !private ["PSo17URLProtocolClient", "urlProtocol"]
 - !private ["PSo17URLProtocolClient", "urlProtocolDidFinishLoading"]
-- ["V10Foundation10URLRequest", "deinit"]
 - !private ["V10Foundation10URLRequest", "url"]
 - !private ["CSo11URLResponse", "allHeaderFields"]
-- ["CSo11URLResponse", "deinit"]
 - !private ["CSo11URLResponse", "init"]
 - !private ["CSo11URLResponse", "mimeType"]
 - !private ["CSo11URLResponse", "statusCode"]
 - !private ["CSo11URLResponse", "textEncodingName"]
-- !private ["Sc", "deinit"]
-- ["CSo12UserDefaults", "deinit"]
 - !private ["CSo12UserDefaults", "set"]
 - !private ["CSo12UserDefaults", "setValue"]
 - !private ["CSo12UserDefaults", "standard"]
-- !private ["CSo12UserDefaults", "value"]
 - !private ["P5Kanna11XMLDocument", "title"]
-- !private ["Ps14_ArrayProtocol", "Index"]
-- !private ["Ps14_ArrayProtocol", "SubSequence"]
 - !private ["Ps14_ArrayProtocol", "isEmpty"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
-- !private ["Ps24_DestructorSafeContainer", "Index"]
-- !private ["Ps24_DestructorSafeContainer", "SubSequence"]
+- !private ["Ps23_BidirectionalIndexable", "count"]
+- !private ["Ps23_BidirectionalIndexable", "isEmpty"]
+- !private ["Ps23_BidirectionalIndexable", "subscript"]
 - !private ["Ps24_DestructorSafeContainer", "isEmpty"]
 - !private ["Ps24_DestructorSafeContainer", "subscript"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "contains"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "getCipherText"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "Encoding"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "contains"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "getCipherText"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "Encoding"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "contains"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "getCipherText"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "Encoding"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "contains"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "getCipherText"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps34_ExpressibleByFileReferenceLiteral", "absoluteString"]
 - !private ["Ps34_ExpressibleByFileReferenceLiteral", "relativePath"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "Encoding"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "contains"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "getCipherText"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Encoding"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "append"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "contains"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "data"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "getCipherText"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
@@ -1367,8 +1289,6 @@ depends-member:
 - !private ["Ps9_Hashable", "Date"]
 - !private ["Ps9_Hashable", "Encoding"]
 - !private ["Ps9_Hashable", "HTTPURLResponse"]
-- !private ["Ps9_Hashable", "IndexDistance"]
-- !private ["Ps9_Hashable", "IntegerLiteralType"]
 - !private ["Ps9_Hashable", "JSONSerialization"]
 - !private ["Ps9_Hashable", "Kanna"]
 - !private ["Ps9_Hashable", "NSEntityDescription"]
@@ -1377,40 +1297,42 @@ depends-member:
 - !private ["Ps9_Hashable", "NSMutableData"]
 - !private ["Ps9_Hashable", "NSPredicate"]
 - !private ["Ps9_Hashable", "NSString"]
+- !private ["Ps9_Hashable", "NSURLAuthenticationMethodServerTrust"]
 - !private ["Ps9_Hashable", "NSURLConnection"]
 - !private ["Ps9_Hashable", "ReadingOptions"]
 - !private ["Ps9_Hashable", "RegEx"]
 - !private ["Ps9_Hashable", "RequestManager"]
-- !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "String"]
 - !private ["Ps9_Hashable", "UIApplication"]
+- !private ["Ps9_Hashable", "URLCredential"]
 - !private ["Ps9_Hashable", "URLProtocol"]
 - !private ["Ps9_Hashable", "URLResponse"]
 - !private ["Ps9_Hashable", "UserDefaults"]
-- !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "absoluteString"]
+- !private ["Ps9_Hashable", "addingTimeInterval"]
 - !private ["Ps9_Hashable", "allHeaderFields"]
 - !private ["Ps9_Hashable", "append"]
 - !private ["Ps9_Hashable", "ascii"]
-- ["Ps9_Hashable", "cachedResponseForCurrentRequest"]
-- ["Ps9_Hashable", "canInit"]
+- !private ["Ps9_Hashable", "authenticationMethod"]
+- !private ["Ps9_Hashable", "cachedResponseForCurrentRequest"]
 - !private ["Ps9_Hashable", "cancel"]
-- ["Ps9_Hashable", "canonicalRequest"]
 - !private ["Ps9_Hashable", "cipherText"]
 - !private ["Ps9_Hashable", "client"]
 - ["Ps9_Hashable", "connection"]
-- ["Ps9_Hashable", "connectionDidFinishLoading"]
+- ["Ps9_Hashable", "connectionShouldUseCredentialStorage"]
+- !private ["Ps9_Hashable", "contains"]
 - !private ["Ps9_Hashable", "count"]
 - !private ["Ps9_Hashable", "data"]
 - !private ["Ps9_Hashable", "delegate"]
+- !private ["Ps9_Hashable", "delete"]
 - !private ["Ps9_Hashable", "deviceId"]
 - !private ["Ps9_Hashable", "entity"]
 - !private ["Ps9_Hashable", "fetch"]
 - !private ["Ps9_Hashable", "getCipherText"]
 - !private ["Ps9_Hashable", "getResponse"]
 - !private ["Ps9_Hashable", "hasChanges"]
-- ["Ps9_Hashable", "httpresponse"]
+- !private ["Ps9_Hashable", "httpresponse"]
 - ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "insertNewObject"]
 - !private ["Ps9_Hashable", "isNetworkActivityIndicatorVisible"]
@@ -1419,31 +1341,33 @@ depends-member:
 - !private ["Ps9_Hashable", "managedObjectContext"]
 - !private ["Ps9_Hashable", "mimeType"]
 - !private ["Ps9_Hashable", "mutableCopy"]
-- ["Ps9_Hashable", "mutableData"]
-- ["Ps9_Hashable", "newRequest"]
+- !private ["Ps9_Hashable", "mutableData"]
+- !private ["Ps9_Hashable", "newRequest"]
 - !private ["Ps9_Hashable", "notAllowed"]
 - !private ["Ps9_Hashable", "pattern_"]
 - !private ["Ps9_Hashable", "pattern_rs"]
 - !private ["Ps9_Hashable", "predicate"]
 - !private ["Ps9_Hashable", "print"]
 - !private ["Ps9_Hashable", "property"]
+- !private ["Ps9_Hashable", "protectionSpace"]
 - !private ["Ps9_Hashable", "rawValue"]
 - !private ["Ps9_Hashable", "relativePath"]
 - !private ["Ps9_Hashable", "replacingOccurrences"]
 - !private ["Ps9_Hashable", "request"]
 - !private ["Ps9_Hashable", "requestCount"]
-- ["Ps9_Hashable", "requestIsCacheEquivalent"]
-- ["Ps9_Hashable", "response"]
+- !private ["Ps9_Hashable", "requestIsCacheEquivalent"]
+- !private ["Ps9_Hashable", "response"]
 - !private ["Ps9_Hashable", "save"]
-- ["Ps9_Hashable", "saveCachedResponse"]
+- !private ["Ps9_Hashable", "saveCachedResponse"]
+- !private ["Ps9_Hashable", "sender"]
+- !private ["Ps9_Hashable", "serverTrust"]
+- !private ["Ps9_Hashable", "serverURL"]
 - !private ["Ps9_Hashable", "set"]
 - !private ["Ps9_Hashable", "setProperty"]
 - !private ["Ps9_Hashable", "setValue"]
 - !private ["Ps9_Hashable", "shared"]
 - !private ["Ps9_Hashable", "standard"]
-- ["Ps9_Hashable", "startLoading"]
 - !private ["Ps9_Hashable", "statusCode"]
-- ["Ps9_Hashable", "stopLoading"]
 - !private ["Ps9_Hashable", "subscript"]
 - !private ["Ps9_Hashable", "textEncodingName"]
 - !private ["Ps9_Hashable", "url"]
@@ -1451,26 +1375,20 @@ depends-member:
 - !private ["Ps9_Hashable", "utf8"]
 - !private ["Ps9_Hashable", "value"]
 - ["Ps9_Hashable", ""]
-- !private ["Ps14_Incrementable", "IntegerLiteralType"]
-- !private ["Ps14_Incrementable", "Stride"]
-- !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
-- !private ["Ps8_Integer", "IntegerLiteralType"]
-- !private ["Ps8_Integer", "Stride"]
-- !private ["Ps8_Integer", "_DisabledRangeIndex"]
-- !private ["Ps18_IntegerArithmetic", "IntegerLiteralType"]
-- !private ["Ps18_IntegerArithmetic", "Stride"]
-- !private ["Ps18_IntegerArithmetic", "_DisabledRangeIndex"]
-- !private ["P10Foundation18_MutablePairBoxing", "IndexDistance"]
-- !private ["P10Foundation18_MutablePairBoxing", "count"]
+- !private ["Ps10_Indexable", "count"]
+- !private ["Ps10_Indexable", "isEmpty"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "count"]
+- !private ["Ps14_IndexableBase", "isEmpty"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps17_MutableIndexable", "count"]
+- !private ["Ps17_MutableIndexable", "isEmpty"]
+- !private ["Ps17_MutableIndexable", "subscript"]
 - !private ["Ps21_ObjectiveCBridgeable", "Encoding"]
-- !private ["Ps21_ObjectiveCBridgeable", "Index"]
-- !private ["Ps21_ObjectiveCBridgeable", "IndexDistance"]
-- !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
-- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
-- !private ["Ps21_ObjectiveCBridgeable", "SubSequence"]
-- !private ["Ps21_ObjectiveCBridgeable", "_DisabledRangeIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "absoluteString"]
+- !private ["Ps21_ObjectiveCBridgeable", "addingTimeInterval"]
+- !private ["Ps21_ObjectiveCBridgeable", "contains"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
 - !private ["Ps21_ObjectiveCBridgeable", "getCipherText"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
@@ -1478,237 +1396,198 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "relativePath"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Ps21_ObjectiveCBridgeable", "url"]
-- ["Vs26_OptionalNilComparisonType", "deinit"]
-- !private ["Ps14_SignedInteger", "IntegerLiteralType"]
-- !private ["Ps14_SignedInteger", "Stride"]
-- !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
-- !private ["Ps11_Strideable", "IntegerLiteralType"]
-- !private ["Ps11_Strideable", "Stride"]
-- !private ["Ps11_Strideable", "_DisabledRangeIndex"]
+- !private ["Ps22_RandomAccessIndexable", "count"]
+- !private ["Ps22_RandomAccessIndexable", "isEmpty"]
+- !private ["Ps22_RandomAccessIndexable", "subscript"]
+- !private ["Ps26_RangeReplaceableIndexable", "count"]
+- !private ["Ps26_RangeReplaceableIndexable", "isEmpty"]
+- !private ["Ps26_RangeReplaceableIndexable", "subscript"]
 depends-nominal:
-- "CSo28AFNetworkReachabilityManager"
+- !private "CSo28AFNetworkReachabilityManager"
 - "Ps9AnyObject"
-- "C16SwiftLoginScreen11AppDelegate"
-- "Sa"
+- !private "C16SwiftLoginScreen11AppDelegate"
+- !private "Sa"
 - !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
-- !private "Vs18BidirectionalSlice"
-- !private "Ps17BitwiseOperations"
-- "Sb"
+- !private "Sb"
 - "Ps7CVarArg"
-- !private "Vs9Character"
-- !private "Vs11ClosedRange"
 - !private "Ps10Collection"
 - "Ps10Comparable"
-- !private "Vs20CountableClosedRange"
-- !private "Vs14CountableRange"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "V10Foundation4Data"
-- "V10Foundation4Date"
-- !private "Vs27DefaultBidirectionalIndices"
-- !private "Vs26DefaultRandomAccessIndices"
-- "Vs10Dictionary"
-- !private "Sd"
-- "VE10FoundationSS8Encoding"
+- !private "V10Foundation4Data"
+- !private "V10Foundation4Date"
+- !private "VE10FoundationSS8Encoding"
 - "Ps9Equatable"
-- "Ps5Error"
+- !private "Ps5Error"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps30ExpressibleByDictionaryLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- !private "Ps27ExpressibleByIntegerLiteral"
-- "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
-- !private "Sf"
-- "P5Kanna12HTMLDocument"
-- "CSo15HTTPURLResponse"
+- !private "P5Kanna12HTMLDocument"
+- !private "CSo15HTTPURLResponse"
 - "Ps8Hashable"
-- "SQ"
-- !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
-- "Si"
-- !private "Vs5Int16"
-- !private "Vs5Int32"
-- !private "Vs5Int64"
-- !private "Vs4Int8"
-- !private "Ps7Integer"
-- !private "Ps17IntegerArithmetic"
-- !private "Ps16IteratorProtocol"
-- !private "V10SwiftyJSON4JSON"
 - !private "CSo17JSONSerialization"
 - "P10SwiftyJSON17JSONSubscriptType"
 - "Ps25LosslessStringConvertible"
 - "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
-- !private "Ps16MutableIndexable"
 - "C16SwiftLoginScreen13MyURLProtocol"
 - "PSo8NSCoding"
 - "PSo9NSCopying"
 - !private "CSo6NSData"
-- "CSo12NSDictionary"
+- !private "CSo12NSDictionary"
 - !private "CSo19NSEntityDescription"
-- "CSo7NSError"
+- !private "CSo7NSError"
 - !private "PSo17NSFastEnumeration"
-- "CSo14NSFetchRequest"
-- "PSo20NSFetchRequestResult"
+- !private "CSo14NSFetchRequest"
+- !private "PSo20NSFetchRequestResult"
 - !private "PSo9NSLocking"
-- "CSo15NSManagedObject"
-- "CSo22NSManagedObjectContext"
+- !private "CSo15NSManagedObject"
+- !private "CSo22NSManagedObjectContext"
 - "PSo16NSMutableCopying"
-- "CSo13NSMutableData"
-- "CSo19NSMutableURLRequest"
+- !private "CSo13NSMutableData"
+- !private "CSo19NSMutableURLRequest"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "CSo24NSPersistentStoreRequest"
-- "CSo11NSPredicate"
+- !private "CSo11NSPredicate"
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
 - !private "CSo15NSURLConnection"
-- "CSo12NSURLRequest"
+- "PSo23NSURLConnectionDelegate"
+- !private "CSo12NSURLRequest"
 - !private "Ps9OptionSet"
-- "Sq"
 - !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
-- !private "Vs17RandomAccessSlice"
-- !private "Vs5Range"
 - !private "Ps26RangeReplaceableCollection"
-- !private "Ps25RangeReplaceableIndexable"
 - !private "Ps16RawRepresentable"
-- "VCSo17JSONSerialization14ReadingOptions"
+- !private "VCSo17JSONSerialization14ReadingOptions"
 - !private "P10Foundation20ReferenceConvertible"
-- "C16SwiftLoginScreen5RegEx"
+- !private "C16SwiftLoginScreen5RegEx"
 - !private "C16SwiftLoginScreen14RequestManager"
 - !private "P5Kanna10Searchable"
 - !private "P5Kanna14SearchableNode"
 - !private "Ps8Sequence"
 - !private "Ps10SetAlgebra"
-- !private "Ps13SignedInteger"
-- !private "Ps12SignedNumber"
-- !private "Vs5Slice"
-- "OCSo8URLCache13StoragePolicy"
-- !private "Ps10Strideable"
+- !private "OCSo8URLCache13StoragePolicy"
 - "SS"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
-- "CSo13UIApplication"
+- !private "CSo13UIApplication"
 - !private "PSo21UIApplicationDelegate"
 - !private "CSo11UIResponder"
 - !private "PSo30UIResponderStandardEditActions"
-- "Su"
-- !private "Vs6UInt16"
-- !private "Vs6UInt32"
-- !private "Vs6UInt64"
-- !private "Vs5UInt8"
-- "V10Foundation3URL"
+- !private "V10Foundation3URL"
+- !private "CSo26URLAuthenticationChallenge"
+- !private "PSo32URLAuthenticationChallengeSender"
+- !private "CSo13URLCredential"
+- !private "CSo18URLProtectionSpace"
 - "CSo11URLProtocol"
-- "PSo17URLProtocolClient"
-- "V10Foundation10URLRequest"
-- "CSo11URLResponse"
-- !private "Sc"
-- "CSo12UserDefaults"
+- !private "PSo17URLProtocolClient"
+- !private "V10Foundation10URLRequest"
+- !private "CSo11URLResponse"
+- !private "CSo12UserDefaults"
 - !private "P5Kanna11XMLDocument"
 - !private "Ps14_ArrayProtocol"
+- !private "Ps23_BidirectionalIndexable"
 - !private "Ps24_DestructorSafeContainer"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
 - !private "Ps34_ExpressibleByFileReferenceLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
 - "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
-- !private "Ps14_Incrementable"
-- !private "Ps8_Integer"
-- !private "Ps18_IntegerArithmetic"
-- !private "P10Foundation18_MutablePairBoxing"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps17_MutableIndexable"
 - "Ps21_ObjectiveCBridgeable"
-- "Vs26_OptionalNilComparisonType"
-- !private "Ps14_SignedInteger"
-- !private "Ps11_Strideable"
+- !private "Ps22_RandomAccessIndexable"
+- !private "Ps26_RangeReplaceableIndexable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCrypto.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptor.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonDigest.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonHMAC.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.2.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
 - "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
-interface-hash: "663d74197a5972d001fc35f2b1c2005b"
+- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+interface-hash: "5f78f7abcccbc5e4003f7069ea7f258e"
