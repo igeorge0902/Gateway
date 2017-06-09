@@ -206,9 +206,10 @@ public class ChangePasswordNewPassword extends HttpServlet implements Serializab
     		 for (Cookie cookie : cookies) {
     		   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
     		     
+				   log.info("XSRF-TOKEN is: " + cookie.getValue());
+
     			   if(cookie.getValue().equals(encrypted_token)) {
     				   
-    				   //do something
     			   }
     			   
     		    }

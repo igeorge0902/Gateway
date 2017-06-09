@@ -12,7 +12,7 @@ import com.jeet.api.Devices;
 import com.jeet.api.Logins;
 import com.jeet.api.Tokens;
 
-public class DAO {
+public class DAO extends Thread{
 
 	private static DAO instance;
 	private SessionFactory factory;
@@ -47,6 +47,7 @@ public class DAO {
 	 * @return DAO instance
 	 */
 	public static synchronized DAO instance() {
+		
 		if (instance == null) {
 			instance = new DAO();
 		}

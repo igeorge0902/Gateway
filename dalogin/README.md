@@ -31,7 +31,7 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 
 Known issues (for most recent version see the update branch!):
 ----
-- In the insert_device_ procedure there is a missing premise: "and device_states.uuid = uuid_". This premise is responsible to update the state for device, on which the user is logging in, only.
+- if the properties.properties file is not copied up-front to its place under your Application Server directory, then unexpected behavior may occur. I still am working on it.
 - In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
 - different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
 - For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
@@ -240,21 +240,12 @@ Sample cache and header settings for Apache (put it inside httpd.conf or the htt
 Clustering:
 ----
 - The in-memory session replication is tested with Apache Tomcat 8.x, following the official instructions. For Apache Tomcat the Cross context attribute is set to true.
-- GlassFish and Wildfly settings will be included soon, but you can use a search engine to find it out!
-
+- GlassFish and Wildfly settings will be included soon, but you can use a search engine to find it out
 - [Running cluster of Tomcat servers behind the Web server](https://people.apache.org/~mturk/docs/article/ftwai.html)
-- [Official TomCat Clustering How To](http://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)
-
-And see also:
 - [TomCat clustering](https://www.mulesoft.com/tcat/tomcat-clustering)
-- [TomCat clustering example](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-clustering-session-replication-tutorial/)
-
-### On TomCat you must add the following configuration for multicast to work:
-
-```bin
-export JAVA_OPTS="$JAVA_OPTS\
- -Djava.net.preferIPv4Stack=true"
- ```
+and
+- [TomCat clustering](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-clustering-session-replication-tutorial/)
+- [TomCat Clustering How To](http://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html)
 
 Session handling:
 ----
@@ -359,6 +350,6 @@ RoadMap:
 
 Note:
 ----
-Last update: 2017.04.19.
+Last update: 2017.03.21.
 
 Copyright © 2015-2017 George Gaspar. All rights reserved.

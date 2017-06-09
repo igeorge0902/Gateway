@@ -8,10 +8,14 @@
 
 package com.jeet.api;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,6 +64,8 @@ public class Tokens {
     protected String token1;
     @XmlElement(required = true)
     protected String token2;
+	//@Temporal(TemporalType.TIMESTAMP)
+    protected String TIME_;
 
 //TODO: get back the device list
     

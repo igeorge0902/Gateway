@@ -8,6 +8,8 @@ package com.dalogin;
  */
 
 import java.io.*;
+import java.util.List;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.Logger;
@@ -95,7 +97,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 	/**
 	 * 
 	 */
-	private volatile static String token2;
+	private volatile static List<String> token2;
 	
 	/**
 	 * 
@@ -253,7 +255,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 				
 					log.info("1");
 					token2 = SQLAccess.token2(deviceId, context);
-					c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+					c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
 					c.setSecure(true);
 					c.setMaxAge(session.getMaxInactiveInterval());
 					
@@ -286,13 +288,13 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 						
 						log.info("2");
 						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
 
 						response.addCookie(c);
 						// The token2 will be used as key-salt-whatever as originally planned.
-						response.addHeader("X-Token", token2);
+						response.addHeader("X-Token", token2.get(0));
 										
 						session.setAttribute(c.getName(), c.getValue());
 
@@ -320,13 +322,13 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 					
 						log.info("3");
 						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
 
 						response.addCookie(c);
 						// The token2 will be used as key-salt-whatever as originally planned.
-						response.addHeader("X-Token", token2);
+						response.addHeader("X-Token", token2.get(0));
 						
 						// TODO: finish cross-site request forgery protection
 						session.setAttribute(c.getName(), c.getValue());

@@ -25,7 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.dalogin.SQLAccess;
- 
+
+
 /**
  * @author Crunchify.com
  *
@@ -42,10 +43,10 @@ public class test {
  
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
-        String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
+      //  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
 
 		
-	    File f = new File("/Users/georgegaspar/Downloads/movie_theaters.json");	      
+	    File f = new File("/Users/georgegaspar/Downloads/test.json");	      
 	    if (f.exists() == true) {
        
 	    BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f));
@@ -59,7 +60,7 @@ public class test {
 		    }    
 		    JSONObject jObj_ = new JSONObject(sb_.toString());
 
-	        JSONArray companyList = (JSONArray) jObj_.get("results");
+	        JSONArray companyList = (JSONArray) jObj_.get("seatsToBeReserved");
 	        
 	      //  System.out.println(values);
 	        
@@ -67,6 +68,27 @@ public class test {
 	
 		    	JSONObject jObj = new JSONObject(companyList.get(i).toString());
 			    
+		    	String value = jObj.getString("screeningDateId");
+		        String value2 = jObj.getString("seat");
+		        
+		        List<String> seatList = new ArrayList<>();
+				 for (String seat: value2.split("-")){
+					 	
+					 if (!seat.isEmpty()) {
+						 
+						 seatList.add(seat);
+					 
+					 } else {
+						 
+						 
+					 }
+					 
+				 }
+		        
+		        System.out.println(value);
+		        System.out.println(seatList);
+		        
+		    	/*
 		    	String value = jObj.getString("formatted_address");
 		        String value2 = jObj.getString("name");
 		        JSONObject value3 = jObj.getJSONObject("geometry");
@@ -79,7 +101,7 @@ public class test {
 		        System.out.println(value2);
 		        System.out.println(lng);
 		        System.out.println(lat);
-		        		    	
+		        */	    	
 		    	
 		    }
 		

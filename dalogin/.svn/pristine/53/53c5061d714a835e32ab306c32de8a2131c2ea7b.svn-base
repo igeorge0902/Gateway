@@ -1,7 +1,0 @@
-\hypertarget{namespacecom_1_1websocket}{}\section{Package com.\+websocket}
-\label{namespacecom_1_1websocket}\index{com.\+websocket@{com.\+websocket}}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \hyperlink{classcom_1_1websocket_1_1_web_socket}{Web\+Socket}
-\end{DoxyCompactItemize}

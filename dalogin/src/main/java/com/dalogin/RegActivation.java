@@ -37,7 +37,7 @@ public class RegActivation extends HttpServlet {
 	/**
 	 * 
 	 */
-	private volatile static String token2;
+	private volatile static List<String> token2;
 	
 	/**
 	 * 
@@ -168,9 +168,9 @@ public class RegActivation extends HttpServlet {
 		
         ServletContext context = session.getServletContext();
 
-        ciphertext = request.getHeader("Ciphertext");
-    	user = request.getParameter("user");
-    	deviceId = request.getParameter("deviceId");
+        ciphertext = request.getHeader("Ciphertext").trim();
+    	user = request.getParameter("user").trim();
+    	deviceId = request.getParameter("deviceId").trim();
 
     	
     	if (ciphertext != null) ciphertext = ciphertext.trim();
@@ -192,7 +192,7 @@ public class RegActivation extends HttpServlet {
 	    try {
         	
             token2 = SQLAccess.token2(deviceId, context);
-            True = token2.equals(ciphertext);
+            True = token2.get(0).equals(ciphertext);
 
 			if (True) {
 				

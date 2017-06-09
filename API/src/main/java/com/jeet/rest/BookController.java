@@ -86,7 +86,7 @@ public class BookController {
 	        
 				if (user_.getId() != 0) {
 								
-						return Response.ok().status(200).entity(user_).header("User", user_.getUuid()).build();		
+						return Response.ok().status(200).entity(user_).header("User", user_.getUuid()).header("TEST", token2).build();		
 					
 					} else {
 				

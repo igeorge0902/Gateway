@@ -9,6 +9,10 @@ package com.dalogin;
 
 //Import required java libraries
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -53,7 +57,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 	private volatile static boolean devices;
 	private volatile static long SessionCreated;
 	private volatile static String sessionID;
-	private volatile static String token2;
+	private volatile static List <String> token2;
 	private volatile static String hmac;
 	private volatile static String hmacHash;
 	private volatile static String time;
@@ -197,16 +201,37 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						try {
 						log.info("1");
 						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+						
+						//TODO: IV can be the sessionId
+						String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+						
+						int l = xsrfToken.length();
+						String actualToken = "";
+							
+						if (xsrfToken.endsWith("=")) {
+								actualToken = xsrfToken.substring(0, l-1);
+	
+							} else {
+								actualToken = xsrfToken;
+	
+								}
+						
+						c = new Cookie("XSRF-TOKEN", actualToken);
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
-						
+						System.out.println("Set XSRF-TOKEN: " +c.getValue());
+
 						response.addCookie(c);
-						response.setContentType("application/json"); 
+						// The token2 will be used as key-salt-whatever as originally planned.
+						response.addHeader("X-Token", token2.get(0));						response.setContentType("application/json"); 
 						response.setCharacterEncoding("utf-8"); 
 						response.setStatus(200);
 		
+						// set XSRF-TOKEN as session attribute
 						session.setAttribute(c.getName(), c.getValue());
+						
+						// set timestamp for device login as session attribute
+						session.setAttribute("TIME_", token2.get(1));
 
 						PrintWriter out = response.getWriter(); 
 						
@@ -214,7 +239,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						
 						json.put("success", 1);
 						json.put("JSESSIONID", sessionID);
-						json.put("X-Token", token2);
+						json.put("X-Token", token2.get(0));
 						
 						out.print(json.toString());
 						out.flush();
@@ -231,16 +256,35 @@ public class HelloWorld extends HttpServlet implements Serializable {
 							try {
 								log.info("2");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
-								c.setSecure(true);
+								
+								//TODO: IV can be the sessionId
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+								
+								int l = xsrfToken.length();
+								String actualToken = "";
+									
+								if (xsrfToken.endsWith("=")) {
+										actualToken = xsrfToken.substring(0, l-1);
+			
+									} else {
+										actualToken = xsrfToken;
+			
+										}
+								
+								c = new Cookie("XSRF-TOKEN", actualToken);								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
+								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2);
+								response.addHeader("X-Token", token2.get(0));
 												
+								// set XSRF-TOKEN as session attribute
 								session.setAttribute(c.getName(), c.getValue());
-
+								
+								// set timestamp for device login as session attribute
+								session.setAttribute("TIME_", token2.get(1));
+								
 								JSONObject json = new JSONObject(); 
 								
 								json.put("Session", "raked"); 
@@ -248,7 +292,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								json.put("JSESSIONID", sessionID);
 
 								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
+								json.put("X-Token", token2.get(0));
 								
 								response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
 
@@ -265,16 +309,36 @@ public class HelloWorld extends HttpServlet implements Serializable {
 							try {
 								log.info("3");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2));
+								//TODO: IV can be the sessionId
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+								
+								int l = xsrfToken.length();
+								String actualToken = "";
+									
+								if (xsrfToken.endsWith("=")) {
+										actualToken = xsrfToken.substring(0, l-1);
+			
+									} else {
+										actualToken = xsrfToken;
+			
+										}
+								
+								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
+								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2);
-								
-								// TODO: finish cross-site request forgery protection
+								response.addHeader("X-Token", token2.get(0));								response.setContentType("application/json"); 
+								response.setCharacterEncoding("utf-8"); 
+								response.setStatus(200);
+				
+								// set XSRF-TOKEN as session attribute
 								session.setAttribute(c.getName(), c.getValue());
+								
+								// set timestamp for device login as session attribute
+								session.setAttribute("TIME_", token2.get(1));
 								
 								PrintWriter out = response.getWriter(); 
 								
@@ -283,7 +347,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								json.put("Session", "raked"); 
 								json.put("Success", "true"); 
 								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
+								json.put("X-Token", token2.get(0));
 								
 								out.print(json.toString());
 								out.flush();

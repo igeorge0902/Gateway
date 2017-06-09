@@ -9,6 +9,7 @@ package com.dalogin;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.*;
@@ -64,7 +65,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 	/**
 	 * 
 	 */
-	private volatile static String token2;
+	private volatile static List<String> token2;
 
 	/**
 	 * 
@@ -256,8 +257,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 				response.setCharacterEncoding("utf-8"); 
 				response.setHeader("Response", "S");
 				response.setStatus(300);
-				response.addHeader("User", user);
-				response.addHeader("X-Token", token2);
+				response.addHeader("X-Token", token2.get(0));
 
 				PrintWriter out = response.getWriter(); 
 				
@@ -267,6 +267,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 				// put some value pairs into the JSON object . 				
 				error.put("Activation", "false"); 
 				error.put("Success", "false");
+				error.put("User", user);
 				error.put("deviceId", deviceId);
 				json.put("Error Details", error);
 				
@@ -294,6 +295,9 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			 */
 			RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 			log.info(request.getContentType());
+			
+			request.setAttribute("user", user);
+			request.setAttribute("TIME_", session.getCreationTime());
 			rd.forward(request, response); 
 			}
 		else {
@@ -347,9 +351,15 @@ public class AdminServlet extends HttpServlet implements Serializable {
 		if (cookies != null) {
 		 for (Cookie cookie : cookies) {
 			 
-			 //TODO: validate XSRF-TOKEN
-			   log.info("Sent cookies: " + cookie.getName());
+			   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
+			   
+				   if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
+					   
+						throw new ServletException("There is no valid XSRF-TOKEN");
 
+				   }
+			   
+			   }
 		  }
 		} else {
 			throw new ServletException("There is no valid XSRF-TOKEN");

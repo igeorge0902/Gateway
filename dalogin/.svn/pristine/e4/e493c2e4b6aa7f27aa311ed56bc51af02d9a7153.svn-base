@@ -1,9 +1,0 @@
-\section{Packages}
-Here are the packages with brief descriptions (if available)\+:\begin{DoxyCompactList}
-\item\contentsline{section}{\hyperlink{namespacecom}{com} }{\pageref{namespacecom}}{}
-\item\contentsline{section}{\hyperlink{namespacecom_1_1dalogin}{com.\+dalogin} }{\pageref{namespacecom_1_1dalogin}}{}
-\item\contentsline{section}{\hyperlink{namespacecom_1_1dalogin_1_1filters}{com.\+dalogin.\+filters} }{\pageref{namespacecom_1_1dalogin_1_1filters}}{}
-\item\contentsline{section}{\hyperlink{namespacecom_1_1dalogin_1_1listeners}{com.\+dalogin.\+listeners} }{\pageref{namespacecom_1_1dalogin_1_1listeners}}{}
-\item\contentsline{section}{\hyperlink{namespacecom_1_1dalogin_1_1utils}{com.\+dalogin.\+utils} }{\pageref{namespacecom_1_1dalogin_1_1utils}}{}
-\item\contentsline{section}{\hyperlink{namespacecom_1_1websocket}{com.\+websocket} }{\pageref{namespacecom_1_1websocket}}{}
-\end{DoxyCompactList}

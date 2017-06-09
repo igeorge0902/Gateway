@@ -50,6 +50,14 @@ public class SQLAccess {
 	/**
 	 * 
 	 */
+	public static volatile String uuid;
+	/**
+	 * 
+	 */
+	public static volatile String time;
+	/**
+	 * 
+	 */
 	public static volatile String forgot_psw_token;
 	/**
 	 * 
@@ -71,6 +79,10 @@ public class SQLAccess {
 	 * 
 	 */
 	private static volatile List<String> list;
+	/**
+	 * 
+	 */
+	private static volatile List<String> list_;
 	/**
 	 * 
 	 */
@@ -975,6 +987,47 @@ public class SQLAccess {
 		return Response;
 	}
 	
+	/**
+	 * Get uuid for current user. 
+	 * 
+	 * @param user
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
+	public synchronized static String uuid(String user, ServletContext context) throws Exception {
+
+		// Setup the connection with the DB
+		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
+		
+		try {
+    		connect = dbManager.getConnection();
+								
+			InputStream in_ = IOUtils.toInputStream(user, "UTF-8");
+		    Reader reader_ = new BufferedReader(new InputStreamReader(in_));
+		    
+			callableStatement = connect.prepareCall("{call `get_uuid`(?)}");
+
+			callableStatement.setCharacterStream(1, reader_);
+							
+			ResultSet rs = callableStatement.executeQuery();
+			callableStatement.closeOnCompletion();
+			reader_.close();
+			while (rs.next()) {
+				
+				uuid =rs.getString(1);
+			}
+			
+		} catch (SQLException ex) {
+		      SQLAccess.printSQLException(ex);
+
+		} finally {
+			
+			dbManager.closeConnection();
+
+		}
+		return uuid;
+	}
 	
 	/**
 	 * Get token1 for current device. 
@@ -1026,11 +1079,12 @@ public class SQLAccess {
 	 * @return token
 	 * @throws Exception
 	 */
-	public synchronized static String token2(String deviceId, ServletContext context) throws Exception {
+	public synchronized static List<String> token2(String deviceId, ServletContext context) throws Exception {
 
 		// Setup the connection with the DB
 		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
-		
+		list_ = new ArrayList<String>();
+
 		try {
     		connect = dbManager.getConnection();
 								
@@ -1047,6 +1101,10 @@ public class SQLAccess {
 			while (rs.next()) {
 				
 				token =rs.getString(1);
+				time = rs.getString(2);
+				list_.add(token);
+				list_.add(time);
+				
 			}
 			
 		} catch (SQLException ex) {
@@ -1058,7 +1116,7 @@ public class SQLAccess {
 			dbManager.closeConnection();
 
 		}
-		return token;
+		return list_;
 	}
 	
 	/**
