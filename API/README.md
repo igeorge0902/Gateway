@@ -15,6 +15,10 @@ Cookie settings:
 ----
 - You may want to send cookies with the API response, where your best option is to place them into the entity response, which returns the method call! Check the available JAVA JAX-RS Api documentations.
 
+Request parameters:
+----
+- You can tunnel your request parameters, that you will send with the client or Servlet(s).
+
 Features:
 ----
 - provides authenticated access to the user's "profile"
