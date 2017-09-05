@@ -11,6 +11,10 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - it is not a mistake that the web.xml is configured for TomCat. You can find the GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
 - [wildFly settings](https://github.com/igeorge0902/Gateway/tree/update/API/wildFly)
 
+Cookie settings:
+----
+- You may want to send cookies with the API response, where your best option is to place them into the entity response, which returns the method call! Check the available JAVA JAX-RS Api documentations.
+
 Features:
 ----
 - provides authenticated access to the user's "profile"
