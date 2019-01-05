@@ -1,6 +1,6 @@
 # General Authentication Service - GAS 
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2017 George Gaspar.
 
 Check the listed components above, and their readme for specific notes, instructions.
 
