@@ -1,6 +1,6 @@
 # General Authentication Service - GAS 
 
-Copyright © 2015-2017 George Gaspar.
+Copyright © 2015-2017 George Gaspar. MIT License.
 
 Check the listed components above, and their readme for specific notes, instructions.
 
@@ -103,4 +103,4 @@ You can find various cloud solutions where you can deploy the system. I think th
 - email: igeorge1982@gmail.com (primary), igeorge1982@hotmail.com, igeorge1982@yahoo.com
 - mobile: +36304088520
 
-Copyright © 2015-2017 George Gaspar. 
+Copyright © 2015-2017 George Gaspar. MIT License.
