@@ -103,4 +103,4 @@ You can find various cloud solutions where you can deploy the system. I think th
 - email: igeorge1982@gmail.com (primary), igeorge1982@hotmail.com, igeorge1982@yahoo.com
 - mobile: +36304088520
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2017 George Gaspar. 
