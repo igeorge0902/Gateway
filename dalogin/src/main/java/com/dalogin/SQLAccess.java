@@ -640,14 +640,14 @@ public class SQLAccess {
 	}
 	
 	/**
-	 * Resets the voucher to the first enum state.
+	 * Resets the voucher to the first enum state, and clears the user. Do not touch other tables.
 	 * 
 	 * @param voucher
 	 * @param context
 	 * @return true
 	 * @throws Exception
 	 */
-	public synchronized static boolean reset_voucher(String voucher, ServletContext context) throws Exception {
+	public synchronized static boolean reset_voucher(String voucher, String user, ServletContext context) throws Exception {
 
 		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
 		
@@ -658,10 +658,11 @@ public class SQLAccess {
 			InputStream in = IOUtils.toInputStream(voucher, "UTF-8");
 		    Reader reader = new BufferedReader(new InputStreamReader(in));
 		    
-			callableStatement = connect.prepareCall("{call `reset_voucher`(?)}");
+			callableStatement = connect.prepareCall("{call `reset_voucher`(?, ?)}");
 
 			callableStatement.setCharacterStream(1, reader);
-							
+			callableStatement.setString(2, user);
+
 			callableStatement.executeQuery();
 			callableStatement.closeOnCompletion();
 			reader.close();
@@ -742,7 +743,7 @@ public class SQLAccess {
 			while (rs.next()) {
 				
 				String voucher =rs.getString(1);
-
+				//int voucher_is_toBeActivated = rs.getInt(4);
 				if (voucher_.equals(voucher)) {
 			
 			InputStream in_ = IOUtils.toInputStream(voucher, "UTF-8");
@@ -755,27 +756,29 @@ public class SQLAccess {
 			callableStatement.executeQuery();
 			callableStatement.closeOnCompletion();
 			reader.close();
-	
-				}
+				
+				} 
 				
 				dbManager.closeConnection();
 
 				return true;
-			} 
+			}
 			
 		} catch (SQLException ex) {
 		      SQLAccess.printSQLException(ex);
 
 		} finally {
 			
+			//always true
 			dbManager.closeConnection();
 
 		}
 		return false;
 	}
 	
+	//TODO: (PBI task) add check, if user not found for the procedure.
 	/**
-	 * Checks user password.
+	 * Checks user password. 
 	 * 
 	 * @param pass
 	 * @param context

@@ -256,6 +256,7 @@ public class Registration extends HttpServlet implements Serializable {
 				sessionID = session.getId();
 				
 				// executes updates in chained method, where if any of them fails, the update will not be committed
+				//PBI: check if the voucher needs activation, but it is still okay to send email...
 				if(SQLAccess.wrapUp_registration(voucher, user, pass, deviceId, SessionCreated, sessionID, context)) {
 					
 					// send email for activation 
@@ -276,7 +277,9 @@ public class Registration extends HttpServlet implements Serializable {
 				    .append("?").append("activation=").append(aesUtil.encrypt(SALT, IV, activationToken, activationData));
 				    
 				    //TODO: start it in a new thread
+				    //remove, if not needed.
 				    SendHtmlEmail.generateAndSendEmail(email, url.toString());
+				    
 					
 				}
 			
@@ -315,7 +318,7 @@ public class Registration extends HttpServlet implements Serializable {
 						try {
 						log.info("1");
 						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
+						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
 						
@@ -330,7 +333,7 @@ public class Registration extends HttpServlet implements Serializable {
 												
 						json.put("success", 1);
 						json.put("JSESSIONID", sessionID);
-						json.put("X-Token", token2);
+						json.put("X-Token", token2.get(0));
 						
 						out.print(json.toString());
 						out.flush();
@@ -345,7 +348,7 @@ public class Registration extends HttpServlet implements Serializable {
 							try {
 								log.info("2");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
+								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
 
@@ -360,7 +363,7 @@ public class Registration extends HttpServlet implements Serializable {
 								json.put("JSESSIONID", sessionID);
 
 								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
+								json.put("X-Token", token2.get(0));
 								
 								response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
 
@@ -375,7 +378,7 @@ public class Registration extends HttpServlet implements Serializable {
 							try {
 								log.info("3");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, time, token2.get(0)));
+								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
 
@@ -391,7 +394,7 @@ public class Registration extends HttpServlet implements Serializable {
 								json.put("Session", "raked"); 
 								json.put("Success", "true"); 
 								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2);
+								json.put("X-Token", token2.get(0));
 								
 								out.print(json.toString());
 								out.flush();
@@ -408,7 +411,7 @@ public class Registration extends HttpServlet implements Serializable {
 					  	
 						PrintWriter out = response.getWriter(); 
 
-					  	SQLAccess.reset_voucher(voucher, context);
+					  	SQLAccess.reset_voucher(voucher, user, context);
 					    
 						out.print(new_hash);
 						out.flush();
@@ -417,16 +420,28 @@ public class Registration extends HttpServlet implements Serializable {
 	           } else {
 
 	        	   // hmac error
-	        	   throw new ServletException("Error in registration!");
+	        	   response.sendError(HttpServletResponse.SC_BAD_REQUEST, "hmac error");
 	           }
 		
 		} catch (Exception e) {
 
 			// servlet runtime error
-
 			try {
 				
-				SQLAccess.reset_voucher(voucher, context);
+				SQLAccess.reset_voucher(voucher, user, context);
+				
+	        	response.setContentType("application/json"); 
+			  	response.setStatus(502);
+			  	
+				PrintWriter out = response.getWriter(); 
+				JSONObject json = new JSONObject(); 
+				
+				json.put("Registration", "failed"); 
+				json.put("Email", "false"); 
+				json.put("Message", "I have gone to smoke a cigarette!"); 
+
+				out.print(json);
+				out.flush();
 				
 			} catch (Exception e1) {
 
@@ -445,7 +460,7 @@ public class Registration extends HttpServlet implements Serializable {
         	// email format failed
 			try {
 				
-				SQLAccess.reset_voucher(voucher, context);
+				SQLAccess.reset_voucher(voucher, user, context);
 				
 			} catch (Exception e1) {
 

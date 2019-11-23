@@ -11,6 +11,10 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - it is not a mistake that the web.xml is configured for TomCat. You can find the GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
 - [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly)
 
+@ wildFly
+- You may need to manually include your Hibernate jar files. I have done this way, but please check the documentation how it works with whichever wildFly distribution.
+- You will find a working package at AWS CodeCommit
+
 Cookie settings and Request parameters:
 ----
 - You can tunnel your request parameters in the HttpServletRequest object at least since Java EE 6, that you will send with the client and/or the Servlet(s) as a dispatched call to any resource.
