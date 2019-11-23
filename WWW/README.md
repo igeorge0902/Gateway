@@ -4,10 +4,13 @@ WWW component for the Gateway
 Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 # Deploy
-- You do not need to build anything, just deploy the app. For proper usage this web app must be served through the Application Server of your choose, and the Apache web server fronting the AS will handle the headers. For TomCat just place it inside the {TOMCAT_HOME}/webapps folder, for GlassFish deploy it as "Other" pointing to your web app directory, and it will create the application context. For wildFly see the instructions at [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly).
+- You do not need to build anything, just deploy the app. For proper usage this web app must be served through the Application Server of your choose, and the Apache web server fronting the AS will handle the headers. For TomCat just place it inside the {TOMCAT_HOME}/webapps folder, for GlassFish deploy it as "Other" pointing to your web app directory, and it will create the application context. 
+- For wildFly see the instructions at [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly).
+- For wildFly deploy it as unmanaged, and the name and runtime should have war extension
 
 # WebSocket
 - Secure WebSocket connection is included. See it in websocket.js and wensocketecho.html file.
+- For wildFly you may need to add your cert into the keystore. It works for me like that.
 
 # Trouble-shooting
 You might get a response in the form of a white page. It means your environment setup is missing something:

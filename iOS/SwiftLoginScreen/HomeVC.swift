@@ -9,10 +9,10 @@ import UIKit
 import SwiftyJSON
 import CoreData
 import WebKit
-import Starscream
+//import Starscream
 
 @available(iOS 9.0, *)
-class HomeVC: UIViewController, WebSocketDelegate {
+class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout /*, WebSocketDelegate */{
 
     deinit {
         print(#function, "\(self)")
@@ -25,6 +25,7 @@ class HomeVC: UIViewController, WebSocketDelegate {
 //    lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
    
     lazy var session = URLSession.sharedCustomSession
+    var url:URL?
 
     var running = false
     
@@ -32,7 +33,8 @@ class HomeVC: UIViewController, WebSocketDelegate {
     @IBOutlet var sessionIDLabel : UILabel!
     
     var collectionView: UICollectionView!
-    var socket: WebSocket!
+    //var socket: WebSocket!
+    //var stream: Stream = Stream()
 
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
@@ -53,7 +55,7 @@ class HomeVC: UIViewController, WebSocketDelegate {
         let view:UIView = UIView(frame: CGRect(x: -25, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height));
         
         self.view.addSubview(view)
-        self.view.sendSubview(toBack: view)
+        self.view.sendSubviewToBack(view)
 
         
         let backgroundImage:UIImage? = UIImage(named: backgroundDict["Background1"]!)
@@ -61,13 +63,46 @@ class HomeVC: UIViewController, WebSocketDelegate {
         imageView = UIImageView(frame: view.frame);
         imageView.image = backgroundImage;
         
+        /*
+        let button = UIButton()
+        button.setTitle("Back", forState: UIControlState.Normal)
+        button.setImage(UIImage(named: "yourImageName.jpg"), forState: UIControlState.Normal)
+     //   button?.addTarget(self, action:Selector("callMethod"), forControlEvents: UIControlEvents.TouchDragInside)
+        button.frame=CGRectMake(0, 0, 100, 30)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+        */
         
-        print(managedObjectContext)
+       // view.addSubview(imageView);
         
-        //TODO: keep the connection open with a wrapped method returning a boolean value, for example
-        socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
-        socket.delegate = self
-        socket.connect()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: view.frame.width * 0.7, height: 200)
+        
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.alwaysBounceVertical = true
+        collectionView.register(FeedCells.self, forCellWithReuseIdentifier: "FeedCell")
+       // collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        collectionView.backgroundColor = UIColor.lightGray
+        
+        view.addSubview(collectionView)
+        
+        /*
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.managedObjectContext
+        let cachedResponse = NSEntityDescription.insertNewObject(forEntityName: "CachedURLResponse", into: context) as NSManagedObject
+        context.refresh(cachedResponse, mergeChanges: false)
+        */
+        
+        MoviesData.addData()
+        
+       // socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
+       // socket.delegate = self
+       // socket.connect()
+        
 
     }
     
@@ -110,41 +145,53 @@ class HomeVC: UIViewController, WebSocketDelegate {
         
         } else {
         
-            self.usernameLabel.text = prefs.value(forKey: "USERNAME") as? String
-            self.sessionIDLabel.text = prefs.value(forKey: "JSESSIONID") as? String
+            //self.usernameLabel.text = prefs.value(forKey: "USERNAME") as? String
+            //self.sessionIDLabel.text = prefs.value(forKey: "JSESSIONID") as? String
             
+            /*
             if (socket.isConnected) {
-            
-            socket.write(string: "hello!", completion: {
-                print("hello!")
-                })
+                
+                socket.write(string: "hello!", completion: {
+                    print("hello!")
+                    })
+                }*/
+
             }
-        }
         
         }
         
     }
     
 
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //TODO: finish
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goto_map" {
+            let nextSegue = segue.destination as? MapViewController
+            nextSegue?.map2 = false
+            
+        }
+        
+    }
     
-    let url:URL = URL(string:serverURL + "/login/logout")!
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
     func dataTask(_ onCompletion: ServiceResponse) {
-        
-        var request:URLRequest = URLRequest(url: url)
+        url = URL(string: serverURL + "/login/logout")!
+
+        var request:URLRequest = URLRequest(url: url!)
         
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("", forHTTPHeaderField: "Referer")
         
         let task = session.dataTask(with: request, completionHandler: {(data, response, sessionError)  in
-
+            
             var error = sessionError
             
             if let httpResponse = response as? HTTPURLResponse {
@@ -163,7 +210,7 @@ class HomeVC: UIViewController, WebSocketDelegate {
                 
                 let alertView:UIAlertView = UIAlertView()
                 
-                alertView.title = self.title!
+                alertView.title = "Error!"
                 alertView.message = "Connection Failure: \(error!.localizedDescription)"
                 alertView.delegate = self
                 alertView.addButton(withTitle: "OK")
@@ -172,72 +219,79 @@ class HomeVC: UIViewController, WebSocketDelegate {
                 
             } else {
                 
-            if let httpResponse = response as? HTTPURLResponse {
-                NSLog("got some data")
-                
-                switch(httpResponse.statusCode) {
-                case 200:
+                if let httpResponse = response as? HTTPURLResponse {
+                    NSLog("got some data")
                     
-                    NSLog("got a 200")
-                    
-                    let jsonData:NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.mutableContainers )) as! NSDictionary
-                    
-                    let success:NSString = jsonData.value(forKey: "Success") as! NSString
-                    
-                    if(success == "true")
-                    {
-                        NSLog("LogOut SUCCESS");
+                    switch(httpResponse.statusCode) {
+                    case 200:
                         
-                        let appDomain = Bundle.main.bundleIdentifier
-                        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
-
+                        NSLog("got a " + String(httpResponse.statusCode) + " response code")
+                        
+                        let jsonData:NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.mutableContainers )) as! NSDictionary
+                        
+                        let success:NSString = jsonData.value(forKey: "Success") as! NSString
+                        
+                        if(success == "true")
+                        {
+                            NSLog("LogOut SUCCESS");
+                            
+                            let appDomain = Bundle.main.bundleIdentifier
+                            UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+                            
+                        }
+                        self.performSegue(withIdentifier: "goto_login", sender: self)
+                        
+                    default:
+                        
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                        
                     }
-                    self.performSegue(withIdentifier: "goto_login", sender: self)
-                    
-                default:
-                    
-                    let alertView:UIAlertView = UIAlertView()
-                    alertView.title = "Server error!"
-                    alertView.message = "Server error \(httpResponse.statusCode)"
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
-                    NSLog("Got an HTTP \(httpResponse.statusCode)")
                     
                 }
                 
-            } else {
+                self.running = false
                 
-                let alertView:UIAlertView = UIAlertView()
-                
-                alertView.title = "LogOut Failed!"
-                alertView.message = "Connection Failure"
-                
-                alertView.delegate = self
-                alertView.addButton(withTitle: "OK")
-                alertView.show()
-                NSLog("Connection Failure")
-            }
-            
-            self.running = false
-            
             }
         })
         
-            
+        
         running = true
         task.resume()
         
     }
     
+       @IBAction func basket(_ sender: UIButton) {
+        
+        if BasketData_.count < 1 {
+            
+            UIAlertController.popUp(title: "Warning!", message: "No free seat(s) to be reserved!")
+            
+        } else {
+            
+            let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
+            let pvc = storyboard.instantiateViewController(withIdentifier: "Basket")
+            
+            pvc.modalPresentationStyle = UIModalPresentationStyle.custom
+            pvc.transitioningDelegate = self
+            //pvc.view.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            
+            self.present(pvc, animated: true, completion: nil)
+            
+        }
+        
+    }
 
     @IBAction func logoutTapped(_ sender : UIButton) {
         
+        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
+
         self.dataTask() {
             (resultString, error) -> Void in
     
             print(error!)
             print(resultString)
+            
+            }
             
         }
         
@@ -247,8 +301,11 @@ class HomeVC: UIViewController, WebSocketDelegate {
     
     @IBAction func NearbyVenues(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goto_map", sender: self)
+        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
 
+        self.performSegue(withIdentifier: "goto_map", sender: self)
+        
+        }
         
     }
     
@@ -287,6 +344,76 @@ class HomeVC: UIViewController, WebSocketDelegate {
 
     }
     
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 100
+    }
+        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as! FeedCells
+        
+        cell.textLabel?.text = "label"
+        
+        
+        
+        cell.textLabel?.numberOfLines = 2
+        cell.textLabel?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let paragrapStyle = NSMutableParagraphStyle()
+        paragrapStyle.lineSpacing = 4
+        
+        
+        let title = NSMutableAttributedString(string: (cell.textLabel?.text!)!, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 14.0)!]))
+        title.append(NSAttributedString(string: "\nBudapest", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 12.0)!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)])))
+        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle ,range: NSMakeRange(0, title.string.characters.count))
+        
+        let icon = NSTextAttachment()
+        icon.image = UIImage(named: "Shit Hits Fan-25")
+        icon.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
+        
+        title.append(NSAttributedString(attachment: icon))
+        
+        cell.textLabel?.attributedText = title
+        cell.profileImage?.image = UIImage(named: "milo")
+        
+        let myTextAttribute = [ convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)! ]
+        let detailText = NSMutableAttributedString(string: "Meanwhile, Milo turned to the bright side.", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute) )
+        
+        cell.statusText?.attributedText = detailText
+        
+        return cell
+    }
+        
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return true
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+    /*
     func websocketDidConnect(socket: WebSocket) {
         print("websocket is connected")
     }
@@ -301,24 +428,24 @@ class HomeVC: UIViewController, WebSocketDelegate {
     
     func websocketDidReceiveData(socket: WebSocket, data: Data) {
         print("got some data: \(data.count)")
+        let str: NSString? = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        print(str as Any)
+       // socket.stream(stream, handle: Stream.Event.hasBytesAvailable)
+
     }
-    
+    */
+
+
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
 
-extension UIView {
-    
-    func addConstraintswithFormat(_ format: String, views: UIView...) {
-        
-        var ViewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            ViewsDictionary[key] = view
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: ViewsDictionary))
-    }
-    
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }
 
-
+}

@@ -3,9 +3,9 @@ provides-top-level:
 - "ServiceResponse"
 - "RestApiManager"
 provides-nominal:
-- "C16SwiftLoginScreen14RestApiManager"
+- "16SwiftLoginScreen14RestApiManagerC"
 provides-member:
-- ["C16SwiftLoginScreen14RestApiManager", ""]
+- ["16SwiftLoginScreen14RestApiManagerC", ""]
 provides-dynamic-lookup:
 - "alertView"
 - "baseURL"
@@ -17,17 +17,17 @@ depends-top-level:
 - !private "<"
 - !private "=="
 - !private ">="
-- "AnyObject"
+- !private "AnyObject"
 - "AssignmentPrecedence"
 - "BooleanLiteralType"
 - "CastingPrecedence"
-- !private "Data"
 - !private "Dictionary"
 - !private "GeneralRequestManager"
 - !private "HTTPURLResponse"
 - "Int"
 - "JSON"
 - !private "JSONSerialization"
+- !private "Kanna"
 - !private "NSDictionary"
 - "NSError"
 - !private "NSLocalizedDescriptionKey"
@@ -37,6 +37,7 @@ depends-top-level:
 - "RestApiManager"
 - "ServiceResponse"
 - "String"
+- !private "UIAlertController"
 - "UIAlertView"
 - "UIAlertViewDelegate"
 - !private "URL"
@@ -50,863 +51,1403 @@ depends-top-level:
 - !private "||"
 - !private "~="
 depends-member:
-- !private ["Ps9AnyObject", "GeneralRequestManager"]
-- !private ["Ps9AnyObject", "JSON"]
-- !private ["Ps9AnyObject", "JSONSerialization"]
-- !private ["Ps9AnyObject", "NSError"]
-- !private ["Ps9AnyObject", "NSLocalizedDescriptionKey"]
-- !private ["Ps9AnyObject", "NSLog"]
-- !private ["Ps9AnyObject", "ReadingOptions"]
-- ["Ps9AnyObject", "RestApiManager"]
-- !private ["Ps9AnyObject", "UIAlertView"]
-- !private ["Ps9AnyObject", "URL"]
-- !private ["Ps9AnyObject", "URLRequest"]
-- !private ["Ps9AnyObject", "URLSession"]
-- !private ["Ps9AnyObject", "UserDefaults"]
-- !private ["Ps9AnyObject", "addButton"]
-- ["Ps9AnyObject", "alertView"]
-- ["Ps9AnyObject", "alertViewCancel"]
-- ["Ps9AnyObject", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps9AnyObject", "baseURL"]
-- !private ["Ps9AnyObject", "cancelButtonIndex"]
-- !private ["Ps9AnyObject", "dataTask"]
-- !private ["Ps9AnyObject", "delegate"]
-- !private ["Ps9AnyObject", "deviceId"]
-- ["Ps9AnyObject", "didPresent"]
-- ["Ps9AnyObject", "didPresentAlertView"]
-- !private ["Ps9AnyObject", "getResponse"]
-- ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "jsonObject"]
-- !private ["Ps9AnyObject", "makeHTTPGetRequest"]
-- !private ["Ps9AnyObject", "message"]
-- !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "resume"]
-- !private ["Ps9AnyObject", "running"]
-- ["Ps9AnyObject", "serverURL"]
-- !private ["Ps9AnyObject", "shared"]
-- !private ["Ps9AnyObject", "sharedCustomSession"]
-- !private ["Ps9AnyObject", "show"]
-- !private ["Ps9AnyObject", "standard"]
-- !private ["Ps9AnyObject", "statusCode"]
-- !private ["Ps9AnyObject", "title"]
-- !private ["Ps9AnyObject", "value"]
-- ["Ps9AnyObject", "willPresent"]
-- ["Ps9AnyObject", "willPresentAlertView"]
-- ["Ps9AnyObject", ""]
+- !private ["12FacebookCore26AppEventParameterValueTypeP", "Encoding"]
+- ["12FacebookCore26AppEventParameterValueTypeP", "init"]
+- !private ["s23BidirectionalCollectionP", "Encoding"]
+- ["s23BidirectionalCollectionP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- !private ["PSo15CALayerDelegate", "addButton"]
-- !private ["PSo15CALayerDelegate", "cancelButtonIndex"]
-- !private ["PSo15CALayerDelegate", "delegate"]
-- !private ["PSo15CALayerDelegate", "init"]
-- !private ["PSo15CALayerDelegate", "message"]
-- !private ["PSo15CALayerDelegate", "show"]
-- !private ["PSo15CALayerDelegate", "title"]
-- !private ["Ps7CVarArg", "GeneralRequestManager"]
-- !private ["Ps7CVarArg", "JSON"]
-- !private ["Ps7CVarArg", "JSONSerialization"]
-- !private ["Ps7CVarArg", "NSError"]
-- !private ["Ps7CVarArg", "NSLocalizedDescriptionKey"]
-- !private ["Ps7CVarArg", "NSLog"]
-- !private ["Ps7CVarArg", "ReadingOptions"]
-- ["Ps7CVarArg", "RestApiManager"]
-- !private ["Ps7CVarArg", "UIAlertView"]
-- !private ["Ps7CVarArg", "URL"]
-- !private ["Ps7CVarArg", "URLRequest"]
-- !private ["Ps7CVarArg", "URLSession"]
-- !private ["Ps7CVarArg", "UserDefaults"]
-- !private ["Ps7CVarArg", "addButton"]
-- ["Ps7CVarArg", "alertView"]
-- ["Ps7CVarArg", "alertViewCancel"]
-- ["Ps7CVarArg", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps7CVarArg", "baseURL"]
-- !private ["Ps7CVarArg", "cancelButtonIndex"]
-- !private ["Ps7CVarArg", "dataTask"]
-- !private ["Ps7CVarArg", "delegate"]
-- !private ["Ps7CVarArg", "deviceId"]
-- ["Ps7CVarArg", "didPresent"]
-- ["Ps7CVarArg", "didPresentAlertView"]
-- !private ["Ps7CVarArg", "getResponse"]
-- ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "jsonObject"]
-- !private ["Ps7CVarArg", "makeHTTPGetRequest"]
-- !private ["Ps7CVarArg", "message"]
-- !private ["Ps7CVarArg", "print"]
-- !private ["Ps7CVarArg", "resume"]
-- !private ["Ps7CVarArg", "running"]
-- ["Ps7CVarArg", "serverURL"]
-- !private ["Ps7CVarArg", "shared"]
-- !private ["Ps7CVarArg", "sharedCustomSession"]
-- !private ["Ps7CVarArg", "show"]
-- !private ["Ps7CVarArg", "standard"]
-- !private ["Ps7CVarArg", "statusCode"]
-- !private ["Ps7CVarArg", "title"]
-- !private ["Ps7CVarArg", "value"]
-- ["Ps7CVarArg", "willPresent"]
-- ["Ps7CVarArg", "willPresentAlertView"]
-- ["Ps7CVarArg", ""]
-- !private ["OCSo12NSURLRequest11CachePolicy", "useProtocolCachePolicy"]
-- !private ["Ps10Collection", "init"]
-- ["Ps10Comparable", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "GeneralRequestManager"]
-- !private ["Ps28CustomDebugStringConvertible", "JSON"]
-- !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
-- !private ["Ps28CustomDebugStringConvertible", "NSError"]
-- !private ["Ps28CustomDebugStringConvertible", "NSLocalizedDescriptionKey"]
-- !private ["Ps28CustomDebugStringConvertible", "NSLog"]
-- !private ["Ps28CustomDebugStringConvertible", "ReadingOptions"]
-- ["Ps28CustomDebugStringConvertible", "RestApiManager"]
-- !private ["Ps28CustomDebugStringConvertible", "UIAlertView"]
-- !private ["Ps28CustomDebugStringConvertible", "URL"]
-- !private ["Ps28CustomDebugStringConvertible", "URLRequest"]
-- !private ["Ps28CustomDebugStringConvertible", "URLSession"]
-- !private ["Ps28CustomDebugStringConvertible", "UserDefaults"]
-- !private ["Ps28CustomDebugStringConvertible", "addButton"]
-- ["Ps28CustomDebugStringConvertible", "alertView"]
-- ["Ps28CustomDebugStringConvertible", "alertViewCancel"]
-- ["Ps28CustomDebugStringConvertible", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps28CustomDebugStringConvertible", "baseURL"]
-- !private ["Ps28CustomDebugStringConvertible", "cancelButtonIndex"]
-- !private ["Ps28CustomDebugStringConvertible", "dataTask"]
-- !private ["Ps28CustomDebugStringConvertible", "delegate"]
-- !private ["Ps28CustomDebugStringConvertible", "deviceId"]
-- ["Ps28CustomDebugStringConvertible", "didPresent"]
-- ["Ps28CustomDebugStringConvertible", "didPresentAlertView"]
-- !private ["Ps28CustomDebugStringConvertible", "getResponse"]
-- !private ["Ps28CustomDebugStringConvertible", "httpBody"]
-- !private ["Ps28CustomDebugStringConvertible", "httpMethod"]
-- ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "jsonObject"]
-- !private ["Ps28CustomDebugStringConvertible", "makeHTTPGetRequest"]
-- !private ["Ps28CustomDebugStringConvertible", "message"]
-- !private ["Ps28CustomDebugStringConvertible", "print"]
-- !private ["Ps28CustomDebugStringConvertible", "requestWithURL"]
-- !private ["Ps28CustomDebugStringConvertible", "resume"]
-- !private ["Ps28CustomDebugStringConvertible", "running"]
-- ["Ps28CustomDebugStringConvertible", "serverURL"]
-- !private ["Ps28CustomDebugStringConvertible", "shared"]
-- !private ["Ps28CustomDebugStringConvertible", "sharedCustomSession"]
-- !private ["Ps28CustomDebugStringConvertible", "show"]
-- !private ["Ps28CustomDebugStringConvertible", "standard"]
-- !private ["Ps28CustomDebugStringConvertible", "statusCode"]
-- !private ["Ps28CustomDebugStringConvertible", "title"]
-- !private ["Ps28CustomDebugStringConvertible", "useProtocolCachePolicy"]
-- !private ["Ps28CustomDebugStringConvertible", "value"]
-- ["Ps28CustomDebugStringConvertible", "willPresent"]
-- ["Ps28CustomDebugStringConvertible", "willPresentAlertView"]
-- ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
-- ["Ps29CustomPlaygroundQuickLookable", "init"]
-- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
-- !private ["Ps17CustomReflectable", "httpBody"]
-- !private ["Ps17CustomReflectable", "httpMethod"]
-- ["Ps17CustomReflectable", "init"]
-- !private ["Ps17CustomReflectable", "requestWithURL"]
-- !private ["Ps17CustomReflectable", "useProtocolCachePolicy"]
-- !private ["Ps17CustomReflectable", "value"]
-- !private ["Ps23CustomStringConvertible", "GeneralRequestManager"]
-- !private ["Ps23CustomStringConvertible", "JSON"]
-- !private ["Ps23CustomStringConvertible", "JSONSerialization"]
-- !private ["Ps23CustomStringConvertible", "NSError"]
-- !private ["Ps23CustomStringConvertible", "NSLocalizedDescriptionKey"]
-- !private ["Ps23CustomStringConvertible", "NSLog"]
-- !private ["Ps23CustomStringConvertible", "ReadingOptions"]
-- ["Ps23CustomStringConvertible", "RestApiManager"]
-- !private ["Ps23CustomStringConvertible", "UIAlertView"]
-- !private ["Ps23CustomStringConvertible", "URL"]
-- !private ["Ps23CustomStringConvertible", "URLRequest"]
-- !private ["Ps23CustomStringConvertible", "URLSession"]
-- !private ["Ps23CustomStringConvertible", "UserDefaults"]
-- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps23CustomStringConvertible", "addButton"]
-- ["Ps23CustomStringConvertible", "alertView"]
-- ["Ps23CustomStringConvertible", "alertViewCancel"]
-- ["Ps23CustomStringConvertible", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps23CustomStringConvertible", "baseURL"]
-- !private ["Ps23CustomStringConvertible", "cancelButtonIndex"]
-- !private ["Ps23CustomStringConvertible", "dataTask"]
-- !private ["Ps23CustomStringConvertible", "delegate"]
-- !private ["Ps23CustomStringConvertible", "deviceId"]
-- ["Ps23CustomStringConvertible", "didPresent"]
-- ["Ps23CustomStringConvertible", "didPresentAlertView"]
-- !private ["Ps23CustomStringConvertible", "getResponse"]
-- !private ["Ps23CustomStringConvertible", "httpBody"]
-- !private ["Ps23CustomStringConvertible", "httpMethod"]
-- ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "jsonObject"]
-- !private ["Ps23CustomStringConvertible", "makeHTTPGetRequest"]
-- !private ["Ps23CustomStringConvertible", "message"]
-- !private ["Ps23CustomStringConvertible", "print"]
-- !private ["Ps23CustomStringConvertible", "requestWithURL"]
-- !private ["Ps23CustomStringConvertible", "resume"]
-- !private ["Ps23CustomStringConvertible", "running"]
-- ["Ps23CustomStringConvertible", "serverURL"]
-- !private ["Ps23CustomStringConvertible", "shared"]
-- !private ["Ps23CustomStringConvertible", "sharedCustomSession"]
-- !private ["Ps23CustomStringConvertible", "show"]
-- !private ["Ps23CustomStringConvertible", "standard"]
-- !private ["Ps23CustomStringConvertible", "statusCode"]
-- !private ["Ps23CustomStringConvertible", "title"]
-- !private ["Ps23CustomStringConvertible", "value"]
-- ["Ps23CustomStringConvertible", "willPresent"]
-- ["Ps23CustomStringConvertible", "willPresentAlertView"]
-- ["Ps23CustomStringConvertible", ""]
-- !private ["Ps9Equatable", "GeneralRequestManager"]
-- !private ["Ps9Equatable", "JSON"]
-- !private ["Ps9Equatable", "JSONSerialization"]
-- !private ["Ps9Equatable", "NSError"]
-- !private ["Ps9Equatable", "NSLocalizedDescriptionKey"]
-- !private ["Ps9Equatable", "NSLog"]
-- !private ["Ps9Equatable", "ReadingOptions"]
-- ["Ps9Equatable", "RestApiManager"]
-- !private ["Ps9Equatable", "UIAlertView"]
-- !private ["Ps9Equatable", "URL"]
-- !private ["Ps9Equatable", "URLRequest"]
-- !private ["Ps9Equatable", "URLSession"]
-- !private ["Ps9Equatable", "UserDefaults"]
-- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
-- !private ["Ps9Equatable", "addButton"]
-- ["Ps9Equatable", "alertView"]
-- ["Ps9Equatable", "alertViewCancel"]
-- ["Ps9Equatable", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps9Equatable", "baseURL"]
-- !private ["Ps9Equatable", "cancelButtonIndex"]
-- !private ["Ps9Equatable", "dataTask"]
-- !private ["Ps9Equatable", "delegate"]
-- !private ["Ps9Equatable", "deviceId"]
-- ["Ps9Equatable", "didPresent"]
-- ["Ps9Equatable", "didPresentAlertView"]
-- !private ["Ps9Equatable", "getResponse"]
-- !private ["Ps9Equatable", "httpBody"]
-- !private ["Ps9Equatable", "httpMethod"]
-- ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "jsonObject"]
-- !private ["Ps9Equatable", "makeHTTPGetRequest"]
-- !private ["Ps9Equatable", "message"]
-- !private ["Ps9Equatable", "mutableContainers"]
-- !private ["Ps9Equatable", "print"]
-- !private ["Ps9Equatable", "requestWithURL"]
-- !private ["Ps9Equatable", "resume"]
-- !private ["Ps9Equatable", "running"]
-- ["Ps9Equatable", "serverURL"]
-- !private ["Ps9Equatable", "shared"]
-- !private ["Ps9Equatable", "sharedCustomSession"]
-- !private ["Ps9Equatable", "show"]
-- !private ["Ps9Equatable", "standard"]
-- !private ["Ps9Equatable", "statusCode"]
-- !private ["Ps9Equatable", "title"]
-- !private ["Ps9Equatable", "useProtocolCachePolicy"]
-- !private ["Ps9Equatable", "value"]
-- ["Ps9Equatable", "willPresent"]
-- ["Ps9Equatable", "willPresentAlertView"]
-- ["Ps9Equatable", ""]
-- !private ["Ps5Error", "init"]
-- !private ["Ps5Error", "localizedDescription"]
-- !private ["Ps25ExpressibleByArrayLiteral", "init"]
-- !private ["Ps25ExpressibleByArrayLiteral", "mutableContainers"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "init"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "init"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "value"]
-- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps25ExpressibleByFloatLiteral", "init"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
-- !private ["Ps23ExpressibleByNilLiteral", "init"]
-- !private ["Ps23ExpressibleByNilLiteral", "useProtocolCachePolicy"]
-- ["Ps26ExpressibleByStringLiteral", "init"]
-- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- !private ["C16SwiftLoginScreen21GeneralRequestManager", "getResponse"]
-- !private ["C16SwiftLoginScreen21GeneralRequestManager", "init"]
-- !private ["CSo15HTTPURLResponse", "statusCode"]
-- !private ["Ps8Hashable", "GeneralRequestManager"]
-- !private ["Ps8Hashable", "JSON"]
-- !private ["Ps8Hashable", "JSONSerialization"]
-- !private ["Ps8Hashable", "NSError"]
-- !private ["Ps8Hashable", "NSLocalizedDescriptionKey"]
-- !private ["Ps8Hashable", "NSLog"]
-- !private ["Ps8Hashable", "ReadingOptions"]
-- ["Ps8Hashable", "RestApiManager"]
-- !private ["Ps8Hashable", "UIAlertView"]
-- !private ["Ps8Hashable", "URL"]
-- !private ["Ps8Hashable", "URLRequest"]
-- !private ["Ps8Hashable", "URLSession"]
-- !private ["Ps8Hashable", "UserDefaults"]
-- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps8Hashable", "addButton"]
-- ["Ps8Hashable", "alertView"]
-- ["Ps8Hashable", "alertViewCancel"]
-- ["Ps8Hashable", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps8Hashable", "baseURL"]
-- !private ["Ps8Hashable", "cancelButtonIndex"]
-- !private ["Ps8Hashable", "dataTask"]
-- !private ["Ps8Hashable", "delegate"]
-- !private ["Ps8Hashable", "deviceId"]
-- ["Ps8Hashable", "didPresent"]
-- ["Ps8Hashable", "didPresentAlertView"]
-- !private ["Ps8Hashable", "getResponse"]
-- !private ["Ps8Hashable", "httpBody"]
-- !private ["Ps8Hashable", "httpMethod"]
-- ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "jsonObject"]
-- !private ["Ps8Hashable", "makeHTTPGetRequest"]
-- !private ["Ps8Hashable", "message"]
-- !private ["Ps8Hashable", "print"]
-- !private ["Ps8Hashable", "requestWithURL"]
-- !private ["Ps8Hashable", "resume"]
-- !private ["Ps8Hashable", "running"]
-- ["Ps8Hashable", "serverURL"]
-- !private ["Ps8Hashable", "shared"]
-- !private ["Ps8Hashable", "sharedCustomSession"]
-- !private ["Ps8Hashable", "show"]
-- !private ["Ps8Hashable", "standard"]
-- !private ["Ps8Hashable", "statusCode"]
-- !private ["Ps8Hashable", "title"]
-- !private ["Ps8Hashable", "useProtocolCachePolicy"]
-- !private ["Ps8Hashable", "value"]
-- ["Ps8Hashable", "willPresent"]
-- ["Ps8Hashable", "willPresentAlertView"]
-- ["Ps8Hashable", ""]
-- !private ["V10SwiftyJSON4JSON", "init"]
-- !private ["CSo17JSONSerialization", "ReadingOptions"]
-- !private ["CSo17JSONSerialization", "jsonObject"]
-- ["P10SwiftyJSON17JSONSubscriptType", "init"]
-- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
-- ["Ps25LosslessStringConvertible", "init"]
-- ["Ps10MirrorPath", "init"]
-- !private ["PSo8NSCoding", "addButton"]
-- !private ["PSo8NSCoding", "cancelButtonIndex"]
-- !private ["PSo8NSCoding", "delegate"]
-- ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "message"]
-- !private ["PSo8NSCoding", "show"]
-- !private ["PSo8NSCoding", "statusCode"]
-- !private ["PSo8NSCoding", "title"]
-- !private ["PSo8NSCoding", "value"]
-- ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "resume"]
-- !private ["PSo9NSCopying", "statusCode"]
-- !private ["PSo9NSCopying", "value"]
-- !private ["CSo12NSDictionary", "value"]
-- !private ["CSo7NSError", "init"]
-- !private ["PSo17NSFastEnumeration", "value"]
-- !private ["PSo20NSFetchRequestResult", "value"]
-- ["PSo16NSMutableCopying", "init"]
-- !private ["PSo16NSMutableCopying", "value"]
-- ["CSo8NSObject", "AnyObject"]
-- !private ["CSo8NSObject", "Data"]
-- !private ["CSo8NSObject", "GeneralRequestManager"]
-- !private ["CSo8NSObject", "HTTPURLResponse"]
-- ["CSo8NSObject", "Int"]
-- ["CSo8NSObject", "JSON"]
-- !private ["CSo8NSObject", "JSONSerialization"]
-- !private ["CSo8NSObject", "NSDictionary"]
-- ["CSo8NSObject", "NSError"]
-- !private ["CSo8NSObject", "NSLocalizedDescriptionKey"]
-- !private ["CSo8NSObject", "NSLog"]
-- !private ["CSo8NSObject", "NSString"]
-- !private ["CSo8NSObject", "ReadingOptions"]
-- ["CSo8NSObject", "RestApiManager"]
-- ["CSo8NSObject", "ServiceResponse"]
-- ["CSo8NSObject", "String"]
-- ["CSo8NSObject", "UIAlertView"]
-- !private ["CSo8NSObject", "URL"]
-- !private ["CSo8NSObject", "URLRequest"]
-- !private ["CSo8NSObject", "URLSession"]
-- !private ["CSo8NSObject", "UserDefaults"]
-- ["CSo8NSObject", "Void"]
-- !private ["CSo8NSObject", "addButton"]
-- ["CSo8NSObject", "alertView"]
-- ["CSo8NSObject", "alertViewCancel"]
-- ["CSo8NSObject", "alertViewShouldEnableFirstOtherButton"]
-- ["CSo8NSObject", "baseURL"]
-- !private ["CSo8NSObject", "cancelButtonIndex"]
-- !private ["CSo8NSObject", "dataTask"]
-- !private ["CSo8NSObject", "delegate"]
-- !private ["CSo8NSObject", "deviceId"]
-- ["CSo8NSObject", "didPresent"]
-- ["CSo8NSObject", "didPresentAlertView"]
-- ["CSo8NSObject", "getRandomUser"]
-- !private ["CSo8NSObject", "getResponse"]
-- ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "jsonObject"]
-- ["CSo8NSObject", "makeHTTPGetRequest"]
-- ["CSo8NSObject", "makeHTTPPostRequest"]
-- !private ["CSo8NSObject", "message"]
-- !private ["CSo8NSObject", "print"]
-- !private ["CSo8NSObject", "resume"]
-- ["CSo8NSObject", "running"]
-- ["CSo8NSObject", "serverURL"]
-- !private ["CSo8NSObject", "shared"]
-- !private ["CSo8NSObject", "sharedCustomSession"]
-- ["CSo8NSObject", "sharedInstance"]
-- !private ["CSo8NSObject", "show"]
-- !private ["CSo8NSObject", "standard"]
-- !private ["CSo8NSObject", "statusCode"]
-- !private ["CSo8NSObject", "title"]
-- !private ["CSo8NSObject", "value"]
-- ["CSo8NSObject", "willPresent"]
-- ["CSo8NSObject", "willPresentAlertView"]
-- ["CSo8NSObject", ""]
-- !private ["PSo16NSObjectProtocol", "GeneralRequestManager"]
-- !private ["PSo16NSObjectProtocol", "JSON"]
-- !private ["PSo16NSObjectProtocol", "JSONSerialization"]
-- !private ["PSo16NSObjectProtocol", "NSError"]
-- !private ["PSo16NSObjectProtocol", "NSLocalizedDescriptionKey"]
-- !private ["PSo16NSObjectProtocol", "NSLog"]
-- !private ["PSo16NSObjectProtocol", "ReadingOptions"]
-- ["PSo16NSObjectProtocol", "RestApiManager"]
-- !private ["PSo16NSObjectProtocol", "UIAlertView"]
-- !private ["PSo16NSObjectProtocol", "URL"]
-- !private ["PSo16NSObjectProtocol", "URLRequest"]
-- !private ["PSo16NSObjectProtocol", "URLSession"]
-- !private ["PSo16NSObjectProtocol", "UserDefaults"]
-- !private ["PSo16NSObjectProtocol", "addButton"]
-- ["PSo16NSObjectProtocol", "alertView"]
-- ["PSo16NSObjectProtocol", "alertViewCancel"]
-- ["PSo16NSObjectProtocol", "alertViewShouldEnableFirstOtherButton"]
-- !private ["PSo16NSObjectProtocol", "baseURL"]
-- !private ["PSo16NSObjectProtocol", "cancelButtonIndex"]
-- !private ["PSo16NSObjectProtocol", "dataTask"]
-- !private ["PSo16NSObjectProtocol", "delegate"]
-- !private ["PSo16NSObjectProtocol", "deviceId"]
-- ["PSo16NSObjectProtocol", "didPresent"]
-- ["PSo16NSObjectProtocol", "didPresentAlertView"]
-- !private ["PSo16NSObjectProtocol", "getResponse"]
-- ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "jsonObject"]
-- !private ["PSo16NSObjectProtocol", "makeHTTPGetRequest"]
-- !private ["PSo16NSObjectProtocol", "message"]
-- !private ["PSo16NSObjectProtocol", "print"]
-- !private ["PSo16NSObjectProtocol", "resume"]
-- !private ["PSo16NSObjectProtocol", "running"]
-- ["PSo16NSObjectProtocol", "serverURL"]
-- !private ["PSo16NSObjectProtocol", "shared"]
-- !private ["PSo16NSObjectProtocol", "sharedCustomSession"]
-- !private ["PSo16NSObjectProtocol", "show"]
-- !private ["PSo16NSObjectProtocol", "standard"]
-- !private ["PSo16NSObjectProtocol", "statusCode"]
-- !private ["PSo16NSObjectProtocol", "title"]
-- !private ["PSo16NSObjectProtocol", "value"]
-- ["PSo16NSObjectProtocol", "willPresent"]
-- ["PSo16NSObjectProtocol", "willPresentAlertView"]
-- ["PSo16NSObjectProtocol", ""]
-- ["PSo14NSSecureCoding", "init"]
-- !private ["PSo14NSSecureCoding", "statusCode"]
-- !private ["PSo14NSSecureCoding", "value"]
-- ["CSo8NSString", "init"]
-- !private ["Ps9OptionSet", "mutableContainers"]
+- !private ["So15CALayerDelegateP", "addButton"]
+- !private ["So15CALayerDelegateP", "cancelButtonIndex"]
+- !private ["So15CALayerDelegateP", "delegate"]
+- !private ["So15CALayerDelegateP", "init"]
+- !private ["So15CALayerDelegateP", "message"]
+- !private ["So15CALayerDelegateP", "show"]
+- !private ["So15CALayerDelegateP", "title"]
+- ["So15CNKeyDescriptorP", "init"]
+- !private ["s7CVarArgP", "Encoding"]
+- !private ["s7CVarArgP", "GeneralRequestManager"]
+- !private ["s7CVarArgP", "JSON"]
+- !private ["s7CVarArgP", "JSONSerialization"]
+- !private ["s7CVarArgP", "Kanna"]
+- !private ["s7CVarArgP", "NSError"]
+- !private ["s7CVarArgP", "NSLocalizedDescriptionKey"]
+- !private ["s7CVarArgP", "NSLog"]
+- !private ["s7CVarArgP", "NSString"]
+- !private ["s7CVarArgP", "ReadingOptions"]
+- ["s7CVarArgP", "RestApiManager"]
+- !private ["s7CVarArgP", "String"]
+- !private ["s7CVarArgP", "UIAlertController"]
+- !private ["s7CVarArgP", "UIAlertView"]
+- !private ["s7CVarArgP", "URL"]
+- !private ["s7CVarArgP", "URLRequest"]
+- !private ["s7CVarArgP", "URLSession"]
+- !private ["s7CVarArgP", "UserDefaults"]
+- !private ["s7CVarArgP", "addButton"]
+- ["s7CVarArgP", "alertView"]
+- ["s7CVarArgP", "alertViewCancel"]
+- ["s7CVarArgP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["s7CVarArgP", "baseURL"]
+- !private ["s7CVarArgP", "cancelButtonIndex"]
+- !private ["s7CVarArgP", "dataTask"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "deviceId"]
+- ["s7CVarArgP", "didPresent"]
+- ["s7CVarArgP", "didPresentAlertView"]
+- !private ["s7CVarArgP", "getResponse"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "jsonObject"]
+- !private ["s7CVarArgP", "makeHTTPGetRequest"]
+- !private ["s7CVarArgP", "message"]
+- !private ["s7CVarArgP", "popUp"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "resume"]
+- !private ["s7CVarArgP", "running"]
+- ["s7CVarArgP", "serverURL"]
+- !private ["s7CVarArgP", "set"]
+- !private ["s7CVarArgP", "sharedCustomSession"]
+- !private ["s7CVarArgP", "show"]
+- !private ["s7CVarArgP", "standard"]
+- !private ["s7CVarArgP", "statusCode"]
+- !private ["s7CVarArgP", "title"]
+- !private ["s7CVarArgP", "value"]
+- ["s7CVarArgP", "willPresent"]
+- ["s7CVarArgP", "willPresentAlertView"]
+- ["s7CVarArgP", ""]
+- !private ["So12NSURLRequestC11CachePolicyO", "useProtocolCachePolicy"]
+- !private ["s10CollectionP", "Encoding"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "object"]
+- !private ["s10CollectionP", "rawString"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10ComparableP", "Encoding"]
+- ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "object"]
+- !private ["s10ComparableP", "rawString"]
+- !private ["s10ComparableP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- !private ["s28CustomDebugStringConvertibleP", "GeneralRequestManager"]
+- !private ["s28CustomDebugStringConvertibleP", "JSON"]
+- !private ["s28CustomDebugStringConvertibleP", "JSONSerialization"]
+- !private ["s28CustomDebugStringConvertibleP", "Kanna"]
+- !private ["s28CustomDebugStringConvertibleP", "NSError"]
+- !private ["s28CustomDebugStringConvertibleP", "NSLocalizedDescriptionKey"]
+- !private ["s28CustomDebugStringConvertibleP", "NSLog"]
+- !private ["s28CustomDebugStringConvertibleP", "NSString"]
+- !private ["s28CustomDebugStringConvertibleP", "ReadingOptions"]
+- ["s28CustomDebugStringConvertibleP", "RestApiManager"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
+- !private ["s28CustomDebugStringConvertibleP", "UIAlertController"]
+- !private ["s28CustomDebugStringConvertibleP", "UIAlertView"]
+- !private ["s28CustomDebugStringConvertibleP", "URL"]
+- !private ["s28CustomDebugStringConvertibleP", "URLRequest"]
+- !private ["s28CustomDebugStringConvertibleP", "URLSession"]
+- !private ["s28CustomDebugStringConvertibleP", "UserDefaults"]
+- !private ["s28CustomDebugStringConvertibleP", "addButton"]
+- ["s28CustomDebugStringConvertibleP", "alertView"]
+- ["s28CustomDebugStringConvertibleP", "alertViewCancel"]
+- ["s28CustomDebugStringConvertibleP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["s28CustomDebugStringConvertibleP", "baseURL"]
+- !private ["s28CustomDebugStringConvertibleP", "cancelButtonIndex"]
+- !private ["s28CustomDebugStringConvertibleP", "dataTask"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "deviceId"]
+- ["s28CustomDebugStringConvertibleP", "didPresent"]
+- ["s28CustomDebugStringConvertibleP", "didPresentAlertView"]
+- !private ["s28CustomDebugStringConvertibleP", "getResponse"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonObject"]
+- !private ["s28CustomDebugStringConvertibleP", "makeHTTPGetRequest"]
+- !private ["s28CustomDebugStringConvertibleP", "message"]
+- !private ["s28CustomDebugStringConvertibleP", "object"]
+- !private ["s28CustomDebugStringConvertibleP", "popUp"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "rawString"]
+- !private ["s28CustomDebugStringConvertibleP", "requestWithURL"]
+- !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s28CustomDebugStringConvertibleP", "running"]
+- ["s28CustomDebugStringConvertibleP", "serverURL"]
+- !private ["s28CustomDebugStringConvertibleP", "set"]
+- !private ["s28CustomDebugStringConvertibleP", "sharedCustomSession"]
+- !private ["s28CustomDebugStringConvertibleP", "show"]
+- !private ["s28CustomDebugStringConvertibleP", "standard"]
+- !private ["s28CustomDebugStringConvertibleP", "statusCode"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "title"]
+- !private ["s28CustomDebugStringConvertibleP", "useProtocolCachePolicy"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
+- ["s28CustomDebugStringConvertibleP", "willPresent"]
+- ["s28CustomDebugStringConvertibleP", "willPresentAlertView"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "Encoding"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "Encoding"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "requestWithURL"]
+- !private ["s17CustomReflectableP", "useProtocolCachePolicy"]
+- !private ["s17CustomReflectableP", "value"]
+- !private ["s23CustomStringConvertibleP", "Encoding"]
+- !private ["s23CustomStringConvertibleP", "GeneralRequestManager"]
+- !private ["s23CustomStringConvertibleP", "JSON"]
+- !private ["s23CustomStringConvertibleP", "JSONSerialization"]
+- !private ["s23CustomStringConvertibleP", "Kanna"]
+- !private ["s23CustomStringConvertibleP", "NSError"]
+- !private ["s23CustomStringConvertibleP", "NSLocalizedDescriptionKey"]
+- !private ["s23CustomStringConvertibleP", "NSLog"]
+- !private ["s23CustomStringConvertibleP", "NSString"]
+- !private ["s23CustomStringConvertibleP", "ReadingOptions"]
+- ["s23CustomStringConvertibleP", "RestApiManager"]
+- !private ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "UIAlertController"]
+- !private ["s23CustomStringConvertibleP", "UIAlertView"]
+- !private ["s23CustomStringConvertibleP", "URL"]
+- !private ["s23CustomStringConvertibleP", "URLRequest"]
+- !private ["s23CustomStringConvertibleP", "URLSession"]
+- !private ["s23CustomStringConvertibleP", "UserDefaults"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "addButton"]
+- ["s23CustomStringConvertibleP", "alertView"]
+- ["s23CustomStringConvertibleP", "alertViewCancel"]
+- ["s23CustomStringConvertibleP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["s23CustomStringConvertibleP", "ascii"]
+- !private ["s23CustomStringConvertibleP", "baseURL"]
+- !private ["s23CustomStringConvertibleP", "cancelButtonIndex"]
+- !private ["s23CustomStringConvertibleP", "dataTask"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "deviceId"]
+- ["s23CustomStringConvertibleP", "didPresent"]
+- ["s23CustomStringConvertibleP", "didPresentAlertView"]
+- !private ["s23CustomStringConvertibleP", "getResponse"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "jsonObject"]
+- !private ["s23CustomStringConvertibleP", "makeHTTPGetRequest"]
+- !private ["s23CustomStringConvertibleP", "message"]
+- !private ["s23CustomStringConvertibleP", "object"]
+- !private ["s23CustomStringConvertibleP", "popUp"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "rawString"]
+- !private ["s23CustomStringConvertibleP", "rawValue"]
+- !private ["s23CustomStringConvertibleP", "requestWithURL"]
+- !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["s23CustomStringConvertibleP", "running"]
+- ["s23CustomStringConvertibleP", "serverURL"]
+- !private ["s23CustomStringConvertibleP", "set"]
+- !private ["s23CustomStringConvertibleP", "sharedCustomSession"]
+- !private ["s23CustomStringConvertibleP", "show"]
+- !private ["s23CustomStringConvertibleP", "standard"]
+- !private ["s23CustomStringConvertibleP", "statusCode"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "title"]
+- !private ["s23CustomStringConvertibleP", "value"]
+- ["s23CustomStringConvertibleP", "willPresent"]
+- ["s23CustomStringConvertibleP", "willPresentAlertView"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "Encoding"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "useProtocolCachePolicy"]
+- !private ["s9EncodableP", "Encoding"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "useProtocolCachePolicy"]
+- !private ["SS10FoundationE8EncodingV", "ascii"]
+- !private ["SS10FoundationE8EncodingV", "rawValue"]
+- !private ["s9EquatableP", "Encoding"]
+- !private ["s9EquatableP", "GeneralRequestManager"]
+- !private ["s9EquatableP", "JSON"]
+- !private ["s9EquatableP", "JSONSerialization"]
+- !private ["s9EquatableP", "Kanna"]
+- !private ["s9EquatableP", "NSError"]
+- !private ["s9EquatableP", "NSLocalizedDescriptionKey"]
+- !private ["s9EquatableP", "NSLog"]
+- !private ["s9EquatableP", "NSString"]
+- !private ["s9EquatableP", "ReadingOptions"]
+- ["s9EquatableP", "RestApiManager"]
+- !private ["s9EquatableP", "String"]
+- !private ["s9EquatableP", "UIAlertController"]
+- !private ["s9EquatableP", "UIAlertView"]
+- !private ["s9EquatableP", "URL"]
+- !private ["s9EquatableP", "URLRequest"]
+- !private ["s9EquatableP", "URLSession"]
+- !private ["s9EquatableP", "UserDefaults"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "addButton"]
+- ["s9EquatableP", "alertView"]
+- ["s9EquatableP", "alertViewCancel"]
+- ["s9EquatableP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["s9EquatableP", "ascii"]
+- !private ["s9EquatableP", "baseURL"]
+- !private ["s9EquatableP", "cancelButtonIndex"]
+- !private ["s9EquatableP", "dataTask"]
+- !private ["s9EquatableP", "delegate"]
+- !private ["s9EquatableP", "deviceId"]
+- ["s9EquatableP", "didPresent"]
+- ["s9EquatableP", "didPresentAlertView"]
+- !private ["s9EquatableP", "getResponse"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "jsonObject"]
+- !private ["s9EquatableP", "makeHTTPGetRequest"]
+- !private ["s9EquatableP", "message"]
+- !private ["s9EquatableP", "mutableContainers"]
+- !private ["s9EquatableP", "object"]
+- !private ["s9EquatableP", "popUp"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "rawString"]
+- !private ["s9EquatableP", "rawValue"]
+- !private ["s9EquatableP", "requestWithURL"]
+- !private ["s9EquatableP", "resume"]
+- !private ["s9EquatableP", "running"]
+- ["s9EquatableP", "serverURL"]
+- !private ["s9EquatableP", "set"]
+- !private ["s9EquatableP", "sharedCustomSession"]
+- !private ["s9EquatableP", "show"]
+- !private ["s9EquatableP", "standard"]
+- !private ["s9EquatableP", "statusCode"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "title"]
+- !private ["s9EquatableP", "useProtocolCachePolicy"]
+- !private ["s9EquatableP", "value"]
+- ["s9EquatableP", "willPresent"]
+- ["s9EquatableP", "willPresentAlertView"]
+- ["s9EquatableP", ""]
+- !private ["s5ErrorP", "init"]
+- !private ["s5ErrorP", "localizedDescription"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "mutableContainers"]
+- !private ["s25ExpressibleByArrayLiteralP", "object"]
+- !private ["s25ExpressibleByArrayLiteralP", "rawString"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s27ExpressibleByBooleanLiteralP", "init"]
+- !private ["s27ExpressibleByBooleanLiteralP", "object"]
+- !private ["s27ExpressibleByBooleanLiteralP", "rawString"]
+- !private ["s27ExpressibleByBooleanLiteralP", "subscript"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "object"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "rawString"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "value"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "object"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "rawString"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "subscript"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "object"]
+- !private ["s25ExpressibleByFloatLiteralP", "rawString"]
+- !private ["s25ExpressibleByFloatLiteralP", "subscript"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "object"]
+- !private ["s27ExpressibleByIntegerLiteralP", "rawString"]
+- !private ["s27ExpressibleByIntegerLiteralP", "subscript"]
+- !private ["s23ExpressibleByNilLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "object"]
+- !private ["s23ExpressibleByNilLiteralP", "rawString"]
+- !private ["s23ExpressibleByNilLiteralP", "subscript"]
+- !private ["s23ExpressibleByNilLiteralP", "useProtocolCachePolicy"]
+- !private ["s26ExpressibleByStringLiteralP", "Encoding"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "object"]
+- !private ["s26ExpressibleByStringLiteralP", "rawString"]
+- !private ["s26ExpressibleByStringLiteralP", "subscript"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Encoding"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "object"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "rawString"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "subscript"]
+- !private ["16SwiftLoginScreen21GeneralRequestManagerC", "getResponse"]
+- !private ["16SwiftLoginScreen21GeneralRequestManagerC", "init"]
+- !private ["5Kanna12HTMLDocumentP", "title"]
+- !private ["So15HTTPURLResponseC", "statusCode"]
+- !private ["s8HashableP", "Encoding"]
+- !private ["s8HashableP", "GeneralRequestManager"]
+- !private ["s8HashableP", "JSON"]
+- !private ["s8HashableP", "JSONSerialization"]
+- !private ["s8HashableP", "Kanna"]
+- !private ["s8HashableP", "NSError"]
+- !private ["s8HashableP", "NSLocalizedDescriptionKey"]
+- !private ["s8HashableP", "NSLog"]
+- !private ["s8HashableP", "NSString"]
+- !private ["s8HashableP", "ReadingOptions"]
+- ["s8HashableP", "RestApiManager"]
+- !private ["s8HashableP", "String"]
+- !private ["s8HashableP", "UIAlertController"]
+- !private ["s8HashableP", "UIAlertView"]
+- !private ["s8HashableP", "URL"]
+- !private ["s8HashableP", "URLRequest"]
+- !private ["s8HashableP", "URLSession"]
+- !private ["s8HashableP", "UserDefaults"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "addButton"]
+- ["s8HashableP", "alertView"]
+- ["s8HashableP", "alertViewCancel"]
+- ["s8HashableP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["s8HashableP", "ascii"]
+- !private ["s8HashableP", "baseURL"]
+- !private ["s8HashableP", "cancelButtonIndex"]
+- !private ["s8HashableP", "dataTask"]
+- !private ["s8HashableP", "delegate"]
+- !private ["s8HashableP", "deviceId"]
+- ["s8HashableP", "didPresent"]
+- ["s8HashableP", "didPresentAlertView"]
+- !private ["s8HashableP", "getResponse"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "jsonObject"]
+- !private ["s8HashableP", "makeHTTPGetRequest"]
+- !private ["s8HashableP", "message"]
+- !private ["s8HashableP", "popUp"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "rawValue"]
+- !private ["s8HashableP", "requestWithURL"]
+- !private ["s8HashableP", "resume"]
+- !private ["s8HashableP", "running"]
+- ["s8HashableP", "serverURL"]
+- !private ["s8HashableP", "set"]
+- !private ["s8HashableP", "sharedCustomSession"]
+- !private ["s8HashableP", "show"]
+- !private ["s8HashableP", "standard"]
+- !private ["s8HashableP", "statusCode"]
+- !private ["s8HashableP", "title"]
+- !private ["s8HashableP", "useProtocolCachePolicy"]
+- !private ["s8HashableP", "value"]
+- ["s8HashableP", "willPresent"]
+- ["s8HashableP", "willPresentAlertView"]
+- ["s8HashableP", ""]
+- !private ["10SwiftyJSON0B0V", "init"]
+- !private ["10SwiftyJSON0B0V", "object"]
+- !private ["10SwiftyJSON0B0V", "rawString"]
+- !private ["10SwiftyJSON0B0V", "subscript"]
+- !private ["So17JSONSerializationC", "ReadingOptions"]
+- !private ["So17JSONSerializationC", "jsonObject"]
+- !private ["10SwiftyJSON17JSONSubscriptTypeP", "Encoding"]
+- ["10SwiftyJSON17JSONSubscriptTypeP", "init"]
+- !private ["s25LosslessStringConvertibleP", "Encoding"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "Encoding"]
+- ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "addButton"]
+- !private ["So8NSCodingP", "cancelButtonIndex"]
+- !private ["So8NSCodingP", "delegate"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "message"]
+- !private ["So8NSCodingP", "popUp"]
+- !private ["So8NSCodingP", "show"]
+- !private ["So8NSCodingP", "statusCode"]
+- !private ["So8NSCodingP", "title"]
+- !private ["So8NSCodingP", "value"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "resume"]
+- !private ["So9NSCopyingP", "statusCode"]
+- !private ["So9NSCopyingP", "value"]
+- !private ["So12NSDictionaryC", "value"]
+- !private ["So7NSErrorC", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "popUp"]
+- !private ["So17NSFastEnumerationP", "value"]
+- !private ["So20NSFetchRequestResultP", "value"]
+- ["So21NSItemProviderReadingP", "init"]
+- ["So21NSItemProviderWritingP", "init"]
+- ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "value"]
+- !private ["So8NSObjectC", "AnyObject"]
+- !private ["So8NSObjectC", "GeneralRequestManager"]
+- !private ["So8NSObjectC", "HTTPURLResponse"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "JSON"]
+- !private ["So8NSObjectC", "JSONSerialization"]
+- !private ["So8NSObjectC", "Kanna"]
+- !private ["So8NSObjectC", "NSDictionary"]
+- ["So8NSObjectC", "NSError"]
+- !private ["So8NSObjectC", "NSLocalizedDescriptionKey"]
+- !private ["So8NSObjectC", "NSLog"]
+- !private ["So8NSObjectC", "NSString"]
+- !private ["So8NSObjectC", "ReadingOptions"]
+- ["So8NSObjectC", "RestApiManager"]
+- ["So8NSObjectC", "ServiceResponse"]
+- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "UIAlertController"]
+- ["So8NSObjectC", "UIAlertView"]
+- !private ["So8NSObjectC", "URL"]
+- !private ["So8NSObjectC", "URLRequest"]
+- !private ["So8NSObjectC", "URLSession"]
+- !private ["So8NSObjectC", "UserDefaults"]
+- ["So8NSObjectC", "Void"]
+- !private ["So8NSObjectC", "addButton"]
+- ["So8NSObjectC", "alertView"]
+- ["So8NSObjectC", "alertViewCancel"]
+- ["So8NSObjectC", "alertViewShouldEnableFirstOtherButton"]
+- ["So8NSObjectC", "baseURL"]
+- !private ["So8NSObjectC", "cancelButtonIndex"]
+- !private ["So8NSObjectC", "dataTask"]
+- !private ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "deviceId"]
+- ["So8NSObjectC", "didPresent"]
+- ["So8NSObjectC", "didPresentAlertView"]
+- ["So8NSObjectC", "getRandomUser"]
+- !private ["So8NSObjectC", "getResponse"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "jsonObject"]
+- ["So8NSObjectC", "makeHTTPGetRequest"]
+- !private ["So8NSObjectC", "message"]
+- !private ["So8NSObjectC", "popUp"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "resume"]
+- ["So8NSObjectC", "running"]
+- ["So8NSObjectC", "serverURL"]
+- !private ["So8NSObjectC", "set"]
+- !private ["So8NSObjectC", "sharedCustomSession"]
+- ["So8NSObjectC", "sharedInstance"]
+- !private ["So8NSObjectC", "show"]
+- !private ["So8NSObjectC", "standard"]
+- !private ["So8NSObjectC", "statusCode"]
+- !private ["So8NSObjectC", "title"]
+- !private ["So8NSObjectC", "value"]
+- ["So8NSObjectC", "willPresent"]
+- ["So8NSObjectC", "willPresentAlertView"]
+- ["So8NSObjectC", ""]
+- !private ["So16NSObjectProtocolP", "GeneralRequestManager"]
+- !private ["So16NSObjectProtocolP", "JSON"]
+- !private ["So16NSObjectProtocolP", "JSONSerialization"]
+- !private ["So16NSObjectProtocolP", "Kanna"]
+- !private ["So16NSObjectProtocolP", "NSError"]
+- !private ["So16NSObjectProtocolP", "NSLocalizedDescriptionKey"]
+- !private ["So16NSObjectProtocolP", "NSLog"]
+- !private ["So16NSObjectProtocolP", "NSString"]
+- !private ["So16NSObjectProtocolP", "ReadingOptions"]
+- ["So16NSObjectProtocolP", "RestApiManager"]
+- !private ["So16NSObjectProtocolP", "String"]
+- !private ["So16NSObjectProtocolP", "UIAlertController"]
+- !private ["So16NSObjectProtocolP", "UIAlertView"]
+- !private ["So16NSObjectProtocolP", "URL"]
+- !private ["So16NSObjectProtocolP", "URLRequest"]
+- !private ["So16NSObjectProtocolP", "URLSession"]
+- !private ["So16NSObjectProtocolP", "UserDefaults"]
+- !private ["So16NSObjectProtocolP", "addButton"]
+- ["So16NSObjectProtocolP", "alertView"]
+- ["So16NSObjectProtocolP", "alertViewCancel"]
+- ["So16NSObjectProtocolP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["So16NSObjectProtocolP", "baseURL"]
+- !private ["So16NSObjectProtocolP", "cancelButtonIndex"]
+- !private ["So16NSObjectProtocolP", "dataTask"]
+- !private ["So16NSObjectProtocolP", "delegate"]
+- !private ["So16NSObjectProtocolP", "deviceId"]
+- ["So16NSObjectProtocolP", "didPresent"]
+- ["So16NSObjectProtocolP", "didPresentAlertView"]
+- !private ["So16NSObjectProtocolP", "getResponse"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "jsonObject"]
+- !private ["So16NSObjectProtocolP", "makeHTTPGetRequest"]
+- !private ["So16NSObjectProtocolP", "message"]
+- !private ["So16NSObjectProtocolP", "popUp"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "resume"]
+- !private ["So16NSObjectProtocolP", "running"]
+- ["So16NSObjectProtocolP", "serverURL"]
+- !private ["So16NSObjectProtocolP", "set"]
+- !private ["So16NSObjectProtocolP", "sharedCustomSession"]
+- !private ["So16NSObjectProtocolP", "show"]
+- !private ["So16NSObjectProtocolP", "standard"]
+- !private ["So16NSObjectProtocolP", "statusCode"]
+- !private ["So16NSObjectProtocolP", "title"]
+- !private ["So16NSObjectProtocolP", "value"]
+- ["So16NSObjectProtocolP", "willPresent"]
+- ["So16NSObjectProtocolP", "willPresentAlertView"]
+- ["So16NSObjectProtocolP", ""]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "statusCode"]
+- !private ["So14NSSecureCodingP", "value"]
+- ["So8NSStringC", "init"]
+- !private ["13FacebookShare22OpenGraphPropertyValueP", "Encoding"]
+- ["13FacebookShare22OpenGraphPropertyValueP", "init"]
+- !private ["s9OptionSetP", "mutableContainers"]
 - !private ["Sq", "useProtocolCachePolicy"]
-- !private ["Ps16RawRepresentable", "init"]
-- !private ["Ps16RawRepresentable", "mutableContainers"]
-- !private ["Ps16RawRepresentable", "useProtocolCachePolicy"]
-- !private ["VCSo17JSONSerialization14ReadingOptions", "mutableContainers"]
-- !private ["P10Foundation20ReferenceConvertible", "httpBody"]
-- !private ["P10Foundation20ReferenceConvertible", "httpMethod"]
-- !private ["P10Foundation20ReferenceConvertible", "init"]
-- !private ["P10Foundation20ReferenceConvertible", "requestWithURL"]
-- ["C16SwiftLoginScreen14RestApiManager", "AnyObject"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "Data"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "GeneralRequestManager"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "HTTPURLResponse"]
-- ["C16SwiftLoginScreen14RestApiManager", "Int"]
-- ["C16SwiftLoginScreen14RestApiManager", "JSON"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "JSONSerialization"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "NSDictionary"]
-- ["C16SwiftLoginScreen14RestApiManager", "NSError"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "NSLocalizedDescriptionKey"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "NSLog"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "NSString"]
-- ["C16SwiftLoginScreen14RestApiManager", "RestApiManager"]
-- ["C16SwiftLoginScreen14RestApiManager", "ServiceResponse"]
-- ["C16SwiftLoginScreen14RestApiManager", "String"]
-- ["C16SwiftLoginScreen14RestApiManager", "UIAlertView"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "URL"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "URLRequest"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "URLSession"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "UserDefaults"]
-- ["C16SwiftLoginScreen14RestApiManager", "Void"]
-- ["C16SwiftLoginScreen14RestApiManager", "alertView"]
-- ["C16SwiftLoginScreen14RestApiManager", "alertViewCancel"]
-- ["C16SwiftLoginScreen14RestApiManager", "alertViewShouldEnableFirstOtherButton"]
-- ["C16SwiftLoginScreen14RestApiManager", "baseURL"]
-- ["C16SwiftLoginScreen14RestApiManager", "deinit"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "deviceId"]
-- ["C16SwiftLoginScreen14RestApiManager", "didPresent"]
-- ["C16SwiftLoginScreen14RestApiManager", "didPresentAlertView"]
-- ["C16SwiftLoginScreen14RestApiManager", "getRandomUser"]
-- ["C16SwiftLoginScreen14RestApiManager", "init"]
-- ["C16SwiftLoginScreen14RestApiManager", "makeHTTPGetRequest"]
-- ["C16SwiftLoginScreen14RestApiManager", "makeHTTPPostRequest"]
-- !private ["C16SwiftLoginScreen14RestApiManager", "print"]
-- ["C16SwiftLoginScreen14RestApiManager", "running"]
-- ["C16SwiftLoginScreen14RestApiManager", "serverURL"]
-- ["C16SwiftLoginScreen14RestApiManager", "sharedInstance"]
-- ["C16SwiftLoginScreen14RestApiManager", "willPresent"]
-- ["C16SwiftLoginScreen14RestApiManager", "willPresentAlertView"]
-- !private ["Ps8Sequence", "init"]
-- !private ["Ps8Sequence", "value"]
-- !private ["Ps10SetAlgebra", "mutableContainers"]
+- !private ["So17ProgressReportingP", "resume"]
+- !private ["s26RangeReplaceableCollectionP", "Encoding"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "ascii"]
+- !private ["s16RawRepresentableP", "init"]
+- !private ["s16RawRepresentableP", "mutableContainers"]
+- !private ["s16RawRepresentableP", "object"]
+- !private ["s16RawRepresentableP", "rawString"]
+- !private ["s16RawRepresentableP", "rawValue"]
+- !private ["s16RawRepresentableP", "subscript"]
+- !private ["s16RawRepresentableP", "useProtocolCachePolicy"]
+- !private ["So17JSONSerializationC14ReadingOptionsV", "mutableContainers"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "requestWithURL"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "AnyObject"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "GeneralRequestManager"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "HTTPURLResponse"]
+- ["16SwiftLoginScreen14RestApiManagerC", "Int"]
+- ["16SwiftLoginScreen14RestApiManagerC", "JSON"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "JSONSerialization"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "Kanna"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "NSDictionary"]
+- ["16SwiftLoginScreen14RestApiManagerC", "NSError"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "NSLocalizedDescriptionKey"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "NSLog"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "NSString"]
+- ["16SwiftLoginScreen14RestApiManagerC", "RestApiManager"]
+- ["16SwiftLoginScreen14RestApiManagerC", "ServiceResponse"]
+- ["16SwiftLoginScreen14RestApiManagerC", "String"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "UIAlertController"]
+- ["16SwiftLoginScreen14RestApiManagerC", "UIAlertView"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "URL"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "URLRequest"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "URLSession"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "UserDefaults"]
+- ["16SwiftLoginScreen14RestApiManagerC", "Void"]
+- ["16SwiftLoginScreen14RestApiManagerC", "alertView"]
+- ["16SwiftLoginScreen14RestApiManagerC", "alertViewCancel"]
+- ["16SwiftLoginScreen14RestApiManagerC", "alertViewShouldEnableFirstOtherButton"]
+- ["16SwiftLoginScreen14RestApiManagerC", "baseURL"]
+- ["16SwiftLoginScreen14RestApiManagerC", "deinit"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "deviceId"]
+- ["16SwiftLoginScreen14RestApiManagerC", "didPresent"]
+- ["16SwiftLoginScreen14RestApiManagerC", "didPresentAlertView"]
+- ["16SwiftLoginScreen14RestApiManagerC", "getRandomUser"]
+- ["16SwiftLoginScreen14RestApiManagerC", "init"]
+- ["16SwiftLoginScreen14RestApiManagerC", "makeHTTPGetRequest"]
+- !private ["16SwiftLoginScreen14RestApiManagerC", "print"]
+- ["16SwiftLoginScreen14RestApiManagerC", "running"]
+- ["16SwiftLoginScreen14RestApiManagerC", "serverURL"]
+- ["16SwiftLoginScreen14RestApiManagerC", "sharedInstance"]
+- ["16SwiftLoginScreen14RestApiManagerC", "willPresent"]
+- ["16SwiftLoginScreen14RestApiManagerC", "willPresentAlertView"]
+- !private ["5Kanna10SearchableP", "title"]
+- !private ["5Kanna14SearchableNodeP", "title"]
+- !private ["s8SequenceP", "Encoding"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "object"]
+- !private ["s8SequenceP", "rawString"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s8SequenceP", "value"]
+- !private ["s10SetAlgebraP", "mutableContainers"]
+- !private ["s5SliceV", "object"]
+- !private ["SS", "Encoding"]
 - ["SS", "init"]
-- ["Ps16TextOutputStream", "init"]
-- ["Ps20TextOutputStreamable", "init"]
-- !private ["PSo29UIAccessibilityIdentification", "addButton"]
-- !private ["PSo29UIAccessibilityIdentification", "cancelButtonIndex"]
-- !private ["PSo29UIAccessibilityIdentification", "delegate"]
-- !private ["PSo29UIAccessibilityIdentification", "init"]
-- !private ["PSo29UIAccessibilityIdentification", "message"]
-- !private ["PSo29UIAccessibilityIdentification", "show"]
-- !private ["PSo29UIAccessibilityIdentification", "title"]
-- !private ["CSo11UIAlertView", "addButton"]
-- !private ["CSo11UIAlertView", "cancelButtonIndex"]
-- !private ["CSo11UIAlertView", "delegate"]
-- !private ["CSo11UIAlertView", "init"]
-- !private ["CSo11UIAlertView", "message"]
-- !private ["CSo11UIAlertView", "show"]
-- !private ["CSo11UIAlertView", "title"]
-- !private ["PSo19UIAlertViewDelegate", "GeneralRequestManager"]
-- !private ["PSo19UIAlertViewDelegate", "JSON"]
-- !private ["PSo19UIAlertViewDelegate", "JSONSerialization"]
-- !private ["PSo19UIAlertViewDelegate", "NSError"]
-- !private ["PSo19UIAlertViewDelegate", "NSLocalizedDescriptionKey"]
-- !private ["PSo19UIAlertViewDelegate", "NSLog"]
-- ["PSo19UIAlertViewDelegate", "RestApiManager"]
-- !private ["PSo19UIAlertViewDelegate", "UIAlertView"]
-- !private ["PSo19UIAlertViewDelegate", "URL"]
-- !private ["PSo19UIAlertViewDelegate", "URLRequest"]
-- !private ["PSo19UIAlertViewDelegate", "URLSession"]
-- !private ["PSo19UIAlertViewDelegate", "UserDefaults"]
-- ["PSo19UIAlertViewDelegate", "alertView"]
-- ["PSo19UIAlertViewDelegate", "alertViewCancel"]
-- ["PSo19UIAlertViewDelegate", "alertViewShouldEnableFirstOtherButton"]
-- !private ["PSo19UIAlertViewDelegate", "baseURL"]
-- !private ["PSo19UIAlertViewDelegate", "deviceId"]
-- ["PSo19UIAlertViewDelegate", "didPresent"]
-- ["PSo19UIAlertViewDelegate", "didPresentAlertView"]
-- ["PSo19UIAlertViewDelegate", "init"]
-- !private ["PSo19UIAlertViewDelegate", "makeHTTPGetRequest"]
-- !private ["PSo19UIAlertViewDelegate", "print"]
-- !private ["PSo19UIAlertViewDelegate", "running"]
-- ["PSo19UIAlertViewDelegate", "serverURL"]
-- ["PSo19UIAlertViewDelegate", "willPresent"]
-- ["PSo19UIAlertViewDelegate", "willPresentAlertView"]
-- ["PSo19UIAlertViewDelegate", ""]
-- !private ["PSo12UIAppearance", "addButton"]
-- !private ["PSo12UIAppearance", "cancelButtonIndex"]
-- !private ["PSo12UIAppearance", "delegate"]
-- !private ["PSo12UIAppearance", "init"]
-- !private ["PSo12UIAppearance", "message"]
-- !private ["PSo12UIAppearance", "show"]
-- !private ["PSo12UIAppearance", "title"]
-- !private ["PSo21UIAppearanceContainer", "addButton"]
-- !private ["PSo21UIAppearanceContainer", "cancelButtonIndex"]
-- !private ["PSo21UIAppearanceContainer", "delegate"]
-- !private ["PSo21UIAppearanceContainer", "init"]
-- !private ["PSo21UIAppearanceContainer", "message"]
-- !private ["PSo21UIAppearanceContainer", "show"]
-- !private ["PSo21UIAppearanceContainer", "title"]
-- !private ["PSo17UICoordinateSpace", "addButton"]
-- !private ["PSo17UICoordinateSpace", "cancelButtonIndex"]
-- !private ["PSo17UICoordinateSpace", "delegate"]
-- !private ["PSo17UICoordinateSpace", "init"]
-- !private ["PSo17UICoordinateSpace", "message"]
-- !private ["PSo17UICoordinateSpace", "show"]
-- !private ["PSo17UICoordinateSpace", "title"]
-- !private ["PSo13UIDynamicItem", "addButton"]
-- !private ["PSo13UIDynamicItem", "cancelButtonIndex"]
-- !private ["PSo13UIDynamicItem", "delegate"]
-- !private ["PSo13UIDynamicItem", "init"]
-- !private ["PSo13UIDynamicItem", "message"]
-- !private ["PSo13UIDynamicItem", "show"]
-- !private ["PSo13UIDynamicItem", "title"]
-- !private ["PSo18UIFocusEnvironment", "addButton"]
-- !private ["PSo18UIFocusEnvironment", "cancelButtonIndex"]
-- !private ["PSo18UIFocusEnvironment", "delegate"]
-- !private ["PSo18UIFocusEnvironment", "init"]
-- !private ["PSo18UIFocusEnvironment", "message"]
-- !private ["PSo18UIFocusEnvironment", "show"]
-- !private ["PSo18UIFocusEnvironment", "title"]
-- !private ["PSo11UIFocusItem", "addButton"]
-- !private ["PSo11UIFocusItem", "cancelButtonIndex"]
-- !private ["PSo11UIFocusItem", "delegate"]
-- !private ["PSo11UIFocusItem", "init"]
-- !private ["PSo11UIFocusItem", "message"]
-- !private ["PSo11UIFocusItem", "show"]
-- !private ["PSo11UIFocusItem", "title"]
-- !private ["CSo11UIResponder", "addButton"]
-- !private ["CSo11UIResponder", "cancelButtonIndex"]
-- !private ["CSo11UIResponder", "delegate"]
-- !private ["CSo11UIResponder", "message"]
-- !private ["CSo11UIResponder", "show"]
-- !private ["CSo11UIResponder", "title"]
-- !private ["PSo30UIResponderStandardEditActions", "addButton"]
-- !private ["PSo30UIResponderStandardEditActions", "cancelButtonIndex"]
-- !private ["PSo30UIResponderStandardEditActions", "delegate"]
-- !private ["PSo30UIResponderStandardEditActions", "init"]
-- !private ["PSo30UIResponderStandardEditActions", "message"]
-- !private ["PSo30UIResponderStandardEditActions", "show"]
-- !private ["PSo30UIResponderStandardEditActions", "title"]
-- !private ["PSo18UITraitEnvironment", "addButton"]
-- !private ["PSo18UITraitEnvironment", "cancelButtonIndex"]
-- !private ["PSo18UITraitEnvironment", "delegate"]
-- !private ["PSo18UITraitEnvironment", "init"]
-- !private ["PSo18UITraitEnvironment", "message"]
-- !private ["PSo18UITraitEnvironment", "show"]
-- !private ["PSo18UITraitEnvironment", "title"]
-- !private ["CSo6UIView", "addButton"]
-- !private ["CSo6UIView", "cancelButtonIndex"]
-- !private ["CSo6UIView", "delegate"]
-- !private ["CSo6UIView", "message"]
-- !private ["CSo6UIView", "show"]
-- !private ["CSo6UIView", "title"]
-- !private ["V10Foundation3URL", "init"]
-- !private ["V10Foundation10URLRequest", "httpBody"]
-- !private ["V10Foundation10URLRequest", "httpMethod"]
-- !private ["V10Foundation10URLRequest", "init"]
-- !private ["V10Foundation10URLRequest", "requestWithURL"]
-- !private ["CSo11URLResponse", "statusCode"]
-- !private ["CSo10URLSession", "dataTask"]
-- !private ["CSo10URLSession", "shared"]
-- !private ["CSo10URLSession", "sharedCustomSession"]
-- !private ["CSo18URLSessionDataTask", "resume"]
-- !private ["CSo14URLSessionTask", "resume"]
-- !private ["CSo12UserDefaults", "standard"]
-- !private ["CSo12UserDefaults", "value"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addButton"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "cancelButtonIndex"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "delegate"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "init"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "message"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "show"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "title"]
-- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
-- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- !private ["Ps34_ExpressibleByFileReferenceLiteral", "init"]
-- ["Ps33_ExpressibleByStringInterpolation", "init"]
-- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
-- !private ["Ps9_Hashable", "GeneralRequestManager"]
-- !private ["Ps9_Hashable", "JSON"]
-- !private ["Ps9_Hashable", "JSONSerialization"]
-- !private ["Ps9_Hashable", "NSError"]
-- !private ["Ps9_Hashable", "NSLocalizedDescriptionKey"]
-- !private ["Ps9_Hashable", "NSLog"]
-- !private ["Ps9_Hashable", "ReadingOptions"]
-- ["Ps9_Hashable", "RestApiManager"]
-- !private ["Ps9_Hashable", "UIAlertView"]
-- !private ["Ps9_Hashable", "URL"]
-- !private ["Ps9_Hashable", "URLRequest"]
-- !private ["Ps9_Hashable", "URLSession"]
-- !private ["Ps9_Hashable", "UserDefaults"]
-- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps9_Hashable", "addButton"]
-- ["Ps9_Hashable", "alertView"]
-- ["Ps9_Hashable", "alertViewCancel"]
-- ["Ps9_Hashable", "alertViewShouldEnableFirstOtherButton"]
-- !private ["Ps9_Hashable", "baseURL"]
-- !private ["Ps9_Hashable", "cancelButtonIndex"]
-- !private ["Ps9_Hashable", "dataTask"]
-- !private ["Ps9_Hashable", "delegate"]
-- !private ["Ps9_Hashable", "deviceId"]
-- ["Ps9_Hashable", "didPresent"]
-- ["Ps9_Hashable", "didPresentAlertView"]
-- !private ["Ps9_Hashable", "getResponse"]
-- !private ["Ps9_Hashable", "httpBody"]
-- !private ["Ps9_Hashable", "httpMethod"]
-- ["Ps9_Hashable", "init"]
-- !private ["Ps9_Hashable", "jsonObject"]
-- !private ["Ps9_Hashable", "makeHTTPGetRequest"]
-- !private ["Ps9_Hashable", "message"]
-- !private ["Ps9_Hashable", "print"]
-- !private ["Ps9_Hashable", "requestWithURL"]
-- !private ["Ps9_Hashable", "resume"]
-- !private ["Ps9_Hashable", "running"]
-- ["Ps9_Hashable", "serverURL"]
-- !private ["Ps9_Hashable", "shared"]
-- !private ["Ps9_Hashable", "sharedCustomSession"]
-- !private ["Ps9_Hashable", "show"]
-- !private ["Ps9_Hashable", "standard"]
-- !private ["Ps9_Hashable", "statusCode"]
-- !private ["Ps9_Hashable", "title"]
-- !private ["Ps9_Hashable", "useProtocolCachePolicy"]
-- !private ["Ps9_Hashable", "value"]
-- ["Ps9_Hashable", "willPresent"]
-- ["Ps9_Hashable", "willPresentAlertView"]
-- ["Ps9_Hashable", ""]
-- !private ["Ps10_Indexable", "init"]
-- !private ["Ps14_IndexableBase", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
-- !private ["Ps21_ObjectiveCBridgeable", "httpBody"]
-- !private ["Ps21_ObjectiveCBridgeable", "httpMethod"]
-- ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "requestWithURL"]
-- !private ["Ps21_ObjectiveCBridgeable", "useProtocolCachePolicy"]
+- !private ["s14StringProtocolP", "Encoding"]
+- ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "Encoding"]
+- ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "Encoding"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "addButton"]
+- !private ["So29UIAccessibilityIdentificationP", "cancelButtonIndex"]
+- !private ["So29UIAccessibilityIdentificationP", "delegate"]
+- !private ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "message"]
+- !private ["So29UIAccessibilityIdentificationP", "show"]
+- !private ["So29UIAccessibilityIdentificationP", "title"]
+- !private ["So17UIAlertControllerC", "popUp"]
+- !private ["So11UIAlertViewC", "addButton"]
+- !private ["So11UIAlertViewC", "cancelButtonIndex"]
+- !private ["So11UIAlertViewC", "delegate"]
+- !private ["So11UIAlertViewC", "init"]
+- !private ["So11UIAlertViewC", "message"]
+- !private ["So11UIAlertViewC", "show"]
+- !private ["So11UIAlertViewC", "title"]
+- !private ["So19UIAlertViewDelegateP", "GeneralRequestManager"]
+- !private ["So19UIAlertViewDelegateP", "JSON"]
+- !private ["So19UIAlertViewDelegateP", "JSONSerialization"]
+- !private ["So19UIAlertViewDelegateP", "Kanna"]
+- !private ["So19UIAlertViewDelegateP", "NSError"]
+- !private ["So19UIAlertViewDelegateP", "NSLocalizedDescriptionKey"]
+- !private ["So19UIAlertViewDelegateP", "NSLog"]
+- !private ["So19UIAlertViewDelegateP", "NSString"]
+- ["So19UIAlertViewDelegateP", "RestApiManager"]
+- !private ["So19UIAlertViewDelegateP", "String"]
+- !private ["So19UIAlertViewDelegateP", "UIAlertController"]
+- !private ["So19UIAlertViewDelegateP", "UIAlertView"]
+- !private ["So19UIAlertViewDelegateP", "URL"]
+- !private ["So19UIAlertViewDelegateP", "URLRequest"]
+- !private ["So19UIAlertViewDelegateP", "URLSession"]
+- !private ["So19UIAlertViewDelegateP", "UserDefaults"]
+- ["So19UIAlertViewDelegateP", "alertView"]
+- ["So19UIAlertViewDelegateP", "alertViewCancel"]
+- ["So19UIAlertViewDelegateP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["So19UIAlertViewDelegateP", "baseURL"]
+- !private ["So19UIAlertViewDelegateP", "deviceId"]
+- ["So19UIAlertViewDelegateP", "didPresent"]
+- ["So19UIAlertViewDelegateP", "didPresentAlertView"]
+- ["So19UIAlertViewDelegateP", "init"]
+- !private ["So19UIAlertViewDelegateP", "makeHTTPGetRequest"]
+- !private ["So19UIAlertViewDelegateP", "print"]
+- !private ["So19UIAlertViewDelegateP", "running"]
+- ["So19UIAlertViewDelegateP", "serverURL"]
+- ["So19UIAlertViewDelegateP", "willPresent"]
+- ["So19UIAlertViewDelegateP", "willPresentAlertView"]
+- ["So19UIAlertViewDelegateP", ""]
+- !private ["So12UIAppearanceP", "addButton"]
+- !private ["So12UIAppearanceP", "cancelButtonIndex"]
+- !private ["So12UIAppearanceP", "delegate"]
+- !private ["So12UIAppearanceP", "init"]
+- !private ["So12UIAppearanceP", "message"]
+- !private ["So12UIAppearanceP", "show"]
+- !private ["So12UIAppearanceP", "title"]
+- !private ["So21UIAppearanceContainerP", "addButton"]
+- !private ["So21UIAppearanceContainerP", "cancelButtonIndex"]
+- !private ["So21UIAppearanceContainerP", "delegate"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "message"]
+- !private ["So21UIAppearanceContainerP", "popUp"]
+- !private ["So21UIAppearanceContainerP", "show"]
+- !private ["So21UIAppearanceContainerP", "title"]
+- !private ["So18UIContentContainerP", "popUp"]
+- !private ["So17UICoordinateSpaceP", "addButton"]
+- !private ["So17UICoordinateSpaceP", "cancelButtonIndex"]
+- !private ["So17UICoordinateSpaceP", "delegate"]
+- !private ["So17UICoordinateSpaceP", "init"]
+- !private ["So17UICoordinateSpaceP", "message"]
+- !private ["So17UICoordinateSpaceP", "show"]
+- !private ["So17UICoordinateSpaceP", "title"]
+- !private ["So13UIDynamicItemP", "addButton"]
+- !private ["So13UIDynamicItemP", "cancelButtonIndex"]
+- !private ["So13UIDynamicItemP", "delegate"]
+- !private ["So13UIDynamicItemP", "init"]
+- !private ["So13UIDynamicItemP", "message"]
+- !private ["So13UIDynamicItemP", "show"]
+- !private ["So13UIDynamicItemP", "title"]
+- !private ["So18UIFocusEnvironmentP", "addButton"]
+- !private ["So18UIFocusEnvironmentP", "cancelButtonIndex"]
+- !private ["So18UIFocusEnvironmentP", "delegate"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "message"]
+- !private ["So18UIFocusEnvironmentP", "popUp"]
+- !private ["So18UIFocusEnvironmentP", "show"]
+- !private ["So18UIFocusEnvironmentP", "title"]
+- !private ["So11UIFocusItemP", "addButton"]
+- !private ["So11UIFocusItemP", "cancelButtonIndex"]
+- !private ["So11UIFocusItemP", "delegate"]
+- !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "message"]
+- !private ["So11UIFocusItemP", "show"]
+- !private ["So11UIFocusItemP", "title"]
+- !private ["So30UIPasteConfigurationSupportingP", "addButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "cancelButtonIndex"]
+- !private ["So30UIPasteConfigurationSupportingP", "delegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "message"]
+- !private ["So30UIPasteConfigurationSupportingP", "popUp"]
+- !private ["So30UIPasteConfigurationSupportingP", "show"]
+- !private ["So30UIPasteConfigurationSupportingP", "title"]
+- !private ["So11UIResponderC", "addButton"]
+- !private ["So11UIResponderC", "cancelButtonIndex"]
+- !private ["So11UIResponderC", "delegate"]
+- !private ["So11UIResponderC", "message"]
+- !private ["So11UIResponderC", "popUp"]
+- !private ["So11UIResponderC", "show"]
+- !private ["So11UIResponderC", "title"]
+- !private ["So30UIResponderStandardEditActionsP", "addButton"]
+- !private ["So30UIResponderStandardEditActionsP", "cancelButtonIndex"]
+- !private ["So30UIResponderStandardEditActionsP", "delegate"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "message"]
+- !private ["So30UIResponderStandardEditActionsP", "popUp"]
+- !private ["So30UIResponderStandardEditActionsP", "show"]
+- !private ["So30UIResponderStandardEditActionsP", "title"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "popUp"]
+- !private ["So16UIStateRestoringP", "popUp"]
+- !private ["So18UITraitEnvironmentP", "addButton"]
+- !private ["So18UITraitEnvironmentP", "cancelButtonIndex"]
+- !private ["So18UITraitEnvironmentP", "delegate"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "message"]
+- !private ["So18UITraitEnvironmentP", "popUp"]
+- !private ["So18UITraitEnvironmentP", "show"]
+- !private ["So18UITraitEnvironmentP", "title"]
+- !private ["So6UIViewC", "addButton"]
+- !private ["So6UIViewC", "cancelButtonIndex"]
+- !private ["So6UIViewC", "delegate"]
+- !private ["So6UIViewC", "message"]
+- !private ["So6UIViewC", "show"]
+- !private ["So6UIViewC", "title"]
+- !private ["So16UIViewControllerC", "popUp"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["10Foundation10URLRequestV", "requestWithURL"]
+- !private ["So11URLResponseC", "statusCode"]
+- !private ["So10URLSessionC", "dataTask"]
+- !private ["So10URLSessionC", "sharedCustomSession"]
+- !private ["So18URLSessionDataTaskC", "resume"]
+- !private ["So14URLSessionTaskC", "resume"]
+- !private ["So12UserDefaultsC", "set"]
+- !private ["So12UserDefaultsC", "standard"]
+- !private ["So12UserDefaultsC", "value"]
+- !private ["5Kanna11XMLDocumentP", "title"]
+- !private ["s23_BidirectionalIndexableP", "Encoding"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addButton"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "cancelButtonIndex"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "delegate"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "message"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "show"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "title"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Encoding"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "Encoding"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Encoding"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "Encoding"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "Encoding"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "object"]
+- !private ["s10_IndexableP", "rawString"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s14_IndexableBaseP", "Encoding"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "object"]
+- !private ["s14_IndexableBaseP", "rawString"]
+- !private ["s14_IndexableBaseP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GeneralRequestManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSON"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSONSerialization"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Kanna"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSError"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLocalizedDescriptionKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLog"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ReadingOptions"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "RestApiManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIAlertController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIAlertView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLRequest"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UserDefaults"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addButton"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "alertView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "alertViewCancel"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "alertViewShouldEnableFirstOtherButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "baseURL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cancelButtonIndex"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dataTask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deviceId"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "didPresent"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "didPresentAlertView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "getResponse"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "makeHTTPGetRequest"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "message"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "popUp"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resume"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "running"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "serverURL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sharedCustomSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "show"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "standard"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "statusCode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "title"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "willPresent"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "willPresentAlertView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "Encoding"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "requestWithURL"]
+- !private ["s21_ObjectiveCBridgeableP", "useProtocolCachePolicy"]
+- !private ["s26_RangeReplaceableIndexableP", "Encoding"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "Encoding"]
+- ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- "Ps9AnyObject"
+- "12FacebookCore26AppEventParameterValueTypeP"
+- "s23BidirectionalCollectionP"
 - !private "Sb"
-- !private "PSo15CALayerDelegate"
-- "Ps7CVarArg"
-- !private "OCSo12NSURLRequest11CachePolicy"
-- !private "Ps10Collection"
-- "Ps10Comparable"
-- "Ps28CustomDebugStringConvertible"
-- "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
-- "Ps23CustomStringConvertible"
-- "Ps9Equatable"
-- !private "Ps5Error"
-- !private "Ps25ExpressibleByArrayLiteral"
-- !private "Ps27ExpressibleByBooleanLiteral"
-- !private "Ps30ExpressibleByDictionaryLiteral"
-- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- !private "Ps25ExpressibleByFloatLiteral"
-- !private "Ps27ExpressibleByIntegerLiteral"
-- !private "Ps23ExpressibleByNilLiteral"
-- "Ps26ExpressibleByStringLiteral"
-- "Ps33ExpressibleByUnicodeScalarLiteral"
-- !private "C16SwiftLoginScreen21GeneralRequestManager"
-- !private "CSo15HTTPURLResponse"
-- "Ps8Hashable"
-- !private "V10SwiftyJSON4JSON"
-- !private "CSo17JSONSerialization"
-- "P10SwiftyJSON17JSONSubscriptType"
-- "Ps25LosslessStringConvertible"
-- "Ps10MirrorPath"
-- "PSo8NSCoding"
-- "PSo9NSCopying"
-- !private "CSo12NSDictionary"
-- !private "CSo7NSError"
-- !private "PSo17NSFastEnumeration"
-- !private "PSo20NSFetchRequestResult"
-- "PSo16NSMutableCopying"
-- "CSo8NSObject"
-- "PSo16NSObjectProtocol"
-- "PSo14NSSecureCoding"
-- "CSo8NSString"
-- !private "Ps9OptionSet"
+- !private "So15CALayerDelegateP"
+- "So15CNKeyDescriptorP"
+- "s7CVarArgP"
+- !private "So12NSURLRequestC11CachePolicyO"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- !private "SS10FoundationE8EncodingV"
+- "s9EquatableP"
+- !private "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "16SwiftLoginScreen21GeneralRequestManagerC"
+- !private "5Kanna12HTMLDocumentP"
+- !private "So15HTTPURLResponseC"
+- "s8HashableP"
+- !private "10SwiftyJSON0B0V"
+- !private "So17JSONSerializationC"
+- "10SwiftyJSON17JSONSubscriptTypeP"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- !private "So12NSDictionaryC"
+- !private "So7NSErrorC"
+- !private "So26NSExtensionRequestHandlingP"
+- !private "So17NSFastEnumerationP"
+- !private "So20NSFetchRequestResultP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- "13FacebookShare22OpenGraphPropertyValueP"
+- !private "s9OptionSetP"
 - !private "Sq"
-- !private "Ps16RawRepresentable"
-- !private "VCSo17JSONSerialization14ReadingOptions"
-- !private "P10Foundation20ReferenceConvertible"
-- "C16SwiftLoginScreen14RestApiManager"
-- !private "Ps8Sequence"
-- !private "Ps10SetAlgebra"
+- !private "So17ProgressReportingP"
+- "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "So17JSONSerializationC14ReadingOptionsV"
+- !private "10Foundation20ReferenceConvertibleP"
+- "16SwiftLoginScreen14RestApiManagerC"
+- !private "5Kanna10SearchableP"
+- !private "5Kanna14SearchableNodeP"
+- "s8SequenceP"
+- !private "s10SetAlgebraP"
+- !private "s5SliceV"
 - "SS"
-- "Ps16TextOutputStream"
-- "Ps20TextOutputStreamable"
-- !private "PSo29UIAccessibilityIdentification"
-- !private "CSo11UIAlertView"
-- "PSo19UIAlertViewDelegate"
-- !private "PSo12UIAppearance"
-- !private "PSo21UIAppearanceContainer"
-- !private "PSo17UICoordinateSpace"
-- !private "PSo13UIDynamicItem"
-- !private "PSo18UIFocusEnvironment"
-- !private "PSo11UIFocusItem"
-- !private "CSo11UIResponder"
-- !private "PSo30UIResponderStandardEditActions"
-- !private "PSo18UITraitEnvironment"
-- !private "CSo6UIView"
-- !private "V10Foundation3URL"
-- !private "V10Foundation10URLRequest"
-- !private "CSo11URLResponse"
-- !private "CSo10URLSession"
-- !private "CSo18URLSessionDataTask"
-- !private "CSo14URLSessionTask"
-- !private "CSo12UserDefaults"
-- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
-- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
-- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- "Ps34_ExpressibleByBuiltinStringLiteral"
-- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- !private "Ps34_ExpressibleByFileReferenceLiteral"
-- "Ps33_ExpressibleByStringInterpolation"
-- "Ps35_HasCustomAnyHashableRepresentation"
-- "Ps9_Hashable"
-- !private "Ps10_Indexable"
-- !private "Ps14_IndexableBase"
-- "Ps21_ObjectiveCBridgeable"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So17UIAlertControllerC"
+- !private "So11UIAlertViewC"
+- "So19UIAlertViewDelegateP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
+- !private "So18UIContentContainerP"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So35UISpringLoadedInteractionSupportingP"
+- !private "So16UIStateRestoringP"
+- !private "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- !private "So16UIViewControllerC"
+- !private "10Foundation3URLV"
+- !private "10Foundation10URLRequestV"
+- !private "So11URLResponseC"
+- !private "So10URLSessionC"
+- !private "So18URLSessionDataTaskC"
+- !private "So14URLSessionTaskC"
+- !private "So12UserDefaultsC"
+- !private "5Kanna11XMLDocumentP"
+- "s23_BidirectionalIndexableP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s26_RangeReplaceableIndexableP"
+- "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 - !private "value"
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Modules/FacebookShare.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Modules/Toaster.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Modules/Toast_Swift.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MapKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
-interface-hash: "341b6f167047881ebf4639348205c17b"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBase64.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDB.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareAPI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/UIColor+BTUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/UIColor+BTUIK.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFURL.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTJSON.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSGZIP.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTS.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AWS.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLog+LOGV.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/Braintree-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Headers/FacebookShare-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCore-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeDropIn-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalytics-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Headers/Toast-Swift-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GoogleAPIClient-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTBinData.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTClientMetadata.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSGeneric.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPostalCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKMobileCountryCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKSecurityCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardNumberFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKMobileNumberFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKExpiryFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKTextField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarTimePeriod.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCard.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeCard.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLTargetNamespace.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTDevice.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTTokenizationService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcherService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKAppearance.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentMethodNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalAccountNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationTokenSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTaskCompletionSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLErrorCode.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareDialogMode.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventAttendee.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMDiskCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMMemoryCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMantle.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarAclRule.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLDateTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventDateTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPaymentOptionType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPaymentOptionType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeObjectType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKVisualAssetType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSUICKeyChainStore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver+ThreeDSecure.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSignature.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDASLLogCapture.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyResponse.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTViewControllerPresentingDelegate.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabaseQueue.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKHashtag.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalCreditFinancing.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLModel+NSCoding.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSLogging.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcherLogging.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLiking.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSNetworking.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharing.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTString.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKLocalizedString.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarSetting.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkResolving.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupAddDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKMessageDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppInviteDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupJoinDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKGameRequestDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTAppSwitch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalOneTouch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2ViewControllerTouch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCocoaLumberjack.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealBank.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLink.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLFramework.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTask.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+PayPal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreePayPal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+Ideal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver+Ideal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarAcl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardListLabel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarChannel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKViewUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabasePool.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICTAControl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeControl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMGatherInputStream.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMReadMonitorInputStream.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyRequestItem.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSServiceEnum.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLContext+SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Headers/Public/Google/Google/SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeDropIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTClientToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTSimpleKeychain.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTVersion.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTURLSession.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarNotification.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2Authentication.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSValidation.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationTokenRegistration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GMRConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLResponseSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLRequestSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphAction.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLReflection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarColorDefinition.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSError+AWSMTLModelException.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLRuntimeCommon.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSendButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICoinbaseButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharingButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPayPalButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIVenmoButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareVideo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSInfo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureInfo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharePhoto.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyGroup.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKInputAccessoryToolbar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLServiceCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLQueryCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPRCClientMetadataIDProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCredentialsProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSIdentityProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventReminder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMCacheBackgroundTaskManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLSessionManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDASLLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDOSLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDTTYLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDFileLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDAbstractDatabaseLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionUploadFetcher.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLRequestRetryHandler.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInBaseViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTCardFormViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTDropInViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTPaymentSelectionViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTVaultManagementViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLValueTransformer.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphValueContainer.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTJSONHelper.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTEncryptionHelper.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLJSONParser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentMethodNonceParser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLJSONAdapter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLManagedObjectAdapter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDDispatchQueueLogFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDContextFilterLogFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDMultiFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalDriver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarError.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardExpirationValidator.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPDataCollector.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalDataCollector.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFExecutor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSExecutor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalytics.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardCapabilities.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLUtilities.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLDefines.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTPinnedCertificates.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarSettings.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalUtils.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTEnums.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabaseAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsOptions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask+Exceptions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLogMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDAssertMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLegacyMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLUploadParameters.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarColors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTHTTPErrors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTErrors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPostalAddress.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSBolts.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEvents.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardExpiryFormat.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLErrorObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMResultSet.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkTarget.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Headers/FacebookShare-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Headers/Toast_Swift-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeUIKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBatchResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTAPIClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsEventClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventAttachment.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMMIMEDocument.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareMediaContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppInviteContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharingContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareLinkContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareVideoContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharePhotoContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKGameRequestContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFMeasurementEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICardHint.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendarList.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLContext.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSClientContext.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIThemedView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPaymentMethodView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPaymentOptionCardView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICardFormView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIVectorArtView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKVectorArtView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKExpiryInputView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUISummaryView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreePaymentFlow.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+UnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardClient+UnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeUnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSynchronizedMutableDictionary.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLQuery.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBatchQuery.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCategory.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTRequestFactory.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendarListEntry.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSKSReachability.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentity.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Headers/module.modulemap"
+interface-hash: "ad239a4445041b3e7fa9195d4bc41011"

@@ -7,4 +7,5 @@ framework module Kanna {
 
 module Kanna.Swift {
     header "Kanna-Swift.h"
+    requires objc
 }

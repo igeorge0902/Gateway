@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class URLSessionManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
-    typealias CallbackBlock = (_ result: String, _ error: NSError?) -> ()
+    typealias CallbackBlock = (_ result: String, _ error: String?) -> ()
     
     
     var callback: CallbackBlock = {
@@ -27,7 +27,8 @@ class URLSessionManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         
         let session = Foundation.URLSession.sharedCustomSession
         
-        let task = session.dataTask(with: request, completionHandler: {(data, response, error)  in
+        let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
+            
             if error != nil {
                 callback("", error!.localizedDescription)
                 

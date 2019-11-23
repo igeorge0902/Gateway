@@ -8,15 +8,34 @@ package com.dalogin;
  */
 
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
+
+import com.dalogin.listeners.CustomServletContextListener;
+import com.dalogin.utils.ParameterStringBuilder;
 
 
 //Extend HttpServlet class
@@ -295,11 +314,41 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			 */
 			RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 			log.info(request.getContentType());
-			
+			token2 = new ArrayList<String>();
+
+			try {
+				
+				token2 = SQLAccess.token2((String)session.getAttribute("deviceId"), context);
+				
+				} catch (Exception e) {
+				
+					throw new ServletException(e.getCause().toString());
+
+			}
 			request.setAttribute("user", user);
+			request.setAttribute("token2", token2.get(0));
 			request.setAttribute("TIME_", session.getCreationTime());
 			rd.forward(request, response); 
 			}
+		/*
+		else if(token_ != null && session != null && deviceId != null && user != null) {
+			
+			// it does not work yet due to some mystic SSL connection error 
+			// plain HTTP request, so should work
+			// money for nothing, and chicks for free! (RBB)
+			
+			try {
+				doHTTPrequest(response, user, token_);
+			
+			} catch (KeyManagementException e) {
+				String stacktrace = ExceptionUtils.getStackTrace(e);
+	        	System.out.println(stacktrace);			
+	        	} catch (NoSuchAlgorithmException e) {
+	        		String stacktrace = ExceptionUtils.getStackTrace(e);
+	            	System.out.println(stacktrace);			}
+			
+		}*/
+		
 		else {
 			
 			response.setContentType("application/json"); 
@@ -312,7 +361,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
-			error.put("Error:", "User does not bear valid paramteres."); 
+			error.put("ErrorMsg:", "User does not bear valid paramteres."); 
 			json.put("Error Details", error); 
 			
 			// finally output the json string 
@@ -334,39 +383,55 @@ public class AdminServlet extends HttpServlet implements Serializable {
 	public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-		HashMap<String, String> error = new HashMap<>();
+	   //PBI: resolve dependencies for WildFly, smoothly
+       //WS SOAP taken out due to dependency conflict on WildFly. 
+    	
+    	HashMap<String, String> error = new HashMap<>();
 
     	// Set the response message's MIME type
         response.setContentType("text/html;charset=UTF-8");
                
         // Get JSESSION url parameter. Later it needs to be sent as header
-        sessionId = request.getParameter("JSESSIONID");			
+        sessionId = request.getParameter("JSESSIONID");		        
         log.info("SessionId from request parameter: " + sessionId);
        
         // Return current session
 		session = request.getSession();		
 		cookies = request.getCookies();
-
-        // check if the original response cookie for the same client is present
-		if (cookies != null) {
-		 for (Cookie cookie : cookies) {
-			 
-			   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
-			   
-				   if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
-					   
-						throw new ServletException("There is no valid XSRF-TOKEN");
-
-				   }
-			   
-			   }
-		  }
-		} else {
-			throw new ServletException("There is no valid XSRF-TOKEN");
-		}
+    	if (cookies == null || !request.isRequestedSessionIdValid() ) {
+        	
+			response.setContentType("application/json"); 
+			response.setCharacterEncoding("utf-8"); 
+			response.setStatus(502);
+			
+			PrintWriter out = response.getWriter(); 
+			
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			
+			// put some value pairs into the JSON object . 				
+			error.put("acticeUsers", "failed"); 
+			error.put("Success", "false");
+			error.put("ErrorMsg:", "no valid session");
+			json.put("Error Details", error); 
+			
+			// finally output the json string 
+			out.print(json.toString());
+			out.flush();
+        	
+        }
     	
+        for (Cookie cookie_ : cookies) {
+        	if (cookie_.getName().equalsIgnoreCase("JSESSIONID")) {
+                if (sessionId == null) {
+                	sessionId = cookie_.getValue();
+                    log.info("SessionId from cookie: " + sessionId);
+        		}
+        	}
+        }
+		
         // Check session for user attribute
-    	if(session.getAttribute("user") == null){
+    	if(session.getAttribute("user") != null){
     	
             if (sessionId != null) {
                 
@@ -378,9 +443,26 @@ public class AdminServlet extends HttpServlet implements Serializable {
                 
                 // Init HashMap that stores session objects
                 activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
-                
+                log.info("SessionId split: " + sessionId.split("\\.")[0].toString());
+
                 // Get session with sessionId
-                session = activeUsers.get(sessionId);
+                session = activeUsers.get(sessionId.split("\\.")[0]); 
+                if(session == null) {	
+                session = activeUsers.get(sessionId/*.split("\\.")[0]*/);
+                }
+                
+                for (Cookie cookie : cookies) {
+    			 
+                	if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
+  			   
+                		if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
+  					   
+                			throw new ServletException("There is no valid XSRF-TOKEN");
+
+                		}
+  			   
+                	}
+                }
 
                 
             } else {
@@ -401,6 +483,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
     	
     	}
     	
+    	// it's a feature, that this will run after the above section, too
     	if (session == null || !request.isRequestedSessionIdValid() ) {
         	
 			response.setContentType("application/json"); 
@@ -419,7 +502,7 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			// put some value pairs into the JSON object . 				
 			error.put("acticeUsers", "failed"); 
 			error.put("Success", "false");
-			error.put("ErrorMsg", "no valid session");
+			error.put("ErrorMsg:", "no valid session");
 			json.put("Error Details", error); 
 			
 			// finally output the json string 
@@ -441,6 +524,98 @@ public class AdminServlet extends HttpServlet implements Serializable {
     public void destroy()
     {
         // do nothing.
+    }
+    
+    // Plain Url connection experiment
+    private void doHTTPrequest(HttpServletResponse response, String user, String token_) throws IOException, NoSuchAlgorithmException, KeyManagementException {
+    
+     	 // Create a trust manager that does not validate certificate chains
+        TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
+                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+                public void checkClientTrusted(X509Certificate[] certs, String authType) {
+                }
+                public void checkServerTrusted(X509Certificate[] certs, String authType) {
+                }
+            }
+        };
+ 
+        // Install the all-trusting trust manager
+        SSLContext sc = SSLContext.getInstance("SSL");
+        sc.init(null, trustAllCerts, new java.security.SecureRandom());
+        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+ 
+        // Create all-trusting host name verifier
+        HostnameVerifier allHostsValid = new HostnameVerifier() {
+            public boolean verify(String hostname, SSLSession session) {
+                return true;
+            }
+        };
+ 
+        
+        // Install the all-trusting host verifier
+        HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+        
+        try {
+    	URL url = new URL("https://milo.crabdance.com/mbook-1/rest/user/" + user.trim().toString()+"/"+token_.trim().toString());
+    	HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    	con.setRequestMethod("GET");
+    	 
+    	con.setRequestProperty("Content-Type", "application/json");
+    	con.setRequestProperty("Ciphertext", token_);
+        
+        if (con.getResponseCode() == 404) {
+        	Reader reader = new InputStreamReader(con.getErrorStream());
+            while (true) {
+                int ch = reader.read();
+                if (ch==-1) {
+                    break;
+                }
+                
+                PrintWriter out = response.getWriter(); 
+                
+                out.print((char)ch);
+    			out.flush();
+            }
+        }
+        
+        if (con.getResponseCode() == 412) {
+        	Reader reader = new InputStreamReader(con.getErrorStream());
+            while (true) {
+                int ch = reader.read();
+                if (ch==-1) {
+                    break;
+                }
+                
+                PrintWriter out = response.getWriter(); 
+                
+                out.print((char)ch);
+    			out.flush();
+            }
+
+        }
+        
+        if (con.getResponseCode() == 200) {
+        	Reader reader = new InputStreamReader(con.getInputStream());
+            while (true) {
+                int ch = reader.read();
+                if (ch==-1) {
+                    break;
+                }
+                
+                PrintWriter out = response.getWriter(); 
+ 
+    			out.print((char)ch);
+    			out.flush();
+            }
+        }
+        
+        } catch (Exception e) {
+        	String stacktrace = ExceptionUtils.getStackTrace(e);
+        	System.out.println(stacktrace);
+        }
+    	    	
     }
   
    

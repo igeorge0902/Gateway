@@ -7,4 +7,5 @@ framework module RealmSwift {
 
 module RealmSwift.Swift {
     header "RealmSwift-Swift.h"
+    requires objc
 }

@@ -2,51 +2,51 @@
 provides-top-level:
 - "CryptoJS"
 provides-nominal:
-- "C16SwiftLoginScreen8CryptoJS"
-- "CC16SwiftLoginScreen8CryptoJS3AES"
-- "CC16SwiftLoginScreen8CryptoJS3MD5"
-- "CC16SwiftLoginScreen8CryptoJS4SHA1"
-- "CC16SwiftLoginScreen8CryptoJS6SHA224"
-- "CC16SwiftLoginScreen8CryptoJS6SHA256"
-- "CC16SwiftLoginScreen8CryptoJS6SHA384"
-- "CC16SwiftLoginScreen8CryptoJS6SHA512"
-- "CC16SwiftLoginScreen8CryptoJS4SHA3"
-- "CC16SwiftLoginScreen8CryptoJS10hmacSHA512"
-- "CC16SwiftLoginScreen8CryptoJS9RIPEMD160"
-- "CC16SwiftLoginScreen8CryptoJS4mode"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3CFB"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3CTR"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3OFB"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3ECB"
-- "CC16SwiftLoginScreen8CryptoJS3pad"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126"
-- "CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding"
-- "CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding"
+- "16SwiftLoginScreen8CryptoJSC"
+- "16SwiftLoginScreen8CryptoJSC3AESC"
+- "16SwiftLoginScreen8CryptoJSC3MD5C"
+- "16SwiftLoginScreen8CryptoJSC4SHA1C"
+- "16SwiftLoginScreen8CryptoJSC6SHA224C"
+- "16SwiftLoginScreen8CryptoJSC6SHA256C"
+- "16SwiftLoginScreen8CryptoJSC6SHA384C"
+- "16SwiftLoginScreen8CryptoJSC6SHA512C"
+- "16SwiftLoginScreen8CryptoJSC4SHA3C"
+- "16SwiftLoginScreen8CryptoJSC10hmacSHA512C"
+- "16SwiftLoginScreen8CryptoJSC9RIPEMD160C"
+- "16SwiftLoginScreen8CryptoJSC4modeC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3CFBC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3CTRC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3OFBC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3ECBC"
+- "16SwiftLoginScreen8CryptoJSC3padC"
+- "16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C"
+- "16SwiftLoginScreen8CryptoJSC3padC8Iso97971C"
+- "16SwiftLoginScreen8CryptoJSC3padC8Iso10126C"
+- "16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC"
+- "16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC"
 provides-member:
-- ["C16SwiftLoginScreen8CryptoJS", ""]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", ""]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", ""]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", ""]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", ""]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", ""]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", ""]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", ""]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", ""]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", ""]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", ""]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", ""]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", ""]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", ""]
+- ["16SwiftLoginScreen8CryptoJSC", ""]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", ""]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", ""]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", ""]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", ""]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", ""]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", ""]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", ""]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", ""]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", ""]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", ""]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", ""]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", ""]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", ""]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", ""]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", ""]
+- ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - !private "!="
@@ -64,584 +64,992 @@ depends-top-level:
 - !private "cryptoJScontext"
 - !private "print"
 depends-member:
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "AnyObject"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "Int"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "JSValue"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "decrypt"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "decryptFunction"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "encrypt"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "encryptFunction"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "encryptFunction_"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "encrypt_"]
-- ["CC16SwiftLoginScreen8CryptoJS3AES", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3AES", "print"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923", "print"]
-- !private ["Ps9AnyObject", "AnsiX923"]
-- !private ["Ps9AnyObject", "Bundle"]
-- !private ["Ps9AnyObject", "CFB"]
-- !private ["Ps9AnyObject", "CTR"]
-- !private ["Ps9AnyObject", "CryptoJS"]
-- !private ["Ps9AnyObject", "ECB"]
-- !private ["Ps9AnyObject", "Encoding"]
-- !private ["Ps9AnyObject", "Iso10126"]
-- !private ["Ps9AnyObject", "Iso97971"]
-- !private ["Ps9AnyObject", "MD5"]
-- !private ["Ps9AnyObject", "NoPadding"]
-- !private ["Ps9AnyObject", "OFB"]
-- !private ["Ps9AnyObject", "RIPEMD160"]
-- !private ["Ps9AnyObject", "SHA1"]
-- !private ["Ps9AnyObject", "SHA224"]
-- !private ["Ps9AnyObject", "SHA256"]
-- !private ["Ps9AnyObject", "SHA3"]
-- !private ["Ps9AnyObject", "SHA384"]
-- !private ["Ps9AnyObject", "SHA512"]
-- !private ["Ps9AnyObject", "String"]
-- !private ["Ps9AnyObject", "ZeroPadding"]
-- !private ["Ps9AnyObject", "call"]
-- !private ["Ps9AnyObject", "cryptoJScontext"]
-- !private ["Ps9AnyObject", "decryptFunction"]
-- !private ["Ps9AnyObject", "encryptFunction"]
-- !private ["Ps9AnyObject", "encryptFunction_"]
-- !private ["Ps9AnyObject", "evaluateScript"]
-- !private ["Ps9AnyObject", "exceptionHandler"]
-- !private ["Ps9AnyObject", "hmacSHA512"]
-- !private ["Ps9AnyObject", "hmacSHA512_"]
-- ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "lowercased"]
-- !private ["Ps9AnyObject", "main"]
-- !private ["Ps9AnyObject", "mode"]
-- !private ["Ps9AnyObject", "objectForKeyedSubscript"]
-- !private ["Ps9AnyObject", "pad"]
-- !private ["Ps9AnyObject", "path"]
-- !private ["Ps9AnyObject", "print"]
-- ["Ps9AnyObject", ""]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "AnyObject"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "Int"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "JSValue"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "decrypt"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "decryptFunction"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "encrypt"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "encryptFunction"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "encryptFunction_"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "encrypt_"]
+- ["16SwiftLoginScreen8CryptoJSC3AESC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3AESC", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C", "print"]
+- !private ["12FacebookCore26AppEventParameterValueTypeP", "Encoding"]
+- ["12FacebookCore26AppEventParameterValueTypeP", "init"]
+- !private ["12FacebookCore26AppEventParameterValueTypeP", "lowercased"]
+- !private ["s23BidirectionalCollectionP", "Encoding"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "lowercased"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- !private ["CSo6Bundle", "main"]
-- !private ["CSo6Bundle", "path"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CFB", "print"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3CTR", "print"]
-- !private ["Ps7CVarArg", "Encoding"]
-- !private ["Ps7CVarArg", "call"]
-- !private ["Ps7CVarArg", "evaluateScript"]
-- !private ["Ps7CVarArg", "exceptionHandler"]
-- ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "lowercased"]
-- !private ["Ps7CVarArg", "main"]
-- !private ["Ps7CVarArg", "objectForKeyedSubscript"]
-- !private ["Ps7CVarArg", "path"]
-- !private ["Ps10Comparable", "Encoding"]
-- ["Ps10Comparable", "init"]
-- !private ["Ps10Comparable", "lowercased"]
-- ["C16SwiftLoginScreen8CryptoJS", "AES"]
-- ["C16SwiftLoginScreen8CryptoJS", "AnsiX923"]
-- ["C16SwiftLoginScreen8CryptoJS", "AnyObject"]
-- !private ["C16SwiftLoginScreen8CryptoJS", "Bundle"]
-- ["C16SwiftLoginScreen8CryptoJS", "CFB"]
-- ["C16SwiftLoginScreen8CryptoJS", "CTR"]
-- ["C16SwiftLoginScreen8CryptoJS", "CryptoJS"]
-- ["C16SwiftLoginScreen8CryptoJS", "ECB"]
-- ["C16SwiftLoginScreen8CryptoJS", "Int"]
-- ["C16SwiftLoginScreen8CryptoJS", "Iso10126"]
-- ["C16SwiftLoginScreen8CryptoJS", "Iso97971"]
-- ["C16SwiftLoginScreen8CryptoJS", "JSValue"]
-- ["C16SwiftLoginScreen8CryptoJS", "MD5"]
-- ["C16SwiftLoginScreen8CryptoJS", "NoPadding"]
-- ["C16SwiftLoginScreen8CryptoJS", "OFB"]
-- ["C16SwiftLoginScreen8CryptoJS", "RIPEMD160"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA1"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA224"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA256"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA3"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA384"]
-- ["C16SwiftLoginScreen8CryptoJS", "SHA512"]
-- ["C16SwiftLoginScreen8CryptoJS", "String"]
-- ["C16SwiftLoginScreen8CryptoJS", "ZeroPadding"]
-- !private ["C16SwiftLoginScreen8CryptoJS", "cryptoJScontext"]
-- ["C16SwiftLoginScreen8CryptoJS", "decrypt"]
-- ["C16SwiftLoginScreen8CryptoJS", "decryptFunction"]
-- ["C16SwiftLoginScreen8CryptoJS", "deinit"]
-- ["C16SwiftLoginScreen8CryptoJS", "encrypt"]
-- ["C16SwiftLoginScreen8CryptoJS", "encryptFunction"]
-- ["C16SwiftLoginScreen8CryptoJS", "encryptFunction_"]
-- ["C16SwiftLoginScreen8CryptoJS", "encrypt_"]
-- ["C16SwiftLoginScreen8CryptoJS", "hash"]
-- ["C16SwiftLoginScreen8CryptoJS", "hmac"]
-- ["C16SwiftLoginScreen8CryptoJS", "hmacSHA512"]
-- ["C16SwiftLoginScreen8CryptoJS", "hmacSHA512_"]
-- ["C16SwiftLoginScreen8CryptoJS", "hmac_"]
-- ["C16SwiftLoginScreen8CryptoJS", "init"]
-- ["C16SwiftLoginScreen8CryptoJS", "mode"]
-- ["C16SwiftLoginScreen8CryptoJS", "pad"]
-- !private ["C16SwiftLoginScreen8CryptoJS", "print"]
-- ["C16SwiftLoginScreen8CryptoJS", ""]
-- !private ["Ps28CustomDebugStringConvertible", "Encoding"]
-- !private ["Ps28CustomDebugStringConvertible", "call"]
-- !private ["Ps28CustomDebugStringConvertible", "evaluateScript"]
-- !private ["Ps28CustomDebugStringConvertible", "exceptionHandler"]
-- ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "lowercased"]
-- !private ["Ps28CustomDebugStringConvertible", "main"]
-- !private ["Ps28CustomDebugStringConvertible", "objectForKeyedSubscript"]
-- !private ["Ps28CustomDebugStringConvertible", "path"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "Encoding"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
-- ["Ps29CustomPlaygroundQuickLookable", "init"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "lowercased"]
-- !private ["Ps17CustomReflectable", "Encoding"]
-- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
-- ["Ps17CustomReflectable", "init"]
-- !private ["Ps17CustomReflectable", "lowercased"]
-- !private ["Ps23CustomStringConvertible", "Encoding"]
-- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps23CustomStringConvertible", "call"]
-- !private ["Ps23CustomStringConvertible", "evaluateScript"]
-- !private ["Ps23CustomStringConvertible", "exceptionHandler"]
-- ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "lowercased"]
-- !private ["Ps23CustomStringConvertible", "main"]
-- !private ["Ps23CustomStringConvertible", "objectForKeyedSubscript"]
-- !private ["Ps23CustomStringConvertible", "path"]
-- !private ["Ps23CustomStringConvertible", "utf8"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3ECB", "print"]
-- !private ["VE10FoundationSS8Encoding", "utf8"]
-- !private ["Ps9Equatable", "Encoding"]
-- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
-- !private ["Ps9Equatable", "call"]
-- !private ["Ps9Equatable", "evaluateScript"]
-- !private ["Ps9Equatable", "exceptionHandler"]
-- ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "lowercased"]
-- !private ["Ps9Equatable", "main"]
-- !private ["Ps9Equatable", "objectForKeyedSubscript"]
-- !private ["Ps9Equatable", "path"]
-- !private ["Ps9Equatable", "utf8"]
-- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Encoding"]
-- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "lowercased"]
-- !private ["Ps26ExpressibleByStringLiteral", "Encoding"]
-- ["Ps26ExpressibleByStringLiteral", "init"]
-- !private ["Ps26ExpressibleByStringLiteral", "lowercased"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "Encoding"]
-- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "lowercased"]
-- !private ["Ps8Hashable", "Encoding"]
-- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps8Hashable", "call"]
-- !private ["Ps8Hashable", "evaluateScript"]
-- !private ["Ps8Hashable", "exceptionHandler"]
-- ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "lowercased"]
-- !private ["Ps8Hashable", "main"]
-- !private ["Ps8Hashable", "objectForKeyedSubscript"]
-- !private ["Ps8Hashable", "path"]
-- !private ["Ps8Hashable", "utf8"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126", "print"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971", "print"]
-- !private ["CSo9JSContext", "evaluateScript"]
-- !private ["CSo9JSContext", "exceptionHandler"]
-- ["CSo9JSContext", "init"]
-- !private ["CSo9JSContext", "objectForKeyedSubscript"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "Encoding"]
-- ["P10SwiftyJSON17JSONSubscriptType", "init"]
-- !private ["P10SwiftyJSON17JSONSubscriptType", "lowercased"]
-- !private ["CSo7JSValue", "call"]
-- !private ["Ps25LosslessStringConvertible", "Encoding"]
-- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
-- ["Ps25LosslessStringConvertible", "init"]
-- !private ["Ps25LosslessStringConvertible", "lowercased"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3MD5", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3MD5", "MD5"]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3MD5", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS3MD5", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3MD5", "print"]
-- !private ["Ps10MirrorPath", "Encoding"]
-- ["Ps10MirrorPath", "init"]
-- !private ["Ps10MirrorPath", "lowercased"]
-- !private ["PSo8NSCoding", "Encoding"]
-- ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "lowercased"]
-- !private ["PSo9NSCopying", "Encoding"]
-- ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "lowercased"]
-- !private ["PSo16NSMutableCopying", "Encoding"]
-- ["PSo16NSMutableCopying", "init"]
-- !private ["PSo16NSMutableCopying", "lowercased"]
-- !private ["CSo8NSObject", "Encoding"]
-- !private ["CSo8NSObject", "call"]
-- !private ["CSo8NSObject", "evaluateScript"]
-- !private ["CSo8NSObject", "exceptionHandler"]
-- ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "lowercased"]
-- !private ["CSo8NSObject", "main"]
-- !private ["CSo8NSObject", "objectForKeyedSubscript"]
-- !private ["CSo8NSObject", "path"]
-- !private ["PSo16NSObjectProtocol", "Encoding"]
-- !private ["PSo16NSObjectProtocol", "call"]
-- !private ["PSo16NSObjectProtocol", "evaluateScript"]
-- !private ["PSo16NSObjectProtocol", "exceptionHandler"]
-- ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "lowercased"]
-- !private ["PSo16NSObjectProtocol", "main"]
-- !private ["PSo16NSObjectProtocol", "objectForKeyedSubscript"]
-- !private ["PSo16NSObjectProtocol", "path"]
-- !private ["PSo14NSSecureCoding", "Encoding"]
-- ["PSo14NSSecureCoding", "init"]
-- !private ["PSo14NSSecureCoding", "lowercased"]
-- !private ["CSo8NSString", "Encoding"]
-- ["CSo8NSString", "init"]
-- !private ["CSo8NSString", "lowercased"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding", "print"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS4mode3OFB", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "Int"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "RIPEMD160"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS9RIPEMD160", "print"]
-- !private ["Ps16RawRepresentable", "utf8"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA1", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA1", "SHA1"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA1", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA1", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA1", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA224", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA224", "SHA224"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA224", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA224", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA224", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA256", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA256", "SHA256"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA256", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA256", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA256", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA3", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "Int"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA3", "SHA3"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA3", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS4SHA3", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4SHA3", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA384", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA384", "SHA384"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA384", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA384", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA384", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA512", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", "JSValue"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA512", "SHA512"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA512", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", "hash"]
-- ["CC16SwiftLoginScreen8CryptoJS6SHA512", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS6SHA512", "print"]
+- !private ["So6BundleC", "main"]
+- !private ["So6BundleC", "path"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CFBC", "print"]
+- ["So15CNKeyDescriptorP", "init"]
+- !private ["So15CNKeyDescriptorP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3CTRC", "print"]
+- !private ["s7CVarArgP", "Encoding"]
+- !private ["s7CVarArgP", "call"]
+- !private ["s7CVarArgP", "evaluateScript"]
+- !private ["s7CVarArgP", "exceptionHandler"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "lowercased"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "objectForKeyedSubscript"]
+- !private ["s7CVarArgP", "path"]
+- !private ["s10CollectionP", "Encoding"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "lowercased"]
+- !private ["s10ComparableP", "Encoding"]
+- ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "lowercased"]
+- ["16SwiftLoginScreen8CryptoJSC", "AES"]
+- ["16SwiftLoginScreen8CryptoJSC", "AnsiX923"]
+- ["16SwiftLoginScreen8CryptoJSC", "AnyObject"]
+- !private ["16SwiftLoginScreen8CryptoJSC", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC", "CFB"]
+- ["16SwiftLoginScreen8CryptoJSC", "CTR"]
+- ["16SwiftLoginScreen8CryptoJSC", "CryptoJS"]
+- ["16SwiftLoginScreen8CryptoJSC", "ECB"]
+- ["16SwiftLoginScreen8CryptoJSC", "Int"]
+- ["16SwiftLoginScreen8CryptoJSC", "Iso10126"]
+- ["16SwiftLoginScreen8CryptoJSC", "Iso97971"]
+- ["16SwiftLoginScreen8CryptoJSC", "JSValue"]
+- ["16SwiftLoginScreen8CryptoJSC", "MD5"]
+- ["16SwiftLoginScreen8CryptoJSC", "NoPadding"]
+- ["16SwiftLoginScreen8CryptoJSC", "OFB"]
+- ["16SwiftLoginScreen8CryptoJSC", "RIPEMD160"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA1"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA224"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA256"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA3"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA384"]
+- ["16SwiftLoginScreen8CryptoJSC", "SHA512"]
+- ["16SwiftLoginScreen8CryptoJSC", "String"]
+- ["16SwiftLoginScreen8CryptoJSC", "ZeroPadding"]
+- !private ["16SwiftLoginScreen8CryptoJSC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC", "decrypt"]
+- ["16SwiftLoginScreen8CryptoJSC", "decryptFunction"]
+- ["16SwiftLoginScreen8CryptoJSC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC", "encrypt"]
+- ["16SwiftLoginScreen8CryptoJSC", "encryptFunction"]
+- ["16SwiftLoginScreen8CryptoJSC", "encryptFunction_"]
+- ["16SwiftLoginScreen8CryptoJSC", "encrypt_"]
+- ["16SwiftLoginScreen8CryptoJSC", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC", "hmac"]
+- ["16SwiftLoginScreen8CryptoJSC", "hmacSHA512"]
+- ["16SwiftLoginScreen8CryptoJSC", "hmacSHA512_"]
+- ["16SwiftLoginScreen8CryptoJSC", "hmac_"]
+- ["16SwiftLoginScreen8CryptoJSC", "init"]
+- ["16SwiftLoginScreen8CryptoJSC", "mode"]
+- ["16SwiftLoginScreen8CryptoJSC", "pad"]
+- !private ["16SwiftLoginScreen8CryptoJSC", "print"]
+- ["16SwiftLoginScreen8CryptoJSC", ""]
+- !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- !private ["s28CustomDebugStringConvertibleP", "call"]
+- !private ["s28CustomDebugStringConvertibleP", "evaluateScript"]
+- !private ["s28CustomDebugStringConvertibleP", "exceptionHandler"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lowercased"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "objectForKeyedSubscript"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Encoding"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "lowercased"]
+- !private ["s17CustomReflectableP", "Encoding"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "lowercased"]
+- !private ["s23CustomStringConvertibleP", "Encoding"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "call"]
+- !private ["s23CustomStringConvertibleP", "evaluateScript"]
+- !private ["s23CustomStringConvertibleP", "exceptionHandler"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lowercased"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "objectForKeyedSubscript"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- !private ["s9DecodableP", "Encoding"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3ECBC", "print"]
+- !private ["s9EncodableP", "Encoding"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "lowercased"]
+- !private ["SS10FoundationE8EncodingV", "utf8"]
+- !private ["s9EquatableP", "Encoding"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "call"]
+- !private ["s9EquatableP", "evaluateScript"]
+- !private ["s9EquatableP", "exceptionHandler"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "lowercased"]
+- !private ["s9EquatableP", "main"]
+- !private ["s9EquatableP", "objectForKeyedSubscript"]
+- !private ["s9EquatableP", "path"]
+- !private ["s9EquatableP", "utf8"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "lowercased"]
+- !private ["s26ExpressibleByStringLiteralP", "Encoding"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "lowercased"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Encoding"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "lowercased"]
+- !private ["s8HashableP", "Encoding"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "call"]
+- !private ["s8HashableP", "evaluateScript"]
+- !private ["s8HashableP", "exceptionHandler"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "lowercased"]
+- !private ["s8HashableP", "main"]
+- !private ["s8HashableP", "objectForKeyedSubscript"]
+- !private ["s8HashableP", "path"]
+- !private ["s8HashableP", "utf8"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso10126C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC8Iso97971C", "print"]
+- !private ["So9JSContextC", "evaluateScript"]
+- !private ["So9JSContextC", "exceptionHandler"]
+- ["So9JSContextC", "init"]
+- !private ["So9JSContextC", "objectForKeyedSubscript"]
+- !private ["10SwiftyJSON17JSONSubscriptTypeP", "Encoding"]
+- ["10SwiftyJSON17JSONSubscriptTypeP", "init"]
+- !private ["10SwiftyJSON17JSONSubscriptTypeP", "lowercased"]
+- !private ["So7JSValueC", "call"]
+- !private ["s25LosslessStringConvertibleP", "Encoding"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC3MD5C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC3MD5C", "MD5"]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3MD5C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC3MD5C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3MD5C", "print"]
+- !private ["s10MirrorPathP", "Encoding"]
+- ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "lowercased"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "lowercased"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "lowercased"]
+- ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "lowercased"]
+- ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "lowercased"]
+- ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "lowercased"]
+- !private ["So8NSObjectC", "call"]
+- !private ["So8NSObjectC", "evaluateScript"]
+- !private ["So8NSObjectC", "exceptionHandler"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "lowercased"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "objectForKeyedSubscript"]
+- !private ["So8NSObjectC", "path"]
+- !private ["So16NSObjectProtocolP", "call"]
+- !private ["So16NSObjectProtocolP", "evaluateScript"]
+- !private ["So16NSObjectProtocolP", "exceptionHandler"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "lowercased"]
+- !private ["So16NSObjectProtocolP", "main"]
+- !private ["So16NSObjectProtocolP", "objectForKeyedSubscript"]
+- !private ["So16NSObjectProtocolP", "path"]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "lowercased"]
+- ["So8NSStringC", "init"]
+- !private ["So8NSStringC", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC3OFBC", "print"]
+- !private ["13FacebookShare22OpenGraphPropertyValueP", "Encoding"]
+- ["13FacebookShare22OpenGraphPropertyValueP", "init"]
+- !private ["13FacebookShare22OpenGraphPropertyValueP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "Int"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "RIPEMD160"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC9RIPEMD160C", "print"]
+- !private ["s26RangeReplaceableCollectionP", "Encoding"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "lowercased"]
+- !private ["s16RawRepresentableP", "utf8"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA1C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA1C", "SHA1"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA1C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA1C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA1C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA224C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA224C", "SHA224"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA224C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA224C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA224C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA256C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA256C", "SHA256"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA256C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA256C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA256C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA3C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "Int"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA3C", "SHA3"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA3C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC4SHA3C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4SHA3C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA384C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA384C", "SHA384"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA384C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA384C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA384C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA512C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", "JSValue"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA512C", "SHA512"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA512C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", "hash"]
+- ["16SwiftLoginScreen8CryptoJSC6SHA512C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC6SHA512C", "print"]
+- !private ["s8SequenceP", "Encoding"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "lowercased"]
 - !private ["SS", "Encoding"]
 - ["SS", "init"]
 - !private ["SS", "lowercased"]
-- !private ["Ps16TextOutputStream", "Encoding"]
-- ["Ps16TextOutputStream", "init"]
-- !private ["Ps16TextOutputStream", "lowercased"]
-- !private ["Ps20TextOutputStreamable", "Encoding"]
-- ["Ps20TextOutputStreamable", "init"]
-- !private ["Ps20TextOutputStreamable", "lowercased"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "Bundle"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "CryptoJS"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "String"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "cryptoJScontext"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "deinit"]
-- ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "init"]
-- !private ["CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding", "print"]
-- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
-- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "lowercased"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "Encoding"]
-- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "lowercased"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "Encoding"]
-- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "lowercased"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "Encoding"]
-- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "lowercased"]
-- !private ["Ps33_ExpressibleByStringInterpolation", "Encoding"]
-- ["Ps33_ExpressibleByStringInterpolation", "init"]
-- !private ["Ps33_ExpressibleByStringInterpolation", "lowercased"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "Encoding"]
-- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "lowercased"]
-- !private ["Ps9_Hashable", "Encoding"]
-- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps9_Hashable", "call"]
-- !private ["Ps9_Hashable", "evaluateScript"]
-- !private ["Ps9_Hashable", "exceptionHandler"]
-- ["Ps9_Hashable", "init"]
-- !private ["Ps9_Hashable", "lowercased"]
-- !private ["Ps9_Hashable", "main"]
-- !private ["Ps9_Hashable", "objectForKeyedSubscript"]
-- !private ["Ps9_Hashable", "path"]
-- !private ["Ps9_Hashable", "utf8"]
-- !private ["Ps21_ObjectiveCBridgeable", "Encoding"]
-- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
-- ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "lowercased"]
-- !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "JSValue"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "hmac"]
-- !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "hmacSHA512"]
-- !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "hmacSHA512_"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "hmac_"]
-- ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS10hmacSHA512", "print"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4mode", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "CFB"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "CTR"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "CryptoJS"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "ECB"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "OFB"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "String"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4mode", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS4mode", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS4mode", "print"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "AnsiX923"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3pad", "Bundle"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "CryptoJS"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "Iso10126"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "Iso97971"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "NoPadding"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "String"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "ZeroPadding"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3pad", "cryptoJScontext"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "deinit"]
-- ["CC16SwiftLoginScreen8CryptoJS3pad", "init"]
-- !private ["CC16SwiftLoginScreen8CryptoJS3pad", "print"]
+- !private ["s14StringProtocolP", "Encoding"]
+- ["s14StringProtocolP", "init"]
+- !private ["s14StringProtocolP", "lowercased"]
+- !private ["s16TextOutputStreamP", "Encoding"]
+- ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "lowercased"]
+- !private ["s20TextOutputStreamableP", "Encoding"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "Bundle"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "CryptoJS"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC", "print"]
+- !private ["s23_BidirectionalIndexableP", "Encoding"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "lowercased"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Encoding"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "lowercased"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Encoding"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "lowercased"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "Encoding"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "lowercased"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Encoding"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "lowercased"]
+- !private ["s33_ExpressibleByStringInterpolationP", "Encoding"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "lowercased"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "lowercased"]
+- !private ["s10_IndexableP", "Encoding"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "lowercased"]
+- !private ["s14_IndexableBaseP", "Encoding"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "lowercased"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "call"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "evaluateScript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "exceptionHandler"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lowercased"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "objectForKeyedSubscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "path"]
+- !private ["s21_ObjectiveCBridgeableP", "Encoding"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "lowercased"]
+- !private ["s26_RangeReplaceableIndexableP", "Encoding"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "lowercased"]
+- !private ["s16_SwiftStringViewP", "Encoding"]
+- ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "lowercased"]
+- !private ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "JSValue"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "hmac"]
+- !private ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "hmacSHA512"]
+- !private ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "hmacSHA512_"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "hmac_"]
+- ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC10hmacSHA512C", "print"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "CFB"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "CTR"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "CryptoJS"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "ECB"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "OFB"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "String"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC4modeC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC4modeC", "print"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "AnsiX923"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC", "Bundle"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "CryptoJS"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "Iso10126"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "Iso97971"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "NoPadding"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "String"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "ZeroPadding"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC", "cryptoJScontext"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "deinit"]
+- ["16SwiftLoginScreen8CryptoJSC3padC", "init"]
+- !private ["16SwiftLoginScreen8CryptoJSC3padC", "print"]
 depends-nominal:
-- "CC16SwiftLoginScreen8CryptoJS3AES"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8AnsiX923"
-- "Ps9AnyObject"
+- "16SwiftLoginScreen8CryptoJSC3AESC"
+- "16SwiftLoginScreen8CryptoJSC3padC8AnsiX923C"
+- "12FacebookCore26AppEventParameterValueTypeP"
+- "s23BidirectionalCollectionP"
 - !private "Sb"
-- !private "CSo6Bundle"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3CFB"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3CTR"
-- "Ps7CVarArg"
-- "Ps10Comparable"
-- "C16SwiftLoginScreen8CryptoJS"
-- "Ps28CustomDebugStringConvertible"
-- "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
-- "Ps23CustomStringConvertible"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3ECB"
-- !private "VE10FoundationSS8Encoding"
-- "Ps9Equatable"
-- !private "Ps27ExpressibleByBooleanLiteral"
-- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- "Ps26ExpressibleByStringLiteral"
-- "Ps33ExpressibleByUnicodeScalarLiteral"
-- "Ps8Hashable"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8Iso10126"
-- "CCC16SwiftLoginScreen8CryptoJS3pad8Iso97971"
-- "CSo9JSContext"
-- "P10SwiftyJSON17JSONSubscriptType"
-- !private "CSo7JSValue"
-- "Ps25LosslessStringConvertible"
-- "CC16SwiftLoginScreen8CryptoJS3MD5"
-- "Ps10MirrorPath"
-- "PSo8NSCoding"
-- "PSo9NSCopying"
-- "PSo16NSMutableCopying"
-- "CSo8NSObject"
-- "PSo16NSObjectProtocol"
-- "PSo14NSSecureCoding"
-- "CSo8NSString"
-- "CCC16SwiftLoginScreen8CryptoJS3pad9NoPadding"
-- "CCC16SwiftLoginScreen8CryptoJS4mode3OFB"
-- "CC16SwiftLoginScreen8CryptoJS9RIPEMD160"
-- !private "Ps16RawRepresentable"
-- "CC16SwiftLoginScreen8CryptoJS4SHA1"
-- "CC16SwiftLoginScreen8CryptoJS6SHA224"
-- "CC16SwiftLoginScreen8CryptoJS6SHA256"
-- "CC16SwiftLoginScreen8CryptoJS4SHA3"
-- "CC16SwiftLoginScreen8CryptoJS6SHA384"
-- "CC16SwiftLoginScreen8CryptoJS6SHA512"
+- !private "So6BundleC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3CFBC"
+- "So15CNKeyDescriptorP"
+- "16SwiftLoginScreen8CryptoJSC4modeC3CTRC"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "16SwiftLoginScreen8CryptoJSC"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "16SwiftLoginScreen8CryptoJSC4modeC3ECBC"
+- "s9EncodableP"
+- !private "SS10FoundationE8EncodingV"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "16SwiftLoginScreen8CryptoJSC3padC8Iso10126C"
+- "16SwiftLoginScreen8CryptoJSC3padC8Iso97971C"
+- "So9JSContextC"
+- "10SwiftyJSON17JSONSubscriptTypeP"
+- !private "So7JSValueC"
+- "s25LosslessStringConvertibleP"
+- "16SwiftLoginScreen8CryptoJSC3MD5C"
+- "s10MirrorPathP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- "16SwiftLoginScreen8CryptoJSC3padC9NoPaddingC"
+- "16SwiftLoginScreen8CryptoJSC4modeC3OFBC"
+- "13FacebookShare22OpenGraphPropertyValueP"
+- "16SwiftLoginScreen8CryptoJSC9RIPEMD160C"
+- "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- "16SwiftLoginScreen8CryptoJSC4SHA1C"
+- "16SwiftLoginScreen8CryptoJSC6SHA224C"
+- "16SwiftLoginScreen8CryptoJSC6SHA256C"
+- "16SwiftLoginScreen8CryptoJSC4SHA3C"
+- "16SwiftLoginScreen8CryptoJSC6SHA384C"
+- "16SwiftLoginScreen8CryptoJSC6SHA512C"
+- "s8SequenceP"
 - "SS"
-- "Ps16TextOutputStream"
-- "Ps20TextOutputStreamable"
-- "CCC16SwiftLoginScreen8CryptoJS3pad11ZeroPadding"
-- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
-- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- "Ps34_ExpressibleByBuiltinStringLiteral"
-- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- "Ps33_ExpressibleByStringInterpolation"
-- "Ps35_HasCustomAnyHashableRepresentation"
-- "Ps9_Hashable"
-- "Ps21_ObjectiveCBridgeable"
-- "CC16SwiftLoginScreen8CryptoJS10hmacSHA512"
-- "CC16SwiftLoginScreen8CryptoJS4mode"
-- "CC16SwiftLoginScreen8CryptoJS3pad"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "16SwiftLoginScreen8CryptoJSC3padC11ZeroPaddingC"
+- "s23_BidirectionalIndexableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s26_RangeReplaceableIndexableP"
+- "s16_SwiftStringViewP"
+- "16SwiftLoginScreen8CryptoJSC10hmacSHA512C"
+- "16SwiftLoginScreen8CryptoJSC4modeC"
+- "16SwiftLoginScreen8CryptoJSC3padC"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/WebKit.apinotesc"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/Kanna.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Modules/FacebookShare.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/FacebookCore.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/FacebookLogin.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Modules/Toaster.swiftmodule/x86_64.swiftmodule"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Modules/Toast_Swift.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MapKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionChange.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOfferResponse.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermissionOffer.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFNetworkReachabilityManager.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Kanna/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
-- "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBase64.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDB.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareAPI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/UIColor+BTUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeUI.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/UIColor+BTUIK.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFURL.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTJSON.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSGZIP.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTS.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AWS.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLog+LOGV.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/Braintree-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Headers/FacebookShare-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCore-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeDropIn-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalytics-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Headers/Toast-Swift-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GoogleAPIClient-umbrella.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTBinData.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTClientMetadata.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSGeneric.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPostalCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKMobileCountryCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKSecurityCodeFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardNumberFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKMobileNumberFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKExpiryFormField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKTextField.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarTimePeriod.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCard.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeCard.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLTargetNamespace.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTDevice.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTTokenizationService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcherService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityService.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKAppearance.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentMethodNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalAccountNonce.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationTokenSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTaskCompletionSource.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLErrorCode.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareDialogMode.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventAttendee.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMDiskCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMMemoryCache.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMantle.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarAclRule.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLDateTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventDateTime.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPaymentOptionType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPaymentOptionType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeObjectType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKVisualAssetType.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeCore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSUICKeyChainStore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver+ThreeDSecure.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSignature.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDASLLogCapture.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabase.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyResponse.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTViewControllerPresentingDelegate.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabaseQueue.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKHashtag.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalCreditFinancing.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLModel+NSCoding.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSLogging.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcherLogging.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLiking.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSNetworking.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharing.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTString.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKLocalizedString.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarSetting.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkResolving.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupAddDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKMessageDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppInviteDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupJoinDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKGameRequestDialog.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTAppSwitch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalOneTouch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2ViewControllerTouch.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCocoaLumberjack.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealBank.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLink.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLFramework.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTask.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+PayPal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreePayPal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+Ideal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver+Ideal.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarAcl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardListLabel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityModel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarChannel.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKViewUtil.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabasePool.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICTAControl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeControl.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMGatherInputStream.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMReadMonitorInputStream.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyRequestItem.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSServiceEnum.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLContext+SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Headers/Public/Google/Google/SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2SignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeDropIn.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTClientToken.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTSimpleKeychain.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTVersion.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTURLSession.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarNotification.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Headers/GTMOAuth2Authentication.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSValidation.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCancellationTokenRegistration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GMRConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsConfiguration.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLResponseSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLRequestSerialization.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphAction.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLReflection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarColorDefinition.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSError+AWSMTLModelException.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLRuntimeCommon.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSendButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKLikeButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICoinbaseButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharingButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPayPalButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIVenmoButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentButton.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareVideo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSInfo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureInfo.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharePhoto.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyGroup.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKInputAccessoryToolbar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLServiceCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLQueryCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarFreeBusyCalendar.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPRCClientMetadataIDProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCredentialsProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSIdentityProvider.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventReminder.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSTMCacheBackgroundTaskManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLSessionManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFNetworkReachabilityManager.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDASLLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDOSLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDTTYLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDFileLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDAbstractDatabaseLogger.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionUploadFetcher.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSURLRequestRetryHandler.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInBaseViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTCardFormViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTDropInViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTPaymentSelectionViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTVaultManagementViewController.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLValueTransformer.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphValueContainer.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTJSONHelper.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTEncryptionHelper.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLJSONParser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentMethodNonceParser.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLJSONAdapter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSMTLManagedObjectAdapter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDDispatchQueueLogFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDContextFilterLogFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDMultiFormatter.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalDriver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowDriver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarError.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardExpirationValidator.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPDataCollector.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalDataCollector.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFExecutor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSExecutor.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalytics.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsERSResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSTSResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentityResources.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardCapabilities.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLUtilities.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLDefines.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTPinnedCertificates.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarSettings.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PayPalUtils.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTEnums.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMDatabaseAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsOptions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFTask+Exceptions.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLogMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDAssertMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSDDLegacyMacros.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLUploadParameters.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarColors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTHTTPErrors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTErrors.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPostalAddress.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/Bolts.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSBolts.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarConstants.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEvents.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKCardExpiryFormat.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLErrorObject.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSFMResultSet.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkTarget.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Headers/Kanna-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Headers/FacebookShare-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Headers/FacebookCore-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Headers/FacebookLogin-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Headers/Toaster-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Headers/Toast_Swift-Swift.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BraintreeUIKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBatchResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowResult.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTAPIClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsEventClient.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEventAttachment.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMMIMEDocument.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareMediaContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppInviteContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharingContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareOpenGraphContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareLinkContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKShareVideoContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKSharePhotoContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKAppGroupContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Headers/FBSDKGameRequestContent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Headers/AWSMobileAnalyticsEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFMeasurementEvent.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICardHint.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTThreeDSecureRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPayPalRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTIdealRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTDropInRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTPaymentFlowRequest.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendarList.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLContext.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSClientContext.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIThemedView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIPaymentMethodView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKPaymentOptionCardView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUICardFormView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUIVectorArtView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKVectorArtView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Headers/BTUIKExpiryInputView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTUISummaryView.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreePaymentFlow.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTConfiguration+UnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BTCardClient+UnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/BraintreeUnionPay.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFSecurityPolicy.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSSynchronizedMutableDictionary.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLQuery.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLBatchQuery.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCategory.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Headers/PPOTRequestFactory.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Headers/GTLCalendarCalendarListEntry.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSKSReachability.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Headers/AWSCognitoIdentity.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMOAuth2/GTMOAuth2.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Braintree/Braintree.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookShare/FacebookShare.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSCore/AWSCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookCore/FacebookCore.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Starscream/Starscream.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Frameworks/GGLSignIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/BraintreeDropIn/BraintreeDropIn.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FacebookLogin/FacebookLogin.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toaster/Toaster.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/AWSMobileAnalytics/AWSMobileAnalytics.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Bolts/Bolts.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Toast-Swift/Toast_Swift.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/GoogleAPIClient/GoogleAPIClient.framework/Modules/module.modulemap"
+- "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Headers/module.modulemap"
 interface-hash: "e133d80a9bb69623096eb6f07c2134eb"

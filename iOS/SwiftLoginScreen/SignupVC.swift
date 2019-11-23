@@ -21,10 +21,10 @@ class SignupVC: UIViewController {
     
     lazy var session = URLSession.sharedCustomSession
     var running = false
-
+    
     @IBOutlet var txtVoucher : UITextField!
     @IBOutlet var txtEmail : UITextField!
-
+    
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     @IBOutlet var txtConfirmPassword : UITextField!
@@ -38,7 +38,7 @@ class SignupVC: UIViewController {
         
         self.view.addSubview(view)
         
-        self.view.sendSubview(toBack: view)
+        self.view.sendSubviewToBack(view)
         
         
         let backgroundImage:UIImage? = UIImage(named: backgroundDict["Signup"]!)
@@ -51,7 +51,7 @@ class SignupVC: UIViewController {
         view.addSubview(imageView);
         
         self.hideKeyboardWhenTappedAround();
-    
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,29 +60,29 @@ class SignupVC: UIViewController {
     }
     
     /*
-    // #pragma mark - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
+     // #pragma mark - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     @IBAction func gotoLogin(_ sender : UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    let url:URL = URL(string:serverURL + "/login/voucher")!
-    let urlR:URL = URL(string:serverURL + "/login/register")!
-
+    let url:URL = URL(string: serverURL + "/login/voucher")!
+    let urlR:URL = URL(string: serverURL + "/login/register")!
+    
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
     func dataTask(_ voucher: String, email: String, username: String, hash: String, deviceId: String, systemVersion: String, onCompletion: @escaping ServiceResponse) {
         
-      //  let requestV:NSMutableURLRequest = NSMutableURLRequest(url: url)
-      //  let request:NSMutableURLRequest = NSMutableURLRequest(url: url)
-
+        //  let requestV:NSMutableURLRequest = NSMutableURLRequest(url: url)
+        //  let request:NSMutableURLRequest = NSMutableURLRequest(url: url)
+        
         var requestV = URLRequest.init(url: url)
         var request = URLRequest.init(url: urlR)
         
@@ -97,7 +97,7 @@ class SignupVC: UIViewController {
         // content length
         let postLength:NSString = String( postData.count ) as NSString
         let postLengthV:NSString = String( postDataV.count ) as NSString
-
+        
         let time = zeroTime(0).getCurrentMillis()
         
         // hmac data
@@ -115,7 +115,7 @@ class SignupVC: UIViewController {
         NSLog("hmacSecret: %@",hmacSec);
         NSLog("PostData: %@",post);
         NSLog("PostData: %@",postV);
-
+        
         request.httpMethod = "POST"
         request.httpBody = postData
         request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
@@ -156,15 +156,15 @@ class SignupVC: UIViewController {
                 
                 
                 if let httpResponse = response as? HTTPURLResponse {
-
-                    if httpResponse.statusCode == 412 {
                     
+                    if httpResponse.statusCode == 412 {
+                        
                         alertView.title = "SignUp Failed!"
                         alertView.message = "Voucher is already used!"
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()
-                    
+                        
                     } else {
                         
                         alertView.title = "Connection Failure!"
@@ -175,7 +175,7 @@ class SignupVC: UIViewController {
                         
                     }
                 }
-                
+                    
                 else {
                     
                     alertView.title = "Connection Failure!"
@@ -185,11 +185,11 @@ class SignupVC: UIViewController {
                     alertView.show()
                     
                 }
-
+                
                 
             } else {
                 
-                let json:JSON = JSON(data: data!)
+                let json:JSON = try! JSON(data: data!)
                 
                 if let httpResponse = response as? HTTPURLResponse {
                     print("got some data")
@@ -198,21 +198,16 @@ class SignupVC: UIViewController {
                     case 200:
                         
                         do {
+                            self.dataTask(request, username: username, onCompletion: { (json, error: NSError?) in
+                                print(json)
+                            })
                             
-                                self.dataTask(request, username: username, onCompletion: { (json) in
-                                    print(json)
-                                })
                         }
                         
                     default:
                         
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "SignUp Failed!"
-                        alertView.message = "Server error \(httpResponse.statusCode)"
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                        _ = UIAlertController.popUp(title: "SignUp Failed!", message: "Server error \(httpResponse.statusCode)")
+                        
                     }
                     
                 }
@@ -226,7 +221,7 @@ class SignupVC: UIViewController {
         running = true
         taskV.resume()
         
-       
+        
     }
     
     func dataTask (_ request:URLRequest, username:String, onCompletion: @escaping ServiceResponse) {
@@ -234,8 +229,8 @@ class SignupVC: UIViewController {
         let task = session.dataTask(with: request, completionHandler: {(data, response, sessionError) in
             
             var error = sessionError
-            let json:JSON = JSON(data: data!)
-
+            let json:JSON = try! JSON(data: data!)
+            
             if let httpResponse = response as? HTTPURLResponse {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
@@ -251,8 +246,6 @@ class SignupVC: UIViewController {
             
             if error != nil {
                 
-                let alertView:UIAlertView = UIAlertView()
-
                 if let httpResponse = response as? HTTPURLResponse {
                     
                     if httpResponse.statusCode == 502 {
@@ -263,77 +256,60 @@ class SignupVC: UIViewController {
                         
                         let message:NSString = jsonData.value(forKey: "Message") as! NSString
                         
-                        
-                        alertView.title = "SignUp Failed!"
-                        alertView.message = "Error: \(message)"
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                        
+                        _ = UIAlertController.popUp(title: "SignUp Failed!", message: "Error: \(message)")
+        
                         
                     } else {
-                
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Connection Failure!"
-                        alertView.message = error!.localizedDescription
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                        NSLog("Got an HTTP \(httpResponse.statusCode)")
-  
+                        
+                        _ = UIAlertController.popUp(title: "Connection Failure!", message: error!.localizedDescription)
+                        
                     }
                 }
                 
             } else {
                 
-               // let json:JSON = JSON(data: data!)
+                // let json:JSON = JSON(data: data!)
                 
                 if let httpResponse = response as? HTTPURLResponse {
                     print("got some data")
                     
                     switch(httpResponse.statusCode) {
                     case 200:
+                        
+                        let prefs:UserDefaults = UserDefaults.standard
+                        
+                        let jsonData:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
                             
-                            let prefs:UserDefaults = UserDefaults.standard
+                            JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
+                        
+                        let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
+                        let sessionID:NSString = jsonData.value(forKey: "JSESSIONID") as! NSString
+                        let xtoken:NSString = jsonData.value(forKey: "X-Token") as! NSString
+                        
+                        NSLog("sessionId ==> %@", sessionID);
+                        
+                        NSLog("Success: %ld", success);
+                        
+                        if(success == 1)
+                        {
+                            NSLog("Login SUCCESS");
                             
-                            let jsonData:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
-                                
-                                JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
+                            prefs.set(username, forKey: "USERNAME")
+                            prefs.set(1, forKey: "ISLOGGEDIN")
+                            prefs.set(0, forKey: "ISWEBLOGGEDIN")
+                            prefs.setValue(sessionID, forKey: "JSESSIONID")
+                            prefs.setValue(deviceId, forKey: "deviceId")
+                            prefs.setValue(xtoken, forKey: "X-Token")
                             
-                            let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
-                            let sessionID:NSString = jsonData.value(forKey: "JSESSIONID") as! NSString
-                            let xtoken:NSString = jsonData.value(forKey: "X-Token") as! NSString
-                            
-                            NSLog("sessionId ==> %@", sessionID);
-                            
-                            NSLog("Success: %ld", success);
-                            
-                            if(success == 1)
-                            {
-                                NSLog("Login SUCCESS");
-                                
-                                prefs.set(username, forKey: "USERNAME")
-                                prefs.set(1, forKey: "ISLOGGEDIN")
-                                prefs.set(0, forKey: "ISWEBLOGGEDIN")
-                                prefs.setValue(sessionID, forKey: "JSESSIONID")
-                                prefs.setValue(deviceId, forKey: "deviceId")
-                                prefs.setValue(xtoken, forKey: "X-Token")
-                                
-                                prefs.synchronize()
-                            }
-                            
-                            NSLog("got a 200")
-                            self.dismiss(animated: true, completion: nil)
+                            prefs.synchronize()
+                        }
+                        
+                        NSLog("got a 200")
+                        self.dismiss(animated: true, completion: nil)
                         
                         
                     default:
                         
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "SignUp Failed!"
-                        alertView.message = "Server error \(httpResponse.statusCode)"
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
                     
@@ -358,20 +334,20 @@ class SignupVC: UIViewController {
         let password:NSString = txtPassword.text! as NSString
         let voucher:NSString = txtVoucher.text! as NSString
         let email:NSString = txtEmail.text! as NSString
-
+        
         let systemVersion = UIDevice.current.systemVersion
         
         let SHA3 = CryptoJS.SHA3()
         
         let hash = SHA3.hash(password as String,outputLength: 512)
-                
+        
         let isUsername = username.isEqual(to: "")
         let isPassword = password.isEqual(to: "")
         let isEmail = email.isEqual(to: "")
         let isVoucher = voucher.isEqual(to: "")
-
+        
         var ErrorData:Array< String > = Array < String >()
-
+        
         if ( isUsername || isPassword || isEmail || isVoucher) {
             
             let Message:NSDictionary = ["Username":isUsername, "Password":isPassword, "Email":isEmail, "Voucher":isVoucher]
@@ -391,19 +367,22 @@ class SignupVC: UIViewController {
             alertView.delegate = self
             alertView.addButton(withTitle: "OK")
             alertView.show()
-                    
-                
+            
+            
             
             
         } else {
             
+            if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
+
             self.dataTask(voucher as String, email: email as String, username: username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion){
                 (resultString, error) -> Void in
                 
                 print(resultString)
                 
+                }
             }
-        
+            
         }
     }
     
@@ -413,23 +392,23 @@ class SignupVC: UIViewController {
     }
     
     /*
-    func URLSession(_ session: Foundation.URLSession, didReceiveChallenge challenge: URLAuthenticationChallenge, completionHandler:
-        (Foundation.URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
-        completionHandler(
-            
-            Foundation.URLSession.AuthChallengeDisposition.useCredential,
-            URLCredential(trust: challenge.protectionSpace.serverTrust!))
-    }
+     func URLSession(_ session: Foundation.URLSession, didReceiveChallenge challenge: URLAuthenticationChallenge, completionHandler:
+     (Foundation.URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+     
+     completionHandler(
+     
+     Foundation.URLSession.AuthChallengeDisposition.useCredential,
+     URLCredential(trust: challenge.protectionSpace.serverTrust!))
+     }
+     
+     func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
+     newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
+     
+     let newRequest : URLRequest? = request
+     
+     print(newRequest?.description);
+     completionHandler(newRequest)
+     }*/
     
-    func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
-                    newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
-        
-        let newRequest : URLRequest? = request
-        
-        print(newRequest?.description);
-        completionHandler(newRequest)
-    }*/
-
-
+    
 }

@@ -1,5 +1,5 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "81ef5cdf3c705898191c296505b9586a"
-build_time: [549273872, 478365000]
+version: "Apple Swift version 4.0 (swiftlang-900.0.65.2 clang-900.0.37)"
+options: "3f802e797e18df7908af511f0ebc7c81"
+build_time: [1522938444, 979746000]
 inputs:
-  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/SwiftyJSON/Source/SwiftyJSON.swift": [540372711, 0]
+  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/SwiftyJSON/Source/SwiftyJSON.swift": [1488233384, 0]

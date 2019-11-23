@@ -8,21 +8,30 @@
 
 import UIKit
 import CoreData
+import CoreLocation
+import Contacts
+import Realm
 
+var expiryDate:Date?
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
                             
     var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    var locationManager: CLLocationManager?
+    var contactStore: CNContactStore?
+    var timer:Timer!
+    var timer_:Timer!
+        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // URL classes available
-        URLProtocol.registerClass(MyURLProtocol)
+        URLProtocol.registerClass(MyURLProtocol.self)
        // NSURLProtocol.registerClass(CustomURLProtocol)
 
         // Nav, Tool bar appearance tweaks
         UINavigationBar.appearance().barStyle = .blackTranslucent
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = UIColor.darkGray
+        UINavigationBar.appearance().backgroundColor = UIColor.darkGray
         
         UIToolbar.appearance().barStyle = .blackTranslucent
         UITabBar.appearance().barStyle = .black
@@ -30,19 +39,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.white
         
         UIBarButtonItem.appearance().tintColor = UIColor.white
-        
         UIButton.appearance().tintColor = UIColor.white
+        
+        
+        // Apple Maps
+        locationManager = CLLocationManager()
+        locationManager!.requestWhenInUseAuthorization()
+        locationManager!.allowsBackgroundLocationUpdates = true
+        
+        contactStore = CNContactStore()
+        contactStore!.requestAccess(for: .contacts){succeeded, err in
+            guard err == nil && succeeded else {
                 
-        // Google Maps
-        //GMSServices.provideAPIKey("AIzaSyBSGtLZM_liUV-HDLbFGBrqccBBkNun048")
-                
+                return
+            }
+        }
+
         return true
     }
-
-    /*
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        return true;
-    }*/
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -60,7 +74,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-         AFNetworkReachabilityManager.shared().startMonitoring()
+        AFNetworkReachabilityManager.shared().startMonitoring()
+        
+      //  AppEventsLogger.activate(application)
+
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.checkNet), userInfo: nil, repeats: true)
+        
+        timer_ = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(AppDelegate.checkRealm), userInfo: nil, repeats: true)
+    }
+    
+    @objc func checkNet() {
+
+        print(AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue)
+        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue == 0 {
+        
+            
+        } else {
+        
+        }
+        
+    }
+    
+    
+    @objc func checkRealm() {
+        
+        let gm:GeneralRequestManager?
+
+        gm = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil , bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+
+        if let localResponse = gm?.cachedResponseForCurrentRequest() {
+            
+            if localResponse.timestamp.addingTimeInterval(3600) < Date() {
+
+
+                let realm = RLMRealm.default()
+                realm.beginWriteTransaction()
+                realm.delete(localResponse)
+        
+                do {
+                    try realm.commitWriteTransaction()
+                    TableData_.removeAll()
+                    
+                } catch {
+                    print("Something went wrong!")
+                }
+            }
+        }
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -134,6 +194,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+
+        return false
+    }
+    
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        
+    }
 
 }
 

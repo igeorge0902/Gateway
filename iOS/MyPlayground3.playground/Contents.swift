@@ -3,21 +3,24 @@
 import Cocoa
 import XCPlayground
 import Foundation
+import PlaygroundSupport
 
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 var str = "Hello, playground"
 
-let username:String = "GG"
-
-let post:NSString = "user=\(username)" as NSString
-
-//let deviceId = "FF247563-8AB1-4F0D-864A-B6BB15743BA2"
+let deviceId = "FF247563-8AB1-4F0D-864A-B6BB15743BA2"
 //let newString:NSString =  "("+("\"\((deviceId))\"")+")"
 //print(newString)
 
 
-//("\"\(deviceId)\"")
+("\"\(deviceId)\"")
 
+var movieId = 1002
+var myString = String(movieId)
+
+print(myString)
 
 //current date
 let date = NSDate().timeIntervalSince1970;
@@ -130,7 +133,7 @@ class human {
 }
 
 let human_ = human(name: "G", height: 2, hairColor: "k")
-human_.applyDamage(5)
+human_.applyDamage(amount: 5)
 
 class Car {
     let make:String;
@@ -220,9 +223,9 @@ var songCount = 0
 
 for item in library {
     if item is Movie {
-        ++movieCount
+        movieCount += 1
     } else if item is Song {
-        ++songCount
+        songCount += 1
     }
 }
 
@@ -262,7 +265,7 @@ things.append(0.0)
 things.append(42)
 things.append(3.14159)
 things.append("hello")
-things.append((3.0, 5.0))
+//things.append((3.0, 5.0))
 things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
 things.append({ (name: String) -> String in "Hello, \(name)" })
 
@@ -284,7 +287,7 @@ for thing in things {
         print("an (x, y) point at \(x), \(y)")
     case let movie as Movie:
         print("a movie called '\(movie.name)', dir. \(movie.director)")
-    case let stringConverter as String -> String:
+    case let stringConverter as (String) -> String:
         print(stringConverter("Michael"))
     default:
         print("something else")
@@ -392,9 +395,11 @@ struct Urls {
         self.urls = urls
     }
 }
+
 if let urlss = Urls(urls: "http://milo.crabdance.com") {
     print (urlss)
 }
+
 class Starship: FullyNamed {
     var prefix: String?
     var name: String
@@ -412,141 +417,311 @@ var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
 ncc1701.fullName
 
 
+/*------------------*/
+
+
+protocol RandomNumberGenerator {
+    func random() -> Double
+}
+
+class LinearCongruentialGenerator: RandomNumberGenerator {
+    var lastRandom = 42.0
+    let m = 139968.0
+    let a = 3877.0
+    let c = 29573.0
+    func random() -> Double {
+        lastRandom = ((lastRandom * a + c) .truncatingRemainder(dividingBy: m))
+        return lastRandom / m
+    }
+}
+let generator = LinearCongruentialGenerator()
+print("Here's a random number: \(generator.random())")
+// Prints "Here's a random number: 0.37464991998171"
+print("And another one: \(generator.random())")
+// Prints "And another one: 0.729023776863283"
+
+
+
+class Dice {
+    let sides: Int
+    let generator: RandomNumberGenerator
+    init(sides: Int, generator: RandomNumberGenerator) {
+        self.sides = sides
+        self.generator = generator
+    }
+    func roll() -> Int {
+        return Int(generator.random() * Double(sides)) + 1
+    }
+}
+
+protocol DiceGame {
+    var dice: Dice { get }
+    func play()
+}
+protocol DiceGameDelegate {
+    func gameDidStart(game: DiceGame)
+    func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gameDidEnd(game: DiceGame)
+}
+
+class SnakesAndLadders: DiceGame {
+    let finalSquare = 25
+    let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    var square = 0
+    var board: [Int]
+    init() {
+        board = [Int](repeating: 0, count: finalSquare + 1)
+        board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+        board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+    }
+    var delegate: DiceGameDelegate?
+    func play() {
+        square = 0
+        delegate?.gameDidStart(game: self)
+        gameLoop: while square != finalSquare {
+            let diceRoll = dice.roll()
+            delegate?.game(game: self, didStartNewTurnWithDiceRoll: diceRoll)
+            print("diceroll: \(diceRoll)")
+            switch square + diceRoll {
+            case finalSquare:
+                break gameLoop
+            case let newSquare where newSquare > finalSquare:
+                continue gameLoop
+            default:
+                square += diceRoll
+                square += board[square]
+            }
+        }
+        delegate?.gameDidEnd(game: self)
+    }
+}
+
+var S = SnakesAndLadders.init()
+
+S.play()
 //--------------------
 
-let baseURL = "https://milo.crabdance.com/login/admin"
 /*
-typealias CallbackBlock = (result: String, error: String?) -> ()
+ 
+ if request.URL!.relativePath == "/example/jsR/app.js" {
+ 
+ let urldata:NSData = self.mutableData
+ let convertedString = NSString(data: urldata, encoding: NSUTF8StringEncoding)
+ 
+ //let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
+ print(deviceId)
+ let newString:NSString = convertedString!.stringByReplacingOccurrencesOfString("(uuid)", withString: "("+("\"\((deviceId))\"")+")")
+ let newurldata:NSData = newString.dataUsingEncoding(NSASCIIStringEncoding)!
+ self.mutableData.appendData(newurldata)
+ cachedResponse.setValue(self.mutableData, forKey: "data")
+ 
+ }
+ 
+ */
 
-func httpGet(request: NSURLRequest!, callback: (String, String?) -> Void) {
-let session = NSURLSession.sharedSession()
-let task = session.dataTaskWithRequest(request){
+let baseURL = "https://www.google.com/accounts/Logout"
+
+typealias CallbackBlock = (_ result: String, _ error: String?) -> ()
+
+func httpGet(request: NSURLRequest!, callback: @escaping (String, String?) -> Void) {
+let session = URLSession.shared
+let task = session.dataTask(with: request as URLRequest){
 
 (data, response, error) -> Void in
 
-if error != nil {
-callback("", error!.localizedDescription)
+    if error != nil {
 
-} else {
+        callback("", error!.localizedDescription)
 
-let result = NSString(data: data!, encoding:
-NSASCIIStringEncoding)!
-callback(result as String, nil)
-}
-}
-task.resume()
-}
+    } else {
 
-var request = NSMutableURLRequest(URL: NSURL(string: baseURL)!)
+                let result = NSString(data: data!, encoding:
+                String.Encoding.ascii.rawValue)!
 
-httpGet(request){
-
-(data, error) -> Void in
-if error != nil {
-print(error)
-} else {
-print(data)
-}
-}*/
-
-
-
-class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
-    
-    typealias CallbackBlock = (result: String, error: String?) -> ()
-    
-    
-    var callback: CallbackBlock = {
-        (resultString, error) -> Void in
-        if error == nil {
-            print(resultString)
-        } else {
-            print(error)
-        }
-    }
-    
-    func httpGet(request: NSMutableURLRequest!, callback: (String, String?) -> Void) {
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
-        let session = NSURLSession(configuration: configuration, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
-        
-        let task = session.dataTaskWithRequest(request){
-            
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            if error != nil {
-                callback("", error!.localizedDescription)
-                
-            } else {
-                let result = NSString(data: data!, encoding: NSASCIIStringEncoding)!
-                
                 callback(result as String, nil)
             }
         }
-        task.resume()
-    }
+    task.resume()
+}
+
+var request = URLRequest(url: URL(string: baseURL)!)
+
+httpGet(request: request as NSURLRequest!){
+
+(data, error) -> Void in
     
-    
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-        (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-            
-            print("didReceiveAuthenticationChallenge")
-            
-            completionHandler(
-                
-                NSURLSessionAuthChallengeDisposition.UseCredential,
-                NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
-    }
-    
-    /*
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-    
-    // For example, you may want to override this to accept some self-signed certs here.
-    if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust &&
-    Constants.selfSignedHosts.contains(challenge.protectionSpace.host) {
-    
-    // Allow the self-signed cert.
-    let credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
-    completionHandler(.UseCredential, credential)
+    if error != nil {
+        print(error as Any)
+        
     } else {
-    // You *have* to call completionHandler either way, so call it to do the default action.
-    completionHandler(.PerformDefaultHandling, nil)
-    }
-    }
-    
-    // MARK: - Constants
-    
-    struct Constants {
-    
-    // A list of hosts you allow self-signed certificates on.
-    // You'd likely have your dev/test servers here.
-    // Please don't put your production server here!
-    static let selfSignedHosts: Set<String> = ["milo.crabdance.com"]
-    }*/
-    
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-        newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-            
-            let newRequest : NSURLRequest? = request
-            
-            print(newRequest?.description);
-            completionHandler(newRequest)
+       // print(data)
     }
 }
 
 
-var learn = LearnNSURLSession()
 
-var request = NSMutableURLRequest(URL: NSURL(string: baseURL)!)
+var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
 
-learn.httpGet(request) {
+for (airportCode, airportName) in airports {
     
-    (resultString, error) -> Void in
-    learn.callback(result: resultString, error: error)
-    print(resultString)
-    
+    if airportCode.contains("YYZ") {
+    print("\(airportCode): \(airportName)")
+    }
+}
+
+var list = ["A1", "A2"]
+print(list)
+
+let airportCodes = [String](airports.keys)
+var size = airportCodes.count
+
+//for i in 0 ..< airportCodes.count {
+    var string = ""
+    for airportCode in airports.keys {
+        
+        
+        string += airportCode+"-"
+        
+    }
+
+print(string)
+//}
+print(airportCodes)
+
+func jediTrainer () -> ((String, Int) -> String) {
+    func train(name: String, times: Int) -> (String) {
+        return "\(name) has been trained in the Force \(times) times"
+    }
+    return train
+}
+let train = jediTrainer()
+train("Obi Wan", 3)
+
+func jediGreet(name: String, ability: String) -> (farewell: String, mayTheForceBeWithYou: String) {
+    return ("Good bye, \(name).", " May the \(ability) be with you.")
+}
+
+let retValue = jediGreet(name: "old friend", ability: "Force")
+print(retValue)
+print(retValue.farewell)
+print(retValue.mayTheForceBeWithYou)
+
+struct Person {
+    var age : Int?
+    init(age: Int) {
+        self.age = age
+    }
+}
+
+var eventAttendees = [Person(age: 22), Person(age: 41), Person(age: 23), Person(age: 30)]
+var filteredAttendees = eventAttendees.filter({
+    $0.age! < 30
+})
+
+for person in filteredAttendees {
+    print(person.age!)
 }
 
 
-XCPSetExecutionShouldContinueIndefinitely(true)
+var visitors = [["age" : 22], ["age" : 41], ["age" : 23], ["age" : 30]]
+
+var filteredVisitors = visitors.filter({
+    $0["age"]! < 30
+})
+
+print(filteredVisitors[1]["age"]!)
+
+class Node {
+    var value: String
+    var children: [Node] = []
+    weak var parent: Node?
+    
+    init(value: String) {
+        self.value = value
+    }
+    
+    func addChild(node: Node) {
+        children.append(node)
+        node.parent = self
+    }
+}
+
+
+let beverages = Node(value: "beverages")
+
+let hotBeverage = Node(value: "hot")
+let coldBeverage = Node(value: "cold")
+
+let tea = Node(value: "tea")
+let coffee = Node(value: "coffee")
+let cocoa = Node(value: "cocoa")
+
+let blackTea = Node(value: "black")
+let greenTea = Node(value: "green")
+let chaiTea = Node(value: "chai")
+
+let soda = Node(value: "soda")
+let milk = Node(value: "milk")
+
+let gingerAle = Node(value: "ginger ale")
+let bitterLemon = Node(value: "bitter lemon")
+
+beverages.addChild(node: hotBeverage)
+beverages.addChild(node: coldBeverage)
+
+hotBeverage.addChild(node: tea)
+hotBeverage.addChild(node: coffee)
+hotBeverage.addChild(node: cocoa)
+
+coldBeverage.addChild(node: soda)
+coldBeverage.addChild(node: milk)
+
+tea.addChild(node: blackTea)
+tea.addChild(node: greenTea)
+tea.addChild(node: chaiTea)
+
+soda.addChild(node: gingerAle)
+soda.addChild(node: bitterLemon)
+
+// 1
+extension Node: CustomStringConvertible {
+    // 2
+    var description: String {
+        // 3
+        var text = "\(value)"
+        
+        // 4
+        if !children.isEmpty {
+            text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
+        }
+        return text
+    }
+}
+
+extension Node {
+    // 1
+    func search(value: String) -> Node? {
+        // 2
+        if value == self.value {
+            return self
+        }
+        // 3
+        for child in children {
+            if let found = child.search(value: value) {
+                return found
+            }
+        }
+        // 4
+        return nil
+    }
+}
+
+var node = beverages.search(value: "cocoa") // returns the "cocoa" node
+print(node as Any)
+beverages.search(value: "chai") // returns the "chai" node
+beverages.search(value: "bubbly") // returns nil
+
+print(soda.children.map { $0.description }.joined(separator: ", "))
+
+print(beverages) // <- try to print it!
 

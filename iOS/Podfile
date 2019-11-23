@@ -1,6 +1,7 @@
 # Uncomment this line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
+
 # Uncomment this line if you're using Swift
 use_frameworks!
 
@@ -8,15 +9,12 @@ workspace ‘SwiftLoginScreen’
 xcodeproj 'SwiftLoginScreen’
 
 target 'SwiftLoginScreen' do
-#pod 'AFNetworking', '~> 3.0'
-#pod 'SwiftyJSON', '~> 2.3'
-#pod 'RealmSwift', '~> 0.98'
-#pod 'Kanna', '~> 1.0'
-pod 'SwiftyJSON', '~> 3.1'
-pod 'RealmSwift', '~> 2.4'
-pod 'Kanna', '~> 2.1.0'
-pod 'Starscream', '~> 2.0'
 
+pod 'SwiftyJSON', '~> 4.2.0'
+pod 'RealmSwift', '~> 3.2'
+#pod 'Kanna', '~> 2.1.0'
+#pod 'Starscream', '~> 2.0'
+#pod 'Franz', '~> 0.1'
 end
 
 target 'SwiftLoginScreenTests' do

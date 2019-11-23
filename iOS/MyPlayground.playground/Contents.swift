@@ -3,55 +3,31 @@
 import Cocoa
 import XCPlayground
 import Foundation
+import Contacts
+import PlaygroundSupport
 
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+var myDateString:[String.CharacterView.SubSequence]?
 
 var str = "Hello, playground"
 
-struct Set<T: Hashable> {
-    typealias Index = T
-    private var dictionary: [T: Bool] = [:]
-    
-    var count: Int {
-        return self.dictionary.count
-    }
-    
-    var isEmpty: Bool {
-        return self.dictionary.isEmpty
-    }
-    
-    func contains(element: T) -> Bool {
-        return self.dictionary[element] ?? false
-    }
-    
-    mutating func put(element: T) {
-        self.dictionary[element] = true
-    }
-    
-    mutating func remove(element: T) -> Bool {
-        if self.contains(element) {
-            self.dictionary.removeValueForKey(element)
-            return true
-        } else {
-            return false
-        }
-    }
+var string = str.characters.split(separator: " ")
+
+var s = string.prefix(10)
+
+let characters = Array(string)
+
+string.map { (number) -> String in
+
+    print(number.first!)
+    return ""
 }
 
+print(String(string.first!))
+s.count
+string.startIndex
 
-protocol ArrayLiteralConvertible {
-    typealias Element
-    init(arrayLiteral elements: Element...)
-}
-
-extension Set: ArrayLiteralConvertible {
-     init(arrayLiteral elements: T...) {
-        for element in elements {
-            put(element)
-        }
-    }
-}
-
-let set: Set = [1,2,3]
-set.contains(1) // true
-set.count // 3
-
+let x = 5
+let y = 1.25
+let w = Double(x)*y

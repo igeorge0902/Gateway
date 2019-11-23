@@ -11,31 +11,36 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - it is not a mistake that the web.xml is configured for TomCat. You can find the GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
 - [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly)
 
-Cookie settings:
+Cookie settings and Request parameters:
 ----
+- You can tunnel your request parameters in the HttpServletRequest object at least since Java EE 6, that you will send with the client and/or the Servlet(s) as a dispatched call to any resource.
 - You may want to send cookies with the API response, where your best option is to place them into the entity response, which returns the method call! Check the available JAVA JAX-RS Api documentations.
 
-Request parameters:
-----
-- You can tunnel your request parameters, that you will send with the client or Servlet(s).
+Please read the JAX-RS documentation and examples about HttpServletRequest injection
+- https://dzone.com/articles/what-is-javaxwsrscorecontext-part-4
+- https://www.logicbig.com/tutorials/java-ee-tutorial/jax-rs/servlet-resources.html
+- https://docs.oracle.com/javaee/6/api/javax/servlet/ServletRequest.html
+
 
 Features:
 ----
 - provides authenticated access to the user's "profile"
 - aesUtil is ready to use, only config is necessary. For more info see it at [WWW](https://github.com/igeorge0902/Gateway/tree/update/WWW)
-- you may want to verify the XSRF-Token during the API calls, which is available after a successful login
-- ciphertext is to be verified upon user request
+- you may want to verify the XSRF-Token (cookie) during the API calls, which is available after a successful login. Please implement your own verification of the cookies to protect the API endpoint from direct call.
+- ciphertext is to be verified upon user request, but there is an error as to it triggers a new token pair and sets wrongly the device state to 'logged_out', when you use it in TomCat cluster, since the ServeltSession Listener sessionDestroyed() method will be called each time a node goes down. I will come up with a solution.
 - it's able to check if the new user, or email is used in system or not, but upon result no further action is enforced
 - direct dB modifications are instantly reflected due to session is always flushed before queries.
 
 Build from Eclipse:
 - import as Maven project
 - maven install
-- configure your MySql connection
+- configure your MySql connection for the proper version
 
 Useful links:
 ----
 Hibernate's C3P0ConnectionProvider settings
 - http://www.mchange.com/projects/c3p0/#hibernate-specific
+Hibernate User Guide
+- https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html
 
 Copyright © 2015-2017 George Gaspar. All rights reserved.

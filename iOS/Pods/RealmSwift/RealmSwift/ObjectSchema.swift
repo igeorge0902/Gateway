@@ -18,6 +18,7 @@
 
 import Foundation
 import Realm
+import Realm.Private
 
 /**
  This class represents Realm model object schemas.
@@ -26,7 +27,7 @@ import Realm
 
  Object schemas map to tables in the core database.
  */
-public final class ObjectSchema: CustomStringConvertible {
+public struct ObjectSchema: CustomStringConvertible {
 
     // MARK: Properties
 
@@ -43,6 +44,9 @@ public final class ObjectSchema: CustomStringConvertible {
 
     /// The name of the class the schema describes.
     public var className: String { return rlmObjectSchema.className }
+
+    /// The object class the schema describes.
+    public var objectClass: AnyClass { return rlmObjectSchema.objectClass }
 
     /// The property which serves as the primary key for the class the schema describes, if any.
     public var primaryKeyProperty: Property? {
@@ -76,7 +80,7 @@ public final class ObjectSchema: CustomStringConvertible {
 
 extension ObjectSchema: Equatable {
     /// Returns whether the two object schemas are equal.
-    public static func == (lhs: ObjectSchema, rhs: ObjectSchema) -> Bool { // swiftlint:disable:this valid_docs
+    public static func == (lhs: ObjectSchema, rhs: ObjectSchema) -> Bool {
         return lhs.rlmObjectSchema.isEqual(to: rhs.rlmObjectSchema)
     }
 }

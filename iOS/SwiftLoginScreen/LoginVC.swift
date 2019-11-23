@@ -22,11 +22,11 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
     var imageView:UIImageView = UIImageView()
     var backgroundDict:Dictionary<String, String> = Dictionary()
     
-    //lazy var config = NSURLSessionConfiguration.defaultSessionConfiguration()
-    //lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
+   // lazy var config = URLSessionConfiguration.default
+   // lazy var session: URLSession = URLSession(configuration: self.config, delegate: self, delegateQueue:OperationQueue.mainQueue())
     
     lazy var session = Foundation.URLSession.sharedCustomSession
-
+    lazy var url = URL(string: serverURL + "/login/HelloWorld")
     
     var running = false
     
@@ -48,6 +48,18 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var error:NSError?
+        
+        if(error != nil) {
+          
+            print(error as Any)
+        
+        }
+        
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(paths[0])
+        print(paths)
+        
         // Do any additional setup after loading the view.
         backgroundDict = ["Login":"login"]
         
@@ -55,7 +67,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
         
         self.view.addSubview(view)
         
-        self.view.sendSubview(toBack: view)
+        self.view.sendSubviewToBack(view)
         
         
         let backgroundImage:UIImage? = UIImage(named: backgroundDict["Login"]!)
@@ -69,7 +81,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.delegate = self
-
+        
         view.addGestureRecognizer(tap)
         
     }
@@ -82,14 +94,14 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
     }
     
     
-    let url:URL = URL(string:serverURL + "/login/HelloWorld")!
+    //let url:URL = URL(string: serverURL + "/login/HelloWorld")!
     
     typealias ServiceResponse = (JSON, NSError?) -> Void
     
     func dataTask(_ username: String, hash: String, deviceId: String, systemVersion: String, onCompletion: @escaping ServiceResponse) {
         
-        var request = URLRequest.init(url: url)
-      //  let request:NSMutableURLRequest = NSMutableURLRequest(url: url)
+        var request = URLRequest.init(url: url!)
+        //  let request:NSMutableURLRequest = NSMutableURLRequest(url: url)
         
         // post data. The server will use this data to reproduce the hash
         let post:NSString = "user=\(username)&pswrd=\(hash)&deviceId=\(deviceId)&ios=\(systemVersion)" as NSString
@@ -99,7 +111,7 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
         
         // content length
         let postLength:NSString = String( postData.count ) as NSString
-
+        
         let time = zeroTime(0).getCurrentMillis()
         
         // hmac data
@@ -112,9 +124,9 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
         
         // Create base64 encoded hmacHash for "X-HMAC-HASH" header
         let hmacHash:NSString = hmacSHA512.hmac(post_, secret: hmacSec as String) as NSString
-            
+        
         NSLog("hmacSecret: %@",hmacSec);
-
+        
         NSLog("PostData: %@",post);
         
         request.httpMethod = "POST"
@@ -143,100 +155,86 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
             }
             
             if error != nil {
-                
-                let alertView:UIAlertView = UIAlertView()
-                
-                alertView.title = "Sign in Failed!"
-                alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                alertView.delegate = self
-                alertView.addButton(withTitle: "OK")
-                alertView.show()
+               // let json:JSON = try! JSON(data: data!)
+
+                UIAlertController.popUp(title: "Sign in Failed!", message: (error?.localizedDescription)!)
                 
                 
             } else {
-            
-            let json:JSON = JSON(data: data!)
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                print("got some data")
                 
-                switch(httpResponse.statusCode) {
-                case 200:
+                let json:JSON = try! JSON(data: data!)
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("got some data")
                     
-                    do {
+                    switch(httpResponse.statusCode) {
+                    case 200:
                         
-                        let prefs:UserDefaults = UserDefaults.standard
-
-                        let jsonData:NSDictionary = try JSONSerialization.jsonObject(with: data!, options:
+                        do {
                             
-                            JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
-                    
-                        let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
-                        let sessionID:NSString = jsonData.value(forKey: "JSESSIONID") as! NSString
-                        let xtoken:NSString = jsonData.value(forKey: "X-Token") as! NSString
-                        
-                        NSLog("sessionId ==> %@", sessionID);
-                        
-                        NSLog("Success: %ld", success);
-                        
-                        if(success == 1)
-                        {
-                            NSLog("Login SUCCESS");
-                                                        
-                            prefs.set(username, forKey: "USERNAME")
-                            prefs.set(1, forKey: "ISLOGGEDIN")
-                            prefs.set(0, forKey: "ISWEBLOGGEDIN")
-                            prefs.setValue(sessionID, forKey: "JSESSIONID")
-                            prefs.setValue(deviceId, forKey: "deviceId")
-                            prefs.setValue(xtoken, forKey: "X-Token")
+                            let prefs:UserDefaults = UserDefaults.standard
                             
-                            prefs.synchronize()
+                            let jsonData:NSDictionary = try JSONSerialization.jsonObject(with: data!, options:
+                                
+                                JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
                             
-                            kKeychainItemName = username
+                            let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
+                            let sessionID:NSString = jsonData.value(forKey: "JSESSIONID") as! NSString
+                            let xtoken:NSString = jsonData.value(forKey: "X-Token") as! NSString
+                            
+                            NSLog("sessionId ==> %@", sessionID);
+                            
+                            NSLog("Success: %ld", success);
+                            
+                            if(success == 1)
+                            {
+                                NSLog("Login SUCCESS");
+                                
+                                prefs.set(username, forKey: "USERNAME")
+                                prefs.set(1, forKey: "ISLOGGEDIN")
+                                prefs.set(0, forKey: "ISWEBLOGGEDIN")
+                                prefs.setValue(sessionID, forKey: "JSESSIONID")
+                                prefs.setValue(deviceId, forKey: "deviceId")
+                                prefs.setValue(xtoken, forKey: "X-Token")
+                                
+                                prefs.synchronize()
+                                
+                                kKeychainItemName = username
+                            }
+                            
+                            NSLog("got a 200")
+                            
+                            self.dismiss(animated: true, completion: nil)
+                            
+                        } catch {
+                            
+                            //TODO: handle error
+                            NSLog("JSON parsing error")
                         }
                         
-                    NSLog("got a 200")
-                    self.dismiss(animated: true, completion: nil)
+                    default:
                         
-                    } catch {
-                        
-                        //TODO: handle error
+                        UIAlertController.popUp(title: "Error!", message: "Got an HTTP \(httpResponse.statusCode)")
+
+                        NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
                     
-                default:
+                } else {
                     
-                    let alertView:UIAlertView = UIAlertView()
-                    alertView.title = "Sign in Failed!"
-                    alertView.message = "Server error \(httpResponse.statusCode)"
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
-                    NSLog("Got an HTTP \(httpResponse.statusCode)")
+                    UIAlertController.popUp(title: "Sign in Failed!", message: "Connection Failure")
+                    
+                    NSLog("Connection Failure")
                 }
                 
-            } else {
+                self.running = false
+                onCompletion(json, error as NSError?)
                 
-                // create a helper method
-                let alertView:UIAlertView = UIAlertView()
-                
-                alertView.title = "Sign in Failed!"
-                alertView.message = "Connection Failure"
-                
-                alertView.delegate = self
-                alertView.addButton(withTitle: "OK")
-                alertView.show()
-                NSLog("Connection Failure")
-            }
-            
-            self.running = false
-            onCompletion(json, error as NSError?)
-            
             }
         })
         
         running = true
         task.resume()
-     
+        
     }
     
     
@@ -247,9 +245,9 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
         let username:NSString = txtUsername.text! as NSString
         let password:NSString = txtPassword.text! as NSString
         let systemVersion = UIDevice.current.systemVersion
-
+        
         let SHA3 = CryptoJS.SHA3()
-
+        
         let hash:String = SHA3.hash(password as String,outputLength: 512)
         
         
@@ -261,25 +259,33 @@ class LoginVC: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate
             alertView.delegate = self
             alertView.addButton(withTitle: "OK")
             alertView.show()
-        
+            
         } else {
             
+           // if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
+
             self.dataTask(username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion){
                 
                 (resultString, error) -> Void in
                 
                 print(resultString)
                 
-            }
+                }
+          //  }
         }
     }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       
-            textField.resignFirstResponder()
-            return true
+        
+        textField.resignFirstResponder()
+        return true
     }
-
-
+    
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return true
+    }
+    
+    
 }

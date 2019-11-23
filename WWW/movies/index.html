@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-$route-service-production</title>
+
+
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="angular/angular-animate.js"></script>
+    <script src="route.js"></script>
+
+</head>
+
+<body ng-app="ngRouteExample">
+    <div ng-controller="repeatController">
+
+        <div ng-view></div>
+
+        <div id="content" class="container">
+            
+            <div class="row">
+                <section class="6u">
+                    <br> List of movies
+                    <input type="search" ng-model="q" placeholder="filter movies..." aria-label="filter movies" />
+                    <!-- <ul class="example-animate-container"> -->
+                    <div class="animate-repeat" ng-repeat="movie in movies | filter:q as results">
+                        <div class="row">
+                            <section class="6u">
+                                <ul>
+                                    <br>
+                                    <picture>
+                                        <a href="mbooks-1/rest/book/venue/{{movie.movieId}}" class="image full"><img id="image_id_{{$index + 1}}" ng-src="../simple-service-webapp/webapi/myresource{{movie.large_picture}}" alt="" width="50%" height="50%"></a>
+                                    </picture>
+                                </ul>
+                                <header>
+                                    <h2>[{{$index + 1}}] Title: {{movie.name}}</h2>
+                                </header>
+                                <p>{{movie.detail}}</p>
+                                <details>
+                                    "hello"
+                                </details>
+                                <a href={{movie.iMDB_url}}>Link</a>
+                                <br>
+                            </section>
+                        </div>
+
+                    </div>
+                    <li class="animate-repeat" ng-if="results.length === 0">
+                        <strong>No results found...</strong>
+                    </li>
+                    <!-- </ul> -->
+                </section>
+            </div>
+        </div>
+
+        <hr />
+
+        <pre>$location.path() = {{$location.path()}}</pre>
+        <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+        <pre>$route.current.params = {{$route.current.params}}</pre>
+        <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+        <pre>$routeParams = {{$routeParams}}</pre>
+    </div>
+</body>
+
+</html>

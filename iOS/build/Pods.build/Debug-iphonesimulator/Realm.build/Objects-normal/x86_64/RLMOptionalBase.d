@@ -1,44 +1,15 @@
 dependencies: \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/Realm/RLMOptionalBase.mm \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Target\ Support\ Files/Realm/Realm-prefix.pch \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMAccessor.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMOptionalBase.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMConstants.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObject_Private.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectBase_Dynamic.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObject.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectBase.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMThreadSafeReference.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMObjectStore.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMProperty_Private.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMProperty.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/RLMUtil.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/meta.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/assert.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/features.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/config.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/terminate.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/to_string.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/version.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file_mapper.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/file.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/safe_int_ops.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/type_traits.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/type_list.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/thread.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/encrypted_file_mapping.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/utilities.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/alloc.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/string_data.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/util/optional.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/null.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/exceptions.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/owned_data.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/query_conditions.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/unicode.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/binary_data.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/column_fwd.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/array_direct.hpp \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/realm_nmmintrin.h \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/Realm/include/core/realm/timestamp.hpp
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/Realm/RLMOptionalBase.mm \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Target\ Support\ Files/Realm/Realm-prefix.pch \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMAccessor.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMOptionalBase.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMConstants.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMObject_Private.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMObjectBase_Dynamic.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMObject.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMObjectBase.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMThreadSafeReference.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMObjectStore.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMProperty_Private.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMProperty.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Realm/include/RLMUtil.hpp

@@ -13,42 +13,42 @@ private var cryptoJScontext = JSContext()
 open class CryptoJS{
     
     open class AES: CryptoJS{
-    
+        
         fileprivate var encryptFunction: JSValue!
         fileprivate var decryptFunction: JSValue!
         fileprivate var encryptFunction_: JSValue!
-
-     
+        
+        
         override init(){
             super.init()
             
             // Retrieve the content of aes.js
             let cryptoJSpath = Bundle.main.path(forResource: "aes", ofType: "js")
             let cryptoJSpathPBKDF2 = Bundle.main.path(forResource: "pbkdf2", ofType: "js")
-
+            
             
             if(( cryptoJSpath ) != nil && ( cryptoJSpathPBKDF2 ) != nil){
                 //let cryptoJS = String(contentsOfFile: cryptoJSpath!, encoding:NSUTF8StringEncoding, error: nil)
                 do {
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding: String.Encoding.utf8)
                     let cryptoJSPBKDF2 = try String(contentsOfFile: cryptoJSpathPBKDF2!, encoding: String.Encoding.utf8)
-
+                    
                     print("Loaded aes.js")
                     print("Loaded pbkdf2.js")
-
-                        
+                    
+                    
                     // Evaluate .js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
                     _ = cryptoJScontext?.evaluateScript(cryptoJSPBKDF2)
-
+                    
                     
                     // Reference functions
                     encryptFunction = cryptoJScontext?.objectForKeyedSubscript("encrypt")
                     decryptFunction = cryptoJScontext?.objectForKeyedSubscript("decrypt")
                     encryptFunction_ = cryptoJScontext?.objectForKeyedSubscript("encrypt_")
-
-
-
+                    
+                    
+                    
                 }
                 catch {
                     print("Unable to load aes.js")
@@ -59,15 +59,15 @@ open class CryptoJS{
             
         }
         
-
+        
         open func encrypt_(_ keySize: Int, iterationCount: Int, salt: String,iv: String, passPhrase: String, plainText: String)->String {
             
             
             cryptoJScontext?.exceptionHandler = { cryptoJScontext, exception in
                 print("AES JS RunTime Error: \(exception)")
             }
-  
-                return "\(encryptFunction_.call(withArguments: [keySize, iterationCount, salt, iv, passPhrase, plainText])!)"
+            
+            return "\(encryptFunction_.call(withArguments: [keySize, iterationCount, salt, iv, passPhrase, plainText])!)"
             
         }
         
@@ -105,10 +105,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded md5.js")
-                        
+                    
                     // Evaluate md5.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.MD5 = cryptoJScontext?.objectForKeyedSubscript("MD5")
                 }
@@ -144,10 +144,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha1.js")
-                        
+                    
                     // Evaluate sha1.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA1 = cryptoJScontext?.objectForKeyedSubscript("SHA1")
                 }
@@ -183,10 +183,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha224.js")
-                        
+                    
                     // Evaluate sha224.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA224 = cryptoJScontext?.objectForKeyedSubscript("SHA224")
                 }
@@ -222,10 +222,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha256.js")
-                        
+                    
                     // Evaluate sha256.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA256 = cryptoJScontext?.objectForKeyedSubscript("SHA256")
                 }
@@ -256,15 +256,15 @@ open class CryptoJS{
             let cryptoJSpath = Bundle.main.path(forResource: "sha384", ofType: "js")
             
             if(( cryptoJSpath ) != nil){
-    
+                
                 do {
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha384.js")
-                        
+                    
                     // Evaluate sha384.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA384 = cryptoJScontext?.objectForKeyedSubscript("SHA384")
                 }
@@ -299,10 +299,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha512.js")
-                        
+                    
                     // Evaluate sha512.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA512 = cryptoJScontext?.objectForKeyedSubscript("SHA512")
                 }
@@ -333,15 +333,15 @@ open class CryptoJS{
             let cryptoJSpath = Bundle.main.path(forResource: "sha3", ofType: "js")
             
             if(( cryptoJSpath ) != nil){
-            
+                
                 do {
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded sha3.js")
-                        
+                    
                     // Evaluate sha3.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.SHA3 = cryptoJScontext?.objectForKeyedSubscript("SHA3")
                 }
@@ -366,7 +366,7 @@ open class CryptoJS{
         
         fileprivate var hmacSHA512: JSValue!
         fileprivate var hmacSHA512_: JSValue!
-
+        
         
         override init(){
             super.init()
@@ -387,7 +387,7 @@ open class CryptoJS{
                     // Reference functions
                     self.hmacSHA512 = cryptoJScontext?.objectForKeyedSubscript("HmacSHA512")
                     self.hmacSHA512_ = cryptoJScontext?.objectForKeyedSubscript("HmacSHA512_")
-
+                    
                 }
                 catch {
                     print("Unable to load hmac-sha512.js")
@@ -397,13 +397,13 @@ open class CryptoJS{
         }
         
         open func hmac(_ string: String, secret: String)->String {
-
+            
             
             cryptoJScontext?.exceptionHandler = { cryptoJScontext, exception in
                 print("hmacSHA512 JS RunTime Error: \(exception)")
             }
             
-                return "\(self.hmacSHA512.call(withArguments: [string, secret])!)"
+            return "\(self.hmacSHA512.call(withArguments: [string, secret])!)"
         }
         
         open func hmac_(_ string: String, secret: String)->String {
@@ -414,9 +414,9 @@ open class CryptoJS{
             }
             
             return "\(hmacSHA512_.call(withArguments: [string, secret])!)"
-            }
-        
         }
+        
+    }
     
     
     open class RIPEMD160: CryptoJS{
@@ -435,10 +435,10 @@ open class CryptoJS{
                     let cryptoJS = try String(contentsOfFile: cryptoJSpath!, encoding:String.Encoding.utf8)
                     
                     print("Loaded ripemd160.js")
-                        
+                    
                     // Evaluate ripemd160.js
                     _ = cryptoJScontext?.evaluateScript(cryptoJS)
-                        
+                    
                     // Reference functions
                     self.RIPEMD160 = cryptoJScontext?.objectForKeyedSubscript("RIPEMD160")
                 }

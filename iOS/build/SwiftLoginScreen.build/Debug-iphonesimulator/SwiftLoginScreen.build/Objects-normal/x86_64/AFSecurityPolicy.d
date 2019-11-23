@@ -1,3 +1,4 @@
 dependencies: \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.m \
-  /Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/SwiftLoginScreen/AFSecurityPolicy.h
+  /Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFSecurityPolicy.m \
+  /Users/georgegaspar/Documents/Git/iOS_S3/SwiftLoginScreen/AFSecurityPolicy.h \
+  /Users/georgegaspar/Documents/Git/iOS_S3/Pods/Google/Headers/module.modulemap

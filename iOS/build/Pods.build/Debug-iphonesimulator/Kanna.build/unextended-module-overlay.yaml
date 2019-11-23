@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules'
+    'name': '/Users/georgegaspar/Documents/Git/iOS_S3/build/Debug-iphonesimulator/Kanna/Kanna.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap',
+      'external-contents': '/Users/georgegaspar/Documents/Git/iOS_S3/build/Pods.build/Debug-iphonesimulator/Kanna.build/unextended-module.modulemap',
     }]
   }]
 }

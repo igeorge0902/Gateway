@@ -4,7 +4,7 @@ General Authentication Service
 Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 # Swift
-- updated to Swift 3.0!;)
+- updated to Swift 4.2!;)
 
 # Notes on iOS build:
 - You should run 'POD install' to install the pods into your local environment. After installing the pods you must run the project with SwiftLoginScreen.xcworkspace!
@@ -16,8 +16,17 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - If you use self-signed certs with the server, you must install your custom cerificate authority file onto your server and device/simulator  (You must use certificate authority format - I use it with Apache http server with mod_jk AJP connector on GlassFish or TomCat).
 - strictly follow the instructions at [Using Self Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/) and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA). You will have two choices, however: either you import the CA on the server, or install it on the device.
 
+# How it works
+- it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
 
-Update your hostnames in CustomURLSessionDelegate.swift file, if you use hostname constrains with your URL Session delegate!
+### gitRepo link to AWS
+[CollectionOfApplications](https://github.com/igeorge0902/CollectionOfApplications)
+
+### AWS repos
+[WildFly_TheBookMyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
+[TheBook_MyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
+
+Update your hostnames!
 ----
 
 

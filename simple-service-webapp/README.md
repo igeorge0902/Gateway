@@ -9,7 +9,8 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 Feature set:
 - it checks the active user sessions in the /login context on the server. 
 For more info on it: [ServletContext class info](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/ServletContext.html)
-- in TomCat clustered setup the app listening on the ../simple-service-webapp/webapi/myresource/admin URI can read the /login context on all nodes. You may need to set crossContext flag in context.xml:
+- in TomCat clustered setup the app listening on the ../simple-service-webapp/webapi/myresource/admin URI can read the /login context on all nodes. 
+- for TomCat you have to set crossContext flag to access different application context on the app server, in context.xml:
 
 ```xml
 <Context crossContext="true">     
@@ -42,6 +43,10 @@ For wildFly you are better off to use the RESTEasy implementation:
 
 # How it works
 We pass the retrieved sessions from the context as a Set to the DAO class, which uses the Sessions.java @Entity class to create our resource object to be returned. However, you may find a trouble with your sessions chart list, since the incrementation is odd. It's a known issue. :)  
+
+- I have now included pictures to test the /images/{image} endpoint, just set the folders on the filesystem properly to match the endpoint.
+Read File with Java:
+- https://www.journaldev.com/867/java-read-text-file
 
 
 Build from Eclipse:

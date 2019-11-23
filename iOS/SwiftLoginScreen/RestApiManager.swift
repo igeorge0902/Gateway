@@ -8,11 +8,12 @@
 
 import Foundation
 import SwiftyJSON
+//import Kanna
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
 class RestApiManager: NSObject, UIAlertViewDelegate {
-
+    
     static let sharedInstance = RestApiManager()
     
     func alertView(_ View: UIAlertView, clickedButtonAt buttonIndex: Int){
@@ -30,52 +31,54 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             
             //let stringRepresentation = i.joinWithSeparator("-")
             
-            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil)
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
             
             errorOnLogin?.getResponse {
                 
                 (resultString, error) -> Void in
                 
                 print(resultString)
+                print(error as Any)
             }
-
+            
         default: break
             
         }
     }
-
+    
     //let baseURL = "http://api.randomuser.me/"
     let baseURL = serverURL + "/login/admin?JSESSIONID="
-
+    
     var running = false
-
+    
     func getRandomUser(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
         
         let prefs:UserDefaults = UserDefaults.standard
         
-        let sessionId:NSString = prefs.value(forKey: "JSESSIONID") as! NSString
+        if let sessionId:NSString = prefs.value(forKey: "JSESSIONID") as? NSString {
         
         let route = baseURL+(sessionId as String)
-       // let route = baseURL
+        // let route = baseURL
         
         makeHTTPGetRequest(route, onCompletion: { json, err in
             onCompletion(json as JSON, err)
-        })
+            })
+        }
     }
     
     func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
         
         let prefs:UserDefaults = UserDefaults.standard
         let xtoken = prefs.value(forKey: "X-Token")
-
-        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20)
-
+        
+        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
+        
         let session = URLSession.sharedCustomSession
         
         let task = session.dataTask(with: request, completionHandler: {data, response, sessionError -> Void in
             
             var error = sessionError
-
+            
             if let httpResponse = response as? HTTPURLResponse {
                 
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
@@ -111,52 +114,63 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                         alertView.cancelButtonIndex = 1
                         alertView.show()
                         
+                        let json:JSON = try! JSON(data: data!)
+                        onCompletion(json, error as NSError?)
+
                         
-                    } else {
+                    }
+                    
+                    if httpResponse.statusCode == 503 {
+                            
+                        if let result = (NSString(data: data!, encoding: String.Encoding.ascii.rawValue)) as String? {
+                                
+                           // if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
+                                    
+                            //  UIAlertController.popUp(title: "Error:", message: result)
+                              
+                           //     }
+                                
+                            }
+                        }
+                    
+                    if httpResponse.statusCode == 502 {
                         
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Connection Failure!"
-                        alertView.message = error!.localizedDescription
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                        NSLog("Got an HTTP \(httpResponse.statusCode)")
+                      //  let json:JSON = try! JSON(data: data!)
                         
+                       // if let dataBlock = json["Error Details"].object as? NSDictionary {
+                            
+                         //   let errorMsg = dataBlock.value(forKey: "ErrorMsg:") as! String
+                            
+                         //   if
+                              let errorMsg = "User does not bear valid paramteres. No valid session" //{
+                            
+                                let prefs:UserDefaults = UserDefaults.standard
+                                prefs.set(0, forKey: "ISLOGGEDIN")
+
+                         //   }
+                            
+                            
+                     //   }
+                        
+                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: errorMsg)
+                    }
+                    
+                    if httpResponse.statusCode == 500 {
+                       
+                        let json:JSON = try! JSON(data: data!)
+
+                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: json.rawString()!)
                     }
                 }
                 
                 
             } else {
-            
-            let json:JSON = JSON(data: data!)
+                
+                let json:JSON = try! JSON(data: data!)
                 onCompletion(json, error as NSError?)
             }
         })
         running = true
-        task.resume()
-    }
-    
-    //MARK: Perform a POST Request
-    func makeHTTPPostRequest(_ path: String, body: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
-        
-        var request = URLRequest(url: URL(string: path)!)
-        
-        // Set the method to POST
-        request.httpMethod = "POST"
-
-        let body = body as? Data
-        
-        // Set the POST body for the request
-        request.httpBody = (try! JSONSerialization.jsonObject(with: body!, options:JSONSerialization.ReadingOptions.mutableContainers)) as? Data
-        
-        //NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &err)
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request, completionHandler: {(data, response, sessionError)  in
-            let json:JSON = JSON(data: data!)
-
-            onCompletion(json, sessionError as NSError?)
-        })
         task.resume()
     }
     

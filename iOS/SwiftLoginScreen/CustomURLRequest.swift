@@ -10,11 +10,13 @@ import Foundation
 
 extension URLRequest {
     
+
     /// Helper for making a URL request.
     /// JSON encodes parameters if any are provided. You may want to change this if your server uses, say, XML.
         
-    static func requestWithURL(_ URL: URL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: URLRequest.CachePolicy?, timeoutInterval: TimeInterval?) -> URLRequest {
-
+    static func requestWithURL(_ URL: Foundation.URL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: NSURLRequest.CachePolicy?, timeoutInterval: TimeInterval?, isCacheable: String?, contentType: String?, bodyToPost: Data?) -> URLRequest {
+        
+        
         // If there's a querystring, append it to the URL.
         let actualURL: Foundation.URL
       
@@ -33,10 +35,19 @@ extension URLRequest {
         let request = NSMutableURLRequest(url: actualURL)
         request.httpMethod = method
         
+  
         // Add any body JSON params (for POSTs).
         if let bodyParameters = bodyParameters {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try? JSONSerialization.data(withJSONObject: bodyParameters, options: [])
+            }
+        
+        if contentType == contentType_.urlEncoded.rawValue {
+            
+            if let bodyToPost = bodyToPost {
+                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                request.httpBody = bodyToPost
+            }
         }
         
         // Add any extra headers if given.
