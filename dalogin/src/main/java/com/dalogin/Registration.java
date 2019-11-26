@@ -318,9 +318,23 @@ public class Registration extends HttpServlet implements Serializable {
 						try {
 						log.info("1");
 						token2 = SQLAccess.token2(deviceId, context);
-						c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
+						String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+						
+						int l = xsrfToken.length();
+						String actualToken = "";
+							
+						if (xsrfToken.endsWith("=")) {
+								actualToken = xsrfToken.substring(0, l-1);
+	
+							} else {
+								actualToken = xsrfToken;
+	
+								}
+						
+						c = new Cookie("XSRF-TOKEN", actualToken);
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
+						System.out.println("Set XSRF-TOKEN: " +c.getValue());
 						
 						response.addCookie(c);
 						response.setContentType("application/json"); 
@@ -348,10 +362,24 @@ public class Registration extends HttpServlet implements Serializable {
 							try {
 								log.info("2");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+								
+								int l = xsrfToken.length();
+								String actualToken = "";
+									
+								if (xsrfToken.endsWith("=")) {
+										actualToken = xsrfToken.substring(0, l-1);
+			
+									} else {
+										actualToken = xsrfToken;
+			
+										}
+								
+								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
-
+								System.out.println("Set XSRF-TOKEN: " +c.getValue());
+								
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
 								response.addHeader("X-Token", token2.get(0));
@@ -378,9 +406,23 @@ public class Registration extends HttpServlet implements Serializable {
 							try {
 								log.info("3");
 								token2 = SQLAccess.token2(deviceId, context);
-								c = new Cookie("XSRF-TOKEN", aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0)));
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
+								
+								int l = xsrfToken.length();
+								String actualToken = "";
+									
+								if (xsrfToken.endsWith("=")) {
+										actualToken = xsrfToken.substring(0, l-1);
+			
+									} else {
+										actualToken = xsrfToken;
+			
+										}
+								
+								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
+								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
@@ -392,7 +434,8 @@ public class Registration extends HttpServlet implements Serializable {
 								PrintWriter out = response.getWriter(); 
 																
 								json.put("Session", "raked"); 
-								json.put("Success", "true"); 
+								json.put("Success", "true");
+								json.put("JSESSIONID", sessionID);
 								// this is necessary because the X-Token header did not appear in the native mobile app
 								json.put("X-Token", token2.get(0));
 								
