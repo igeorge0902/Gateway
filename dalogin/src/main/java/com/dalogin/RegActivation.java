@@ -160,21 +160,15 @@ public class RegActivation extends HttpServlet {
     }
     
     /**
-     * 
+     * TODO: add user session validation. (Global filters)
      */
     public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 	
 
-		session = request.getSession(false);		
-		
+		session = request.getSession(false);				
         ServletContext context = session.getServletContext();
 
         ciphertext = request.getHeader("Ciphertext").trim();
-    	user = request.getParameter("user").trim();
-    	deviceId = request.getParameter("deviceId").trim();
-
-    	
     	if (ciphertext != null) ciphertext = ciphertext.trim();
-        if (user != null) user = user.trim();
                
 	    StringBuilder sb = new StringBuilder();
 	    BufferedReader br = request.getReader();
