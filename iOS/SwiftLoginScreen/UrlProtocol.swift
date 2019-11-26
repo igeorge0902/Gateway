@@ -306,9 +306,9 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                 
                 if request.url!.absoluteString.contains(serverURL) {
                     
-                  if request.url!.relativePath == "/login/HelloWorld" || request.url!.relativePath == "/login/forgotPSw" ||
-                      request.url!.relativePath == "/login/forgotPSwCode" ||
-                      request.url!.relativePath == "/login/forgotPSwNewPSw" {
+                  if request.url!.relativePath != "/login/HelloWorld" || request.url!.relativePath != "/login/forgotPSw" ||
+                      request.url!.relativePath != "/login/forgotPSwCode" ||
+                      request.url!.relativePath != "/login/forgotPSwNewPSw" {
                     
                     cachedResponse.setValue(self.mutableData, forKey: "data")
                     cachedResponse.setValue(self.request.url!.absoluteString, forKey: "url")
