@@ -1,7 +1,7 @@
 # iOS component for the Gateway
 General Authentication Service
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2019 George Gaspar. All rights reserved.
 
 # Swift
 - updated to Swift 4.2!;)
@@ -36,4 +36,4 @@ Web Debugging tool for iOS, web:
 - [Charles Web Proxy Debugging](https://www.charlesproxy.com/documentation/welcome/) - to use Charles you may need to modify your app transport security settings to allow traffic.
 - if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2019 George Gaspar. All rights reserved.

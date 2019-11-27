@@ -1,6 +1,6 @@
 # General Authentication Service - GAS 
 
-Copyright © 2015-2017 George Gaspar. MIT License.
+Copyright © 2015-2019 George Gaspar. MIT License.
 
 Check the listed components above, and their readme for specific notes, instructions.
 
@@ -49,7 +49,7 @@ The following code snipet is going to take as argument the "deviceId_ = request.
 
 ###### Gateway/WWW/jsR/app.js
 
-Have a look at the following snipet. The data object will change if the headerField M-Device holds data.
+Have a look at the following snipet. The data object should change with proper getter method if the headerField M-Device holds value. Right now the M-Device header is set by the iOS with UrlProtocol, and just the server will read it, to process the request accordingly.
 
 ```javascript
 
@@ -110,4 +110,4 @@ You can find various cloud solutions where you can deploy the system. I think th
 - email: igeorge1982@gmail.com (primary), igeorge1982@hotmail.com, igeorge1982@yahoo.com
 - mobile: +36304088520
 
-Copyright © 2015-2017 George Gaspar. MIT License.
+Copyright © 2015-2019 George Gaspar. MIT License.

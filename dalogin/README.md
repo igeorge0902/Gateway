@@ -1,22 +1,20 @@
 # General Authentication Service
 (Release Candidate)
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2019 George Gaspar. All rights reserved.
 
 ## Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
 
 Questions:
 igeorge1982@gmail.com
 
-Update
-----
-- Password reset as of 2017.03.20.
-- For the first step of the password reset you may have noticed a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
 
 RoadMap
 ----
+- update Swift 5.x (with iOS event calendar)
 - adding outsourced session storage so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
 [Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
+- addind SOAP webservice to the API (I have it working, but still experimental)
 
 # New
 ### WebSocket and rabbitMQ
@@ -31,12 +29,14 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 
 Known issues (for most recent version see the update branch!):
 ----
-- if the properties.properties file is not copied up-front to its place under your Application Server directory, then unexpected behavior may occur. I still am working on it.
-- In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
-- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
-- For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
+- In TomCat 9.x version somehow a sessionDestroy will be called causing the tokkens to be triggered. This has to be solved, but as quick remedy you can comment out the trigger in the logout_device procedure:
+```javascript
+    update Tokens
+    set Tokens.token1 = 0 and Tokens.token2 = 0 
+	where Tokens.deviceId = deviceId_;
+```
+- The logic in the CustomHttpSessionListener class in attributeAdded method stopped working, however it used to do so. Just comment out. The purpuse of the implenetation was just! to create a neat list - sessionUsers - holding (user, sessionId) per deviceId. 
 
-- Please note you would like to report issues you may find so that I can fix that I might have missed.
 
 Donation
 ----
@@ -124,6 +124,10 @@ You define the first part of the context in the web.xml for the API (Gateway/API
 The token parameter will be retrieved from the session, which will be the "user" attribute. See between line 60 and 70 in AdminServlet.java.
 
 User has to provide the second key (token2) of tokens by a client request, which has to belong to the first one - retrieved from the session - by a given device.
+
+Password reset:
+----
+For the first step of the password reset you may have noticed a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
 
 Important:
 ----
@@ -333,7 +337,7 @@ About the WebView login:
 ----
 - it will use a redirection: basically the browser in the webview will tell the server it uses a mobile browser and as such is going to use a designated headerField called M, too. 
 
-In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. Please note, that the header of the request is goint to make a preflight regardless the body part has been cached. 
+In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. 
 
 The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the values of "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, also knowing that the webView has finished the redirect successfully. For the webview request we are happy the value of the headerfield M is cached, even though it is not readable, but we check only if it is an object or null. 
 
@@ -350,6 +354,6 @@ RoadMap:
 
 Note:
 ----
-Last update: 2017.03.21.
+Last update: 2019.11.27.
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2019 George Gaspar. All rights reserved.
