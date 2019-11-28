@@ -16,6 +16,15 @@ Copyright © 2015-2019 George Gaspar. All rights reserved.
 - If you use self-signed certs with the server, you must install your custom cerificate authority file onto your server and device/simulator  (You must use certificate authority format - I use it with Apache http server with mod_jk AJP connector on GlassFish or TomCat).
 - strictly follow the instructions at [Using Self Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/) and go with Tip # 5: Consider Creating Your Own Certificate Authority (CA). You will have two choices, however: either you import the CA on the server, or install it on the device.
 
+### CFNetwork Debug
+- in general the built-in XCode Profiler is fine. However, I cannot get it run with XCode 10.1, for some of its tools, that I was able to use in XCode 9.*, because the CoreProfile.framework is missing
+- please check out this article: https://www.agnosticdev.com/blog-entry/networking-swift/advanced-network-debugging-xcode
+
+
+### CriptoJS
+- please check-out this source, that gives a comprehensive understanding, as to how to use the encryptions. I guess it's fine for those, who just want to implement the function: [crypto-js](https://code.google.com/archive/p/crypto-js/) 
+
+
 # How it works
 - it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
 
