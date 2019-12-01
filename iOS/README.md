@@ -54,6 +54,10 @@ Usefull links:
 ----
 Web Debugging tool for iOS, web:
 - [Charles Web Proxy Debugging](https://www.charlesproxy.com/documentation/welcome/) - to use Charles you may need to modify your app transport security settings to allow traffic.
-- if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
+
+NSUrlProtocol:
+- [How the NSUrlProtocol works](https://www.raywenderlich.com/2509-nsurlprotocol-tutorial)
+
+Finally, if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
 
 Copyright © 2015-2019 George Gaspar. All rights reserved.
