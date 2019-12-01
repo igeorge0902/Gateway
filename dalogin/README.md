@@ -339,12 +339,22 @@ About the WebView login:
 
 In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. 
 
-The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the values of "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, also knowing that the webView has finished the redirect successfully. For the webview request we are happy the value of the headerfield M is cached, even though it is not readable, but we check only if it is an object or null. 
+The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been completed out successfully, using the shouldStartLoadWith delegate, knowing that the webView has finished the redirect successfully. 
 
-The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
+The meaning of such redirect is that the iOS, and the WWW app in the WebView will know quickly, if/when the login has succeeded. 
 
-After the redirect has beed carried out successfully the iOS app has recieved the server response and finalized the user login process in the app initiated throught webview, and the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
+After the redirect has beed carried out successfully the iOS app has recieved the server response (NSData) and finalized the user login process in the app initiated through the webview, the user can access restricted data through the API, using the generated token pairs, which is when we call a subsequent request to the /login/admin (AdminServlet). These user variables are going to be up-to-date for the particular user specifically and always.
 
+```swift
+                    requestLogin = RequestManager(url: adminUrl!, errors: "")
+                    
+                    requestLogin?.getResponse {
+                        (json: JSON, error: NSError?) in
+                        
+                        print(json)
+                        
+                    }
+```
 
 RoadMap:
 ----
