@@ -20,6 +20,7 @@ Copyright © 2015-2019 George Gaspar. All rights reserved.
 ### CFNetwork Debug and using Instruments
 - in general the built-in XCode Profiler is fine. However, I cannot get it run with XCode 10.1, for some of its tools, that I was able to use in XCode 9.*, because the CoreProfile.framework is missing
 - please check out this article: [CFNetwork Debug and using Instruments](https://www.agnosticdev.com/blog-entry/networking-swift/advanced-network-debugging-xcode)
+- please try out on real device, to verify the network and SSL, before doing any bold things. The Simulator sucks, but it's cheap, because you don't have to subscribe for the Apple developer program. I did test it on real device throughout my one and only one time occasion, when I paid to be a so-called iOS developer and to test it; worked everything fine, tried it on Google Cloud with the server side deployed. However, with self-signed certs you may recieve any kind of boring SSL error, for which not even the Google knows the answer... God bless you!;)
 
 
 ### CriptoJS
