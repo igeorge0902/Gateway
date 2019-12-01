@@ -228,9 +228,9 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         self.scrollView.addSubview(buttonDate)
         self.scrollView.addSubview(buttonMap)
         
-        scrollView.addSubview(buttonCalendar)
+       // scrollView.addSubview(buttonCalendar)
         scrollView.addSubview(buttonCalendar_)
-        scrollView.addSubview(buttonShare)
+       // scrollView.addSubview(buttonShare)
         self.view.addSubview(scrollView)
         
         self.view.addSubview(btnData)
@@ -278,7 +278,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     
     @objc func showMoreActions(_ tap: UITapGestureRecognizer) {
         
-        let touchPoint = tap.location(in: self.view)
+        _ = tap.location(in: self.view)
         
     }
     
@@ -287,27 +287,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-    // it will not work on simulator
- //   func shareOnFaceBook() {
-        
- //       let photo = Photo(image: moviePicture, userGenerated: true)
- //       let content = PhotoShareContent(photos: [photo])
-        
- //       let shareDialog = ShareDialog(content: content )
-        
- //       shareDialog.mode = .native
- //       shareDialog.failsOnInvalidData = true
- //       shareDialog.completion = { result in
-            
-            // Handle share results
-            
-  //      }
-        
-  //      try! shareDialog.show()
-       // try! ShareDialog.show(from: self, content: content)
-        
-   // }
     
     @objc func book(_ sender: UIButton, event: UIEvent) {
         
@@ -477,69 +456,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         }
     }
     
-    @objc func selectCalendar_(sender: UIButton/*, event: UIEvent*/) {
-        
-        if (screeningDateId == nil ) {
-            
-            let alertView:UIAlertView = UIAlertView()
-            
-            alertView.title = "Warning!"
-            alertView.message = "Select dates first!"
-            alertView.delegate = self
-            alertView.addButton(withTitle: "OK")
-            alertView.show()
-            
-        } else {
-            
-            //Access permission
-            eventStore.requestAccess(to: EKEntityType.event) { (granted,error) in
-                
-                if (granted) &&  (error == nil) {
-                    print("permission is granted")
-                    /*
-                    if event.type == .touches {
-                        
-                        let touches:Set<UITouch> = event.allTouches!
-                        
-                        if let touch =  touches.first{
-                            
-                            self.popOverY = touch.location(in: self.scrollView).y
-                            self.popOverX = touch.location(in: self.view).x
-                            
-                        }
-                    }*/
-            
-            SelectMovieName = self.movieName
-            SelectVenueForMovie = self.selectAddress
-            
-                    /*
-            let popOver =  iOSCalendarVC()
-            popOver.modalPresentationStyle = UIModalPresentationStyle.popover
-            popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
-            
-            let popoverMenuViewController = popOver.popoverPresentationController
-            popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-            popoverMenuViewController?.delegate = self
-            popoverMenuViewController?.sourceView = self.view
-            popoverMenuViewController!.sourceRect = CGRect(
-                x: self.view.frame.width * 0.50,
-                y: self.view.frame.height * 0.50,
-                width: 0,
-                height: 0)
-            
-            self.present(
-                popOver,
-                animated: true,
-                completion: nil)
-               */
-                    
-                }
-            }
-            
-        }
-        
-    }
-    
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
@@ -554,43 +470,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
             
         }
     }
-    
-    func calendar(_ sender: UIButton) {
-        
-        if SeatsData_.count < 1 {
-            
-            let alertView:UIAlertView = UIAlertView()
-            
-            alertView.title = "Warning!"
-            alertView.message = "Select dates first!"
-            alertView.delegate = self
-            alertView.addButton(withTitle: "OK")
-            alertView.show()
-            
-        } else {
-        /*
-        let popOver =  CalendarVC()
-        popOver.modalPresentationStyle = UIModalPresentationStyle.popover
-        popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
-        
-        let popoverMenuViewController = popOver.popoverPresentationController
-        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
-        popoverMenuViewController?.delegate = self
-        popoverMenuViewController?.sourceView = self.view
-        popoverMenuViewController!.sourceRect = CGRect(
-            x: self.view.frame.width * 0.50,
-            y: self.view.frame.height * 0.50,
-            width: 0,
-            height: 0)
-        
-        self.present(
-            popOver,
-            animated: true,
-            completion: nil)
-           */
-        }
-        
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -638,6 +518,68 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
             }
             
         }
+    }
+    
+   @objc func selectCalendar_(sender: UIButton/*, event: UIEvent*/) {
+        
+        if (screeningDateId == nil ) {
+            
+            let alertView:UIAlertView = UIAlertView()
+            
+            alertView.title = "Warning!"
+            alertView.message = "Select dates first!"
+            alertView.delegate = self
+            alertView.addButton(withTitle: "OK")
+            alertView.show()
+            
+        } else {
+            
+            //Access permission
+            eventStore.requestAccess(to: EKEntityType.event) { (granted,error) in
+                
+                if (granted) &&  (error == nil) {
+                    print("permission is granted")
+                    /*
+                     if event.type == .touches {
+                     
+                     let touches:Set<UITouch> = event.allTouches!
+                     
+                     if let touch =  touches.first{
+                     
+                     self.popOverY = touch.location(in: self.scrollView).y
+                     self.popOverX = touch.location(in: self.view).x
+                     
+                     }
+                     }*/
+                    
+                    SelectMovieName = self.movieName
+                    SelectVenueForMovie = self.selectAddress
+                    
+                    let popOver =  iOSCalendarVC()
+                    popOver.modalPresentationStyle = UIModalPresentationStyle.popover
+                    popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
+                    
+                    let popoverMenuViewController = popOver.popoverPresentationController
+                    popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                    popoverMenuViewController?.delegate = self
+                    popoverMenuViewController?.sourceView = self.view
+                    popoverMenuViewController!.sourceRect = CGRect(
+                        x: self.view.frame.width * 0.50,
+                        y: self.view.frame.height * 0.50,
+                        width: 0,
+                        height: 0)
+                    
+                    self.present(
+                        popOver,
+                        animated: true,
+                        completion: nil)
+                    
+                    
+                }
+            }
+            
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -85,7 +85,8 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                  NSLog("Serving response from NSURLConnection. url == %@", self.request.url!.absoluteString)
                 
                 
-                if request.url!.relativePath == "/login/HelloWorld" || request.url!.relativePath == "/login/forgotPSw" ||
+                if request.url!.relativePath == "/login/HelloWorld" ||
+                    request.url!.relativePath == "/login/forgotPSw" ||
                     request.url!.relativePath == "/login/forgotPSwCode" ||
                     request.url!.relativePath == "/login/forgotPSwNewPSw" {
                     
@@ -285,7 +286,6 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
     }
     
     func saveCachedResponse () {
-        //  NSLog("Saving cached response url == %@", self.request.URL!.absoluteString)
         
         // 1
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -306,10 +306,14 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                 
                 if request.url!.absoluteString.contains(serverURL) {
                     
-                  if request.url!.relativePath != "/login/HelloWorld" || request.url!.relativePath != "/login/forgotPSw" ||
-                      request.url!.relativePath != "/login/forgotPSwCode" ||
-                      request.url!.relativePath != "/login/forgotPSwNewPSw" {
+                if request.url!.relativePath != "/login/HelloWorld" &&
+                     request.url!.relativePath != "/login/admin" &&
+                     request.url!.relativePath != "/login/forgotPSw" &&
+                     request.url!.relativePath != "/login/forgotPSwCode" &&
+                     request.url!.relativePath != "/login/forgotPSwNewPSw" {
                     
+                    NSLog("Saving cached response url == %@", self.request.url!.absoluteString)
+
                     cachedResponse.setValue(self.mutableData, forKey: "data")
                     cachedResponse.setValue(self.request.url!.absoluteString, forKey: "url")
                     cachedResponse.setValue(Date(), forKey: "timestamp")
@@ -320,6 +324,8 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                     
                     if request.url!.relativePath == "/example/jsR/app.js" {
                         
+                        NSLog("Saving cached response url == %@", self.request.url!.absoluteString)
+
                         let urldata:Data = self.mutableData as Data
                         let convertedString = NSString(data: urldata, encoding: String.Encoding.utf8.rawValue)
                         

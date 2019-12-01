@@ -28,7 +28,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
     var url:URL?
 
     var running = false
-    
+    var beenViewed = false
     @IBOutlet var usernameLabel : UILabel!
     @IBOutlet var sessionIDLabel : UILabel!
     
@@ -52,7 +52,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
 
         backgroundDict = ["Background1":"background1"]
         
-        let view:UIView = UIView(frame: CGRect(x: -25, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height));
+        let view:UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height));
         
         self.view.addSubview(view)
         self.view.sendSubviewToBack(view)
@@ -62,16 +62,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         
         imageView = UIImageView(frame: view.frame);
         imageView.image = backgroundImage;
-        
-        /*
-        let button = UIButton()
-        button.setTitle("Back", forState: UIControlState.Normal)
-        button.setImage(UIImage(named: "yourImageName.jpg"), forState: UIControlState.Normal)
-     //   button?.addTarget(self, action:Selector("callMethod"), forControlEvents: UIControlEvents.TouchDragInside)
-        button.frame=CGRectMake(0, 0, 100, 30)
-        let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
-        */
         
        // view.addSubview(imageView);
         
@@ -135,12 +125,12 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
                 animated: true,
                 completion: nil)
         }*/
-        
+            
         let prefs:UserDefaults = UserDefaults.standard
         let isLoggedIn:Int = prefs.integer(forKey: "ISLOGGEDIN") as Int
         
         if (isLoggedIn != 1) {
-        
+            self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "goto_login", sender: self)
         
         } else {
@@ -161,9 +151,8 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         }
         
     }
-    
 
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -311,27 +300,41 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
     
     @IBAction func Navigation(_ sender : UIButton) {
         
-       /*
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
-        let vcs = storyboard.instantiateViewControllerWithIdentifier("ViewController") as UIViewController
-        self.navigationController?.pushViewController(vcs, animated: true)
-        */
         
-        self.performSegue(withIdentifier: "goto_menu", sender: self)
-
-        /*
-        let vc = MenuVC(nibName: "MenuVC", bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
-        */
+       //Create the AlertController
+               let actionSheetController: UIAlertController = UIAlertController(title: "Action Sheet", message: "Choose an option!", preferredStyle: .actionSheet)
+               
+               //Create and add the Cancel action
+               let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+                   //Just dismiss the action sheet
+               }
+               actionSheetController.addAction(cancelAction)
+        
+               //Create and add first option action
+               let goToMenu: UIAlertAction = UIAlertAction(title: "Go to Menu", style: .default) { action -> Void in
+                   
+                   self.performSegue(withIdentifier: "goto_menu", sender: self)
+                
+               }
+               actionSheetController.addAction(goToMenu)
+        
+               //Create and add a second option action
+               let goToLogin: UIAlertAction = UIAlertAction(title: "Go to Login Screen", style: .default) { action -> Void in
+                let prefs:UserDefaults = UserDefaults.standard
+                prefs.set(0, forKey: "ISLOGGEDIN")
+                prefs.synchronize()
+                self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "goto_login", sender: self)
+        
+               }
+               actionSheetController.addAction(goToLogin)
+               
+               //Present the AlertController
+               self.present(actionSheetController, animated: true, completion: nil)
+        
     }
     
     @IBAction func WebView(_ sender : UIButton) {
-        
-        /*
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
-        let vcs = storyboard.instantiateViewControllerWithIdentifier("ViewController") as UIViewController
-        self.navigationController?.pushViewController(vcs, animated: true)
-        */
         
         self.performSegue(withIdentifier: "goto_webview", sender: self)
         
@@ -370,7 +373,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         
         let icon = NSTextAttachment()
         icon.image = UIImage(named: "Shit Hits Fan-25")
-        icon.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
+        icon.bounds = CGRect(x: 10, y: -2, width: 12, height: 12)
         
         title.append(NSAttributedString(attachment: icon))
         

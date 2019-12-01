@@ -31,8 +31,8 @@ class RequestManager: NSObject {
     
     deinit {
         
-        NSLog("\(url) is being deinitialized")
-        NSLog("\(errors) is being deinitialized")
+        NSLog("\(url!) is being deinitialized")
+        NSLog("\(errors!) is being deinitialized")
         NSLog(#function, "\(self)")
         
     }

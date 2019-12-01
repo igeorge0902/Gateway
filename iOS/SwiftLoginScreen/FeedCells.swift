@@ -13,6 +13,7 @@ class FeedCells: UICollectionViewCell {
     
     var textLabel: UILabel?
     var profileImage: UIImageView?
+    var QRCodeImage: UIImageView?
     var statusText: UITextView?
     
     override init(frame: CGRect) {
@@ -25,6 +26,11 @@ class FeedCells: UICollectionViewCell {
         profileImage?.backgroundColor = UIColor.clear
         profileImage?.translatesAutoresizingMaskIntoConstraints = false
         
+        QRCodeImage = UIImageView(frame: CGRect(x: 30, y: 10, width: 75, height: 75))
+        QRCodeImage?.contentMode = .scaleAspectFit
+        QRCodeImage?.backgroundColor = UIColor.clear
+        QRCodeImage?.translatesAutoresizingMaskIntoConstraints = false
+        
         textLabel = UILabel(frame: CGRect(x: frame.width * 0.2 , y: 0, width: frame.size.width, height: 40))
         textLabel?.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         textLabel?.textAlignment = .center
@@ -35,27 +41,18 @@ class FeedCells: UICollectionViewCell {
         
         contentView.addSubview(statusText!)
         contentView.addSubview(profileImage!)
+        contentView.addSubview(QRCodeImage!)
         contentView.addSubview(textLabel!)
         
         addConstraintswithFormat("H:|-8-[v0(44)]-8-[v1]|", views: profileImage!, textLabel!)
+        addConstraintswithFormat("H:|-240-[v0(44)]-8-[v1]|", views: QRCodeImage!, textLabel!)
         addConstraintswithFormat("V:|-12-[v0]", views: textLabel!)
         addConstraintswithFormat("V:|-8-[v0(44)]", views: profileImage!)
+        addConstraintswithFormat("V:|-8-[v0(44)]", views: QRCodeImage!)
         addConstraintswithFormat("H:|-4-[v0]-4-|", views: statusText!)
         addConstraintswithFormat("V:|-8-[v0(44)]-4-[v1(90)]", views: profileImage!, statusText!)
+        addConstraintswithFormat("V:|-8-[v0(44)]-4-[v1(90)]", views: QRCodeImage!, statusText!)
     
-        /*
-        let viewsDictionaryOne = ["label1": profileImage, "label2": textLabel]
-        let viewsDictionaryTwo = ["label2": textLabel]
-        let viewsDictionaryThree = ["label1": profileImage]
-        let viewsDictionaryFour = ["label3": statusText]
-        let viewsDictionaryFive = ["label1": profileImage, "label3": statusText]
-
-        contentView.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0(44)]-8-[v1]|", options: [], metrics: nil, views: viewsDictionaryOne as [String : Any]))
-        contentView.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0]", options: [], metrics: nil, views: viewsDictionaryTwo as [String : Any]))
-        contentView.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0(44)]", options: [], metrics: nil, views: viewsDictionaryThree as [String : Any]))
-        contentView.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "H:|-4-[v0]-4-|", options: [], metrics: nil, views: viewsDictionaryFour as [String : Any]))
-        contentView.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0(44)]-4-[v1(90)]", options: [], metrics: nil, views: viewsDictionaryFive as [String : Any]))
-         */
     }
     
     func toggleSelected ()

@@ -31,6 +31,8 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     var movieName:String?
     var purchaseId: String!
     
+    lazy var filter = CIFilter(name: "CIQRCodeGenerator")
+    
     var CollectionData:Array< AllTicketsData > = Array < AllTicketsData >()
     lazy var layout = UICollectionViewFlowLayout()
     
@@ -171,6 +173,15 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         let text = NSMutableAttributedString(string: "Ticket details: \n Seat Row: \(CollectionData[indexPath.row].seats_seatRow!), \n Seat Nr: \(CollectionData[indexPath.row].seats_seatNumber!), \nDate of Screening: \n\(CollectionData[indexPath.row].screening_date!), \n Venue: \(CollectionData[indexPath.row].venue_name!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 14.0)!]))
         
         cell.statusText?.attributedText = text
+        
+        guard let filter = filter,
+            let data = CollectionData[indexPath.row].seats_seatNumber!.data(using: .isoLatin1, allowLossyConversion: false) else {
+                return cell
+        }
+        
+        filter.setValue(data, forKey: "inputMessage")
+        let ciImage = filter.outputImage
+        cell.QRCodeImage?.image = UIImage(ciImage: ciImage!, scale: 4.0, orientation: .up)
         
         return cell
     }

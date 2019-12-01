@@ -75,10 +75,10 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
         let prefs:UserDefaults = UserDefaults.standard
         let isLoggedIn:Int = prefs.integer(forKey: "ISLOGGEDIN") as Int
         
-        if (isLoggedIn != 1) {
+     //   if (isLoggedIn != 1) {
             
-            self.dismiss(animated: true, completion: nil)
-        }
+     //       self.dismiss(animated: true, completion: nil)
+     //   }
 
     }
     

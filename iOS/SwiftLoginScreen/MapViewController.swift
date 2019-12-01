@@ -85,8 +85,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-       // mapView.addAnnotations(PlacesData_)
+
+        mapView.addAnnotations(PlacesData_)
 
     }
     
@@ -96,9 +96,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let location = self.locationManager.location
         centerMapOnLocation(location!)
         mapView.centerCoordinate = location!.coordinate
-        
-        mapView.addAnnotations(PlacesData_)
-        
+                
     }
     
     // instantiate Artwork class

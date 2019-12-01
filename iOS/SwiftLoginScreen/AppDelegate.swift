@@ -54,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 return
             }
         }
+        
+        setenv("CFNETWORK_DIAGNOSTICS", "3", 1);
 
         return true
     }
@@ -78,11 +80,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
       //  AppEventsLogger.activate(application)
 
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.checkNet), userInfo: nil, repeats: true)
+      //  timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.checkNet), userInfo: nil, repeats: true)
         
-        timer_ = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(AppDelegate.checkRealm), userInfo: nil, repeats: true)
+      //  timer_ = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(AppDelegate.checkRealm), userInfo: nil, repeats: true)
     }
     
+    /*
     @objc func checkNet() {
 
         print(AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue)
@@ -94,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
     }
-    
+    */
     
     @objc func checkRealm() {
         

@@ -173,8 +173,6 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     
     func addData_(_ match: String) {
         
-        SearchData.removeAll()
-        
         var errorOnLogin:GeneralRequestManager?
         
         errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies/search", errors: "", method: "GET", queryParameters: ["match": match], bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
@@ -185,6 +183,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             
             if let list = json["searchedMovies"].object as? NSArray
             {
+                self.SearchData.removeAll()
                 for i in 0 ..< list.count
                 {
                     if let dataBlock = list[i] as? NSDictionary
@@ -196,7 +195,12 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 
             }
             
-            if self.SearchData.count > 0 {
+            if let _ = json["NotFoundMovies"].object as? NSArray
+            {
+                // TODO: present empty list
+            }
+            
+          //  if self.SearchData.count > 0 {
             
                 DispatchQueue.main.async(execute: {
                 
@@ -204,7 +208,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 
                 })
             
-            }
+          //  }
             
         }
         

@@ -92,7 +92,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webView(_: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        
+        // We have to also close the webview, without user-interaction.
         if request.url!.relativePath == "/example/tabularasa.jsp" {
                 webView = nil
                 self.dismiss(animated: true, completion: nil)
