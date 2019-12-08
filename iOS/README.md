@@ -20,7 +20,6 @@ Copyright © 2015-2019 George Gaspar. All rights reserved.
 ### CFNetwork Debug and using Instruments
 - in general the built-in XCode Profiler is fine. However, I cannot get it run with XCode 10.1, for some of its tools, that I was able to use in XCode 9.*, because the CoreProfile.framework is missing
 - please check out this article: [CFNetwork Debug and using Instruments](https://www.agnosticdev.com/blog-entry/networking-swift/advanced-network-debugging-xcode)
-- please try out on real device, to verify the network and SSL, before doing any bold things. The Simulator sucks, but it's cheap, because you don't have to subscribe for the Apple developer program. I did test it on real device throughout my one and only one time occasion, when I paid to be a so-called iOS developer and to test it; worked everything fine, tried it on Google Cloud with the server side deployed. However, with self-signed certs you may recieve any kind of boring SSL error, for which not even the Google knows the answer... God bless you!;)
 
 
 ### CriptoJS
@@ -35,6 +34,11 @@ func connectionDidFinishLoading(_ connection: NSURLConnection!) {
   //  self.saveCachedResponse()
 }
 ```
+
+### URL Loading System
+- the app has 3 different request manager, combined with a NSUrlProtocol, and a WebView, therefor it is advisable to read the official Apple documentation, as to how it works (cookies, etc) 
+- [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 
+- the app uses 2 different cookies, the JSESSIONID, and XSRF-TOKEN. Both abide the naming strategy, and standards, and it's part of the URL Loading System, how they are sent and recieved, while the WebView only initiates the request, the cookies are managed by the app's default CookieStorage, and not the WebView, which some may think confusingly. The path the server is '/login' for both cookies. You can introduce more cookies, if you want.
 
 # How it works
 - it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
@@ -54,10 +58,6 @@ Usefull links:
 ----
 Web Debugging tool for iOS, web:
 - [Charles Web Proxy Debugging](https://www.charlesproxy.com/documentation/welcome/) - to use Charles you may need to modify your app transport security settings to allow traffic.
-
-NSUrlProtocol:
-- [How the NSUrlProtocol works](https://www.raywenderlich.com/2509-nsurlprotocol-tutorial)
-
-Finally, if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
+- if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
 
 Copyright © 2015-2019 George Gaspar. All rights reserved.
