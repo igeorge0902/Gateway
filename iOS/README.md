@@ -39,6 +39,7 @@ func connectionDidFinishLoading(_ connection: NSURLConnection!) {
 - the app has 3 different request manager, combined with a NSUrlProtocol, and a WebView, therefor it is advisable to read the official Apple documentation, as to how it works (cookies, etc) 
 - [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 
 - [NSMutableURLRequest](https://developer.apple.com/documentation/foundation/nsmutableurlrequest)
+- [HttpCookieStorage](https://developer.apple.com/documentation/foundation/httpcookiestorage)
 - the app uses 2 different cookies, the JSESSIONID, and XSRF-TOKEN. Both abide the naming strategy, and standards, and it's part of the URL Loading System, how they are sent and recieved, while the WebView only initiates the request, the cookies are managed by the app's default CookieStorage, and not the WebView, which some may think confusingly. The path the server uses is '/login' for both cookies. You can introduce more cookies, if you want.
 
 #### Configure cookie handling
@@ -91,5 +92,7 @@ Usefull links:
 Web Debugging tool for iOS, web:
 - [Charles Web Proxy Debugging](https://www.charlesproxy.com/documentation/welcome/) - to use Charles you may need to modify your app transport security settings to allow traffic.
 - if everythings is set and both the Charles and your server CA certificates are in place you can verify the traffic between your server and iOS client app.
+
+HTTPCookieStorage - Foundation | Apple Developer Documentation
 
 Copyright © 2015-2019 George Gaspar. All rights reserved.
