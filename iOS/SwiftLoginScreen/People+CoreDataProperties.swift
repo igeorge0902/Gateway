@@ -9,14 +9,12 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension People {
-
     @NSManaged var deviceId: String?
     @NSManaged var email: String?
     @NSManaged var name: String?
     @NSManaged var uuid: String?
-
 }

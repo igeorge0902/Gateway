@@ -6,12 +6,9 @@
 //  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 class People: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    // Insert code here to add functionality to your managed object subclass
 }

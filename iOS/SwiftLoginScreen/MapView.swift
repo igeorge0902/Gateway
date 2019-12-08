@@ -16,7 +16,4 @@
 
 import MapKit
 
-extension MapViewController {
-    
-    
-}
+extension MapViewController {}

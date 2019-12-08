@@ -10,21 +10,19 @@ import Foundation
 import SwiftyJSON
 
 class BasketData: NSObject {
-    
-    var movie_name:String!
-    var seatId:Int!
-    var seats_seatRow:String!
-    var seats_seatNumber:String!
-    var price:Int!
-    var tax:Double!
-    var screeningDateId:String!
-    var movie_picture:String!
-    var venue_picture:String!
-    var venue_name:String!
-    var screening_date:String!
-    
+    var movie_name: String!
+    var seatId: Int!
+    var seats_seatRow: String!
+    var seats_seatNumber: String!
+    var price: Int!
+    var tax: Double!
+    var screeningDateId: String!
+    var movie_picture: String!
+    var venue_picture: String!
+    var venue_name: String!
+    var screening_date: String!
+
     init(add: NSDictionary) {
-        
         movie_name = add["movie_name"] as! String
         seatId = add["seatId"] as! Int
         seats_seatRow = add["seats_seatRow"] as! String
@@ -36,6 +34,5 @@ class BasketData: NSObject {
         venue_picture = add["venue_picture"] as! String
         venue_name = add["venue_name"] as! String
         screening_date = add["screening_date"] as! String
-        
     }
 }

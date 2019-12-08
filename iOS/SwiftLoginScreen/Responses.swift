@@ -12,17 +12,16 @@ import Foundation
 /// so it'll be easy for you to add any helpers/fields as you need it.
 
 struct Responses {
-   
     // Actual fields.
     let data: Data!
     let response: URLResponse!
     var error: NSError?
-    
+
     // Helpers.
     var HTTPResponse: HTTPURLResponse! {
         return response as? HTTPURLResponse
     }
-    
+
     var responseJSON: AnyObject? {
         if let data = data {
             return try! JSONSerialization.jsonObject(with: data, options: []) as AnyObject?
@@ -30,11 +29,11 @@ struct Responses {
             return nil
         }
     }
-    
+
     var responseString: String? {
         if let data = data,
             let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-                return String(string)
+            return String(string)
         } else {
             return nil
         }

@@ -25,117 +25,111 @@
 import Foundation
 
 enum JSONValue {
-    
-    case jsonObject([String:JSONValue])
+    case jsonObject([String: JSONValue])
     case jsonArray([JSONValue])
     case jsonString(String)
     case jsonNumber(NSNumber)
     case jsonBool(Bool)
     case jsonNull
-    
-    var object: [String:JSONValue]? {
+
+    var object: [String: JSONValue]? {
         switch self {
-        case .jsonObject(let value):
+        case let .jsonObject(value):
             return value
         default:
             return nil
         }
     }
-    
+
     var array: [JSONValue]? {
         switch self {
-        case .jsonArray(let value):
+        case let .jsonArray(value):
             return value
         default:
             return nil
         }
     }
-    
+
     var string: String? {
         switch self {
-        case .jsonString(let value):
+        case let .jsonString(value):
             return value
         default:
             return nil
         }
     }
-    
+
     var integer: Int? {
         switch self {
-        case .jsonNumber(let value):
+        case let .jsonNumber(value):
             return value.intValue
         default:
             return nil
         }
     }
-    
+
     var double: Double? {
         switch self {
-        case .jsonNumber(let value):
+        case let .jsonNumber(value):
             return value.doubleValue
         default:
             return nil
         }
     }
-    
+
     var bool: Bool? {
         switch self {
-        case .jsonBool(let value):
+        case let .jsonBool(value):
             return value
-        case .jsonNumber(let value):
+        case let .jsonNumber(value):
             return value.boolValue
         default:
             return nil
         }
     }
-    
+
     subscript(i: Int) -> JSONValue? {
-        get {
-            switch self {
-            case .jsonArray(let value):
-                return value[i]
-            default:
-                return nil
-            }
+        switch self {
+        case let .jsonArray(value):
+            return value[i]
+        default:
+            return nil
         }
     }
-    
+
     subscript(key: String) -> JSONValue? {
-        get {
-            switch self {
-            case .jsonObject(let value):
-                return value[key]
-            default:
-                return nil
-            }
+        switch self {
+        case let .jsonObject(value):
+            return value[key]
+        default:
+            return nil
         }
     }
-    
+
     static func fromObject(_ object: AnyObject) -> JSONValue? {
         switch object {
-            
         case let value as NSString:
             return JSONValue.jsonString(value as String)
-            
+
         case let value as NSNumber:
             return JSONValue.jsonNumber(value)
-            
+
         case let value as NSNull:
             return JSONValue.jsonNull
-         /*
-        case let value as NSDictionary:
-            var jsonObject: [String:JSONValue] = [:]
-            for (k, v): (AnyObject, AnyObject) in value {
-                if let k = k as? NSString {
-                    if let v = JSONValue.fromObject(v) {
-                        jsonObject[k as String] = v
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return JSONValue.jsonObject(jsonObject)
-            */
+        /*
+         case let value as NSDictionary:
+             var jsonObject: [String:JSONValue] = [:]
+             for (k, v): (AnyObject, AnyObject) in value {
+                 if let k = k as? NSString {
+                     if let v = JSONValue.fromObject(v) {
+                         jsonObject[k as String] = v
+                     } else {
+                         return nil
+                     }
+                 }
+             }
+             return JSONValue.jsonObject(jsonObject)
+         */
         case let value as NSArray:
             var jsonArray: [JSONValue] = []
             for v in value {
@@ -150,5 +144,4 @@ enum JSONValue {
             return nil
         }
     }
-    
 }

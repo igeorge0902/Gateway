@@ -9,12 +9,10 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 extension LogItem {
-
     @NSManaged var title: String?
     @NSManaged var itemText: String?
-
 }

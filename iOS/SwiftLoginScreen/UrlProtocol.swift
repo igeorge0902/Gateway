@@ -143,7 +143,7 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
             
             let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: nil, headerFields: nil)
             
-            self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
+                self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
             
             self.client?.urlProtocolDidFinishLoading(self)
             

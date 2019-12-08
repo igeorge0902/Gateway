@@ -10,21 +10,19 @@ import Foundation
 import SwiftyJSON
 
 class AllTicketsData: NSObject {
-    
-    var movie_name:String!
-    var movie_picture:String!
-    var venue_name:String!
-    var seats_seatRow:String!
-    var seats_seatNumber:String!
-    var price:Int!
-    var tax:Double!
-    var screen_screenId:String!
-    var screening_date:String!
-    var ticketId:Int!
-    
-    //TODO: add venue details, pictures
+    var movie_name: String!
+    var movie_picture: String!
+    var venue_name: String!
+    var seats_seatRow: String!
+    var seats_seatNumber: String!
+    var price: Int!
+    var tax: Double!
+    var screen_screenId: String!
+    var screening_date: String!
+    var ticketId: Int!
+
+    // TODO: add venue details, pictures
     init(add: NSDictionary) {
-        
         movie_name = add["movie_name"] as! String
         movie_picture = add["movie_picture"] as! String
         venue_name = add["venue_name"] as! String
@@ -35,6 +33,5 @@ class AllTicketsData: NSObject {
         screening_date = add["screening_date"] as! String
         screen_screenId = add["screen_screenId"] as! String
         ticketId = add["ticketId"] as! Int
-        
     }
 }

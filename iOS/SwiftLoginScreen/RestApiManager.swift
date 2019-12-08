@@ -142,7 +142,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                     }
                     
                     if httpResponse.statusCode == 500 {
-                       
+                        // assumes the Exception handler servlet is on
                         let json:JSON = try! JSON(data: data!)
                         UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: json.rawString()!)
                     }
