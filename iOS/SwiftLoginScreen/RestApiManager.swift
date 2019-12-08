@@ -135,30 +135,15 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                     
                     if httpResponse.statusCode == 502 {
                         
-                      //  let json:JSON = try! JSON(data: data!)
-                        
-                       // if let dataBlock = json["Error Details"].object as? NSDictionary {
-                            
-                         //   let errorMsg = dataBlock.value(forKey: "ErrorMsg:") as! String
-                            
-                         //   if
-                              let errorMsg = "User does not bear valid paramteres. No valid session" //{
-                            
-                                let prefs:UserDefaults = UserDefaults.standard
-                                prefs.set(0, forKey: "ISLOGGEDIN")
-
-                         //   }
-                            
-                            
-                     //   }
-                        
-                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: errorMsg)
+                        let json:JSON = try! JSON(data: data!)
+                        let prefs:UserDefaults = UserDefaults.standard
+                        prefs.set(0, forKey: "ISLOGGEDIN")
+                        onCompletion(json, error as NSError?)
                     }
                     
                     if httpResponse.statusCode == 500 {
                        
                         let json:JSON = try! JSON(data: data!)
-
                         UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: json.rawString()!)
                     }
                 }

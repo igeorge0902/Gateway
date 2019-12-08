@@ -92,11 +92,12 @@ extension UIAlertController {
     static func popUp(title: String, message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
+            
+        alertController.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
         
         let alertWindow = UIWindow(frame: UIScreen.main.bounds)
         alertWindow.rootViewController = UIViewController()
-        alertWindow.windowLevel = UIWindow.Level.alert + 1;
+        alertWindow.windowLevel = UIWindow.Level.normal + 1;
         alertWindow.makeKeyAndVisible()
         alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
     }
@@ -131,5 +132,17 @@ extension Date {
         return dateFormatter.date(from: dateString)!
 
     }
+}
+
+extension UIViewController {
+
+  func presentAlert(withTitle title: String, message : String) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+
+    }
+    alertController.addAction(OKAction)
+    self.present(alertController, animated: true, completion: nil)
+  }
 }
 

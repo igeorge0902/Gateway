@@ -124,9 +124,10 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
             
             // if response == 300
             if let message_ = json["Error Details"].object as? NSDictionary {
-                
-                self.nameTextView.text = message_.value(forKey: "User") as! String!
-
+            
+                let errorMsg = message_.value(forKey: "ErrorMsg:") as! String
+                self.presentAlert(withTitle: "Error Details", message: errorMsg)
+            
             } else {
             
             let users: AnyObject = json["user"].object as AnyObject
@@ -189,7 +190,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
                     
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
                     NSLog(error!.localizedDescription)
-                    
+                    print(data!)
                     UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
                     
                 }

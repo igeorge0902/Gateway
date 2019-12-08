@@ -158,7 +158,7 @@ class RequestManager: NSObject {
                             
                             
                         } else {
-                            
+                            // TODO: add corresponding server response
                             UIAlertController.popUp(title: "Sorry!", message: "User does not exist!")
                             
                             NSLog("User ==> %@", user);

@@ -57,6 +57,8 @@ extension URLRequest {
             }
         }
         
+        // TEST
+        request.httpShouldHandleCookies = false
         return request as URLRequest
     }
     

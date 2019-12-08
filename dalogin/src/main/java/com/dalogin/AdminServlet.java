@@ -327,6 +327,8 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			}
 			request.setAttribute("user", user);
 			request.setAttribute("token2", token2.get(0));
+      	   System.out.print("Token2: "+ token2.get(0));
+
 			request.setAttribute("TIME_", session.getCreationTime());
 			rd.forward(request, response); 
 			}
@@ -419,15 +421,6 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			out.print(json.toString());
 			out.flush();
         	
-        }
-    	
-        for (Cookie cookie_ : cookies) {
-        	if (cookie_.getName().equalsIgnoreCase("JSESSIONID")) {
-                if (sessionId == null) {
-                	sessionId = cookie_.getValue();
-                    log.info("SessionId from cookie: " + sessionId);
-        		}
-        	}
         }
 		
         // Check session for user attribute
