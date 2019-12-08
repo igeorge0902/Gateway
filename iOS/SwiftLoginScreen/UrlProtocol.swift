@@ -232,9 +232,14 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
         
         self.response = response
         self.mutableData = NSMutableData()
-        self.httpresponse = response as? HTTPURLResponse!
+        self.httpresponse = response as? HTTPURLResponse
         
-        
+        let cookieStorage = HTTPCookieStorage.shared
+        if let cookies_ = cookieStorage.cookies {
+        for cookie in cookies_ {
+            print("(using UrlProtocol)Cookie_ name: \(cookie.name), (using UrlProtocol)Cookie_ value: \(cookie.value)")
+            }
+        }
     }
     
     func connection(_ connection: NSURLConnection!, didReceiveData data: Data!) {
