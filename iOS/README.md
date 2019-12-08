@@ -38,7 +38,39 @@ func connectionDidFinishLoading(_ connection: NSURLConnection!) {
 ### URL Loading System
 - the app has 3 different request manager, combined with a NSUrlProtocol, and a WebView, therefor it is advisable to read the official Apple documentation, as to how it works (cookies, etc) 
 - [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 
-- the app uses 2 different cookies, the JSESSIONID, and XSRF-TOKEN. Both abide the naming strategy, and standards, and it's part of the URL Loading System, how they are sent and recieved, while the WebView only initiates the request, the cookies are managed by the app's default CookieStorage, and not the WebView, which some may think confusingly. The path the server is '/login' for both cookies. You can introduce more cookies, if you want.
+- [NSMutableURLRequest](https://developer.apple.com/documentation/foundation/nsmutableurlrequest)
+- the app uses 2 different cookies, the JSESSIONID, and XSRF-TOKEN. Both abide the naming strategy, and standards, and it's part of the URL Loading System, how they are sent and recieved, while the WebView only initiates the request, the cookies are managed by the app's default CookieStorage, and not the WebView, which some may think confusingly. The path the server uses is '/login' for both cookies. You can introduce more cookies, if you want.
+
+#### Configure cookie handling
+You can set up the policy at three different points, at the same time:
+
+In the CustomURLRequest:
+```swift
+// TEST
+request.httpShouldHandleCookies = false
+return request as URLRequest
+```
+
+In the CustomSessionConfiguration:
+```swift
+/// Just like defaultSessionConfiguration, returns a newly created session configuration object, customised
+/// from the default to your requirements.
+class func CustomSessionConfiguration() -> URLSessionConfiguration {
+    
+    let config = `default`
+    
+    //config.timeoutIntervalForRequest = 20 // Make things timeout quickly.
+    config.sessionSendsLaunchEvents = true
+    config.httpAdditionalHeaders = ["MyResponseType": "JSON"] // My web service needs to be explicitly asked for JSON.
+    config.httpShouldUsePipelining = true // Might speed things up if your server supports it.
+    
+    return config
+```
+
+In the UrlProtocol, in general, but mainly at this point, when you work with NSMutableURLRequest:
+```swift
+   func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
+```
 
 # How it works
 - it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
