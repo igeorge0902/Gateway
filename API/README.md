@@ -66,6 +66,10 @@ SET global log_output = 'table';
 SELECT CONVERT(argument USING utf8), event_time FROM mysql.general_log;
 ```
 
+### Extra
+----
+- added HyperSQL in-memory database configuration. Just change the configuration to use the hibernate.mem.cfg.xml file, and you can test the webservice to retrive a device. It inserts the import.sql script, by default, if you set the hbmddl.auto property to create.
+
 Features:
 ----
 - provides authenticated access to the user's "profile"
