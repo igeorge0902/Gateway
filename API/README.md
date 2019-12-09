@@ -38,6 +38,14 @@ public class Ticket {
     @JoinColumn(name="purchase_purchaseId")
     protected Purchase purchase;
 ```
+You also want make it bi-directional, so the Purchase class will reference the Ticket(s) entities:
+```java
+    /**
+	 * Do not use CascadeType.REMOVE, because it will remove the whole purchase once a corresponding ticket is deleted!
+	 */
+    @OneToMany(mappedBy="purchase", cascade={/*CascadeType.REMOVE,*/ CascadeType.PERSIST, CascadeType.REFRESH}, fetch=FetchType.EAGER)
+    protected List<Ticket> ticket;
+```
 
 The example above is in the [WildFly_TheBookMyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
 Ticket.java class, where I had to create an entity query relationship, like one purchase and its many tickets.
