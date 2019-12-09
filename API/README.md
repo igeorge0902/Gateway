@@ -25,6 +25,38 @@ Please read the JAX-RS documentation and examples about HttpServletRequest injec
 - https://www.logicbig.com/tutorials/java-ee-tutorial/jax-rs/servlet-resources.html
 - https://docs.oracle.com/javaee/6/api/javax/servlet/ServletRequest.html
 
+Hibernate class mapping with annotations and the dB (MySql, MSSQL)
+----
+- I use default naming strategy, that comes out of box, which is convinient, I think. The classes have XML decorations, but I use the JSON content-type.
+- If you are bold enough, and want to create the database without schema export with Hibernate, make sure that you use snake_case table name conventions, when you add i.e. Many-to- relationships, where you have to use JoinColumn, and then you just have to add the foreign key, that points to the primary key of the referenced table from the referencing one, which is like a Tickets table will have a 'purchase_purchaseId' column pointing to the 'purchaseId' in the Purchase table:
+
+```java
+@Entity
+public class Ticket {
+    
+   @ManyToOne (cascade={CascadeType.PERSIST, CascadeType.REFRESH}, fetch=FetchType.EAGER)
+    @JoinColumn(name="purchase_purchaseId")
+    protected Purchase purchase;
+```
+
+The example above is in the [WildFly_TheBookMyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
+Ticket.java class, where I had to create an entity query relationship, like one purchase and its many tickets.
+
+- for MSSQL the same thing goes on, but you are better off with SQL login user, instead of integratedSecurity, and you have to explicitly define the schema, in which you keep your table:
+
+```java
+@Entity
+@Table(name="Ticket", schema="yourschema")
+public class Ticket {
+```
+
+Once everything is up and running, you can check the sql statements in the hibernate debug logs, or MySql query log table, where you will find them in snake case interpretation. To set the MySQL to show the query logs, just run the following commands:
+
+```sql
+SET global general_log = 1;
+SET global log_output = 'table';
+SELECT CONVERT(argument USING utf8), event_time FROM mysql.general_log;
+```
 
 Features:
 ----
