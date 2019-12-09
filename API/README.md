@@ -28,7 +28,7 @@ Please read the JAX-RS documentation and examples about HttpServletRequest injec
 Hibernate class mapping with annotations and the dB (MySql, MSSQL)
 ----
 - I use default naming strategy, that comes out of box, which is convinient, I think. The classes have XML decorations, but I use the JSON content-type.
-- If you are bold enough, and want to create the database without schema export with Hibernate, make sure that you use snake_case table name conventions, when you add i.e. Many-to- relationships, where you have to use JoinColumn, and then you just have to add the foreign key, that points to the primary key of the referenced table from the referencing one, which is like a Tickets table will have a 'purchase_purchaseId' column pointing to the 'purchaseId' in the Purchase table:
+- If you are bold enough, and want to create the database without schema export with Hibernate, make sure that you use snake_case table name conventions, when you add i.e. Many-to-One relationships, where you have to use JoinColumn, and then you just have to add the foreign key, that points to the primary key of the referenced table from the referencing one, which is like a Tickets table will have a 'purchase_purchaseId' column pointing to the 'purchaseId' in the Purchase table:
 
 ```java
 @Entity
