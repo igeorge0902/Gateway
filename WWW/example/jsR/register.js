@@ -106,6 +106,9 @@ myRegController.controller('SearchCtrl', ['$scope','$http',
 }]);
 
 myRegController.controller('RegController', function ($scope, $http, base64, $location, jsonFilter) {
+    $scope.modelP = {
+        isDisabled: true
+        };
     $scope.message = '';
     $scope.username = '';
     $scope.password = '';
@@ -115,24 +118,35 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
     $scope.url = '/mbook-1/rest/newuser';
     $scope.successMsg_User = '';
     $scope.errorMsg_User = '';
+    $scope.successMsg = '';
+    $scope.errorMsg = '';
     localStorage.hmacSecret = 'undefined';
+    
+    $scope.fields = function() {
+        if($scope.voucher_ != '' && $scope.password != '' && $scope.username != '' && $scope.errorMsg === '' && $scope.errorMsg_User === '') {
+                $scope.modelP = {
+                isDisabled: false
+                };
+            }
+        }
     
     // The function that will be executed on button click (ng-click="search()")
     $scope.search = function() {
-        alert($scope.username)
 
         // Create the http post request
         // the data holds the keywords
         // The request is a JSON request.
     $http.get($scope.url+'/'+$scope.username)
             .success(function(data, status) {
-                $scope.successMsg_User = data;
+                $scope.successMsg_User = data.name;
                 $scope.errorMsg_User = '';
      })
             .error(function(data, status) {
                 $scope.successMsg_User = ''; 
                 $scope.errorMsg_User = "Username is already taken!";
-
+                $scope.modelP = {
+                    isDisabled: true
+                    };
             });
     }
     
@@ -144,13 +158,15 @@ myRegController.controller('RegController', function ($scope, $http, base64, $lo
         // The request is a JSON request.
     $http.get($scope.e_url+'/'+$scope.email)
             .success(function(data, status) {
-                $scope.successMsg = data;
+                $scope.successMsg = data.name;
                 $scope.errorMsg = '';
      })
             .error(function(data, status) {
                 $scope.successMsg = '';
                 $scope.errorMsg = "Email is already taken!";
-
+                $scope.modelP = {
+                    isDisabled: true
+                    };
             });
     }
     

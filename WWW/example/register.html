@@ -38,26 +38,26 @@
             <h2>Login</h2>
             <section class="4u">
             <label for="voucher_" class="sr-only">Voucher</label>
-            <input type="text" name=voucher_ id="voucher_" ng-model="voucher_"/>
+            <input type="text" name=voucher_ id="voucher_" ng-model="voucher_" ng-change="fields()"/>
             <br />
             <label for="username" class="sr-only">Username</label>
-            <input type="text" name=username id="username" ng-model="username" ng-change="search()"/>
+            <input type="text" name=username id="username" ng-model="username" ng-change="search()" ng-change="fields()"/>
             <br />
             <label for="email" class="sr-only">Email</label>
-            <input type="text" name=email id="email" ng-model="email" ng-change="email_search()"/>
+            <input type="text" name=email id="email" ng-model="email" ng-change="email_search()" ng-change="fields()"/>
             <br />
             <label for="password" class="sr-only">Password</label>
-            <input type="password" name=password id="password" ng-model="password"/>
+            <input type="password" name=password id="password" ng-model="password" ng-change="fields()"/>
             </section>
             <div class="row">
             <section class="4u">
             <br>
             <div class="alert alert-danger" role="alert" ng-show="errorMsg_User">{{errorMsg_User}}</div>
             <div class="alert alert-danger" role="alert" ng-show="successMsg_User">{{successMsg_User}}</div>
-            <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg.name}}</div>
             <div class="alert alert-danger" role="alert" ng-show="successMsg">{{successMsg}}</div>
             <br>
-            <button ng-click="register()">Register</button>
+            <button ng-disabled="modelP.isDisabled" ng-click="register()">Register</button>
             <input type="reset" value="Cancel"/>
             </section>
             </div>
