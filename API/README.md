@@ -92,12 +92,18 @@ Build from Eclipse:
 
 Useful links:
 ----
-Hibernate's C3P0ConnectionProvider settings
-* http://www.mchange.com/projects/c3p0/#hibernate-specific
-Hibernate User Guide
-* https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html
-How to upgrade Hibernate in Wildfly 10.1.0.Final
-* https://developer.jboss.org/thread/274313
-* https://planet.jboss.org/post/updating_hibernate_orm_in_wildfly
+<details>
+   <summary>Hibernate's C3P0ConnectionProvider settings</summary>
+   <p>http://www.mchange.com/projects/c3p0/#hibernate-specific</p>
+</details>
+<details>
+   <summary>Hibernate User Guide</summary>
+   <p>https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html</p>
+</details>
+<details>
+   <summary>How to upgrade Hibernate in Wildfly 10.1.0.Final</summary>
+   <p>https://developer.jboss.org/thread/274313</p>
+   <p>https://planet.jboss.org/post/updating_hibernate_orm_in_wildfly</p>
+</details>
 
 Copyright © 2015-2017 George Gaspar. All rights reserved.
