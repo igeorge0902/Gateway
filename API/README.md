@@ -11,8 +11,14 @@ Copyright © 2015-2017 George Gaspar. All rights reserved.
 - it is not a mistake that the web.xml is configured for TomCat. You can find the GlassFish configuration in the [simple-service-webapp](https://github.com/igeorge0902/Gateway/tree/master/simple-service-webapp/src/main/webapp/WEB-INF)
 - [wildFly settings](https://github.com/igeorge0902/Gateway/tree/master/API/wildFly)
 
-@ wildFly
-- You may need to manually include your Hibernate jar files. I have done this way, but please check the documentation how it works with whichever wildFly distribution.
+### wildFly
+- You may need to manually include your Hibernate jar files in the system moduls. I have done this way instead of maven configuration, but please check the documentation how it works with whichever wildFly distribution:
+* you will need to have the following Hibernate jar files:
+    * hibernate-infinispan-5.0.10.Final
+    * hibernate-core-5.0.10.Final
+    * hibernate-entitymanager-5.0.10.Final
+    * hibernate-envers-5.0.10.Final
+    * hibernate-java8-5.0.10.Final
 - You will find a working package at AWS CodeCommit
 
 Cookie settings and Request parameters:
