@@ -71,7 +71,15 @@ public class Loggingout extends HttpServlet {
 		      	
 		     if(session != null){
 		  		 
+		    	 ServletContext context = request.getServletContext();
 		    	 session.removeAttribute("user");
+		         try {
+					SQLAccess.logout(session.getId(), context);	
+				} catch (Exception e) {
+
+						throw new ServletException(e.getMessage());	
+
+				}
 			     session.invalidate();
 				 
 			     response.setContentType("application/json"); 

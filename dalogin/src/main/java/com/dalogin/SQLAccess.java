@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
@@ -776,7 +778,6 @@ public class SQLAccess {
 		return false;
 	}
 	
-	//TODO: (PBI task) add check, if user not found for the procedure.
 	/**
 	 * Checks user password. 
 	 * 
@@ -811,10 +812,13 @@ public class SQLAccess {
 			reader.close();
 			reader_.close();
 			
-			while (rs.next()) {
-				
-				hash =rs.getString(1);
-			}
+			 if (rs.next() == false) {
+			        hash = "ResultSet in empty";
+			      } else {
+			        do {
+						hash =rs.getString(1);
+			        } while (rs.next());
+			      }
 			
 		} catch (SQLException ex) {
 		      SQLAccess.printSQLException(ex);
@@ -1198,8 +1202,9 @@ public class SQLAccess {
 
 			
 		} catch (SQLException ex) {
-		      SQLAccess.printSQLException(ex);
-		      return false;
+			SQLAccess.printSQLException(ex);
+			throw new Exception(ex);
+			//return false;
 
 		} finally {
 			

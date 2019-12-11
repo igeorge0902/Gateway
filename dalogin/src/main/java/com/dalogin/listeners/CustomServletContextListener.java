@@ -23,12 +23,10 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-
 import org.apache.log4j.Logger;
-
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 import com.google.common.collect.TreeMultimap;
-
 import com.dalogin.DBConnectionManager;
 import com.dalogin.UrlManager;
 import com.dalogin.utils.PropertyUtils;
@@ -65,6 +63,7 @@ public class CustomServletContextListener implements ServletContextListener{
 	public static String gmail_password = null;
 	public static String gmail_username = null;
 	public static String gmail_smtp = null;
+	
 	/**
 	 * 
 	 */
@@ -169,9 +168,12 @@ public class CustomServletContextListener implements ServletContextListener{
        attributes = new HashMap<String, String>();
        context.setAttribute("attributes", attributes); 
        
-       sessions = TreeMultimap.create();
+       sessions = Multimaps.synchronizedSetMultimap(TreeMultimap.create());
        context.setAttribute("sessions", sessions);
        
+	   //PBI: resolve dependencies for WildFly, smoothly
+       //WS SOAP taken out due to dependency conflict on WildFly. 
+       //put it here 
    }
 
    /**
