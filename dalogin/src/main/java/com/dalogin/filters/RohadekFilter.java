@@ -8,43 +8,97 @@ package com.dalogin.filters;
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+import org.json.JSONObject;
 
-public class RohadekFilter implements Filter
-{
+@WebFilter(servletNames= {"AdminServlet", "GetAllPurchases", "CheckOut"})
+public class RohadekFilter implements Filter {
 
-    @Override
-    public void doFilter( ServletRequest request, ServletResponse response, FilterChain chain )
-                          throws IOException, ServletException
-    {
-    	  HttpServletResponse response_ = (HttpServletResponse) response;
-    	  //HttpServletRequest request_ = (HttpServletRequest) request;
+    private ServletContext context;
+	private static Logger log = Logger.getLogger(Logger.class.getName());
 
-
-          response_.addHeader("Cache-Control", "no-cache, must-revalidate, post-check=0, pre-check=0, proxy-revalidate"); // HTTP 1.1.
-          response_.addHeader("Pragma", "no-cache"); // HTTP 1.0.
-
-          response_.addDateHeader("Expires", 0);
-          
-          chain.doFilter(request, response);
+    public void init(FilterConfig fConfig) throws ServletException {
+        this.context = fConfig.getServletContext();
+        this.context.log("AuthenticationFilter initialized");
     }
 
-    @Override
-    public void init( FilterConfig filterConfig )
-    {        
-        
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+
+        HttpSession session = req.getSession(false);
+       	HashMap<String, String> error = new HashMap<>();
+
+    	// Set the response message's MIME type
+        response.setContentType("text/html;charset=UTF-8");
+               		
+		Cookie [] cookies = req.getCookies();
+		
+        // Get JSESSION url parameter. Later it needs to be sent as header
+        String sessionId = req.getParameter("JSESSIONID");	
+        if(session != null && sessionId == null) {
+        	sessionId = session.getId();
+        }
+        log.info("SessionId from request parameter: " + sessionId);
+    	if (cookies == null || !req.isRequestedSessionIdValid() || session == null) {
+        	
+			res.setContentType("application/json"); 
+			res.setCharacterEncoding("utf-8"); 
+			res.setStatus(502);
+			
+			PrintWriter out = response.getWriter(); 
+			
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			
+			// put some value pairs into the JSON object . 				
+			error.put("acticeUsers", "failed"); 
+			error.put("Success", "false");
+			error.put("ErrorMsg:", "no valid session");
+			json.put("Error Details", error); 
+			
+			// finally output the json string 
+			out.print(json.toString());
+			out.flush();
+        	
+        } else if (session != null && req.isRequestedSessionIdValid() && cookies != null) {
+                
+                for (Cookie cookie : cookies) {
+    			 
+                	if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
+
+                		if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
+
+                			throw new ServletException("There is no valid XSRF-TOKEN");
+
+                		} else {
+                            // pass the request along the filter chain
+                            chain.doFilter(request, response);
+                        }
+  			   
+                	}
+                }
+        }
     }
 
-    @Override
-    public void destroy()
-    {
+    public void destroy() {
+        //close any resources here
     }
 }

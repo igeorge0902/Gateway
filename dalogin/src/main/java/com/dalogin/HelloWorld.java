@@ -107,7 +107,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
  	     final long T2 = Long.parseLong(context.getAttribute("time").toString());
 
         // Actual logic goes here.		
-        try {
+      //  try {
 
         	// hmac is not encrypted, just the password inside
         	hmac = request.getHeader("X-HMAC-HASH").trim();
@@ -129,7 +129,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
     		log.info("HandShake was given: "+hmac+" & "+hmacHash);
     		
             try{ 
-                //TODO: fix logging on WildFly
             	log.info("deviceId to be decrypted: " +  deviceId_ );
             	deviceId = aesUtil.decrypt(SALT, IV, PASSPHRASE, deviceId_);
             	log.info("deviceId decrypted: " +  deviceId );
@@ -140,20 +139,18 @@ public class HelloWorld extends HttpServlet implements Serializable {
             	
             }
             
-			hash1 = SQLAccess.hash(pass, user, context);
-			devices = SQLAccess.insert_device(deviceId, user, context);
-		
-		} catch (Exception e) {
+            hash1 = hash_(pass, user, context);
+	//	} catch (Exception e) {
 			
-			throw new ServletException(e.getCause().toString());
+	//		throw new ServletException(e.getCause().toString());
 
-		}
+	//	}
         	/*
         	 *  user authentication only can happen during the intervallum that the network latency produces 
         	 *  plus seconds given as context parameter
         	 *  
         	 */
-        	if(pass.equals(hash1) && devices && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())){
+        	if(pass.equals(hash1) && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())){
         		
         		// Create new session
 				session = request.getSession(true);
@@ -187,6 +184,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 		           }
 
 				try {
+					SQLAccess.insert_device(deviceId, user, context);
 					SQLAccess.insert_sessionCreated(deviceId, SessionCreated, sessionID, context);
 				} catch (Exception e) {	
 					throw new ServletException(e.getCause().toString());
@@ -421,5 +419,15 @@ public class HelloWorld extends HttpServlet implements Serializable {
     public void destroy()
     {
         // do nothing.
+    }
+    
+    private String hash_(String pass, String user, ServletContext context) throws ServletException {
+    	try {
+			hash1 = SQLAccess.hash(pass, user, context);
+		} catch (Exception e) {
+			
+			throw new ServletException(e.getMessage());	
+		}
+    	return hash1;
     }
 }

@@ -397,8 +397,5 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
               .append(" live sessions in the application.").toString();
           log.info(message);
     	}
-        
     }
-   
-
 }
