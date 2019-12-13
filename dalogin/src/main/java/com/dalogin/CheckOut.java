@@ -31,36 +31,43 @@ public class CheckOut extends HttpServlet implements Serializable {
     private static volatile Cookie[] cookies;
     private static volatile List<String> token2;
     private static volatile String uuid;
+	protected volatile static String sessionId = null;
 
 	public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     		
-		if (session == null || !request.isRequestedSessionIdValid()) {
-			
-			HashMap<String, String> error = new HashMap<>();
+    	HashMap<String, String> error = new HashMap<>();
 
+    	// Set the response message's MIME type
+        response.setContentType("text/html;charset=UTF-8");
+               
+        // Get JSESSION url parameter. Later it needs to be sent as header
+        sessionId = request.getParameter("JSESSIONID");		        
+        log.info("SessionId from request parameter: " + sessionId);
+       
+        // Return current session
+		session = request.getSession();		
+		cookies = request.getCookies();
+		
+    	if (cookies == null || !request.isRequestedSessionIdValid() ) {
+        	
 			response.setContentType("application/json"); 
 			response.setCharacterEncoding("utf-8"); 
 			response.setStatus(502);
-			
-			PrintWriter out = response.getWriter(); 
-			
+						
 			//create Json Object 
 			JSONObject json = new JSONObject(); 
 			
 			// put some value pairs into the JSON object . 				
 			error.put("acticeUsers", "failed"); 
 			error.put("Success", "false");
-			error.put("ErrorMsg", "no valid session");
+			error.put("ErrorMsg:", "no valid session");
 			json.put("Error Details", error); 
 			
-			// finally output the json string 
+			PrintWriter out = response.getWriter(); 
 			out.print(json.toString());
 			out.flush();
-			
-		} else {
-
-		session = request.getSession(false);
-		cookies = request.getCookies();
+						        	
+        } else {
 		
 		ServletContext context = request.getServletContext();
         
