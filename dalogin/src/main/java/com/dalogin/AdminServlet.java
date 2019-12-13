@@ -120,23 +120,42 @@ public class AdminServlet extends HttpServlet implements Serializable {
 	public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
     	
-    	HashMap<String, String> error = new HashMap<>();
+       	HashMap<String, String> error = new HashMap<>();
 
     	// Set the response message's MIME type
         response.setContentType("text/html;charset=UTF-8");
                
         // Get JSESSION url parameter. Later it needs to be sent as header
-        sessionId = request.getParameter("JSESSIONID");			
+        sessionId = request.getParameter("JSESSIONID");		        
         log.info("SessionId from request parameter: " + sessionId);
        
         // Return current session
 		session = request.getSession();		
-    	
+		cookies = request.getCookies();
+    	if (cookies == null || !request.isRequestedSessionIdValid() ) {
+        	
+			response.setContentType("application/json"); 
+			response.setCharacterEncoding("utf-8"); 
+			response.setStatus(502);
+						
+			//create Json Object 
+			JSONObject json = new JSONObject(); 
+			
+			// put some value pairs into the JSON object . 				
+			error.put("acticeUsers", "failed"); 
+			error.put("Success", "false");
+			error.put("ErrorMsg:", "no valid session");
+			json.put("Error Details", error); 
+			
+			PrintWriter out = response.getWriter(); 
+			out.print(json.toString());
+			out.flush();
+						        	
+        }
+		
         // Check session for user attribute
-    	if(session.getAttribute("user") == null){
-    	
-            if (sessionId != null) {
-                
+    	if(session.getAttribute("user") != null && sessionId != null){
+    	                
                 // Get the existing session and creates a new one
             	session = request.getSession(true);
             	
@@ -145,12 +164,30 @@ public class AdminServlet extends HttpServlet implements Serializable {
                 
                 // Init HashMap that stores session objects
                 activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
-                
-                // Get session with sessionId
-                session = activeUsers.get(sessionId);
+                log.info("SessionId split: " + sessionId.split("\\.")[0].toString());
 
+                // Get session with sessionId
+                session = activeUsers.get(sessionId.split("\\.")[0]); 
+                if(session == null) {	
+                session = activeUsers.get(sessionId/*.split("\\.")[0]*/);
+                }
                 
-            } else {
+                for (Cookie cookie : cookies) {
+    			 
+                	if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
+  			   
+                		if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
+  					   
+                			throw new ServletException("There is no valid XSRF-TOKEN");
+
+                		} else {
+                			performTask(request, response);
+                		}
+                	}
+                  }
+            
+    	
+    		} else {
             	
     			response.setContentType("application/json"); 
     			response.setCharacterEncoding("utf-8"); 
@@ -160,45 +197,20 @@ public class AdminServlet extends HttpServlet implements Serializable {
     				session.invalidate();				
     			}
     			
-    			// put some value pairs into the JSON object . 				
+    			// put some value pairs into the JSON object .
+    			JSONObject json = new JSONObject(); 
+
+    			if(error.isEmpty()) {
     			error.put("acticeUsers", "failed"); 
     			error.put("Success", "false"); 
+    			json.put("Error Details", error); 
     			
-            }
-    	
-    	}
-    	
-    	if (session == null || !request.isRequestedSessionIdValid() ) {
-        	
-			response.setContentType("application/json"); 
-			response.setCharacterEncoding("utf-8"); 
-			response.setStatus(502);
-
-		//	if (session != null) {
-		//	session.invalidate();				
-		//	}
-			
-			PrintWriter out = response.getWriter(); 
-			
-			//create Json Object 
-			JSONObject json = new JSONObject(); 
-			
-			// put some value pairs into the JSON object . 				
-			error.put("acticeUsers", "failed"); 
-			error.put("Success", "false");
-			error.put("ErrorMsg", "no valid session");
-			json.put("Error Details", error); 
-			
-			// finally output the json string 
-			out.print(json.toString());
-			out.flush();
-        	
-
-        } else {
-    		
-		            performTask(request, response);
-    			//	log.info("CurrentUserSessionId: " + session.getId());
-        	}
+    			
+    			PrintWriter out = response.getWriter(); 
+    			out.print(json.toString());
+    			out.flush();
+    				}
+            	}
 
     }
     
