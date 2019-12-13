@@ -168,7 +168,7 @@ public class CustomServletContextListener implements ServletContextListener{
        attributes = new HashMap<String, String>();
        context.setAttribute("attributes", attributes); 
        
-       sessions = Multimaps.synchronizedSetMultimap(TreeMultimap.create());
+       sessions = Multimaps.synchronizedSortedSetMultimap(TreeMultimap.create());
        context.setAttribute("sessions", sessions);
        
 	   //PBI: resolve dependencies for WildFly, smoothly

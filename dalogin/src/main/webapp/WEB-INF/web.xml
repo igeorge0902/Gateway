@@ -98,7 +98,7 @@
      <filter>
         <description>Set cache expiry for static content</description>
         <filter-name>ExpiresFilter</filter-name>
-        <filter-class>main.java.com.dalogin.filters.RohadekFilter</filter-class>
+        <filter-class>com.dalogin.filters.RohadekFilter</filter-class>
     <init-param>
  		<param-name>ExpiresByType text/html</param-name>
  		<param-value>now</param-value>
@@ -115,7 +115,7 @@
 	
 	<filter>
 		<filter-name>XssFilter</filter-name>
-		<filter-class>main.java.com.dalogin.filters.XssFilter</filter-class>
+		<filter-class>com.dalogin.filters.XssFilter</filter-class>
 	</filter>
 
     <filter-mapping>
@@ -127,7 +127,7 @@
     
     <filter>
         <filter-name>HSTSFilter</filter-name>
-        <filter-class>main.java.com.dalogin.filters.HSTSFilter</filter-class>
+        <filter-class>com.dalogin.filters.HSTSFilter</filter-class>
     </filter>
     
     <filter-mapping>
@@ -140,7 +140,7 @@
    
    <servlet>  
     <servlet-name>AdminServlet</servlet-name>  
-    <servlet-class>main.java.com.dalogin.AdminServlet</servlet-class>  
+    <servlet-class>com.dalogin.AdminServlet</servlet-class>  
   </servlet>  
   
   <servlet-mapping>  
@@ -151,7 +151,7 @@
 
  <servlet>
    <servlet-name>HelloWorld</servlet-name>
-   <servlet-class>main.java.com.dalogin.HelloWorld</servlet-class>
+   <servlet-class>com.dalogin.HelloWorld</servlet-class>
  </servlet>
 
  <servlet-mapping>
@@ -162,7 +162,7 @@
 
    <servlet>  
     <servlet-name>Registration</servlet-name>  
-    <servlet-class>main.java.com.dalogin.Registration</servlet-class>  
+    <servlet-class>com.dalogin.Registration</servlet-class>  
   </servlet>  
   
   <servlet-mapping>  
@@ -172,7 +172,7 @@
   
    <servlet>  
     <servlet-name>Voucher</servlet-name>  
-    <servlet-class>main.java.com.dalogin.Voucher</servlet-class>  
+    <servlet-class>com.dalogin.Voucher</servlet-class>  
   </servlet>  
   
   <servlet-mapping>  
@@ -182,7 +182,7 @@
   
    <servlet>  
     <servlet-name>Loggingout</servlet-name>  
-    <servlet-class>main.java.com.dalogin.Loggingout</servlet-class>  
+    <servlet-class>com.dalogin.Loggingout</servlet-class>  
   </servlet>  
   
   <servlet-mapping>  

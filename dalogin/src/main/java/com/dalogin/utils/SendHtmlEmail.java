@@ -78,7 +78,6 @@ public class SendHtmlEmail {
 		
 		// Enter your correct gmail UserID and Password
 		// if you have 2FA enabled then provide App Specific Password
-		
 		transport.connect(CustomServletContextListener.gmail_smtp, CustomServletContextListener.gmail_username, CustomServletContextListener.gmail_password);
 		transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
 		transport.close();

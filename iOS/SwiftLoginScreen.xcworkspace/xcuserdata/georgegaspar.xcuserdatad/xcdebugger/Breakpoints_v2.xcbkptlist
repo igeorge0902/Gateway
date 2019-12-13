@@ -454,7 +454,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2119,7 +2119,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "imageFromUrl(urlString:)"
+            landmarkName = "popUp(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2136,7 +2136,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "imageFromUrl(urlString:)"
+            landmarkName = "popUp(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2525,7 +2525,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "prepare(for:sender:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3314,7 +3314,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
             endingLineNumber = "250"
-            landmarkName = "dataTask(_:)"
+            landmarkName = "logoutTapped(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -4232,7 +4232,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
             endingLineNumber = "134"
-            landmarkName = "addData()"
+            landmarkName = "logoutTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4249,7 +4249,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "addData()"
+            landmarkName = "logoutTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4266,7 +4266,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4351,7 +4351,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
             endingLineNumber = "126"
-            landmarkName = "addData()"
+            landmarkName = "logoutTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4929,7 +4929,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "logoutTapped(_:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4946,7 +4946,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "logoutTapped(_:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4963,7 +4963,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
             endingLineNumber = "155"
-            landmarkName = "logoutTapped(_:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4980,7 +4980,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "logoutTapped(_:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5014,7 +5014,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
-            landmarkName = "logoutTapped(_:)"
+            landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5029,10 +5029,8 @@
             timestampString = "596391893.378799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "safariViewController(_:didCompleteInitialLoad:)"
-            landmarkType = "7">
+            startingLineNumber = "235"
+            endingLineNumber = "235">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5182,10 +5180,10 @@
             timestampString = "595682197.294449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "RestApiManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5199,10 +5197,8 @@
             timestampString = "595682197.294492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5218,8 +5214,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
+            landmarkName = "MenuVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5235,7 +5231,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "viewDidAppear(_:)"
+            landmarkName = "navigateBack()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5303,7 +5299,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5318,8 +5314,8 @@
             timestampString = "595682197.2946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5335,8 +5331,8 @@
             timestampString = "595682197.2946399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5352,8 +5348,8 @@
             timestampString = "595682197.294679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5369,8 +5365,8 @@
             timestampString = "595682197.294717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
             <Locations>
@@ -5420,8 +5416,8 @@
             timestampString = "595682197.294754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5437,8 +5433,8 @@
             timestampString = "595682197.2947921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5454,8 +5450,8 @@
             timestampString = "595682197.294829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5471,8 +5467,8 @@
             timestampString = "595682197.294866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5488,8 +5484,8 @@
             timestampString = "595682197.294903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5505,10 +5501,8 @@
             timestampString = "595682197.294939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5522,10 +5516,8 @@
             timestampString = "595682197.294975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5539,8 +5531,8 @@
             timestampString = "595682197.295012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5556,8 +5548,8 @@
             timestampString = "595682197.295049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5660,7 +5652,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "dataTask(_:)"
+            landmarkName = "saveCachedResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5728,8 +5720,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
             endingLineNumber = "376"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "HomeVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5881,7 +5873,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "viewDidAppear(_:)"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5889,7 +5881,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4F501558-1B06-40BD-8129-7ED5EA49FFE6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftLoginScreen/MenuVC.swift"
@@ -5913,7 +5905,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "addData()"
+            landmarkName = "logoutTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -6026,6 +6018,102 @@
             startingLineNumber = "118"
             endingLineNumber = "118"
             landmarkName = "checkRealm()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED1794E5-D689-447F-B5F9-3D7BEE69A156"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MenuVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "addData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ED1794E5-D689-447F-B5F9-3D7BEE69A156 - 751dd51972fa44"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MenuVC.addData() -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Documents/Git/iOS_S5/iOS_S4/SwiftLoginScreen/MenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  uuid = "ED1794E5-D689-447F-B5F9-3D7BEE69A156 - 79dff1bc35971c00"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in SwiftLoginScreen.MenuVC.addData() -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Documents/Git/iOS_S5/iOS_S4/SwiftLoginScreen/MenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3846BC7-4D04-4162-8BB1-2D2A0CA618DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MenuVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "addData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52B7986C-D5B9-4FE5-BC96-6AC1988B5164"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MenuVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "addData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5055901-B912-4942-A923-E62BDC9D0315"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MenuVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

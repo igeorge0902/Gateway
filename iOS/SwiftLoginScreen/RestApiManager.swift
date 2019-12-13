@@ -56,6 +56,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             makeHTTPGetRequest(route, onCompletion: { json, err in
                 onCompletion(json as JSON, err)
             })
+            //TODO: else case without sessionId show popUp
         }
     }
 

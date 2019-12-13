@@ -191,6 +191,14 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
         <servlet-name>CheckOut</servlet-name>
         <url-pattern>/CheckOut</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>GetAllPurchases</servlet-name>
+        <servlet-class>com.dalogin.GetAllPurchases</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllPurchases</servlet-name>
+        <url-pattern>/GetAllPurchases</url-pattern>
+    </servlet-mapping>
     <description>MySQL Test App</description>
     <resource-ref>
         <description>DB Connection</description>

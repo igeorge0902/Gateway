@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
-public class CheckOut extends HttpServlet implements Serializable {
+public class GetAllPurchases extends HttpServlet implements Serializable {
 
     /**
 	 * 
@@ -32,7 +32,7 @@ public class CheckOut extends HttpServlet implements Serializable {
     private static volatile List<String> token2;
     private static volatile String uuid;
 
-	public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     		
 		if (session == null || !request.isRequestedSessionIdValid()) {
 			
@@ -65,11 +65,11 @@ public class CheckOut extends HttpServlet implements Serializable {
 		ServletContext context = request.getServletContext();
         
         // check if the original response cookie for the same client is present
-		if (cookies != null) {
+		if (cookies != null && session != null && request.isRequestedSessionIdValid()) {
 		 for (Cookie cookie : cookies) {
 			 
 			   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
-			   
+				   
 				   if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
 					   
 						throw new ServletException("There is no valid XSRF-TOKEN");
@@ -79,7 +79,7 @@ public class CheckOut extends HttpServlet implements Serializable {
 			   }
 		  }
 		} else {
-			throw new ServletException("There is no valid XSRF-TOKEN");
+			throw new ServletException("There is no valid XSRF-TOKEN, user is not in session!");
 		}
 
 		String webApi2Context = context.getInitParameter("webApi2Context");
@@ -87,26 +87,31 @@ public class CheckOut extends HttpServlet implements Serializable {
 		
 		ServletContext otherContext = getServletContext().getContext(webApi2Context);
 
-		RequestDispatcher rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/payment/fullcheckout");
+		RequestDispatcher rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/purchases");
 		token2 = new ArrayList<String>();
 
-		try {
+		if (session == null || !request.isRequestedSessionIdValid() ) {
+			
+		} else {
+		
+			try {
 			
 			token2 = SQLAccess.token2((String)session.getAttribute("deviceId"), context);
 			uuid = SQLAccess.uuid((String)session.getAttribute("user"), context);
 			
+			//TODO: check if account is activated, if needed
+			request.setAttribute("token2", token2.get(0));
+			request.setAttribute("TIME_", token2.get(1));
+			request.setAttribute("uuid", uuid);
+
+			rd.forward(request, response);
+			
 			} catch (Exception e) {
 			
-				throw new ServletException(e.getCause().toString());
+				//throw new ServletException(e.getCause().toString());
 
+			}
 		}
-		
-		//TODO: check if account is activated, if needed
-		request.setAttribute("token2", token2.get(0));
-		request.setAttribute("TIME_", token2.get(1));
-		request.setAttribute("uuid", uuid);
-
-		rd.forward(request, response);
 		
 		}
     }

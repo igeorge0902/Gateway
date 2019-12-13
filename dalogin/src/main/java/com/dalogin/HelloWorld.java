@@ -19,6 +19,7 @@ import javax.servlet.http.*;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
+import com.dalogin.listeners.CustomServletContextListener;
 import com.dalogin.utils.AesUtil;
 import com.dalogin.utils.hmac512;
 
@@ -107,7 +108,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 
         // Actual logic goes here.		
         try {
-        	
+
         	// hmac is not encrypted, just the password inside
         	hmac = request.getHeader("X-HMAC-HASH").trim();
         	contentLength = request.getHeader("Content-Length").trim();
@@ -128,7 +129,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
     		log.info("HandShake was given: "+hmac+" & "+hmacHash);
     		
             try{ 
-                
+                //TODO: fix logging on WildFly
             	log.info("deviceId to be decrypted: " +  deviceId_ );
             	deviceId = aesUtil.decrypt(SALT, IV, PASSPHRASE, deviceId_);
             	log.info("deviceId decrypted: " +  deviceId );
@@ -157,6 +158,8 @@ public class HelloWorld extends HttpServlet implements Serializable {
         		// Create new session
 				session = request.getSession(true);
 				
+				System.out.println("Session created: " +session.getId());
+
 				// synchronized session object to prevent concurrent update		        	   
 				synchronized(session) {
 	                
@@ -330,7 +333,8 @@ public class HelloWorld extends HttpServlet implements Serializable {
 
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2.get(0));								response.setContentType("application/json"); 
+								response.addHeader("X-Token", token2.get(0));								
+								response.setContentType("application/json"); 
 								response.setCharacterEncoding("utf-8"); 
 								response.setStatus(200);
 				

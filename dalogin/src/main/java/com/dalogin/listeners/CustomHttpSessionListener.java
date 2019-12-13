@@ -359,30 +359,22 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
     }
 
     /**
-     * Destroy sessions from ConcurrentHashMap on context when they expire
-     * or are invalidated.
+     * Destroy sessions in the container, and remove them from ConcurrentHashMap on context when they expire
+     * or are invalidated. 
+     * 
+     * TODO: on TomCat, it is called on TomCat shutdown, triggering new tokens.
      */
     @SuppressWarnings("unchecked")
 	public void sessionDestroyed(HttpSessionEvent event){
         
     	HttpSession session = event.getSession();
-    	try {
+    	if(session != null && session.getAttribute("deviceId") != null) {
         ServletContext context = session.getServletContext();
         activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
         sessions = (SetMultimap<String, String>)context.getAttribute("sessions");
         D_ = session.getAttribute("deviceId").toString();
         id = session.getId();
         log.info("deviceId_ at destroy: "+D_);
-        
-       // try {
-        	SQLAccess.logout(id, context);
-	        log.info("SessionID destroyed: " + id.toString());          
-			
-        	} catch (Exception e) {
-        		
-        		log.info(e.getMessage());
-		}
-
 
             activeUsers.remove(session.getId());
             
@@ -404,7 +396,7 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
               "\n").append("There are now ").append("" + activeUsers.size())
               .append(" live sessions in the application.").toString();
           log.info(message);
-          
+    	}
         
     }
    

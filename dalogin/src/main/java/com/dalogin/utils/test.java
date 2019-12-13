@@ -35,6 +35,12 @@ import com.dalogin.SQLAccess;
 public class test {
  
 	public final static int THREAD_POOL_SIZE = 5;
+    private static final String SALT = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
+    private static final String IV = "F27D5C9927726BCEFE7510B1BDD3D137";
+    private static final String activationToken_ = "G";
+    private static final int KEYSIZE = 128;
+    private static final int ITERATIONCOUNT = 1000;
+
 	
 	private static boolean True;
 	public static Map<String, Integer> crunchifyHashTableObject = null;
@@ -43,8 +49,13 @@ public class test {
  
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
-      //  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
+		AesUtil aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
 
+		String query_ = aesUtil.decrypt(SALT, IV, activationToken_, "EDFdW+RzxENjlJ/7XbgHcdWW4Mi5b5EHogHTl6oNxbZH/mdIUZkKd4tCBxEGziF6YLt8vgMQ6EbGJUrpHu46Dw==");
+      //  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
+		
+		String test = "aC8SRTzA1vhfFZr_bSjE2GmAj8wgHWHck7O1N1YM.gaspars-macbook-pro";
+		System.out.println(test.split("\\.")[0].toString());
 		
 	    File f = new File("/Users/georgegaspar/Downloads/test.json");	      
 	    if (f.exists() == true) {

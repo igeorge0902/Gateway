@@ -243,6 +243,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 			    // TODO: configuring email text for sending email about the registration 
 			    url.append("Thank you for regestering!");
 			    
+			    //remove, if not needed.
 			    SendHtmlEmail.generateAndSendEmail(email, url.toString());
 				
 		        String homePage = getServletContext().getInitParameter("homePage");
@@ -389,7 +390,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 					  	
 						PrintWriter out = response.getWriter(); 
 
-					  	SQLAccess.reset_voucher(voucher, context);
+					  	SQLAccess.reset_voucher(voucher, user, context);
 					    
 						out.print(new_hash);
 						out.flush();
@@ -399,7 +400,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 	           } else {
 
 	        	   // hmac error
-	        	   response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Line 253");
+	        	   response.sendError(HttpServletResponse.SC_BAD_REQUEST, "hmac error");
 	           }
 			
 			} catch (Exception e) {
@@ -407,7 +408,21 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 				// servlet runtime error
 				try {
 					
-					SQLAccess.reset_voucher(voucher, context);
+					SQLAccess.reset_voucher(voucher, user, context);
+					
+		        	response.setContentType("application/json"); 
+				  	response.setStatus(502);
+				  	
+					PrintWriter out = response.getWriter(); 
+					JSONObject json = new JSONObject(); 
+					
+					json.put("Registration", "failed"); 
+					json.put("Email", "false"); 
+					json.put("Message", "I have gone to smoke a cigarette!"); 
+
+					out.print(json);
+					out.flush();
+					
 					
 				} catch (Exception e1) {
 
@@ -426,7 +441,7 @@ public class RegistrationWithoutVoucher extends HttpServlet implements Serializa
 	        	// email format failed
 				try {
 					
-					SQLAccess.reset_voucher(voucher, context);
+					SQLAccess.reset_voucher(voucher, user, context);
 					
 				} catch (Exception e1) {
 

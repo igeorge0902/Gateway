@@ -1,5 +1,7 @@
 package com.dalogin.listeners;
 
+import javax.servlet.annotation.WebListener;
+
 /**
  * @author George Gaspar
  * @email: igeorge1982@gmail.com 
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpSessionBindingEvent;
 
 import org.apache.log4j.Logger;
 
-
+@WebListener
 public class SessionAttributeListener implements HttpSessionAttributeListener {
 
 	/**

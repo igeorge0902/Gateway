@@ -117,7 +117,7 @@ public class ChangePassword extends HttpServlet implements Serializable {
     		log.info("HandShake was given: "+hmac+" & "+hmacHash);
     		
             try{ 
-                
+                //TODO: make use of M-Device
             	log.info("deviceId to be decrypted: " +  deviceId_ );
             	deviceId = aesUtil.decrypt(SALT, IV, PASSPHRASE, deviceId_);
             	log.info("deviceId decrypted: " +  deviceId );
@@ -171,7 +171,7 @@ public class ChangePassword extends HttpServlet implements Serializable {
 
 		    			url.append(encrypted_token.substring(31, 34));
 		    			    
-		    			//SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
+		    			SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
 
 						c = new Cookie("XSRF-TOKEN", encrypted_token);
 						c.setSecure(true);
@@ -226,7 +226,7 @@ public class ChangePassword extends HttpServlet implements Serializable {
 
 					    			url.append(encrypted_token.substring(31, 34));
 					    			    
-					    		//	SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
+					    			SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
 
 									c = new Cookie("XSRF-TOKEN", encrypted_token);
 									c.setSecure(true);
@@ -282,7 +282,7 @@ public class ChangePassword extends HttpServlet implements Serializable {
 
 					    			url.append(encrypted_token.substring(31, 34));
 					    			    
-					    		//	SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
+					    			SendHtmlEmail.generateAndSendEmail(email, url.toString()); 
 
 									c = new Cookie("XSRF-TOKEN", encrypted_token);
 									c.setSecure(true);
