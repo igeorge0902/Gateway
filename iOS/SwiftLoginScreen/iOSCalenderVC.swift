@@ -48,7 +48,7 @@ class iOSCalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
-        btnNav.setTitle("Attendees", for: UIControl.State.normal)
+        btnNav.setTitle("Back", for: UIControl.State.normal)
         btnNav.showsTouchWhenHighlighted = true
         btnNav.addTarget(self, action: #selector(iOSCalendarVC.navigateBack), for: UIControl.Event.touchUpInside)
 

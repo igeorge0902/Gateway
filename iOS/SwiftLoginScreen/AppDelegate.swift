@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  SwiftLoginScreen
 //
-//  Created by Dipin Krishna on 31/07/14.
-//  Copyright (c) 2014 Dipin Krishna. All rights reserved.
+//  Copyright (c) 2015 Gaspar Gyorgy. MIT
 //
 
 import Contacts
@@ -51,7 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }
         }
 
-        setenv("CFNETWORK_DIAGNOSTICS", "3", 1)
+        //  setenv("CFNETWORK_DIAGNOSTICS", "3", 1);
+
+        checkRealm()
 
         return true
     }
@@ -94,13 +95,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
      }
      */
 
-    @objc func checkRealm() {
+    func checkRealm() {
         let gm: GeneralRequestManager?
 
-        gm = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+        gm = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
 
         if let localResponse = gm?.cachedResponseForCurrentRequest() {
-            if localResponse.timestamp.addingTimeInterval(3600) < Date() {
+            if localResponse.timestamp.addingTimeInterval(600) < Date() {
                 let realm = RLMRealm.default()
                 realm.beginWriteTransaction()
                 realm.delete(localResponse)

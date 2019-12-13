@@ -182,7 +182,6 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
 
     func searchBarCancelButtonClicked(_: UISearchBar) {
         shouldShowSearchResults = false
-        SearchData.removeAll()
         searchController.searchBar.resignFirstResponder()
     }
 
@@ -289,7 +288,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        searchController.searchBar.resignFirstResponder()
+        //  searchController.searchBar.resignFirstResponder()
 
         if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_venues", sender: self)

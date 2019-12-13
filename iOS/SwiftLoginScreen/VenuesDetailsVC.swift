@@ -385,26 +385,28 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                         SelectMovieName = self.movieName
                         SelectVenueForMovie = self.selectAddress
 
-                        /*
-                         let popOver =  CalendarVC()
-                         popOver.modalPresentationStyle = UIModalPresentationStyle.popover
-                         popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
+                        DispatchQueue.main.async {
+                            let popOver = iOSCalendarVC()
+                            popOver.modalPresentationStyle = UIModalPresentationStyle.popover
+                            popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
 
-                         let popoverMenuViewController = popOver.popoverPresentationController
-                         popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-                         popoverMenuViewController?.delegate = self
-                         popoverMenuViewController?.sourceView = self.view
-                         popoverMenuViewController!.sourceRect = CGRect(
-                             x: self.view.frame.width * 0.50,
-                             y: self.view.frame.height * 0.50,
-                             width: 0,
-                             height: 0)
+                            let popoverMenuViewController = popOver.popoverPresentationController
+                            popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                            popoverMenuViewController?.delegate = self
+                            popoverMenuViewController?.sourceView = self.view
+                            popoverMenuViewController!.sourceRect = CGRect(
+                                x: self.view.frame.width * 0.50,
+                                y: self.view.frame.height * 0.50,
+                                width: 0,
+                                height: 0
+                            )
 
-                         self.present(
-                             popOver,
-                             animated: true,
-                             completion: nil)
-                         */
+                            self.present(
+                                popOver,
+                                animated: true,
+                                completion: nil
+                            )
+                        }
                     }
                 }
             }
@@ -490,27 +492,28 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
 
                     SelectMovieName = self.movieName
                     SelectVenueForMovie = self.selectAddress
+                    DispatchQueue.main.async {
+                        let popOver = iOSCalendarVC()
+                        popOver.modalPresentationStyle = UIModalPresentationStyle.popover
+                        popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
 
-                    let popOver = iOSCalendarVC()
-                    popOver.modalPresentationStyle = UIModalPresentationStyle.popover
-                    popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 4)
+                        let popoverMenuViewController = popOver.popoverPresentationController
+                        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                        popoverMenuViewController?.delegate = self
+                        popoverMenuViewController?.sourceView = self.view
+                        popoverMenuViewController!.sourceRect = CGRect(
+                            x: self.view.frame.width * 0.50,
+                            y: self.view.frame.height * 0.50,
+                            width: 0,
+                            height: 0
+                        )
 
-                    let popoverMenuViewController = popOver.popoverPresentationController
-                    popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-                    popoverMenuViewController?.delegate = self
-                    popoverMenuViewController?.sourceView = self.view
-                    popoverMenuViewController!.sourceRect = CGRect(
-                        x: self.view.frame.width * 0.50,
-                        y: self.view.frame.height * 0.50,
-                        width: 0,
-                        height: 0
-                    )
-
-                    self.present(
-                        popOver,
-                        animated: true,
-                        completion: nil
-                    )
+                        self.present(
+                            popOver,
+                            animated: true,
+                            completion: nil
+                        )
+                    }
                 }
             }
         }

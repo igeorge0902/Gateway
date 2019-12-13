@@ -1,14 +1,14 @@
 //: Playground - noun: a place where people can play
 
 import Cocoa
-import XCPlayground
-import Foundation
 import Contacts
+import Foundation
 import PlaygroundSupport
+import XCPlayground
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-var myDateString:[String.CharacterView.SubSequence]?
+var myDateString: [String.CharacterView.SubSequence]?
 
 var str = "Hello, playground"
 
@@ -30,4 +30,4 @@ string.startIndex
 
 let x = 5
 let y = 1.25
-let w = Double(x)*y
+let w = Double(x) * y

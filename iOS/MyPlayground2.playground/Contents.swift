@@ -1,10 +1,10 @@
 //: Playground - noun: a place where people can play
 
-import XCPlayground
-import Foundation
 import Contacts
-import UIKit
+import Foundation
 import PlaygroundSupport
+import UIKit
+import XCPlayground
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
@@ -24,20 +24,20 @@ let dateFormatter = DateFormatter()
 dateFormatter.dateStyle = DateFormatter.Style.medium
 dateFormatter.timeStyle = DateFormatter.Style.short
 
-let date_ = Date(timeIntervalSinceReferenceDate: 118800)
+let date_ = Date(timeIntervalSinceReferenceDate: 118_800)
 
 // US English Locale (en_US)
 dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-//dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+// dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
 print(dateFormatter.string(from: date_)) // Jan 2, 2001
 
 let RFC3339DateFormatter = DateFormatter()
-//RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+// RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
 RFC3339DateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZZ"
 RFC3339DateFormatter.timeZone = TimeZone.autoupdatingCurrent
 
 /* 39 minutes and 57 seconds after the 16th hour of December 19th, 1996 with an offset of -08:00 from UTC (Pacific Standard Time) */
-let string = "2017-04-23 14:11:23 +0000" //2017-04-23 14:11:24 +0000
+let string = "2017-04-23 14:11:23 +0000" // 2017-04-23 14:11:24 +0000
 // "2016-12-16 00:00:00.0"
 let datE = RFC3339DateFormatter.date(from: string)
 print(dateFormatter.string(from: datE!)) // Jan 2, 2001

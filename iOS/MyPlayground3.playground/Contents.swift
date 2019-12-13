@@ -1,38 +1,34 @@
 //: Playground - noun: a place where people can play
 
 import Cocoa
-import XCPlayground
 import Foundation
 import PlaygroundSupport
-
+import XCPlayground
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 var str = "Hello, playground"
 
 let deviceId = "FF247563-8AB1-4F0D-864A-B6BB15743BA2"
-//let newString:NSString =  "("+("\"\((deviceId))\"")+")"
-//print(newString)
+// let newString:NSString =  "("+("\"\((deviceId))\"")+")"
+// print(newString)
 
-
-("\"\(deviceId)\"")
+"\"\(deviceId)\""
 
 var movieId = 1002
 var myString = String(movieId)
 
 print(myString)
 
-//current date
-let date = NSDate().timeIntervalSince1970;
+// current date
+let date = NSDate().timeIntervalSince1970
 print("Date 1 \(date)")
 
-func getCurrentMillis()->Int64{
-    return  Int64(NSDate().timeIntervalSince1970 * 1000)
+func getCurrentMillis() -> Int64 {
+    return Int64(NSDate().timeIntervalSince1970 * 1000)
 }
 
 var currentTime = getCurrentMillis()
-
-
 
 class StepCounter {
     var totalSteps: Int = 0 {
@@ -40,12 +36,13 @@ class StepCounter {
             print("About to set totalSteps to \(newTotalSteps)")
         }
         didSet {
-            if totalSteps > oldValue  {
+            if totalSteps > oldValue {
                 print("Added \(totalSteps - oldValue) steps")
             }
         }
     }
 }
+
 let stepCounter = StepCounter()
 
 stepCounter.totalSteps = 200
@@ -68,19 +65,17 @@ struct Point {
     var x = 0.0, y = 0.0
 }
 
-
-
 struct Rect {
     var origin = Point()
     var size = Size()
-    
+
     init() {}
-    
+
     init(origin: Point, size: Size) {
         self.origin = origin
         self.size = size
     }
-    
+
     init(center: Point, size: Size) {
         let originX = center.x - (size.width / 2)
         let originY = center.y - (size.height / 2)
@@ -90,16 +85,12 @@ struct Rect {
 
 let centerRect = Rect(center: Point(x: 8.0, y: 8.0), size: Size(width: 3.0, height: 3.0))
 
-
-
 class Vehicle {
     var numberOfWheels = 0
     var description: String {
         return "\(numberOfWheels) wheel(s)"
     }
 }
-
-
 
 class Bicycle: Vehicle {
     override init() {
@@ -111,24 +102,23 @@ class Bicycle: Vehicle {
 let bicycle = Bicycle()
 print("Bicycle: \(bicycle.description)")
 
-
 class human {
-    var name:String
-    var height:Int
-    var hairColor:String
-    var health:Int
-    
-    init(name:String, height:Int, hairColor:String) {
+    var name: String
+    var height: Int
+    var hairColor: String
+    var health: Int
+
+    init(name: String, height: Int, hairColor: String) {
         self.name = name
         self.height = height
         self.hairColor = hairColor
-        self.health = 100
+        health = 100
     }
-    
-    func applyDamage(amount:Int) -> Int{
-        self.health = self.health - amount
-        print(self.health)
-        return self.health
+
+    func applyDamage(amount: Int) -> Int {
+        health = health - amount
+        print(health)
+        return health
     }
 }
 
@@ -136,32 +126,32 @@ let human_ = human(name: "G", height: 2, hairColor: "k")
 human_.applyDamage(amount: 5)
 
 class Car {
-    let make:String;
-    let model:String;
-    let price:Int;
-    
-    init(make: String, model: String, price:Int) {
-        self.make = make;
-        self.model = model;
-        self.price = price;
+    let make: String
+    let model: String
+    let price: Int
+
+    init(make: String, model: String, price: Int) {
+        self.make = make
+        self.model = model
+        self.price = price
     }
-    
+
     func drive() {
-        print("Driving");
+        print("Driving")
     }
 }
 
 class SportsCar: Car {
-    var isExotic:Bool;
-    
-    init(make: String, model: String, price:Int, isExotic: Bool) {
-        self.isExotic = isExotic;
-        super.init(make: make, model: model, price: price);
+    var isExotic: Bool
+
+    init(make: String, model: String, price: Int, isExotic: Bool) {
+        self.isExotic = isExotic
+        super.init(make: make, model: model, price: price)
     }
-    
+
     override func drive() {
         if isExotic == false {
-            print("Driving fast");
+            print("Driving fast")
         }
     }
 }
@@ -169,19 +159,18 @@ class SportsCar: Car {
 var trabant = SportsCar(make: "Trabant", model: "sedan", price: 10000, isExotic: false)
 trabant.drive()
 
-var toyotaCamry = Car(make:"Toyota", model:"Camry", price:20000);
-toyotaCamry.drive(); // prints "Driving"
+var toyotaCamry = Car(make: "Toyota", model: "Camry", price: 20000)
+toyotaCamry.drive() // prints "Driving"
 
-//-----------
+// -----------
 
-func calculate(arbitraryValue value:Int) -> Int {
-    return value * 2;
+func calculate(arbitraryValue value: Int) -> Int {
+    return value * 2
 }
 
-var c = calculate(arbitraryValue: 5);
+var c = calculate(arbitraryValue: 5)
 
-//-----------
-
+// -----------
 
 class MediaItem {
     var name: String
@@ -189,8 +178,6 @@ class MediaItem {
         self.name = name
     }
 }
-
-
 
 class Movie: MediaItem {
     var director: String
@@ -213,10 +200,8 @@ let library = [
     Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
     Movie(name: "Citizen Kane", director: "Orson Welles"),
     Song(name: "The One And Only", artist: "Chesney Hawkes"),
-    Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
+    Song(name: "Never Gonna Give You Up", artist: "Rick Astley"),
 ]
-
-
 
 var movieCount = 0
 var songCount = 0
@@ -239,11 +224,10 @@ for item in library {
     }
 }
 
-
 let someObjects: [AnyObject] = [
     Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
     Movie(name: "Moon", director: "Duncan Jones"),
-    Movie(name: "Alien", director: "Ridley Scott")
+    Movie(name: "Alien", director: "Ridley Scott"),
 ]
 
 for object in someObjects {
@@ -255,8 +239,7 @@ for movie in someObjects as! [Movie] {
     print("Movie: '\(movie.name)', dir. \(movie.director)")
 }
 
-//-----------
-
+// -----------
 
 var things = [Any]()
 
@@ -267,7 +250,7 @@ things.append(3.14159)
 things.append("hello")
 //things.append((3.0, 5.0))
 things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
-things.append({ (name: String) -> String in "Hello, \(name)" })
+things.append { (name: String) -> String in "Hello, \(name)" }
 
 for thing in things {
     switch thing {
@@ -294,50 +277,42 @@ for thing in things {
     }
 }
 
-//-----------
-
+// -----------
 
 class Food {
     var name: String
     init(name: String) {
         self.name = name
     }
+
     convenience init() {
         self.init(name: "[Unnamed]")
     }
 }
 
-
-
 let namedMeat = Food(name: "Bacon")
 // namedMeat's name is "Bacon"
 
-
-
 class RecipeIngredient: Food {
     var quantity: Int
-    
+
     init(name: String, quantity: Int) {
         self.quantity = quantity
         super.init(name: name)
     }
-    override convenience init(name: String) {
+
+    convenience override init(name: String) {
         self.init(name: name, quantity: 1)
     }
 }
 
-
-//-----------
-
+// -----------
 
 let oneMysteryItem = RecipeIngredient()
 let oneBacon = RecipeIngredient(name: "Bacon")
 let sixEggs = RecipeIngredient(name: "Eggs", quantity: 6)
 
-
-
 class ShoppingListItem: RecipeIngredient {
-    
     var purchased = false
     var description: String {
         var output = "\(quantity) x \(name)"
@@ -359,9 +334,7 @@ for item in breakfastList {
     print(item.description)
 }
 
-
-//-----------
-
+// -----------
 
 struct Animal {
     let species: String
@@ -371,18 +344,14 @@ struct Animal {
     }
 }
 
-
-
 let someCreature = Animal(species: "Giraffe")
 // someCreature is of type Animal?, not Animal
 
 if let giraffe = someCreature {
     print("An animal was initialized with a species of \(giraffe.species)")
 }
+
 // prints "An animal was initialized with a species of Giraffe"
-
-
-
 
 protocol FullyNamed {
     var fullName: String { get }
@@ -397,7 +366,7 @@ struct Urls {
 }
 
 if let urlss = Urls(urls: "http://milo.crabdance.com") {
-    print (urlss)
+    print(urlss)
 }
 
 class Starship: FullyNamed {
@@ -407,7 +376,7 @@ class Starship: FullyNamed {
         self.name = name
         self.prefix = prefix
     }
-    
+
     var fullName: String {
         return (prefix != nil ? prefix! + " " : "") + name
     }
@@ -416,9 +385,7 @@ class Starship: FullyNamed {
 var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
 ncc1701.fullName
 
-
 /*------------------*/
-
 
 protocol RandomNumberGenerator {
     func random() -> Double
@@ -426,21 +393,20 @@ protocol RandomNumberGenerator {
 
 class LinearCongruentialGenerator: RandomNumberGenerator {
     var lastRandom = 42.0
-    let m = 139968.0
+    let m = 139_968.0
     let a = 3877.0
     let c = 29573.0
     func random() -> Double {
-        lastRandom = ((lastRandom * a + c) .truncatingRemainder(dividingBy: m))
+        lastRandom = (lastRandom * a + c).truncatingRemainder(dividingBy: m)
         return lastRandom / m
     }
 }
+
 let generator = LinearCongruentialGenerator()
 print("Here's a random number: \(generator.random())")
 // Prints "Here's a random number: 0.37464991998171"
 print("And another one: \(generator.random())")
 // Prints "And another one: 0.729023776863283"
-
-
 
 class Dice {
     let sides: Int
@@ -449,6 +415,7 @@ class Dice {
         self.sides = sides
         self.generator = generator
     }
+
     func roll() -> Int {
         return Int(generator.random() * Double(sides)) + 1
     }
@@ -458,6 +425,7 @@ protocol DiceGame {
     var dice: Dice { get }
     func play()
 }
+
 protocol DiceGameDelegate {
     func gameDidStart(game: DiceGame)
     func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
@@ -474,6 +442,7 @@ class SnakesAndLadders: DiceGame {
         board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
         board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
     }
+
     var delegate: DiceGameDelegate?
     func play() {
         square = 0
@@ -496,76 +465,69 @@ class SnakesAndLadders: DiceGame {
     }
 }
 
-var S = SnakesAndLadders.init()
+var S = SnakesAndLadders()
 
 S.play()
-//--------------------
+// --------------------
 
 /*
- 
+
  if request.URL!.relativePath == "/example/jsR/app.js" {
- 
+
  let urldata:NSData = self.mutableData
  let convertedString = NSString(data: urldata, encoding: NSUTF8StringEncoding)
- 
+
  //let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
  print(deviceId)
  let newString:NSString = convertedString!.stringByReplacingOccurrencesOfString("(uuid)", withString: "("+("\"\((deviceId))\"")+")")
  let newurldata:NSData = newString.dataUsingEncoding(NSASCIIStringEncoding)!
  self.mutableData.appendData(newurldata)
  cachedResponse.setValue(self.mutableData, forKey: "data")
- 
+
  }
- 
+
  */
 
 let baseURL = "https://www.google.com/accounts/Logout"
 
-typealias CallbackBlock = (_ result: String, _ error: String?) -> ()
+typealias CallbackBlock = (_ result: String, _ error: String?) -> Void
 
 func httpGet(request: NSURLRequest!, callback: @escaping (String, String?) -> Void) {
-let session = URLSession.shared
-let task = session.dataTask(with: request as URLRequest){
+    let session = URLSession.shared
+    let task = session.dataTask(with: request as URLRequest) {
+        (data, _, error) -> Void in
 
-(data, response, error) -> Void in
+        if error != nil {
+            callback("", error!.localizedDescription)
 
-    if error != nil {
-
-        callback("", error!.localizedDescription)
-
-    } else {
-
-                let result = NSString(data: data!, encoding:
+        } else {
+            let result = NSString(data: data!, encoding:
                 String.Encoding.ascii.rawValue)!
 
-                callback(result as String, nil)
-            }
+            callback(result as String, nil)
         }
+    }
     task.resume()
 }
 
 var request = URLRequest(url: URL(string: baseURL)!)
 
-httpGet(request: request as NSURLRequest!){
+httpGet(request: request as NSURLRequest!) {
+    (_, error) -> Void in
 
-(data, error) -> Void in
-    
     if error != nil {
         print(error as Any)
-        
+
     } else {
-       // print(data)
+        // print(data)
     }
 }
-
-
 
 var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
 
 for (airportCode, airportName) in airports {
-    
     if airportCode.contains("YYZ") {
-    print("\(airportCode): \(airportName)")
+        print("\(airportCode): \(airportName)")
     }
 }
 
@@ -575,25 +537,23 @@ print(list)
 let airportCodes = [String](airports.keys)
 var size = airportCodes.count
 
-//for i in 0 ..< airportCodes.count {
-    var string = ""
-    for airportCode in airports.keys {
-        
-        
-        string += airportCode+"-"
-        
-    }
+// for i in 0 ..< airportCodes.count {
+var string = ""
+for airportCode in airports.keys {
+    string += airportCode + "-"
+}
 
 print(string)
-//}
+// }
 print(airportCodes)
 
-func jediTrainer () -> ((String, Int) -> String) {
+func jediTrainer() -> ((String, Int) -> String) {
     func train(name: String, times: Int) -> (String) {
         return "\(name) has been trained in the Force \(times) times"
     }
     return train
 }
+
 let train = jediTrainer()
 train("Obi Wan", 3)
 
@@ -607,27 +567,26 @@ print(retValue.farewell)
 print(retValue.mayTheForceBeWithYou)
 
 struct Person {
-    var age : Int?
+    var age: Int?
     init(age: Int) {
         self.age = age
     }
 }
 
 var eventAttendees = [Person(age: 22), Person(age: 41), Person(age: 23), Person(age: 30)]
-var filteredAttendees = eventAttendees.filter({
+var filteredAttendees = eventAttendees.filter {
     $0.age! < 30
-})
+}
 
 for person in filteredAttendees {
     print(person.age!)
 }
 
+var visitors = [["age": 22], ["age": 41], ["age": 23], ["age": 30]]
 
-var visitors = [["age" : 22], ["age" : 41], ["age" : 23], ["age" : 30]]
-
-var filteredVisitors = visitors.filter({
+var filteredVisitors = visitors.filter {
     $0["age"]! < 30
-})
+}
 
 print(filteredVisitors[1]["age"]!)
 
@@ -635,17 +594,16 @@ class Node {
     var value: String
     var children: [Node] = []
     weak var parent: Node?
-    
+
     init(value: String) {
         self.value = value
     }
-    
+
     func addChild(node: Node) {
         children.append(node)
         node.parent = self
     }
 }
-
 
 let beverages = Node(value: "beverages")
 
@@ -689,7 +647,7 @@ extension Node: CustomStringConvertible {
     var description: String {
         // 3
         var text = "\(value)"
-        
+
         // 4
         if !children.isEmpty {
             text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
@@ -724,4 +682,3 @@ beverages.search(value: "bubbly") // returns nil
 print(soda.children.map { $0.description }.joined(separator: ", "))
 
 print(beverages) // <- try to print it!
-

@@ -122,7 +122,20 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                                 let seat = ["screeningDateId": screeningDateId, "seat": str]
 
                                 Seats.updateValue(seat as NSDictionary, forKey: screeningDateId!)
-                                // TODO: remove key pair after the last
+
+                                let seatDatas = [NSDictionary](Seats.values)
+                                seatDatas.forEach { item in
+                                    _ = item.contains { (_, value) -> Bool in
+                                        for (keys, values) in item {
+                                            if (keys as! String) == "seat" {
+                                                if !(values as! String).contains("-") {
+                                                    Seats.removeValue(forKey: value as! String)
+                                                }
+                                            }
+                                        }
+                                        return true
+                                    }
+                                }
                             }
 
                             BasketData_.removeValue(forKey: seatId)
@@ -244,7 +257,6 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                         let Amount = json["Amount"].rawValue
                         let TaxAmount = json["TaxAmount"].rawValue
 
-                        // TODO: create user purchase db table and api endpoint to retrieve tickets for user
                         UIAlertController.popUp(title: "Payment info:", message: "ResponseText: \(responseText), Status: \(Status!), Amount: \(Amount), TaxAmount: \(TaxAmount), Movie name: \(TicketsData_[0].movie_name!), \(tickets.minimalDescrption)")
 
                         TicketsData_.removeAll()

@@ -58,7 +58,9 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
 
                 nextSegue?.selectVenues_picture = venueData.venues_picture
                 nextSegue?.selectVenueId = venueData.venuesId
+                nextSegue?.venueName = venueData.name
                 nextSegue?.movieId = data.movieId
+                nextSegue?.movieName = data.name
                 nextSegue?.movieDetails = data.detail
                 nextSegue?.selectLarge_picture = data.large_picture
             }

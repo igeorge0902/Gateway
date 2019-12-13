@@ -1,27 +1,25 @@
 //: Playground - noun: a place where people can play
 
-import XCPlayground
-import Foundation
 import Contacts
-import UIKit
+import Foundation
 import PlaygroundSupport
+import UIKit
+import XCPlayground
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 var str = "Hello, playground"
 
-
 // a closure that has no parameters and return a String
 var hello: () -> (String) = {
-    return "Hello!"
+    "Hello!"
 }
 
 hello() // Hello!
 
-
 // a closure that take one Int and return an Int
 var double: (Int) -> (Int) = { x in
-    return 2 * x
+    2 * x
 }
 
 double(2) // 4
@@ -37,28 +35,26 @@ print(strings)
 
 // x always smaller than y
 numbers.sort(by: { x, y in
-    return x < y
+    x < y
 })
 
 print(numbers)
 // [1, 2, 3, 4, 5, 8]
 
-numbers.sorted(by: { return $0 < $1 })
+numbers.sorted(by: { $0 < $1 })
 numbers.sort { $0 < $1 }
 
-
 var double_: (Int) -> (Int) = {
-    return $0 * 2
+    $0 * 2
 }
 
 var sum: (Int, Int) -> (Int) = {
-    return $0 + $1
+    $0 + $1
 }
-
 
 func sum(from: Int, to: Int, f: (Int) -> (Int)) -> Int {
     var sum = 0
-    for i in from...to {
+    for i in from ... to {
         sum += f(i)
     }
     return sum
@@ -73,33 +69,31 @@ sum(from: 1, to: 10) {
 } // the sum of the first 10 squares
 
 double_(3)
-sum(1,2)
+sum(1, 2)
 
-var noParameterAndNoReturnValue: () -> () = {
+var noParameterAndNoReturnValue: () -> Void = {
     print("Hello!")
 }
 
 noParameterAndNoReturnValue()
 
 var noParameterAndReturnValue = { () -> Int in
-    return 1000
+    1000
 }
 
 noParameterAndReturnValue()
 
 var oneParameterAndReturnValue = { (x: Int) -> Int in
-    return x % 10
+    x % 10
 }
 
 var multipleParametersAndReturnValue = {
-    
     (first: String, second: String) -> String in
-    
-    return first + " " + second
+
+    first + " " + second
 }
 
 multipleParametersAndReturnValue("first", "second")
-
 
 let numbers_ = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
 
@@ -116,22 +110,20 @@ enum HTTPResponse {
 let lastThreeResponses: [HTTPResponse] = [.ok, .ok, .error(404)]
 
 let hadError = lastThreeResponses.contains { element in
-   
+
     if case .error = element {
-    
         print(element)
         return true
-    
+
     } else {
-    
         print(element)
         return false
     }
 }
 
 let digitNames = [
-    0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
-    5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
+    0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four",
+    5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine",
 ]
 let numberS = [16, 58, 510]
 
@@ -148,6 +140,7 @@ let strings_ = numberS.map { (number) -> String in
     } while number > 0
     return output
 }
+
 // strings is inferred to be of type [String]
 // its value is ["OneSix", "FiveEight", "FiveOneZero"]
 
@@ -159,4 +152,3 @@ print(lowercaseNames)
 let letterCounts = cast.map { $0.characters.count }
 
 // 'letterCounts' == [6, 6, 3, 4]
-

@@ -292,11 +292,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             // Code for launching the camera goes here
         }
         actionSheetController.addAction(takePictureAction)
-        // Create and add a second option action
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .default) { _ -> Void in
-            // Code for picking from camera roll goes here
-        }
-        actionSheetController.addAction(choosePictureAction)
 
         // Present the AlertController
         present(actionSheetController, animated: true, completion: nil)

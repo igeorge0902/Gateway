@@ -79,6 +79,7 @@
 		A4C3F2A71BFCEAC700ADE1E3 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C3F2A61BFCEAC700ADE1E3 /* Responses.swift */; };
 		A4CA8DA51C07328F00EA59A4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */; };
 		A4CC2C451C33E07A0015546C /* ciphertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CC2C441C33E07A0015546C /* ciphertext.swift */; };
+		A4D1C765239D7B3D00B4395B /* docs.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D1C764239D7B3D00B4395B /* docs.png */; };
 		A4D58A451BFA40AB00D379F8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D58A441BFA40AB00D379F8 /* AFNetworkReachabilityManager.m */; };
 		A4D9B6471D81AC9B00FB5C44 /* DatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9B6461D81AC9B00FB5C44 /* DatesData.swift */; };
 		A4D9B6491D834A1700FB5C44 /* PopOverDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9B6481D834A1700FB5C44 /* PopOverDates.swift */; };
@@ -195,6 +196,7 @@
 		A4CC2C441C33E07A0015546C /* ciphertext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ciphertext.swift; sourceTree = "<group>"; };
 		A4CD12011D9818700013014C /* MyPlayground4Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground4Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4CD12021D981D0D0013014C /* MyPlayground5.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground5.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A4D1C764239D7B3D00B4395B /* docs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = docs.png; path = ../../../docs.png; sourceTree = "<group>"; };
 		A4D58A431BFA40AB00D379F8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		A4D58A441BFA40AB00D379F8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		A4D58A471BFA40D000D379F8 /* SwiftLoginScreen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftLoginScreen-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		EA62FD471989F6AC00469896 = {
 			isa = PBXGroup;
 			children = (
+				A4D1C764239D7B3D00B4395B /* docs.png */,
 				A4E795CD237DD06C00CA2C4C /* MyPlayground7.playground */,
 				A4F9CBDB1E64DFEE00BE67E4 /* README.md */,
 				A4F34F6C1CB03E940034CFE8 /* MyPlayground.playground */,
@@ -649,6 +652,7 @@
 				A4B9929F1BED305900F87E21 /* sha256.js in Resources */,
 				A4B9929D1BED305900F87E21 /* sha3.js in Resources */,
 				EA62FD581989F6AC00469896 /* Images.xcassets in Resources */,
+				A4D1C765239D7B3D00B4395B /* docs.png in Resources */,
 				A4B992941BED305900F87E21 /* mode-ecb.js in Resources */,
 				A4CA8DA51C07328F00EA59A4 /* Launch Screen.storyboard in Resources */,
 				A4B992A01BED305900F87E21 /* sha384.js in Resources */,
