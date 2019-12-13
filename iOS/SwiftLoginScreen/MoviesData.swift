@@ -30,7 +30,7 @@ class MoviesData: NSObject {
 
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
