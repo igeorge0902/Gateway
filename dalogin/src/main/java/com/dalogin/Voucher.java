@@ -11,6 +11,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.json.JSONObject;
+
 //Extend HttpServlet class
 public class Voucher extends HttpServlet {
     /**
@@ -50,6 +52,15 @@ public class Voucher extends HttpServlet {
 				response.setContentType("application/json"); 
 				response.setCharacterEncoding("utf-8"); 
 				response.setStatus(200);
+				
+				PrintWriter out = response.getWriter(); 
+			    JSONObject json = new JSONObject(); 
+
+				json.put("Voucher", "Okay"); 
+				json.put("Success", "true");
+				
+				out.print(json.toString());
+				out.flush();
 				
 			}
 			else {
