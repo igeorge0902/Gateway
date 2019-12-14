@@ -225,7 +225,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         // self.view.addSubview(buttonCalendar)
 
         // create the textView
-        nameTextView = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: starty * 3.0, width: view.frame.size.width * 0.8, height: view.frame.height / 5))
+        nameTextView = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: starty * 3.0, width: view.frame.size.width * 0.8, height: view.frame.height / 7))
         nameTextView?.isEditable = false
 
         let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]

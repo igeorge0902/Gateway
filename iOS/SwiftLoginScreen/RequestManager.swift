@@ -118,8 +118,13 @@ class RequestManager: NSObject {
                                     prefs.set(user, forKey: "USERNAME")
                                     prefs.set(1, forKey: "ISWEBLOGGEDIN")
                                     prefs.set(1, forKey: "ISLOGGEDIN")
-
-                                    UIAlertController.popUp(title: "Welcome", message: user as String)
+                                    
+                                   let alertView: UIAlertView = UIAlertView()
+                                   alertView.title = "Welcome!"
+                                   alertView.message = user as String
+                                   alertView.delegate = self
+                                   alertView.addButton(withTitle: "That's all folks!")
+                                   alertView.show()
 
                                     NSLog("User ==> %@", user)
 

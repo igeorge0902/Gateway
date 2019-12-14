@@ -25,29 +25,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
-         let button = UIButton()
-         button.frame = CGRectMake(0, 0, 30, 30)
-         button.setTitle("R", forState: .Normal)
-         button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-         button.addTarget(self, action: "reloadPage:", forControlEvents: UIControlEvents.TouchUpInside)
-
-         //.... Set Right/Left Bar Button item
-         let rightBarButton = UIBarButtonItem()
-         rightBarButton.customView = button
-         self.navigationItem.rightBarButtonItem = rightBarButton
-         */
-
         webView.scrollView.bounces = true
         webView.scalesPageToFit = true
-
-        /*
-         webView.translatesAutoresizingMaskIntoConstraints = false
-
-         let height = NSLayoutConstraint(item: webView, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1, constant: 0)
-         let width = NSLayoutConstraint(item: webView, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1, constant: 0)
-         view.addConstraints([height, width])
-         */
 
         let ciphertext = cipherText.getCipherText(deviceId)
         let requestURL = URL(string: serverURL + "/example/index.html")
@@ -60,13 +39,6 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_: Bool) {
         super.viewDidAppear(true)
     }
-
-    /*
-     override func loadView() {
-         super.loadView() // call parent loadView
-
-         self.view = self.web // make it the main view
-     }*/
 
     func reloadPage(_: AnyObject) {
         webView.reload()

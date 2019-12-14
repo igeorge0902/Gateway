@@ -36,7 +36,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
     // var stream: Stream = Stream()
 
     // Retreive the managedObjectContext from AppDelegate
-    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    //let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,37 +44,37 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
 
         // COREDATA:
-        let newItem = NSEntityDescription.insertNewObject(forEntityName: "LogItem", into: managedObjectContext) as! LogItem
+     //   let newItem = NSEntityDescription.insertNewObject(forEntityName: "LogItem", into: managedObjectContext) as! LogItem
 
-        newItem.title = "Wrote Core Data Tutorial"
-        newItem.itemText = "Wrote and post a tutorial on the basics of Core Data to blog."
+     //   newItem.title = "Wrote Core Data Tutorial"
+     //   newItem.itemText = "Wrote and post a tutorial on the basics of Core Data to blog."
 
-        backgroundDict = ["Background1": "background1"]
+      //  backgroundDict = ["Background1": "background1"]
 
-        let view: UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height))
+      //  let view: UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height))
 
-        self.view.addSubview(view)
-        self.view.sendSubviewToBack(view)
+      //  self.view.addSubview(view)
+      //  self.view.sendSubviewToBack(view)
 
-        let backgroundImage: UIImage? = UIImage(named: backgroundDict["Background1"]!)
+      //  let backgroundImage: UIImage? = UIImage(named: backgroundDict["Background1"]!)
 
-        imageView = UIImageView(frame: view.frame)
-        imageView.image = backgroundImage
+      //  imageView = UIImageView(frame: view.frame)
+      //  imageView.image = backgroundImage
 
         // view.addSubview(imageView);
 
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        // layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width * 0.7, height: 200)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: view.frame.width * 0.82, height: 182)
 
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
 
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = true
         collectionView.register(FeedCells.self, forCellWithReuseIdentifier: "FeedCell")
         // collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        collectionView.backgroundColor = UIColor.lightGray
+        collectionView.backgroundColor = UIColor.black
 
         view.addSubview(collectionView)
 
@@ -98,10 +98,10 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
 
         // Create a new fetch request using the LogItem entity
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
+        //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
 
         // Execute the fetch request, and cast the results to an array of LogItem objects
-        if let fetchResults = (try? managedObjectContext.fetch(fetchRequest)) as? [LogItem] {
+        //if let fetchResults = (try? managedObjectContext.fetch(fetchRequest)) as? [LogItem] {
             /*
                  // Create an Alert, and set it's message to whatever the itemText is
                  let alert = UIAlertController(title: fetchResults[0].title,
@@ -140,7 +140,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
                          })
                      }*/
             }
-        }
+        //}
     }
 
     override func didReceiveMemoryWarning() {

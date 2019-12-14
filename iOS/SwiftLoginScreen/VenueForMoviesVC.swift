@@ -54,7 +54,7 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
             let nextSegue = segue.destination as? VenuesDetailsVC
             if let indexPath = self.tableView!.indexPathForSelectedRow {
                 let data = TableData[indexPath.row]
-                let venueData = VenueData[0]
+                let venueData = VenueData[indexPath.row]
 
                 nextSegue?.selectVenues_picture = venueData.venues_picture
                 nextSegue?.selectVenueId = venueData.venuesId

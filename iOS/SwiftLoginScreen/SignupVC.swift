@@ -54,16 +54,6 @@ class SignupVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-     // #pragma mark - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-
     @IBAction func gotoLogin(_: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -74,8 +64,6 @@ class SignupVC: UIViewController {
     typealias ServiceResponse = (JSON, NSError?) -> Void
 
     func dataTask(_ voucher: String, email: String, username: String, hash: String, deviceId: String, systemVersion: String, onCompletion: @escaping ServiceResponse) {
-        //  let requestV:NSMutableURLRequest = NSMutableURLRequest(url: url)
-        //  let request:NSMutableURLRequest = NSMutableURLRequest(url: url)
 
         var requestV = URLRequest(url: url)
         var request = URLRequest(url: urlR)
@@ -181,7 +169,7 @@ class SignupVC: UIViewController {
 
                     default:
 
-                        _ = UIAlertController.popUp(title: "SignUp Failed!", message: "Server error \(httpResponse.statusCode)")
+                        self.presentAlert(withTitle: "SignUp Failed!", message: "Server error \(httpResponse.statusCode)")
                     }
                 }
 
@@ -218,10 +206,10 @@ class SignupVC: UIViewController {
 
                         let message: NSString = jsonData.value(forKey: "Message") as! NSString
 
-                        _ = UIAlertController.popUp(title: "SignUp Failed!", message: "Error: \(message)")
+                        self.presentAlert(withTitle: "SignUp Failed!", message: "Error: \(message)")
 
                     } else {
-                        _ = UIAlertController.popUp(title: "Connection Failure!", message: error!.localizedDescription)
+                        self.presentAlert(withTitle: "Connection Failure!", message: error!.localizedDescription)
                     }
                 }
 
@@ -331,23 +319,4 @@ class SignupVC: UIViewController {
         textField.resignFirstResponder()
         return true
     }
-
-    /*
-     func URLSession(_ session: Foundation.URLSession, didReceiveChallenge challenge: URLAuthenticationChallenge, completionHandler:
-     (Foundation.URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-
-     completionHandler(
-
-     Foundation.URLSession.AuthChallengeDisposition.useCredential,
-     URLCredential(trust: challenge.protectionSpace.serverTrust!))
-     }
-
-     func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
-     newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
-
-     let newRequest : URLRequest? = request
-
-     print(newRequest?.description);
-     completionHandler(newRequest)
-     }*/
 }

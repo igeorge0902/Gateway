@@ -138,7 +138,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
             if error != nil {
                 // let json:JSON = try! JSON(data: data!)
 
-                UIAlertController.popUp(title: "Sign in Failed!", message: (error?.localizedDescription)!)
+                self.presentAlert(withTitle: "Sign in Failed!", message: (error?.localizedDescription)!)
 
             } else {
                 let json: JSON = try! JSON(data: data!)
@@ -197,13 +197,13 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
 
                     default:
 
-                        UIAlertController.popUp(title: "Error!", message: "Got an HTTP \(httpResponse.statusCode)")
+                        self.presentAlert(withTitle: "Error!", message: "Got an HTTP \(httpResponse.statusCode)")
 
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
 
                 } else {
-                    UIAlertController.popUp(title: "Sign in Failed!", message: "Connection Failure")
+                    self.presentAlert(withTitle: "Sign in Failed!", message: "Connection Failure")
 
                     NSLog("Connection Failure")
                 }

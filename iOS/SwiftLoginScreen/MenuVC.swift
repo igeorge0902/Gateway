@@ -83,17 +83,6 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
     @objc func navigateToPurchases() {
         if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_mypurchases", sender: self)
-
-            /*
-             let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
-             let pvc = storyboard.instantiateViewController(withIdentifier: "Purchases")
-
-             pvc.modalPresentationStyle = UIModalPresentationStyle.custom
-             pvc.transitioningDelegate = self
-             //pvc.view.backgroundColor = UIColor.groupTableViewBackgroundColor()
-
-             self.present(pvc, animated: true, completion: nil)
-             */
         }
     }
 
@@ -109,9 +98,12 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
 
             // if response == 300
             if let message_ = json["Error Details"].object as? NSDictionary {
-                let errorMsg = message_.value(forKey: "ErrorMsg:") as! String
+                if let errorMsg = message_.value(forKey: "ErrorMsg:") as? String {
                 self.presentAlert(withTitle: "Error Details", message: errorMsg)
-
+                }
+              //  if let errorMsg = message_.value(forKey: "acticeUsers:") as? String {
+              //  self.presentAlert(withTitle: "Error Details", message: errorMsg)
+              //  }
             } else {
                 let users: AnyObject = json["user"].object as AnyObject
                 self.items.add(users)
@@ -199,6 +191,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
 
                             let appDomain = Bundle.main.bundleIdentifier
                             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+                            self.presentAlert(withTitle: "LogOut SUCCESS", message: "Bye!")
                         }
 
                     default:
