@@ -39,6 +39,7 @@ or
 - Since it is a complex system, you shall understand the importance of logging. Please take note on the following add-ons, that will satisfy the most eager eyes, too:
 
 [Forensic Logging](https://httpd.apache.org/docs/2.4/mod/mod_log_forensic.html)
+[Know-How for logging..](http://northernmost.org/blog/mod-log-forensic-howto/index.html)
 [Headers](https://httpd.apache.org/docs/2.4/mod/mod_headers.html)
 [Cache Control](https://httpd.apache.org/docs/2.4/mod/mod_cache.html)
 
