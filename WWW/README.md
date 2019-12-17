@@ -103,6 +103,10 @@ Configuration:
 - for registration, if activation is needed the status code is set to 300, so the http interceptors has to be listening to the same status code, therefore.
 - for setting the vouchers you will need to use numbers when setting the voucher and the flags in the dB
 
+# Testing
+- Testing is crucial, and I am sure, you would like to be convinced, that your page works as intended. For this purpose, please follow through the unit test guide lines and create your own test cases, esp, if you want to assure, that all the functions and their respective controllers work fine:
+* [Unit Testing](https://code.angularjs.org/snapshot-stable/docs/guide/unit-testing)
+
 # Useful links:
 ----
 The hmac authentication was implemented by the following example:
@@ -110,4 +114,4 @@ The hmac authentication was implemented by the following example:
 - https://github.com/Monofraps/angular-node-hmac-example
 - http://www.devblogrbmz.com/angular-default-request-headers-and-interceptors/
 
-Copyright © 2015-2017 George Gaspar. All rights reserved.
+Copyright © 2015-2019 George Gaspar. All rights reserved.
