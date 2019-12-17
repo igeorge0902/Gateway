@@ -95,23 +95,25 @@ var salt = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
 ## Recommendation:
 - you probably would like to use some variables for the passphrase and plaintext. The server and client let you take advantage on generated data linked to a user, or the UNIX epoch time so that they can be used to replace the static values. If you deal with aes encryption / decryption in the WWW app it advised to use request transformator to tighten the security. 
 
-# Features:
+## Features:
 - login and registration is tested on WWW
-- for mobile only login is tested
+- for mobile only login and password reset is tested through the UIWebView
 
 Configuration:
 - for registration, if activation is needed the status code is set to 300, so the http interceptors has to be listening to the same status code, therefore.
 - for setting the vouchers you will need to use numbers when setting the voucher and the flags in the dB
 
-# Testing
-- Testing is crucial, and I am sure, you would like to be convinced, that your page works as intended. For this purpose, please follow through the unit test guide lines and create your own test cases, esp, if you want to assure, that all the functions and their respective controllers work fine:
+## Testing
+- Testing is crucial, and I am sure, you would like to be convinced, that your page works as intended. For this purpose, please follow through the unit test guide lines and create your own test cases, esp, if you want to assure, that all the functions and their respective controllers work fine, and also I do plan on adding some example test cases to use them to test controllers:
 * [Unit Testing](https://code.angularjs.org/snapshot-stable/docs/guide/unit-testing)
 
-# Useful links:
+## Useful links:
 ----
 The hmac authentication was implemented by the following example:
 
 - https://github.com/Monofraps/angular-node-hmac-example
 - http://www.devblogrbmz.com/angular-default-request-headers-and-interceptors/
+>Example unit test project
+- https://www.dotnetcurry.com/angularjs/1248/unit-testing-angularjs-controllers-jasmine-karma
 
 Copyright © 2015-2019 George Gaspar. All rights reserved.
