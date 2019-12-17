@@ -73,6 +73,10 @@ In the UrlProtocol, in general, but mainly at this point, when you work with NSM
    func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
 ```
 
+# UIWebView debugging
+- if you wish to solely debug a webview session, please follow the guide lines in the following article, that will help to launch a debug session on the webview in your app:
+* [Debugging UIWebView on iOS app](https://medium.com/@mattcroak718/debugging-your-iphone-mobile-web-app-using-safari-development-tools-71240657c487)
+
 # How it works
 - it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
 
