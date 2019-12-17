@@ -88,6 +88,10 @@ var salt = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
 }
 ```
 
+## $http and the XSRF-Token
+- Please refer to the official documentation:
+[Cross Site Request Forgery (XSRF) Protection](https://code.angularjs.org/snapshot-stable/docs/api/ng/service/$http#cross-site-request-forgery-xsrf-protection)
+
 ## Recommendation:
 - you probably would like to use some variables for the passphrase and plaintext. The server and client let you take advantage on generated data linked to a user, or the UNIX epoch time so that they can be used to replace the static values. If you deal with aes encryption / decryption in the WWW app it advised to use request transformator to tighten the security. 
 
