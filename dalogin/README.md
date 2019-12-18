@@ -29,7 +29,17 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 
 Known issues (for most recent version see the update branch!):
 ----
-- In TomCat 9.x version somehow a sessionDestroy will be called causing the tokkens to be triggered. This has to be solved, but as quick remedy you can comment out the trigger in the logout_device procedure:
+- In TomCat 9.x version somehow a sessionDestroy will be called causing the tokkens to be triggered. This has to be solved, but as quick remedy you can comment out the trigger in the logout_device procedure, which is called by the 
+
+```java
+SQLAccess.logout(session.getId(), context);
+```
+
+and resides in two places:
+* Loggingout.java for user initiated logging out
+* CustomHttpSessionListener.java for initiated by session expiring to log out
+
+
 ```javascript
     update Tokens
     set Tokens.token1 = 0 and Tokens.token2 = 0 

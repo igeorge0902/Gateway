@@ -113,7 +113,8 @@ The hmac authentication was implemented by the following example:
 
 - https://github.com/Monofraps/angular-node-hmac-example
 - http://www.devblogrbmz.com/angular-default-request-headers-and-interceptors/
+
 >Example unit test project
-- https://www.dotnetcurry.com/angularjs/1248/unit-testing-angularjs-controllers-jasmine-karma
+ * https://www.dotnetcurry.com/angularjs/1248/unit-testing-angularjs-controllers-jasmine-karma
 
 Copyright © 2015-2019 George Gaspar. All rights reserved.

@@ -73,12 +73,13 @@ public class Loggingout extends HttpServlet {
 		  		 
 		    	 ServletContext context = request.getServletContext();
 		    	 session.removeAttribute("user");
+		    	 //TODO: on TomCat, it is called on TomCat shutdown, triggering new tokens.
+		    	 //TODO: automatic logging out handling in the dB (device_states)
 		         try {
 					SQLAccess.logout(session.getId(), context);	
 				} catch (Exception e) {
 
 						throw new ServletException(e.getMessage());	
-
 				}
 			     session.invalidate();
 				 

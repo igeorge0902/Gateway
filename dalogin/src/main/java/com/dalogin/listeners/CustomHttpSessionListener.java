@@ -18,6 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
@@ -377,14 +378,15 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
         log.info("deviceId_ at destroy: "+D_);
 
             activeUsers.remove(session.getId());
-            
+        	sessions.removeAll(D_);
+        	/*
             try {
-            	sessions.removeAll(D_);
+				SQLAccess.logout(session.getId(), context);	
             		} catch (Exception e) {
             			// error handling for empty leafs
             			log.info("There was no device left over to remove...");
             		}
-            
+            */
             log.info("device logging out from SessionUsers: " + D_);
             
             log.info("SessionUsers left: " + sessions.entries());
