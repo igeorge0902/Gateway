@@ -73,6 +73,8 @@ In the UrlProtocol, in general, but mainly at this point, when you work with NSM
    func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
 ```
 
+Since the app employs a custom UrlProtocol class, it gives you the possibility to take control over the request - response of any NSUrlConnection, by making deep copies with NSMutableRequest, witch means you can add/modify header fields, set Cookie policy, etc. That also happens for the UIWebView, witch is basic ttyl just a canvas for the authentication: the app uses context URI based cookies ('/login'), and they are managed by the shared Cookie Storage (since iOS SDK 2.0), as well as the UrlSession based /login requests, so you can use the same cookies without a fuss, let it be got back from UIWebView, or UrlSession, as per default session object configuration, witch means shouldAcceptCookies 'true' by default. 
+
 # UIWebView debugging
 - if you wish to solely debug a webview session, please follow the guide lines in the following article, that will help to launch a debug session on the webview in your app:
 * [Debugging UIWebView on iOS app](https://medium.com/@mattcroak718/debugging-your-iphone-mobile-web-app-using-safari-development-tools-71240657c487)
