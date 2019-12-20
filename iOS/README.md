@@ -73,7 +73,12 @@ In the UrlProtocol, in general, but mainly at this point, when you work with NSM
    func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
 ```
 
-Since the app employs a custom UrlProtocol class, it gives you the possibility to take control over the request - response of any NSUrlConnection, by making deep copies with NSMutableRequest, witch means you can add/modify header fields, set Cookie policy, etc. That also happens for the UIWebView, witch is basic ttyl just a canvas for the authentication: the app uses context URI based cookies ('/login'), and they are managed by the shared Cookie Storage (since iOS SDK 2.0), as well as the UrlSession based /login requests, so you can use the same cookies without a fuss, let it be got back from UIWebView, or UrlSession, as per default session object configuration, witch means shouldAcceptCookies 'true' by default. 
+Since the app employs a custom UrlProtocol class, it gives you the possibility to take control over the request - response of any NSUrlConnection, by making deep copies with NSMutableRequest, witch means you can add/modify header fields, set Cookie policy, etc. That also happens for the UIWebView, witch is basic ttyl just a canvas for the authentication, using NSUrlConnection: the app uses context URI based cookies ('/login'), and they are managed by the shared Cookie Storage (since iOS SDK 2.0), as well as the UrlSession based /login requests, so you can use the same cookies without a fuss, let it be got back from UIWebView (NSUrlConnection), or UrlSession, as per default session object configuration, witch means shouldAcceptCookies 'true' by default. 
+
+Since the CustomURLRequest extension of URLRequest is used by both UrlSession and NSUrlConnection you can add convinient system wide settings, or separately at the UrlProtocol for NSUrlConnection, or at the CustomSessionConfiguration.. Find the solution best for you, are you ready? 
+
+>More about the Url Loading System
+* [Url Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
 
 # UIWebView debugging
 - if you wish to solely debug a webview session, please follow the guide lines in the following article, that will help to launch a debug session on the webview in your app:
@@ -85,7 +90,7 @@ Since the app employs a custom UrlProtocol class, it gives you the possibility t
 ### gitRepo link to AWS
 [CollectionOfApplications](https://github.com/igeorge0902/CollectionOfApplications)
 
-### AWS repos
+### AWS repos for the movie ticket booking API
 [WildFly_TheBookMyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
 [TheBook_MyMovie](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2#)
 
