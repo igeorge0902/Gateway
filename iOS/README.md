@@ -84,6 +84,11 @@ Since the CustomURLRequest extension of URLRequest is used by both UrlSession an
 - if you wish to solely debug a webview session, please follow the guide lines in the following article, that will help to launch a debug session on the webview in your app:
 * [Debugging UIWebView on iOS app](https://medium.com/@mattcroak718/debugging-your-iphone-mobile-web-app-using-safari-development-tools-71240657c487)
 
+# AFNetworking
+- you may find invocations of the AFNetworkReachabilityManager at points, where you navigate to the next segue. Please consider it yourself, if you need it at all. I left it in the code intentionally.
+- please check the corresponding docs:
+* [AFNetworkReachabilityManager](http://cocoadocs.org/docsets/AFNetworking/3.1.0/Classes/AFNetworkReachabilityManager.html)
+
 # How it works
 - it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
 
