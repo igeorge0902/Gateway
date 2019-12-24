@@ -1,6 +1,8 @@
 # General Authentication Service - GAS 
 
-Copyright © 2015-2019 George Gaspar. MIT License.
+>Copyright © 2015-2019 George Gaspar. MIT License.
+
+* This is the active git repo for the legacy one - [igeorge1982](https://github.com/igeorge1982), because I hade to abandon that due to my lost password and recovery codes, and github back then could not help with verified email, only, if you had two-factor authentication enabled.
 
 Check the listed components above, and their readme for specific notes, instructions.
 
