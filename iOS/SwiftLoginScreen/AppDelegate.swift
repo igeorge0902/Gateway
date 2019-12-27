@@ -17,13 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var locationManager: CLLocationManager?
     var contactStore: CNContactStore?
-    var timer: Timer!
-    var timer_: Timer!
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+        setenv("CFNETWORK_DIAGNOSTICS", "3", 1);
+        return true;
+    }
+    
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // URL classes available
         URLProtocol.registerClass(MyURLProtocol.self)
-        // NSURLProtocol.registerClass(CustomURLProtocol)
+        //URLProtocol.registerClass(MyURLProtocolSession.self)
 
         // Nav, Tool bar appearance tweaks
         UINavigationBar.appearance().barStyle = .blackTranslucent
@@ -50,9 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }
         }
 
-        //  setenv("CFNETWORK_DIAGNOSTICS", "3", 1);
-
         checkRealm()
+
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+         print("dB location: \(urls[urls.count-1] as URL)")
 
         return true
     }
@@ -82,36 +87,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //  timer_ = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(AppDelegate.checkRealm), userInfo: nil, repeats: true)
     }
 
-    /*
-     @objc func checkNet() {
-
-         print(AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue)
-         if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue == 0 {
-
-         } else {
-
-         }
-
-     }
-     */
-
     func checkRealm() {
-        let gm: GeneralRequestManager?
 
-        gm = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
+            // put your server address here
+            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: ["https://milo.crabdance.com/mbooks-1/rest/book/movies"])
 
-        if let localResponse = gm?.cachedResponseForCurrentRequest() {
-            if localResponse.timestamp.addingTimeInterval(600) < Date() {
-                let realm = RLMRealm.default()
-                realm.beginWriteTransaction()
-                realm.delete(localResponse)
+            // Query
+        if let results = CachedResponse.objects(with: p) as AnyObject? {
+            
+            if results.count > 0 {
+                
+                for i in 0 ..< results.count {
+                    
+                    let data = results.object(at: i) as? CachedResponse
+                    if ((data?.timestamp.addingTimeInterval(3600))! < Date()) {
+                        
+                        let realm = RLMRealm.default()
+                        realm.beginWriteTransaction()
+                        realm.delete(results.object(at: i) as! RLMObject)
 
-                do {
-                    try realm.commitWriteTransaction()
-                    TableData_.removeAll()
+                        do {
+                            try realm.commitWriteTransaction()
+                           // TableData_.removeAll()
 
-                } catch {
-                    print("Something went wrong!")
+                        } catch {
+                            print("Something went wrong!")
+                        }
+                        
+                    }
                 }
             }
         }

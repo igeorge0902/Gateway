@@ -39,6 +39,27 @@ func connectionDidFinishLoading(_ connection: NSURLConnection!) {
 }
 ```
 
+The CoreData cache is taking care of the caching of the webpage and its sources the first time you open up the WebView, so that the app does not need to download it from the server again, and the deviceId will be put into the app.js, for the sake of convinience. 
+
+The CoreData cache will store also the images of the movies and venues, if you use the full system, found through AWS repository.
+
+All the data will be rerieved based on the url.
+
+You can access and check the data with SqlLite. 
+
+### Realm cache
+- the app also includes another cache system, out of convinience, which is the Realm cache. It is taking care of storing the responses of the Booking api.
+
+You can access and check the data with Realm browser.
+
+### Document Directory on the device and simulator
+- please check for the following print out in the logs, that will tell you where you can find the dB locations:
+
+```swift
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+         print("dB location: \(urls[urls.count-1] as URL)")
+```
+
 ### URL Loading System
 - the app has 3 different request manager, combined with a NSUrlProtocol, and a WebView, therefor it is advisable to read the official Apple documentation, as to how it works (cookies, etc) 
 - [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 
