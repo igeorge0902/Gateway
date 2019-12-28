@@ -1,5 +1,4 @@
 //
-//  d.swift
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.

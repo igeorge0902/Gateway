@@ -64,7 +64,7 @@ open class CryptoJS{
             
             
             cryptoJScontext?.exceptionHandler = { cryptoJScontext, exception in
-                print("AES JS RunTime Error: \(exception)")
+                print("AES JS RunTime Error: \(exception!)")
             }
             
             return "\(encryptFunction_.call(withArguments: [keySize, iterationCount, salt, iv, passPhrase, plainText])!)"
@@ -81,7 +81,7 @@ open class CryptoJS{
         
         open func decrypt(_ encryptedMessage: String,secretKey: String, options: AnyObject?=nil)->String {
             if let unwrappedOptions: AnyObject = options {
-                return "\(decryptFunction.call(withArguments: [encryptedMessage, secretKey, unwrappedOptions]))"
+                return "\(decryptFunction.call(withArguments: [encryptedMessage, secretKey, unwrappedOptions])!)"
             }else{
                 return "\(decryptFunction.call(withArguments: [encryptedMessage, secretKey])!)"
             }
@@ -400,7 +400,7 @@ open class CryptoJS{
             
             
             cryptoJScontext?.exceptionHandler = { cryptoJScontext, exception in
-                print("hmacSHA512 JS RunTime Error: \(exception)")
+                print("hmacSHA512 JS RunTime Error: \(exception!)")
             }
             
             return "\(self.hmacSHA512.call(withArguments: [string, secret])!)"
@@ -410,7 +410,7 @@ open class CryptoJS{
             
             
             cryptoJScontext?.exceptionHandler = { cryptoJScontext, exception in
-                print("hmacSHA512_ JS RunTime Error: \(exception)")
+                print("hmacSHA512_ JS RunTime Error: \(exception!)")
             }
             
             return "\(hmacSHA512_.call(withArguments: [string, secret])!)"

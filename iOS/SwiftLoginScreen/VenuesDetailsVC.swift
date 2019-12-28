@@ -14,6 +14,7 @@ import EventKit
 import SwiftyJSON
 import UIKit
 import WebKit
+import AVKit
 
 // TODO: use collectionView cells
 var selectedCalendar: String?
@@ -60,6 +61,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
 
     var calendars: [EKCalendar]?
     let eventStore: EKEventStore = EKEventStore()
+    var playerItemContext = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,10 +117,10 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
 
         scrollView = UIScrollView()
         scrollView.delegate = self
+        scrollView.frame = view.bounds
         scrollView.alwaysBounceVertical = true
-
         scrollView.backgroundColor = UIColor.white
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 0.8)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
 
         scrollView.addSubview(imageView)
         scrollView.addSubview(imageView_)
@@ -143,6 +145,17 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         button.backgroundColor = UIColor.white
         button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(VenuesDetailsVC.book), for: UIControl.Event.touchUpInside)
+        
+        let frameD = CGRect(x: view.frame.width * 0.15, y: (starty * 3) + imageHeight, width: 130, height: 20)
+        let buttonD = UIButton(frame: frameD)
+        let myAttributeD = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
+        let titleD = NSMutableAttributedString(string: "Movie detail", attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttributeD))
+
+        buttonD.tintColor = UIColor.darkGray
+        buttonD.setAttributedTitle(titleD, for: UIControl.State())
+        buttonD.backgroundColor = UIColor.white
+        buttonD.showsTouchWhenHighlighted = true
+        buttonD.addTarget(self, action: #selector(VenuesDetailsVC.movieDetail), for: UIControl.Event.touchUpInside)
 
         let frame2 = CGRect(x: view.frame.width * 0.65, y: (starty * 2.5) + imageHeight, width: 44, height: 20)
         let buttonDate = UIButton(frame: frame2)
@@ -188,7 +201,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         ical = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         ical.image = ios
 
-        let frame3_ = CGRect(x: view.frame.width * 0.55, y: (starty * 2.9) + imageHeight, width: 44, height: 44)
+        let frame3_ = CGRect(x: view.frame.width * 0.64, y: (starty * 2.9) + imageHeight, width: 44, height: 44)
         let buttonCalendar_ = UIButton(frame: frame3_)
         buttonCalendar_.setImage(ical.image, for: UIControl.State())
         buttonCalendar_.showsTouchWhenHighlighted = true
@@ -214,6 +227,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         scrollView.addSubview(button)
         scrollView.addSubview(buttonDate)
         scrollView.addSubview(buttonMap)
+        scrollView.addSubview(buttonD)
 
         // scrollView.addSubview(buttonCalendar)
         scrollView.addSubview(buttonCalendar_)
@@ -236,19 +250,45 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         nameTextView?.alwaysBounceVertical = true
         scrollView.addSubview(nameTextView!)
 
-        /*
-         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-         loginButton.center = view.center
-         scrollView.addSubview(loginButton)
-         */
-
+        //Seats
         while !SeatsData_.isEmpty {
             SeatsData_.removeAll()
         }
-
         ScreeningDates.removeAll()
         ScreeningDates.append(DatesData(add: pickerdata))
+ 
+        
+        guard let fileURL = Bundle.main.path(forResource: "garnier1", ofType: "mov") else {
+                fatalError("File not found")
+        }
+
+        let url = NSURL.fileURL(withPath: fileURL)
+        var playerLayer = AVPlayerLayer()
+        let playerItem = AVPlayerItem(asset: AVAsset(url: url), automaticallyLoadedAssetKeys: ["playable"])
+        let player = AVPlayer(playerItem: playerItem)
+        
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        playerLayer.frame = CGRect(x: startx_, y: view.frame.height * 1.2, width: view.frame.width * 0.9, height: imageHeight_)
+        
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 55.0, right: 0.0)
+        scrollView.contentSize.height = view.frame.height * 1.2 + imageHeight_
+        scrollView.layer.addSublayer(playerLayer)
+        //playerLayer.player?.play()
+        
         addDatesData()
+    }
+    
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
+    }
+
+    override func viewDidAppear(_: Bool) {
+        super.viewDidAppear(true)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -257,8 +297,13 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
             nextSegue?.selectVenueId = selectVenueId
             nextSegue?.map2 = true
         }
+        if segue.identifier == "goto_movie_detail2" {
+            let nextSegue = segue.destination as? MovieDetailVC
+            nextSegue?.iMDB = iMDB
+            nextSegue?.origin = "VenuesDetailsVC"
+        }
     }
-
+  
     @objc func showMoreActions(_ tap: UITapGestureRecognizer) {
         _ = tap.location(in: view)
     }
@@ -266,9 +311,13 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc func movieDetail(_: UIButton, event: UIEvent) {
+        performSegue(withIdentifier: "goto_movie_detail2", sender: self)
+    }
 
     @objc func book(_: UIButton, event: UIEvent) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
+
             if event.type == .touches {
                 let touches: Set<UITouch> = event.allTouches!
 
@@ -320,17 +369,14 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                     }
                 )
             }
-        }
+        
     }
 
     @objc func map(_: UIButton, event _: UIEvent) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_map2", sender: self)
-        }
     }
 
     @objc func dates(_: UIButton, event: UIEvent) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             if event.type == .touches {
                 let touches: Set<UITouch> = event.allTouches!
 
@@ -361,11 +407,9 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                 animated: true,
                 completion: nil
             )
-        }
     }
 
     @objc func selectCalendar(_: UIButton) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             if screeningDateId == nil {
                 let alertView: UIAlertView = UIAlertView()
 
@@ -410,7 +454,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                     }
                 }
             }
-        }
     }
 
     func presentationController(forPresented presented: UIViewController, presenting _: UIViewController?, source _: UIViewController) -> UIPresentationController? {
@@ -423,21 +466,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         }
     }
 
-    override func viewWillAppear(_: Bool) {
-        super.viewWillAppear(true)
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.viewDidAppear(true)
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        scrollView.frame = view.bounds
-        scrollView.contentSize.height = 1000
-    }
-
     func adaptivePresentationStyle(for _: UIPresentationController) -> UIModalPresentationStyle {
         // Return no adaptive presentation style, use default presentation behaviour
         return .none
@@ -446,7 +474,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     func addDatesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + String(selectVenueId) + "/" + String(movieId), errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + String(selectVenueId) + "/" + String(movieId), errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

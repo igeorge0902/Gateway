@@ -15,9 +15,9 @@ class DatesData: NSObject {
     var movieId: Int!
 
     init(add: NSDictionary) {
-        screeningDatesId = add["screeningDatesId"] as! Int
-        screeningDate = add["screeningDate"] as! String
-        movieId = add["movieId"] as! Int
+        screeningDatesId = (add["screeningDatesId"] as! Int)
+        screeningDate = (add["screeningDate"] as! String)
+        movieId = (add["movieId"] as! Int)
     }
 
     class func addDatesData(_ screen_screenId: String) {
@@ -25,7 +25,7 @@ class DatesData: NSObject {
 
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + screen_screenId, errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + screen_screenId, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

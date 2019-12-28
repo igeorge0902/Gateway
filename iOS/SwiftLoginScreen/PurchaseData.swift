@@ -18,12 +18,12 @@ class PurchaseData: NSObject {
     var purchaseDate: String!
 
     init(add: NSDictionary) {
-        orderId = add["orderId"] as! String
-        purchaseId = add["purchaseId"] as! String
-        movie_name = add["movie_name"] as! String
-        venue_name = add["venue_name"] as! String
-        movie_picture = add["movie_picture"] as! String
-        purchaseDate = add["purchaseDate"] as! String
-        screeningDate = add["screeningDate"] as! String
+        orderId = (add["orderId"] as! String)
+        purchaseId = (add["purchaseId"] as! String)
+        movie_name = (add["movie_name"] as! String)
+        venue_name = (add["venue_name"] as! String)
+        movie_picture = (add["movie_picture"] as! String)
+        purchaseDate = (add["purchaseDate"] as! String)
+        screeningDate = (add["screeningDate"] as! String)
     }
 }

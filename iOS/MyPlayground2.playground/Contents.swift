@@ -16,15 +16,15 @@ let date = Date()
 
 let timeZone = TimeZone.current.description
 
-let current = timeZone.characters.split(separator: " ")
-let zone = String(current.first!)
-print(timeZone)
+//let current = timeZone.characters.split(separator: " ")
+//let zone = String(current.first!)
+//print(timeZone)
 
 let dateFormatter = DateFormatter()
 dateFormatter.dateStyle = DateFormatter.Style.medium
 dateFormatter.timeStyle = DateFormatter.Style.short
 
-let date_ = Date(timeIntervalSinceReferenceDate: 118_800)
+let date_ = Date()
 
 // US English Locale (en_US)
 dateFormatter.locale = Locale(identifier: "en_US_POSIX")

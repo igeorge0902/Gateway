@@ -39,7 +39,7 @@ class iOSCalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
 
     override func viewWillAppear(_: Bool) {
-        let frame: CGRect = CGRect(x: 0, y: 60, width: view.frame.width, height: view.frame.height / 1.5)
+        let frame: CGRect = CGRect(x: 0, y: 60, width: view.frame.width, height: view.frame.height - 90)
         tableView = UITableView(frame: frame)
         tableView?.dataSource = self
         tableView?.delegate = self

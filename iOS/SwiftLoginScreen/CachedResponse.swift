@@ -31,6 +31,7 @@ class CachedResponse: RLMObject {
     @objc dynamic var encoding: String!
     @objc dynamic var mimeType: NSString!
     @objc dynamic var url: String!
+    @objc dynamic var query:String!
     @objc dynamic var timestamp: Date!
 
     override init() {
@@ -40,6 +41,7 @@ class CachedResponse: RLMObject {
         encoding = "utf-8"
         mimeType = ""
         url = ""
+        query = ""
         timestamp = NSDate() as Date!
     }
 }

@@ -75,7 +75,7 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     func addData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/purchases/tickets", errors: "", method: "GET", queryParameters: ["purchaseId": purchaseId], bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/purchases/tickets", errors: "", method: "GET", headers: nil, queryParameters: ["purchaseId": purchaseId], bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -134,7 +134,7 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
 
         title.append(NSAttributedString(string: "\n\(CollectionData[indexPath.row].movie_name!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 12.0)!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red: 155 / 255, green: 161 / 255, blue: 171 / 255, alpha: 1)])))
 
-        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle, range: NSMakeRange(0, title.string.characters.count))
+        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle, range: NSMakeRange(0, title.string.count))
 
         // TODO: add map pointing to the venue
         let icon = NSTextAttachment()

@@ -12,8 +12,14 @@ import UIKit
 // import FacebookShare
 
 var TableData_: [MoviesData] = [MoviesData]()
+var endOfFile = false
+var veil = true
+var shouldShowSearchResults = false
 class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+    
     deinit {
+        endOfFile = false
+        TableData.removeAll()
         print(#function, "\(self)")
     }
 
@@ -21,30 +27,13 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     var TableData: [MoviesData] = [MoviesData]()
     var data: MoviesData?
     var searchController: UISearchController!
-    var shouldShowSearchResults = false
+    lazy var session = URLSession.sharedCustomSession
 
-    /*
-     struct datastruct
-     {
-         var movieId:Int!
-         var detail:String!
-         var name:String!
-         var large_picture:String!
-         var image:UIImage? = nil
-
-         init(add: NSDictionary)
-         {
-             movieId = add["movieId"] as! Int
-             name = add["name"] as! String
-             large_picture = add["large_picture"] as! String
-             detail = add["detail"] as! String
-         }
-     }*/
 
     var refreshControl: UIRefreshControl!
     var tableView: UITableView?
 
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goto_venues" {
             let nextSegue = segue.destination as? VenuesVC
 
@@ -55,6 +44,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 nextSegue!.movieName = data.name
                 nextSegue!.selectDetails = data.detail
                 nextSegue!.selectLarge_picture = data.large_picture
+                nextSegue!.imdb = data.imdb
 
                 if SearchData.count > 0 {
                     data = SearchData[indexPath.row]
@@ -63,14 +53,37 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     nextSegue!.movieName = data.name
                     nextSegue!.selectDetails = data.detail
                     nextSegue!.selectLarge_picture = data.large_picture
+                    nextSegue!.imdb = data.imdb
                 }
             }
+        }
+        if segue.identifier == "goto_movie_detail" {
+            let nextSegue = segue.destination as? MovieDetailVC
+            guard let tag = (sender as? UIButton)?.tag else { return }
+                var data = TableData[tag]
+
+                nextSegue!.movieId = data.movieId
+                nextSegue!.movieName = data.name
+                nextSegue!.selectDetails = data.detail
+                nextSegue!.selectLarge_picture = data.large_picture
+                nextSegue!.iMDB = data.imdb
+
+                if SearchData.count > 0 {
+                    data = SearchData[tag]
+
+                    nextSegue!.movieId = data.movieId
+                    nextSegue!.movieName = data.name
+                    nextSegue!.selectDetails = data.detail
+                    nextSegue!.selectLarge_picture = data.large_picture
+                    nextSegue!.iMDB = data.imdb
+                }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        veil = true
         tableView?.delegate = self
         tableView?.dataSource = self
 
@@ -116,15 +129,26 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     @objc func navigateBack() {
-        dismiss(animated: true, completion: nil)
+        if (veil) {
+             dismiss(animated: true, completion: nil)
+         }
+         veil = false
+         dismiss(animated: true, completion: nil)
     }
 
     func addData() {
-        TableData.removeAll()
+        //TableData.removeAll()
 
         var errorOnLogin: GeneralRequestManager?
-
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+        var setFirstResult: Int?
+ 
+        if(TableData.count > 0) {
+            setFirstResult = TableData.count
+        } else {
+            setFirstResult = 0;
+        }
+        
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies/paging", errors: "", method: "GET", headers: nil, queryParameters: ["setFirstResult": String(setFirstResult!)], bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -136,6 +160,11 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     }
                 }
             }
+            
+            if let _ = json["NotFoundMovies"].string as NSString? {
+                endOfFile = true
+            }
+
 
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
@@ -146,7 +175,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     func addData_(_ match: String) {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies/search", errors: "", method: "GET", queryParameters: ["match": match], bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies/search", errors: "", method: "GET", headers: nil, queryParameters: ["match": match], bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -156,62 +185,50 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
                         self.SearchData.append(MoviesData(add: dataBlock))
+                        shouldShowSearchResults = true
                     }
                 }
             }
 
-            if let _ = json["NotFoundMovies"].object as? NSArray {
+            if let _ = json["NotFoundMovies"].string as NSString? {
                 // TODO: present empty list
             }
 
-            //  if self.SearchData.count > 0 {
-
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
-
             })
-
-            //  }
         }
     }
 
     func searchBarTextDidBeginEditing(_: UISearchBar) {
-        shouldShowSearchResults = false
+        shouldShowSearchResults = true
         // self.tableView!.reloadData()
     }
 
     func searchBarCancelButtonClicked(_: UISearchBar) {
-        shouldShowSearchResults = false
+        shouldShowSearchResults = true
         searchController.searchBar.resignFirstResponder()
     }
 
     func searchBarTextDidEndEditing(_: UISearchBar) {
-        shouldShowSearchResults = true
+        shouldShowSearchResults = false
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
         if searchText.substring(from: searchText.startIndex).count > 2 {
-            // NSObject.cancelPreviousPerformRequests(withTarget: self)
-            // self.perform(#selector(MoviesVC.addData_(_:)), with: searchText, afterDelay: 0.5)
-
-            //  let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 0 * Int64(NSEC_PER_SEC))
-            //  dispatch_after(time, dispatch_get_main_queue()) {
 
             let backgroundQueue = DispatchQueue.global()
             let deadline = DispatchTime.now() + .milliseconds(100)
             backgroundQueue.asyncAfter(deadline: deadline, qos: .background) {
                 self.addData_(searchText)
             }
-
-            //      AppEventsLogger.log(AppEvent.searched(contentId: nil, searchedString: searchText, successful: true, valueToSum: 1, extraParameters: ["":""]))
-
-            //  }
         }
 
         if searchText.substring(from: searchText.startIndex).count == 0 {
             SearchData.removeAll()
             tableView!.reloadData()
         }
+        shouldShowSearchResults = true
     }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -245,6 +262,10 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
         return 22.0
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as UITableViewCell?
@@ -253,10 +274,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
         }
 
-        if TableData_.count > 0 {
-            data = TableData_[indexPath.row]
-
-        } else if TableData.count > 0 {
+        if TableData.count > 0 {
             data = TableData[indexPath.row]
         }
 
@@ -268,13 +286,32 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         let detailText = NSMutableAttributedString(string: (data?.name)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
         cell!.textLabel?.attributedText = detailText
-        // TODO: pictures' size shall not exceed 100 kbytes
+        cell!.textLabel?.numberOfLines = 2
+       // TODO: pictures' size shall not exceed 100 kbytes
         if let url = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!) {
             if let imageData = try? Data(contentsOf: url) {
                 cell!.imageView?.image = UIImage(data: imageData)
             }
         }
-        //  cell.imageView?.image = TableData[indexPath.row].image
+        
+        //TODO: export method, and reload tableview
+        /*
+        var errorOnLogin: GeneralRequestManager?
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+
+        errorOnLogin?.getData_ {
+            (data: Data, _: NSError?) in
+            let image = UIImage(data: data)
+            cell!.imageView?.image = image
+            }
+        */
+        
+        let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
+        btn.frame = CGRect(x: view.frame.width * 0.9, y: 0, width: 20, height: (cell?.frame.height)!)
+        btn.addTarget(self, action: #selector(MoviesVC.movieDetail), for: .touchUpInside)
+        btn.tag = indexPath.row
+        btn.setImage(UIImage(named: "window-7.png"), for: .normal)
+        cell?.contentView.addSubview(btn)
 
         return cell!
     }
@@ -288,16 +325,26 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        //  searchController.searchBar.resignFirstResponder()
-
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_venues", sender: self)
+    }
+
+    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == TableData.count - 3 {
+            if(endOfFile == false) {
+            //MoviesData.addData()
+            addData()
+            }
         }
     }
 
-    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt _: IndexPath) {}
-
-    func scrollViewDidScroll(_: UIScrollView) {}
+    @objc func movieDetail(button: UIButton, event: UIEvent) {
+        if (veil && shouldShowSearchResults) {
+            dismiss(animated: true, completion: nil)
+        }
+        veil = false
+        shouldShowSearchResults = false
+        performSegue(withIdentifier: "goto_movie_detail", sender: button)
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.

@@ -89,8 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func checkRealm() {
 
-            // put your server address here
-            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: ["https://milo.crabdance.com/mbooks-1/rest/book/movies"])
+            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: ["https://milo.crabdance.com/mbooks-1/rest/book/movies/paging"])
 
             // Query
         if let results = CachedResponse.objects(with: p) as AnyObject? {

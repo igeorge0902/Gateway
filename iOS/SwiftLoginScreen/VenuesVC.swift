@@ -15,6 +15,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var selectLarge_picture: String!
     var selectDetails: String!
     var selectVenues_picture: String!
+    var imdb: String!
 
     deinit {
         print(#function, "\(self)")
@@ -32,11 +33,11 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var image: UIImage?
 
         init(add: NSDictionary) {
-            venuesId = add["venuesId"] as! Int
-            name = add["name"] as! String
-            address = add["address"] as! String
-            venues_picture = add["venues_picture"] as! String
-            screen_screenId = add["screen_screenId"] as! String
+            venuesId = (add["venuesId"] as! Int)
+            name = (add["name"] as! String)
+            address = (add["address"] as! String)
+            venues_picture = (add["venues_picture"] as! String)
+            screen_screenId = (add["screen_screenId"] as! String)
         }
     }
 
@@ -58,6 +59,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 nextSegue?.movieName = movieName
                 nextSegue?.movieDetails = selectDetails
                 nextSegue?.selectLarge_picture = selectLarge_picture
+                nextSegue?.iMDB = imdb
             }
         }
     }
@@ -94,12 +96,18 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
+    
+    func navigateBack2() {
+        self.dismiss(animated: true, completion: {
+
+        })
+    }
 
     func addData() {
         let myString = String(movieId)
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/" + myString, errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/" + myString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

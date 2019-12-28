@@ -23,15 +23,15 @@ class AllTicketsData: NSObject {
 
     // TODO: add venue details, pictures
     init(add: NSDictionary) {
-        movie_name = add["movie_name"] as! String
-        movie_picture = add["movie_picture"] as! String
-        venue_name = add["venue_name"] as! String
-        seats_seatRow = add["seats_seatRow"] as! String
-        seats_seatNumber = add["seats_seatNumber"] as! String
-        price = add["price"] as! Int
-        tax = add["tax"] as! Double
-        screening_date = add["screening_date"] as! String
-        screen_screenId = add["screen_screenId"] as! String
-        ticketId = add["ticketId"] as! Int
+        movie_name = (add["movie_name"] as! String)
+        movie_picture = (add["movie_picture"] as! String)
+        venue_name = (add["venue_name"] as! String)
+        seats_seatRow = (add["seats_seatRow"] as! String)
+        seats_seatNumber = (add["seats_seatNumber"] as! String)
+        price = (add["price"] as! Int)
+        tax = (add["tax"] as! Double)
+        screening_date = (add["screening_date"] as! String)
+        screen_screenId = (add["screen_screenId"] as! String)
+        ticketId = (add["ticketId"] as! Int)
     }
 }

@@ -16,33 +16,32 @@ class MoviesData: NSObject {
     var name: String!
     var large_picture: String!
     var image: UIImageView!
+    var imdb: String!
 
     init(add: NSDictionary) {
-        movieId_ = add["movieId"] as! String
+        movieId_ = (add["movieId"] as! String)
         movieId = Int(movieId_)
-        name = add["name"] as! String
-        large_picture = add["large_picture"] as! String
-        detail = add["detail"] as! String
+        name = (add["name"] as! String)
+        large_picture = (add["large_picture"] as! String)
+        detail = (add["detail"] as! String)
+        imdb = (add["iMDB_url"] as! String)
     }
 
     class func addData() {
-        TableData_.removeAll()
 
-        var errorOnLogin: GeneralRequestManager?
+        var OnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+        OnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/movies/paging", errors: "", method: "GET", headers: nil, queryParameters: ["setFirstResult": String(0)], bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
 
-        errorOnLogin?.getResponse {
+        OnLogin?.getResponse {
             (json: JSON, _: NSError?) in
 
             if let list = json["movies"].object as? NSArray {
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
-                        TableData_.append(MoviesData(add: dataBlock))
-
                         //   dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
 
-                        Data.imageFromUrl(urlString: serverURL + "/simple-service-webapp/webapi/myresource" + TableData_[i].large_picture!)
+                        Data.imageFromUrl(urlString: serverURL + "/simple-service-webapp/webapi/myresource" + MoviesData(add: dataBlock).large_picture!)
 
                         //   })
                     }
@@ -55,15 +54,15 @@ class MoviesData: NSObject {
 extension Data {
     static func imageFromUrl(urlString: String) {
         if let url = URL(string: urlString) {
+            
+            // _ = try? Data(contentsOf: url)
+            
             let request = URLRequest(url: url as URL)
 
             NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
                 (_: URLResponse?, _: Data?, _: Error?) -> Void in
-
-                //  if let imageData = data as NSData? {
-                //  self.image = UIImage(data: imageData)
-                //  }
-            }
+          }
+            
         }
     }
 }

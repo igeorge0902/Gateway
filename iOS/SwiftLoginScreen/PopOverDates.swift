@@ -12,7 +12,7 @@ import SwiftyJSON
 import UIKit
 
 var SelectScreeningDateText: String?
-var myDateString: [String.CharacterView.SubSequence]?
+var myDateString: [String.SubSequence]?
 var screeningDateId: String?
 var SelectMovieName: String?
 var SelectMoviePicture: String?
@@ -100,7 +100,7 @@ class PopOverDates: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         var myTitle: NSAttributedString!
 
         if row > 0 {
-            let myDateString_ = titleData!.characters.split(separator: ".")
+            let myDateString_ = titleData!.split(separator: ".")
             let date_ = Date.formatDate(dateString: String(myDateString_.first!))
 
             myTitle = NSAttributedString(string: String.formatDate(date: date_), attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 16.0)!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor.black]))
@@ -124,7 +124,7 @@ class PopOverDates: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         if ScreeningDates[row].screeningDatesId != 0 {
             //    SeatsData.addData(ScreeningDates[row].screeningDatesId)
             screeningDateId = String(ScreeningDates[row].screeningDatesId)
-            myDateString = SelectScreeningDateText!.characters.split(separator: ".")
+            myDateString = SelectScreeningDateText!.split(separator: ".")
         }
     }
 

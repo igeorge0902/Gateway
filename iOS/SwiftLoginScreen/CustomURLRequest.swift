@@ -42,6 +42,10 @@ extension URLRequest {
                 request.httpBody = bodyToPost
             }
         }
+        
+        if contentType == contentType_.image.rawValue {
+                request.setValue("image/jpeg", forHTTPHeaderField: "Accept")
+        }
 
         // Add any extra headers if given.
         if let headers = headers {

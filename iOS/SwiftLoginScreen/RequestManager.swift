@@ -13,6 +13,7 @@ import SwiftyJSON
 // import Toast_Swift
 
 typealias ServiceResponses = (JSON, NSError?) -> Void
+typealias ServiceResponsesData = (Data, NSError?) -> Void
 // Only used to handle webview logins
 class RequestManager: NSObject {
     var url: URL!
@@ -46,6 +47,26 @@ class RequestManager: NSObject {
             onCompletion(json as JSON, err)
         }
     }
+    
+    func getData(_ onCompletion: @escaping ServiceResponsesData) {
+        dataTask_ { data, err in
+
+            onCompletion(data as Data, err)
+        }
+    }
+    
+    func dataTask_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+
+        let request = URLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: nil, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: contentType_.image.rawValue, bodyToPost: nil)
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+
+            onCompletion(data!, sessionError as NSError?)
+        })
+
+        task.resume()
+    }
+
 
     func dataTask(_ onCompletion: @escaping ServiceResponses) {
         var xtoken = prefs.value(forKey: "X-Token")

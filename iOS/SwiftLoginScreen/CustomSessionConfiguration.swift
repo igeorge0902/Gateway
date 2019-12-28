@@ -16,8 +16,10 @@ extension URLSessionConfiguration {
 
         // config.timeoutIntervalForRequest = 20 // Make things timeout quickly.
         config.sessionSendsLaunchEvents = true
-        config.httpAdditionalHeaders = ["MyResponseType": "JSON"] // My web service needs to be explicitly asked for JSON.
-        config.httpShouldUsePipelining = true // Might speed things up if your server supports it.
+        // My web service needs to be explicitly asked for JSON.
+        config.httpAdditionalHeaders = ["MyResponseType": "JSON"]
+        // Might speed things up if your server supports it.
+        config.httpShouldUsePipelining = true
 
         return config
     }

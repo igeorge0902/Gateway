@@ -10,14 +10,15 @@ import SafariServices
 import SwiftyJSON
 import UIKit
 
-class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewControllerTransitioningDelegate {
+class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
+    
     deinit {
         print(#function, "\(self)")
     }
 
     lazy var nameTextView = UITextView()
-    @IBOutlet var usernameLabel: UILabel!
-    @IBOutlet var sessionIDLabel: UILabel!
+    lazy var nameTextView_ = UITextView()
+    lazy var nameTextViewX = UITextView()
 
     lazy var session = URLSession.sharedCustomSession
     lazy var url = URL(string: serverURL + "/login/logout")
@@ -27,6 +28,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func viewWillAppear(_: Bool) {
@@ -45,7 +47,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
         view.addSubview(btnNav)
 
         // create the textView
-        nameTextView = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: 25 * 3.0, width: view.frame.size.width * 0.8, height: view.frame.height / 5))
+        nameTextView = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: 25 * 3.0, width: view.frame.size.width * 0.8, height: view.frame.height / 10))
         nameTextView.isEditable = false
 
         let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
@@ -56,8 +58,55 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
         nameTextView.alwaysBounceVertical = true
         nameTextView.layer.borderWidth = 2
         nameTextView.layer.borderColor = UIColor.darkGray.cgColor
+        
+        // create the textView
+        nameTextView_ = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: view.frame.height / 4.5, width: view.frame.size.width * 0.8, height: view.frame.height / 10))
+        nameTextView_.isEditable = false
+
+        let myTextAttribute_ = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                
+        let detailText_ = NSMutableAttributedString(string: "JSESSION cookie", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute_))
+
+        nameTextView_.attributedText = detailText_
+        nameTextView_.textAlignment = NSTextAlignment.justified
+        nameTextView_.alwaysBounceVertical = true
+        nameTextView_.layer.borderWidth = 2
+        nameTextView_.layer.borderColor = UIColor.darkGray.cgColor
+        
+        let cookieStorage = HTTPCookieStorage.shared
+             if let cookies_ = cookieStorage.cookies {
+                 for cookie in cookies_ {
+                     if (cookie.name == "JSESSIONID") {
+                        self.nameTextView_.text = cookie.value
+                     }
+                 }
+         }
+        
+        // create the textView
+        nameTextViewX = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: (view.frame.height / 4.5)+(view.frame.height / 10)+2, width: view.frame.size.width * 0.8, height: view.frame.height / 10))
+        nameTextViewX.isEditable = false
+
+        let myTextAttributeX = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                
+        let detailTextX = NSMutableAttributedString(string: "x-cookie", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttributeX))
+
+        nameTextViewX.attributedText = detailTextX
+        nameTextViewX.textAlignment = NSTextAlignment.justified
+        nameTextViewX.alwaysBounceVertical = true
+        nameTextViewX.layer.borderWidth = 2
+        nameTextViewX.layer.borderColor = UIColor.darkGray.cgColor
+        
+             if let cookies_ = cookieStorage.cookies {
+                 for cookie in cookies_ {
+                     if (cookie.name == "XSRF-TOKEN") {
+                        self.nameTextViewX.text = cookie.value
+                     }
+                 }
+         }
 
         view.addSubview(nameTextView)
+        view.addSubview(nameTextView_)
+        view.addSubview(nameTextViewX)
 
         addData()
     }
@@ -81,9 +130,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
     }
 
     @objc func navigateToPurchases() {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_mypurchases", sender: self)
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -92,31 +139,26 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
         }
     }
 
+    //TODO: put the completion into the origin (calling) method, not in the nesting class
     func addData() {
         RestApiManager.sharedInstance.getRandomUser {
-            (json: JSON, _: NSError?) in
+            (json: JSON, error: NSError?) in
 
             // if response == 300
             if let message_ = json["Error Details"].object as? NSDictionary {
                 if let errorMsg = message_.value(forKey: "ErrorMsg:") as? String {
                 self.presentAlert(withTitle: "Error Details", message: errorMsg)
                 }
-              //  if let errorMsg = message_.value(forKey: "acticeUsers:") as? String {
-              //  self.presentAlert(withTitle: "Error Details", message: errorMsg)
-              //  }
             } else {
                 let users: AnyObject = json["user"].object as AnyObject
                 self.items.add(users)
                 let user: JSON = JSON(self.items[0])
                 self.nameTextView.text = user.string
-
-                // DispatchQueue.main.async(execute: { self.tableView?.reloadData()})
             }
         }
     }
 
     @IBAction func logoutTapped(_: UIButton) {
-        // if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
 
         dataTask {
             (resultString, error) -> Void in
@@ -124,19 +166,16 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
             if error == nil {
                 print(resultString)
 
-                self.dismiss(animated: true, completion: nil)
+            //    self.dismiss(animated: true, completion: nil)
 
             } else {
                 print(error!)
             }
         }
 
-        // }
     }
 
-    typealias ServiceResponse = (JSON, NSError?) -> Void
-
-    func dataTask(_ onCompletion: @escaping ServiceResponse) {
+    func dataTask(_ onCompletion: @escaping ServiceResponses) {
         var request: URLRequest = URLRequest(url: url!)
 
         request.httpMethod = "GET"
@@ -159,7 +198,7 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
                     print(data!)
 
                     DispatchQueue.main.async {
-                        UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
+                        self.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
                     }
                 }
             }
@@ -207,11 +246,6 @@ class MenuVC: UIViewController, SFSafariViewControllerDelegate, UIViewController
 
         running = true
         task.resume()
-    }
-
-    // TODO: nice to have to dismiss MenuVC
-    func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad _: Bool) {
-        controller.dismiss(animated: true, completion: nil)
     }
 }
 

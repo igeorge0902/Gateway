@@ -20,10 +20,13 @@
 		A424835C1D1FDC6300F83E6C /* PlacesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A424835B1D1FDC6300F83E6C /* PlacesData.swift */; };
 		A424835E1D1FDD2800F83E6C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A424835D1D1FDD2800F83E6C /* MapView.swift */; };
 		A42483601D1FDDB300F83E6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A424835F1D1FDDB300F83E6C /* MapViewController.swift */; };
+		A4272E0A23A9841500304A2A /* garnier1.mov in Resources */ = {isa = PBXBuildFile; fileRef = A4272E0923A9841500304A2A /* garnier1.mov */; };
+		A4272E0C23AB4E0800304A2A /* UrlProtocolSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4272E0B23AB4E0800304A2A /* UrlProtocolSession.swift */; };
 		A4333017238F018E00A44212 /* AttendeesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4333016238F018E00A44212 /* AttendeesVC.swift */; };
 		A433301B238F044700A44212 /* iOSCalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433301A238F044700A44212 /* iOSCalenderVC.swift */; };
 		A43383802380670E0028B0B7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433837F2380670E0028B0B7 /* UIViewExt.swift */; };
 		A433A5AA1D15734A0051F428 /* MoviesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433A5A91D15734A0051F428 /* MoviesData.swift */; };
+		A43AAD7F23B2D3F2004B0B0A /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43AAD7E23B2D3F2004B0B0A /* MovieDetailVC.swift */; };
 		A443806A1D40167600380273 /* SeatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44380691D40167600380273 /* SeatsData.swift */; };
 		A4471C211D46F4170081A4E5 /* TableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4471C201D46F4170081A4E5 /* TableViewCellExt.swift */; };
 		A4471C231D46F4FB0081A4E5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4471C221D46F4FB0081A4E5 /* Helpers.swift */; };
@@ -130,11 +133,16 @@
 		A424835B1D1FDC6300F83E6C /* PlacesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesData.swift; sourceTree = "<group>"; };
 		A424835D1D1FDD2800F83E6C /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A424835F1D1FDDB300F83E6C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A4272E0923A9841500304A2A /* garnier1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = garnier1.mov; sourceTree = "<group>"; };
+		A4272E0B23AB4E0800304A2A /* UrlProtocolSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolSession.swift; sourceTree = "<group>"; };
+		A42BF87523B0233200F069E0 /* MyPlayground8UIViewController.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground8UIViewController.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A42DF01B1D95718A00775A93 /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4333016238F018E00A44212 /* AttendeesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesVC.swift; sourceTree = "<group>"; };
 		A433301A238F044700A44212 /* iOSCalenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCalenderVC.swift; sourceTree = "<group>"; };
 		A433837F2380670E0028B0B7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		A433A5A91D15734A0051F428 /* MoviesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesData.swift; sourceTree = "<group>"; };
+		A43AAD7E23B2D3F2004B0B0A /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
+		A43AAD8023B4B4F6004B0B0A /* MyPlayground9.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground9.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A44380691D40167600380273 /* SeatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsData.swift; sourceTree = "<group>"; };
 		A4471C201D46F4170081A4E5 /* TableViewCellExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellExt.swift; sourceTree = "<group>"; };
 		A4471C221D46F4FB0081A4E5 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -321,6 +329,7 @@
 				A433837F2380670E0028B0B7 /* UIViewExt.swift */,
 				A4333016238F018E00A44212 /* AttendeesVC.swift */,
 				A433301A238F044700A44212 /* iOSCalenderVC.swift */,
+				A43AAD7E23B2D3F2004B0B0A /* MovieDetailVC.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -440,8 +449,9 @@
 		EA62FD471989F6AC00469896 = {
 			isa = PBXGroup;
 			children = (
+				A43AAD8023B4B4F6004B0B0A /* MyPlayground9.playground */,
+				A4272E0923A9841500304A2A /* garnier1.mov */,
 				A4D1C764239D7B3D00B4395B /* docs.png */,
-				A4E795CD237DD06C00CA2C4C /* MyPlayground7.playground */,
 				A4F9CBDB1E64DFEE00BE67E4 /* README.md */,
 				A4F34F6C1CB03E940034CFE8 /* MyPlayground.playground */,
 				A42DF01B1D95718A00775A93 /* MyPlayground2.playground */,
@@ -449,6 +459,8 @@
 				A4CD12011D9818700013014C /* MyPlayground4Closures.playground */,
 				A4CD12021D981D0D0013014C /* MyPlayground5.playground */,
 				A4A43C1C1EB29302006C08D8 /* MyPlayground6.playground */,
+				A4E795CD237DD06C00CA2C4C /* MyPlayground7.playground */,
+				A42BF87523B0233200F069E0 /* MyPlayground8UIViewController.playground */,
 				EA62FD521989F6AC00469896 /* SwiftLoginScreen */,
 				EA62FD601989F6AC00469896 /* SwiftLoginScreenTests */,
 				EA62FD511989F6AC00469896 /* Products */,
@@ -475,6 +487,7 @@
 				A4D58A471BFA40D000D379F8 /* SwiftLoginScreen-Bridging-Header.h */,
 				EA62FD551989F6AC00469896 /* AppDelegate.swift */,
 				A49F831C1BEF5ABA00572CC5 /* UrlProtocol.swift */,
+				A4272E0B23AB4E0800304A2A /* UrlProtocolSession.swift */,
 				A4C0AE541D8800BE00260FCB /* CustomCells */,
 				A424835A1D1FDC3800F83E6C /* Map */,
 				A42483551D1EB6E800F83E6C /* Utils */,
@@ -648,6 +661,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4272E0A23A9841500304A2A /* garnier1.mov in Resources */,
 				A4B992961BED305900F87E21 /* pad-ansix923.js in Resources */,
 				A4B9929F1BED305900F87E21 /* sha256.js in Resources */,
 				A4B9929D1BED305900F87E21 /* sha3.js in Resources */,
@@ -740,7 +754,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXMES:|COREDATA:\"\nERRORTAG=\"ERRORS:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+			shellScript = "TAGS=\"TODO:|FIXMES:|COREDATA:\"\nERRORTAG=\"ERRORS:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
 		};
 		AC19F5458D1EB65F3B0CE7DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -768,6 +782,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A416B0291D6115B8008C9CBC /* VenueForMoviesVC.swift in Sources */,
+				A4272E0C23AB4E0800304A2A /* UrlProtocolSession.swift in Sources */,
+				A43AAD7F23B2D3F2004B0B0A /* MovieDetailVC.swift in Sources */,
 				A407DE081C31DFA300D3CAD1 /* Time.swift in Sources */,
 				A4C3F2A51BFCC9F300ADE1E3 /* CustomURLRequest.swift in Sources */,
 				A4C3F29F1BFCC7F500ADE1E3 /* CustomSessionConfiguration.swift in Sources */,
@@ -955,7 +971,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SwiftLoginScreen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1018,7 +1034,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SwiftLoginScreen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

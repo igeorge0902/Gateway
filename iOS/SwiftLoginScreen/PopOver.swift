@@ -76,8 +76,8 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
         label.attributedText = detailText
 
         view.addSubview(label)
-
-        let frame: CGRect = CGRect(x: 0, y: 90, width: view.frame.width, height: view.frame.height - 50)
+        // FIX: size
+        let frame: CGRect = CGRect(x: 0, y: 90, width: view.frame.width, height: view.frame.height - 120)
         tableView_ = UITableView(frame: frame)
         tableView_?.delegate = self
         tableView_?.dataSource = self

@@ -40,16 +40,6 @@ class CustomURLSessionDelegate: URLSessionDownloadTask, URLSessionDelegate {
         static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost", "example.yourgreenapple.com"]
     }
 
-    /*
-     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler:
-         @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-
-         completionHandler(
-
-             Foundation.URLSession.AuthChallengeDisposition.useCredential,
-             URLCredential(trust: challenge.protectionSpace.serverTrust!))
-     }*/
-
     func URLSession(_: Foundation.URLSession, task _: URLSessionTask, willPerformHTTPRedirection _: HTTPURLResponse,
                     newRequest request: URLRequest, completionHandler: (URLRequest?) -> Void) {
         let newRequest: URLRequest? = request
@@ -58,56 +48,4 @@ class CustomURLSessionDelegate: URLSessionDownloadTask, URLSessionDelegate {
         completionHandler(newRequest)
     }
 
-    /*
-
-     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-     (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-
-     completionHandler(
-
-     NSURLSessionAuthChallengeDisposition.UseCredential,
-     NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
-     }
-
-     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-
-     let newRequest : NSURLRequest? = request
-
-     print(newRequest?.description);
-     completionHandler(newRequest)
-     }*/
-
-    /*
-     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler:
-     (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-
-     print("didReceiveAuthenticationChallenge")
-
-     completionHandler(
-
-     NSURLSessionAuthChallengeDisposition.UseCredential,
-     NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!))
-     }
-
-     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-
-     let newRequest : NSURLRequest? = request
-
-     print(newRequest?.description);
-     completionHandler(newRequest)
-     }*/
-
-    /*
-     func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse,
-     newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
-
-     let newRequest : NSURLRequest? = request
-
-     print(newRequest?.description);
-     completionHandler(newRequest)
-     }*/
-
-    // MARK: - Constants
 }

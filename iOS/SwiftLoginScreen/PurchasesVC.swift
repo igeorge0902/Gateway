@@ -55,16 +55,16 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         btnNav.showsTouchWhenHighlighted = true
         btnNav.setTitle("Back", for: UIControl.State.normal)
         btnNav.addTarget(self, action: #selector(BasketVC.navigateBack), for: UIControl.Event.touchUpInside)
-
+        /*
         let btnData = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
         btnData.backgroundColor = UIColor.black
         btnData.setTitle("CheckOut", for: UIControl.State())
         btnData.showsTouchWhenHighlighted = true
         btnData.addTarget(self, action: #selector(BasketVC.book), for: UIControl.Event.touchUpInside)
-
+        view.addSubview(btnData)
+        */
         view.addSubview(btnNav)
 
-        // self.view.addSubview(btnData)
         addPurchasesData()
     }
 
@@ -133,7 +133,7 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func addPurchasesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases", errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases", errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

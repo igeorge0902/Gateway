@@ -42,12 +42,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var error: NSError?
-
-        if error != nil {
-            print(error as Any)
-        }
-
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         print(paths[0])
         print(paths)
@@ -237,14 +231,12 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
             alertView.show()
 
         } else {
-            // if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
 
             dataTask(username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
                 (resultString, _) -> Void in
 
                 print(resultString)
             }
-            //  }
         }
     }
 

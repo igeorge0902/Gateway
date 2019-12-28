@@ -64,14 +64,14 @@ class AttendeesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // TODO: add UITextView to display select attendees
     }
 
-    func clearAttendees() {
+    @objc func clearAttendees() {
         attendeesDictionary.removeAll()
         attendeesIndexDictionary.removeAll()
 
         tableView?.reloadData()
     }
 
-    func navigateBack() {
+    @objc func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
 

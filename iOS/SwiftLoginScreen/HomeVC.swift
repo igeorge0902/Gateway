@@ -12,26 +12,20 @@ import WebKit
 // import Starscream
 
 @available(iOS 9.0, *)
-class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout { /* , WebSocketDelegate */
+class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , WebSocketDelegate */
     deinit {
         print(#function, "\(self)")
     }
 
-    var imageView: UIImageView = UIImageView()
+    var imageView: UIImageView!
     var backgroundDict: [String: String] = Dictionary()
-
-//    lazy var config = NSURLSessionConfiguration.defaultSessionConfiguration()
-//    lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
 
     lazy var session = URLSession.sharedCustomSession
     var url: URL?
 
     var running = false
     var beenViewed = false
-    @IBOutlet var usernameLabel: UILabel!
-    @IBOutlet var sessionIDLabel: UILabel!
-
-    var collectionView: UICollectionView!
+    
     // var socket: WebSocket!
     // var stream: Stream = Stream()
 
@@ -49,34 +43,17 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
      //   newItem.title = "Wrote Core Data Tutorial"
      //   newItem.itemText = "Wrote and post a tutorial on the basics of Core Data to blog."
 
-      //  backgroundDict = ["Background1": "background1"]
 
-      //  let view: UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height))
+       // let view: UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height))
+       // self.view.addSubview(view)
+       // self.view.sendSubviewToBack(view)
+        
+        backgroundDict = ["Background1": "background1"]
+        let backgroundImage: UIImage? = UIImage(named: backgroundDict["Background1"]!)
 
-      //  self.view.addSubview(view)
-      //  self.view.sendSubviewToBack(view)
-
-      //  let backgroundImage: UIImage? = UIImage(named: backgroundDict["Background1"]!)
-
-      //  imageView = UIImageView(frame: view.frame)
-      //  imageView.image = backgroundImage
-
-        // view.addSubview(imageView);
-
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: view.frame.width * 0.82, height: 182)
-
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.alwaysBounceVertical = true
-        collectionView.register(FeedCells.self, forCellWithReuseIdentifier: "FeedCell")
-        // collectionView.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        collectionView.backgroundColor = UIColor.black
-
-        view.addSubview(collectionView)
+        imageView = UIImageView(frame: view.bounds)
+        imageView.image = backgroundImage
+        view.addSubview(imageView);
 
         /*
          let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -129,9 +106,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
                 performSegue(withIdentifier: "goto_login", sender: self)
 
             } else {
-                // self.usernameLabel.text = prefs.value(forKey: "USERNAME") as? String
-                // self.sessionIDLabel.text = prefs.value(forKey: "JSESSIONID") as? String
-
                 /*
                  if (socket.isConnected) {
 
@@ -140,12 +114,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
                          })
                      }*/
             }
-        //}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // TODO: finish
@@ -241,20 +209,16 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
     }
 
     @IBAction func logoutTapped(_: UIButton) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             dataTask {
                 (resultString, error) -> Void in
 
                 print(error!)
                 print(resultString)
             }
-        }
     }
 
     @IBAction func NearbyVenues(_: UIButton) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             performSegue(withIdentifier: "goto_map", sender: self)
-        }
     }
 
     @IBAction func Navigation(_: UIButton) {
@@ -278,17 +242,24 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         let goToLogin: UIAlertAction = UIAlertAction(title: "Go to Login Screen", style: .default) { _ -> Void in
             let prefs: UserDefaults = UserDefaults.standard
             prefs.set(0, forKey: "ISLOGGEDIN")
-            prefs.synchronize()
+          //  prefs.synchronize()
             self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "goto_login", sender: self)
         }
         actionSheetController.addAction(goToLogin)
-
         // Present the AlertController
-        present(actionSheetController, animated: true, completion: nil)
+        //self.present(actionSheetController, animated: false, completion: nil)
+        DispatchQueue.main.async {
+        let topViewController = UIApplication.shared.keyWindow?.rootViewController
+        topViewController?.present(actionSheetController, animated: true, completion: nil)
+        }
     }
 
     @IBAction func WebView(_: UIButton) {
+        // Dismiss the Old
+        if let presented = self.presentedViewController {
+            presented.removeFromParent()
+        }
         performSegue(withIdentifier: "goto_webview", sender: self)
     }
 
@@ -296,62 +267,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
         performSegue(withIdentifier: "goto_movies", sender: self)
     }
 
-    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return 100
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as! FeedCells
-
-        cell.textLabel?.text = "label"
-
-        cell.textLabel?.numberOfLines = 2
-        cell.textLabel?.translatesAutoresizingMaskIntoConstraints = false
-
-        let paragrapStyle = NSMutableParagraphStyle()
-        paragrapStyle.lineSpacing = 4
-
-        let title = NSMutableAttributedString(string: (cell.textLabel?.text!)!, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 14.0)!]))
-        title.append(NSAttributedString(string: "\nBudapest", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 12.0)!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red: 155 / 255, green: 161 / 255, blue: 171 / 255, alpha: 1)])))
-        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle, range: NSMakeRange(0, title.string.characters.count))
-
-        let icon = NSTextAttachment()
-        icon.image = UIImage(named: "Shit Hits Fan-25")
-        icon.bounds = CGRect(x: 10, y: -2, width: 12, height: 12)
-
-        title.append(NSAttributedString(attachment: icon))
-
-        cell.textLabel?.attributedText = title
-        cell.profileImage?.image = UIImage(named: "milo")
-
-        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-        let detailText = NSMutableAttributedString(string: "Meanwhile, Milo turned to the bright side.", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
-
-        cell.statusText?.attributedText = detailText
-
-        return cell
-    }
-
-    func numberOfSections(in _: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_: UICollectionView, shouldHighlightItemAt _: IndexPath) -> Bool {
-        return true
-    }
-
-    func collectionView(_: UICollectionView, shouldSelectItemAt _: IndexPath) -> Bool {
-        return true
-    }
-
-    func collectionView(_: UICollectionView, canPerformAction _: Selector, forItemAt _: IndexPath, withSender _: Any?) -> Bool {
-        return true
-    }
-
-    func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {}
-
-    func collectionView(_: UICollectionView, willDisplay _: UICollectionViewCell, forItemAt _: IndexPath) {}
-
+    
     /*
      func websocketDidConnect(socket: WebSocket) {
          print("websocket is connected")
@@ -383,5 +299,10 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate, UICollect
     // Helper function inserted by Swift 4.2 migrator.
     fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
         return input.rawValue
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }

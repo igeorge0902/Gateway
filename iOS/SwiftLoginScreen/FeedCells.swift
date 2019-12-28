@@ -33,10 +33,12 @@ class FeedCells: UICollectionViewCell {
         textLabel = UILabel(frame: CGRect(x: frame.width * 0.2, y: 0, width: frame.size.width, height: 40))
         textLabel?.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         textLabel?.textAlignment = .center
+        textLabel?.isUserInteractionEnabled = false
 
         statusText = UITextView(frame: CGRect(x: 1, y: 60, width: frame.size.width * 0.8, height: 100))
         statusText?.font = UIFont.systemFont(ofSize: 14)
         statusText?.textAlignment = .left
+        statusText?.isUserInteractionEnabled = false
 
         contentView.addSubview(statusText!)
         contentView.addSubview(profileImage!)

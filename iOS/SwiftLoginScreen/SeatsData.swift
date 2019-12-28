@@ -19,12 +19,12 @@ class SeatsData: NSObject {
     var image: UIImageView!
 
     init(add: NSDictionary) {
-        seatId = add["seatId"] as! Int
-        seatNumber = add["seatNumber"] as! String
-        seatRow = add["seatRow"] as! String
-        isReserved = add["isReserved"] as! String
-        price = add["price"] as! Int
-        tax = add["tax"] as! Double
+        seatId = (add["seatId"] as! Int)
+        seatNumber = (add["seatNumber"] as! String)
+        seatRow = (add["seatRow"] as! String)
+        isReserved = (add["isReserved"] as! String)
+        price = (add["price"] as! Int)
+        tax = (add["tax"] as! Double)
     }
 
     class func addData(_ screeningDateId: Int) {
@@ -34,7 +34,7 @@ class SeatsData: NSObject {
 
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/seats/" + myString, errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/seats/" + myString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

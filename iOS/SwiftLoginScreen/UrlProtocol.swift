@@ -17,7 +17,7 @@ var pattern_ = "https://([^/]+)(/example/tabularasa.jsp.*?)(/$|$)"
 var pattern_rs = "https://([^/]+)(/example/tabularasa.jsp.*?JSESSIONID=)"
 
 class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
-    var connection: NSURLConnection!
+    weak var connection: NSURLConnection!
     var mutableData: NSMutableData!
     var response: URLResponse!
     var httpresponse: HTTPURLResponse!
@@ -47,7 +47,9 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
     }
 
     override func startLoading() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        DispatchQueue.main.async { // Correct
+           UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
         if AFNetworkReachabilityManager.shared().isReachable {
             NSLog("AFNetwork is reachable...")
 
@@ -145,8 +147,10 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
         if connection != nil {
             connection.cancel()
         }
-        connection = nil
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        //connection = nil
+        DispatchQueue.main.async { // Correct
+           UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
 
     func connection(_: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
@@ -221,7 +225,7 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
     }
 
     // It sends a call to RequestManager to present an alert view about the error
-    func connection(_: NSURLConnection!, didFailWithError error: NSError!) {
+    func connection(_: NSURLConnection, didFailWithError error: Error) {
         client!.urlProtocol(self, didFailWithError: error)
 
         if newRequest != nil {
@@ -257,9 +261,6 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
 
         // Create a private NSManagedObjectContext with private queue concurrency type and use it to access CoreData whenever operating on a background thread.
         let context = delegate.managedObjectContext
-
-        // let privateMOC = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        // privateMOC.parentContext = context
 
         // 2
         let cachedResponse = NSEntityDescription.insertNewObject(forEntityName: "CachedURLResponse", into: context) as NSManagedObject
@@ -321,9 +322,7 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                 prefs.set(0, forKey: "ISWEBLOGGEDIN")
 
                 var errorOnLogin: RequestManager?
-
                 let data: Data = mutableData as Data
-
                 if let result = NSString(data: data, encoding: String.Encoding.ascii.rawValue) as String? {
                     //   if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
                     //       errorOnLogin = RequestManager(url: serverURL + "/login/HelloWorld", errors: doc.title!)
@@ -354,7 +353,7 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
         // 1
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.managedObjectContext
-
+        
         // 2
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         let entity = NSEntityDescription.entity(forEntityName: "CachedURLResponse", in: context)

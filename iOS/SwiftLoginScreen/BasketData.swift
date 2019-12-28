@@ -23,16 +23,16 @@ class BasketData: NSObject {
     var screening_date: String!
 
     init(add: NSDictionary) {
-        movie_name = add["movie_name"] as! String
-        seatId = add["seatId"] as! Int
-        seats_seatRow = add["seats_seatRow"] as! String
-        seats_seatNumber = add["seats_seatNumber"] as! String
-        price = add["price"] as! Int
-        tax = add["tax"] as! Double
-        screeningDateId = add["screeningDateId"] as! String
-        movie_picture = add["movie_picture"] as! String
-        venue_picture = add["venue_picture"] as! String
-        venue_name = add["venue_name"] as! String
-        screening_date = add["screening_date"] as! String
+        movie_name = (add["movie_name"] as! String)
+        seatId = (add["seatId"] as! Int)
+        seats_seatRow = (add["seats_seatRow"] as! String)
+        seats_seatNumber = (add["seats_seatNumber"] as! String)
+        price = (add["price"] as! Int)
+        tax = (add["tax"] as! Double)
+        screeningDateId = (add["screeningDateId"] as! String)
+        movie_picture = (add["movie_picture"] as! String)
+        venue_picture = (add["venue_picture"] as! String)
+        venue_name = (add["venue_name"] as! String)
+        screening_date = (add["screening_date"] as! String)
     }
 }

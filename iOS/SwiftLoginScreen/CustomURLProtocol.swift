@@ -157,7 +157,7 @@ class CustomURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTaskDele
         }
 
         if let data = self.receivedData {
-            cachedResponse!.data = data as Data!
+            cachedResponse!.data = data as Data
         }
 
         if let url: URL = self.request.url, let absoluteString = url.absoluteString as? String {
@@ -167,7 +167,7 @@ class CustomURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTaskDele
         cachedResponse!.timestamp = Date()
         if let response = self.urlResponse {
             if let mimeType = response.mimeType {
-                cachedResponse!.mimeType = mimeType as NSString!
+                cachedResponse!.mimeType = mimeType as NSString
             }
 
             if let encoding = response.textEncodingName {

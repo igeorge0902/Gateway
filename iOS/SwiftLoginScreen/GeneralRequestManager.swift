@@ -12,19 +12,20 @@ import SwiftyJSON
 // import Kanna
 
 let serverURL = "https://milo.crabdance.com"
-
 enum contentType_: String {
     case json = "application/json"
     case urlEncoded = "application/x-www-form-urlencoded"
+    case image = "image/jpeg"
 }
-
 class GeneralRequestManager: NSObject {
-    fileprivate var urlResponse: URLResponse?
 
+    fileprivate var urlResponse: URLResponse?
+    
     var url: URL!
     var errors: String!
     var method: String!
     var queryParameters: [String: String]?
+    var headers: [String: String]?
     var bodyParameters: [String: String]?
     var isCacheable: String?
     var contentType: String!
@@ -32,11 +33,12 @@ class GeneralRequestManager: NSObject {
 
     var prefs: UserDefaults = UserDefaults.standard
 
-    init?(url: String, errors: String, method: String, queryParameters: [String: String]?, bodyParameters: [String: String]?, isCacheable: String?, contentType: String, bodyToPost: Data?) {
+    init?(url: String, errors: String, method: String, headers: [String: String]?, queryParameters: [String: String]?, bodyParameters: [String: String]?, isCacheable: String?, contentType: String, bodyToPost: Data?) {
         super.init()
         self.url = URL(string: url)!
         self.errors = errors
         self.method = method
+        self.headers = headers
         self.queryParameters = queryParameters
         self.bodyParameters = bodyParameters
         self.isCacheable = isCacheable
@@ -53,9 +55,66 @@ class GeneralRequestManager: NSObject {
     }
 
     lazy var session: URLSession = URLSession.sharedCustomSession
-
     var running = false
 
+    func getData_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+        dataTask_ { data, err in
+
+            onCompletion(data as Data, err)
+        }
+    }
+    
+    func getData(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
+        if isCacheable == "1" {
+                 if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+                     if localResponse.timestamp.addingTimeInterval(3600) > Date() {
+                         var headerFields: [String: String] = [:]
+
+                         headerFields["Content-Length"] = String(format: "%d", data.count)
+
+                         if let mimeType = localResponse.mimeType {
+                             headerFields["Content-Type"] = mimeType as String
+                         }
+
+                         headerFields["Content-Encoding"] = localResponse.encoding!
+                         let err: NSError = NSError()
+
+                         let json: JSON = try! JSON(data: data)
+
+                         onCompletion(json as JSON, err)
+
+                     } else {
+                         dataTask { json, err in
+
+                             onCompletion(json as JSON, err)
+                         }
+
+                         let realm = RLMRealm.default()
+                         realm.beginWriteTransaction()
+                         realm.delete(localResponse)
+
+                         do {
+                             try realm.commitWriteTransaction()
+                         } catch {
+                             print("Something went wrong!")
+                         }
+                     }
+
+                 } else {
+                     dataTask { json, err in
+
+                         onCompletion(json as JSON, err)
+                     }
+                 }
+
+             } else {
+                 dataTask { json, err in
+
+                     onCompletion(json as JSON, err)
+                 }
+             }
+    }
+    
     func getResponse(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
         if isCacheable == "1" {
             if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
@@ -106,6 +165,20 @@ class GeneralRequestManager: NSObject {
             }
         }
     }
+    
+    // for testing
+    func dataTask_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+
+        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: headers, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30, isCacheable: isCacheable, contentType: contentType, bodyToPost: bodyToPost)
+
+            let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+            
+            //let json: JSON = try! JSON(data: data!)
+                onCompletion(data!, sessionError as NSError?)
+
+            })
+            task.resume()
+    }
 
     // INFO: use this class for every dataTask operation
     func dataTask(_ onCompletion: @escaping ServiceResponses) {
@@ -114,13 +187,13 @@ class GeneralRequestManager: NSObject {
         if xtoken == nil {
             xtoken = ""
         }
+        if url.absoluteString.contains(serverURL) {
+            headers = ["Ciphertext": xtoken as! String, "X-Token": "client-secret", "X-Device": deviceId as String]
+        }
 
-        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: ["Ciphertext": xtoken as! String, "X-Token": "client-secret", "X-Device": deviceId as String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30, isCacheable: "", contentType: contentType, bodyToPost: bodyToPost)
+        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: headers, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30, isCacheable: "", contentType: contentType, bodyToPost: bodyToPost)
 
         let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
-
-            // dispatch_async(dispatch_get_main_queue(), { () -> Void in
-
             //  if  let json:JSON = try! JSON(data: data!) {
             var error = sessionError
 
@@ -175,9 +248,6 @@ class GeneralRequestManager: NSObject {
                 self.running = false
                 onCompletion(json, error as NSError?)
             }
-
-            // })
-            //  }
         })
 
         running = true
@@ -202,6 +272,7 @@ class GeneralRequestManager: NSObject {
         // }
 
         if let url: URL? = url, let absoluteString = url?.absoluteString {
+            cachedResponse!.query = queryParameters?.values.first
             cachedResponse!.url = absoluteString
         }
 
@@ -231,7 +302,16 @@ class GeneralRequestManager: NSObject {
      :returns: A CachedResponse optional object.
      */
     func cachedResponseForCurrentRequest() -> CachedResponse? {
-        if let url: URL? = url, let absoluteString = url?.absoluteString {
+        
+        if let url: URL? = url, let absoluteString = url?.absoluteString, let query = queryParameters?.values.first {
+            let p: NSPredicate = NSPredicate(format: "query == %@", argumentArray: [query])
+
+            // Query
+            let results = CachedResponse.objects(with: p)
+            if results.count > 0 {
+                return results.object(at: 0) as? CachedResponse
+            }
+        } else if let url: URL? = url, let absoluteString = url?.absoluteString {
             let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: [absoluteString])
 
             // Query
@@ -244,3 +324,4 @@ class GeneralRequestManager: NSObject {
         return nil
     }
 }
+

@@ -488,7 +488,7 @@ S.play()
 
  */
 
-let baseURL = "https://www.google.com/accounts/Logout"
+let baseURL = "https://milo.crabdance.com/login/logout"
 
 typealias CallbackBlock = (_ result: String, _ error: String?) -> Void
 
@@ -512,14 +512,14 @@ func httpGet(request: NSURLRequest!, callback: @escaping (String, String?) -> Vo
 
 var request = URLRequest(url: URL(string: baseURL)!)
 
-httpGet(request: request as NSURLRequest!) {
-    (_, error) -> Void in
+httpGet(request: request as NSURLRequest?) {
+    (data, error) -> Void in
 
     if error != nil {
         print(error as Any)
 
     } else {
-        // print(data)
+         print(data)
     }
 }
 

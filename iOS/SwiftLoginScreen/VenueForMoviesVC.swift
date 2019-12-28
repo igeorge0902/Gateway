@@ -38,11 +38,11 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
         var image: UIImage?
 
         init(add: NSDictionary) {
-            venuesId = add["venuesId"] as! Int
-            name = add["name"] as! String
-            address = add["address"] as! String
-            venues_picture = add["venues_picture"] as! String
-            screen_screenId = add["screen_screenId"] as! String
+            venuesId = (add["venuesId"] as! Int)
+            name = (add["name"] as! String)
+            address = (add["address"] as! String)
+            venues_picture = (add["venues_picture"] as! String)
+            screen_screenId = (add["screen_screenId"] as! String)
         }
     }
 
@@ -125,7 +125,7 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
 
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/movies", errors: "", method: "GET", queryParameters: ["locationId": String(locationId)], bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/movies", errors: "", method: "GET", headers: nil, queryParameters: ["locationId": String(locationId)], bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -155,7 +155,7 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
     func addDatesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/mbooks-1/rest/book/dates/" + String(2) + "/" + String(1002), errors: "", method: "GET", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/mbooks-1/rest/book/dates/" + String(2) + "/" + String(1002), errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

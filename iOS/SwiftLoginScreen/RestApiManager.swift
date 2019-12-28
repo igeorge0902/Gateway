@@ -14,7 +14,9 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 
 class RestApiManager: NSObject, UIAlertViewDelegate {
     static let sharedInstance = RestApiManager()
-
+    let baseURL = serverURL + "/login/admin?JSESSIONID="
+    var running = false
+    
     func alertView(_: UIAlertView, clickedButtonAt buttonIndex: Int) {
         switch buttonIndex {
         case 0:
@@ -23,12 +25,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             let user = prefs.value(forKey: "USERNAME")
 
             var errorOnLogin: GeneralRequestManager?
-
-            // var i = ["a","b"]
-
-            // let stringRepresentation = i.joinWithSeparator("-")
-
-            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", queryParameters: nil, bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
 
             errorOnLogin?.getResponse {
                 (resultString, error) -> Void in
@@ -41,30 +38,20 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
         }
     }
 
-    // let baseURL = "http://api.randomuser.me/"
-    let baseURL = serverURL + "/login/admin?JSESSIONID="
-
-    var running = false
-
     func getRandomUser(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
-        let prefs: UserDefaults = UserDefaults.standard
-
-        if let sessionId: NSString = prefs.value(forKey: "JSESSIONID") as? NSString {
-            let route = baseURL + (sessionId as String)
-            // let route = baseURL
+       // let prefs: UserDefaults = UserDefaults.standard
+        let route = baseURL
 
             makeHTTPGetRequest(route, onCompletion: { json, err in
                 onCompletion(json as JSON, err)
             })
-            //TODO: else case without sessionId show popUp
-        }
     }
 
     func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
         let prefs: UserDefaults = UserDefaults.standard
         let xtoken = prefs.value(forKey: "X-Token")
 
-        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
+        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as? String ?? "none"], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         let session = URLSession.sharedCustomSession
 

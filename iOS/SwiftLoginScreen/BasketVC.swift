@@ -33,7 +33,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     var TaxAmount: String?
     var movieName: String?
 
-    lazy var values = [BasketData](BasketData_.values)
+    lazy var values = [BasketData](BasketData_.values.sorted{ ($0.movie_name ?? "") < ($1.movie_name ?? "") })
     lazy var layout = UICollectionViewFlowLayout()
 
     override func viewDidLoad() {
@@ -158,7 +158,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         cell.textLabel?.text = values[indexPath.row].movie_name
         cell.textLabel?.numberOfLines = 2
         cell.textLabel?.translatesAutoresizingMaskIntoConstraints = false
-
+        
         let paragrapStyle = NSMutableParagraphStyle()
         paragrapStyle.lineSpacing = 4
 
@@ -166,7 +166,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
         title.append(NSAttributedString(string: "\n\(values[indexPath.row].venue_name!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 12.0)!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red: 155 / 255, green: 161 / 255, blue: 171 / 255, alpha: 1)])))
 
-        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle, range: NSMakeRange(0, title.string.characters.count))
+        title.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragrapStyle, range: NSMakeRange(0, title.string.count))
 
         // TODO: add map pointing to the venue
         let icon = NSTextAttachment()
@@ -223,7 +223,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         let postData: Data = post.data(using: String.Encoding.ascii.rawValue)!
 
         var errorOnLogin: GeneralRequestManager?
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/CheckOut", errors: "", method: "POST", queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: postData)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/CheckOut", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: postData)
 
         errorOnLogin?.getResponse {
             (json: JSON, error: NSError?) in
@@ -263,6 +263,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                         tickets.removeAll()
                         Seats.removeAll()
                         BasketData_.removeAll()
+                        //updates seats state if reserved
                         self.collectionView.reloadData()
                     }
 
