@@ -37,11 +37,11 @@ class CachedResponse: RLMObject {
     override init() {
         super.init()
 
-        data = NSData() as Data!
+        data = NSData() as Data?
         encoding = "utf-8"
         mimeType = ""
         url = ""
         query = ""
-        timestamp = NSDate() as Date!
+        timestamp = NSDate() as Date?
     }
 }

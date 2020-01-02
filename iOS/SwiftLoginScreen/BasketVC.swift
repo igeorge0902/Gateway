@@ -258,7 +258,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                         let TaxAmount = json["TaxAmount"].rawValue
 
                         UIAlertController.popUp(title: "Payment info:", message: "ResponseText: \(responseText), Status: \(Status!), Amount: \(Amount), TaxAmount: \(TaxAmount), Movie name: \(TicketsData_[0].movie_name!), \(tickets.minimalDescrption)")
-
+                        
                         TicketsData_.removeAll()
                         tickets.removeAll()
                         Seats.removeAll()
@@ -277,7 +277,6 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                             }
                         }
                     }
-
                     let Status = json["Success"].string!
                     UIAlertController.popUp(title: "Booking failed with payment info:", message: "Failed tickets for movie: \(TicketsData_[0].movie_name!), seats_seatNumber: \(TicketsData_[0].seats_seatNumber!), ResponseText: \(responseText), Status: \(Status))")
                 }

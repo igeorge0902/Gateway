@@ -89,7 +89,7 @@ class PopOverDates: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
      }*/
 
     func pickerView(_: UIPickerView, viewForRow row: Int, forComponent _: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel = view as! UILabel!
+        var pickerLabel = view as! UILabel?
         if view == nil { // if no label there yet
             pickerLabel = UILabel()
             // color the label's background

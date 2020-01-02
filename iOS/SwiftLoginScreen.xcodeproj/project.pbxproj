@@ -36,7 +36,6 @@
 		A46A6DD41BFA15E100F4EB6F /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A6DD21BFA15E100F4EB6F /* People+CoreDataProperties.swift */; };
 		A46A6DD51BFA15E100F4EB6F /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A6DD31BFA15E100F4EB6F /* People.swift */; };
 		A46A92661C2B1A13003F31F1 /* hmac-sha512.js in Resources */ = {isa = PBXBuildFile; fileRef = A46A92651C2B1A13003F31F1 /* hmac-sha512.js */; };
-		A46A926A1C2B2154003F31F1 /* hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A92691C2B2154003F31F1 /* hmac.swift */; };
 		A46A926C1C2B242D003F31F1 /* enc-base64-min.js in Resources */ = {isa = PBXBuildFile; fileRef = A46A926B1C2B242D003F31F1 /* enc-base64-min.js */; };
 		A4743E4E1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4743E4C1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld */; };
 		A4743E931BF3E0FB009078F9 /* LogItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4743E911BF3E0FB009078F9 /* LogItem+CoreDataProperties.swift */; };
@@ -153,7 +152,6 @@
 		A46A6DD21BFA15E100F4EB6F /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "People+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A46A6DD31BFA15E100F4EB6F /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		A46A92651C2B1A13003F31F1 /* hmac-sha512.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hmac-sha512.js"; sourceTree = "<group>"; };
-		A46A92691C2B2154003F31F1 /* hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hmac.swift; sourceTree = "<group>"; };
 		A46A926B1C2B242D003F31F1 /* enc-base64-min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "enc-base64-min.js"; sourceTree = "<group>"; };
 		A46F12471E59E04700B29EFF /* SwiftLoginScreen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftLoginScreen.entitlements; sourceTree = "<group>"; };
 		A4743E4D1BF3DBD6009078F9 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 				A4B9928C1BED305900F87E21 /* sha256.js */,
 				A4B9928D1BED305900F87E21 /* sha384.js */,
 				A4B9928E1BED305900F87E21 /* sha512.js */,
-				A46A92691C2B2154003F31F1 /* hmac.swift */,
 			);
 			name = CryptoStuff;
 			sourceTree = "<group>";
@@ -616,7 +613,7 @@
 					EA62FD4F1989F6AC00469896 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = X8DL5FV4EA;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -632,7 +629,7 @@
 					};
 					EA62FD5C1989F6AC00469896 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1110;
 						TestTargetID = EA62FD4F1989F6AC00469896;
 					};
 				};
@@ -836,7 +833,6 @@
 				A433A5AA1D15734A0051F428 /* MoviesData.swift in Sources */,
 				A424835C1D1FDC6300F83E6C /* PlacesData.swift in Sources */,
 				A433301B238F044700A44212 /* iOSCalenderVC.swift in Sources */,
-				A46A926A1C2B2154003F31F1 /* hmac.swift in Sources */,
 				A41942031BF264B7003EFC0E /* RequestManager.swift in Sources */,
 				A4D9B6491D834A1700FB5C44 /* PopOverDates.swift in Sources */,
 				A4F5D5B91BF88548002850B2 /* CachedURLResponse.swift in Sources */,
@@ -1010,7 +1006,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1072,7 +1068,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftLoginScreen/SwiftLoginScreen-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1096,7 +1092,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dipinkrishna.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -1116,7 +1112,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dipinkrishna.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;

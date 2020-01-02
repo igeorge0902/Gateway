@@ -279,7 +279,7 @@ class GeneralRequestManager: NSObject {
         cachedResponse!.timestamp = Date()
         if let response = self.urlResponse {
             if let mimeType = response.mimeType {
-                cachedResponse!.mimeType = mimeType as NSString!
+                cachedResponse!.mimeType = mimeType as NSString?
             }
 
             if let encoding = response.textEncodingName {
