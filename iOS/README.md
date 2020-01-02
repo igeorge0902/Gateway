@@ -4,12 +4,12 @@ General Authentication Service
 Copyright © 2015-2019 George Gaspar. All rights reserved.
 
 # Swift
-- updated to Swift 4.2!;)
+- updated to Swift 5!;)
 - updated/fixed for XCode 11.1
 - 4 years in the &making
 
 ## Road map
-- updating to Swift 5.x (2020)
+- fixing up UIAlertControllers to display them properly. They are a bit flashy. (2020)
 
 # Notes on iOS build:
 - You should run 'POD install' to install the pods into your local environment. After installing the pods you must run the project with SwiftLoginScreen.xcworkspace!
