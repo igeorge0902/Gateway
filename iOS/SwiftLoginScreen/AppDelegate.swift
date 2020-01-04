@@ -96,18 +96,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             if results.count > 0 {
                 
-                for i in 0 ..< results.count {
+                for _ in 0 ..< results.count {
                     
-                    let data = results.object(at: i) as? CachedResponse
+                    let data = results.object(at: 0) as? CachedResponse
                     if ((data?.timestamp.addingTimeInterval(3600))! < Date()) {
                         
                         let realm = RLMRealm.default()
                         realm.beginWriteTransaction()
-                        realm.delete(results.object(at: i) as! RLMObject)
+                        realm.delete(results.object(at: 0) as! RLMObject)
 
                         do {
                             try realm.commitWriteTransaction()
-                           // TableData_.removeAll()
 
                         } catch {
                             print("Something went wrong!")
