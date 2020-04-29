@@ -107,7 +107,7 @@ public class BookController {
 			System.out.println("SOAP is down!");
 		}
 		
-		cookies = request.getCookies();
+	cookies = request.getCookies();
         xsrf = false;
 
 		// check if the original response cookie for the same client is present
@@ -116,16 +116,7 @@ public class BookController {
 			 for (Cookie cookie : cookies) { 
 				   if (cookie.getName().equals("XSRF-TOKEN")) {
 					   xsrfToken = aesUtil.encrypt(SALT, IV, request.getAttribute("TIME_").toString(), request.getAttribute("token2").toString());
-					   String actualToken = "";
-					   String token = xsrfToken.trim();
-					   int l = token.length();
-
-						if (token.endsWith("=")) {
-							actualToken = token.substring(0, l-1);
-						} else {
-							actualToken = xsrfToken;
-						}
-						
+						String actualToken = xsrfToken.trim();
 					   if (!actualToken.equals(cookie.getValue())) {
 						   xsrf = false;
 					          throw new CustomNotFoundException("User is not authorized##!");
