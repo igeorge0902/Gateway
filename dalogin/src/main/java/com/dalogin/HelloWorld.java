@@ -140,6 +140,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
             }
             
             hash1 = hash_(pass, user, context);
+
 	//	} catch (Exception e) {
 			
 	//		throw new ServletException(e.getCause().toString());
@@ -150,7 +151,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
         	 *  plus seconds given as context parameter
         	 *  
         	 */
-        	if(pass.equals(hash1) && hmac.equals(hmacHash) && ((T+T2) > System.currentTimeMillis())){
+        	if(pass.equals(hash1) && hmac.equals(hmacHash)){
         		
         		// Create new session
 				session = request.getSession(true);
@@ -204,22 +205,14 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						token2 = SQLAccess.token2(deviceId, context);
 						
 						//TODO: IV can be the sessionId
-						String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
-						
-						int l = xsrfToken.length();
-						String actualToken = "";
-							
-						if (xsrfToken.endsWith("=")) {
-								actualToken = xsrfToken.substring(0, l-1);
-	
-							} else {
-								actualToken = xsrfToken;
-	
-								}
+						String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
+						String actualToken = xsrfToken.trim();
 						
 						c = new Cookie("XSRF-TOKEN", actualToken);
 						c.setSecure(true);
 						c.setMaxAge(session.getMaxInactiveInterval());
+						c.setHttpOnly(true);
+						c.setPath(context.getContextPath());
 						System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 						response.addCookie(c);
@@ -259,19 +252,9 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								token2 = SQLAccess.token2(deviceId, context);
 								
 								//TODO: IV can be the sessionId
-								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
-								
-								int l = xsrfToken.length();
-								String actualToken = "";
-									
-								if (xsrfToken.endsWith("=")) {
-										actualToken = xsrfToken.substring(0, l-1);
-			
-									} else {
-										actualToken = xsrfToken;
-			
-										}
-								
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
+								String actualToken = xsrfToken.trim();
+																
 								c = new Cookie("XSRF-TOKEN", actualToken);								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
 								System.out.println("Set XSRF-TOKEN: " +c.getValue());
@@ -311,19 +294,9 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								log.info("3");
 								token2 = SQLAccess.token2(deviceId, context);
 								//TODO: IV can be the sessionId
-								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));
-								
-								int l = xsrfToken.length();
-								String actualToken = "";
-									
-								if (xsrfToken.endsWith("=")) {
-										actualToken = xsrfToken.substring(0, l-1);
-			
-									} else {
-										actualToken = xsrfToken;
-			
-										}
-								
+								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
+								String actualToken = xsrfToken.trim();
+																
 								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
