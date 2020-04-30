@@ -75,6 +75,7 @@ SELECT CONVERT(argument USING utf8), event_time FROM mysql.general_log;
 ### Extra
 ----
 - added HyperSQL in-memory database configuration. Just change the configuration to use the hibernate.mem.cfg.xml file, and you can test the webservice to retrive a device. It inserts the import.sql script, by default, if you set the hbmddl.auto property to create.
+- embedded SOAP client (consumer) at the GetUser endpoint. The idea was to chain subsequent webservice calls in a comprehensive manner, giving the ability for data model aggregation. See details for the Spring SOAP example to create the producer.
 
 Features:
 ----
@@ -104,6 +105,10 @@ Useful links:
    <summary>How to upgrade Hibernate in Wildfly 10.1.0.Final</summary>
    <p>https://developer.jboss.org/thread/274313</p>
    <p>https://planet.jboss.org/post/updating_hibernate_orm_in_wildfly</p>
+</details>
+<details>
+   <summary>Spring Boot SOAP Web Service Example</summary>
+   <p>https://www.concretepage.com/spring-boot/spring-boot-soap-web-service-example</p>
 </details>
 
 Copyright © 2015-2017 George Gaspar. All rights reserved.
