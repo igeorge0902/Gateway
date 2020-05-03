@@ -206,7 +206,16 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						
 						//TODO: IV can be the sessionId
 						String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
-						String actualToken = xsrfToken.trim();
+						int l = xsrfToken.length();	
+						String actualToken = "";	
+
+						if (xsrfToken.endsWith("=")) {	
+								actualToken = xsrfToken.substring(0, l-1);	
+
+							} else {	
+								actualToken = xsrfToken.trim();	
+
+								}
 						
 						c = new Cookie("XSRF-TOKEN", actualToken);
 						c.setSecure(true);
@@ -253,8 +262,17 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								
 								//TODO: IV can be the sessionId
 								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
-								String actualToken = xsrfToken.trim();
-																
+								int l = xsrfToken.length();	
+								String actualToken = "";	
+
+								if (xsrfToken.endsWith("=")) {	
+										actualToken = xsrfToken.substring(0, l-1);	
+
+									} else {	
+										actualToken = xsrfToken.trim();	
+
+										}
+								
 								c = new Cookie("XSRF-TOKEN", actualToken);								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
 								System.out.println("Set XSRF-TOKEN: " +c.getValue());
@@ -295,8 +313,17 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								token2 = SQLAccess.token2(deviceId, context);
 								//TODO: IV can be the sessionId
 								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
-								String actualToken = xsrfToken.trim();
-																
+								int l = xsrfToken.length();	
+								String actualToken = "";	
+
+								if (xsrfToken.endsWith("=")) {	
+										actualToken = xsrfToken.substring(0, l-1);	
+
+									} else {	
+										actualToken = xsrfToken.trim();	
+
+										}
+								
 								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
