@@ -5,22 +5,19 @@
 //  Created by Gaspar Gyorgy on 27/03/16.
 //  Copyright © 2016 George Gaspar. All rights reserved.
 //
-
+  
 import UIKit
+import WebKit
 
-@available(iOS 9.0, *)
-class WebViewController: UIViewController, UIWebViewDelegate {
-    lazy var webView:UIWebView = UIWebView()
-    
-    deinit {
-        webView.delegate = nil
-       // webView = nil
-        print(#function, "\(self)")
-    }
+class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
-    override func viewDidAppear(_: Bool) {
-        super.viewDidAppear(true)
-       // webView = UIWebView()
+    lazy var webView:WKWebView = WKWebView()
+    var response: URLResponse!
+    var httpresponse: HTTPURLResponse!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
         btnNav.setTitle("Back", for: UIControl.State())
@@ -35,20 +32,23 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         view.addSubview(btnNav)
         view.addSubview(btnReload)
         
+        //let config = WKWebViewConfiguration()
+        //config.setValue(true, forKey: "allowUniversalAccessFromFileURLs")
+        webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
         webView.frame = CGRect(x: 0, y: 60, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         definesPresentationContext = true
-        webView.delegate = self
         webView.scrollView.bounces = true
-        webView.scalesPageToFit = true
-
-        let ciphertext = cipherText.getCipherText(deviceId)
-        let requestURL = URL(string: serverURL + "/example/index.html")
-        let request = URLRequest.requestWithURL(requestURL!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["M-Device": ciphertext], cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
-        
         view.addSubview(webView)
-        webView.loadRequest(request)
+        
+        let requestURL = URL(string: "https://igeorge1982.local/login/index.html")
+        var urlrequest = URLRequest(url: requestURL!)
+        
+        //urlrequest.setValue("M", forHTTPHeaderField: "M")
+        webView.load(urlrequest)
     }
-
+    
     @objc func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
@@ -57,44 +57,40 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.reload()
     }
     
-    func webViewDidStartLoad(_: UIWebView) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        NSLog("WebView started loading...")
-    }
-
-    func webViewDidFinishLoad(_: UIWebView) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        NSLog("WebView finished loading...")
-    }
-
-    func webView(_: UIWebView, shouldStartLoadWith request: URLRequest, navigationType _: UIWebView.NavigationType) -> Bool {
-        // We have to also close the webview, without user-interaction.
-        if request.url!.relativePath == "/example/tabularasa.jsp" {
-            DispatchQueue.main.async { [weak self] in
-                self?.dismiss(animated: true, completion: nil)
-            }
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+            print("cookis: \(cookies)")
+          
+                for cookie in cookies {
+                let cookieStorage = HTTPCookieStorage.shared
+                cookieStorage.setCookie(cookie)
+                    
+                    if (cookie.name == "X-Token") {
+                        let prefs: UserDefaults = UserDefaults.standard
+                        prefs.setValue(cookie.value, forKey: "X-Token")
+                    }
+                }
         }
-        return true
     }
-
-    func webView(_: UIWebView, didFailLoadWithError error: Error) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
-        /*
-         let alertView:UIAlertView = UIAlertView()
-
-         alertView.title = "Error!"
-         alertView.message = "Connection Failure: \(error!.localizedDescription)"
-         alertView.delegate = self
-         alertView.addButtonWithTitle("OK")
-         alertView.show()
-         */
-        print(error.localizedDescription)
-        NSLog("There was a problem loading the web page!")
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if webView.url?.relativePath == "/login/index.jsp" {
+            dismiss(animated: true, completion: nil)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func webView(_ webView: WKWebView,
+        didReceive challenge: URLAuthenticationChallenge,
+        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
+    {
+        if(challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust)
+        {
+            let cred = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+            completionHandler(.useCredential, cred)
+        }
+        else
+        {
+            completionHandler(.performDefaultHandling, nil)
+        }
     }
 }

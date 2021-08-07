@@ -34,7 +34,7 @@ var seatsToBeReserved = [Int: String]()
  */
 var Seats = [String: NSDictionary]()
 var tableView_: UITableView?
-class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableViewDelegate, UITableViewDataSource {
+class PopOver: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
     lazy var storedOffsets = [Int: CGFloat]()
     lazy var label = UILabel()
 
@@ -55,12 +55,8 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView_?.delegate = self
-        tableView_?.dataSource = self
-
+        
         refreshControl = UIRefreshControl()
-        tableView_?.addSubview(refreshControl)
     }
 
     override func viewWillAppear(_: Bool) {
@@ -82,6 +78,7 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
         tableView_?.delegate = self
         tableView_?.dataSource = self
         tableView_?.rowHeight = 75
+        //tableView_?.allowsSelection = false
 
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
@@ -99,7 +96,7 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
         view.addSubview(btnData)
 
         tableView_!.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
-        tableView_!.register(UITableViewCell.self, forCellReuseIdentifier: "NormalCell")
+       // tableView_!.register(UITableViewCell.self, forCellReuseIdentifier: "NormalCell")
 
         view.addSubview(tableView_!)
     }
@@ -124,12 +121,12 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
 
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
 
         cell.backgroundColor = UIColor.groupTableViewBackground
-
+      //  self.cellDelegate = self
         return cell
     }
 
@@ -150,7 +147,7 @@ class PopOver: UIViewController, UIViewControllerTransitioningDelegate, UITableV
 
     @objc func openBasket() {
         if BasketData_.count < 1 {
-            UIAlertController.popUp(title: "Warning!", message: "No free seat(s) to be reserved!")
+            self.presentAlert(withTitle: "Warning!", message: "No free seat(s) to be reserved!")
 
         } else {
             let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
@@ -184,14 +181,14 @@ extension PopOver: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SeatCells = collectionView.dequeueReusableCell(withReuseIdentifier: "SeatCells", for: indexPath) as! SeatCells
-        let seatData = [NSDictionary](Seats.values)
+       // cell.cellDelegate = self
 
         for j in 0 ..< numberOfRows.count {
             if collectionView.tag == j {
                 let filteredAttendees = SeatsData_.filter {
                     $0.seatRow == String(j + 1)
                 }
-
+                
                 for i in 0 ..< filteredAttendees.count {
                     // cell.backgroundColor = self.model[collectionView.tag][indexPath.item]
                     if indexPath.item == i {
@@ -208,26 +205,6 @@ extension PopOver: UICollectionViewDelegate, UICollectionViewDataSource {
                         cell.layer.borderColor = UIColor.gray.cgColor
                         cell.layer.borderWidth = 1
                         cell.layer.cornerRadius = 5
-
-                        seatData.forEach { item in
-
-                            _ = item.contains { (_, value) -> Bool in
-
-                                if (value as! String) == screeningDateId {
-                                    for (keys, values) in item {
-                                        if (keys as! String) == "seat" {
-                                            if (values as! String).contains(filteredAttendees[i].seatNumber) {
-                                                cell.layer.borderWidth = 4
-                                            }
-
-                                            return true
-                                        }
-                                    }
-                                }
-
-                                return false
-                            }
-                        }
 
                         if filteredAttendees[i].isReserved == "1" {
                             cell.backgroundColor = UIColor.darkGray
@@ -250,7 +227,9 @@ extension PopOver: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as? SeatCells
+
+  //      self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: TableViewCell())
 
         cell?.layer.borderWidth = 4
         // cell?.layer.borderColor = UIColor.black.cgColor
@@ -270,7 +249,7 @@ extension PopOver: UICollectionViewDelegate, UICollectionViewDataSource {
 
             let date_ = Date.formatDate(dateString: String(myDateString!.first!))
 
-            let basketItem: NSDictionary = ["movie_name": SelectMovieName!, "seatId": seatId!, "seats_seatRow": filteredAttendees[indexPath.row].seatRow, "seats_seatNumber": seatNumber as Any, "price": filteredAttendees[indexPath.row].price, "tax": filteredAttendees[indexPath.row].tax, "screeningDateId": screeningDateId!, "movie_picture": SelectMoviePicture!, "venue_picture": "", "venue_name": SelectVenueName!, "screening_date": String.formatDate(date: date_)]
+            let basketItem: NSDictionary = ["movie_name": SelectMovieName!, "seatId": seatId!, "seats_seatRow": filteredAttendees[indexPath.row].seatRow!, "seats_seatNumber": seatNumber as Any, "price": filteredAttendees[indexPath.row].price!, "tax": filteredAttendees[indexPath.row].tax!, "screeningDateId": screeningDateId!, "movie_picture": SelectMoviePicture!, "venue_picture": "", "venue_name": SelectVenueName!, "screening_date": String.formatDate(date: date_)]
 
             BasketData_.updateValue(BasketData(add: basketItem), forKey: seatId!)
 

@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -49,14 +50,44 @@ public class test {
  
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
+		
 		AesUtil aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
 
-		String query_ = aesUtil.decrypt(SALT, IV, activationToken_, "EDFdW+RzxENjlJ/7XbgHcdWW4Mi5b5EHogHTl6oNxbZH/mdIUZkKd4tCBxEGziF6YLt8vgMQ6EbGJUrpHu46Dw==");
-      //  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
+		String query_ = aesUtil.decrypt(SALT, IV, activationToken_, "0+/H2wuaUTwxrD/sJJ9jyWytNprm6BvqjSwCLj4KTtiWpxJjCIkhprk/SKVQ45v+");
+        //  String split = query_.split("r=")[1];     
+		//  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
 		
-		String test = "aC8SRTzA1vhfFZr_bSjE2GmAj8wgHWHck7O1N1YM.gaspars-macbook-pro";
-		System.out.println(test.split("\\.")[0].toString());
+	//	String test = "aC8SRTzA1vhfFZr_bSjE2GmAj8wgHWHck7O1N1YM.gaspars-macbook-pro";
+	//	System.out.println(test.split("\\.")[0].toString());
+        
 		
+        String [] params_ = query_.split("&");
+        Map<String, String> queryMap = new HashMap<String, String>();
+	    String user = "";
+	    String token2 = "";
+	    int j = 0;
+	    Arrays.sort(params_);
+	    
+	    for (String param : params_)
+	    
+	    {
+	        String name = param.split("=")[0];
+	        String value = param.split("=")[1];
+	        queryMap.put(name, value);
+	        j++;
+	         if(j == 1) {
+	        	token2= value; 
+	         }
+	         if(j == 2) {
+	        	 user = value;
+	         }
+	        
+	    }
+	    
+        System.out.println(token2);
+        System.out.println(user);
+
+	    
 	    File f = new File("/Users/georgegaspar/Downloads/test.json");	      
 	    if (f.exists() == true) {
        
@@ -69,35 +100,23 @@ public class test {
 		    while( (str_ = br_.readLine()) != null ){
 		        sb_.append(str_);
 		    }    
+		    
 		    JSONObject jObj_ = new JSONObject(sb_.toString());
 
-	        JSONArray companyList = (JSONArray) jObj_.get("seatsToBeReserved");
-	        
-	      //  System.out.println(values);
-	        
-		    for (int i = 0; i < companyList.length(); i++) { 
-	
-		    	JSONObject jObj = new JSONObject(companyList.get(i).toString());
+		    JSONArray ticketsList = (JSONArray) jObj_.get("ticketIds");
+		    
+		    System.out.print("ticketId: " + ticketsList.get(0));
+	        List<Integer> ticketIds = new ArrayList<>();
+			for (int i = 0; i < ticketsList.length(); i++) { 
+				
+		    	
 			    
-		    	String value = jObj.getString("screeningDateId");
-		        String value2 = jObj.getString("seat");
-		        
-		        List<String> seatList = new ArrayList<>();
-				 for (String seat: value2.split("-")){
-					 	
-					 if (!seat.isEmpty()) {
-						 
-						 seatList.add(seat);
-					 
-					 } else {
-						 
-						 
-					 }
+		    	int ticketId = Integer.valueOf(ticketsList.get(i).toString());
+		    	ticketIds.add(ticketId);
 					 
 				 }
 		        
-		        System.out.println(value);
-		        System.out.println(seatList);
+		        System.out.println(ticketIds);
 		        
 		    	/*
 		    	String value = jObj.getString("formatted_address");
@@ -113,8 +132,8 @@ public class test {
 		        System.out.println(lng);
 		        System.out.println(lat);
 		        */	    	
-		    	
-		    }
+	   	
+		    
 		
 		    br_.close();
 	    

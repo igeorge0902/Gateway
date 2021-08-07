@@ -92,7 +92,8 @@ class RequestManager: NSObject {
                     NSLog(error!.localizedDescription)
 
                     let headers: NSDictionary = httpResponse.allHeaderFields as NSDictionary
-
+                    
+                    // set credentials to activate voucher
                     if let xtoken: NSString = headers.value(forKey: "X-Token") as? NSString {
                         self.prefs.set(xtoken, forKey: "X-Token")
                     }
@@ -116,18 +117,14 @@ class RequestManager: NSObject {
                     UIAlertController.popUp(title: "Warning", message: "Your account is not activated yet: \(message)")
                 }
 
-                if httpResponse.statusCode == 503 {
-                    UIAlertController.popUp(title: self.errors, message: "Connection Failure: \(error!.localizedDescription)")
-                }
-
-                if httpResponse.statusCode == 502 {
+                if httpResponse.statusCode == 502 || httpResponse.statusCode == 503 {
                     if self.errors != nil {
                         UIAlertController.popUp(title: "Error:", message: self.errors)
                     } else {
                         UIAlertController.popUp(title: self.errors, message: "Connection Failure: \(error!.localizedDescription)")
                     }
                 } else {
-                    let json: JSON = try! JSON(data: data!)
+                    let json:JSON = try! JSON(data: data!)
                     let prefs: UserDefaults = UserDefaults.standard
 
                     if let httpResponse = response as? HTTPURLResponse {
@@ -139,7 +136,7 @@ class RequestManager: NSObject {
                                     prefs.set(user, forKey: "USERNAME")
                                     prefs.set(1, forKey: "ISWEBLOGGEDIN")
                                     prefs.set(1, forKey: "ISLOGGEDIN")
-                                    
+                                //TODO: add observer to replace alert, and use it with AlertViewController on the view
                                    let alertView: UIAlertView = UIAlertView()
                                    alertView.title = "Welcome!"
                                    alertView.message = user as String
@@ -157,16 +154,13 @@ class RequestManager: NSObject {
                                 }
                             }
                         }
-                    }
-
-                    self.running = false
+                      }
+                    
                     onCompletion(json, error as NSError?)
                 }
             }
 
         })
-
-        running = true
         task.resume()
     }
 }

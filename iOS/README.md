@@ -4,12 +4,11 @@ General Authentication Service
 Copyright © 2015-2019 George Gaspar. All rights reserved.
 
 # Swift
-- updated to Swift 5!;)
+- updated to Swift 4.2!;)
 - updated/fixed for XCode 11.1
 - 4 years in the &making
-
-## Road map
-- fixing up UIAlertControllers to display them properly. They are a bit flashy. (2020)
+- updated to Swift 5.x (2020)
+- updated to WKWebView
 
 # Notes on iOS build:
 - You should run 'POD install' to install the pods into your local environment. After installing the pods you must run the project with SwiftLoginScreen.xcworkspace!
@@ -70,52 +69,22 @@ You can access and check the data with Realm browser.
 #### Configure cookie handling
 You can set up the policy at three different points, at the same time:
 
-In the CustomURLRequest:
-```swift
-// TEST
-request.httpShouldHandleCookies = false
-return request as URLRequest
-```
 
-In the CustomSessionConfiguration:
-```swift
-/// Just like defaultSessionConfiguration, returns a newly created session configuration object, customised
-/// from the default to your requirements.
-class func CustomSessionConfiguration() -> URLSessionConfiguration {
-    
-    let config = `default`
-    
-    //config.timeoutIntervalForRequest = 20 // Make things timeout quickly.
-    config.sessionSendsLaunchEvents = true
-    config.httpAdditionalHeaders = ["MyResponseType": "JSON"] // My web service needs to be explicitly asked for JSON.
-    config.httpShouldUsePipelining = true // Might speed things up if your server supports it.
-    
-    return config
-```
+Since the app employs a custom UrlProtocol class, it gives you the possibility to take control over the some request - response of any NSUrlConnection, by making deep copies with NSMutableRequest, witch means you can add/modify header fields, set Cookie policy, etc. 
 
-In the UrlProtocol, in general, but mainly at this point, when you work with NSMutableURLRequest:
-```swift
-   func connection(_ connection: NSURLConnection!, willSendRequest request: URLRequest, redirectResponse response: URLResponse?) -> URLRequest? {
-```
+### WKWebView
+WKHTTPCookieStore
 
-Since the app employs a custom UrlProtocol class, it gives you the possibility to take control over the request - response of any NSUrlConnection, by making deep copies with NSMutableRequest, witch means you can add/modify header fields, set Cookie policy, etc. That also happens for the UIWebView, witch is basic ttyl just a canvas for the authentication, using NSUrlConnection: the app uses context URI based cookies ('/login'), and they are managed by the shared Cookie Storage (since iOS SDK 2.0), as well as the UrlSession based /login requests, so you can use the same cookies without a fuss, let it be got back from UIWebView (NSUrlConnection), or UrlSession, as per default session object configuration, witch means shouldAcceptCookies 'true' by default. 
+Each instance of WKWebView has its own cookie storage container, which is named WKHTTPCookieStore.
+Once the user logs in to the iOS app, we obtain the auth access token from the server. Use the following for sharing the auth token across the native app and to the embedded webpage at WKWebView, back and forth.
 
-Since the CustomURLRequest extension of URLRequest is used by both UrlSession and NSUrlConnection you can add convinient system wide settings, or separately at the UrlProtocol for NSUrlConnection, or at the CustomSessionConfiguration.. Find the solution best for you, are you ready? 
 
 >More about the Url Loading System
 * [Url Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
-
-# UIWebView debugging
-- if you wish to solely debug a webview session, please follow the guide lines in the following article, that will help to launch a debug session on the webview in your app:
-* [Debugging UIWebView on iOS app](https://medium.com/@mattcroak718/debugging-your-iphone-mobile-web-app-using-safari-development-tools-71240657c487)
-
-# AFNetworking
-- you may find invocations of the AFNetworkReachabilityManager at points, where you navigate to the next segue. Please consider it yourself, if you need it at all. I left it in the code intentionally.
-- please check the corresponding docs:
-* [AFNetworkReachabilityManager](http://cocoadocs.org/docsets/AFNetworking/3.1.0/Classes/AFNetworkReachabilityManager.html)
+* [Cookies in iOS 13](https://betterprogramming.pub/cookie-at-ios-13-8c089b8338fd)
 
 # How it works
-- it's a login and movie ticket booking client, currently. Please checkout the other parts of the backend at the following repository:
+- it's a login and movie ticket booking system. Please checkout the other stuff of my works at the following repository:
 
 ### gitRepo link to AWS
 [CollectionOfApplications](https://github.com/igeorge0902/CollectionOfApplications)

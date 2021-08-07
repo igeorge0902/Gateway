@@ -27,7 +27,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
-@WebFilter(servletNames= {"AdminServlet", "GetAllPurchases", "CheckOut"})
+@WebFilter(servletNames= {"AdminServlet", "GetAllPurchases", "CheckOut", "ManagePurchases", "Loggingout"})
 public class RohadekFilter implements Filter {
 
     private ServletContext context;
@@ -83,9 +83,9 @@ public class RohadekFilter implements Filter {
                 for (Cookie cookie : cookies) {
     			 
                 	if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
-
-                		if (!session.getAttribute("XSRF-TOKEN").toString().equals(cookie.getValue())) {
-
+						String actualToken = cookie.getValue().trim();
+						
+                		if (!session.getAttribute("XSRF-TOKEN").toString().equals(actualToken)) {
                 			throw new ServletException("There is no valid XSRF-TOKEN");
 
                 		} else {

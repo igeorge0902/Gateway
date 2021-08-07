@@ -178,7 +178,6 @@ class SignupVC: UIViewController {
             }
         })
 
-        running = true
         taskV.resume()
     }
 
@@ -257,13 +256,9 @@ class SignupVC: UIViewController {
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
                 }
-
-                self.running = false
                 onCompletion(json, error as NSError?)
             }
         })
-
-        running = true
         task.resume()
     }
 
@@ -305,12 +300,10 @@ class SignupVC: UIViewController {
             alertView.show()
 
         } else {
-            if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
                 dataTask(voucher as String, email: email as String, username: username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
                     (resultString, _) -> Void in
 
                     print(resultString)
-                }
             }
         }
     }

@@ -8,6 +8,7 @@
 
 import SwiftyJSON
 import UIKit
+import Security
 
 let deviceId = UIDevice.current.identifierForVendor!.uuidString
 var kKeychainItemName: String?
@@ -15,7 +16,15 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
     deinit {
         print(#function, "\(self)")
     }
-
+    var username: NSString?
+    var password: NSString?
+    
+    enum KeychainError: Error {
+        case noPassword
+        case unexpectedPasswordData
+        case unhandledError(status: OSStatus)
+    }
+    
     var imageView: UIImageView = UIImageView()
     var backgroundDict: [String: String] = Dictionary()
 
@@ -176,8 +185,31 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
                                 prefs.setValue(xtoken, forKey: "X-Token")
 
                                 prefs.synchronize()
+                                
+                                /*
+                                let query = [
+                                  kSecClass: kSecClassInternetPassword,
+                                  kSecAttrServer: "pullipstyle.com",
+                                  kSecAttrAccount: "andyibanez",
+                                  kSecValueData: "Pullip2020".data(using: .utf8)!,
+                                  kSecReturnAttributes: true,
+                                  kSecReturnData: true,
+                                  kSecMatchLimit: 5
+                                ] as CFDictionary
 
-                                kKeychainItemName = username
+                                var result: AnyObject?
+                                let status = SecItemCopyMatching(query, &result)
+
+                                print("Operation finished with status: \(status)")
+                                let array = result as! [NSDictionary]
+
+                                array.forEach { dic in
+                                  let username = dic[kSecAttrAccount] ?? ""
+                                  let passwordData = dic[kSecValueData] as! Data
+                                  let password = String(data: passwordData, encoding: .utf8)!
+                                  print("Username: \(username)")
+                                  print("Password: \(password)")
+                                }*/
                             }
 
                             NSLog("got a 200")
@@ -214,15 +246,19 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
     @IBAction func signinTapped(_: UIButton) {
         // let deviceId = UIDevice.currentDevice().identifierForVendor!.UUIDString
         NSLog("deviceId ==> %@", deviceId)
-        let username: NSString = txtUsername.text! as NSString
-        let password: NSString = txtPassword.text! as NSString
+        username = txtUsername.text! as NSString
+        txtUsername.textContentType = .username
+
+        password = txtPassword.text! as NSString
+        txtPassword.textContentType = .newPassword
+
         let systemVersion = UIDevice.current.systemVersion
 
         let SHA3 = CryptoJS.SHA3()
 
-        let hash: String = SHA3.hash(password as String, outputLength: 512)
+        let hash: String = SHA3.hash(password! as String, outputLength: 512)
 
-        if username.isEqual(to: "") || password.isEqual(to: "") {
+        if username!.isEqual(to: "") || password!.isEqual(to: "") {
             let alertView: UIAlertView = UIAlertView()
             alertView.title = "Sign in Failed!"
             alertView.message = "Please enter Username and Password"
@@ -232,7 +268,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
 
         } else {
 
-            dataTask(username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
+            dataTask(username! as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
                 (resultString, _) -> Void in
 
                 print(resultString)

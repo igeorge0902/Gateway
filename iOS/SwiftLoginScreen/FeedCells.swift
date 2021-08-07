@@ -13,6 +13,7 @@ class FeedCells: UICollectionViewCell {
     var textLabel: UILabel?
     var profileImage: UIImageView?
     var QRCodeImage: UIImageView?
+    var CancelImage: UIImageView?
     var statusText: UITextView?
 
     override init(frame: CGRect) {
@@ -25,10 +26,15 @@ class FeedCells: UICollectionViewCell {
         profileImage?.backgroundColor = UIColor.clear
         profileImage?.translatesAutoresizingMaskIntoConstraints = false
 
-        QRCodeImage = UIImageView(frame: CGRect(x: 30, y: 10, width: 75, height: 75))
+        QRCodeImage = UIImageView(frame: CGRect(x: frame.width * 0.8, y: 10, width: 75, height: 75))
         QRCodeImage?.contentMode = .scaleAspectFit
         QRCodeImage?.backgroundColor = UIColor.clear
         QRCodeImage?.translatesAutoresizingMaskIntoConstraints = false
+        
+        CancelImage = UIImageView(frame: CGRect(x: frame.width * 0.8, y: 120, width: 25, height: 25))
+        CancelImage?.contentMode = .scaleAspectFit
+        CancelImage?.backgroundColor = UIColor.clear
+        CancelImage?.translatesAutoresizingMaskIntoConstraints = false
 
         textLabel = UILabel(frame: CGRect(x: frame.width * 0.2, y: 0, width: frame.size.width, height: 40))
         textLabel?.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
@@ -46,13 +52,13 @@ class FeedCells: UICollectionViewCell {
         contentView.addSubview(textLabel!)
 
         addConstraintswithFormat("H:|-8-[v0(44)]-8-[v1]|", views: profileImage!, textLabel!)
-        addConstraintswithFormat("H:|-240-[v0(44)]-8-[v1]|", views: QRCodeImage!, textLabel!)
+        addConstraintswithFormat("H:|-265-[v0(44)]-60-[v1]|", views: QRCodeImage!, textLabel!)
         addConstraintswithFormat("V:|-12-[v0]", views: textLabel!)
         addConstraintswithFormat("V:|-8-[v0(44)]", views: profileImage!)
-        addConstraintswithFormat("V:|-8-[v0(44)]", views: QRCodeImage!)
+        addConstraintswithFormat("V:|-60-[v0(44)]", views: QRCodeImage!)
         addConstraintswithFormat("H:|-4-[v0]-4-|", views: statusText!)
         addConstraintswithFormat("V:|-8-[v0(44)]-4-[v1(90)]", views: profileImage!, statusText!)
-        addConstraintswithFormat("V:|-8-[v0(44)]-4-[v1(90)]", views: QRCodeImage!, statusText!)
+        addConstraintswithFormat("V:|-60-[v0(44)]-4-[v1(90)]", views: QRCodeImage!, statusText!)
     }
 
     func toggleSelected() {

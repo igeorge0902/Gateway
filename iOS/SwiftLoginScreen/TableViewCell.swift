@@ -11,6 +11,7 @@ import SwiftyJSON
 import UIKit
 
 class TableViewCell: UITableViewCell, UICollectionViewDelegateFlowLayout {
+    
     var collectionView: UICollectionView!
     var cell: SeatCells!
 
@@ -30,7 +31,8 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegateFlowLayout {
         collectionView.register(SeatCells.self, forCellWithReuseIdentifier: "SeatCells")
         collectionView.backgroundColor = UIColor.clear
 
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
+        //addSubview(collectionView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,6 +41,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegateFlowLayout {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        //collectionView.delegate = self
         collectionView.frame = contentView.bounds
     }
 }

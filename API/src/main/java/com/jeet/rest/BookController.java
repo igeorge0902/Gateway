@@ -3,7 +3,6 @@ package com.jeet.rest;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.activation.MimetypesFileTypeMap;
@@ -22,7 +21,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.concretepage.StudentClient;
@@ -36,6 +34,7 @@ import com.jeet.service.BookingHandlerImpl;
 import com.jeet.utils.AesUtil;
 import com.jeet.utils.CustomNotFoundException;
 
+//TODO: add filter
 @Path("/")
 public class BookController {
 	
@@ -107,7 +106,7 @@ public class BookController {
 			System.out.println("SOAP is down!");
 		}
 		
-	cookies = request.getCookies();
+		cookies = request.getCookies();
         xsrf = false;
 
 		// check if the original response cookie for the same client is present

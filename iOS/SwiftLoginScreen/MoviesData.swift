@@ -15,7 +15,7 @@ class MoviesData: NSObject {
     var detail: String!
     var name: String!
     var large_picture: String!
-    var image: UIImageView!
+    var image: UIImage!
     var imdb: String!
 
     init(add: NSDictionary) {
@@ -39,11 +39,9 @@ class MoviesData: NSObject {
             if let list = json["movies"].object as? NSArray {
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
-                        //   dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
 
                         Data.imageFromUrl(urlString: serverURL + "/simple-service-webapp/webapi/myresource" + MoviesData(add: dataBlock).large_picture!)
 
-                        //   })
                     }
                 }
             }
@@ -115,3 +113,17 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 }
+ 
+
+extension UIViewController {
+    func presenAlertView(withTitle: String, message: String) {
+        let alertView: UIAlertView = UIAlertView()
+
+        alertView.title = withTitle
+        alertView.message = message
+        alertView.delegate = self
+        alertView.addButton(withTitle: "OK")
+        alertView.show()
+    }
+}
+

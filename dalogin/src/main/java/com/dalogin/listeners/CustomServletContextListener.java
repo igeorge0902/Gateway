@@ -16,13 +16,17 @@ import java.nio.file.NoSuchFileException;
  */
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
@@ -54,6 +58,7 @@ public class CustomServletContextListener implements ServletContextListener{
 	 * 
 	 */
 	private static volatile HashMap<String,String> attributes;
+	public static volatile KafkaConsumer<String, String> kafkaConsumer;
 	
 	/**
 	 * 
@@ -104,55 +109,6 @@ public class CustomServletContextListener implements ServletContextListener{
    	final String time = context.getInitParameter("TIME");
     context.setAttribute("time", time);
 
-   	/*
-   	 * uRL parameters loaded from web.xml
-   	 */
-	final String voucherRedirect = context.getInitParameter("voucherRedirect");
-	final String voucherElseRedirect = context.getInitParameter("voucherElseRedirect");
-	final String homePage = context.getInitParameter("homePage");
-	final String homePageIndex = context.getInitParameter("homePageIndex");
-	final String loginContext = context.getInitParameter("loginContext");
-	final String loginToRegister = context.getInitParameter("loginToRegister");
-	final String loginToLogout = context.getInitParameter("loginToLogout");
-	final String webApiContext = context.getInitParameter("webApiContext");
-	final String webApiContextUrl = context.getInitParameter("webApiContextUrl");
-	
-	/* loading the context InitParameters once, then putting them into HashMap<String, String> that is set to context then, 
-	*  using an UrlManager class that initialize all the urls and has getter / setter methods.
-	*/
-	
-	/* Urls are loadable from context scope or at class level with "getServletContext().getInitParameter("voucherRedirect");".
-	* The purpose of the context scope is to make editable the urls during runtime, through an API later.
-	*/
-	
-	//TODO: set the edited urls as new InitParameter value
-	
-	UrlManager urlManager = new UrlManager(voucherRedirect, voucherElseRedirect, homePage, homePageIndex, loginContext, loginToRegister, loginToLogout, webApiContextUrl, webApiContext);
-   	
-    urls = new HashMap<String, String>();
-
-   	String voucherRedirect_ = urlManager.getVoucherRedirect();
-   	String voucherElseRedirect_ = urlManager.getVoucherElseRedirect();
-	String homePage_ = urlManager.getHomePage();
-	String homePageIndex_ = urlManager.getHomePageIndex();
-	String loginContext_ = urlManager.getLoginContext();
-	String loginToRegister_ = urlManager.getLoginToRegister();
-	String loginToLogout_ = urlManager.getLoginToLogout();
-	String webApiContext_ = urlManager.getWebApiContext();
-	String webApiContextUrl_ = urlManager.getWebApiContextUrl();
-	
-   	urls.put(voucherRedirect, voucherRedirect_);
-   	urls.put(voucherElseRedirect, voucherElseRedirect_);
-   	urls.put(homePage, homePage_);
-   	urls.put(homePageIndex, homePageIndex_);
-   	urls.put(loginContext, loginContext_);
-   	urls.put(loginToRegister, loginToRegister_);
-   	urls.put(loginToLogout, loginToLogout_);
-   	urls.put(webApiContext, webApiContext_);
-   	urls.put(webApiContextUrl, webApiContextUrl_);
-
-   	context.setAttribute("UrlManager", urls);
-
    	//create database connection from init parameters and set it to context
    	DBConnectionManager dbManager = new DBConnectionManager(url, u, p);
    	context.setAttribute("DBManager", dbManager);
@@ -170,7 +126,7 @@ public class CustomServletContextListener implements ServletContextListener{
        
        sessions = Multimaps.synchronizedSortedSetMultimap(TreeMultimap.create());
        context.setAttribute("sessions", sessions);
-       
+
 	   //PBI: resolve dependencies for WildFly, smoothly
        //WS SOAP taken out due to dependency conflict on WildFly. 
        //put it here 

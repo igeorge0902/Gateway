@@ -12,6 +12,9 @@ target 'SwiftLoginScreen' do
 
 pod 'SwiftyJSON', '~> 4.2.0'
 pod 'RealmSwift', '~> 3.2'
+pod 'BraintreeDropIn'
+pod 'Braintree/PayPal'
+pod 'Braintree/Apple-Pay'
 #pod 'Kanna', '~> 2.1.0'
 #pod 'Starscream', '~> 2.0'
 #pod 'Franz', '~> 0.1'

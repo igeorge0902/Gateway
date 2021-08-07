@@ -29,7 +29,7 @@ public class DAO extends Thread{
 	private DAO() {
 
 		factory = HibernateUtil.getSessionFactory();
-		System.out.println("Creating factory");
+		System.out.println("Creating green factory");
 
 		Statistics stats = factory.getStatistics(); 
 		stats.setStatisticsEnabled(true);
@@ -54,7 +54,7 @@ public class DAO extends Thread{
 		return instance;
 	}
 	
-	public synchronized List<Devices> getDevices(String uuid){
+	public List<Devices> getDevices(String uuid){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -100,7 +100,7 @@ public class DAO extends Thread{
 		return list;
 	}
 	
-	public synchronized Logins getUser(String user){
+	public Logins getUser(String user){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -143,7 +143,7 @@ public class DAO extends Thread{
 		return user_;
 	}
 	
-	public synchronized int getNewUser(String newuser){
+	public int getNewUser(String newuser){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -185,7 +185,7 @@ public class DAO extends Thread{
 		return list.size(); }
 	}
 	
-	public synchronized int getNewEmail(String newemail){
+	public int getNewEmail(String newemail){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -227,7 +227,7 @@ public class DAO extends Thread{
 		return list.size(); }
 	}
 	
-	public synchronized Logins getUuid(String uuid){
+	public Logins getUuid(String uuid){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -258,7 +258,7 @@ public class DAO extends Thread{
 		return ilu;
 	}
 	
-	public synchronized Tokens getToken(String token1){
+	public Tokens getToken(String token1){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();
@@ -289,7 +289,7 @@ public class DAO extends Thread{
 		return token_taylor;
 	}
 	
-	public synchronized Tokens getToken2(String token1){
+	public Tokens getToken2(String token1){
 		
 		if(!session.isOpen()) {			
 			session = factory.openSession();

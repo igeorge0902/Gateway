@@ -200,23 +200,7 @@ public class ChangePasswordNewPassword extends HttpServlet implements Serializab
     		// retrieve email which requested the password reset
     		cC = SQLAccess.forgot_psw_confirmationCode(email, context);
             encrypted_token = aesUtil.encrypt(SALT, IV, cC.get(1), cC.get(0));
-            
-            // check if the original response cookie for the same client is present
-    		if (cookies != null) {
-    		 for (Cookie cookie : cookies) {
-    		   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
-    		     
-				   log.info("XSRF-TOKEN is: " + cookie.getValue());
 
-    			   if(cookie.getValue().equals(encrypted_token)) {
-    				   
-    			   }
-    			   
-    		    }
-    		  }
-    		} else {
-    			throw new ServletException("There is no valid XSRF-TOKEN");
-    		}
     		//TODO: add password policy
     		if (pass.length() < 1) {
     			

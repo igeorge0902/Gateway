@@ -3,7 +3,6 @@
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.
-//  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
 import Foundation
@@ -31,11 +30,13 @@ extension URLRequest {
         request.httpMethod = method
 
         // Add any body JSON params (for POSTs).
+        if contentType == contentType_.json.rawValue {
         if let bodyParameters = bodyParameters {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try? JSONSerialization.data(withJSONObject: bodyParameters, options: [])
+            }
         }
-
+        
         if contentType == contentType_.urlEncoded.rawValue {
             if let bodyToPost = bodyToPost {
                 request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -55,7 +56,7 @@ extension URLRequest {
         }
 
         // TEST
-        // request.httpShouldHandleCookies = false
+        request.httpShouldHandleCookies = true
         return request as URLRequest
     }
 }

@@ -16,13 +16,15 @@ import UIKit
 import WebKit
 import AVKit
 
-// TODO: use collectionView cells
 var selectedCalendar: String?
 class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate {
     deinit {
         screeningDateId = nil
+       // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
         print(#function, "\(self)")
     }
+
+    lazy var NoPicture: [String: String] = Dictionary()
 
     let pickerdata: NSDictionary = ["screeningDatesId": 0, "screeningDate": "Select date", "movieId": 0]
     var nameTextView: UITextView?
@@ -36,6 +38,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     var movieName: String!
     var movieDetails: String!
     var screen_screenId: String!
+    var locationId: Int!
     var iMDB: String!
 
     var starty: CGFloat!
@@ -75,12 +78,17 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
             }
         }
 
+        if (!selectVenues_picture.isEmpty) {
         if let urlVenue = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + selectVenues_picture!) {
             if let venueImage = try? Data(contentsOf: urlVenue) {
                 venuePicture = UIImage(data: venueImage)!
             }
         }
-
+        } else {
+        NoPicture = ["NoPicture": "cat2"]
+            venuePicture = UIImage(named: NoPicture["NoPicture"]!)!
+        }
+        
         var imageWidth = moviePicture.size.width
         imageHeight = moviePicture.size.height
 
@@ -132,8 +140,9 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
 
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
+        btnNav.showsTouchWhenHighlighted = true
         btnNav.setTitle("Back", for: UIControl.State())
-        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControl.Event.touchUpInside)
+        btnNav.addTarget(self, action: #selector(VenuesDetailsVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         let frame1 = CGRect(x: view.frame.width * 0.15, y: (starty * 2.5) + imageHeight, width: 44, height: 20)
         let button = UIButton(frame: frame1)
@@ -217,7 +226,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         buttonShare.showsTouchWhenHighlighted = true
         //     buttonShare.addTarget(self, action: #selector(VenuesDetailsVC.shareOnFaceBook), for: UIControlEvents.touchUpInside)
 
-        // TODO: add mapview in box that can be opened?
         // TODO: add venue details, info, etc
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(VenuesDetailsVC.showMoreActions))
@@ -263,19 +271,20 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         }
 
         let url = NSURL.fileURL(withPath: fileURL)
-        var playerLayer = AVPlayerLayer()
         let playerItem = AVPlayerItem(asset: AVAsset(url: url), automaticallyLoadedAssetKeys: ["playable"])
         let player = AVPlayer(playerItem: playerItem)
         
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        playerLayer.frame = CGRect(x: startx_, y: view.frame.height * 1.2, width: view.frame.width * 0.9, height: imageHeight_)
-        
+        let playerFrame = CGRect(x: startx_, y: view.frame.height * 1.2, width: view.frame.width * 0.9, height: imageHeight_)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        playerViewController.view.frame = playerFrame
+
+        addChild(playerViewController)
         scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 55.0, right: 0.0)
         scrollView.contentSize.height = view.frame.height * 1.2 + imageHeight_
-        scrollView.layer.addSublayer(playerLayer)
-        //playerLayer.player?.play()
-        
+ 
+        scrollView.addSubview(playerViewController.view)
+        playerViewController.didMove(toParent: self)
         addDatesData()
     }
     
@@ -308,8 +317,8 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         _ = tap.location(in: view)
     }
 
-    func navigateBack() {
-        dismiss(animated: true, completion: nil)
+    @objc func navigateBack() {
+        dismiss(animated: false, completion: nil)
     }
     
     @objc func movieDetail(_: UIButton, event: UIEvent) {
@@ -385,7 +394,6 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                 }
             }
 
-            // TODO: fix popOver positioning (mid point of x)
             let popOver = PopOverDates()
             popOver.modalPresentationStyle = UIModalPresentationStyle.popover
             popOver.preferredContentSize = CGSize(width: view.frame.width * 0.90, height: view.frame.height / 5)
@@ -474,7 +482,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     func addDatesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + String(selectVenueId) + "/" + String(movieId), errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + String(locationId) + "/" + String(movieId), errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

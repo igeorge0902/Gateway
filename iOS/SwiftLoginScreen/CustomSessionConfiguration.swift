@@ -3,7 +3,6 @@
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.
-//  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
 import Foundation
@@ -14,13 +13,14 @@ extension URLSessionConfiguration {
     class func CustomSessionConfiguration() -> URLSessionConfiguration {
         let config = `default`
 
-        // config.timeoutIntervalForRequest = 20 // Make things timeout quickly.
+        // config.timeoutIntervalForRequest = 7 // Make things timeout quickly.
         config.sessionSendsLaunchEvents = true
         // My web service needs to be explicitly asked for JSON.
         config.httpAdditionalHeaders = ["MyResponseType": "JSON"]
         // Might speed things up if your server supports it.
         config.httpShouldUsePipelining = true
-
+        config.httpCookieAcceptPolicy = HTTPCookie.AcceptPolicy.always
+        
         return config
     }
 }

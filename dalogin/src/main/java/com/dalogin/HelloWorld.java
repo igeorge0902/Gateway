@@ -69,6 +69,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
     private static final int KEYSIZE = 128;
     private static final int ITERATIONCOUNT = 1000;
     private static volatile Cookie c;
+    private static volatile Cookie d;
     private static volatile long T;
 
 	private static Logger log = Logger.getLogger(Logger.class.getName());
@@ -107,7 +108,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
  	     final long T2 = Long.parseLong(context.getAttribute("time").toString());
 
         // Actual logic goes here.		
-      //  try {
 
         	// hmac is not encrypted, just the password inside
         	hmac = request.getHeader("X-HMAC-HASH").trim();
@@ -141,11 +141,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
             
             hash1 = hash_(pass, user, context);
 
-	//	} catch (Exception e) {
-			
-	//		throw new ServletException(e.getCause().toString());
-
-	//	}
         	/*
         	 *  user authentication only can happen during the intervallum that the network latency produces 
         	 *  plus seconds given as context parameter
@@ -214,7 +209,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
 
 							} else {	
 								actualToken = xsrfToken.trim();	
-
 								}
 						
 						c = new Cookie("XSRF-TOKEN", actualToken);
@@ -253,7 +247,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 							
 						}
 						
-						// mobile webview (there is no session in iOS simulator in normal webview with GlassFish. Interesting.)
+						// mobile webview
 						} else if (WebView.contains("Mobile") && M.equals("M")){ 
 							
 							try {
@@ -273,30 +267,22 @@ public class HelloWorld extends HttpServlet implements Serializable {
 
 										}
 								
-								c = new Cookie("XSRF-TOKEN", actualToken);								c.setSecure(true);
+								c = new Cookie("XSRF-TOKEN", actualToken);								
+								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
 								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 								response.addCookie(c);
 								// The token2 will be used as key-salt-whatever as originally planned.
 								response.addHeader("X-Token", token2.get(0));
-												
+
 								// set XSRF-TOKEN as session attribute
 								session.setAttribute(c.getName(), c.getValue());
 								
 								// set timestamp for device login as session attribute
 								session.setAttribute("TIME_", token2.get(1));
 								
-								JSONObject json = new JSONObject(); 
-								
-								json.put("Session", "raked"); 
-								json.put("Success", "true");
-								json.put("JSESSIONID", sessionID);
-
-								// this is necessary because the X-Token header did not appear in the native mobile app
-								json.put("X-Token", token2.get(0));
-								
-								response.sendRedirect(otherContext.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
+								response.sendRedirect(context.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
 
 								
 							} catch (Exception e) {
@@ -329,7 +315,13 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								c.setMaxAge(session.getMaxInactiveInterval());
 								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
+								d = new Cookie("X-Token", token2.get(0));								
+								d.setSecure(true);
+								d.setMaxAge(session.getMaxInactiveInterval());
+								
 								response.addCookie(c);
+								response.addCookie(d);
+								
 								// The token2 will be used as key-salt-whatever as originally planned.
 								response.addHeader("X-Token", token2.get(0));								
 								response.setContentType("application/json"); 

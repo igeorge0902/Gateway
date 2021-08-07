@@ -7,8 +7,8 @@
 //
 
 import Foundation
-// import Braintree
-// import BraintreeDropIn
+import Braintree
+import BraintreeDropIn
 import SwiftyJSON
 // import FacebookCore
 
@@ -32,6 +32,8 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     var Amount: String?
     var TaxAmount: String?
     var movieName: String?
+    var clientToken: String?
+    
 
     lazy var values = [BasketData](BasketData_.values.sorted{ ($0.movie_name ?? "") < ($1.movie_name ?? "") })
     lazy var layout = UICollectionViewFlowLayout()
@@ -200,14 +202,57 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
      */
     @objc func book() {
         if BasketData_.count < 1 {
-            UIAlertController.popUp(title: "Warning!", message: "Select free seat(s) first!")
+            self.presentAlert(withTitle: "Warning!", message: "Select free seat(s) first!")
 
         } else {
-            // TODO: check if user has active session
-            postNonceToServer("hello")
+            //postNonceToServer(nonce!)
+            getClientToken()
         }
     }
 
+    func getClientToken() {
+        
+        var errorOnLogin: GeneralRequestManager?
+               errorOnLogin = GeneralRequestManager(url: serverURL + "/login/CheckOut", errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
+
+               errorOnLogin?.getResponse {
+                   (json: JSON, error: NSError?) in
+
+                   if error != nil {
+                   } else {
+                    self.clientToken = json["clientToken"].string
+                    self.showDropIn(clientTokenOrTokenizationKey: self.clientToken!)
+                    }
+                }
+    }
+    
+    func showDropIn(clientTokenOrTokenizationKey: String) {
+        let request =  BTDropInRequest()
+        let dropIn = BTDropInController(authorization: clientTokenOrTokenizationKey, request: request)
+        { (controller, result, error) in
+            if (error != nil) {
+                print("ERROR")
+            } else if (result?.isCancelled == true) {
+                print("CANCELLED")
+            } else if let result = result {
+                guard let nonce = result.paymentMethod?.nonce
+                 else {
+                    controller.dismiss(animated: true, completion: nil)
+                    return
+                }
+                self.postNonceToServer(nonce)
+                // Use the BTDropInResult properties to update your UI
+                // result.paymentOptionType
+                // result.paymentMethod
+                // result.paymentIcon
+                // result.paymentDescription
+            }
+            controller.dismiss(animated: true, completion: nil)
+        }
+        self.present(dropIn!, animated: true, completion: nil)
+    }
+    
+    
     func postNonceToServer(_ paymentMethodNonce: String) {
         let seatData = [NSDictionary](Seats.values)
         let testdata: NSDictionary = ["seatsToBeReserved": seatData]
@@ -227,7 +272,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
         errorOnLogin?.getResponse {
             (json: JSON, error: NSError?) in
-            // TODO: add error cases
+
             if error != nil {
             } else {
                 if let list = json["seatsforscreen"].object as? NSArray {
@@ -257,7 +302,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                         let Amount = json["Amount"].rawValue
                         let TaxAmount = json["TaxAmount"].rawValue
 
-                        UIAlertController.popUp(title: "Payment info:", message: "ResponseText: \(responseText), Status: \(Status!), Amount: \(Amount), TaxAmount: \(TaxAmount), Movie name: \(TicketsData_[0].movie_name!), \(tickets.minimalDescrption)")
+                        self.presentAlert(withTitle: "Payment info:", message: "ResponseText: \(responseText), Status: \(Status!), Amount: \(Amount), TaxAmount: \(TaxAmount), Movie name: \(TicketsData_[0].movie_name!), \(tickets.minimalDescrption)")
                         
                         TicketsData_.removeAll()
                         tickets.removeAll()
@@ -278,10 +323,17 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
                         }
                     }
                     let Status = json["Success"].string!
-                    UIAlertController.popUp(title: "Booking failed with payment info:", message: "Failed tickets for movie: \(TicketsData_[0].movie_name!), seats_seatNumber: \(TicketsData_[0].seats_seatNumber!), ResponseText: \(responseText), Status: \(Status))")
+                    self.presentAlert(withTitle: "Booking failed with payment info:", message: "Failed tickets for movie: \(TicketsData_[0].movie_name!), seats_seatNumber: \(TicketsData_[0].seats_seatNumber!), ResponseText: \(responseText), Status: \(Status))")
+                }
+                
+                 else if let responseText = json["Error with Transaction"].string {
+                    // error case
+                    print(json)
+                    self.presentAlert(withTitle: "Booking failed with payment info:", message: "Payment error: \(responseText)")
                 }
             }
         }
+            
     }
 
     override func didReceiveMemoryWarning() {

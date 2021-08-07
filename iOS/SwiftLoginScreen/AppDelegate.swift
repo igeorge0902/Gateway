@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // URL classes available
+        // add from git if needed; discontinued
         URLProtocol.registerClass(MyURLProtocol.self)
         //URLProtocol.registerClass(MyURLProtocolSession.self)
 
@@ -78,24 +79,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationDidBecomeActive(_: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        AFNetworkReachabilityManager.shared().startMonitoring()
 
-        //  AppEventsLogger.activate(application)
-
-        //  timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(AppDelegate.checkNet), userInfo: nil, repeats: true)
-
-        //  timer_ = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(AppDelegate.checkRealm), userInfo: nil, repeats: true)
     }
 
     func checkRealm() {
 
-            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: ["https://milo.crabdance.com/mbooks-1/rest/book/movies/paging"])
+            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: ["https://"+serverURL+"/mbooks-1/rest/book/movies/paging"])
 
             // Query
         if let results = CachedResponse.objects(with: p) as AnyObject? {
             
             if results.count > 0 {
-                
+
                 for _ in 0 ..< results.count {
                     
                     let data = results.object(at: 0) as? CachedResponse
@@ -107,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
                         do {
                             try realm.commitWriteTransaction()
-
+                            
                         } catch {
                             print("Something went wrong!")
                         }

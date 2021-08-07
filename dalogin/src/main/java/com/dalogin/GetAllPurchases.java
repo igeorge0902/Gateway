@@ -52,7 +52,14 @@ public class GetAllPurchases extends HttpServlet implements Serializable {
 		
 		ServletContext otherContext = getServletContext().getContext(webApi2Context);
 
-		RequestDispatcher rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/purchases");
+		RequestDispatcher rd = null;
+		if(request.getParameter("book") != null) {
+		rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/purchases");
+		} else {
+		// TODO: temp. Replace it to CheckOut 
+		rd=	otherContext.getRequestDispatcher(webApi2ContextUrl + "book/webcheckout");
+		}
+		
 		token2 = new ArrayList<String>();
 		
 			try {

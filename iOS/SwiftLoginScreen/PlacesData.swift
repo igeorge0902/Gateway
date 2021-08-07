@@ -16,16 +16,20 @@ class PlacesData: NSObject, MKAnnotation {
     // Place structure
     let locationId: Int!
     let title: String?
-    let locationName: String
+    let address: String
     let type: String
     let coordinate: CLLocationCoordinate2D
+    var thumbnail: String?
 
-    init(locationId: Int, title: String, locationName: String, type: String, coordinate: CLLocationCoordinate2D) {
+    init(locationId: Int, title: String, address: String, type: String, coordinate: CLLocationCoordinate2D, thumbnail: String) {
         self.locationId = locationId
         self.title = title
-        self.locationName = locationName
+        self.address = address
         self.type = type
         self.coordinate = coordinate
+        self.thumbnail = thumbnail
+        //if thumbnail.isEmpty { self.thumbnail = "No picture" }
+
 
         super.init()
     }
@@ -33,7 +37,7 @@ class PlacesData: NSObject, MKAnnotation {
     class func fromJSON(_ json: NSDictionary) -> PlacesData! {
         let locationId = json.value(forKey: "locationId") as! Int
         let title = json.value(forKey: "name") as! String
-        let locationName = json.value(forKey: "formatted_address") as! String
+        let address = json.value(forKey: "formatted_address") as! String
         let type = "movie_theater" as String
         /*
          guard let geometry = json.valueForKey("geometry"),
@@ -41,13 +45,15 @@ class PlacesData: NSObject, MKAnnotation {
          */
         let latitude = json.value(forKey: "latitude") as! Double
         let longitude = json.value(forKey: "longitude") as! Double
+        let thumbnail = json.value(forKey: "thumbnail") as? String
+
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 
-        return PlacesData(locationId: locationId, title: title, locationName: locationName, type: type, coordinate: coordinate)
+        return PlacesData(locationId: locationId, title: title, address: address, type: type, coordinate: coordinate, thumbnail: thumbnail ?? "No picture")
     }
 
-    var subtitle: String? {
-        return locationName
+    var locationaddress: String? {
+        return address
     }
 
     var locationId_: Int? {
@@ -71,7 +77,7 @@ class PlacesData: NSObject, MKAnnotation {
     // annotation callout opens this mapItem in Maps app
     func mapItem() -> MKMapItem {
         // decorate the map with the appended Artwork structure items
-        let addressDict = [String(kABPersonAddressStreetKey): self.subtitle! as String]
+        let addressDict = [String(kABPersonAddressStreetKey): self.locationaddress! as String]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = title

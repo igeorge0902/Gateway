@@ -8,6 +8,7 @@ package com.dalogin;
  */
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -250,14 +251,24 @@ public class RegActivation extends HttpServlet {
      * 
      */
     public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json"); 
+
+    	response.setContentType("application/json"); 
 		response.setCharacterEncoding("utf-8"); 
 
-		activationData = request.getParameter("activation");
-		query = aesUtil.decrypt(SALT, IV, activationToken_, activationData);
+		session = request.getSession(true);				
+        ServletContext context = session.getServletContext();
+        
+		String parameter = request.getQueryString();
+
+		String[] activationData = parameter.split("=");
+		query = aesUtil.decrypt(SALT, IV, activationToken_, activationData[1]);
 		
 	    params = query.split("&");
 	    queryMap = new HashMap<String, String>();
+	    String user = "";
+	    String token2 = "";
+	    int i = 0;
+	    Arrays.sort(params);
 	    
 	    for (String param : params)
 	    
@@ -265,16 +276,42 @@ public class RegActivation extends HttpServlet {
 	        name = param.split("=")[0];
 	        value = param.split("=")[1];
 	        queryMap.put(name, value);
+	        i++;
+	         if(i == 1) {
+	        	token2= value; 
+	         }
+	         if(i == 2) {
+	        	 user = value;
+	         }
+	        
 	    }
 
 		//TODO: activate the voucher		
-		
+	    try {
+			SQLAccess.activate_voucher(token2, user, context);
+		} catch (Exception e) {
+			String error = e.getCause().toString();
+			log.info(error);
+
+		    JSONObject json = new JSONObject(); 
+			json.put("Error", error);
+
+			response.setContentType("application/json"); 
+			response.setCharacterEncoding("utf-8"); 
+			response.setStatus(502);
+			response.getWriter().write(json.toString());
+			response.flushBuffer();
+		}
+
+	    session.invalidate();
+	    
 		PrintWriter out = response.getWriter(); 
 
 		JSONObject json = new JSONObject(); 
 		JSONArray list = new JSONArray();
 		list.put(queryMap);
 		json.put("activation", list);
+		json.put("Registration:", "active");
 		
 		out.print(json.toString());
 		out.flush();

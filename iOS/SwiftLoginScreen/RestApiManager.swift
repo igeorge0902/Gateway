@@ -12,10 +12,11 @@ import SwiftyJSON
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-class RestApiManager: NSObject, UIAlertViewDelegate {
+class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
+    var alertViewPresentingVC: UIViewController?
+    
     static let sharedInstance = RestApiManager()
     let baseURL = serverURL + "/login/admin?JSESSIONID="
-    var running = false
     
     func alertView(_: UIAlertView, clickedButtonAt buttonIndex: Int) {
         switch buttonIndex {
@@ -60,10 +61,20 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
             var error = sessionError
 
             if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
+                if httpResponse.statusCode < 200 || httpResponse.statusCode > 300 {
                     let description = "HTTP response was \(httpResponse.statusCode)"
 
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                    var errorMsg: String = ""
+                    if let json: JSON = try? JSON(data: data!) {
+                    if let message_ = json["Error Details"].object as? NSDictionary {
+                        errorMsg =  message_.value(forKey: "ErrorMsg:") as! String
+                        
+                        }
+                        errorMsg = ", " + errorMsg
+                    }
+                    self.alertViewPresentingVC = UIAlertController()
+                    self.alertViewPresentingVC!.presenAlertView(withTitle: "Error", message: error!.localizedDescription + errorMsg)
                     NSLog(error!.localizedDescription)
                 }
             }
@@ -121,7 +132,6 @@ class RestApiManager: NSObject, UIAlertViewDelegate {
                 onCompletion(json, error as NSError?)
             }
         })
-        running = true
         task.resume()
     }
 }

@@ -240,6 +240,9 @@ public class AdminServlet extends HttpServlet implements Serializable {
 			 * 
 			 * It takes token1 to verify user. All user must have a valid token pair. 
 			 * Token pair will be overwritten upon logout to prevent malicious usage.
+			 * 
+			 * Beverly Cops 2: pofa be, nem téged kérdeztelek.
+			 * Velazquez: Las Maninas - s a mester egy nagy ajtót fest, amin két fontos alak van.
 			 */
 			RequestDispatcher rd = otherContext.getRequestDispatcher(webApiContextUrl + user.trim().toString()+"/"+token_.trim().toString());
 			log.info(request.getContentType());

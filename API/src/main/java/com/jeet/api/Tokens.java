@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="deviceId" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="token1" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="token2" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="TIME_" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -50,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
 	"id",
     "deviceId",
     "token1",
-    "token2"
+    "token2",
+    "TIME_"
 })
 @XmlRootElement(name = "tokens")
 @Entity

@@ -8,28 +8,40 @@
 
 import SwiftyJSON
 import UIKit
+import MapKit
 
 class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
+    
     var movieId: Int!
     var movieName: String!
     var selectLarge_picture: String!
     var selectDetails: String!
     var selectVenues_picture: String!
     var imdb: String!
+    
+    var matchingItems:[MKMapItem] = []
+    var mapView: MKMapView? = nil
+    var handleVenuesOnMapDelegate:HandleVenueMap? = nil
 
     deinit {
+        adminPage = false
         print(#function, "\(self)")
+        PlacesData2_.removeAll()
+        PlacesData_.removeAll()
     }
 
     // local
-    var TableData: [datastruct] = [datastruct]()
-
-    struct datastruct {
+    //  var TableData: [datastruct] = [datastruct]()
+    var LocationData: [PlacesData] = [PlacesData]()
+    /*
+    struct datastruct : Equatable {
         var venuesId: Int!
         var name: String!
         var address: String!
         var venues_picture: String!
         var screen_screenId: String!
+        var locationId: Int!
         var image: UIImage?
 
         init(add: NSDictionary) {
@@ -38,9 +50,15 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             address = (add["address"] as! String)
             venues_picture = (add["venues_picture"] as! String)
             screen_screenId = (add["screen_screenId"] as! String)
+            locationId = (add["locationId"] as! Int)
+        }
+        
+        static func == (lhs: datastruct, rhs: datastruct) -> Bool {
+            return lhs.name == rhs.name
         }
     }
-
+     */
+    
     var refreshControl: UIRefreshControl!
     var tableView: UITableView?
 
@@ -48,13 +66,20 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "goto_venues_details" {
             let nextSegue = segue.destination as? VenuesDetailsVC
             if let indexPath = self.tableView!.indexPathForSelectedRow {
-                let data = TableData[indexPath.row]
+               // let data = TableData[indexPath.row]
+                let data_ = LocationData[indexPath.row]
 
-                nextSegue?.selectVenues_picture = data.venues_picture
-                nextSegue?.selectVenueId = data.venuesId
-                nextSegue?.venueName = data.name
-                nextSegue?.selectAddress = data.address
-                nextSegue?.screen_screenId = data.screen_screenId
+                //TODO: remove venues data, and use location data, instead
+                //nextSegue?.selectVenues_picture = data.venues_picture
+                //nextSegue?.selectVenueId = data.venuesId
+                //nextSegue?.venueName = data.name
+                //nextSegue?.selectAddress = data.address
+                //nextSegue?.screen_screenId = data.screen_screenId
+                //nextSegue?.locationId = data.locationId
+                
+                nextSegue?.locationId = data_.locationId
+                nextSegue?.selectVenues_picture = data_.thumbnail
+                nextSegue?.venueName = data_.title
                 nextSegue?.movieId = movieId
                 nextSegue?.movieName = movieName
                 nextSegue?.movieDetails = selectDetails
@@ -73,7 +98,16 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl)
 
-        addData()
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateBack), name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
+        
+            
+        if adminPage  {
+            addLocation()
+        } else  if mapViewPage {
+            addLocation()
+        } else {
+            addLocalData()
+        }
     }
 
     override func viewWillAppear(_: Bool) {
@@ -88,21 +122,16 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         btnNav.backgroundColor = UIColor.black
         btnNav.setTitle("Back", for: UIControl.State())
         btnNav.showsTouchWhenHighlighted = true
-        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControl.Event.touchUpInside)
+        btnNav.addTarget(self, action: #selector(VenuesVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnNav)
     }
 
-    func navigateBack() {
-        dismiss(animated: true, completion: nil)
+    @objc func navigateBack() {
+        dismiss(animated: false, completion: nil)
     }
     
-    func navigateBack2() {
-        self.dismiss(animated: true, completion: {
-
-        })
-    }
-
+    /*
     func addData() {
         let myString = String(movieId)
         var errorOnLogin: GeneralRequestManager?
@@ -115,14 +144,72 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if let list = json["venues"].object as? NSArray {
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
-                        self.TableData.append(datastruct(add: dataBlock))
+                            self.TableData.append(datastruct(add: dataBlock))
+                        
                     }
                 }
             }
 
-            DispatchQueue.main.async(execute: {
+            DispatchQueue.main.async {
                 self.tableView?.reloadData()
-            })
+            }
+        }
+    }
+    */
+    
+    func addLocalData() {
+        let myString = String(movieId)
+        var errorOnLogin: GeneralRequestManager?
+
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/v2/" + myString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+
+        errorOnLogin?.getResponse { [self]
+            (json: JSON, _: NSError?) in
+
+            if let list = json["locations"].object as? NSArray {
+                for i in 0 ..< list.count {
+                    if let dataBlock = list[i] as? NSDictionary {
+                        if let artwork = PlacesData.fromJSON(dataBlock) {
+                            self.LocationData.append(artwork)
+                        }
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
+    }
+
+    func addLocation() {
+        PlacesData_.removeAll()
+        let pathString = "locations"
+
+        var errorOnLogin: GeneralRequestManager?
+
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/" + pathString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "", contentType: "", bodyToPost: nil)
+
+        errorOnLogin?.getResponse {
+            (json: JSON, _: NSError?) in
+
+            //   PlacesData_.removeAll()
+
+            if let list = json["locations"].object as? NSArray {
+                for i in 0 ..< list.count {
+                    if let dataBlock = list[i] as? NSDictionary {
+                        if let location = PlacesData.fromJSON(dataBlock) {
+                            PlacesData_.append(location)
+                            if mapViewPage == true {
+                                PlacesData2_.append(location)
+                            }
+                        }
+                    }
+                }
+            }
+
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
         }
     }
 
@@ -132,17 +219,51 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
         }
+        
+        if adminPage || mapViewPage {
+            PlacesData_.sort { ($0.title ?? "") < ($1.title ?? "")}
+            PlacesData2_.sort { ($0.title ?? "") < ($1.title ?? "")}
+            
+            var data_: PlacesData?
+            if mapViewPage {
+                data_ = PlacesData2_[indexPath.row]
+            } else {
+            data_ = PlacesData_[indexPath.row]
+            }
+            
+            var s = ""
+            if originalVenueName != nil {
+                s = (originalVenueName.string as NSString) as String
+            }
+            
+            if data_?.title! == s as String {
+                let range = (s as NSString).range(of: s as String)
+                let mutableAttributedString = NSMutableAttributedString.init(string: s as String)
+                mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
+                cell!.textLabel?.attributedText = mutableAttributedString
 
-        let data = TableData[indexPath.row]
+            } else {
+            
+            let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: (data_?.title!)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
-        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-        let detailText = NSMutableAttributedString(string: data.name, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+            cell!.textLabel?.attributedText = detailText
+                
+            }
 
-        cell!.textLabel?.attributedText = detailText
+        } else {
+            LocationData.sort { ($0.title ?? "") < ($1.title ?? "")}
+            let data = LocationData[indexPath.row]
+            
+            let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+            let detailText = NSMutableAttributedString(string: data.title!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
-        if let url = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + data.venues_picture!) {
-            if let imageData = try? Data(contentsOf: url) {
-                cell!.imageView?.image = UIImage(data: imageData)
+            cell!.textLabel?.attributedText = detailText
+
+            if let url = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + data.thumbnail!) {
+                if let imageData = try? Data(contentsOf: url) {
+                    cell!.imageView?.image = UIImage(data: imageData)
+                }
             }
         }
 
@@ -150,15 +271,34 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return TableData.count
-    }
+        if adminPage {
+            return PlacesData_.count
 
-    func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
-            performSegue(withIdentifier: "goto_venues_details", sender: self)
+        } else if mapViewPage {
+            return PlacesData2_.count
+        } else {
+            return LocationData.count
+
         }
     }
-}
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (adminPage && LocationData.count == 0) {
+            addVenue = PlacesData_[indexPath.row].title!
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
+        
+        } else if mapViewPage{
+            let selectedItem = PlacesData_[indexPath.row].mapItem().placemark
+          //  handleVenuesOnMapDelegate?.dropPinZoomIn(placemark: selectedItem)
+            self.handleVenuesOnMapDelegate?.dropPinZoomIn(placemark: selectedItem)
+ 
+            dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "goto_venues_details", sender: self)
+            }
+        }
+    }
+
 
 // Helper function inserted by Swift 4.2 migrator.
 private func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {

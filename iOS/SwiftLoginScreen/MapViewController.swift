@@ -12,9 +12,17 @@ import UIKit
 import UserNotifications
 
 var PlacesData_: [PlacesData] = [PlacesData]()
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+var PlacesData2_: [PlacesData] = [PlacesData]()
+var mapViewPage: Bool = false
+
+protocol HandleVenueMap {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate, UIPopoverPresentationControllerDelegate {
     deinit {
         PlacesData_.removeAll()
+        mapViewPage = false
         print(#function, "\(self)")
     }
 
@@ -24,14 +32,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var locationId_: Int!
     var selectVenueId: Int!
     var map2: Bool?
-
+    var selectedPin:MKPlacemark? = nil
+    
     @IBOutlet var mapView: MKMapView!
 
     let regionRadius: CLLocationDistance = 1000
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        mapViewPage = true
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -60,7 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         mapView.showsScale = true
         mapView.showsTraffic = true
-        mapView.showsCompass = true
+        mapView.showsCompass = false
         mapView.showsBuildings = true
         mapView.showsUserLocation = true
         mapView.isScrollEnabled = true
@@ -69,10 +79,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         btnNav.backgroundColor = UIColor.black
         btnNav.setTitle("Back", for: UIControl.State())
         btnNav.showsTouchWhenHighlighted = true
-        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControl.Event.touchUpInside)
+        btnNav.addTarget(self, action: #selector(MapViewController.navigateBack), for: UIControl.Event.touchUpInside)
+        
+        let btnVen = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
+        btnVen.backgroundColor = UIColor.black
+        btnVen.setTitle("Venues", for: UIControl.State())
+        btnVen.showsTouchWhenHighlighted = true
+        btnVen.addTarget(self, action: #selector(MapViewController.listVenues), for: UIControl.Event.touchUpInside)
 
+        view.addSubview(btnVen)
         view.addSubview(btnNav)
-
+        
+        let venues = VenuesVC()
+        venues.mapView = mapView
+        venues.handleVenuesOnMapDelegate = self
+        
         addData()
     }
 
@@ -93,8 +114,35 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // instantiate Artwork class
     var artworks = [PlacesData]()
 
-    func navigateBack() {
+    @objc func navigateBack() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func listVenues() {
+        mapViewPage = true
+        DispatchQueue.main.async {
+            let popOver = VenuesVC()
+            popOver.modalPresentationStyle = UIModalPresentationStyle.popover
+            popOver.preferredContentSize = CGSize(width: self.view.frame.width * 0.90, height: self.view.frame.height / 2)
+
+            let popoverMenuViewController = popOver.popoverPresentationController
+            popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+            popoverMenuViewController?.delegate = self
+            popoverMenuViewController?.sourceView = self.view
+            popoverMenuViewController?.backgroundColor = .white
+            popoverMenuViewController!.sourceRect = CGRect(
+                x: self.view.frame.width * 0.50,
+                y: self.view.frame.height * 0.70,
+                width: 0,
+                height: 0
+            )
+
+            self.present(
+                popOver,
+                animated: true,
+                completion: nil
+            )
+        }
     }
 
     func addData() {
@@ -109,7 +157,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/mbooks-1/rest/book/" + pathString, errors: "", method: "GET", headers: nil, queryParameters: queryString, bodyParameters: nil, isCacheable: "", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/" + pathString, errors: "", method: "GET", headers: nil, queryParameters: queryString, bodyParameters: nil, isCacheable: "", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -218,13 +266,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         if map2 == false {
             if control == view.leftCalloutAccessoryView {
-                if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
+
                     let location = view.annotation as! PlacesData
                     locationId_ = location.locationId
                     control.isHighlighted = true
                     control.isSelected = true
                     showActionSheetTapped()
-                }
+                
             }
         }
 
@@ -310,6 +358,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         present(alertController, animated: true, completion: nil)
     }
 
+    func presentationController(forPresented presented: UIViewController, presenting _: UIViewController?, source _: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
+
+    class HalfSizePresentationController: UIPresentationController {
+        override var frameOfPresentedViewInContainerView: CGRect {
+            return CGRect(x: 0, y: 200, width: containerView!.bounds.width, height: containerView!.bounds.height)
+        }
+    }
+
+    func adaptivePresentationStyle(for _: UIPresentationController) -> UIModalPresentationStyle {
+        // Return no adaptive presentation style, use default presentation behaviour
+        return .none
+    }
     // MARK: - location manager to authorize user location for Maps app
 
     //  var locationManager = CLLocationManager()
@@ -325,4 +387,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //    super.viewDidAppear(animated)
     //    checkLocationAuthorizationStatus()
     //  }
+}
+
+extension MapViewController: HandleVenueMap {
+    
+    func dropPinZoomIn(placemark:MKPlacemark) {
+
+        selectedPin = placemark
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: placemark.coordinate,
+                                        span: span)
+        mapView.setRegion(region, animated: true)
+    }
 }

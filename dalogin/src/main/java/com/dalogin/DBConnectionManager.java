@@ -10,7 +10,6 @@ package com.dalogin;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import org.apache.log4j.Logger;
 
 /**
@@ -43,6 +42,9 @@ public class DBConnectionManager {
 	 */
 	private volatile Connection con;
 	
+	public DBConnectionManager(){	
+	}
+	
 	/**
 	 * 
 	 * @param url
@@ -54,8 +56,7 @@ public class DBConnectionManager {
 		this.dbURL=url;
 		this.user=u;
 		this.password=p;
-		//create db connection now
-		
+		//create db connection now	
 	}
 	
 	//TODO: add RabbitMQ Connection factory as below

@@ -11,11 +11,14 @@ import SwiftyJSON
 
 var TableData: [PurchaseData] = [PurchaseData]()
 class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     deinit {
         TableData.removeAll()
         print(#function, "\(self)")
     }
-
+    
+    lazy var label = UILabel()
+    var sortBy = "purchase"
     var refreshControl: UIRefreshControl!
     var tableView: UITableView?
 
@@ -46,15 +49,26 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         tableView?.delegate = self
         tableView?.dataSource = self
-
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl)
-
+        
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
         btnNav.showsTouchWhenHighlighted = true
         btnNav.setTitle("Back", for: UIControl.State.normal)
-        btnNav.addTarget(self, action: #selector(BasketVC.navigateBack), for: UIControl.Event.touchUpInside)
+        btnNav.addTarget(self, action: #selector(PurchasesVC.navigateBack), for: UIControl.Event.touchUpInside)
+        
+        let btnSortPurchase = UIButton(frame: CGRect(x: view.frame.width / 2, y: 50, width: view.frame.width / 2, height: 20))
+        btnSortPurchase.backgroundColor = UIColor.black
+        btnSortPurchase.showsTouchWhenHighlighted = true
+        btnSortPurchase.setTitle("By Purchase", for: UIControl.State.normal)
+        btnSortPurchase.addTarget(self, action: #selector(PurchasesVC.sortByPurchaseDate), for: UIControl.Event.touchUpInside)
+        
+        let btnSortScreening = UIButton(frame: CGRect(x: 0, y: 50, width: view.frame.width / 2, height: 20))
+        btnSortScreening.backgroundColor = UIColor.black
+        btnSortScreening.showsTouchWhenHighlighted = true
+        btnSortScreening.setTitle("By Screening", for: UIControl.State.normal)
+        btnSortScreening.addTarget(self, action: #selector(PurchasesVC.sortByScreeningDate), for: UIControl.Event.touchUpInside)
         /*
         let btnData = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
         btnData.backgroundColor = UIColor.black
@@ -64,15 +78,60 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.addSubview(btnData)
         */
         view.addSubview(btnNav)
+        view.addSubview(btnSortPurchase)
+        view.addSubview(btnSortScreening)
+        
+        let frame2 = CGRect(x: view.frame.width * 0.10, y: 75, width: view.frame.width, height: 20)
 
+        label = UILabel(frame: frame2)
+        label.textColor = UIColor.black
+        label.textAlignment = NSTextAlignment.left
+
+        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+        let detailText = NSMutableAttributedString(string: sortBy, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+
+        label.attributedText = detailText
+
+        view.addSubview(label)
+
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        
         addPurchasesData()
     }
 
     override func viewDidAppear(_: Bool) {
         super.viewDidAppear(true)
     }
+    
+    @objc func sortByPurchaseDate() {
+        TableData.sort { ($0.purchaseDate ?? "") > ($1.purchaseDate ?? "") }
+        sortBy = "purchase"
+        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+        let detailText = NSMutableAttributedString(string: sortBy, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
-    func navigateBack() {
+        label.attributedText = detailText
+        
+        self.tableView?.reloadData()
+    }
+    
+    @objc func sortByScreeningDate() {
+        TableData.sort { ($0.screeningDate ?? "") > ($1.screeningDate ?? "") }
+        sortBy = "screening"
+        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+        let detailText = NSMutableAttributedString(string: sortBy, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+
+        label.attributedText = detailText
+        
+        self.tableView?.reloadData()
+    }
+
+     @objc func refresh() {
+        TableData.removeAll()
+        addPurchasesData()
+    }
+    
+    @objc func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
 
@@ -83,13 +142,28 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if sortBy == "purchase" {
+            return TableData[section].purchaseDate
+        } else {
+            return TableData[section].screeningDate
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as UITableViewCell?
 
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
         }
-
+        
+        if sortBy == "purchase" {
+        TableData.sort { ($0.purchaseDate ?? "") > ($1.purchaseDate ?? "") }
+        }
+        if sortBy == "screening" {
+        TableData.sort { ($0.screeningDate ?? "") > ($1.screeningDate ?? "") }
+        }
+        
         let data = TableData[indexPath.section]
 
         let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
@@ -124,16 +198,55 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if AFNetworkReachabilityManager.shared().networkReachabilityStatus.rawValue != 0 {
             purchaseId = TableData[indexPath.section].purchaseId
             performSegue(withIdentifier: "goto_tickets", sender: self)
-        }
     }
+    
+    func tableView(_ tableView: UITableView,
+                      trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+       {
+           // Write action code for the trash
+           let TrashAction = UIContextualAction(style: .normal, title:  "Trash", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            self.purchaseId = TableData[indexPath.section].purchaseId
+            let post: NSString = "purchaseId=\(self.purchaseId!)" as NSString
+            let postData: Data = post.data(using: String.Encoding.ascii.rawValue)!
+            
+            var errorOnLogin: GeneralRequestManager?
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/ManagePurchases", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: postData)
 
+            errorOnLogin?.getResponse {
+                (json: JSON, _: NSError?) in
+
+                if json["Success"].string == "true" {
+                TableData.remove(at: indexPath.section)
+                self.presentAlert(withTitle: "Info", message: "Purchase was refunded")
+                }
+
+                DispatchQueue.main.async(execute: {
+                    self.tableView?.reloadData()
+                })
+            }
+            
+               print("Update action ...")
+               success(true)
+           })
+           TrashAction.backgroundColor = .red
+
+           // Write action code for the More
+           let MoreAction = UIContextualAction(style: .normal, title:  "More", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+               print("Update action ...")
+               success(true)
+           })
+           MoreAction.backgroundColor = .gray
+
+
+           return UISwipeActionsConfiguration(actions: [TrashAction,MoreAction])
+       }
+    
     func addPurchasesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases", errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases", errors: "", method: "GET", headers: nil, queryParameters: ["book" : "GetAllPurchases"], bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in

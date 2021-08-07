@@ -9,10 +9,12 @@
 import Foundation
 import SwiftyJSON
 
+
 /**
  Stores BasketData objects representing basket items.
  */
 class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+   
     deinit {
         purchaseId = nil
         CollectionData.removeAll()
@@ -69,13 +71,13 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
 
     @objc func navigateBack() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
 
     func addData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/purchases/tickets", errors: "", method: "GET", headers: nil, queryParameters: ["purchaseId": purchaseId], bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/ManagePurchases", errors: "", method: "GET", headers: nil, queryParameters: ["purchaseId": purchaseId], bodyParameters: nil, isCacheable: "0", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {
             (json: JSON, _: NSError?) in
@@ -84,6 +86,7 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
                         self.CollectionData.append(AllTicketsData(add: dataBlock))
+                        self.CollectionData.sort { ($0.seats_seatNumber ?? "") < ($1.seats_seatNumber ?? "") }
                     }
                 }
             }
@@ -93,6 +96,38 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             collectionView.reloadData()
         }
     }
+    
+    /*
+     Method to delete tickets one by one
+     */
+    @objc func cancelTicket(button: UIButton, event: UIEvent) {
+
+        let ticketId = CollectionData[button.tag].ticketId
+        var ticketIds = [Int]()
+        ticketIds.append(ticketId!)
+        let data: NSDictionary = ["ticketIds": ticketIds]
+        let jsonData: Data = try! JSONSerialization.data(withJSONObject: data, options: [])
+        let prepareDataToPost = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+        
+        let post: NSString = "purchaseId=\(purchaseId!)&ticketsToBeCancelled=\(prepareDataToPost)" as NSString
+        let postData: Data = post.data(using: String.Encoding.ascii.rawValue)!
+
+        var errorOnLogin: GeneralRequestManager?
+
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/ManagePurchases", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "0", contentType: contentType_.urlEncoded.rawValue, bodyToPost: postData)
+
+        errorOnLogin?.getResponse {
+            (json: JSON, _: NSError?) in
+
+            if json["Success"].string == "true"  {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+            }
+        }
+        
+        CollectionData.remove(at: button.tag)
+        collectionView.reloadData()
+    }
+
 
     func numberOfSections(in _: UICollectionView) -> Int {
         return 1
@@ -154,6 +189,13 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         let text = NSMutableAttributedString(string: "Ticket details: \n Seat Row: \(CollectionData[indexPath.row].seats_seatRow!), \n Seat Nr: \(CollectionData[indexPath.row].seats_seatNumber!), \nDate of Screening: \n\(CollectionData[indexPath.row].screening_date!), \n Venue: \(CollectionData[indexPath.row].venue_name!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 14.0)!]))
 
         cell.statusText?.attributedText = text
+        
+        let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
+        btn.frame = cell.CancelImage!.frame
+        btn.addTarget(self, action: #selector(TicketsVC.cancelTicket), for: .touchUpInside)
+        btn.tag = indexPath.section
+        btn.setImage(UIImage(named: "trash"), for: .normal)
+        cell.contentView.addSubview(btn)
 
         guard let filter = filter,
             let data = CollectionData[indexPath.row].seats_seatNumber!.data(using: .isoLatin1, allowLossyConversion: false) else {

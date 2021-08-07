@@ -3,7 +3,6 @@
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.
-//  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
 import Foundation
@@ -37,7 +36,7 @@ class CustomURLSessionDelegate: URLSessionDownloadTask, URLSessionDelegate {
         // You'd likely have your dev/test servers here.
         // Please don't put your production server here!
 
-        static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost", "example.yourgreenapple.com"]
+        static let selfSignedHosts: Set<String> = ["milo.crabdance.com", "localhost", "igeorge1982.local"]
     }
 
     func URLSession(_: Foundation.URLSession, task _: URLSessionTask, willPerformHTTPRedirection _: HTTPURLResponse,

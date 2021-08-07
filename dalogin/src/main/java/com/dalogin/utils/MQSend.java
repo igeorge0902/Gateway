@@ -15,7 +15,7 @@ public class MQSend {
     Channel channel = connection.createChannel();
 
     channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-    String message = "Happy Birthday, Twifty!";
+    String message = "Happy Birthday, G!";
     channel.basicPublish("", QUEUE_NAME, null, message.getBytes("UTF-8"));
     System.out.println(" [x] Sent '" + message + "'");
 

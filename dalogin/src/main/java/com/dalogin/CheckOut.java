@@ -34,26 +34,18 @@ public class CheckOut extends HttpServlet implements Serializable {
 	protected volatile static String sessionId = null;
 
 	public synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    		
-    	// Set the response message's MIME type
-        response.setContentType("text/html;charset=UTF-8");
                
         // Return current session
 		session = request.getSession();		
-		cookies = request.getCookies();
 		       
 		 // Get JSESSION url parameter. By now it is just a logging..
 		 sessionId = request.getParameter("JSESSIONID");	
-		 if(sessionId == null) {
-		 	sessionId = session.getId();        	
-		 }
 		
 		ServletContext context = request.getServletContext();
 		String webApi2Context = context.getInitParameter("webApi2Context");
 		String webApi2ContextUrl = context.getInitParameter("webApi2ContextUrl");
 		
 		ServletContext otherContext = getServletContext().getContext(webApi2Context);
-
 		RequestDispatcher rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/payment/fullcheckout");
 		token2 = new ArrayList<String>();
 
@@ -76,5 +68,40 @@ public class CheckOut extends HttpServlet implements Serializable {
 		rd.forward(request, response);
 		
 		}
+	
+	public synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+        // Return current session
+		session = request.getSession();		
+		       
+		 // Get JSESSION url parameter. By now it is just a logging..
+		 sessionId = request.getParameter("JSESSIONID");	
+		
+		ServletContext context = request.getServletContext();
+		String webApi2Context = context.getInitParameter("webApi2Context");
+		String webApi2ContextUrl = context.getInitParameter("webApi2ContextUrl");
+		
+		ServletContext otherContext = getServletContext().getContext(webApi2Context);
+		RequestDispatcher rd = otherContext.getRequestDispatcher(webApi2ContextUrl + "book/payment/clientToken");
+		token2 = new ArrayList<String>();
+
+		try {
+			
+			token2 = SQLAccess.token2((String)session.getAttribute("deviceId"), context);
+			uuid = SQLAccess.uuid((String)session.getAttribute("user"), context);
+			
+			} catch (Exception e) {
+			
+				throw new ServletException(e.getCause().toString());
+
+		}
+		
+		//TODO: check if account is activated, if needed
+		request.setAttribute("token2", token2.get(0));
+		request.setAttribute("TIME_", token2.get(1));
+		request.setAttribute("uuid", uuid);
+
+		rd.forward(request, response);
+	}
     
 }

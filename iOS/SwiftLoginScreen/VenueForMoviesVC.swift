@@ -63,6 +63,9 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
                 nextSegue?.movieName = data.name
                 nextSegue?.movieDetails = data.detail
                 nextSegue?.selectLarge_picture = data.large_picture
+                nextSegue?.iMDB = data.imdb
+                nextSegue?.locationId = locationId
+
             }
         }
     }
@@ -110,12 +113,12 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
         btnNav.backgroundColor = UIColor.black
         btnNav.setTitle("Back", for: UIControl.State())
         btnNav.showsTouchWhenHighlighted = true
-        btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControl.Event.touchUpInside)
+        btnNav.addTarget(self, action: #selector(VenueForMoviesVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnNav)
     }
 
-    func navigateBack() {
+    @objc func navigateBack() {
         dismiss(animated: true, completion: nil)
     }
 

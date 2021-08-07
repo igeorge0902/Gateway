@@ -237,6 +237,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
             self.performSegue(withIdentifier: "goto_menu", sender: self)
         }
         actionSheetController.addAction(goToMenu)
+        
 
         // Create and add a second option action
         let goToLogin: UIAlertAction = UIAlertAction(title: "Go to Login Screen", style: .default) { _ -> Void in

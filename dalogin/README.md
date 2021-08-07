@@ -1,20 +1,22 @@
 # General Authentication Service
 (Release Candidate)
 
-Copyright © 2015-2019 George Gaspar. All rights reserved.
+Copyright © 2015-2017 George Gaspar. All rights reserved.
 
 ## Tested (with Apache httpd fronting Tomcat, GlassFish and wildFly 10.*): OK!
 
 Questions:
 igeorge1982@gmail.com
 
+Update
+----
+- Password reset as of 2017.03.20.
+- For the first step of the password reset you may have noticed a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
 
 RoadMap
 ----
-- update Swift 5.x (with iOS event calendar)
 - adding outsourced session storage so that the session objects will not be stored in the servletContext, but in a NoSQL-like dB.
 [Considered dataBases](https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
-- addind SOAP webservice to the API (I have it working, but still experimental)
 
 # New
 ### WebSocket and rabbitMQ
@@ -29,24 +31,12 @@ rabbitMQ is a message publishing and subscribing system (or you can include the 
 
 Known issues (for most recent version see the update branch!):
 ----
-- In TomCat 9.x version somehow a sessionDestroy will be called causing the tokkens to be triggered. This has to be solved, but as quick remedy you can comment out the trigger in the logout_device procedure, which is called by the 
+- if the properties.properties file is not copied up-front to its place under your Application Server directory, then unexpected behavior may occur. I still am working on it.
+- In the CustomSessionListener class at line 180 you may experience server runtime issue that I got on Wildfly 10.1.0. Just surround that line with a try catch and you will be fine. -> FIXED in the update branch. See same class at line 189.
+- different desktop browser may need different cache settings apart from what is supplied in the Apache config files! Make sure you will configure your web server - not the application server - not to use cache at all, because then after subsequential logins using the same browser the user will not able to access the restricted API.
+- For authentication (index.html and register.html) Angular JS 1.3.x is used that is due to be upgraded to newer version. Feel free to contribute! Thereafter in index.jsp higher version of Angular JS is used.
 
-```java
-SQLAccess.logout(session.getId(), context);
-```
-
-and resides in two places:
-* Loggingout.java for user initiated logging out
-* CustomHttpSessionListener.java for initiated by session expiring to log out
-
-
-```javascript
-    update Tokens
-    set Tokens.token1 = 0 and Tokens.token2 = 0 
-	where Tokens.deviceId = deviceId_;
-```
-- The logic in the CustomHttpSessionListener class in attributeAdded method stopped working, however it used to do so. Just comment out. The purpuse of the implenetation was just! to create a neat list - sessionUsers - holding (user, sessionId) per deviceId. 
-
+- Please note you would like to report issues you may find so that I can fix that I might have missed.
 
 Donation
 ----
@@ -135,10 +125,6 @@ The token parameter will be retrieved from the session, which will be the "user"
 
 User has to provide the second key (token2) of tokens by a client request, which has to belong to the first one - retrieved from the session - by a given device.
 
-Password reset:
-----
-For the first step of the password reset you may have noticed a sessionToken will be created upon the email has been successfully verified. You may wish to store it and/or use it as another security checkpoint. The XSRF-Token and the browser's localStorage is not cleaned up after the password reset has been successful, which also may be useful, but it won't do no harm, however.
-
 Important:
 ----
 - configure your links according to your environment setup (server, webApp, iOS)!
@@ -178,6 +164,78 @@ The structure:
 Configured to run on SSL only, which is required as right now the iOS part is configured to use Certificate Authority (CA) -> [Using Self-Signed SSL Certificates with iOS](https://blog.httpwatch.com/2013/12/12/five-tips-for-using-self-signed-ssl-certificates-with-ios/)
 
 The webserver and the application server is configured not to use cache, but it worked for me without cache settings, too!
+
+Apache HTTPD configuration
+----
+
+- config files are included that you should use to get started. 
+- it facilitates AJP protocol with separate modjk configuration file (define a loadbalancer worker and assign its routes in the designated workers.properties file. For more info, pls see the corresponding Apache documentation! 
+- [Apache Connectors](http://tomcat.apache.org/connectors-doc/) 
+and 
+- [The Apache Tomcat Connectors - Web Server HowTo](http://tomcat.apache.org/connectors-doc/webserver_howto/apache.html)
+
+# setup
+- install openssl - for macOs you can use homebrew: brew install openssl
+- build your Apache HTTP server with openssl and optionally apr included (you can use alternative installation solutions like homebrew, linux apt get install or specific to Windows) 
+- [Apache Install](https://httpd.apache.org/docs/2.4/install.html), 
+- [Compiling Apache for Microsoft Windows](http://httpd.apache.org/docs/current/platform/win_compiling.html), 
+- [Manual install on Windows 7 with Apache and MySQL](https://docs.moodle.org/29/en/Manual_install_on_Windows_7_with_Apache_and_MySQL)
+
+```shell
+./configure \
+    --prefix=/opt/httpd \
+    --with-included-apr \
+    --enable-ssl \
+    --with-ssl=/opt/openssl-1.0.1i \
+    --enable-ssl-staticlib-deps \
+    --enable-mods-static=ssl
+```
+
+- install and enable mod_ssl - [How To Install Apache 2 with SSL](http://www.thegeekstuff.com/2011/03/install-apache2-ssl)
+or
+- install openssl with homebrew on macOs
+- add your SSL Certificate in httpd-ssl.conf (example included)
+- add (compile/build/install) mod_jk pointing to your Apache installation like --with-apxs=/usr/sbin/apxs
+- configure your mod_jk config file and include it in your httpd.conf file - [Apache Tomcat mod_jk Connector Configuration ](https://www.mulesoft.com/tcat/apache-tomcat-mod-jk-connector-configuration), [Configure Apache to load mod_jk](https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/clustering-http-modjk.html)
+- reference your uriworkermap.properties in mod_jk config file (that is necesary, but actually we won't make use of it in this configuration)
+- reference your workers.properties file in mod_jk config file and set up your workers
+- the actual uri contexts (#JKMount paths with corresponding worker) are defined in httpd-ssl.conf in this configuration
+- create your AJP listner with the same port in your AS (Tomcat, GlassFish - [Tomcat server.xml Configuration Example](https://examples.javacodegeeks.com/enterprise-java/tomcat/tomcat-server-xml-configuration-example/), [To Enable mod_jk on GlassFish](https://docs.oracle.com/cd/E19798-01/821-1751/gixqw/index.html), [Enable SSL Between the mod_jk Load Balancer and GlassFish Server](https://docs.oracle.com/cd/E19798-01/821-1751/gjpan/index.html)
+
+# HTTP Strict Transport Security (HSTS)
+- HTTP Strict Transport Security (HSTS) is a web security policy mechanism which helps to protect websites against protocol downgrade attacks and cookie hijacking. To complete the HSTS security you must obtain a trusted certificate from a Certificate Authority that can effectively verify your host.
+
+# More information on security headers:
+[Hardening Your HTTP Security Headers](https://www.keycdn.com/blog/http-security-headers/)
+
+Sample cache and header settings for Apache (put it inside httpd.conf or the httpd-ssl.conf):
+
+```xml
+ <IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection 1;mode=block
+    Header always set X-Content-Type-Options nosniff
+    Header always set Access-Control-Expose-Headers "X-Token"
+    Header always set Access-Control-Max-Age "1800"
+    Header always set Access-Control-Allow-Headers "Content-Type, Origin, Authorization, Accept, X-Token, Accept-Encoding"
+    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+    Header set MyHeader "%D ms %t ms %l %i %b"
+    Header echo ^M-Device
+    Header set X-SSL-PROTOCOL "expr=%{SSL_PROTOCOL}"
+    Header set X-SSL-CIPHER "expr=%{SSL:SSL_CIPHER}"
+    Header always set Content-Security-Policy "script-src 'self' https://apis.google.com https://www.google-analytics.com https://facebook.com"
+    Header always set Public-Key-Pins "pin-sha256=\"the sha256 fingerprint of your certificate\"; max-age=5184000" 
+  </IfModule>
+```
+
+```xml
+  <FilesMatch "\.(html|ico|pdf|flv|jpg|jpeg|png|gif|js|jsp|css|swf)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+```
 
 Clustering:
 ----
@@ -275,24 +333,14 @@ About the WebView login:
 ----
 - it will use a redirection: basically the browser in the webview will tell the server it uses a mobile browser and as such is going to use a designated headerField called M, too. 
 
-In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. 
+In iOS, all the requests are going to be copied into a new mutable one, that go through the url protocol (NSURLProtocol). The protocol can and will set a header value for these particular NEW requests, and these new requests are going to make the actual connection, with the added headerField. Please note, that the header of the request is goint to make a preflight regardless the body part has been cached. 
 
-The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been completed out successfully, using the shouldStartLoadWith delegate, knowing that the webView has finished the redirect successfully. 
+The js in the webView is going to pick up this value that is set into the headerField M, but it checks only if its value is undefined or not, and sets the values of "window.location.href" according to the server response: As the iOS has set the value for the headerField already, the server is going to know that a redirection must be carried out, and the iOS will close the webView after the redirect has been carried out successfully, also knowing that the webView has finished the redirect successfully. For the webview request we are happy the value of the headerfield M is cached, even though it is not readable, but we check only if it is an object or null. 
 
-The meaning of such redirect is that the iOS, and the WWW app in the WebView will know quickly, if/when the login has succeeded. 
+The meaning of such redirect is that the iOS will know quickly if the login has succeeded. 
 
-After the redirect has beed carried out successfully the iOS app has recieved the server response (NSData) and finalized the user login process in the app initiated through the webview, the user can access restricted data through the API, using the generated token pairs, which is when we call a subsequent request to the /login/admin (AdminServlet). These user variables are going to be up-to-date for the particular user specifically and always.
+After the redirect has beed carried out successfully the iOS app has recieved the server response and finalized the user login process in the app initiated throught webview, and the user can access restricted data through the API, using the generated token pairs. These user variables are going to be up-to-date for the particular user specifically and always.
 
-```swift
-                    requestLogin = RequestManager(url: adminUrl!, errors: "")
-                    
-                    requestLogin?.getResponse {
-                        (json: JSON, error: NSError?) in
-                        
-                        print(json)
-                        
-                    }
-```
 
 RoadMap:
 ----
@@ -302,6 +350,6 @@ RoadMap:
 
 Note:
 ----
-Last update: 2019.11.27.
+Last update: 2017.03.21.
 
-Copyright © 2015-2019 George Gaspar. All rights reserved.
+Copyright © 2015-2018 George Gaspar. All rights reserved.

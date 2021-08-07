@@ -48,6 +48,7 @@ class MovieDetailVC: UIViewController, UIViewControllerTransitioningDelegate, UI
 
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
+        btnNav.showsTouchWhenHighlighted = true
         btnNav.setTitle("Back", for: UIControl.State())
         btnNav.addTarget(self, action: #selector(MovieDetailVC.navigateBack), for: UIControl.Event.touchUpInside)
         
@@ -124,7 +125,7 @@ class MovieDetailVC: UIViewController, UIViewControllerTransitioningDelegate, UI
     }
 
     @objc func navigateBack() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @objc func Venues() {

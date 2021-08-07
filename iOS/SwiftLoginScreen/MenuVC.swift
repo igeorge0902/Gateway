@@ -41,6 +41,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
         btnNav.setTitle("Back", for: UIControl.State())
+        btnNav.showsTouchWhenHighlighted = true
         btnNav.addTarget(self, action: #selector(MenuVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnData)
@@ -51,7 +52,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         nameTextView.isEditable = false
 
         let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-        let detailText = NSMutableAttributedString(string: "user", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+        let detailText = NSMutableAttributedString(string: "no logged in user", attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
         nameTextView.attributedText = detailText
         nameTextView.textAlignment = NSTextAlignment.justified
@@ -96,14 +97,26 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         nameTextViewX.layer.borderWidth = 2
         nameTextViewX.layer.borderColor = UIColor.darkGray.cgColor
         
-             if let cookies_ = cookieStorage.cookies {
+        if let cookies_ = cookieStorage.cookies {
                  for cookie in cookies_ {
                      if (cookie.name == "XSRF-TOKEN") {
                         self.nameTextViewX.text = cookie.value
                      }
                  }
          }
+        
+        let frame1 = CGRect(x: view.frame.width * 0.15, y: view.frame.height / 2, width: 44, height: 20)
+        let button = UIButton(frame: frame1)
+        let myAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
+        let title = NSMutableAttributedString(string: "Admin", attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttribute))
 
+        button.tintColor = UIColor.darkGray
+        button.setAttributedTitle(title, for: UIControl.State())
+        button.backgroundColor = UIColor.white
+        button.showsTouchWhenHighlighted = true
+        button.addTarget(self, action: #selector(MenuVC.admin), for: UIControl.Event.touchUpInside)
+
+        view.addSubview(button)
         view.addSubview(nameTextView)
         view.addSubview(nameTextView_)
         view.addSubview(nameTextViewX)
@@ -145,10 +158,10 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
             (json: JSON, error: NSError?) in
 
             // if response == 300
-            if let message_ = json["Error Details"].object as? NSDictionary {
-                if let errorMsg = message_.value(forKey: "ErrorMsg:") as? String {
-                self.presentAlert(withTitle: "Error Details", message: errorMsg)
-                }
+            if json["Error Details"].object is NSDictionary {
+          //      if let errorMsg = message_.value(forKey: "ErrorMsg:") as? String {
+          //      self.presentAlert(withTitle: "Error Details", message: errorMsg)
+          //      }
             } else {
                 let users: AnyObject = json["user"].object as AnyObject
                 self.items.add(users)
@@ -174,19 +187,20 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         }
 
     }
+    
+    @objc func admin(_: UIButton, event _: UIEvent) {
+            performSegue(withIdentifier: "goto_admin", sender: self)
+    }
 
     func dataTask(_ onCompletion: @escaping ServiceResponses) {
         var request: URLRequest = URLRequest(url: url!)
 
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("", forHTTPHeaderField: "Referer")
 
         let task = session.dataTask(with: request, completionHandler: { data, response, sessionError in
 
             // TODO: nil handling
-            let json: JSON = try! JSON(data: data!)
-
             var error = sessionError
 
             if let httpResponse = response as? HTTPURLResponse {
@@ -218,7 +232,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
 
                     switch httpResponse.statusCode {
                     case 200:
-
+                        let json: JSON = try! JSON(data: data!)
                         NSLog("got a " + String(httpResponse.statusCode) + " response code")
 
                         let jsonData: NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
@@ -227,10 +241,21 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
 
                         if success == "true" {
                             NSLog("LogOut SUCCESS")
-
+                            let cookieStorage = HTTPCookieStorage.shared
+                            if let cookies_ = cookieStorage.cookies {
+                                for cookie in cookies_ {
+                                    cookieStorage.deleteCookie(cookie)
+                                }
+                                
+                                self.nameTextView_.text = "JSESSION cookie"
+                                self.nameTextViewX.text = "xsrf-cookie"
+                                self.nameTextView.text = "no logged in user"
+                            }
                             let appDomain = Bundle.main.bundleIdentifier
                             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
                             self.presentAlert(withTitle: "LogOut SUCCESS", message: "Bye!")
+                          
+                            onCompletion(json, error as NSError?)
                         }
 
                     default:
@@ -238,13 +263,9 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
                 }
-
-                onCompletion(json, error as NSError?)
-                self.running = false
             }
         })
 
-        running = true
         task.resume()
     }
 }

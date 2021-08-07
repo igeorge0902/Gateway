@@ -1,5 +1,6 @@
 package com.jeet.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.jeet.api.Devices;
@@ -57,6 +58,27 @@ public class BookingHandlerImpl {
 		Tokens token_ = DAO.instance().getToken2(token1);
 
 		return token_;
+	}
+	
+	public List<Devices> getDevice_() {
+		
+		
+		Devices device = new Devices();
+		device.setId(1);
+		device.setDevice("Samsung");
+		device.setUuid("11-11");
+		
+		Devices device_ = new Devices();
+		device_.setId(2);
+		device_.setDevice("iPhone");
+		device_.setUuid("11-11");
+		
+		List<Devices> allDevices = new ArrayList<Devices>();
+		allDevices.add(device);
+		allDevices.add(device_);
+		
+		
+		return allDevices;
 	}
 
 }

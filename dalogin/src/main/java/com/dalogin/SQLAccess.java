@@ -130,7 +130,7 @@ public class SQLAccess {
 
           if (connect == null) {
       		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
-      		SQLAccess.connect = dbManager.getConnection();
+      		connect = dbManager.getConnection();
           	}
 	  return connect;         
 	  }
@@ -156,7 +156,7 @@ public class SQLAccess {
 		
 		try {
 
-		connect = dbManager.getConnection();
+	    connect = dbManager.getConnection();
 		
 			String sql = "insert into  login.logins values (default, ?, ?, default, ?, default)";
 		
@@ -1171,6 +1171,48 @@ public class SQLAccess {
 		return list;
 	}
 	
+	/**
+	 * Get activation token and email for user.
+	 * 
+	 * @param user
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
+	public synchronized static boolean activate_voucher(String activationToken, String user, ServletContext context) throws Exception {
+
+		// Setup the connection with the DB
+		DBConnectionManager dbManager = (DBConnectionManager) context.getAttribute("DBManager");
+		try {
+    		connect = dbManager.getConnection();
+								
+			InputStream in_ = IOUtils.toInputStream(activationToken, "UTF-8");
+		    Reader reader_ = new BufferedReader(new InputStreamReader(in_));
+		    
+		    InputStream ins = IOUtils.toInputStream(user, "UTF-8");
+		    Reader readers = new BufferedReader(new InputStreamReader(ins));
+		    
+			callableStatement = connect.prepareCall("{call `activate_voucher`(?, ?)}");
+
+			callableStatement.setCharacterStream(1, reader_);	
+			callableStatement.setCharacterStream(2, readers);	
+
+			callableStatement.executeUpdate();
+			callableStatement.closeOnCompletion();
+			reader_.close();
+			readers.close();
+			return true;
+			
+		} catch (SQLException ex) {
+		      SQLAccess.printSQLException(ex);
+
+		} finally {
+			
+			dbManager.closeConnection();
+			
+		}
+		return false;
+	}
 	
 	/**
 	 * Logs out the device by sessionID.
