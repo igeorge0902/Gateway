@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `login` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `login`;
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: localhost    Database: login
@@ -41,7 +43,7 @@ CREATE TABLE `Last_seen` (
 
 LOCK TABLES `Last_seen` WRITE;
 /*!40000 ALTER TABLE `Last_seen` DISABLE KEYS */;
-INSERT INTO `Last_seen` VALUES (1,'7501012353736560292487537365900144024','1489971801555','2017-03-20 01:03:21',1);
+INSERT INTO `Last_seen` VALUES (1,'64CAA753-A134-44C4-A425-92B46A6D18A8','1588542251924','2020-05-03 21:44:11',1);
 /*!40000 ALTER TABLE `Last_seen` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -125,7 +127,7 @@ CREATE TABLE `Tokens` (
 
 LOCK TABLES `Tokens` WRITE;
 /*!40000 ALTER TABLE `Tokens` DISABLE KEYS */;
-INSERT INTO `Tokens` VALUES (1,'7501012353736560292487537365900144024','63157170-0d50-11e7-bfa5-08d61afda954','0.28146259699153026','2017-03-20 09:34:16',1);
+INSERT INTO `Tokens` VALUES (1,'64CAA753-A134-44C4-A425-92B46A6D18A8','39e2f5d8-8d87-11ea-a441-cf47f7011c8d','0.4399847150221325','2020-05-03 21:44:11',1);
 /*!40000 ALTER TABLE `Tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -189,7 +191,7 @@ CREATE TABLE `device_states` (
   KEY `sessionID` (`SessionID`),
   KEY `fk_devices_idx` (`devices_id`),
   CONSTRAINT `fk_devices` FOREIGN KEY (`devices_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +200,7 @@ CREATE TABLE `device_states` (
 
 LOCK TABLES `device_states` WRITE;
 /*!40000 ALTER TABLE `device_states` DISABLE KEYS */;
-INSERT INTO `device_states` VALUES (1,'7501012353736560292487537365900144024','logged_out','9032f02af73197aac9b1c639d30a','2017-03-16 21:26:04','9f394dd6-6de0-11e5-8441-71caa0c5f788',1),(2,'7501012353736560292487537365900144024','logged_in','-AM6ZD6MPAcoze74xiG9XvXQk57ZKn_sYQ1gzxfM','2017-03-14 13:15:57','65f63602-6ddf-11e5-8441-71caa0c5f788',2),(3,'7501012353736560292487537365900144024','logged_out','9036a0e11cb5eced4a0d1591894c','2017-03-16 21:27:49','a08d4212-3d4e-11e6-b703-b68b964fca08',3),(4,'7501012353736560292487537365900144024','logged_out','Qblue5ORs8pYtIlLlRaKAJyGzzODEQXmYAIrZpA4','2017-03-20 09:34:16','ab36ff88-6de1-11e5-8441-71caa0c5f788',4);
+INSERT INTO `device_states` VALUES (1,'64CAA753-A134-44C4-A425-92B46A6D18A8','logged_out','qs77DJ16A2PwXbxQjXtmUVfDiSf1C0skkxVXaPRi','2020-05-03 21:43:48','65f63602-6ddf-11e5-8441-71caa0c5f788',1),(2,'64CAA753-A134-44C4-A425-92B46A6D18A8','logged_in','Mg47Ho9vUJ6mk5xy9ZHF-BDTWH_LgLCGwL_6e54k','2020-05-03 21:44:11','97c6fd76-ed90-11e9-871a-874ce8a992e2',2);
 /*!40000 ALTER TABLE `device_states` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,7 +218,7 @@ CREATE TABLE `devices` (
   `TIME_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +227,7 @@ CREATE TABLE `devices` (
 
 LOCK TABLES `devices` WRITE;
 /*!40000 ALTER TABLE `devices` DISABLE KEYS */;
-INSERT INTO `devices` VALUES (1,'7501012353736560292487537365900144024','9f394dd6-6de0-11e5-8441-71caa0c5f788','2017-03-14 12:53:12'),(2,'7501012353736560292487537365900144024','65f63602-6ddf-11e5-8441-71caa0c5f788','2017-03-14 13:15:57'),(3,'7501012353736560292487537365900144024','a08d4212-3d4e-11e6-b703-b68b964fca08','2017-03-16 21:26:04'),(4,'7501012353736560292487537365900144024','ab36ff88-6de1-11e5-8441-71caa0c5f788','2017-03-20 01:03:21');
+INSERT INTO `devices` VALUES (1,'64CAA753-A134-44C4-A425-92B46A6D18A8','65f63602-6ddf-11e5-8441-71caa0c5f788','2020-05-03 21:43:27'),(2,'64CAA753-A134-44C4-A425-92B46A6D18A8','97c6fd76-ed90-11e9-871a-874ce8a992e2','2020-05-03 21:44:11');
 /*!40000 ALTER TABLE `devices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -273,7 +275,7 @@ CREATE TABLE `forgotPsw` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `forgotUserEmail_UNIQUE` (`forgotUserEmail`),
   UNIQUE KEY `forgotRequestToken_UNIQUE` (`forgotRequestToken`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +284,7 @@ CREATE TABLE `forgotPsw` (
 
 LOCK TABLES `forgotPsw` WRITE;
 /*!40000 ALTER TABLE `forgotPsw` DISABLE KEYS */;
-INSERT INTO `forgotPsw` VALUES (1,'ga@ga.com','0.6539524473752384','1489964739351',1,'2017-03-21 11:19:00'),(2,'gi@gi.com','0.09058727611842311','1490103024413',0,'2017-03-21 13:30:42');
+INSERT INTO `forgotPsw` VALUES (1,'ga@ga.com','0.20107192378590993','1491772273707',0,'2017-04-09 21:11:23'),(2,'gi@gi.com','0.8017910614626399','1490129614313',0,'2017-03-21 20:55:32'),(3,'igeorge1982@gmail.com','0.23730198502289315','1588170794417',0,'2020-04-29 14:33:29');
 /*!40000 ALTER TABLE `forgotPsw` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -347,7 +349,7 @@ CREATE TABLE `logins` (
   KEY `user` (`user`),
   KEY `hash_` (`hash_`),
   FULLTEXT KEY `user_2` (`user`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -356,7 +358,7 @@ CREATE TABLE `logins` (
 
 LOCK TABLES `logins` WRITE;
 /*!40000 ALTER TABLE `logins` DISABLE KEYS */;
-INSERT INTO `logins` VALUES (1,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GG','65f63602-6ddf-11e5-8441-71caa0c5f788','igeorge0902@yahoo.com','2017-03-05 15:23:21'),(2,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GA','9f394dd6-6de0-11e5-8441-71caa0c5f788','ga@ga.com','2017-03-05 15:23:21'),(3,'a444e9773a37543a1a380f0076e766cc6bf38953c74c09929dcab75c43ef3082a37568974728d0ccd0d2870cc2110da4e72183bf116a2ccb4262906cb003f6c0','GI','ab36ff88-6de1-11e5-8441-71caa0c5f788','gi@gi.com','2017-03-21 13:30:42'),(4,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Lilla','37bd295e-6de3-11e5-8441-71caa0c5f788','lilla@lilla.hu','2017-03-05 15:23:21'),(5,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Milo','81e84d10-6de3-11e5-8441-71caa0c5f788','milo@milo.hu','2017-03-05 15:23:21'),(13,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KI','ce118410-b7bf-11e5-ab38-d9d1883983e4','ki@ki.hu','2017-03-05 15:23:21'),(14,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','KK','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','kk@kk.hu','2017-03-05 15:23:21'),(37,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','George','eefcfe1a-0284-11e6-b3c9-cce30c92baea','igeorge1982@hotmail.com','2017-03-05 15:23:21'),(60,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','AA','d4969b4e-04b4-11e6-8ded-b86cf27c977e','aa@aa.hu','2017-03-05 15:23:21'),(62,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','CC','6b8e6034-04c6-11e6-8ded-b86cf27c977e','igeorge1982@gmail.com','2017-03-05 15:23:21'),(63,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','CD','a08d4212-3d4e-11e6-b703-b68b964fca08','igeorge1982@yahoo.com','2017-03-05 15:23:21');
+INSERT INTO `logins` VALUES (2,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','GI','97c6fd76-ed90-11e9-871a-874ce8a992e2','ildiko.gaspar.911@gmail.com','2019-10-13 08:09:41'),(5,'52fa80662e64c128f8389c9ea6c73d4c02368004bf4463491900d11aaadca39d47de1b01361f207c512cfa79f0f92c3395c67ff7928e3f5ce3e3c852b392f976','Milo','f73b72c4-1071-11ea-9359-551258859352','igeorge1982@yahoo.com','2019-11-26 17:27:05'),(9,'c3f143d18059221215df660694195553ce02d4ebb4a48e89a5a5a0104898f61a9c6b24793cf5e80ad37616696d1b504295aa9a0c0a10ed3fd0380928d18b7cc1','GG','65f63602-6ddf-11e5-8441-71caa0c5f788','igeorge1982@gmail.com','2020-04-29 14:33:29');
 /*!40000 ALTER TABLE `logins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -414,12 +416,13 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE VIEW `user_on_devices` AS SELECT 
  1 AS `user`,
- 1 AS `email`,
  1 AS `uuid`,
+ 1 AS `email`,
+ 1 AS `voucher`,
  1 AS `deviceId`,
  1 AS `state`,
- 1 AS `TIME_`,
- 1 AS `voucher_`*/;
+ 1 AS `sessionID`,
+ 1 AS `Time`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -450,7 +453,7 @@ CREATE TABLE `voucher_states` (
 
 LOCK TABLES `voucher_states` WRITE;
 /*!40000 ALTER TABLE `voucher_states` DISABLE KEYS */;
-INSERT INTO `voucher_states` VALUES (8,'registered','12345',NULL,0,1,'2016-03-10 20:25:44',NULL),(9,'registered','12346',NULL,0,1,'2016-03-10 20:41:30',NULL),(10,'registered','12347',NULL,0,1,'2016-03-10 20:41:30',NULL),(11,'registered','12348',NULL,0,1,'2016-03-10 20:40:42',NULL),(12,'registered','12349',NULL,0,1,'2016-03-10 20:40:51',NULL),(13,'registered','12350',NULL,0,1,'2016-03-10 20:41:00',NULL),(14,'registered','12351',NULL,0,1,'2016-03-10 20:41:07',NULL),(15,'registered','12352',NULL,1,0,'2016-04-20 22:48:32','0.32044395554852105'),(16,'free','12353',NULL,1,0,'2017-03-14 08:59:40','0.058389987850924946'),(17,'registered','12354',NULL,1,0,'2016-04-17 18:01:58','0.32044395554852106'),(18,'registered','12355',NULL,1,0,'2016-04-14 21:17:11','0.09055326235532134'),(19,'registered','12356',NULL,1,0,'2016-06-28 16:37:39','0.554701955574287'),(20,'free','12357',NULL,0,1,'2017-03-21 13:22:48',NULL);
+INSERT INTO `voucher_states` VALUES (8,'free','12345',NULL,0,1,'2019-12-14 17:41:05',NULL),(9,'registered','12346',NULL,0,1,'2019-10-13 08:08:08','0.21622941476873067'),(10,'registered','12347',NULL,0,1,'2019-12-14 17:19:36','0.31117856345249206'),(11,'registered','12348',NULL,0,1,'2019-12-14 17:34:51','0.1513986430609586'),(12,'free','12349',NULL,0,1,'2019-03-05 00:04:28',NULL),(13,'free','12350',NULL,0,1,'2019-03-05 00:04:28',NULL),(14,'free','12351',NULL,0,1,'2019-03-05 00:04:28',NULL),(15,'registered','12352',NULL,1,0,'2019-11-26 17:27:05','0.3084171948101532'),(16,'free','12353',NULL,1,0,'2019-03-05 00:04:28',''),(17,'free','12354',NULL,1,0,'2019-03-05 00:04:28',''),(18,'free','12355',NULL,1,0,'2019-03-05 00:04:28',''),(19,'free','12356',NULL,1,0,'2019-03-05 00:04:28',''),(20,'free','12357',NULL,0,1,'2017-03-21 13:22:48',NULL);
 /*!40000 ALTER TABLE `voucher_states` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -472,7 +475,7 @@ CREATE TABLE `vouchers` (
   UNIQUE KEY `voucherUuid_UNIQUE` (`voucherUuid`),
   UNIQUE KEY `voucher__UNIQUE` (`voucher_`),
   KEY `uuid_2` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -481,7 +484,7 @@ CREATE TABLE `vouchers` (
 
 LOCK TABLES `vouchers` WRITE;
 /*!40000 ALTER TABLE `vouchers` DISABLE KEYS */;
-INSERT INTO `vouchers` VALUES (1,'b2438bc2-019f-11e7-82f7-55d015f58ee5','12346','9f394dd6-6de0-11e5-8441-71caa0c5f788','2017-03-05 12:31:46'),(2,'48fe32f6-01a0-11e7-82f7-55d015f58ee5','12347','ab36ff88-6de1-11e5-8441-71caa0c5f788','2017-03-05 12:35:58'),(3,'571c48d2-01a0-11e7-82f7-55d015f58ee5','12348','37bd295e-6de3-11e5-8441-71caa0c5f788','2017-03-05 12:36:22'),(4,'65ec7e4a-01a0-11e7-82f7-55d015f58ee5','12350','ce118410-b7bf-11e5-ab38-d9d1883983e4','2017-03-05 12:36:47'),(5,'718b3dfe-01a0-11e7-82f7-55d015f58ee5','12351','0cc4b1a4-b7c1-11e5-ab38-d9d1883983e4','2017-03-05 12:37:06'),(6,'81f0a1a2-01a0-11e7-82f7-55d015f58ee5','12349','437266ba-d03f-11e5-bf8d-12c4a3e48e1b','2017-03-05 12:37:34'),(7,'92137168-01a0-11e7-82f7-55d015f58ee5','12355','eefcfe1a-0284-11e6-b3c9-cce30c92baea','2017-03-05 12:38:01'),(8,'e508cf76-01a0-11e7-82f7-55d015f58ee5','12345','65f63602-6ddf-11e5-8441-71caa0c5f788','2017-03-05 12:40:20'),(9,'f9513ab8-01a0-11e7-82f7-55d015f58ee5','12354','d4969b4e-04b4-11e6-8ded-b86cf27c977e','2017-03-05 12:40:54'),(10,'5f56878c-01a1-11e7-82f7-55d015f58ee5','12352','6b8e6034-04c6-11e6-8ded-b86cf27c977e','2017-03-05 12:43:45'),(11,'6c0a8d02-01a1-11e7-82f7-55d015f58ee5','12356','a08d4212-3d4e-11e6-b703-b68b964fca08','2017-03-14 09:23:24'),(12,'1a8ba03a-0cdf-11e7-85af-5c2dcc79f86f',NULL,'1a8b440a-0cdf-11e7-85af-5c2dcc79f86f','2017-03-19 20:03:22'),(13,'b3ccd0f2-0cdf-11e7-85af-5c2dcc79f86f',NULL,'b3ccc8e6-0cdf-11e7-85af-5c2dcc79f86f','2017-03-19 20:07:39');
+INSERT INTO `vouchers` VALUES (9,'97c76dc4-ed90-11e9-871a-874ce8a992e2','12346','97c6fd76-ed90-11e9-871a-874ce8a992e2','2019-10-13 08:08:08'),(12,'f73b7e0e-1071-11ea-9359-551258859352','12352','f73b72c4-1071-11ea-9359-551258859352','2019-11-26 17:27:05'),(13,'e75efdd0-1e95-11ea-878f-b5c6be69cfd4','12347','e75ee37c-1e95-11ea-878f-b5c6be69cfd4','2019-12-14 17:19:36'),(14,'65f63602-6ddf-11e5-8441-71caa0c5f788','12348','65f63602-6ddf-11e5-8441-71caa0c5f788','2019-12-17 08:42:06');
 /*!40000 ALTER TABLE `vouchers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -782,11 +785,30 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `get_token2`(IN deviceId_ char (255))
 BEGIN
-select token2 from Tokens where deviceId = deviceId_ order by TIME_ desc LIMIT 1;
+select Tokens.token2, Last_seen.Session_ from Tokens join Last_seen on Tokens.deviceId = Last_seen.deviceId where Tokens.deviceId = deviceId_ order by Tokens.TIME_ desc LIMIT 1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_uuid` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `get_uuid`(IN user_ char (255))
+BEGIN
+select uuid from logins where user = user_;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -874,7 +896,8 @@ else
 
 update device_states 
 set device_states.state = 'logged_in' 
-where device_states.deviceId = deviceId_;
+where device_states.deviceId = deviceId_
+and device_states.uuid = uuid_;
 
 end if;
 
@@ -987,7 +1010,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `logout_device`(IN sessionID_ char(255))
 BEGIN
@@ -1001,6 +1024,7 @@ BEGIN
     select deviceId into deviceId_ from device_states
 	where device_states.sessionID = sessionID_;
     
+    ##comment out if it causes issues in TomCat cluster env
     update Tokens
     set Tokens.token1 = 0 and Tokens.token2 = 0 
 	where Tokens.deviceId = deviceId_;
@@ -1041,14 +1065,17 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `reset_voucher`(IN voucher_ char(255))
+CREATE DEFINER=`sqluser`@`localhost` PROCEDURE `reset_voucher`(IN voucher_ char(255), IN user_ varchar(255))
 BEGIN
 UPDATE login.voucher_states 
-SET login.voucher_states.state ='free' 
+SET login.voucher_states.state ='free'
 WHERE login.voucher_states.voucher_ = voucher_ 
 AND login.voucher_states.state = 'registered' or login.voucher_states.state = 'processing';
+
+DELETE FROM login.logins WHERE login.logins.user = user_;
+DELETE FROM login.vouchers WHERE login.vouchers.voucher_ = voucher_;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1122,7 +1149,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `user_on_devices` AS select `logins`.`user` AS `user`,`logins`.`email` AS `email`,`logins`.`uuid` AS `uuid`,`devices`.`deviceId` AS `deviceId`,`device_states`.`state` AS `state`,`device_states`.`TIME_` AS `TIME_`,`voucher_states`.`voucher_` AS `voucher_` from (((((`logins` join `vouchers` on((`logins`.`uuid` = `vouchers`.`uuid`))) join `devices` on((`logins`.`uuid` = `devices`.`uuid`))) join `device_states` on((`devices`.`uuid` = `device_states`.`uuid`))) join `tokens` on((`tokens`.`deviceId` = `devices`.`deviceId`))) join `voucher_states` on((`voucher_states`.`voucher_` = `vouchers`.`voucher_`))) */;
+/*!50001 VIEW `user_on_devices` AS select `logins`.`user` AS `user`,`logins`.`uuid` AS `uuid`,`logins`.`email` AS `email`,`vouchers`.`voucher_` AS `voucher`,`device_states`.`deviceId` AS `deviceId`,`device_states`.`state` AS `state`,`device_states`.`SessionID` AS `sessionID`,`device_states`.`TIME_` AS `Time` from ((`logins` join `vouchers` on((`logins`.`uuid` = `vouchers`.`uuid`))) join `device_states` on((`logins`.`uuid` = `device_states`.`uuid`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1136,4 +1163,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-21 14:31:06
+-- Dump completed on 2020-05-04  0:34:59
