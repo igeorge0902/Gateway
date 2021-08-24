@@ -1,0 +1,1 @@
+insert into devices (id, deviceId, uuid) values (1, '777', '1982-09-02');

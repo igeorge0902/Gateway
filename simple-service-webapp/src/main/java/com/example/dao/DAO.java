@@ -13,23 +13,23 @@ import com.example.api.Sessions;
 	private static DAO instance;
 	
 	
-	public static synchronized DAO instance(Set<String> sessions, List<String> deviceId) {
+	public static synchronized DAO instance(String sessionId, String deviceId) {
 	//	if (instance == null) {
-			instance = new DAO(sessions, deviceId);
+			instance = new DAO(sessionId, deviceId);
 	//	}
 		return instance;
 	}
 	
 	private Map<String, Sessions> sessionProvider = new HashMap<>();
 	
-	private DAO(Set<String> sessions, List<String> deviceId) {
+	private DAO(String sessionId, String deviceId) {
 		
 		List <String> sessionIds = new ArrayList<String>();
-		sessionIds.addAll(sessions);
+		sessionIds.add(sessionId);
 		
 		for(int i = 0; i < sessionIds.size(); i++) {
 
-				Sessions session_ = new Sessions(Integer.toString(i), sessionIds.get(i), deviceId.get(i));
+				Sessions session_ = new Sessions(Integer.toString(i), sessionIds.get(i), deviceId);
 				sessionProvider.put(Integer.toString(i), session_);
 			}
 		}

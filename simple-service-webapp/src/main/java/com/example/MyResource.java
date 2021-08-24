@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,10 +23,17 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.container.AsyncResponse;
+import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.Response.StatusType;
+
+import org.glassfish.jersey.server.ChunkedOutput;
+
 import com.example.api.Sessions;
 import com.example.dao.DAO;
 import com.example.interceptors.Compress;
@@ -39,19 +47,6 @@ import com.utils.CustomNotFoundException;
 public class MyResource {
 	
 	private static volatile HttpSession session;
-
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response getString () throws Exception {
-    	String string = "Got it";
-        return Response.ok().entity(string).build();
-    }
     
     @GET
     @Path("/images/{image}")
@@ -62,7 +57,7 @@ public class MyResource {
     		@PathParam("image") String image) throws IOException {
     	
       response.setContentType("images/jpg");
-      File f = new File("/Users/georgegaspar/Pictures/Exports/" + image);
+      File f = new File("/Users/georgegaspar/Pictures/Exports" + image);
       byte[] bytes = new byte[(int) f.length()];
       
       if (f.exists() == false) 
@@ -87,7 +82,7 @@ public class MyResource {
     		@Context HttpHeaders header,
     		@Context HttpServletResponse response,
     		@PathParam("image") String image) throws IOException {
-    	    
+    	
       response.setContentType("images/jpg");
       File f = new File("/Users/georgegaspar/Pictures/movies/" + image);
       byte[] bytes = new byte[(int) f.length()];
@@ -132,13 +127,12 @@ public class MyResource {
        return Response.ok(new ByteArrayInputStream(imageData), mt).build();
     }
     
-    //TODO: add pagination
     @SuppressWarnings("unchecked")
 	@GET
     @Compress
     @Path("/admin")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getSessions(
+    @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    public List<Sessions> getSessions(
     		@Context HttpHeaders header,
     		@Context HttpServletResponse response,
     		@Context HttpServletRequest request,
@@ -149,27 +143,22 @@ public class MyResource {
 
         ConcurrentHashMap<String, HttpSession> activeUsers = new ConcurrentHashMap<String, HttpSession>();
         activeUsers = (ConcurrentHashMap<String, HttpSession>)otherContext.getAttribute("activeUsers");
-        
+
         Set<String> sessions = activeUsers.keySet();               
-        List<String> devices = new ArrayList<String>();
+        String device = "";
         
-        for (String sessionId : sessions) {
+      for (String sessionId : sessions) {
 
-        	session = activeUsers.get(sessionId);          
-        	
-        	try {
-            	
-        		devices.add(session.getAttribute("deviceId").toString());
-                sessions_.addAll(DAO.instance(sessions, devices).getModel().values());
+        	// retrieve session by ID from activeUsers
+        	session = activeUsers.get(sessionId);
+            device = session.getAttribute("deviceId").toString();
+            sessions_.addAll(DAO.instance(sessionId, device).getModel().values());
 
-        	} catch (Exception e) {
-        		
-        		}
-        	
-        	}
-                
-		return Response.ok().status(200).entity(sessions_).build();
+        }
+        
+        
+        return sessions_;    
+        
     }
-    
 }
 

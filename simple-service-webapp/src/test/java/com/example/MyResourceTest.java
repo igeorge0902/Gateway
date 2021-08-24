@@ -1,5 +1,6 @@
 package com.example;
 
+import javax.ws.rs.client.AsyncInvoker;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -12,6 +13,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class MyResourceTest {
 
@@ -42,27 +46,43 @@ public class MyResourceTest {
     
     /**
      * Test to see that the message "Got it!" is sent in the response.
+     * @throws ExecutionException 
+     * @throws InterruptedException 
      */
     
+    
     @Test
-    public void testGetIt() {
+    public void testGetIt() throws InterruptedException, ExecutionException {
+    	
+    	final AsyncInvoker asyncInvoker = target.path("myresource")
+    	        .request().async();
+    	final Future<Response> responseFuture = asyncInvoker.get();
+    	System.out.println("Request is being processed asynchronously.");
+    	final Response response = responseFuture.get();
+    	    // get() waits for the response to be ready
+    	System.out.println("Response received.");
+    	
+    	System.out.println(response.toString());
+
+    	/*
         String responseMsg = target.path("myresource").request().get(String.class);
         assertEquals("Got it!", responseMsg);
     	System.out.println(target.getUri());
         System.out.println(responseMsg);
-       
+       */
     }
+    
     
     
     @Test
     public void testGetImage() {
     	
-    	WebTarget images = target.path("images");
-    	WebTarget image = images.path("Bp-1.jpg");
-    	Invocation.Builder invocationBuilder = image.request(MediaType.MEDIA_TYPE_WILDCARD);
+    	WebTarget images = target.path("resource");
+    	//WebTarget image = images.path("Bp-1.jpg");
+    	Invocation.Builder invocationBuilder = images.request(MediaType.MEDIA_TYPE_WILDCARD);
     	Response response = invocationBuilder.get();
     	
-    	System.out.println(image.getUri());
+    	System.out.println(images.getUri());
     	System.out.println(response.getStatus());    	
 
     }

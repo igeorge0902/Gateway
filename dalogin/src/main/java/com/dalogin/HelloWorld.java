@@ -188,10 +188,7 @@ public class HelloWorld extends HttpServlet implements Serializable {
 
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60); 	
-		        String homePage = getServletContext().getInitParameter("homePage");
 
-				ServletContext otherContext = getServletContext().getContext(homePage);
-				
 				// X-Token should be sent as json response I guess
 				// native mobile
 						if (ios != null) {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="hmac">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">       
+    <title>Login</title>
+    <script type="text/javascript" src="jsR/sha512.js"></script>
+    <script type="text/javascript" src="jsR/sha3.js"></script>
+    <script type="text/javascript" src="jsR/hmac-sha512.js"></script>
+    <script type="text/javascript" src="jsR/angular.min.js"></script>
+    <script type="text/javascript" src="jsR/register.js"></script>
+    <script type="text/javascript" src="jsR/enc-base64-min.js"></script>
+    <script type="text/javascript" src="jsR/angular-utf8-base64.min.js"></script>
+    <script type="text/javascript" src="jsR/ng-device-detector.min.js"></script>
+    <script type="text/javascript" src="jsR/re-tree/re-tree.min.js"></script>
+
+	<style type="text/css">
+		.login-form {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+		#inputUsername {
+		  margin-bottom: -1px;
+		  border-bottom-right-radius: 0;
+		  border-bottom-left-radius: 0;
+		}
+		#inputPassword {
+			border-top-left-radius: 0;
+  			border-top-right-radius: 0;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+       <div ng-controller="RegController">
+          <form class="login-form">
+            <h2>Login</h2>
+            <section class="4u">
+            <label for="voucher_" class="sr-only">Voucher</label>
+            <input type="text" name=voucher_ id="voucher_" ng-model="voucher_" ng-change="fields()"/>
+            <br />
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" name=username id="username" ng-model="username" ng-change="search()" ng-change="fields()"/>
+            <br />
+            <label for="email" class="sr-only">Email</label>
+            <input type="text" name=email id="email" ng-model="email" ng-change="email_search()" ng-change="fields()"/>
+            <br />
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name=password id="password" ng-model="password" ng-change="fields()"/>
+            </section>
+            <div class="row">
+            <section class="4u">
+            <br>
+            <div class="alert alert-danger" role="alert" ng-show="errorMsg_User">{{errorMsg_User}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="successMsg_User">{{successMsg_User}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg.name}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="successMsg">{{successMsg}}</div>
+            <br>
+            <button ng-disabled="modelP.isDisabled" ng-click="register()">Register</button>
+            <input type="reset" value="Cancel"/>
+            </section>
+            </div>
+         </form>
+       </div>
+    </div>
+  <hr/>
+</body>
+</html>

@@ -223,22 +223,6 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	    
    	 D = GetMappings("deviceId");
      useR = GetMappings("user");
-    
-     // last step - we check if we have the deviceId already. If so, we try to remove its sessionId, if not yet concluded.
-      if (sessions.containsKey(D)) {
- 
-     sessionData = (SortedSet<String>) sessions.get(D);
-     
-  // Synchronizing on multimap, not values!
-     synchronized (sessions) {  
-    	 
-    	sessionData.clear();
-  		sessionData.add(useR);
-  		sessionData.add(id);
-     
-     }
-      
-          } else {
         	              
             // It will be null at first time. 
             try {
@@ -247,11 +231,8 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
             	} catch (Exception e) {
             		log.info(e.getMessage());
             }
-
-          }
-     
-      context.setAttribute("activeUsers", activeUsers);
-      context.setAttribute("sessions", sessions);
+            activeUsers.put(session.getId(), session);
+          
       
      log.info("SessionUsers: " + sessions.entries());
      log.info("Active UserSessions (attribute Added): " + activeUsers.keySet().toString());
@@ -280,8 +261,7 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 	    SetMappings_(name, value);
         D_ = GetMappings_("deviceId");
 
-        // first step, before handshake &new session creation (still doesn't solve the over-spawning session ids at extreme condition)
-        // removes session by id from context
+        // removes existing sessionId
         activeUsers.remove(id);
         log.info("deviceId_ &sessioId at remove: "+D_ + "," + id);
 
@@ -324,36 +304,14 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
                	
 	    	 D = GetMappings("deviceId");
 	         
+	    	 // when creating a new session, if it's a new device, add user and sessionId tied to deviceId
 	         if (!sessions.containsKey(D)) {
 	         	
 	         	activeUsers.put(session.getId(), session);
+
 	        	log.info("sessionId addded in event context: " + session.getId());
 
 	         } 
-	         
-	         else {
-	        	 
-	             sessionData = (SortedSet<String>) sessions.get(D);
-	             
-	             // Synchronizing on multimap, not values!
-	                synchronized (sessions) {  
-
-	                       	g = sessionData.toArray()[1].toString();
-	    		        	log.info("sessionId to remove in event context: " + g);
-
-	    	               	activeUsers.remove(g);
-	
-
-	                }
-
-	         	activeUsers.put(session.getId(), session);
-	        	log.info("sessionId addded in event context (else): " + session.getId());
-
-	         	
-	         } 	         
-	      
-        context.setAttribute("activeUsers", activeUsers);
-        context.setAttribute("sessions", sessions);
       
         log.info("Active UserSessions (session Created): " + activeUsers.keySet().toString());
     	
@@ -379,14 +337,14 @@ public class CustomHttpSessionListener extends HttpServlet implements HttpSessio
 
             activeUsers.remove(session.getId());
         	sessions.removeAll(D_);
-        	/*
+        	// runs logging out to make the user look like logged_out
             try {
 				SQLAccess.logout(session.getId(), context);	
             		} catch (Exception e) {
             			// error handling for empty leafs
             			log.info("There was no device left over to remove...");
             		}
-            */
+            
             log.info("device logging out from SessionUsers: " + D_);
             
             log.info("SessionUsers left: " + sessions.entries());
