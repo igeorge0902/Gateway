@@ -25,21 +25,12 @@ public class ClientAppConfig {
 	    return httpComponentsMessageSender;
 	}
 	  
-	@Bean
-	public StudentClient studentClient(Jaxb2Marshaller marshaller) {
-		StudentClient client = new StudentClient();
-		client.setDefaultUri("http://localhost:8082/spring4soap-1/soapws/students.wsdl");
-		client.setMarshaller(marshaller);
-		client.setUnmarshaller(marshaller);
-		return client;
-	}
-	
-	@Bean
-	public StudentClient2 studentClient2(Jaxb2Marshaller marshaller) {
-		StudentClient2 client = new StudentClient2();
-		client.setDefaultUri("http://localhost:8082/spring4soap2-1/soapws2/students.wsdl");
-		client.setMarshaller(marshaller);
-		client.setUnmarshaller(marshaller);
-		return client;
-	}
+		@Bean
+		public StudentClient studentClient(Jaxb2Marshaller marshaller) {
+			StudentClient client = new StudentClient();
+			client.setDefaultUri("http://localhost:8082/spring4soap-1/soapws/students.wsdl");
+			client.setMarshaller(marshaller);
+			client.setUnmarshaller(marshaller);
+			return client;
+		}
 }
