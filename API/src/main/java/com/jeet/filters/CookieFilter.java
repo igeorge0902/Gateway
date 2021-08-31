@@ -14,7 +14,7 @@ public class CookieFilter implements ContainerRequestFilter {
     public ContainerRequest filter(ContainerRequest request) throws WebApplicationException {
     	System.out.println("\nCiphertext filter...");
     	
-    	if(request.getRequestUri().getPath().contains("user")) {
+    	if(request.getRequestUri().getPath().contains("/user")) {
     	System.out.println("\nCiphertext filter running...");
 
     	String headerToken = request.getHeaderValue("Ciphertext");
