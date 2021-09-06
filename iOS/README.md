@@ -1,7 +1,6 @@
 # iOS component for the Gateway
 General Authentication Service
 
-Copyright © 2015-2019 George Gaspar. All rights reserved.
 
 # Swift
 - updated to Swift 4.2!;)
@@ -105,4 +104,4 @@ Web Debugging tool for iOS, web:
 
 HTTPCookieStorage - Foundation | Apple Developer Documentation
 
-Copyright © 2015-2019 George Gaspar. All rights reserved.
+Copyright © 2015-2021 George Gaspar. All rights reserved.

@@ -61,12 +61,10 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li><a href="register.html">Register to the Gym</a></li>
-                    <li><a href="index.html">Login vis-a-vis</a></li>
                     <li class="active"><a href="../login/index.jsp">Homepage</a></li>
-                    <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    <li><a href="left-sidebar.html">Movies</a></li>
+                    <li><a href="registerbar.html">Register</a></li>
+                    <li><a href="loginbar.html">Login</a></li>
                 </ul>
             </nav>
         </div>
