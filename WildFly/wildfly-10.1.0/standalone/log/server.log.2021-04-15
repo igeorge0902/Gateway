@@ -1,0 +1,35 @@
+2021-04-15 14:28:27,349 INFO  [stdout] (default task-107) Cookie filter...
+2021-04-15 14:28:27,356 INFO  [stdout] (default task-107) Path: /book/movies
+2021-04-15 14:28:27,356 INFO  [stdout] (default task-107) Ciphertext filter...
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107) Hibernate: 
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)     select
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.movieId as movieId1_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.category as category2_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.detail as detail3_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.large_picture as large_pi5_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.name as name6_1_,
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)     from
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         Movie movie0_ 
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)     order by
+2021-04-15 14:28:27,546 INFO  [stdout] (default task-107)         movie0_.name asc
+2021-04-15 14:29:34,941 INFO  [stdout] (default task-95) Cookie filter...
+2021-04-15 14:29:34,943 INFO  [stdout] (default task-95) Path: /book/venue/v2/1048
+2021-04-15 14:29:34,943 INFO  [stdout] (default task-95) Ciphertext filter...
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95) Hibernate: 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     SELECT
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         distinct * 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     FROM
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         book.location 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     join
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         book.venues 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)             on venues.location_locationId = location.locationId 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     join
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         book.Screen 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)             on venues.screen_screenId = Screen.screenId 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     join
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         book.Movie 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)             on Screen.movie_movieId = Movie.movieId 
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)     where
+2021-04-15 14:29:34,948 INFO  [stdout] (default task-95)         movieId = ?

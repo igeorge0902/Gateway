@@ -1,0 +1,823 @@
+2021-08-10 09:35:00,936 INFO  [stdout] (default task-36) Cookie filter...
+2021-08-10 09:35:00,941 INFO  [stdout] (default task-36) Path: /book/movies/paging
+2021-08-10 09:35:00,942 INFO  [stdout] (default task-36) Ciphertext filter...
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36) Hibernate: 
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)     select
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.movieId as movieId1_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.category as category2_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.detail as detail3_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.large_picture as large_pi5_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.name as name6_1_,
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)     from
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         Movie movie0_ 
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)     order by
+2021-08-10 09:35:00,963 INFO  [stdout] (default task-36)         movie0_.name asc limit ?
+2021-08-10 09:35:00,990 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-36) Session Metrics {
+    7516051 nanoseconds spent acquiring 2 JDBC connections;
+    1582542 nanoseconds spent releasing 1 JDBC connections;
+    2654895 nanoseconds spent preparing 1 JDBC statements;
+    5634643 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    9313635 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    804205 nanoseconds spent performing 1 L2C misses;
+    942425 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    102320 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:19,497 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-76) Session Metrics {
+    1946434 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    558808 nanoseconds spent preparing 1 JDBC statements;
+    1812772 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58598 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5962 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:24,588 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-74) Session Metrics {
+    931294 nanoseconds spent acquiring 2 JDBC connections;
+    198121 nanoseconds spent releasing 1 JDBC connections;
+    419240 nanoseconds spent preparing 14 JDBC statements;
+    8012399 nanoseconds spent executing 14 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    845650 nanoseconds spent performing 10 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    1194611 nanoseconds spent performing 4 L2C misses;
+    309642 nanoseconds spent executing 1 flushes (flushing a total of 105 entities and 19 collections);
+    6399 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:26,968 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-84) Session Metrics {
+    296335 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    97146 nanoseconds spent preparing 4 JDBC statements;
+    1659404 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    24054 nanoseconds spent performing 2 L2C puts;
+    30514 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    108524 nanoseconds spent executing 1 flushes (flushing a total of 38 entities and 4 collections);
+    6771 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:31,376 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-88) Session Metrics {
+    325249 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    83142 nanoseconds spent preparing 4 JDBC statements;
+    1528247 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    19842 nanoseconds spent performing 2 L2C puts;
+    24512 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    100012 nanoseconds spent executing 1 flushes (flushing a total of 28 entities and 4 collections);
+    5917 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:33,949 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-95) Session Metrics {
+    302509 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    79914 nanoseconds spent preparing 4 JDBC statements;
+    1413755 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    18246 nanoseconds spent performing 2 L2C puts;
+    48683 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    106740 nanoseconds spent executing 1 flushes (flushing a total of 28 entities and 4 collections);
+    5554 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:35:48,172 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-108) Session Metrics {
+    240938 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    340845 nanoseconds spent preparing 16 JDBC statements;
+    6534694 nanoseconds spent executing 16 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    73993 nanoseconds spent performing 6 L2C puts;
+    135881 nanoseconds spent performing 4 L2C hits;
+    401294 nanoseconds spent performing 1 L2C misses;
+    240065 nanoseconds spent executing 1 flushes (flushing a total of 105 entities and 19 collections);
+    6101 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:37:36,449 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-37) Session Metrics {
+    419994 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    188230 nanoseconds spent preparing 1 JDBC statements;
+    448620 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    39206 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5887 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:37:38,487 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-38) Session Metrics {
+    493164 nanoseconds spent acquiring 2 JDBC connections;
+    318023 nanoseconds spent releasing 1 JDBC connections;
+    349544 nanoseconds spent preparing 14 JDBC statements;
+    6870859 nanoseconds spent executing 14 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    812962 nanoseconds spent performing 10 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    87378 nanoseconds spent performing 4 L2C misses;
+    202140 nanoseconds spent executing 1 flushes (flushing a total of 105 entities and 19 collections);
+    6091 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:39:36,115 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-104) Session Metrics {
+    296001 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    99240 nanoseconds spent preparing 5 JDBC statements;
+    1699620 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    197186 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    77026 nanoseconds spent performing 1 L2C misses;
+    107671 nanoseconds spent executing 1 flushes (flushing a total of 38 entities and 4 collections);
+    5576 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:39:44,516 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-107) Session Metrics {
+    237285 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    163027 nanoseconds spent preparing 5 JDBC statements;
+    2289543 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    284793 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    119895 nanoseconds spent performing 1 L2C misses;
+    105840 nanoseconds spent executing 1 flushes (flushing a total of 28 entities and 4 collections);
+    6028 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:50:03,592 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-10) Session Metrics {
+    266651 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    151326 nanoseconds spent preparing 5 JDBC statements;
+    1886770 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    290670 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    93483 nanoseconds spent performing 1 L2C misses;
+    108693 nanoseconds spent executing 1 flushes (flushing a total of 38 entities and 4 collections);
+    6231 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:52:03,516 INFO  [stdout] (default task-72) Cookie filter...
+2021-08-10 09:52:03,516 INFO  [stdout] (default task-72) Path: /book/movies/paging
+2021-08-10 09:52:03,516 INFO  [stdout] (default task-72) Ciphertext filter...
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72) Hibernate: 
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)     select
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.movieId as movieId1_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.category as category2_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.detail as detail3_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.large_picture as large_pi5_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.name as name6_1_,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)     from
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         Movie movie0_ 
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)     order by
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         movie0_.name asc limit ?,
+2021-08-10 09:52:03,519 INFO  [stdout] (default task-72)         ?
+2021-08-10 09:52:03,522 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-72) Session Metrics {
+    587393 nanoseconds spent acquiring 2 JDBC connections;
+    252734 nanoseconds spent releasing 1 JDBC connections;
+    31652 nanoseconds spent preparing 1 JDBC statements;
+    675110 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1112662 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    25761 nanoseconds spent performing 1 L2C misses;
+    102103 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    6197 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:52:28,294 INFO  [stdout] (default task-3) Cookie filter...
+2021-08-10 09:52:28,295 INFO  [stdout] (default task-3) Path: /book/venue/v2/1025
+2021-08-10 09:52:28,295 INFO  [stdout] (default task-3) Ciphertext filter...
+2021-08-10 09:52:28,296 INFO  [stdout] (default task-3) Hibernate: 
+2021-08-10 09:52:28,296 INFO  [stdout] (default task-3)     SELECT
+2021-08-10 09:52:28,296 INFO  [stdout] (default task-3)         distinct * 
+2021-08-10 09:52:28,296 INFO  [stdout] (default task-3)     FROM
+2021-08-10 09:52:28,296 INFO  [stdout] (default task-3)         book.location 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)     join
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)         book.venues 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)             on venues.location_locationId = location.locationId 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)     join
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)         book.Screen 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)             on venues.screen_screenId = Screen.screenId 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)     join
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)         book.Movie 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)             on Screen.movie_movieId = Movie.movieId 
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)     where
+2021-08-10 09:52:28,297 INFO  [stdout] (default task-3)         movieId = ?
+2021-08-10 09:52:28,302 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-3) Session Metrics {
+    512801 nanoseconds spent acquiring 2 JDBC connections;
+    264282 nanoseconds spent releasing 1 JDBC connections;
+    50675 nanoseconds spent preparing 1 JDBC statements;
+    2380842 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    160912 nanoseconds spent performing 2 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    26480 nanoseconds spent performing 1 L2C misses;
+    76225 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    6372 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:52:31,336 INFO  [stdout] (default task-128) Cookie filter...
+2021-08-10 09:52:31,336 INFO  [stdout] (default task-128) Path: /book/dates/5/1025
+2021-08-10 09:52:31,336 INFO  [stdout] (default task-128) Ciphertext filter...
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128) Hibernate: 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)     select
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         screeningd0_.screeningDatesId as screenin1_4_,
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         screeningd0_.movieId as movieId2_4_,
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         screeningd0_.screeningDate as screenin3_4_,
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)     from
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         ScreeningDates screeningd0_ 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)     inner join
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         Venues venues1_ 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)     inner join
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         Location location2_ 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)             on venues1_.location_locationId=location2_.locationId 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)     where
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         movieId=? 
+2021-08-10 09:52:31,339 INFO  [stdout] (default task-128)         and locationId=?
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128) Hibernate: 
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)     select
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.venuesId as venuesId1_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.address as address2_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.contact as contact3_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.location_locationId as location7_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.name as name4_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.screen_screenId as screen_s5_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         venues0_.venues_picture as venues_p6_7_0_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.locationId as location1_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.formatted_address as formatte2_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.latitude as latitude3_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.longitude as longitud4_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.name as name5_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         location1_.thumbnail as thumbnai6_0_1_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screen2_.screenId as screenId1_3_2_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screen2_.movie_movieId as movie_mo3_3_2_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screen2_.screeningDates_screeningDatesId as screenin4_3_2_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screen2_.seats as seats2_3_2_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.movieId as movieId1_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.category as category2_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.detail as detail3_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.iMDB_url as iMDB_url4_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.large_picture as large_pi5_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.name as name6_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         movie3_.thumbnail_picture as thumbnai7_1_3_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screeningd4_.screeningDatesId as screenin1_4_4_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screeningd4_.movieId as movieId2_4_4_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screeningd4_.screeningDate as screenin3_4_4_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         screeningd4_.venues_venuesId as venues_v4_4_4_,
+2021-08-10 09:52:31,340 INFO  [stdout] (default task-128)         seat5_.screen_screenId as screen_s7_5_5_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.seatId as seatId1_5_5_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.seatId as seatId1_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.isReserved as isReserv2_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.price as price3_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.screen_screenId as screen_s7_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.seatNumber as seatNumb4_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.seatRow as seatRow5_5_6_,
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         seat5_.tax as tax6_5_6_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     from
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         Venues venues0_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     left outer join
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         Location location1_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)             on venues0_.location_locationId=location1_.locationId 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     left outer join
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         Screen screen2_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)             on venues0_.screen_screenId=screen2_.screenId 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     left outer join
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         Movie movie3_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)             on screen2_.movie_movieId=movie3_.movieId 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     left outer join
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         ScreeningDates screeningd4_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)             on screen2_.screeningDates_screeningDatesId=screeningd4_.screeningDatesId 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     left outer join
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         Seats seat5_ 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)             on screen2_.screenId=seat5_.screen_screenId 
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)     where
+2021-08-10 09:52:31,341 INFO  [stdout] (default task-128)         venues0_.venuesId=?
+2021-08-10 09:52:31,343 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-128) Session Metrics {
+    259117 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    67603 nanoseconds spent preparing 2 JDBC statements;
+    1228484 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    126825 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    82531 nanoseconds spent performing 1 L2C misses;
+    128950 nanoseconds spent executing 1 flushes (flushing a total of 65 entities and 3 collections);
+    5845 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 09:52:41,555 INFO  [stdout] (default task-7) Cookie filter...
+2021-08-10 09:52:41,555 INFO  [stdout] (default task-7) Path: /book/seats/76
+2021-08-10 09:52:41,555 INFO  [stdout] (default task-7) Ciphertext filter...
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7) Hibernate: 
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)     select
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.seatId as seatId1_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.isReserved as isReserv2_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.price as price3_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.screen_screenId as screen_s7_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.seatNumber as seatNumb4_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.seatRow as seatRow5_5_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         seat3_.tax as tax6_5_ 
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)     from
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         ScreeningDates screeningd0_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         Venues venues1_,
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)         Screen screen2_ 
+2021-08-10 09:52:41,556 INFO  [stdout] (default task-7)     inner join
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)         Seats seat3_ 
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)             on screen2_.screenId=seat3_.screen_screenId 
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)     where
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)         and venues1_.screen_screenId=screen2_.screenId 
+2021-08-10 09:52:41,557 INFO  [stdout] (default task-7)         and screeningDatesId=?
+2021-08-10 09:52:41,559 INFO  [stdout] (default task-7) Hibernate: 
+2021-08-10 09:52:41,559 INFO  [stdout] (default task-7)     select
+2021-08-10 09:52:41,559 INFO  [stdout] (default task-7)         screen0_.screenId as screenId1_3_0_,
+2021-08-10 09:52:41,559 INFO  [stdout] (default task-7)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screen0_.seats as seats2_3_0_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.movieId as movieId1_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.category as category2_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.detail as detail3_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.large_picture as large_pi5_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.name as name6_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screeningd2_.movieId as movieId2_4_2_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.venuesId as venuesId1_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.address as address2_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.contact as contact3_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.location_locationId as location7_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.name as name4_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         venues3_.venues_picture as venues_p6_7_3_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.seatId as seatId1_5_4_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.seatId as seatId1_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.isReserved as isReserv2_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.price as price3_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.seatRow as seatRow5_5_5_,
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         seat4_.tax as tax6_5_5_ 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)     from
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         Screen screen0_ 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)     left outer join
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         Movie movie1_ 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)             on screen0_.movie_movieId=movie1_.movieId 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)     left outer join
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)         ScreeningDates screeningd2_ 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-08-10 09:52:41,560 INFO  [stdout] (default task-7)     left outer join
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)         Venues venues3_ 
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)     left outer join
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)         Seats seat4_ 
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)             on screen0_.screenId=seat4_.screen_screenId 
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)     where
+2021-08-10 09:52:41,561 INFO  [stdout] (default task-7)         screen0_.screenId=?
+2021-08-10 09:52:41,563 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-7) Session Metrics {
+    325353 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    88617 nanoseconds spent preparing 2 JDBC statements;
+    1328628 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    50831 nanoseconds spent performing 2 L2C puts;
+    10397 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    136637 nanoseconds spent executing 1 flushes (flushing a total of 65 entities and 3 collections);
+    6900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 18:50:40,453 INFO  [stdout] (default task-47) Cookie filter...
+2021-08-10 18:50:40,455 INFO  [stdout] (default task-47) Path: /book/movies/paging
+2021-08-10 18:50:40,455 INFO  [stdout] (default task-47) Ciphertext filter...
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47) Hibernate: 
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)     select
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.movieId as movieId1_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.category as category2_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.detail as detail3_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.large_picture as large_pi5_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.name as name6_1_,
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)     from
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         Movie movie0_ 
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)     order by
+2021-08-10 18:50:40,489 INFO  [stdout] (default task-47)         movie0_.name asc limit ?
+2021-08-10 18:50:40,509 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-47) Session Metrics {
+    5090174 nanoseconds spent acquiring 2 JDBC connections;
+    748859 nanoseconds spent releasing 1 JDBC connections;
+    983842 nanoseconds spent preparing 1 JDBC statements;
+    2119501 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    7474968 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    1177457 nanoseconds spent performing 1 L2C misses;
+    2509270 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    67125 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:00:41,108 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-113) Session Metrics {
+    1732421 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    549079 nanoseconds spent preparing 1 JDBC statements;
+    1378590 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58726 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5677 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:09:10,234 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-50) Session Metrics {
+    2428928 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    424241 nanoseconds spent preparing 1 JDBC statements;
+    665662 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58850 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6033 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:09:28,907 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-54) Session Metrics {
+    452375 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    231313 nanoseconds spent preparing 1 JDBC statements;
+    599643 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    54375 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5835 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:10:55,070 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-61) Session Metrics {
+    2977217 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    373693 nanoseconds spent preparing 1 JDBC statements;
+    655738 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    90622 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    22189 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:13:11,539 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-65) Session Metrics {
+    460428 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    240125 nanoseconds spent preparing 1 JDBC statements;
+    455710 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    37401 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6024 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:13:32,231 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-87) Session Metrics {
+    504287 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    197399 nanoseconds spent preparing 1 JDBC statements;
+    546688 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    44501 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5988 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:15:42,262 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-88) Session Metrics {
+    438280 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    188754 nanoseconds spent preparing 1 JDBC statements;
+    503871 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    46528 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5785 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:17:45,639 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/49/72bd12d0a1b441b93ff96930abbecf9deffa88/content
+2021-08-10 19:17:45,655 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-10 19:17:45,655 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-08-10 19:17:45,661 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 74) WFLYUT0022: Unregistered web context: /login
+2021-08-10 19:17:45,810 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 162ms
+2021-08-10 19:17:45,811 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-08-10 19:17:47,173 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-08-10 19:17:47,174 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-08-10 19:17:47,177 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-10 19:17:47,177 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-08-10 19:17:47,188 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 75) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-08-10 19:17:47,189 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 75) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-08-10 19:17:47,220 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0021: Registered web context: /login
+2021-08-10 19:17:47,283 INFO  [org.jboss.as.server] (External Management Request Threads -- 5) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-08-10 19:17:47,288 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/13/f8d254b7e8739f757ebc7a309775d17294ba8c/content
+2021-08-10 19:21:11,874 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-22) Session Metrics {
+    443501 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    176163 nanoseconds spent preparing 1 JDBC statements;
+    407693 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    37579 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5195 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:21:52,678 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-23) Session Metrics {
+    399040 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    180118 nanoseconds spent preparing 1 JDBC statements;
+    407280 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    50841 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5498 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 19:27:47,993 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-66) Session Metrics {
+    496128 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    329504 nanoseconds spent preparing 1 JDBC statements;
+    1786249 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    71203 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6061 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 20:27:17,700 INFO  [org.jboss.as.repository] (External Management Request Threads -- 7) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/6a/28a4c362a9872f17ce07ab1dd102d64f3d0f12/content
+2021-08-10 20:27:17,702 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0022: Unregistered web context: /simple-service-webapp
+2021-08-10 20:27:17,713 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment simple-service-webapp.war (runtime-name: simple-service-webapp.war) in 11ms
+2021-08-10 20:27:17,714 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "simple-service-webapp.war" (runtime-name: "simple-service-webapp.war")
+2021-08-10 20:27:19,038 WARN  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0013: Deployment deployment "simple-service-webapp.war" contains CDI annotations but no bean archive was not found. (No beans.xml nor class with bean defining annotations)
+2021-08-10 20:27:19,475 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 85) WFLYUT0021: Registered web context: /simple-service-webapp
+2021-08-10 20:27:19,489 INFO  [org.jboss.as.server] (External Management Request Threads -- 7) WFLYSRV0016: Replaced deployment "simple-service-webapp.war" with deployment "simple-service-webapp.war"
+2021-08-10 20:27:19,491 INFO  [org.jboss.as.repository] (External Management Request Threads -- 7) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/47/adebc6cbb53623471373b8c62fd4b0a92a8492/content
+2021-08-10 20:27:58,581 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-123) Session Metrics {
+    645270 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    249138 nanoseconds spent preparing 1 JDBC statements;
+    587749 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    40315 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    7980 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 20:28:03,288 INFO  [stdout] (default task-124) milo.crabdance.com
+2021-08-10 20:30:51,599 INFO  [stdout] (default task-37) milo.crabdance.com
+2021-08-10 20:30:51,600 INFO  [stdout] (default task-32) milo.crabdance.com
+2021-08-10 20:30:51,608 INFO  [stdout] (default task-36) milo.crabdance.com
+2021-08-10 20:30:51,609 INFO  [stdout] (default task-38) milo.crabdance.com
+2021-08-10 20:30:51,609 INFO  [stdout] (default task-27) milo.crabdance.com
+2021-08-10 20:30:55,155 INFO  [stdout] (default task-40) milo.crabdance.com
+2021-08-10 20:31:22,955 INFO  [stdout] (default task-46) milo.crabdance.com
+2021-08-10 20:31:22,968 INFO  [stdout] (default task-45) milo.crabdance.com
+2021-08-10 20:31:22,975 INFO  [stdout] (default task-43) milo.crabdance.com
+2021-08-10 20:31:22,981 INFO  [stdout] (default task-42) milo.crabdance.com
+2021-08-10 20:31:22,987 INFO  [stdout] (default task-44) milo.crabdance.com
+2021-08-10 20:31:23,010 INFO  [stdout] (default task-47) milo.crabdance.com
+2021-08-10 20:31:23,013 INFO  [stdout] (default task-48) milo.crabdance.com
+2021-08-10 20:31:23,014 INFO  [stdout] (default task-49) milo.crabdance.com
+2021-08-10 20:31:23,014 INFO  [stdout] (default task-51) milo.crabdance.com
+2021-08-10 20:31:23,014 INFO  [stdout] (default task-50) milo.crabdance.com
+2021-08-10 20:31:25,518 INFO  [stdout] (default task-52) milo.crabdance.com
+2021-08-10 20:49:10,679 INFO  [stdout] (default task-53) milo.crabdance.com
+2021-08-10 20:49:11,297 INFO  [stdout] (default task-55) milo.crabdance.com
+2021-08-10 20:49:21,116 INFO  [stdout] (default task-54) milo.crabdance.com
+2021-08-10 20:49:35,127 INFO  [stdout] (default task-57) milo.crabdance.com
+2021-08-10 20:49:35,136 INFO  [stdout] (default task-59) milo.crabdance.com
+2021-08-10 20:49:35,148 INFO  [stdout] (default task-68) milo.crabdance.com
+2021-08-10 20:49:35,155 INFO  [stdout] (default task-67) milo.crabdance.com
+2021-08-10 20:49:35,163 INFO  [stdout] (default task-64) milo.crabdance.com
+2021-08-10 20:49:57,881 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-62) Session Metrics {
+    838745 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    216285 nanoseconds spent preparing 1 JDBC statements;
+    510388 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    45658 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5636 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 20:53:14,546 INFO  [stdout] (default task-104) milo.crabdance.com
+2021-08-10 20:53:14,547 INFO  [stdout] (default task-83) milo.crabdance.com
+2021-08-10 20:53:14,547 INFO  [stdout] (default task-106) milo.crabdance.com
+2021-08-10 20:53:14,548 INFO  [stdout] (default task-81) milo.crabdance.com
+2021-08-10 20:53:14,549 INFO  [stdout] (default task-107) milo.crabdance.com
+2021-08-10 20:55:41,858 INFO  [org.jboss.as.repository] (External Management Request Threads -- 9) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/f6/ca531def1ffd0aaacabeef69a6bdeb66230d1a/content
+2021-08-10 20:55:41,860 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-10 20:55:41,860 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-08-10 20:55:41,861 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0022: Unregistered web context: /login
+2021-08-10 20:55:41,979 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 120ms
+2021-08-10 20:55:41,980 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-08-10 20:55:43,330 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-08-10 20:55:43,331 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-08-10 20:55:43,332 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-08-10 20:55:43,335 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-10 20:55:43,342 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 89) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-08-10 20:55:43,343 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 89) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-08-10 20:55:43,369 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: /login
+2021-08-10 20:55:43,388 INFO  [org.jboss.as.server] (External Management Request Threads -- 9) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-08-10 20:55:43,392 INFO  [org.jboss.as.repository] (External Management Request Threads -- 9) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/49/72bd12d0a1b441b93ff96930abbecf9deffa88/content
+2021-08-10 20:55:50,268 INFO  [stdout] (default task-108) milo.crabdance.com
+2021-08-10 20:56:04,550 INFO  [stdout] (default task-15) milo.crabdance.com
+2021-08-10 20:56:04,551 INFO  [stdout] (default task-18) milo.crabdance.com
+2021-08-10 20:56:04,551 INFO  [stdout] (default task-14) milo.crabdance.com
+2021-08-10 20:56:04,551 INFO  [stdout] (default task-19) milo.crabdance.com
+2021-08-10 20:56:04,553 INFO  [stdout] (default task-14) milo.crabdance.com
+2021-08-10 20:56:16,225 INFO  [stdout] (default task-37) Cookie filter...
+2021-08-10 20:56:16,225 INFO  [stdout] (default task-37) Path: /book/movies
+2021-08-10 20:56:16,225 INFO  [stdout] (default task-37) Ciphertext filter...
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37) Hibernate: 
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)     select
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.movieId as movieId1_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.category as category2_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.detail as detail3_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.large_picture as large_pi5_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.name as name6_1_,
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)     from
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         Movie movie0_ 
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)     order by
+2021-08-10 20:56:16,227 INFO  [stdout] (default task-37)         movie0_.name asc
+2021-08-10 20:56:16,239 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-37) Session Metrics {
+    896182 nanoseconds spent acquiring 2 JDBC connections;
+    345340 nanoseconds spent releasing 1 JDBC connections;
+    578161 nanoseconds spent preparing 1 JDBC statements;
+    757311 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    5030706 nanoseconds spent performing 103 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    33375 nanoseconds spent performing 1 L2C misses;
+    419532 nanoseconds spent executing 1 flushes (flushing a total of 102 entities and 102 collections);
+    5437 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-08-10 20:56:16,342 INFO  [stdout] (default task-35) milo.crabdance.com
+2021-08-10 20:56:16,343 INFO  [stdout] (default task-36) milo.crabdance.com
+2021-08-10 20:56:16,362 INFO  [stdout] (default task-34) milo.crabdance.com
+2021-08-10 20:56:16,363 INFO  [stdout] (default task-40) milo.crabdance.com
+2021-08-10 20:56:16,363 INFO  [stdout] (default task-35) milo.crabdance.com
+2021-08-10 20:56:16,364 INFO  [stdout] (default task-41) milo.crabdance.com
+2021-08-10 20:56:16,392 INFO  [stdout] (default task-46) milo.crabdance.com
+2021-08-10 20:56:16,414 INFO  [stdout] (default task-45) milo.crabdance.com
+2021-08-10 20:56:16,416 INFO  [stdout] (default task-43) milo.crabdance.com
+2021-08-10 20:56:16,418 INFO  [stdout] (default task-42) milo.crabdance.com
+2021-08-10 20:56:16,423 INFO  [stdout] (default task-44) milo.crabdance.com
+2021-08-10 20:56:16,424 INFO  [stdout] (default task-47) milo.crabdance.com
+2021-08-10 20:56:16,438 INFO  [stdout] (default task-48) milo.crabdance.com
+2021-08-10 20:56:16,448 INFO  [stdout] (default task-49) milo.crabdance.com
+2021-08-10 20:56:16,448 INFO  [stdout] (default task-50) milo.crabdance.com
+2021-08-10 20:56:16,458 INFO  [stdout] (default task-51) milo.crabdance.com
+2021-08-10 20:56:16,462 INFO  [stdout] (default task-52) milo.crabdance.com
+2021-08-10 20:56:16,467 INFO  [stdout] (default task-53) milo.crabdance.com
+2021-08-10 20:56:16,469 INFO  [stdout] (default task-55) milo.crabdance.com
+2021-08-10 20:56:16,475 INFO  [stdout] (default task-58) milo.crabdance.com
+2021-08-10 20:56:16,477 INFO  [stdout] (default task-54) milo.crabdance.com
+2021-08-10 20:56:16,481 INFO  [stdout] (default task-61) milo.crabdance.com
+2021-08-10 20:56:16,484 INFO  [stdout] (default task-57) milo.crabdance.com
+2021-08-10 20:56:16,492 INFO  [stdout] (default task-59) milo.crabdance.com
+2021-08-10 20:56:16,504 INFO  [stdout] (default task-68) milo.crabdance.com
+2021-08-10 20:56:16,512 INFO  [stdout] (default task-67) milo.crabdance.com
+2021-08-10 20:56:16,519 INFO  [stdout] (default task-64) milo.crabdance.com
+2021-08-10 20:56:16,530 INFO  [stdout] (default task-62) milo.crabdance.com
+2021-08-10 20:56:16,532 INFO  [stdout] (default task-60) milo.crabdance.com
+2021-08-10 20:56:16,534 INFO  [stdout] (default task-56) milo.crabdance.com
+2021-08-10 20:56:16,541 INFO  [stdout] (default task-65) milo.crabdance.com
+2021-08-10 20:56:16,546 INFO  [stdout] (default task-63) milo.crabdance.com
+2021-08-10 20:56:16,565 INFO  [stdout] (default task-66) milo.crabdance.com
+2021-08-10 20:56:16,572 INFO  [stdout] (default task-71) milo.crabdance.com
+2021-08-10 20:56:16,572 INFO  [stdout] (default task-70) milo.crabdance.com
+2021-08-10 20:56:16,572 INFO  [stdout] (default task-74) milo.crabdance.com
+2021-08-10 20:56:16,579 INFO  [stdout] (default task-69) milo.crabdance.com
+2021-08-10 20:56:16,581 INFO  [stdout] (default task-73) milo.crabdance.com
+2021-08-10 20:56:16,600 INFO  [stdout] (default task-72) milo.crabdance.com
+2021-08-10 20:56:16,605 INFO  [stdout] (default task-79) milo.crabdance.com
+2021-08-10 20:56:16,606 INFO  [stdout] (default task-76) milo.crabdance.com
+2021-08-10 20:56:16,606 INFO  [stdout] (default task-86) milo.crabdance.com
+2021-08-10 20:56:16,606 INFO  [stdout] (default task-84) milo.crabdance.com
+2021-08-10 20:56:16,606 INFO  [stdout] (default task-77) milo.crabdance.com
+2021-08-10 20:56:16,631 INFO  [stdout] (default task-85) milo.crabdance.com
+2021-08-10 20:56:16,634 INFO  [stdout] (default task-75) milo.crabdance.com
+2021-08-10 20:56:16,636 INFO  [stdout] (default task-87) milo.crabdance.com
+2021-08-10 20:56:16,636 INFO  [stdout] (default task-82) milo.crabdance.com
+2021-08-10 20:56:16,637 INFO  [stdout] (default task-90) milo.crabdance.com
+2021-08-10 20:56:16,640 INFO  [stdout] (default task-92) milo.crabdance.com
+2021-08-10 20:56:16,651 INFO  [stdout] (default task-88) milo.crabdance.com
+2021-08-10 20:56:16,670 INFO  [stdout] (default task-91) milo.crabdance.com
+2021-08-10 20:56:16,672 INFO  [stdout] (default task-93) milo.crabdance.com
+2021-08-10 20:56:16,672 INFO  [stdout] (default task-89) milo.crabdance.com
+2021-08-10 20:56:16,672 INFO  [stdout] (default task-96) milo.crabdance.com
+2021-08-10 20:56:16,673 INFO  [stdout] (default task-94) milo.crabdance.com
+2021-08-10 20:56:16,674 INFO  [stdout] (default task-97) milo.crabdance.com
+2021-08-10 20:56:16,703 INFO  [stdout] (default task-99) milo.crabdance.com
+2021-08-10 20:56:16,703 INFO  [stdout] (default task-98) milo.crabdance.com
+2021-08-10 20:56:16,705 INFO  [stdout] (default task-95) milo.crabdance.com
+2021-08-10 20:56:16,705 INFO  [stdout] (default task-102) milo.crabdance.com
+2021-08-10 20:56:16,705 INFO  [stdout] (default task-100) milo.crabdance.com
+2021-08-10 20:56:16,707 INFO  [stdout] (default task-105) milo.crabdance.com
+2021-08-10 20:56:16,730 INFO  [stdout] (default task-101) milo.crabdance.com
+2021-08-10 20:56:16,733 INFO  [stdout] (default task-103) milo.crabdance.com
+2021-08-10 20:56:16,733 INFO  [stdout] (default task-78) milo.crabdance.com
+2021-08-10 20:56:16,734 INFO  [stdout] (default task-106) milo.crabdance.com
+2021-08-10 20:56:16,735 INFO  [stdout] (default task-83) milo.crabdance.com
+2021-08-10 20:56:16,741 INFO  [stdout] (default task-104) milo.crabdance.com
+2021-08-10 20:56:16,764 INFO  [stdout] (default task-107) milo.crabdance.com
+2021-08-10 20:56:16,764 INFO  [stdout] (default task-81) milo.crabdance.com
+2021-08-10 20:56:16,764 INFO  [stdout] (default task-112) milo.crabdance.com
+2021-08-10 20:56:16,766 INFO  [stdout] (default task-80) milo.crabdance.com
+2021-08-10 20:56:16,766 INFO  [stdout] (default task-110) milo.crabdance.com
+2021-08-10 20:56:16,766 INFO  [stdout] (default task-108) milo.crabdance.com
+2021-08-10 20:56:16,790 INFO  [stdout] (default task-109) milo.crabdance.com
+2021-08-10 20:56:16,791 INFO  [stdout] (default task-117) milo.crabdance.com
+2021-08-10 20:56:16,793 INFO  [stdout] (default task-113) milo.crabdance.com
+2021-08-10 20:56:16,793 INFO  [stdout] (default task-119) milo.crabdance.com
+2021-08-10 20:56:16,793 INFO  [stdout] (default task-115) milo.crabdance.com
+2021-08-10 20:56:16,796 INFO  [stdout] (default task-116) milo.crabdance.com
+2021-08-10 20:56:16,828 INFO  [stdout] (default task-114) milo.crabdance.com
+2021-08-10 20:56:16,832 INFO  [stdout] (default task-120) milo.crabdance.com
+2021-08-10 20:56:16,832 INFO  [stdout] (default task-111) milo.crabdance.com
+2021-08-10 20:56:16,832 INFO  [stdout] (default task-123) milo.crabdance.com
+2021-08-10 20:56:16,832 INFO  [stdout] (default task-121) milo.crabdance.com
+2021-08-10 20:56:16,832 INFO  [stdout] (default task-124) milo.crabdance.com
+2021-08-10 20:56:16,854 INFO  [stdout] (default task-122) milo.crabdance.com
+2021-08-10 20:56:16,858 INFO  [stdout] (default task-1) milo.crabdance.com
+2021-08-10 20:56:16,860 INFO  [stdout] (default task-127) milo.crabdance.com
+2021-08-10 20:56:16,860 INFO  [stdout] (default task-125) milo.crabdance.com
+2021-08-10 20:56:16,860 INFO  [stdout] (default task-8) milo.crabdance.com
+2021-08-10 20:56:16,860 INFO  [stdout] (default task-6) milo.crabdance.com
+2021-08-10 20:56:16,884 INFO  [stdout] (default task-3) milo.crabdance.com
+2021-08-10 20:56:16,889 INFO  [stdout] (default task-118) milo.crabdance.com
+2021-08-10 20:56:16,892 INFO  [stdout] (default task-11) milo.crabdance.com
+2021-08-10 20:56:16,892 INFO  [stdout] (default task-5) milo.crabdance.com
+2021-08-10 20:56:16,892 INFO  [stdout] (default task-2) milo.crabdance.com
+2021-08-10 20:56:16,892 INFO  [stdout] (default task-7) milo.crabdance.com
+2021-08-10 20:56:16,924 INFO  [stdout] (default task-13) milo.crabdance.com
+2021-08-10 20:56:16,924 INFO  [stdout] (default task-126) milo.crabdance.com
+2021-08-10 20:56:16,925 INFO  [stdout] (default task-4) milo.crabdance.com
+2021-08-10 20:58:01,464 INFO  [stdout] (default task-20) milo.crabdance.com
+2021-08-10 20:58:01,526 INFO  [stdout] (default task-24) milo.crabdance.com
+2021-08-10 20:58:01,527 INFO  [stdout] (default task-31) milo.crabdance.com
+2021-08-10 20:58:01,527 INFO  [stdout] (default task-30) milo.crabdance.com
+2021-08-10 20:58:01,527 INFO  [stdout] (default task-33) milo.crabdance.com
+2021-08-10 20:58:36,516 INFO  [stdout] (default task-38) Cookie filter...
+2021-08-10 20:58:36,516 INFO  [stdout] (default task-38) Path: /newuser/G
+2021-08-10 20:58:36,516 INFO  [stdout] (default task-38) Cookie filter running...
+2021-08-10 20:58:36,516 INFO  [stdout] (default task-38) Sending response...
+2021-08-10 20:58:36,728 INFO  [stdout] (default task-27) Cookie filter...
+2021-08-10 20:58:36,728 INFO  [stdout] (default task-27) Path: /newuser/GG
+2021-08-10 20:58:36,728 INFO  [stdout] (default task-27) Cookie filter running...
+2021-08-10 20:58:36,728 INFO  [stdout] (default task-27) Sending response...
+2021-08-10 20:58:47,876 INFO  [stdout] (default task-35) Cookie filter...
+2021-08-10 20:58:47,876 INFO  [stdout] (default task-35) Path: /newuser/GGG
+2021-08-10 20:58:47,876 INFO  [stdout] (default task-35) Cookie filter running...
+2021-08-10 20:58:47,876 INFO  [stdout] (default task-35) Sending response...
+2021-08-10 20:58:51,185 INFO  [stdout] (default task-41) Cookie filter...
+2021-08-10 20:58:51,185 INFO  [stdout] (default task-41) Path: /newuser/GG
+2021-08-10 20:58:51,185 INFO  [stdout] (default task-41) Cookie filter running...
+2021-08-10 20:58:51,185 INFO  [stdout] (default task-41) Sending response...
+2021-08-10 20:58:52,016 INFO  [stdout] (default task-40) Cookie filter...
+2021-08-10 20:58:52,016 INFO  [stdout] (default task-40) Path: /newuser/G
+2021-08-10 20:58:52,016 INFO  [stdout] (default task-40) Cookie filter running...
+2021-08-10 20:58:52,016 INFO  [stdout] (default task-40) Sending response...
+2021-08-10 20:58:53,129 INFO  [stdout] (default task-45) Cookie filter...
+2021-08-10 20:58:53,129 INFO  [stdout] (default task-45) Path: /newuser/
+2021-08-10 20:58:53,129 INFO  [stdout] (default task-45) Cookie filter running...
+2021-08-10 20:58:53,129 INFO  [stdout] (default task-45) Sending response...
+2021-08-10 20:59:20,096 INFO  [stdout] (default task-47) milo.crabdance.com
+2021-08-10 21:00:26,700 INFO  [stdout] (default task-64) milo.crabdance.com
+2021-08-10 21:00:26,758 INFO  [stdout] (default task-62) milo.crabdance.com
+2021-08-10 21:00:26,770 INFO  [stdout] (default task-56) milo.crabdance.com
+2021-08-10 21:00:26,869 INFO  [stdout] (default task-66) milo.crabdance.com
+2021-08-10 21:00:26,870 INFO  [stdout] (default task-71) milo.crabdance.com
+2021-08-10 21:00:30,540 INFO  [stdout] (default task-74) milo.crabdance.com
+2021-08-10 21:01:11,308 INFO  [stdout] (default task-94) milo.crabdance.com
+2021-08-10 21:01:11,312 INFO  [stdout] (default task-89) milo.crabdance.com
+2021-08-10 21:01:11,413 INFO  [stdout] (default task-95) milo.crabdance.com
+2021-08-10 21:01:11,414 INFO  [stdout] (default task-99) milo.crabdance.com
+2021-08-10 21:01:11,418 INFO  [stdout] (default task-98) milo.crabdance.com
+2021-08-10 21:02:36,397 INFO  [stdout] (default task-103) milo.crabdance.com
+2021-08-10 21:02:36,399 INFO  [stdout] (default task-78) milo.crabdance.com
+2021-08-10 21:02:36,401 INFO  [stdout] (default task-83) milo.crabdance.com
+2021-08-10 21:02:36,402 INFO  [stdout] (default task-106) milo.crabdance.com
+2021-08-10 21:02:36,404 INFO  [stdout] (default task-101) milo.crabdance.com
+2021-08-10 21:02:36,446 INFO  [stdout] (default task-80) milo.crabdance.com
+2021-08-10 21:02:36,447 INFO  [stdout] (default task-104) milo.crabdance.com
+2021-08-10 21:02:36,447 INFO  [stdout] (default task-81) milo.crabdance.com
+2021-08-10 21:02:36,448 INFO  [stdout] (default task-112) milo.crabdance.com
+2021-08-10 21:02:36,449 INFO  [stdout] (default task-107) milo.crabdance.com
+2021-08-10 21:02:56,071 INFO  [stdout] (default task-110) milo.crabdance.com

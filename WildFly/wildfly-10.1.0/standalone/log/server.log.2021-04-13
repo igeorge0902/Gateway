@@ -1,0 +1,893 @@
+2021-04-13 14:22:28,335 ERROR [io.undertow.request] (default task-24) UT005023: Exception handling request to /simple-service-webapp/webapi/myresource/images/e.jpg: org.jboss.resteasy.spi.UnhandledException: java.lang.NullPointerException
+	at org.jboss.resteasy.core.ExceptionHandler.handleApplicationException(ExceptionHandler.java:77)
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:220)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:175)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:418)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:209)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at java.awt.color.ICC_Profile.activateDeferredProfile(ICC_Profile.java:1090)
+	at java.awt.color.ICC_Profile$1.activate(ICC_Profile.java:744)
+	at sun.java2d.cmm.ProfileDeferralMgr.activateProfiles(ProfileDeferralMgr.java:95)
+	at java.awt.color.ICC_Profile.getInstance(ICC_Profile.java:777)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.setImageData(JPEGImageReader.java:657)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImageHeader(Native Method)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readNativeHeader(JPEGImageReader.java:609)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.checkTablesOnly(JPEGImageReader.java:347)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.gotoImage(JPEGImageReader.java:481)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readHeader(JPEGImageReader.java:602)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1059)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039)
+	at javax.imageio.ImageIO.read(ImageIO.java:1448)
+	at javax.imageio.ImageIO.read(ImageIO.java:1352)
+	at com.example.MyResource.getImage(MyResource.java:72)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:236)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:402)
+	... 42 more
+
+2021-04-13 14:22:28,355 ERROR [io.undertow.request] (default task-39) UT005023: Exception handling request to /simple-service-webapp/webapi/myresource/images/m.jpg: org.jboss.resteasy.spi.UnhandledException: java.lang.NullPointerException
+	at org.jboss.resteasy.core.ExceptionHandler.handleApplicationException(ExceptionHandler.java:77)
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:220)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:175)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:418)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:209)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at java.awt.color.ICC_Profile.activateDeferredProfile(ICC_Profile.java:1090)
+	at java.awt.color.ICC_Profile$1.activate(ICC_Profile.java:744)
+	at sun.java2d.cmm.ProfileDeferralMgr.activateProfiles(ProfileDeferralMgr.java:95)
+	at java.awt.color.ICC_Profile.getInstance(ICC_Profile.java:777)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.setImageData(JPEGImageReader.java:657)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImageHeader(Native Method)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readNativeHeader(JPEGImageReader.java:609)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.checkTablesOnly(JPEGImageReader.java:347)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.gotoImage(JPEGImageReader.java:481)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readHeader(JPEGImageReader.java:602)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1059)
+	at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039)
+	at javax.imageio.ImageIO.read(ImageIO.java:1448)
+	at javax.imageio.ImageIO.read(ImageIO.java:1352)
+	at com.example.MyResource.getImage(MyResource.java:72)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:236)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:402)
+	... 42 more
+
+2021-04-13 14:31:50,440 INFO  [stdout] (default task-42) Cookie filter...
+2021-04-13 14:31:50,440 INFO  [stdout] (default task-42) Path: /book/movies
+2021-04-13 14:31:50,440 INFO  [stdout] (default task-42) Ciphertext filter...
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42) Hibernate: 
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)     select
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.movieId as movieId1_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.category as category2_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.detail as detail3_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.name as name6_1_,
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)     from
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         Movie movie0_ 
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)     order by
+2021-04-13 14:31:50,445 INFO  [stdout] (default task-42)         movie0_.name asc
+2021-04-13 14:37:48,844 INFO  [stdout] (default task-36) Cookie filter...
+2021-04-13 14:37:48,844 INFO  [stdout] (default task-36) Path: /book/movies
+2021-04-13 14:37:48,844 INFO  [stdout] (default task-36) Ciphertext filter...
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36) Hibernate: 
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)     select
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.movieId as movieId1_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.category as category2_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.detail as detail3_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.name as name6_1_,
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)     from
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         Movie movie0_ 
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)     order by
+2021-04-13 14:37:48,846 INFO  [stdout] (default task-36)         movie0_.name asc
+2021-04-13 14:38:46,997 INFO  [stdout] (default task-71) Cookie filter...
+2021-04-13 14:38:46,997 INFO  [stdout] (default task-71) Path: /book/movies
+2021-04-13 14:38:46,997 INFO  [stdout] (default task-71) Ciphertext filter...
+2021-04-13 14:48:09,439 INFO  [stdout] (default task-116) Cookie filter...
+2021-04-13 14:48:09,439 INFO  [stdout] (default task-116) Path: /book/movies
+2021-04-13 14:48:09,439 INFO  [stdout] (default task-116) Ciphertext filter...
+2021-04-13 14:48:09,443 INFO  [stdout] (default task-116) Hibernate: 
+2021-04-13 14:48:09,443 INFO  [stdout] (default task-116)     select
+2021-04-13 14:48:09,443 INFO  [stdout] (default task-116)         movie0_.movieId as movieId1_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.category as category2_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.detail as detail3_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.name as name6_1_,
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)     from
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         Movie movie0_ 
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)     order by
+2021-04-13 14:48:09,444 INFO  [stdout] (default task-116)         movie0_.name asc
+2021-04-13 14:49:38,302 INFO  [stdout] (default task-98) Cookie filter...
+2021-04-13 14:49:38,302 INFO  [stdout] (default task-98) Path: /book/movies
+2021-04-13 14:49:38,302 INFO  [stdout] (default task-98) Ciphertext filter...
+2021-04-13 14:50:29,831 INFO  [stdout] (default task-19) Cookie filter...
+2021-04-13 14:50:29,831 INFO  [stdout] (default task-19) Path: /book/venue/1042
+2021-04-13 14:50:29,831 INFO  [stdout] (default task-19) Ciphertext filter...
+2021-04-13 14:50:29,855 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-19) HHH000248: Starting query cache at region: venues
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19) Hibernate: 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)     select
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.venuesId as venuesId1_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.address as address2_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.contact as contact3_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.location_locationId as location7_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.name as name4_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.screen_screenId as screen_s5_7_,
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         venues0_.venues_picture as venues_p6_7_ 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)     from
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         Venues venues0_ 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)     inner join
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         Screen screen1_ 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)             on venues0_.screen_screenId=screen1_.screenId 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)     inner join
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         Movie movie2_ 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)             on screen1_.movie_movieId=movie2_.movieId 
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)     where
+2021-04-13 14:50:29,858 INFO  [stdout] (default task-19)         movieId=?
+2021-04-13 14:50:29,883 INFO  [stdout] (default task-19) Hibernate: 
+2021-04-13 14:50:29,883 INFO  [stdout] (default task-19)     select
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.locationId as location1_0_0_,
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.formatted_address as formatte2_0_0_,
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.latitude as latitude3_0_0_,
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.longitude as longitud4_0_0_,
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.name as name5_0_0_,
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.thumbnail as thumbnai6_0_0_ 
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)     from
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         Location location0_ 
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)     where
+2021-04-13 14:50:29,884 INFO  [stdout] (default task-19)         location0_.locationId=?
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19) Hibernate: 
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)     select
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:29,895 INFO  [stdout] (default task-19)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     from
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         Screen screen0_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         Movie movie1_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         Venues venues3_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         Seats seat4_ 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)     where
+2021-04-13 14:50:29,896 INFO  [stdout] (default task-19)         screen0_.screenId=?
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19) Hibernate: 
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)     select
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.locationId as location1_0_0_,
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.formatted_address as formatte2_0_0_,
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.latitude as latitude3_0_0_,
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.longitude as longitud4_0_0_,
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.name as name5_0_0_,
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.thumbnail as thumbnai6_0_0_ 
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)     from
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         Location location0_ 
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)     where
+2021-04-13 14:50:30,036 INFO  [stdout] (default task-19)         location0_.locationId=?
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19) Hibernate: 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     select
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     from
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         Screen screen0_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         Movie movie1_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         Venues venues3_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     left outer join
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         Seats seat4_ 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)     where
+2021-04-13 14:50:30,040 INFO  [stdout] (default task-19)         screen0_.screenId=?
+2021-04-13 14:50:34,950 INFO  [stdout] (default task-120) Cookie filter...
+2021-04-13 14:50:34,950 INFO  [stdout] (default task-120) Path: /book/dates/158/1042
+2021-04-13 14:50:34,950 INFO  [stdout] (default task-120) Ciphertext filter...
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120) Hibernate: 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)     select
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         screeningd0_.screeningDatesId as screenin1_4_,
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         screeningd0_.movieId as movieId2_4_,
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         screeningd0_.screeningDate as screenin3_4_,
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)     from
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         ScreeningDates screeningd0_ 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)     inner join
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         Venues venues1_ 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)     inner join
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)         Location location2_ 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)             on venues1_.location_locationId=location2_.locationId 
+2021-04-13 14:50:34,961 INFO  [stdout] (default task-120)     where
+2021-04-13 14:50:34,962 INFO  [stdout] (default task-120)         movieId=? 
+2021-04-13 14:50:34,962 INFO  [stdout] (default task-120)         and locationId=?
+2021-04-13 14:50:46,102 INFO  [stdout] (default task-111) Cookie filter...
+2021-04-13 14:50:46,102 INFO  [stdout] (default task-111) Path: /book/venue/1083
+2021-04-13 14:50:46,102 INFO  [stdout] (default task-111) Ciphertext filter...
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.venuesId as venuesId1_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.address as address2_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.contact as contact3_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.location_locationId as location7_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.name as name4_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.screen_screenId as screen_s5_7_,
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         venues0_.venues_picture as venues_p6_7_ 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         Venues venues0_ 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)     inner join
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         Screen screen1_ 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)             on venues0_.screen_screenId=screen1_.screenId 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)     inner join
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         Movie movie2_ 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)             on screen1_.movie_movieId=movie2_.movieId 
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,104 INFO  [stdout] (default task-111)         movieId=?
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.locationId as location1_0_0_,
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.formatted_address as formatte2_0_0_,
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.latitude as latitude3_0_0_,
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.longitude as longitud4_0_0_,
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.name as name5_0_0_,
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.thumbnail as thumbnai6_0_0_ 
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         Location location0_ 
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,109 INFO  [stdout] (default task-111)         location0_.locationId=?
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:46,115 INFO  [stdout] (default task-111)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         Screen screen0_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         Movie movie1_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         Venues venues3_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         Seats seat4_ 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,116 INFO  [stdout] (default task-111)         screen0_.screenId=?
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.locationId as location1_0_0_,
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.formatted_address as formatte2_0_0_,
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.latitude as latitude3_0_0_,
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.longitude as longitud4_0_0_,
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.name as name5_0_0_,
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.thumbnail as thumbnai6_0_0_ 
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         Location location0_ 
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,191 INFO  [stdout] (default task-111)         location0_.locationId=?
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         Screen screen0_ 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         Movie movie1_ 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:46,194 INFO  [stdout] (default task-111)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)         Venues venues3_ 
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)         Seats seat4_ 
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,195 INFO  [stdout] (default task-111)         screen0_.screenId=?
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:46,295 INFO  [stdout] (default task-111)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         Screen screen0_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         Movie movie1_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         Venues venues3_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         Seats seat4_ 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,296 INFO  [stdout] (default task-111)         screen0_.screenId=?
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111)         location0_.locationId as location1_0_0_,
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111)         location0_.formatted_address as formatte2_0_0_,
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111)         location0_.latitude as latitude3_0_0_,
+2021-04-13 14:50:46,395 INFO  [stdout] (default task-111)         location0_.longitude as longitud4_0_0_,
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)         location0_.name as name5_0_0_,
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)         location0_.thumbnail as thumbnai6_0_0_ 
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)         Location location0_ 
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,396 INFO  [stdout] (default task-111)         location0_.locationId=?
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111) Hibernate: 
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)     select
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screen0_.screenId as screenId1_3_0_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screen0_.seats as seats2_3_0_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.movieId as movieId1_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.category as category2_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.detail as detail3_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.large_picture as large_pi5_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.name as name6_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-04-13 14:50:46,399 INFO  [stdout] (default task-111)         screeningd2_.movieId as movieId2_4_2_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.venuesId as venuesId1_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.address as address2_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.contact as contact3_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.location_locationId as location7_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.name as name4_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         venues3_.venues_picture as venues_p6_7_3_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_4_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.seatId as seatId1_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.isReserved as isReserv2_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.price as price3_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.seatRow as seatRow5_5_5_,
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         seat4_.tax as tax6_5_5_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     from
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         Screen screen0_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         Movie movie1_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)             on screen0_.movie_movieId=movie1_.movieId 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         ScreeningDates screeningd2_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         Venues venues3_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     left outer join
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         Seats seat4_ 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)             on screen0_.screenId=seat4_.screen_screenId 
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)     where
+2021-04-13 14:50:46,400 INFO  [stdout] (default task-111)         screen0_.screenId=?
+2021-04-13 14:50:48,149 INFO  [stdout] (default task-84) Cookie filter...
+2021-04-13 14:50:48,150 INFO  [stdout] (default task-84) Path: /book/dates/118/1083
+2021-04-13 14:50:48,150 INFO  [stdout] (default task-84) Ciphertext filter...
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84) Hibernate: 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)     select
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         screeningd0_.screeningDatesId as screenin1_4_,
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         screeningd0_.movieId as movieId2_4_,
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         screeningd0_.screeningDate as screenin3_4_,
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)     from
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         ScreeningDates screeningd0_ 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)     inner join
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         Venues venues1_ 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)     inner join
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         Location location2_ 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)             on venues1_.location_locationId=location2_.locationId 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)     where
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         movieId=? 
+2021-04-13 14:50:48,153 INFO  [stdout] (default task-84)         and locationId=?
+2021-04-13 15:43:00,525 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/0a/c730c2b8292be62e36147e5fc0302d44d7eca5/content
+2021-04-13 15:43:00,547 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:43:00,547 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:43:00,562 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 74) WFLYUT0022: Unregistered web context: /login
+2021-04-13 15:43:00,715 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 178ms
+2021-04-13 15:43:00,717 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 15:43:01,989 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 15:43:01,990 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 15:43:01,992 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:43:01,992 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:43:02,004 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 76) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 15:43:02,008 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 76) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 15:43:02,034 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 76) WFLYUT0021: Registered web context: /login
+2021-04-13 15:43:02,100 INFO  [org.jboss.as.server] (External Management Request Threads -- 5) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 15:43:02,103 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/7a/d91c1d71e5cbc8136c63d8d08e315777a9b989/content
+2021-04-13 15:43:40,725 INFO  [stdout] (default task-86) Cookie filter...
+2021-04-13 15:43:40,725 INFO  [stdout] (default task-86) Path: /book/movies
+2021-04-13 15:43:40,725 INFO  [stdout] (default task-86) Ciphertext filter...
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86) Hibernate: 
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)     select
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.movieId as movieId1_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.category as category2_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.detail as detail3_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.name as name6_1_,
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)     from
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         Movie movie0_ 
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)     order by
+2021-04-13 15:43:40,727 INFO  [stdout] (default task-86)         movie0_.name asc
+2021-04-13 15:52:54,435 INFO  [org.jboss.as.repository] (External Management Request Threads -- 7) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/b2/d201eda647a48be3bc7463b9b3052f47d58119/content
+2021-04-13 15:52:54,437 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:52:54,437 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:52:54,438 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0022: Unregistered web context: /login
+2021-04-13 15:52:54,537 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 100ms
+2021-04-13 15:52:54,537 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 15:52:55,706 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 15:52:55,707 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 15:52:55,710 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:52:55,711 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:52:55,718 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 89) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 15:52:55,721 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 89) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 15:52:55,739 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0021: Registered web context: /login
+2021-04-13 15:52:55,752 INFO  [org.jboss.as.server] (External Management Request Threads -- 7) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 15:52:55,754 INFO  [org.jboss.as.repository] (External Management Request Threads -- 7) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/0a/c730c2b8292be62e36147e5fc0302d44d7eca5/content
+2021-04-13 15:53:19,758 INFO  [stdout] (default task-43) Cookie filter...
+2021-04-13 15:53:19,759 INFO  [stdout] (default task-43) Path: /book/movies
+2021-04-13 15:53:19,759 INFO  [stdout] (default task-43) Ciphertext filter...
+2021-04-13 15:53:19,760 INFO  [stdout] (default task-43) Hibernate: 
+2021-04-13 15:53:19,760 INFO  [stdout] (default task-43)     select
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.movieId as movieId1_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.category as category2_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.detail as detail3_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.name as name6_1_,
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)     from
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         Movie movie0_ 
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)     order by
+2021-04-13 15:53:19,761 INFO  [stdout] (default task-43)         movie0_.name asc
+2021-04-13 15:54:40,787 INFO  [stdout] (default task-108) Cookie filter...
+2021-04-13 15:54:40,787 INFO  [stdout] (default task-108) Path: /book/venue/v2/1083
+2021-04-13 15:54:40,787 INFO  [stdout] (default task-108) Ciphertext filter...
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108) Hibernate: 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)     SELECT
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)         distinct * 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)     FROM
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)         book.location 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)     join
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)         book.venues 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)             on venues.location_locationId = location.locationId 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)     join
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)         book.Screen 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)             on venues.screen_screenId = Screen.screenId 
+2021-04-13 15:54:40,814 INFO  [stdout] (default task-108)     join
+2021-04-13 15:54:40,815 INFO  [stdout] (default task-108)         book.Movie 
+2021-04-13 15:54:40,815 INFO  [stdout] (default task-108)             on Screen.movie_movieId = Movie.movieId 
+2021-04-13 15:54:40,815 INFO  [stdout] (default task-108)     where
+2021-04-13 15:54:40,815 INFO  [stdout] (default task-108)         movieId = ?
+2021-04-13 15:56:56,458 INFO  [org.jboss.as.repository] (External Management Request Threads -- 9) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/fc/61ada71676afddf73de4cc670eb0f725a14d6b/content
+2021-04-13 15:56:56,460 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:56:56,460 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:56:56,461 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0022: Unregistered web context: /login
+2021-04-13 15:56:56,552 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 93ms
+2021-04-13 15:56:56,553 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 15:56:57,618 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 15:56:57,619 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 15:56:57,621 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 15:56:57,627 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 108) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 15:56:57,621 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 15:56:57,631 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 108) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 15:56:57,648 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 108) WFLYUT0021: Registered web context: /login
+2021-04-13 15:56:57,666 INFO  [org.jboss.as.server] (External Management Request Threads -- 9) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 15:56:57,670 INFO  [org.jboss.as.repository] (External Management Request Threads -- 9) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/b2/d201eda647a48be3bc7463b9b3052f47d58119/content
+2021-04-13 15:57:13,395 INFO  [stdout] (default task-106) Cookie filter...
+2021-04-13 15:57:13,395 INFO  [stdout] (default task-106) Path: /book/movies
+2021-04-13 15:57:13,395 INFO  [stdout] (default task-106) Ciphertext filter...
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106) Hibernate: 
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)     select
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.movieId as movieId1_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.category as category2_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.detail as detail3_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.name as name6_1_,
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)     from
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         Movie movie0_ 
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)     order by
+2021-04-13 15:57:13,398 INFO  [stdout] (default task-106)         movie0_.name asc
+2021-04-13 16:01:07,635 INFO  [org.jboss.as.repository] (External Management Request Threads -- 1) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/0d/4232eaaf74e6b56f379ca53d428a330c87306f/content
+2021-04-13 16:01:07,637 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:01:07,637 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:01:07,637 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 109) WFLYUT0022: Unregistered web context: /login
+2021-04-13 16:01:07,723 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 86ms
+2021-04-13 16:01:07,724 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 16:01:08,796 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 16:01:08,797 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 16:01:08,798 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:01:08,799 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:01:08,805 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 121) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 16:01:08,806 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 121) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 16:01:08,825 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 121) WFLYUT0021: Registered web context: /login
+2021-04-13 16:01:08,837 INFO  [org.jboss.as.server] (External Management Request Threads -- 1) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 16:01:08,838 INFO  [org.jboss.as.repository] (External Management Request Threads -- 1) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/fc/61ada71676afddf73de4cc670eb0f725a14d6b/content
+2021-04-13 16:01:43,135 INFO  [stdout] (default task-104) Cookie filter...
+2021-04-13 16:01:43,135 INFO  [stdout] (default task-104) Path: /book/movies
+2021-04-13 16:01:43,135 INFO  [stdout] (default task-104) Ciphertext filter...
+2021-04-13 16:01:43,136 INFO  [stdout] (default task-104) Hibernate: 
+2021-04-13 16:01:43,136 INFO  [stdout] (default task-104)     select
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.movieId as movieId1_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.category as category2_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.detail as detail3_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.name as name6_1_,
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)     from
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         Movie movie0_ 
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)     order by
+2021-04-13 16:01:43,137 INFO  [stdout] (default task-104)         movie0_.name asc
+2021-04-13 16:01:55,189 INFO  [stdout] (default task-49) Cookie filter...
+2021-04-13 16:01:55,189 INFO  [stdout] (default task-49) Path: /book/venue/v21083
+2021-04-13 16:01:55,189 INFO  [stdout] (default task-49) Ciphertext filter...
+2021-04-13 16:03:22,983 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/d7/e71ae5a8f302a88f2774075245d69163b6ac1a/content
+2021-04-13 16:03:22,985 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:03:22,985 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:03:22,985 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 125) WFLYUT0022: Unregistered web context: /login
+2021-04-13 16:03:23,079 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 95ms
+2021-04-13 16:03:23,080 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 16:03:24,161 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 16:03:24,162 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 16:03:24,163 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:03:24,163 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:03:24,169 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 138) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 16:03:24,170 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 138) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 16:03:24,189 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 138) WFLYUT0021: Registered web context: /login
+2021-04-13 16:03:24,199 INFO  [org.jboss.as.server] (External Management Request Threads -- 3) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 16:03:24,201 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/0d/4232eaaf74e6b56f379ca53d428a330c87306f/content
+2021-04-13 16:03:29,210 INFO  [stdout] (default task-87) Cookie filter...
+2021-04-13 16:03:29,211 INFO  [stdout] (default task-87) Path: /book/movies
+2021-04-13 16:03:29,211 INFO  [stdout] (default task-87) Ciphertext filter...
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87) Hibernate: 
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)     select
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.movieId as movieId1_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.category as category2_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.detail as detail3_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.large_picture as large_pi5_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.name as name6_1_,
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)     from
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         Movie movie0_ 
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)     order by
+2021-04-13 16:03:29,213 INFO  [stdout] (default task-87)         movie0_.name asc
+2021-04-13 16:03:33,235 INFO  [stdout] (default task-43) Cookie filter...
+2021-04-13 16:03:33,235 INFO  [stdout] (default task-43) Path: /book/venue/v2/1083
+2021-04-13 16:03:33,235 INFO  [stdout] (default task-43) Ciphertext filter...
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43) Hibernate: 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     SELECT
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         distinct * 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     FROM
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         book.location 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     join
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         book.venues 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)             on venues.location_locationId = location.locationId 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     join
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         book.Screen 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)             on venues.screen_screenId = Screen.screenId 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     join
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         book.Movie 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)             on Screen.movie_movieId = Movie.movieId 
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)     where
+2021-04-13 16:03:33,238 INFO  [stdout] (default task-43)         movieId = ?
+2021-04-13 16:04:46,197 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/93/06298340c870193ae48f52bc5974e9222120cd/content
+2021-04-13 16:04:46,198 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:04:46,199 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:04:46,199 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 139) WFLYUT0022: Unregistered web context: /login
+2021-04-13 16:04:46,280 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 82ms
+2021-04-13 16:04:46,281 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2021-04-13 16:04:47,349 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2021-04-13 16:04:47,350 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2021-04-13 16:04:47,351 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-04-13 16:04:47,354 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-04-13 16:04:47,358 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 153) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2021-04-13 16:04:47,359 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 153) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2021-04-13 16:04:47,380 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 153) WFLYUT0021: Registered web context: /login
+2021-04-13 16:04:47,391 INFO  [org.jboss.as.server] (External Management Request Threads -- 5) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2021-04-13 16:04:47,394 INFO  [org.jboss.as.repository] (External Management Request Threads -- 5) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/d7/e71ae5a8f302a88f2774075245d69163b6ac1a/content
+2021-04-13 16:04:56,849 INFO  [stdout] (default task-103) Cookie filter...
+2021-04-13 16:04:56,849 INFO  [stdout] (default task-103) Path: /book/movies
+2021-04-13 16:04:56,849 INFO  [stdout] (default task-103) Ciphertext filter...
+2021-04-13 16:05:00,182 INFO  [stdout] (default task-60) Cookie filter...
+2021-04-13 16:05:00,183 INFO  [stdout] (default task-60) Path: /book/venue/v2/1039
+2021-04-13 16:05:00,183 INFO  [stdout] (default task-60) Ciphertext filter...
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60) Hibernate: 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     SELECT
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         distinct * 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     FROM
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         book.location 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     join
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         book.venues 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)             on venues.location_locationId = location.locationId 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     join
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         book.Screen 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)             on venues.screen_screenId = Screen.screenId 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     join
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         book.Movie 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)             on Screen.movie_movieId = Movie.movieId 
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)     where
+2021-04-13 16:05:00,184 INFO  [stdout] (default task-60)         movieId = ?
+2021-04-13 16:05:16,982 INFO  [stdout] (default task-45) Cookie filter...
+2021-04-13 16:05:16,982 INFO  [stdout] (default task-45) Path: /book/venue/v2/1083
+2021-04-13 16:05:16,982 INFO  [stdout] (default task-45) Ciphertext filter...
+2021-04-13 16:05:16,986 INFO  [stdout] (default task-45) Hibernate: 
+2021-04-13 16:05:16,986 INFO  [stdout] (default task-45)     SELECT
+2021-04-13 16:05:16,986 INFO  [stdout] (default task-45)         distinct * 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)     FROM
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)         book.location 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)     join
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)         book.venues 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)             on venues.location_locationId = location.locationId 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)     join
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)         book.Screen 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)             on venues.screen_screenId = Screen.screenId 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)     join
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)         book.Movie 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)             on Screen.movie_movieId = Movie.movieId 
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)     where
+2021-04-13 16:05:16,987 INFO  [stdout] (default task-45)         movieId = ?

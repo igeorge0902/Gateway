@@ -1,0 +1,301 @@
+2021-05-03 18:27:47,693 INFO  [stdout] (default task-128) Cookie filter...
+2021-05-03 18:27:47,701 INFO  [stdout] (default task-128) Path: /book/movies
+2021-05-03 18:27:47,701 INFO  [stdout] (default task-128) Ciphertext filter...
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128) Hibernate: 
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)     select
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.movieId as movieId1_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.category as category2_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.detail as detail3_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.large_picture as large_pi5_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.name as name6_1_,
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)     from
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         Movie movie0_ 
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)     order by
+2021-05-03 18:27:47,876 INFO  [stdout] (default task-128)         movie0_.name asc
+2021-05-03 18:30:10,751 INFO  [stdout] (default task-108) Cookie filter...
+2021-05-03 18:30:10,752 INFO  [stdout] (default task-108) Path: /book/movies
+2021-05-03 18:30:10,752 INFO  [stdout] (default task-108) Ciphertext filter...
+2021-05-03 18:30:10,754 INFO  [stdout] (default task-108) Hibernate: 
+2021-05-03 18:30:10,754 INFO  [stdout] (default task-108)     select
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.movieId as movieId1_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.category as category2_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.detail as detail3_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.large_picture as large_pi5_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.name as name6_1_,
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)     from
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         Movie movie0_ 
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)     order by
+2021-05-03 18:30:10,755 INFO  [stdout] (default task-108)         movie0_.name asc
+2021-05-03 18:30:19,235 INFO  [stdout] (default task-105) Cookie filter...
+2021-05-03 18:30:19,235 INFO  [stdout] (default task-105) Path: /book/movies
+2021-05-03 18:30:19,235 INFO  [stdout] (default task-105) Ciphertext filter...
+2021-05-03 18:30:22,559 INFO  [stdout] (default task-13) Cookie filter...
+2021-05-03 18:30:22,559 INFO  [stdout] (default task-13) Path: /book/venue/v2/1083
+2021-05-03 18:30:22,559 INFO  [stdout] (default task-13) Ciphertext filter...
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13) Hibernate: 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     SELECT
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         distinct * 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     FROM
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         book.location 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     join
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         book.venues 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)             on venues.location_locationId = location.locationId 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     join
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         book.Screen 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)             on venues.screen_screenId = Screen.screenId 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     join
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         book.Movie 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)             on Screen.movie_movieId = Movie.movieId 
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)     where
+2021-05-03 18:30:22,562 INFO  [stdout] (default task-13)         movieId = ?
+2021-05-03 18:30:31,597 INFO  [stdout] (default task-57) Cookie filter...
+2021-05-03 18:30:31,597 INFO  [stdout] (default task-57) Path: /book/dates/3/1083
+2021-05-03 18:30:31,597 INFO  [stdout] (default task-57) Ciphertext filter...
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57) Hibernate: 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)     select
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         screeningd0_.screeningDatesId as screenin1_4_,
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         screeningd0_.movieId as movieId2_4_,
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         screeningd0_.screeningDate as screenin3_4_,
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)     from
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         ScreeningDates screeningd0_ 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)     inner join
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         Venues venues1_ 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)     inner join
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         Location location2_ 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)             on venues1_.location_locationId=location2_.locationId 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)     where
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         movieId=? 
+2021-05-03 18:30:31,600 INFO  [stdout] (default task-57)         and locationId=?
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57) Hibernate: 
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)     select
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.venuesId as venuesId1_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.address as address2_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.contact as contact3_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.location_locationId as location7_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.name as name4_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.screen_screenId as screen_s5_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         venues0_.venues_picture as venues_p6_7_0_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         location1_.locationId as location1_0_1_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         location1_.formatted_address as formatte2_0_1_,
+2021-05-03 18:30:31,606 INFO  [stdout] (default task-57)         location1_.latitude as latitude3_0_1_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         location1_.longitude as longitud4_0_1_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         location1_.name as name5_0_1_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         location1_.thumbnail as thumbnai6_0_1_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screen2_.screenId as screenId1_3_2_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screen2_.movie_movieId as movie_mo3_3_2_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screen2_.screeningDates_screeningDatesId as screenin4_3_2_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screen2_.seats as seats2_3_2_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.movieId as movieId1_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.category as category2_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.detail as detail3_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.iMDB_url as iMDB_url4_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.large_picture as large_pi5_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.name as name6_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         movie3_.thumbnail_picture as thumbnai7_1_3_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screeningd4_.screeningDatesId as screenin1_4_4_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screeningd4_.movieId as movieId2_4_4_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screeningd4_.screeningDate as screenin3_4_4_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         screeningd4_.venues_venuesId as venues_v4_4_4_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.screen_screenId as screen_s7_5_5_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.seatId as seatId1_5_5_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.seatId as seatId1_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.isReserved as isReserv2_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.price as price3_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.screen_screenId as screen_s7_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.seatNumber as seatNumb4_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.seatRow as seatRow5_5_6_,
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         seat5_.tax as tax6_5_6_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     from
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         Venues venues0_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     left outer join
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         Location location1_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)             on venues0_.location_locationId=location1_.locationId 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     left outer join
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         Screen screen2_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)             on venues0_.screen_screenId=screen2_.screenId 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     left outer join
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         Movie movie3_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)             on screen2_.movie_movieId=movie3_.movieId 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     left outer join
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         ScreeningDates screeningd4_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)             on screen2_.screeningDates_screeningDatesId=screeningd4_.screeningDatesId 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     left outer join
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         Seats seat5_ 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)             on screen2_.screenId=seat5_.screen_screenId 
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)     where
+2021-05-03 18:30:31,607 INFO  [stdout] (default task-57)         venues0_.venuesId=?
+2021-05-03 18:30:36,352 INFO  [stdout] (default task-114) Cookie filter...
+2021-05-03 18:30:36,352 INFO  [stdout] (default task-114) Path: /book/seats/113
+2021-05-03 18:30:36,352 INFO  [stdout] (default task-114) Ciphertext filter...
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114) Hibernate: 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)     select
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.seatId as seatId1_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.isReserved as isReserv2_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.price as price3_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.screen_screenId as screen_s7_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.seatNumber as seatNumb4_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.seatRow as seatRow5_5_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         seat3_.tax as tax6_5_ 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)     from
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         ScreeningDates screeningd0_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         Venues venues1_,
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         Screen screen2_ 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)     inner join
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         Seats seat3_ 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)             on screen2_.screenId=seat3_.screen_screenId 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)     where
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         and venues1_.screen_screenId=screen2_.screenId 
+2021-05-03 18:30:36,356 INFO  [stdout] (default task-114)         and screeningDatesId=?
+2021-05-03 18:30:36,385 INFO  [stdout] (default task-114) Hibernate: 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     select
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screen0_.screenId as screenId1_3_0_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screen0_.movie_movieId as movie_mo3_3_0_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screen0_.seats as seats2_3_0_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.movieId as movieId1_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.category as category2_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.detail as detail3_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.large_picture as large_pi5_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.name as name6_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screeningd2_.movieId as movieId2_4_2_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screeningd2_.screeningDate as screenin3_4_2_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.venuesId as venuesId1_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.address as address2_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.contact as contact3_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.location_locationId as location7_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.name as name4_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.screen_screenId as screen_s5_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         venues3_.venues_picture as venues_p6_7_3_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.screen_screenId as screen_s7_5_4_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.seatId as seatId1_5_4_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.seatId as seatId1_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.isReserved as isReserv2_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.price as price3_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.screen_screenId as screen_s7_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.seatNumber as seatNumb4_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.seatRow as seatRow5_5_5_,
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         seat4_.tax as tax6_5_5_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     from
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         Screen screen0_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     left outer join
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         Movie movie1_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)             on screen0_.movie_movieId=movie1_.movieId 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     left outer join
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         ScreeningDates screeningd2_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     left outer join
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         Venues venues3_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     left outer join
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         Seats seat4_ 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)             on screen0_.screenId=seat4_.screen_screenId 
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)     where
+2021-05-03 18:30:36,386 INFO  [stdout] (default task-114)         screen0_.screenId=?
+2021-05-03 18:30:46,951 INFO  [stdout] (default task-112) Cookie filter...
+2021-05-03 18:30:46,951 INFO  [stdout] (default task-112) Path: /book/venue/v2/1083
+2021-05-03 18:30:46,951 INFO  [stdout] (default task-112) Ciphertext filter...
+2021-05-03 18:30:52,161 INFO  [stdout] (default task-110) Cookie filter...
+2021-05-03 18:30:52,161 INFO  [stdout] (default task-110) Path: /book/venue/v2/1083
+2021-05-03 18:30:52,161 INFO  [stdout] (default task-110) Ciphertext filter...
+2021-05-03 18:31:14,920 INFO  [stdout] (default task-30) Cookie filter...
+2021-05-03 18:31:14,920 INFO  [stdout] (default task-30) Path: /book/venue/v2/1048
+2021-05-03 18:31:14,920 INFO  [stdout] (default task-30) Ciphertext filter...
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30) Hibernate: 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     SELECT
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         distinct * 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     FROM
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         book.location 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     join
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         book.venues 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)             on venues.location_locationId = location.locationId 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     join
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         book.Screen 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)             on venues.screen_screenId = Screen.screenId 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     join
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         book.Movie 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)             on Screen.movie_movieId = Movie.movieId 
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)     where
+2021-05-03 18:31:14,923 INFO  [stdout] (default task-30)         movieId = ?
+2021-05-03 18:36:24,043 INFO  [stdout] (default task-67) Cookie filter...
+2021-05-03 18:36:24,043 INFO  [stdout] (default task-67) Path: /newuser/G
+2021-05-03 18:36:24,043 INFO  [stdout] (default task-67) Cookie filter running...
+2021-05-03 18:36:24,043 INFO  [stdout] (default task-67) Sending response...
+2021-05-03 18:36:24,072 INFO  [stdout] (default task-37) Cookie filter...
+2021-05-03 18:36:24,072 INFO  [stdout] (default task-37) Path: /newuser/GG
+2021-05-03 18:36:24,072 INFO  [stdout] (default task-37) Cookie filter running...
+2021-05-03 18:36:24,072 INFO  [stdout] (default task-37) Sending response...
+2021-05-03 18:37:52,350 INFO  [stdout] (default task-17) Cookie filter...
+2021-05-03 18:37:52,351 INFO  [stdout] (default task-17) Path: /newuser/G
+2021-05-03 18:37:52,351 INFO  [stdout] (default task-17) Cookie filter running...
+2021-05-03 18:37:52,351 INFO  [stdout] (default task-17) Sending response...
+2021-05-03 18:37:52,499 INFO  [stdout] (default task-118) Cookie filter...
+2021-05-03 18:37:52,499 INFO  [stdout] (default task-118) Path: /newuser/GG
+2021-05-03 18:37:52,499 INFO  [stdout] (default task-118) Cookie filter running...
+2021-05-03 18:37:52,499 INFO  [stdout] (default task-118) Sending response...
+2021-05-03 18:38:00,342 INFO  [stdout] (default task-124) Cookie filter...
+2021-05-03 18:38:00,342 INFO  [stdout] (default task-124) Path: /newuser/G
+2021-05-03 18:38:00,342 INFO  [stdout] (default task-124) Cookie filter running...
+2021-05-03 18:38:00,342 INFO  [stdout] (default task-124) Sending response...
+2021-05-03 18:38:01,499 INFO  [stdout] (default task-61) Cookie filter...
+2021-05-03 18:38:01,499 INFO  [stdout] (default task-61) Path: /newuser/GC
+2021-05-03 18:38:01,499 INFO  [stdout] (default task-61) Cookie filter running...
+2021-05-03 18:38:01,499 INFO  [stdout] (default task-61) Sending response...
+2021-05-03 18:38:10,815 INFO  [stdout] (default task-108) Cookie filter...
+2021-05-03 18:38:10,815 INFO  [stdout] (default task-108) Path: /book/movies
+2021-05-03 18:38:10,815 INFO  [stdout] (default task-108) Ciphertext filter...
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108) Hibernate: 
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108)     select
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108)         movie0_.movieId as movieId1_1_,
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108)         movie0_.category as category2_1_,
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108)         movie0_.detail as detail3_1_,
+2021-05-03 18:38:10,818 INFO  [stdout] (default task-108)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)         movie0_.large_picture as large_pi5_1_,
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)         movie0_.name as name6_1_,
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)     from
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)         Movie movie0_ 
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)     order by
+2021-05-03 18:38:10,819 INFO  [stdout] (default task-108)         movie0_.name asc
+2021-05-03 18:38:29,285 INFO  [stdout] (default task-73) Cookie filter...
+2021-05-03 18:38:29,285 INFO  [stdout] (default task-73) Path: /newuser/G
+2021-05-03 18:38:29,285 INFO  [stdout] (default task-73) Cookie filter running...
+2021-05-03 18:38:29,285 INFO  [stdout] (default task-73) Sending response...
+2021-05-03 18:38:29,432 INFO  [stdout] (default task-117) Cookie filter...
+2021-05-03 18:38:29,433 INFO  [stdout] (default task-117) Path: /newuser/GG
+2021-05-03 18:38:29,433 INFO  [stdout] (default task-117) Cookie filter running...
+2021-05-03 18:38:29,433 INFO  [stdout] (default task-117) Sending response...
+2021-05-03 18:38:35,307 INFO  [stdout] (default task-56) Cookie filter...
+2021-05-03 18:38:35,307 INFO  [stdout] (default task-56) Path: /newuser/G
+2021-05-03 18:38:35,307 INFO  [stdout] (default task-56) Cookie filter running...
+2021-05-03 18:38:35,307 INFO  [stdout] (default task-56) Sending response...
+2021-05-03 18:38:36,143 INFO  [stdout] (default task-126) Cookie filter...
+2021-05-03 18:38:36,143 INFO  [stdout] (default task-126) Path: /newuser/GC
+2021-05-03 18:38:36,143 INFO  [stdout] (default task-126) Cookie filter running...
+2021-05-03 18:38:36,143 INFO  [stdout] (default task-126) Sending response...
+2021-05-03 18:46:54,758 INFO  [stdout] (default task-37) Cookie filter...
+2021-05-03 18:46:54,758 INFO  [stdout] (default task-37) Path: /newuser/G
+2021-05-03 18:46:54,758 INFO  [stdout] (default task-37) Cookie filter running...
+2021-05-03 18:46:54,759 INFO  [stdout] (default task-37) Sending response...
+2021-05-03 18:46:54,932 INFO  [stdout] (default task-113) Cookie filter...
+2021-05-03 18:46:54,932 INFO  [stdout] (default task-113) Path: /newuser/GG
+2021-05-03 18:46:54,932 INFO  [stdout] (default task-113) Cookie filter running...
+2021-05-03 18:46:54,932 INFO  [stdout] (default task-113) Sending response...
+2021-05-03 18:47:03,638 INFO  [stdout] (default task-41) Cookie filter...
+2021-05-03 18:47:03,638 INFO  [stdout] (default task-41) Path: /newuser/G
+2021-05-03 18:47:03,638 INFO  [stdout] (default task-41) Cookie filter running...
+2021-05-03 18:47:03,638 INFO  [stdout] (default task-41) Sending response...
+2021-05-03 18:47:04,690 INFO  [stdout] (default task-66) Cookie filter...
+2021-05-03 18:47:04,690 INFO  [stdout] (default task-66) Path: /newuser/GC
+2021-05-03 18:47:04,690 INFO  [stdout] (default task-66) Cookie filter running...
+2021-05-03 18:47:04,690 INFO  [stdout] (default task-66) Sending response...

@@ -1,0 +1,269 @@
+2021-01-27 16:37:06,279 INFO  [stdout] (default task-39) Cookie filter...
+2021-01-27 16:37:06,284 INFO  [stdout] (default task-39) Path: /book/movies/paging
+2021-01-27 16:37:06,284 INFO  [stdout] (default task-39) Ciphertext filter...
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39) Hibernate: 
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)     select
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.movieId as movieId1_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.category as category2_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.detail as detail3_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.name as name6_1_,
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)     from
+2021-01-27 16:37:06,318 INFO  [stdout] (default task-39)         Movie movie0_ 
+2021-01-27 16:37:06,371 INFO  [stdout] (default task-39)     order by
+2021-01-27 16:37:06,371 INFO  [stdout] (default task-39)         movie0_.name asc limit ?
+2021-01-27 16:37:06,403 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-39) Session Metrics {
+    21523853 nanoseconds spent acquiring 2 JDBC connections;
+    432394 nanoseconds spent releasing 1 JDBC connections;
+    748078 nanoseconds spent preparing 1 JDBC statements;
+    18347427 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    5420997 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    477687 nanoseconds spent performing 1 L2C misses;
+    930269 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    67439 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 16:52:47,520 INFO  [stdout] (default task-68) Cookie filter...
+2021-01-27 16:52:47,521 INFO  [stdout] (default task-68) Path: /book/movies/paging
+2021-01-27 16:52:47,522 INFO  [stdout] (default task-68) Ciphertext filter...
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68) Hibernate: 
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)     select
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.movieId as movieId1_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.category as category2_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.detail as detail3_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.name as name6_1_,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)     from
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         Movie movie0_ 
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)     order by
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         movie0_.name asc limit ?,
+2021-01-27 16:52:47,528 INFO  [stdout] (default task-68)         ?
+2021-01-27 16:52:47,531 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-68) Session Metrics {
+    1865226 nanoseconds spent acquiring 2 JDBC connections;
+    180983 nanoseconds spent releasing 1 JDBC connections;
+    74201 nanoseconds spent preparing 1 JDBC statements;
+    958875 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    416143 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    44509 nanoseconds spent performing 1 L2C misses;
+    110625 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7107 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 16:52:49,440 INFO  [stdout] (default task-72) Cookie filter...
+2021-01-27 16:52:49,440 INFO  [stdout] (default task-72) Path: /book/movies/paging
+2021-01-27 16:52:49,440 INFO  [stdout] (default task-72) Ciphertext filter...
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72) Hibernate: 
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)     select
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.movieId as movieId1_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.category as category2_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.detail as detail3_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.name as name6_1_,
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)     from
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         Movie movie0_ 
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)     order by
+2021-01-27 16:52:49,442 INFO  [stdout] (default task-72)         movie0_.name asc limit ?,
+2021-01-27 16:52:49,459 INFO  [stdout] (default task-72)         ?
+2021-01-27 16:52:49,463 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-72) Session Metrics {
+    1820515 nanoseconds spent acquiring 2 JDBC connections;
+    213172 nanoseconds spent releasing 1 JDBC connections;
+    50176 nanoseconds spent preparing 1 JDBC statements;
+    871709 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    409718 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    15341 nanoseconds spent performing 1 L2C misses;
+    80972 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5822 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 16:52:53,787 INFO  [stdout] (default task-77) Cookie filter...
+2021-01-27 16:52:53,787 INFO  [stdout] (default task-77) Path: /book/movies/paging
+2021-01-27 16:52:53,787 INFO  [stdout] (default task-77) Ciphertext filter...
+2021-01-27 16:52:53,789 INFO  [stdout] (default task-77) Hibernate: 
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)     select
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.movieId as movieId1_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.category as category2_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.detail as detail3_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.name as name6_1_,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)     from
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         Movie movie0_ 
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)     order by
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         movie0_.name asc limit ?,
+2021-01-27 16:52:53,790 INFO  [stdout] (default task-77)         ?
+2021-01-27 16:52:53,793 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-77) Session Metrics {
+    462045 nanoseconds spent acquiring 2 JDBC connections;
+    202980 nanoseconds spent releasing 1 JDBC connections;
+    47549 nanoseconds spent preparing 1 JDBC statements;
+    922204 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1331978 nanoseconds spent performing 16 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    16838 nanoseconds spent performing 1 L2C misses;
+    68504 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 15 collections);
+    5407 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 16:52:56,648 INFO  [stdout] (default task-89) Cookie filter...
+2021-01-27 16:52:56,648 INFO  [stdout] (default task-89) Path: /book/movies/paging
+2021-01-27 16:52:56,649 INFO  [stdout] (default task-89) Ciphertext filter...
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89) Hibernate: 
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)     select
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.movieId as movieId1_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.category as category2_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.detail as detail3_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.name as name6_1_,
+2021-01-27 16:52:56,653 INFO  [stdout] (default task-89)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 16:52:56,658 INFO  [stdout] (default task-89)     from
+2021-01-27 16:52:56,658 INFO  [stdout] (default task-89)         Movie movie0_ 
+2021-01-27 16:52:56,658 INFO  [stdout] (default task-89)     order by
+2021-01-27 16:52:56,658 INFO  [stdout] (default task-89)         movie0_.name asc limit ?,
+2021-01-27 16:52:56,658 INFO  [stdout] (default task-89)         ?
+2021-01-27 16:52:56,660 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-89) Session Metrics {
+    701140 nanoseconds spent acquiring 2 JDBC connections;
+    382925 nanoseconds spent releasing 1 JDBC connections;
+    52609 nanoseconds spent preparing 1 JDBC statements;
+    1188338 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    8225 nanoseconds spent performing 1 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    17474 nanoseconds spent performing 1 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    7122 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 17:22:24,034 INFO  [stdout] (default task-21) Cookie filter...
+2021-01-27 17:22:24,035 INFO  [stdout] (default task-21) Path: /book/venue/v2/1058
+2021-01-27 17:22:24,035 INFO  [stdout] (default task-21) Ciphertext filter...
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21) Hibernate: 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     SELECT
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         distinct * 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     FROM
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         book.location 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     join
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         book.venues 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)             on venues.location_locationId = location.locationId 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     join
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         book.Screen 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)             on venues.screen_screenId = Screen.screenId 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     join
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         book.Movie 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)             on Screen.movie_movieId = Movie.movieId 
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)     where
+2021-01-27 17:22:24,038 INFO  [stdout] (default task-21)         movieId = ?
+2021-01-27 17:22:24,055 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-21) Session Metrics {
+    1360469 nanoseconds spent acquiring 2 JDBC connections;
+    137273 nanoseconds spent releasing 1 JDBC connections;
+    45526 nanoseconds spent preparing 1 JDBC statements;
+    15972879 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    12335 nanoseconds spent performing 1 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    35337 nanoseconds spent performing 1 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5656 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-01-27 17:22:24,072 ERROR [io.undertow.request] (default task-21) UT005023: Exception handling request to /mbooks-1/rest/book/venue/v2/1058: org.jboss.resteasy.spi.UnhandledException: com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.json.JSONObject and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) )
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:187)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:418)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:209)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.fasterxml.jackson.databind.JsonMappingException: No serializer found for class org.json.JSONObject and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) )
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:269)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:68)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:32)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:130)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1428)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:930)
+	at org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider.writeTo(ResteasyJackson2Provider.java:207)
+	at org.jboss.resteasy.core.interception.AbstractWriterInterceptorContext.writeTo(AbstractWriterInterceptorContext.java:131)
+	at org.jboss.resteasy.core.interception.ServerWriterInterceptorContext.writeTo(ServerWriterInterceptorContext.java:60)
+	at org.jboss.resteasy.core.interception.AbstractWriterInterceptorContext.proceed(AbstractWriterInterceptorContext.java:120)
+	at org.jboss.resteasy.security.doseta.DigitalSigningInterceptor.aroundWriteTo(DigitalSigningInterceptor.java:145)
+	at org.jboss.resteasy.core.interception.AbstractWriterInterceptorContext.proceed(AbstractWriterInterceptorContext.java:124)
+	at org.jboss.resteasy.plugins.interceptors.encoding.GZIPEncodingInterceptor.aroundWriteTo(GZIPEncodingInterceptor.java:100)
+	at org.jboss.resteasy.core.interception.AbstractWriterInterceptorContext.proceed(AbstractWriterInterceptorContext.java:124)
+	at org.jboss.resteasy.core.ServerResponseWriter.writeNomapResponse(ServerResponseWriter.java:98)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:183)
+	... 43 more
+
+2021-01-27 17:22:27,603 INFO  [stdout] (default task-19) Cookie filter...
+2021-01-27 17:22:27,603 INFO  [stdout] (default task-19) Path: /book/movies/paging
+2021-01-27 17:22:27,603 INFO  [stdout] (default task-19) Ciphertext filter...
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19) Hibernate: 
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)     select
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.movieId as movieId1_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.category as category2_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.detail as detail3_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.large_picture as large_pi5_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.name as name6_1_,
+2021-01-27 17:22:27,605 INFO  [stdout] (default task-19)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-01-27 17:22:27,624 INFO  [stdout] (default task-19)     from
+2021-01-27 17:22:27,625 INFO  [stdout] (default task-19)         Movie movie0_ 
+2021-01-27 17:22:27,625 INFO  [stdout] (default task-19)     where
+2021-01-27 17:22:27,625 INFO  [stdout] (default task-19)         movie0_.category=? 
+2021-01-27 17:22:27,625 INFO  [stdout] (default task-19)     order by
+2021-01-27 17:22:27,625 INFO  [stdout] (default task-19)         movie0_.name asc limit ?
+2021-01-27 17:22:27,628 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-19) Session Metrics {
+    448172 nanoseconds spent acquiring 2 JDBC connections;
+    221966 nanoseconds spent releasing 1 JDBC connections;
+    97297 nanoseconds spent preparing 1 JDBC statements;
+    1756315 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    80589 nanoseconds spent performing 2 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    15458 nanoseconds spent performing 1 L2C misses;
+    47641 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    5652 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

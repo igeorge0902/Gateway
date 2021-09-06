@@ -1,0 +1,1081 @@
+2020-05-03 23:21:58,622 ERROR [io.undertow.request] (default task-31) UT005023: Exception handling request to /login/CheckOut: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:27:42,436 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/02/aac598a20b87358078dfbade10cd7b7849211b/content
+2020-05-03 23:27:42,442 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:27:42,442 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:27:42,443 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 121) WFLYUT0022: Unregistered web context: /login
+2020-05-03 23:27:42,569 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 129ms
+2020-05-03 23:27:42,571 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2020-05-03 23:27:43,709 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:27:43,710 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:27:43,713 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:27:43,713 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:27:43,721 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 126) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2020-05-03 23:27:43,722 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 126) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2020-05-03 23:27:43,747 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 126) WFLYUT0021: Registered web context: /login
+2020-05-03 23:27:43,764 INFO  [org.jboss.as.server] (External Management Request Threads -- 3) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2020-05-03 23:27:43,765 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/1d/ed64ff3fc20ded93ee77ea0a70cd5befe1cd09/content
+2020-05-03 23:28:19,596 ERROR [io.undertow.request] (default task-33) UT005023: Exception handling request to /login/CheckOut: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:28:45,691 ERROR [io.undertow.request] (default task-34) UT005023: Exception handling request to /login/CheckOut: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:30:55,185 ERROR [io.undertow.request] (default task-36) UT005023: Exception handling request to /login/admin: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:31:16,876 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-38) SQL Error: 0, SQLState: 08S01
+2020-05-03 23:31:16,877 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-38) The last packet successfully received from the server was 97,923,703 milliseconds ago.  The last packet sent successfully to the server was 97,923,704 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2020-05-03 23:31:38,757 ERROR [io.undertow.request] (default task-37) UT005023: Exception handling request to /login/admin: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:32:01,787 ERROR [io.undertow.request] (default task-40) UT005023: Exception handling request to /login/admin: javax.servlet.ServletException: There is no valid XSRF-TOKEN
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:89)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-05-03 23:35:29,318 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2020-05-03 23:35:29,322 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 132) WFLYUT0022: Unregistered web context: /login
+2020-05-03 23:35:29,323 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:29,323 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:29,323 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 134) WFLYUT0022: Unregistered web context: /movies
+2020-05-03 23:35:29,324 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2020-05-03 23:35:29,324 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 133) WFLYUT0022: Unregistered web context: /mbook-1
+2020-05-03 23:35:29,329 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 135) WFLYUT0022: Unregistered web context: /mbooks-1
+2020-05-03 23:35:29,331 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 138) WFLYUT0022: Unregistered web context: /simple-service-webapp
+2020-05-03 23:35:29,334 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 139) WFLYUT0022: Unregistered web context: /example
+2020-05-03 23:35:29,336 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2020-05-03 23:35:29,336 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:29,336 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:29,335 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:29,335 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:29,357 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0019: Host default-host stopping
+2020-05-03 23:35:29,361 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-05-03 23:35:29,364 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment movies.war (runtime-name: movies.war) in 40ms
+2020-05-03 23:35:29,366 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment example.war (runtime-name: example.war) in 41ms
+2020-05-03 23:35:29,370 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow AJP listener Apache suspending
+2020-05-03 23:35:29,370 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTPS listener https suspending
+2020-05-03 23:35:29,370 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2020-05-03 23:35:29,371 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTP listener default suspending
+2020-05-03 23:35:29,371 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow AJP listener Apache stopped, was bound to 127.0.0.1:8008
+2020-05-03 23:35:29,371 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8444
+2020-05-03 23:35:29,372 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8888
+2020-05-03 23:35:29,373 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 1.4.0.Final stopping
+2020-05-03 23:35:29,389 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment simple-service-webapp.war (runtime-name: simple-service-webapp.war) in 65ms
+2020-05-03 23:35:29,445 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment mbook-1.war (runtime-name: mbook-1.war) in 120ms
+2020-05-03 23:35:29,449 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment mbooks-1.war (runtime-name: mbooks-1.war) in 125ms
+2020-05-03 23:35:29,473 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 149ms
+2020-05-03 23:35:29,478 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 144ms
+2020-05-03 23:35:38,843 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2020-05-03 23:35:39,267 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2020-05-03 23:35:39,368 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2020-05-03 23:35:39,369 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.lwawt.macosx.LWCToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	gopherProxySet = false
+	http.proxyHost = 127.0.0.1
+	http.proxyPort = 8889
+	https.proxyHost = 127.0.0.1
+	https.proxyPort = 8889
+	java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+	java.class.path = /usr/local/wildfly-10.1.0/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/endorsed
+	java.ext.dirs = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+	java.home = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre
+	java.io.tmpdir = /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/
+	java.library.path = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_91-b14
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_91
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.91-b14
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /usr/local/wildfly-10.1.0
+	jboss.host.name = localhost
+	jboss.modules.dir = /usr/local/wildfly-10.1.0/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = localhost
+	jboss.qualified.host.name = localhost
+	jboss.server.base.dir = /usr/local/wildfly-10.1.0/standalone
+	jboss.server.config.dir = /usr/local/wildfly-10.1.0/standalone/configuration
+	jboss.server.data.dir = /usr/local/wildfly-10.1.0/standalone/data
+	jboss.server.deploy.dir = /usr/local/wildfly-10.1.0/standalone/data/content
+	jboss.server.log.dir = /usr/local/wildfly-10.1.0/standalone/log
+	jboss.server.name = localhost
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /usr/local/wildfly-10.1.0/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties
+	module.path = /usr/local/wildfly-10.1.0/modules
+	org.jboss.boot.log.file = /usr/local/wildfly-10.1.0/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = x86_64
+	os.name = Mac OS X
+	os.version = 10.15.4
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/classes
+	sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeBig
+	sun.java.command = /usr/local/wildfly-10.1.0/jboss-modules.jar -mp /usr/local/wildfly-10.1.0/modules org.jboss.as.standalone -Djboss.home.dir=/usr/local/wildfly-10.1.0 -Djboss.server.base.dir=/usr/local/wildfly-10.1.0/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.country.format = HU
+	user.dir = /usr/local/wildfly-10.1.0/bin
+	user.home = /var/root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Budapest
+2020-05-03 23:35:39,370 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/usr/local/wildfly-10.1.0/standalone/log/server.log -Dlogging.configuration=file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties 
+2020-05-03 23:35:40,433 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2020-05-03 23:35:40,449 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.4.0.Final
+2020-05-03 23:35:40,457 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.4.0.Final
+2020-05-03 23:35:40,491 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+2020-05-03 23:35:40,494 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 16 core threads with 128 task threads based on your 8 available processors
+2020-05-03 23:35:40,506 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.4.Final)
+2020-05-03 23:35:40,507 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2020-05-03 23:35:40,516 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2020-05-03 23:35:40,519 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = h2
+2020-05-03 23:35:40,523 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+2020-05-03 23:35:40,530 INFO  [org.jboss.remoting] (MSC service thread 1-4) JBoss Remoting version 4.0.21.Final
+2020-05-03 23:35:40,548 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2020-05-03 23:35:40,551 INFO  [org.jboss.as.naming] (MSC service thread 1-3) WFLYNAM0003: Starting Naming Service
+2020-05-03 23:35:40,551 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2020-05-03 23:35:40,552 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+2020-05-03 23:35:40,554 INFO  [org.jboss.as.security] (MSC service thread 1-5) WFLYSEC0001: Current PicketBox version=4.9.6.Final
+2020-05-03 23:35:40,563 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+2020-05-03 23:35:40,575 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0003: Undertow 1.4.0.Final starting
+2020-05-03 23:35:40,625 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/usr/local/wildfly-10.1.0/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-05-03 23:35:40,634 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+2020-05-03 23:35:40,635 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2020-05-03 23:35:40,637 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-05-03 23:35:40,638 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example2' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2020-05-03 23:35:40,639 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2020-05-03 23:35:40,640 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2020-05-03 23:35:40,686 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow AJP listener Apache listening on 127.0.0.1:8008
+2020-05-03 23:35:40,686 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8888
+2020-05-03 23:35:40,790 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2020-05-03 23:35:40,976 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /usr/local/wildfly-10.1.0/standalone/deployments
+2020-05-03 23:35:40,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2020-05-03 23:35:40,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "example.war" (runtime-name: "example.war")
+2020-05-03 23:35:40,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "simple-service-webapp.war" (runtime-name: "simple-service-webapp.war")
+2020-05-03 23:35:40,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "mbooks-1.war" (runtime-name: "mbooks-1.war")
+2020-05-03 23:35:40,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "movies.war" (runtime-name: "movies.war")
+2020-05-03 23:35:40,984 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "mbook-1.war" (runtime-name: "mbook-1.war")
+2020-05-03 23:35:41,235 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.4.Final
+2020-05-03 23:35:41,264 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,264 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 59) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,266 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,266 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 59) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,269 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,270 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2020-05-03 23:35:41,577 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8444
+2020-05-03 23:35:41,736 INFO  [org.jboss.ws.common.management] (MSC service thread 1-2) JBWS022052: Starting JBossWS 5.1.5.Final (Apache CXF 3.1.6) 
+2020-05-03 23:35:42,472 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 68) WFLYUT0021: Registered web context: /example
+2020-05-03 23:35:42,472 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 70) WFLYUT0021: Registered web context: /movies
+2020-05-03 23:35:42,882 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 69) HV000001: Hibernate Validator 5.2.4.Final
+2020-05-03 23:35:42,986 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0021: Registered web context: /simple-service-webapp
+2020-05-03 23:35:43,608 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:35:43,609 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:35:43,620 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:43,620 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:43,633 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 68) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2020-05-03 23:35:44,045 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 68) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2020-05-03 23:35:44,101 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 68) WFLYUT0021: Registered web context: /login
+2020-05-03 23:35:45,022 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2020-05-03 23:35:45,026 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:35:45,027 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:35:45,029 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:45,030 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:45,030 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2020-05-03 23:35:45,077 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0021: Registered web context: /mbook-1
+2020-05-03 23:35:45,118 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-4) WFLYSRV0018: Deployment "deployment.mbooks-1.war" is using a private module ("org.javassist:main") which may be changed or removed in future versions without notice.
+2020-05-03 23:35:45,150 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2020-05-03 23:35:45,154 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:35:45,155 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:35:45,157 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:35:45,157 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:35:45,157 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2020-05-03 23:35:45,240 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 58) WFLYUT0021: Registered web context: /mbooks-1
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "login.war" (runtime-name : "login.war")
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbooks-1.war" (runtime-name : "mbooks-1.war")
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbook-1.war" (runtime-name : "mbook-1.war")
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "example.war" (runtime-name : "example.war")
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "simple-service-webapp.war" (runtime-name : "simple-service-webapp.war")
+2020-05-03 23:35:45,264 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "movies.war" (runtime-name : "movies.war")
+2020-05-03 23:35:45,382 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2020-05-03 23:35:45,382 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2020-05-03 23:35:45,382 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) started in 6951ms - Started 849 of 1128 services (462 services are lazy, passive or on-demand)
+2020-05-03 23:41:35,705 INFO  [org.jboss.as.repository] (External Management Request Threads -- 1) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/ff/e5200fa44cef05e1cd84ac2564fb94be351dce/content
+2020-05-03 23:41:35,714 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:41:35,714 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:41:35,718 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 73) WFLYUT0022: Unregistered web context: /login
+2020-05-03 23:41:35,821 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 109ms
+2020-05-03 23:41:35,823 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2020-05-03 23:41:36,906 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:41:36,907 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:41:36,909 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:41:36,909 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:41:36,915 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 80) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2020-05-03 23:41:36,915 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 80) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2020-05-03 23:41:36,937 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 80) WFLYUT0021: Registered web context: /login
+2020-05-03 23:41:36,980 INFO  [org.jboss.as.server] (External Management Request Threads -- 1) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2020-05-03 23:41:36,983 INFO  [org.jboss.as.repository] (External Management Request Threads -- 1) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/02/aac598a20b87358078dfbade10cd7b7849211b/content
+2020-05-03 23:43:12,515 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0001: Content added at location /usr/local/wildfly-10.1.0/standalone/data/content/73/19ebff9802b6f203457e703aada6b6aa445314/content
+2020-05-03 23:43:12,518 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:43:12,518 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:43:12,518 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0022: Unregistered web context: /login
+2020-05-03 23:43:12,590 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 72ms
+2020-05-03 23:43:12,591 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2020-05-03 23:43:13,608 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2020-05-03 23:43:13,608 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2020-05-03 23:43:13,611 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2020-05-03 23:43:13,611 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2020-05-03 23:43:13,618 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 95) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2020-05-03 23:43:13,619 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 95) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2020-05-03 23:43:13,636 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: /login
+2020-05-03 23:43:13,646 INFO  [org.jboss.as.server] (External Management Request Threads -- 3) WFLYSRV0016: Replaced deployment "login.war" with deployment "login.war"
+2020-05-03 23:43:13,647 INFO  [org.jboss.as.repository] (External Management Request Threads -- 3) WFLYDR0002: Content removed from location /usr/local/wildfly-10.1.0/standalone/data/content/ff/e5200fa44cef05e1cd84ac2564fb94be351dce/content
+2020-05-03 23:44:38,559 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-05-03 23:44:38,559 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-05-03 23:44:38,559 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2020-05-03 23:44:38,559 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-05-03 23:44:38,560 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2020-05-03 23:44:38,582 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-05-03 23:44:38,582 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-05-03 23:44:38,582 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.locationId as y0_ 
+2020-05-03 23:44:38,582 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-05-03 23:44:38,582 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2020-05-03 23:44:38,593 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2020-05-03 23:44:38,593 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2020-05-03 23:44:38,593 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.locationId as location1_0_0_,
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.formatted_address as formatte2_0_0_,
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.latitude as latitude3_0_0_,
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.longitude as longitud4_0_0_,
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name5_0_0_ 
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)         Location this_ 
+2020-05-03 23:44:38,594 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2020-05-03 23:44:38,595 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.locationId in (
+2020-05-03 23:44:38,595 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?
+2020-05-03 23:44:38,595 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.locationId as location1_0_0_,
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.formatted_address as formatte2_0_0_,
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.latitude as latitude3_0_0_,
+2020-05-03 23:44:38,596 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.longitude as longitud4_0_0_,
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name5_0_0_ 
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)         Location this_ 
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.locationId in (
+2020-05-03 23:44:38,597 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,598 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2020-05-03 23:44:38,647 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-05-03 23:44:38,648 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-05-03 23:44:38,648 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2020-05-03 23:44:38,648 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-05-03 23:44:38,648 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2020-05-03 23:44:38,651 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-05-03 23:44:38,651 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-05-03 23:44:38,651 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.movieId as y0_ 
+2020-05-03 23:44:38,651 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-05-03 23:44:38,651 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2020-05-03 23:44:38,655 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2020-05-03 23:44:38,655 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2020-05-03 23:44:38,655 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,655 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         Movie this_ 
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId in (
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,656 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,658 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,663 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,664 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2020-05-03 23:44:38,675 INFO  [stdout] (Hibernate Search: entityloader-5) Hibernate: 
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)     select
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)     from
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         Movie this_ 
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)     where
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId in (
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,676 INFO  [stdout] (Hibernate Search: entityloader-5)         )
+2020-05-03 23:44:38,705 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2020-05-03 23:44:38,705 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,706 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2020-05-03 23:44:38,710 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2020-05-03 23:44:38,710 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         Movie this_ 
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId in (
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,711 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,763 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)         Movie this_ 
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId in (
+2020-05-03 23:44:38,765 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5) Hibernate: 
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)     select
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)     from
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         Movie this_ 
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)     where
+2020-05-03 23:44:38,766 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId in (
+2020-05-03 23:44:38,767 INFO  [stdout] (Hibernate Search: entityloader-5)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,767 INFO  [stdout] (Hibernate Search: entityloader-5)         )
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,770 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2020-05-03 23:44:38,771 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-05-03 23:44:38,772 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2020-05-03 23:44:38,796 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2020-05-03 23:44:38,796 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.category as category2_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail3_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi5_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name6_1_0_,
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?
+2020-05-03 23:44:38,797 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23) Hibernate: 
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)     select
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.movieId as movieId1_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.category as category2_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.detail as detail3_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.large_picture as large_pi5_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.name as name6_1_,
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)     from
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         Movie movie0_ 
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)     order by
+2020-05-03 23:45:20,464 INFO  [stdout] (default task-23)         movie0_.name asc limit ?
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24) Hibernate: 
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)     select
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.movieId as movieId1_1_,
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.category as category2_1_,
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.detail as detail3_1_,
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.large_picture as large_pi5_1_,
+2020-05-03 23:45:24,038 INFO  [stdout] (default task-24)         movie0_.name as name6_1_,
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)     from
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)         Movie movie0_ 
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)     where
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)         movie0_.category=? 
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)     order by
+2020-05-03 23:45:24,039 INFO  [stdout] (default task-24)         movie0_.name asc limit ?
+2020-05-03 23:45:25,582 INFO  [stdout] (default task-27) Hibernate: 
+2020-05-03 23:45:25,582 INFO  [stdout] (default task-27)     select
+2020-05-03 23:45:25,582 INFO  [stdout] (default task-27)         venues0_.venuesId as venuesId1_7_,
+2020-05-03 23:45:25,582 INFO  [stdout] (default task-27)         venues0_.address as address2_7_,
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         venues0_.contact as contact3_7_,
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         venues0_.location_locationId as location7_7_,
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         venues0_.name as name4_7_,
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         venues0_.screen_screenId as screen_s5_7_,
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         venues0_.venues_picture as venues_p6_7_ 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)     from
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         Venues venues0_ 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)     inner join
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         Screen screen1_ 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)             on venues0_.screen_screenId=screen1_.screenId 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)     inner join
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         Movie movie2_ 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)             on screen1_.movie_movieId=movie2_.movieId 
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)     where
+2020-05-03 23:45:25,583 INFO  [stdout] (default task-27)         movieId=?
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27) Hibernate: 
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)     select
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         location0_.locationId as location1_0_0_,
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         location0_.formatted_address as formatte2_0_0_,
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         location0_.latitude as latitude3_0_0_,
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         location0_.longitude as longitud4_0_0_,
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         location0_.name as name5_0_0_ 
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)     from
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)         Location location0_ 
+2020-05-03 23:45:25,591 INFO  [stdout] (default task-27)     where
+2020-05-03 23:45:25,592 INFO  [stdout] (default task-27)         location0_.locationId=?
+2020-05-03 23:45:25,603 INFO  [stdout] (default task-27) Hibernate: 
+2020-05-03 23:45:25,603 INFO  [stdout] (default task-27)     select
+2020-05-03 23:45:25,603 INFO  [stdout] (default task-27)         screen0_.screenId as screenId1_3_0_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         screen0_.seats as seats2_3_0_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.movieId as movieId1_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.category as category2_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.detail as detail3_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.large_picture as large_pi5_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.name as name6_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-05-03 23:45:25,604 INFO  [stdout] (default task-27)         screeningd2_.movieId as movieId2_4_2_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.venuesId as venuesId1_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.address as address2_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.contact as contact3_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.location_locationId as location7_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.name as name4_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         venues3_.venues_picture as venues_p6_7_3_,
+2020-05-03 23:45:25,605 INFO  [stdout] (default task-27)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.seatId as seatId1_5_4_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.seatId as seatId1_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.isReserved as isReserv2_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.price as price3_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.seatRow as seatRow5_5_5_,
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         seat4_.tax as tax6_5_5_ 
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)     from
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         Screen screen0_ 
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)     left outer join
+2020-05-03 23:45:25,606 INFO  [stdout] (default task-27)         Movie movie1_ 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)             on screen0_.movie_movieId=movie1_.movieId 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)     left outer join
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)         ScreeningDates screeningd2_ 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)     left outer join
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)         Venues venues3_ 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)     left outer join
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)         Seats seat4_ 
+2020-05-03 23:45:25,607 INFO  [stdout] (default task-27)             on screen0_.screenId=seat4_.screen_screenId 
+2020-05-03 23:45:25,608 INFO  [stdout] (default task-27)     where
+2020-05-03 23:45:25,608 INFO  [stdout] (default task-27)         screen0_.screenId=?
+2020-05-03 23:45:27,373 INFO  [stdout] (default task-30) Hibernate: 
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)     select
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)         screeningd0_.movieId as movieId2_4_,
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)         screeningd0_.screeningDate as screenin3_4_,
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)     from
+2020-05-03 23:45:27,374 INFO  [stdout] (default task-30)         ScreeningDates screeningd0_ 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)     inner join
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)         Venues venues1_ 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)     inner join
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)         Screen screen2_ 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)             on venues1_.screen_screenId=screen2_.screenId 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)     where
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)         movieId=? 
+2020-05-03 23:45:27,375 INFO  [stdout] (default task-30)         and venuesId=?
+2020-05-03 23:45:27,390 INFO  [stdout] (default task-30) Hibernate: 
+2020-05-03 23:45:27,390 INFO  [stdout] (default task-30)     select
+2020-05-03 23:45:27,390 INFO  [stdout] (default task-30)         screen0_.screenId as screenId1_3_0_,
+2020-05-03 23:45:27,390 INFO  [stdout] (default task-30)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-05-03 23:45:27,390 INFO  [stdout] (default task-30)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         screen0_.seats as seats2_3_0_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.movieId as movieId1_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.category as category2_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.detail as detail3_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.large_picture as large_pi5_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.name as name6_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         screeningd2_.movieId as movieId2_4_2_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         venues3_.venuesId as venuesId1_7_3_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         venues3_.address as address2_7_3_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         venues3_.contact as contact3_7_3_,
+2020-05-03 23:45:27,391 INFO  [stdout] (default task-30)         venues3_.location_locationId as location7_7_3_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         venues3_.name as name4_7_3_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         venues3_.venues_picture as venues_p6_7_3_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.seatId as seatId1_5_4_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.seatId as seatId1_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.isReserved as isReserv2_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.price as price3_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.seatRow as seatRow5_5_5_,
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         seat4_.tax as tax6_5_5_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     from
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         Screen screen0_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     left outer join
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         Movie movie1_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)             on screen0_.movie_movieId=movie1_.movieId 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     left outer join
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         ScreeningDates screeningd2_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     left outer join
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         Venues venues3_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     left outer join
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         Seats seat4_ 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)             on screen0_.screenId=seat4_.screen_screenId 
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)     where
+2020-05-03 23:45:27,392 INFO  [stdout] (default task-30)         screen0_.screenId=?
+2020-05-03 23:45:32,108 INFO  [stdout] (default task-31) Hibernate: 
+2020-05-03 23:45:32,108 INFO  [stdout] (default task-31)     select
+2020-05-03 23:45:32,108 INFO  [stdout] (default task-31)         seat3_.seatId as seatId1_5_,
+2020-05-03 23:45:32,108 INFO  [stdout] (default task-31)         seat3_.isReserved as isReserv2_5_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         seat3_.price as price3_5_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         seat3_.screen_screenId as screen_s7_5_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         seat3_.seatNumber as seatNumb4_5_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         seat3_.seatRow as seatRow5_5_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         seat3_.tax as tax6_5_ 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)     from
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         ScreeningDates screeningd0_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         Venues venues1_,
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         Screen screen2_ 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)     inner join
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         Seats seat3_ 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)             on screen2_.screenId=seat3_.screen_screenId 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)     where
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         and venues1_.screen_screenId=screen2_.screenId 
+2020-05-03 23:45:32,109 INFO  [stdout] (default task-31)         and screeningDatesId=?
+2020-05-03 23:45:32,130 INFO  [stdout] (default task-31) Hibernate: 
+2020-05-03 23:45:32,130 INFO  [stdout] (default task-31)     select
+2020-05-03 23:45:32,130 INFO  [stdout] (default task-31)         screen0_.screenId as screenId1_3_0_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screen0_.seats as seats2_3_0_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.movieId as movieId1_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.category as category2_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.detail as detail3_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.large_picture as large_pi5_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.name as name6_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screeningd2_.movieId as movieId2_4_2_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.venuesId as venuesId1_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.address as address2_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.contact as contact3_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.location_locationId as location7_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.name as name4_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         venues3_.venues_picture as venues_p6_7_3_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.seatId as seatId1_5_4_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.seatId as seatId1_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.isReserved as isReserv2_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.price as price3_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.seatRow as seatRow5_5_5_,
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         seat4_.tax as tax6_5_5_ 
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)     from
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         Screen screen0_ 
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)     left outer join
+2020-05-03 23:45:32,131 INFO  [stdout] (default task-31)         Movie movie1_ 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)             on screen0_.movie_movieId=movie1_.movieId 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)     left outer join
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)         ScreeningDates screeningd2_ 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)     left outer join
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)         Venues venues3_ 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)     left outer join
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)         Seats seat4_ 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)             on screen0_.screenId=seat4_.screen_screenId 
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)     where
+2020-05-03 23:45:32,132 INFO  [stdout] (default task-31)         screen0_.screenId=?
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37) Hibernate: 
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)     select
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.ticketId as ticketId1_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.price as price2_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.purchase_purchaseId as purchase7_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.screen_screenId as screen_s3_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.seats_seatId as seats_se8_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.seats_seatNumber as seats_se4_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.seats_seatRow as seats_se5_6_,
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         ticket0_.tax as tax6_6_ 
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)     from
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         Ticket ticket0_ 
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)     where
+2020-05-03 23:46:35,962 INFO  [stdout] (default task-37)         purchase_purchaseId=?
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37) Hibernate: 
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)     select
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         purchase0_.purchaseId as purchase1_2_0_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         purchase0_.TIME_ as TIME_2_2_0_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         purchase0_.orderId as orderId3_2_0_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         purchase0_.uuid as uuid4_2_0_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.purchase_purchaseId as purchase7_6_1_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.ticketId as ticketId1_6_1_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.ticketId as ticketId1_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.price as price2_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.purchase_purchaseId as purchase7_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.screen_screenId as screen_s3_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.seats_seatId as seats_se8_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.seats_seatNumber as seats_se4_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.seats_seatRow as seats_se5_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         ticket1_.tax as tax6_6_2_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         screen2_.screenId as screenId1_3_3_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         screen2_.movie_movieId as movie_mo3_3_3_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         screen2_.screeningDates_screeningDatesId as screenin4_3_3_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         screen2_.seats as seats2_3_3_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         seats3_.seatId as seatId1_5_4_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         seats3_.isReserved as isReserv2_5_4_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         seats3_.price as price3_5_4_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         seats3_.screen_screenId as screen_s7_5_4_,
+2020-05-03 23:46:35,978 INFO  [stdout] (default task-37)         seats3_.seatNumber as seatNumb4_5_4_,
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         seats3_.seatRow as seatRow5_5_4_,
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         seats3_.tax as tax6_5_4_ 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)     from
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         Purchase purchase0_ 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)     left outer join
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         Ticket ticket1_ 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)             on purchase0_.purchaseId=ticket1_.purchase_purchaseId 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)     left outer join
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         Screen screen2_ 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)             on ticket1_.screen_screenId=screen2_.screenId 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)     left outer join
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         Seats seats3_ 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)             on ticket1_.seats_seatId=seats3_.seatId 
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)     where
+2020-05-03 23:46:35,979 INFO  [stdout] (default task-37)         purchase0_.purchaseId=?
+2020-05-03 23:46:36,010 INFO  [stdout] (default task-37) Hibernate: 
+2020-05-03 23:46:36,010 INFO  [stdout] (default task-37)     select
+2020-05-03 23:46:36,010 INFO  [stdout] (default task-37)         screeningd0_.screeningDatesId as screenin1_4_0_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screeningd0_.movieId as movieId2_4_0_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screeningd0_.screeningDate as screenin3_4_0_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screeningd0_.venues_venuesId as venues_v4_4_0_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.venuesId as venuesId1_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.address as address2_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.contact as contact3_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.location_locationId as location7_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.name as name4_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.screen_screenId as screen_s5_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         venues1_.venues_picture as venues_p6_7_1_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         location2_.locationId as location1_0_2_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         location2_.formatted_address as formatte2_0_2_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         location2_.latitude as latitude3_0_2_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         location2_.longitude as longitud4_0_2_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         location2_.name as name5_0_2_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screen3_.screenId as screenId1_3_3_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screen3_.movie_movieId as movie_mo3_3_3_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screen3_.screeningDates_screeningDatesId as screenin4_3_3_,
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screen3_.seats as seats2_3_3_ 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)     from
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         ScreeningDates screeningd0_ 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)     inner join
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         Venues venues1_ 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)     left outer join
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         Location location2_ 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)             on venues1_.location_locationId=location2_.locationId 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)     left outer join
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         Screen screen3_ 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)             on venues1_.screen_screenId=screen3_.screenId 
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)     where
+2020-05-03 23:46:36,011 INFO  [stdout] (default task-37)         screeningd0_.screeningDatesId=?
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37) Hibernate: 
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)     select
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.screen_screenId as screen_s7_5_0_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.seatId as seatId1_5_0_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.seatId as seatId1_5_1_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.isReserved as isReserv2_5_1_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.price as price3_5_1_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.screen_screenId as screen_s7_5_1_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.seatNumber as seatNumb4_5_1_,
+2020-05-03 23:46:36,035 INFO  [stdout] (default task-37)         seat0_.seatRow as seatRow5_5_1_,
+2020-05-03 23:46:36,036 INFO  [stdout] (default task-37)         seat0_.tax as tax6_5_1_ 
+2020-05-03 23:46:36,036 INFO  [stdout] (default task-37)     from
+2020-05-03 23:46:36,036 INFO  [stdout] (default task-37)         Seats seat0_ 
+2020-05-03 23:46:36,036 INFO  [stdout] (default task-37)     where
+2020-05-03 23:46:36,036 INFO  [stdout] (default task-37)         seat0_.screen_screenId=?

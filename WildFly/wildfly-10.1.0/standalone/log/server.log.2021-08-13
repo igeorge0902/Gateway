@@ -1,0 +1,32 @@
+2021-08-13 15:50:57,399 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2021-08-13 15:50:57,480 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2021-08-13 15:50:57,491 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2021-08-13 15:50:57,492 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-13 15:50:57,496 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 86) WFLYUT0022: Unregistered web context: /mbooks-1
+2021-08-13 15:50:57,496 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 85) WFLYUT0022: Unregistered web context: /mbook-1
+2021-08-13 15:50:57,496 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 80) WFLYUT0022: Unregistered web context: /movies
+2021-08-13 15:50:57,496 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0022: Unregistered web context: /login
+2021-08-13 15:50:57,507 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2021-08-13 15:50:57,508 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2021-08-13 15:50:57,508 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-13 15:50:57,509 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2021-08-13 15:50:57,509 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2021-08-13 15:50:57,514 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0022: Unregistered web context: /example
+2021-08-13 15:50:57,518 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0022: Unregistered web context: /simple-service-webapp
+2021-08-13 15:50:57,661 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment example.war (runtime-name: example.war) in 185ms
+2021-08-13 15:50:57,662 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment movies.war (runtime-name: movies.war) in 186ms
+2021-08-13 15:50:57,676 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0019: Host default-host stopping
+2021-08-13 15:50:57,677 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2021-08-13 15:50:57,689 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow AJP listener Apache suspending
+2021-08-13 15:50:57,689 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTP listener default suspending
+2021-08-13 15:50:57,689 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow HTTPS listener https suspending
+2021-08-13 15:50:57,690 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8444
+2021-08-13 15:50:57,691 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2021-08-13 15:50:57,693 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8888
+2021-08-13 15:50:57,693 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow AJP listener Apache stopped, was bound to 127.0.0.1:8008
+2021-08-13 15:50:57,696 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0004: Undertow 1.4.0.Final stopping
+2021-08-13 15:50:57,772 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment simple-service-webapp.war (runtime-name: simple-service-webapp.war) in 293ms
+2021-08-13 15:50:57,799 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment mbook-1.war (runtime-name: mbook-1.war) in 322ms
+2021-08-13 15:50:57,806 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment mbooks-1.war (runtime-name: mbooks-1.war) in 330ms
+2021-08-13 15:50:57,859 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 383ms
+2021-08-13 15:50:57,867 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 378ms

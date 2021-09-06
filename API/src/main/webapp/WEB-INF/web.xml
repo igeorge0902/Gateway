@@ -6,11 +6,11 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.jeet</param-value>
-        </init-param>          
+            <param-value>com.jeet.rest</param-value>
+        </init-param>     
         <init-param>
             <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
-            <param-value>com.jeet.filters.CookieFilter</param-value>
+            <param-value>com.jeet.filters.CiphertextFilter</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

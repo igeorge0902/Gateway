@@ -1,0 +1,1180 @@
+2019-12-20 00:15:26,857 INFO  [stdout] (default task-102) Hibernate: 
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)     select
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.movieId as movieId1_1_,
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.detail as detail2_1_,
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.name as name5_1_,
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)     from
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         Movie movie0_ 
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)     order by
+2019-12-20 00:15:26,859 INFO  [stdout] (default task-102)         movie0_.name asc limit ?
+2019-12-20 00:15:26,867 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-102) Session Metrics {
+    866487 nanoseconds spent acquiring 2 JDBC connections;
+    316879 nanoseconds spent releasing 1 JDBC connections;
+    338815 nanoseconds spent preparing 1 JDBC statements;
+    934647 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2765241 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    74713 nanoseconds spent performing 1 L2C misses;
+    932406 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    6615 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 00:22:21,197 INFO  [stdout] (default task-45) Hibernate: 
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)     select
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.movieId as movieId1_1_,
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.detail as detail2_1_,
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.name as name5_1_,
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)     from
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         Movie movie0_ 
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)     order by
+2019-12-20 00:22:21,198 INFO  [stdout] (default task-45)         movie0_.name asc limit ?
+2019-12-20 00:22:21,205 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-45) Session Metrics {
+    619785 nanoseconds spent acquiring 2 JDBC connections;
+    255733 nanoseconds spent releasing 1 JDBC connections;
+    59235 nanoseconds spent preparing 1 JDBC statements;
+    708030 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2788809 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    23026 nanoseconds spent performing 1 L2C misses;
+    740192 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5154 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78) Hibernate: 
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)     select
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)         movie0_.movieId as movieId1_1_,
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)         movie0_.detail as detail2_1_,
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 01:23:25,636 INFO  [stdout] (default task-78)         movie0_.name as name5_1_,
+2019-12-20 01:23:25,637 INFO  [stdout] (default task-78)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 01:23:25,637 INFO  [stdout] (default task-78)     from
+2019-12-20 01:23:25,637 INFO  [stdout] (default task-78)         Movie movie0_ 
+2019-12-20 01:23:25,637 INFO  [stdout] (default task-78)     order by
+2019-12-20 01:23:25,637 INFO  [stdout] (default task-78)         movie0_.name asc limit ?
+2019-12-20 01:23:25,643 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-78) Session Metrics {
+    1155244 nanoseconds spent acquiring 2 JDBC connections;
+    238149 nanoseconds spent releasing 1 JDBC connections;
+    235430 nanoseconds spent preparing 1 JDBC statements;
+    1234147 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2133049 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    48358 nanoseconds spent performing 1 L2C misses;
+    474124 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    9892 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 01:33:13,719 INFO  [stdout] (default task-41) Hibernate: 
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)     select
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.movieId as movieId1_1_,
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.detail as detail2_1_,
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.name as name5_1_,
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)     from
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         Movie movie0_ 
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)     order by
+2019-12-20 01:33:13,721 INFO  [stdout] (default task-41)         movie0_.name asc limit ?
+2019-12-20 01:33:13,727 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-41) Session Metrics {
+    605137 nanoseconds spent acquiring 2 JDBC connections;
+    209134 nanoseconds spent releasing 1 JDBC connections;
+    236436 nanoseconds spent preparing 1 JDBC statements;
+    804333 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2460123 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    29449 nanoseconds spent performing 1 L2C misses;
+    585300 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7997 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:30:18,947 INFO  [stdout] (default task-87) Hibernate: 
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)     select
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.detail as detail2_1_,
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.name as name5_1_,
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)     from
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         Movie movie0_ 
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)     order by
+2019-12-20 02:30:18,948 INFO  [stdout] (default task-87)         movie0_.name asc limit ?
+2019-12-20 02:30:18,955 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-87) Session Metrics {
+    896208 nanoseconds spent acquiring 2 JDBC connections;
+    405737 nanoseconds spent releasing 1 JDBC connections;
+    245551 nanoseconds spent preparing 1 JDBC statements;
+    651219 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1916818 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    58152 nanoseconds spent performing 1 L2C misses;
+    832617 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5875 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:36:50,035 INFO  [stdout] (default task-111) Hibernate: 
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)     select
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.detail as detail2_1_,
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.name as name5_1_,
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)     from
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         Movie movie0_ 
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)     order by
+2019-12-20 02:36:50,036 INFO  [stdout] (default task-111)         movie0_.name asc limit ?
+2019-12-20 02:36:50,040 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-111) Session Metrics {
+    633322 nanoseconds spent acquiring 2 JDBC connections;
+    231515 nanoseconds spent releasing 1 JDBC connections;
+    60629 nanoseconds spent preparing 1 JDBC statements;
+    690408 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1486245 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    23548 nanoseconds spent performing 1 L2C misses;
+    681478 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5595 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:38:53,263 INFO  [stdout] (default task-2) Hibernate: 
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)     select
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.detail as detail2_1_,
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.name as name5_1_,
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)     from
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         Movie movie0_ 
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)     order by
+2019-12-20 02:38:53,264 INFO  [stdout] (default task-2)         movie0_.name asc limit ?
+2019-12-20 02:38:53,269 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-2) Session Metrics {
+    797279 nanoseconds spent acquiring 2 JDBC connections;
+    275463 nanoseconds spent releasing 1 JDBC connections;
+    61546 nanoseconds spent preparing 1 JDBC statements;
+    1497211 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1408440 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    31686 nanoseconds spent performing 1 L2C misses;
+    288387 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7984 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31) Hibernate: 
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)     select
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)         movie0_.detail as detail2_1_,
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:42:36,314 INFO  [stdout] (default task-31)         movie0_.name as name5_1_,
+2019-12-20 02:42:36,315 INFO  [stdout] (default task-31)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:42:36,315 INFO  [stdout] (default task-31)     from
+2019-12-20 02:42:36,315 INFO  [stdout] (default task-31)         Movie movie0_ 
+2019-12-20 02:42:36,315 INFO  [stdout] (default task-31)     order by
+2019-12-20 02:42:36,315 INFO  [stdout] (default task-31)         movie0_.name asc limit ?
+2019-12-20 02:42:36,320 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-31) Session Metrics {
+    1043871 nanoseconds spent acquiring 2 JDBC connections;
+    255245 nanoseconds spent releasing 1 JDBC connections;
+    88359 nanoseconds spent preparing 1 JDBC statements;
+    691968 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1776614 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    48182 nanoseconds spent performing 1 L2C misses;
+    446929 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7474 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:43:21,121 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-86) Session Metrics {
+    597430 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    15912664 nanoseconds spent performing 31 L2C hits;
+    82636 nanoseconds spent performing 1 L2C misses;
+    484006 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    10454 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:45:48,210 INFO  [stdout] (default task-78) Hibernate: 
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)     select
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.detail as detail2_1_,
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.name as name5_1_,
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)     from
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         Movie movie0_ 
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)     order by
+2019-12-20 02:45:48,213 INFO  [stdout] (default task-78)         movie0_.name asc limit ?
+2019-12-20 02:45:48,218 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-78) Session Metrics {
+    686999 nanoseconds spent acquiring 2 JDBC connections;
+    223177 nanoseconds spent releasing 1 JDBC connections;
+    91884 nanoseconds spent preparing 1 JDBC statements;
+    725564 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1860020 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    28815 nanoseconds spent performing 1 L2C misses;
+    405845 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    9521 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8) Hibernate: 
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)     select
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.detail as detail2_1_,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.name as name5_1_,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)     from
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         Movie movie0_ 
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)     order by
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         movie0_.name asc limit ?,
+2019-12-20 02:46:13,023 INFO  [stdout] (default task-8)         ?
+2019-12-20 02:46:13,033 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-8) Session Metrics {
+    611896 nanoseconds spent acquiring 2 JDBC connections;
+    218014 nanoseconds spent releasing 1 JDBC connections;
+    326118 nanoseconds spent preparing 1 JDBC statements;
+    2482076 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    4000539 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    25211 nanoseconds spent performing 1 L2C misses;
+    364640 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5329 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:46:18,910 INFO  [stdout] (default task-14) Hibernate: 
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)     select
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.detail as detail2_1_,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.name as name5_1_,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)     from
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         Movie movie0_ 
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)     order by
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         movie0_.name asc limit ?,
+2019-12-20 02:46:18,911 INFO  [stdout] (default task-14)         ?
+2019-12-20 02:46:18,918 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-14) Session Metrics {
+    861030 nanoseconds spent acquiring 2 JDBC connections;
+    332692 nanoseconds spent releasing 1 JDBC connections;
+    84763 nanoseconds spent preparing 1 JDBC statements;
+    1524191 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1916031 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    28180 nanoseconds spent performing 1 L2C misses;
+    220772 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    6991 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:46:22,114 INFO  [stdout] (default task-55) Hibernate: 
+2019-12-20 02:46:22,114 INFO  [stdout] (default task-55)     select
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.detail as detail2_1_,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.name as name5_1_,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)     from
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         Movie movie0_ 
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)     order by
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         movie0_.name asc limit ?,
+2019-12-20 02:46:22,115 INFO  [stdout] (default task-55)         ?
+2019-12-20 02:46:22,124 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-55) Session Metrics {
+    920888 nanoseconds spent acquiring 2 JDBC connections;
+    255073 nanoseconds spent releasing 1 JDBC connections;
+    57345 nanoseconds spent preparing 1 JDBC statements;
+    3258151 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    4012478 nanoseconds spent performing 16 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    26557 nanoseconds spent performing 1 L2C misses;
+    169415 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 15 collections);
+    6186 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:46:24,058 INFO  [stdout] (default task-79) Hibernate: 
+2019-12-20 02:46:24,058 INFO  [stdout] (default task-79)     select
+2019-12-20 02:46:24,058 INFO  [stdout] (default task-79)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:46:24,058 INFO  [stdout] (default task-79)         movie0_.detail as detail2_1_,
+2019-12-20 02:46:24,063 INFO  [stdout] (default task-79)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:46:24,063 INFO  [stdout] (default task-79)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)         movie0_.name as name5_1_,
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)     from
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)         Movie movie0_ 
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)     order by
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)         movie0_.name asc limit ?,
+2019-12-20 02:46:24,064 INFO  [stdout] (default task-79)         ?
+2019-12-20 02:46:24,065 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-79) Session Metrics {
+    537795 nanoseconds spent acquiring 2 JDBC connections;
+    201722 nanoseconds spent releasing 1 JDBC connections;
+    60280 nanoseconds spent preparing 1 JDBC statements;
+    684753 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    9236 nanoseconds spent performing 1 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    22999 nanoseconds spent performing 1 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    7236 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:47:28,832 INFO  [stdout] (default task-66) Hibernate: 
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)     select
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.movieId as movieId1_1_,
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.detail as detail2_1_,
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.name as name5_1_,
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 02:47:28,833 INFO  [stdout] (default task-66)     from
+2019-12-20 02:47:28,834 INFO  [stdout] (default task-66)         Movie movie0_ 
+2019-12-20 02:47:28,834 INFO  [stdout] (default task-66)     order by
+2019-12-20 02:47:28,834 INFO  [stdout] (default task-66)         movie0_.name asc limit ?
+2019-12-20 02:47:28,852 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-66) Session Metrics {
+    678714 nanoseconds spent acquiring 2 JDBC connections;
+    272956 nanoseconds spent releasing 1 JDBC connections;
+    66806 nanoseconds spent preparing 1 JDBC statements;
+    614222 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    14966858 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    1146919 nanoseconds spent performing 1 L2C misses;
+    199870 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7213 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 02:47:52,515 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-106) Session Metrics {
+    519290 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    359527 nanoseconds spent performing 31 L2C hits;
+    30989 nanoseconds spent performing 1 L2C misses;
+    265751 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7211 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 20:00:08,644 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-73) SQL Error: 0, SQLState: 08S01
+2019-12-20 20:00:08,652 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-73) The last packet successfully received from the server was 61,936,125 milliseconds ago.  The last packet sent successfully to the server was 61,936,126 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103) Hibernate: 
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)     select
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.movieId as movieId1_1_,
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.detail as detail2_1_,
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.name as name5_1_,
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)     from
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         Movie movie0_ 
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)     order by
+2019-12-20 20:00:13,686 INFO  [stdout] (default task-103)         movie0_.name asc limit ?
+2019-12-20 20:00:13,696 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-103) SQL Error: 0, SQLState: 08S01
+2019-12-20 20:00:13,696 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-103) The last packet successfully received from the server was 61,964,844 milliseconds ago.  The last packet sent successfully to the server was 61,964,845 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2019-12-20 20:00:13,697 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-103) Session Metrics {
+    2367827 nanoseconds spent acquiring 2 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    635865 nanoseconds spent preparing 1 JDBC statements;
+    4012160 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2163556 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    233273 nanoseconds spent performing 1 L2C misses;
+    666056 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    27941 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2019-12-20 20:00:26,240 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-36) SQL Error: 0, SQLState: 08S01
+2019-12-20 20:00:26,240 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-36) The last packet successfully received from the server was 124,022,684 milliseconds ago.  The last packet sent successfully to the server was 124,022,684 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2019-12-20 20:00:26,243 ERROR [io.undertow.request] (default task-36) UT005023: Exception handling request to /mbook-1/rest/user/GG/f8b6a546-235a-11ea-b8d3-df60432d1b01: java.lang.RuntimeException: java.lang.RuntimeException: org.jboss.resteasy.spi.UnhandledException: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at io.undertow.servlet.spec.ServletContextImpl.invokeAction(ServletContextImpl.java:888)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.forwardImplSetup(RequestDispatcherImpl.java:134)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:111)
+	at com.dalogin.AdminServlet.performTask(AdminServlet.java:262)
+	at com.dalogin.AdminServlet.doGet(AdminServlet.java:331)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at com.dalogin.filters.RohadekFilter.doFilter(RohadekFilter.java:93)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.websockets.jsr.JsrWebSocketFilter.doFilter(JsrWebSocketFilter.java:130)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:805)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.jboss.resteasy.spi.UnhandledException: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at io.undertow.servlet.spec.RequestDispatcherImpl.forwardImpl(RequestDispatcherImpl.java:245)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.access$100(RequestDispatcherImpl.java:54)
+	at io.undertow.servlet.spec.RequestDispatcherImpl$2.call(RequestDispatcherImpl.java:137)
+	at io.undertow.servlet.spec.RequestDispatcherImpl$2.call(RequestDispatcherImpl.java:134)
+	at io.undertow.servlet.spec.ServletContextImpl$5.call(ServletContextImpl.java:175)
+	at io.undertow.servlet.spec.ServletContextImpl$5.call(ServletContextImpl.java:172)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.spec.ServletContextImpl.invokeAction(ServletContextImpl.java:886)
+	... 51 more
+Caused by: org.jboss.resteasy.spi.UnhandledException: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.jboss.resteasy.core.ExceptionHandler.handleApplicationException(ExceptionHandler.java:77)
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:220)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:175)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:418)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:209)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:274)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:209)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.forwardImpl(RequestDispatcherImpl.java:221)
+	... 64 more
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:115)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:90)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:112)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:230)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:237)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:214)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:52)
+	at com.jeet.db.DAO.getUser(DAO.java:107)
+	at com.jeet.service.BookingHandlerImpl.getUser(BookingHandlerImpl.java:22)
+	at com.jeet.rest.BookController.getUser(BookController.java:107)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:236)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:402)
+	... 78 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 124,022,684 milliseconds ago.  The last packet sent successfully to the server was 124,022,684 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2417)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2531)
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:4852)
+	at com.mchange.v2.c3p0.impl.NewProxyConnection.setAutoCommit(NewProxyConnection.java:912)
+	at org.hibernate.c3p0.internal.C3P0ConnectionProvider.getConnection(C3P0ConnectionProvider.java:78)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:386)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:87)
+	... 95 more
+Caused by: java.net.SocketException: Broken pipe
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:109)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:153)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3591)
+	... 103 more
+
+2019-12-20 20:01:02,364 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2019-12-20 20:01:02,390 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:01:02,390 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:02,392 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:01:02,403 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:02,403 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:02,409 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:02,411 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:02,414 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:02,443 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 73) WFLYUT0022: Unregistered web context: /mbooks-1
+2019-12-20 20:01:02,443 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 72) WFLYUT0022: Unregistered web context: /mbook-1
+2019-12-20 20:01:02,444 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 77) WFLYUT0022: Unregistered web context: /example
+2019-12-20 20:01:02,458 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 78) WFLYUT0022: Unregistered web context: /movies
+2019-12-20 20:01:02,460 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0022: Unregistered web context: /login
+2019-12-20 20:01:02,463 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 71) WFLYUT0022: Unregistered web context: /simple-service-webapp
+2019-12-20 20:01:02,488 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0019: Host default-host stopping
+2019-12-20 20:01:02,495 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2019-12-20 20:01:02,500 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2019-12-20 20:01:02,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow AJP listener Apache suspending
+2019-12-20 20:01:02,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTP listener default suspending
+2019-12-20 20:01:02,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8888
+2019-12-20 20:01:02,514 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow AJP listener Apache stopped, was bound to 127.0.0.1:8008
+2019-12-20 20:01:02,516 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTPS listener https suspending
+2019-12-20 20:01:02,516 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment movies.war (runtime-name: movies.war) in 129ms
+2019-12-20 20:01:02,516 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment example.war (runtime-name: example.war) in 136ms
+2019-12-20 20:01:02,516 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8444
+2019-12-20 20:01:02,518 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0004: Undertow 1.4.0.Final stopping
+2019-12-20 20:01:02,549 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment simple-service-webapp.war (runtime-name: simple-service-webapp.war) in 163ms
+2019-12-20 20:01:02,632 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment mbook-1.war (runtime-name: mbook-1.war) in 244ms
+2019-12-20 20:01:02,642 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment mbooks-1.war (runtime-name: mbooks-1.war) in 254ms
+2019-12-20 20:01:02,651 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 272ms
+2019-12-20 20:01:02,658 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 271ms
+2019-12-20 20:01:17,789 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2019-12-20 20:01:18,305 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2019-12-20 20:01:18,405 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2019-12-20 20:01:18,407 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.lwawt.macosx.LWCToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	gopherProxySet = false
+	java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+	java.class.path = /usr/local/wildfly-10.1.0/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/endorsed
+	java.ext.dirs = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+	java.home = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre
+	java.io.tmpdir = /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/
+	java.library.path = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_91-b14
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_91
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.91-b14
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /usr/local/wildfly-10.1.0
+	jboss.host.name = localhost
+	jboss.modules.dir = /usr/local/wildfly-10.1.0/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = localhost
+	jboss.qualified.host.name = localhost
+	jboss.server.base.dir = /usr/local/wildfly-10.1.0/standalone
+	jboss.server.config.dir = /usr/local/wildfly-10.1.0/standalone/configuration
+	jboss.server.data.dir = /usr/local/wildfly-10.1.0/standalone/data
+	jboss.server.deploy.dir = /usr/local/wildfly-10.1.0/standalone/data/content
+	jboss.server.log.dir = /usr/local/wildfly-10.1.0/standalone/log
+	jboss.server.name = localhost
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /usr/local/wildfly-10.1.0/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties
+	module.path = /usr/local/wildfly-10.1.0/modules
+	org.jboss.boot.log.file = /usr/local/wildfly-10.1.0/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = x86_64
+	os.name = Mac OS X
+	os.version = 10.15.1
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/classes
+	sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeBig
+	sun.java.command = /usr/local/wildfly-10.1.0/jboss-modules.jar -mp /usr/local/wildfly-10.1.0/modules org.jboss.as.standalone -Djboss.home.dir=/usr/local/wildfly-10.1.0 -Djboss.server.base.dir=/usr/local/wildfly-10.1.0/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.country.format = HU
+	user.dir = /usr/local/wildfly-10.1.0/bin
+	user.home = /var/root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Budapest
+2019-12-20 20:01:18,408 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/usr/local/wildfly-10.1.0/standalone/log/server.log -Dlogging.configuration=file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties 
+2019-12-20 20:01:19,529 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2019-12-20 20:01:19,547 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.4.0.Final
+2019-12-20 20:01:19,554 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.4.0.Final
+2019-12-20 20:01:19,584 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+2019-12-20 20:01:19,589 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 16 core threads with 128 task threads based on your 8 available processors
+2019-12-20 20:01:19,590 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+2019-12-20 20:01:19,601 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2019-12-20 20:01:19,602 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+2019-12-20 20:01:19,607 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+2019-12-20 20:01:19,607 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2019-12-20 20:01:19,624 INFO  [org.jboss.as.security] (MSC service thread 1-8) WFLYSEC0001: Current PicketBox version=4.9.6.Final
+2019-12-20 20:01:19,626 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.4.Final)
+2019-12-20 20:01:19,633 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0003: Undertow 1.4.0.Final starting
+2019-12-20 20:01:19,633 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2019-12-20 20:01:19,634 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2019-12-20 20:01:19,643 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2019-12-20 20:01:19,646 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = h2
+2019-12-20 20:01:19,696 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 4.0.21.Final
+2019-12-20 20:01:19,762 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/usr/local/wildfly-10.1.0/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:01:19,771 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2019-12-20 20:01:19,772 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:01:19,772 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2019-12-20 20:01:19,772 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example2' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:01:19,816 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow AJP listener Apache listening on 127.0.0.1:8008
+2019-12-20 20:01:19,816 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8888
+2019-12-20 20:01:19,845 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2019-12-20 20:01:19,845 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2019-12-20 20:01:19,935 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2019-12-20 20:01:20,068 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-6) WFLYDS0013: Started FileSystemDeploymentService for directory /usr/local/wildfly-10.1.0/standalone/deployments
+2019-12-20 20:01:20,073 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "example.war" (runtime-name: "example.war")
+2019-12-20 20:01:20,073 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "mbooks-1.war" (runtime-name: "mbooks-1.war")
+2019-12-20 20:01:20,073 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "movies.war" (runtime-name: "movies.war")
+2019-12-20 20:01:20,075 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "mbook-1.war" (runtime-name: "mbook-1.war")
+2019-12-20 20:01:20,076 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2019-12-20 20:01:20,073 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "simple-service-webapp.war" (runtime-name: "simple-service-webapp.war")
+2019-12-20 20:01:20,323 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-6) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.4.Final
+2019-12-20 20:01:20,344 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 61) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,344 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,345 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 61) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,346 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 63) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,346 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,347 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 63) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:01:20,728 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8444
+2019-12-20 20:01:20,886 INFO  [org.jboss.ws.common.management] (MSC service thread 1-5) JBWS022052: Starting JBossWS 5.1.5.Final (Apache CXF 3.1.6) 
+2019-12-20 20:01:21,650 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0021: Registered web context: /movies
+2019-12-20 20:01:21,650 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 65) WFLYUT0021: Registered web context: /example
+2019-12-20 20:01:22,117 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 66) HV000001: Hibernate Validator 5.2.4.Final
+2019-12-20 20:01:22,271 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 66) WFLYUT0021: Registered web context: /simple-service-webapp
+2019-12-20 20:01:23,331 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:01:23,332 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:01:23,335 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:23,335 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:23,351 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 65) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2019-12-20 20:01:23,359 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 65) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2019-12-20 20:01:23,403 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 65) WFLYUT0021: Registered web context: /login
+2019-12-20 20:01:24,174 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2019-12-20 20:01:24,177 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:01:24,178 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:01:24,180 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:24,181 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:24,181 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:01:24,233 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0021: Registered web context: /mbook-1
+2019-12-20 20:01:24,264 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-3) WFLYSRV0018: Deployment "deployment.mbooks-1.war" is using a private module ("org.javassist:main") which may be changed or removed in future versions without notice.
+2019-12-20 20:01:24,294 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2019-12-20 20:01:24,299 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:01:24,301 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:01:24,303 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:01:24,303 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:01:24,303 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:01:24,365 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 64) WFLYUT0021: Registered web context: /mbooks-1
+2019-12-20 20:01:24,395 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbooks-1.war" (runtime-name : "mbooks-1.war")
+2019-12-20 20:01:24,396 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "login.war" (runtime-name : "login.war")
+2019-12-20 20:01:24,396 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbook-1.war" (runtime-name : "mbook-1.war")
+2019-12-20 20:01:24,396 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "example.war" (runtime-name : "example.war")
+2019-12-20 20:01:24,396 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "simple-service-webapp.war" (runtime-name : "simple-service-webapp.war")
+2019-12-20 20:01:24,396 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "movies.war" (runtime-name : "movies.war")
+2019-12-20 20:01:24,508 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2019-12-20 20:01:24,509 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2019-12-20 20:01:24,509 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) started in 7179ms - Started 845 of 1124 services (462 services are lazy, passive or on-demand)
+2019-12-20 20:07:34,477 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-6) HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/book
+2019-12-20 20:07:34,478 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-6) HHH10001001: Connection properties: {user=sqluser, password=****, autocommit=false}
+2019-12-20 20:07:34,478 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-6) HHH10001003: Autocommit mode: false
+2019-12-20 20:07:34,486 INFO  [com.mchange.v2.log.MLog] (default task-6) MLog clients using log4j logging.
+2019-12-20 20:07:34,709 INFO  [com.mchange.v2.c3p0.C3P0Registry] (default task-6) Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2019-12-20 20:07:34,710 WARN  [com.mchange.v2.c3p0.management.ActiveManagementCoordinator] (default task-6) A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+2019-12-20 20:07:34,727 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-6) HHH10001007: JDBC isolation level: <unknown>
+2019-12-20 20:07:34,736 INFO  [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] (default task-6) Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@e2a4b6d2 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@10e07e41 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta7a6nyciw8431y|48b3af4a, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@a6bff47f [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kflta7a6nyciw8431y|29e275b9, jdbcUrl -> jdbc:mysql://localhost:3306/book, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kflta7a6nyciw8431y|36b31245, numHelperThreads -> 3 ]
+2019-12-20 20:07:35,326 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-6) ISPN000078: Starting JGroups channel infinispan-hibernate-cluster
+2019-12-20 20:07:35,328 WARN  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-6) ISPN000304: More than one configuration file with specified name on classpath. The first one will be used:
+ [jar:file:/usr/local/wildfly-10.1.0/modules/system/layers/base/org/infinispan/main/infinispan-core-8.2.4.Final.jar!/default-configs/default-jgroups-tcp.xml, vfs:/content/mbooks-1.war/WEB-INF/lib/infinispan-core-8.1.0.Final.jar/default-configs/default-jgroups-tcp.xml]
+2019-12-20 20:07:40,610 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-6) ISPN000094: Received new cluster view for channel infinispan-hibernate-cluster: [localhost-49747|0] (1) [localhost-49747]
+2019-12-20 20:07:40,612 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-6) ISPN000079: Channel infinispan-hibernate-cluster local address is localhost-49747, physical addresses are [127.0.0.1:7800]
+2019-12-20 20:07:40,620 INFO  [org.hibernate.cache.spi.UpdateTimestampsCache] (default task-6) HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2019-12-20 20:07:40,812 INFO  [org.infinispan.expiration.impl.ExpirationManagerImpl] (default task-6) ISPN000025: wakeUpInterval is <= 0, not starting expired purge thread
+2019-12-20 20:07:40,866 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-6) HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2019-12-20 20:07:40,905 INFO  [org.hibernate.search.engine.Version] (default task-6) HSEARCH000034: Hibernate Search 5.5.4.Final
+2019-12-20 20:07:41,372 WARN  [org.hibernate.search.engine.impl.ConfigContext] (default task-6) HSEARCH000075: Configuration setting hibernate.search.lucene_version was not specified: using LUCENE_CURRENT.
+2019-12-20 20:07:41,762 INFO  [stdout] (default task-6) Areating factory
+2019-12-20 20:07:41,770 INFO  [stdout] (default task-6) Aache cleared.
+2019-12-20 20:07:41,776 INFO  [stdout] (default task-6) Areating a FullTextSession from a regular Session.
+2019-12-20 20:07:41,868 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2019-12-20 20:07:41,868 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2019-12-20 20:07:41,869 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2019-12-20 20:07:41,869 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2019-12-20 20:07:41,869 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2019-12-20 20:07:41,887 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: identifierloader-1) HSEARCH000027: Going to reindex 105 entities
+2019-12-20 20:07:41,889 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2019-12-20 20:07:41,889 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2019-12-20 20:07:41,889 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.movieId as y0_ 
+2019-12-20 20:07:41,889 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2019-12-20 20:07:41,889 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2019-12-20 20:07:41,901 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2019-12-20 20:07:41,902 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2019-12-20 20:07:41,903 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,904 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2019-12-20 20:07:41,904 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2019-12-20 20:07:41,904 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2019-12-20 20:07:41,904 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         Movie this_ 
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId in (
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2019-12-20 20:07:41,905 INFO  [stdout] (Hibernate Search: entityloader-5) Hibernate: 
+2019-12-20 20:07:41,906 INFO  [stdout] (Hibernate Search: entityloader-5)     select
+2019-12-20 20:07:41,906 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,906 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,906 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)     from
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         Movie this_ 
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)     where
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId in (
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,907 INFO  [stdout] (Hibernate Search: entityloader-5)         )
+2019-12-20 20:07:41,908 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         Movie this_ 
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId in (
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,909 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2019-12-20 20:07:41,927 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2019-12-20 20:07:41,927 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2019-12-20 20:07:41,927 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2019-12-20 20:07:41,928 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name5_1_0_,
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:41,929 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2019-12-20 20:07:42,046 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-3) HSEARCH000030: 50 documents indexed in 19 ms
+2019-12-20 20:07:42,046 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-3) HSEARCH000031: Indexing speed: 2631.578857 documents/second; progress: 47.62%
+2019-12-20 20:07:42,053 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2019-12-20 20:07:42,053 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name5_1_0_,
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:42,054 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-5) Hibernate: 
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-5)     select
+2019-12-20 20:07:42,055 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.name as name5_1_0_,
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)     from
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         Movie this_ 
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)     where
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId in (
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:42,056 INFO  [stdout] (Hibernate Search: entityloader-5)         )
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name5_1_0_,
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2019-12-20 20:07:42,057 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name5_1_0_,
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2019-12-20 20:07:42,058 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId as movieId1_1_0_,
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.detail as detail2_1_0_,
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.iMDB_url as iMDB_url3_1_0_,
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.large_picture as large_pi4_1_0_,
+2019-12-20 20:07:42,059 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name5_1_0_,
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.thumbnail_picture as thumbnai6_1_0_ 
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)         Movie this_ 
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId in (
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:42,060 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2019-12-20 20:07:42,120 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-2) HSEARCH000030: 100 documents indexed in 93 ms
+2019-12-20 20:07:42,120 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-2) HSEARCH000031: Indexing speed: 1075.268799 documents/second; progress: 95.24%
+2019-12-20 20:07:42,127 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2019-12-20 20:07:42,127 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2019-12-20 20:07:42,127 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2019-12-20 20:07:42,127 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2019-12-20 20:07:42,128 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2019-12-20 20:07:42,130 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: identifierloader-1) HSEARCH000027: Going to reindex 13 entities
+2019-12-20 20:07:42,130 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2019-12-20 20:07:42,130 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2019-12-20 20:07:42,131 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.locationId as y0_ 
+2019-12-20 20:07:42,131 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2019-12-20 20:07:42,131 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.locationId as location1_0_0_,
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.formatted_address as formatte2_0_0_,
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.latitude as latitude3_0_0_,
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.longitude as longitud4_0_0_,
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name5_0_0_ 
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2019-12-20 20:07:42,137 INFO  [stdout] (Hibernate Search: entityloader-4)         Location this_ 
+2019-12-20 20:07:42,138 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2019-12-20 20:07:42,138 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.locationId in (
+2019-12-20 20:07:42,138 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2019-12-20 20:07:42,138 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.locationId as location1_0_0_,
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.formatted_address as formatte2_0_0_,
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.latitude as latitude3_0_0_,
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.longitude as longitud4_0_0_,
+2019-12-20 20:07:42,139 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name5_0_0_ 
+2019-12-20 20:07:42,140 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2019-12-20 20:07:42,140 INFO  [stdout] (Hibernate Search: entityloader-3)         Location this_ 
+2019-12-20 20:07:42,140 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2019-12-20 20:07:42,140 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.locationId in (
+2019-12-20 20:07:42,141 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?
+2019-12-20 20:07:42,141 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2019-12-20 20:07:42,395 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (default task-6) HSEARCH000028: Reindexed 118 entities
+2019-12-20 20:07:42,402 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-6) HHH000248: Starting query cache at region: movies
+2019-12-20 20:07:42,405 INFO  [stdout] (default task-6) Hibernate: 
+2019-12-20 20:07:42,405 INFO  [stdout] (default task-6)     select
+2019-12-20 20:07:42,405 INFO  [stdout] (default task-6)         movie0_.movieId as movieId1_1_,
+2019-12-20 20:07:42,405 INFO  [stdout] (default task-6)         movie0_.detail as detail2_1_,
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         movie0_.iMDB_url as iMDB_url3_1_,
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         movie0_.large_picture as large_pi4_1_,
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         movie0_.name as name5_1_,
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)     from
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         Movie movie0_ 
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)     order by
+2019-12-20 20:07:42,406 INFO  [stdout] (default task-6)         movie0_.name asc limit ?
+2019-12-20 20:45:49,108 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2019-12-20 20:45:49,117 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:45:49,118 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:45:49,121 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:45:49,123 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:45:49,124 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:45:49,125 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:45:49,125 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:45:49,127 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:45:49,132 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 72) WFLYUT0022: Unregistered web context: /mbooks-1
+2019-12-20 20:45:49,133 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 73) WFLYUT0022: Unregistered web context: /example
+2019-12-20 20:45:49,138 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0022: Unregistered web context: /movies
+2019-12-20 20:45:49,138 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 80) WFLYUT0022: Unregistered web context: /login
+2019-12-20 20:45:49,138 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 77) WFLYUT0022: Unregistered web context: /mbook-1
+2019-12-20 20:45:49,139 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 76) WFLYUT0022: Unregistered web context: /simple-service-webapp
+2019-12-20 20:45:49,167 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment movies.war (runtime-name: movies.war) in 52ms
+2019-12-20 20:45:49,167 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment example.war (runtime-name: example.war) in 51ms
+2019-12-20 20:45:49,173 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0019: Host default-host stopping
+2019-12-20 20:45:49,174 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2019-12-20 20:45:49,178 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTP listener default suspending
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow AJP listener Apache suspending
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTPS listener https suspending
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8888
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow AJP listener Apache stopped, was bound to 127.0.0.1:8008
+2019-12-20 20:45:49,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8444
+2019-12-20 20:45:49,181 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0004: Undertow 1.4.0.Final stopping
+2019-12-20 20:45:49,189 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment simple-service-webapp.war (runtime-name: simple-service-webapp.war) in 74ms
+2019-12-20 20:45:49,258 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment mbook-1.war (runtime-name: mbook-1.war) in 143ms
+2019-12-20 20:45:49,262 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment mbooks-1.war (runtime-name: mbooks-1.war) in 147ms
+2019-12-20 20:45:49,280 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment login.war (runtime-name: login.war) in 167ms
+2019-12-20 20:45:49,283 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 162ms
+2019-12-20 20:48:23,983 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2019-12-20 20:48:24,336 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2019-12-20 20:48:24,405 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2019-12-20 20:48:24,406 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.lwawt.macosx.LWCToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	gopherProxySet = false
+	java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+	java.class.path = /usr/local/wildfly-10.1.0/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/endorsed
+	java.ext.dirs = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+	java.home = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre
+	java.io.tmpdir = /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/
+	java.library.path = /Users/georgegaspar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_91-b14
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_91
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.91-b14
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /usr/local/wildfly-10.1.0
+	jboss.host.name = localhost
+	jboss.modules.dir = /usr/local/wildfly-10.1.0/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = localhost
+	jboss.qualified.host.name = localhost
+	jboss.server.base.dir = /usr/local/wildfly-10.1.0/standalone
+	jboss.server.config.dir = /usr/local/wildfly-10.1.0/standalone/configuration
+	jboss.server.data.dir = /usr/local/wildfly-10.1.0/standalone/data
+	jboss.server.deploy.dir = /usr/local/wildfly-10.1.0/standalone/data/content
+	jboss.server.log.dir = /usr/local/wildfly-10.1.0/standalone/log
+	jboss.server.name = localhost
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /usr/local/wildfly-10.1.0/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties
+	module.path = /usr/local/wildfly-10.1.0/modules
+	org.jboss.boot.log.file = /usr/local/wildfly-10.1.0/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = x86_64
+	os.name = Mac OS X
+	os.version = 10.15.1
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/classes
+	sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeBig
+	sun.java.command = /usr/local/wildfly-10.1.0/jboss-modules.jar -mp /usr/local/wildfly-10.1.0/modules org.jboss.as.standalone -Djboss.home.dir=/usr/local/wildfly-10.1.0 -Djboss.server.base.dir=/usr/local/wildfly-10.1.0/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.country.format = HU
+	user.dir = /usr/local/wildfly-10.1.0/bin
+	user.home = /var/root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Budapest
+2019-12-20 20:48:24,406 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/usr/local/wildfly-10.1.0/standalone/log/server.log -Dlogging.configuration=file:/usr/local/wildfly-10.1.0/standalone/configuration/logging.properties 
+2019-12-20 20:48:25,267 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2019-12-20 20:48:25,281 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.4.0.Final
+2019-12-20 20:48:25,286 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.4.0.Final
+2019-12-20 20:48:25,310 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+2019-12-20 20:48:25,310 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 16 core threads with 128 task threads based on your 8 available processors
+2019-12-20 20:48:25,324 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2019-12-20 20:48:25,326 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.4.Final)
+2019-12-20 20:48:25,328 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = h2
+2019-12-20 20:48:25,330 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 4.0.21.Final
+2019-12-20 20:48:25,335 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2019-12-20 20:48:25,338 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+2019-12-20 20:48:25,357 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2019-12-20 20:48:25,357 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2019-12-20 20:48:25,363 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2019-12-20 20:48:25,367 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+2019-12-20 20:48:25,368 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+2019-12-20 20:48:25,372 INFO  [org.jboss.as.security] (MSC service thread 1-6) WFLYSEC0001: Current PicketBox version=4.9.6.Final
+2019-12-20 20:48:25,380 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 1.4.0.Final starting
+2019-12-20 20:48:25,440 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/usr/local/wildfly-10.1.0/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:48:25,445 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0012: Started server default-server.
+2019-12-20 20:48:25,445 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:48:25,446 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+2019-12-20 20:48:25,446 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/Users/georgegaspar/Documents/Gateway-master/example2' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-12-20 20:48:25,485 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8888
+2019-12-20 20:48:25,487 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow AJP listener Apache listening on 127.0.0.1:8008
+2019-12-20 20:48:25,503 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 32 (per class), which is derived from the number of CPUs on this host.
+2019-12-20 20:48:25,503 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 128 (per class), which is derived from thread worker pool sizing.
+2019-12-20 20:48:25,599 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2019-12-20 20:48:25,662 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "mbook-1.war" (runtime-name: "mbook-1.war")
+2019-12-20 20:48:25,662 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "movies.war" (runtime-name: "movies.war")
+2019-12-20 20:48:25,662 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "mbooks-1.war" (runtime-name: "mbooks-1.war")
+2019-12-20 20:48:25,663 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "example.war" (runtime-name: "example.war")
+2019-12-20 20:48:25,663 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "simple-service-webapp.war" (runtime-name: "simple-service-webapp.war")
+2019-12-20 20:48:25,664 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "login.war" (runtime-name: "login.war")
+2019-12-20 20:48:25,677 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-8) WFLYDS0013: Started FileSystemDeploymentService for directory /usr/local/wildfly-10.1.0/standalone/deployments
+2019-12-20 20:48:25,810 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-7) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.4.Final
+2019-12-20 20:48:25,831 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 64) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:25,831 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:25,831 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:25,832 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 64) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:25,832 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:25,832 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-12-20 20:48:26,257 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8444
+2019-12-20 20:48:26,366 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBossWS 5.1.5.Final (Apache CXF 3.1.6) 
+2019-12-20 20:48:27,001 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 58) WFLYUT0021: Registered web context: /example
+2019-12-20 20:48:27,000 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0021: Registered web context: /movies
+2019-12-20 20:48:27,355 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 61) HV000001: Hibernate Validator 5.2.4.Final
+2019-12-20 20:48:27,434 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 61) WFLYUT0021: Registered web context: /simple-service-webapp
+2019-12-20 20:48:28,234 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:48:28,235 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:48:28,241 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:48:28,243 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = login.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:48:28,255 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 62) UT026004: Adding annotated client endpoint class com.websocket.WebSocketClient
+2019-12-20 20:48:28,264 INFO  [io.undertow.websockets.jsr] (ServerService Thread Pool -- 62) UT026003: Adding annotated server endpoint class com.websocket.WebSocket for path /jsr356toUpper
+2019-12-20 20:48:28,311 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 62) WFLYUT0021: Registered web context: /login
+2019-12-20 20:48:29,423 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2019-12-20 20:48:29,427 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:48:29,428 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:48:29,429 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:48:29,430 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:48:29,429 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = mbook-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:48:29,465 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 58) WFLYUT0021: Registered web context: /mbook-1
+2019-12-20 20:48:29,499 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-7) WFLYSRV0018: Deployment "deployment.mbooks-1.war" is using a private module ("org.javassist:main") which may be changed or removed in future versions without notice.
+2019-12-20 20:48:29,524 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2019-12-20 20:48:29,527 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2019-12-20 20:48:29,527 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2019-12-20 20:48:29,530 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_org.hsqldb.jdbc.JDBCDriver_2_4
+2019-12-20 20:48:29,530 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2019-12-20 20:48:29,530 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = mbooks-1.war_com.mysql.jdbc.Driver_5_1
+2019-12-20 20:48:29,571 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 63) WFLYUT0021: Registered web context: /mbooks-1
+2019-12-20 20:48:29,587 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbooks-1.war" (runtime-name : "mbooks-1.war")
+2019-12-20 20:48:29,587 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "login.war" (runtime-name : "login.war")
+2019-12-20 20:48:29,588 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mbook-1.war" (runtime-name : "mbook-1.war")
+2019-12-20 20:48:29,588 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "example.war" (runtime-name : "example.war")
+2019-12-20 20:48:29,588 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "simple-service-webapp.war" (runtime-name : "simple-service-webapp.war")
+2019-12-20 20:48:29,588 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "movies.war" (runtime-name : "movies.war")
+2019-12-20 20:48:29,661 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2019-12-20 20:48:29,661 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2019-12-20 20:48:29,662 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) started in 5983ms - Started 845 of 1124 services (462 services are lazy, passive or on-demand)

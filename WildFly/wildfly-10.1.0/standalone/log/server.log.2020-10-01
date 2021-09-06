@@ -1,0 +1,598 @@
+2020-10-01 02:19:54,589 INFO  [stdout] (default task-2) Cookie filter...
+2020-10-01 02:19:54,602 INFO  [stdout] (default task-2) Path: /book/movies/paging
+2020-10-01 02:19:54,602 INFO  [stdout] (default task-2) Ciphertext filter...
+2020-10-01 02:19:54,981 INFO  [org.hibernate.Version] (default task-2) HHH000412: Hibernate Core {5.0.10.Final}
+2020-10-01 02:19:54,984 INFO  [org.hibernate.cfg.Environment] (default task-2) HHH000206: hibernate.properties not found
+2020-10-01 02:19:54,986 INFO  [org.hibernate.cfg.Environment] (default task-2) HHH000021: Bytecode provider name : javassist
+2020-10-01 02:19:55,468 INFO  [org.hibernate.annotations.common.Version] (default task-2) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-10-01 02:19:55,540 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-2) HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/book
+2020-10-01 02:19:55,541 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-2) HHH10001001: Connection properties: {user=sqluser, password=****, autocommit=false}
+2020-10-01 02:19:55,541 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-2) HHH10001003: Autocommit mode: false
+2020-10-01 02:19:55,557 INFO  [com.mchange.v2.log.MLog] (default task-2) MLog clients using log4j logging.
+2020-10-01 02:19:57,507 INFO  [com.mchange.v2.c3p0.C3P0Registry] (default task-2) Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2020-10-01 02:19:57,530 INFO  [org.hibernate.c3p0.internal.C3P0ConnectionProvider] (default task-2) HHH10001007: JDBC isolation level: <unknown>
+2020-10-01 02:19:57,547 INFO  [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] (default task-2) Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@ba8ce69 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@ba83b300 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kfltac1qkr6hr1xrktvv|42f8451a, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@399b7b1a [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> z8kfltac1qkr6hr1xrktvv|1fab49f2, jdbcUrl -> jdbc:mysql://localhost:3306/book, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> z8kfltac1qkr6hr1xrktvv|470dc5f5, numHelperThreads -> 3 ]
+2020-10-01 02:19:57,875 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2020-10-01 02:19:57,914 INFO  [org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl] (default task-2) HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2020-10-01 02:19:57,924 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2020-10-01 02:19:58,562 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-2) ISPN000078: Starting JGroups channel infinispan-hibernate-cluster
+2020-10-01 02:19:58,564 WARN  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-2) ISPN000304: More than one configuration file with specified name on classpath. The first one will be used:
+ [jar:file:/usr/local/wildfly-10.1.0/modules/system/layers/base/org/infinispan/main/infinispan-core-8.2.4.Final.jar!/default-configs/default-jgroups-tcp.xml, vfs:/content/mbooks-1.war/WEB-INF/lib/infinispan-core-8.1.0.Final.jar/default-configs/default-jgroups-tcp.xml]
+2020-10-01 02:20:03,852 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-2) ISPN000094: Received new cluster view for channel infinispan-hibernate-cluster: [localhost-2010|0] (1) [localhost-2010]
+2020-10-01 02:20:03,855 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (default task-2) ISPN000079: Channel infinispan-hibernate-cluster local address is localhost-2010, physical addresses are [127.0.0.1:7800]
+2020-10-01 02:20:03,868 INFO  [org.hibernate.cache.spi.UpdateTimestampsCache] (default task-2) HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache
+2020-10-01 02:20:04,074 INFO  [org.infinispan.expiration.impl.ExpirationManagerImpl] (default task-2) ISPN000025: wakeUpInterval is <= 0, not starting expired purge thread
+2020-10-01 02:20:04,131 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-2) HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache
+2020-10-01 02:20:04,189 INFO  [org.hibernate.search.engine.Version] (default task-2) HSEARCH000034: Hibernate Search 5.5.4.Final
+2020-10-01 02:20:04,488 WARN  [org.hibernate.search.engine.impl.ConfigContext] (default task-2) HSEARCH000075: Configuration setting hibernate.search.lucene_version was not specified: using LUCENE_CURRENT.
+2020-10-01 02:20:04,546 INFO  [org.hibernate.search.store.impl.DirectoryProviderHelper] (default task-2) HSEARCH000041: Index directory not found, creating: '/tmp/lucene/indexes'
+2020-10-01 02:20:04,547 INFO  [org.hibernate.search.store.impl.DirectoryProviderHelper] (default task-2) HSEARCH000041: Index directory not found, creating: '/tmp/lucene/indexes/com.jeet.api.Movie'
+2020-10-01 02:20:04,774 INFO  [org.hibernate.search.store.impl.DirectoryProviderHelper] (default task-2) HSEARCH000041: Index directory not found, creating: '/tmp/lucene/indexes/com.jeet.api.Location'
+2020-10-01 02:20:04,833 INFO  [stdout] (default task-2) Areating factory
+2020-10-01 02:20:04,883 INFO  [stdout] (default task-2) Aache cleared.
+2020-10-01 02:20:04,888 INFO  [stdout] (default task-2) Areating a FullTextSession from a regular Session.
+2020-10-01 02:20:04,950 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-10-01 02:20:04,950 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-10-01 02:20:04,950 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2020-10-01 02:20:04,951 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-10-01 02:20:04,951 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2020-10-01 02:20:04,976 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: identifierloader-1) HSEARCH000027: Going to reindex 105 entities
+2020-10-01 02:20:04,977 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-10-01 02:20:04,977 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-10-01 02:20:04,977 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.movieId as y0_ 
+2020-10-01 02:20:04,978 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-10-01 02:20:04,978 INFO  [stdout] (Hibernate Search: identifierloader-1)         Movie this_
+2020-10-01 02:20:04,992 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2020-10-01 02:20:04,992 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.category as category2_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name6_1_0_,
+2020-10-01 02:20:04,993 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)         Movie this_ 
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId in (
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2020-10-01 02:20:04,994 INFO  [stdout] (Hibernate Search: entityloader-5) Hibernate: 
+2020-10-01 02:20:04,995 INFO  [stdout] (Hibernate Search: entityloader-5)     select
+2020-10-01 02:20:04,996 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:04,996 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.category as category2_1_0_,
+2020-10-01 02:20:04,996 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:04,996 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:04,997 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.name as name6_1_0_,
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)     from
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)         Movie this_ 
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)     where
+2020-10-01 02:20:04,998 INFO  [stdout] (Hibernate Search: entityloader-5)         this_.movieId in (
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-5)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-5)         )
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.category as category2_1_0_,
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:04,999 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2020-10-01 02:20:05,000 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,001 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2020-10-01 02:20:05,002 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2020-10-01 02:20:05,002 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2020-10-01 02:20:05,002 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,002 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,002 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2020-10-01 02:20:05,003 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,004 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2020-10-01 02:20:05,005 INFO  [stdout] (Hibernate Search: entityloader-3)         Movie this_ 
+2020-10-01 02:20:05,005 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2020-10-01 02:20:05,005 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId in (
+2020-10-01 02:20:05,005 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,005 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2020-10-01 02:20:05,109 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-5) HSEARCH000030: 50 documents indexed in 18 ms
+2020-10-01 02:20:05,111 INFO  [stdout] (Hibernate Search: entityloader-6) Hibernate: 
+2020-10-01 02:20:05,111 INFO  [stdout] (Hibernate Search: entityloader-6)     select
+2020-10-01 02:20:05,111 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,109 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-5) HSEARCH000031: Indexing speed: 2777.777832 documents/second; progress: 47.62%
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)     from
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)         Movie this_ 
+2020-10-01 02:20:05,112 INFO  [stdout] (Hibernate Search: entityloader-6)     where
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-6)         this_.movieId in (
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-6)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-6)         )
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,113 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         Movie this_ 
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.movieId in (
+2020-10-01 02:20:05,114 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,114 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-5) Session Metrics {
+    1094703 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    211219 nanoseconds spent preparing 1 JDBC statements;
+    1546982 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    44954 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,115 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2020-10-01 02:20:05,115 INFO  [stdout] (Hibernate Search: entityloader-3) Hibernate: 
+2020-10-01 02:20:05,115 INFO  [stdout] (Hibernate Search: entityloader-3)     select
+2020-10-01 02:20:05,115 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)     from
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         Movie this_ 
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)     where
+2020-10-01 02:20:05,116 INFO  [stdout] (Hibernate Search: entityloader-3)         this_.movieId in (
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-3)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-3)         )
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4) Hibernate: 
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)     select
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,117 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)     from
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)         Movie this_ 
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)     where
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)         this_.movieId in (
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-4)         )
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId as movieId1_1_0_,
+2020-10-01 02:20:05,118 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.category as category2_1_0_,
+2020-10-01 02:20:05,130 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-6) Session Metrics {
+    10554014 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    776003 nanoseconds spent preparing 2 JDBC statements;
+    1374163 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5546 nanoseconds spent executing 2 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,130 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-1) Session Metrics {
+    833900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    3399477 nanoseconds spent preparing 2 JDBC statements;
+    2723754 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    8082 nanoseconds spent executing 2 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,131 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.detail as detail3_1_0_,
+2020-10-01 02:20:05,131 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-01 02:20:05,131 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-3) Session Metrics {
+    11171184 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    637393 nanoseconds spent preparing 2 JDBC statements;
+    1212468 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    6193 nanoseconds spent executing 2 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,132 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-4) HSEARCH000030: 100 documents indexed in 41 ms
+2020-10-01 02:20:05,133 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.large_picture as large_pi5_1_0_,
+2020-10-01 02:20:05,133 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name6_1_0_,
+2020-10-01 02:20:05,133 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: entityloader-4) HSEARCH000031: Indexing speed: 2439.024414 documents/second; progress: 95.24%
+2020-10-01 02:20:05,133 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-01 02:20:05,133 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2020-10-01 02:20:05,134 INFO  [stdout] (Hibernate Search: entityloader-2)         Movie this_ 
+2020-10-01 02:20:05,134 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2020-10-01 02:20:05,134 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.movieId in (
+2020-10-01 02:20:05,134 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?, ?, ?
+2020-10-01 02:20:05,134 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-4) Session Metrics {
+    3136762 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    534615 nanoseconds spent preparing 2 JDBC statements;
+    1144842 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    7854 nanoseconds spent executing 2 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,134 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2020-10-01 02:20:05,140 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-2) Session Metrics {
+    1937864 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1009275 nanoseconds spent preparing 2 JDBC statements;
+    1348594 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    40370 nanoseconds spent executing 2 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,142 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-10-01 02:20:05,142 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-10-01 02:20:05,142 INFO  [stdout] (Hibernate Search: identifierloader-1)         count(*) as y0_ 
+2020-10-01 02:20:05,142 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-10-01 02:20:05,143 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2020-10-01 02:20:05,143 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (Hibernate Search: identifierloader-1) HSEARCH000027: Going to reindex 13 entities
+2020-10-01 02:20:05,144 INFO  [stdout] (Hibernate Search: identifierloader-1) Hibernate: 
+2020-10-01 02:20:05,144 INFO  [stdout] (Hibernate Search: identifierloader-1)     select
+2020-10-01 02:20:05,144 INFO  [stdout] (Hibernate Search: identifierloader-1)         this_.locationId as y0_ 
+2020-10-01 02:20:05,144 INFO  [stdout] (Hibernate Search: identifierloader-1)     from
+2020-10-01 02:20:05,144 INFO  [stdout] (Hibernate Search: identifierloader-1)         Location this_
+2020-10-01 02:20:05,225 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-5) Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,225 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-4) Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,225 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-3) Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,225 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-6) Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,226 INFO  [stdout] (Hibernate Search: entityloader-2) Hibernate: 
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)     select
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.locationId as location1_0_0_,
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.formatted_address as formatte2_0_0_,
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.latitude as latitude3_0_0_,
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.longitude as longitud4_0_0_,
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.name as name5_0_0_ 
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)     from
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         Location this_ 
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)     where
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)         this_.locationId in (
+2020-10-01 02:20:05,227 INFO  [stdout] (Hibernate Search: entityloader-2)             ?, ?, ?
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-2)         )
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1) Hibernate: 
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)     select
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.locationId as location1_0_0_,
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.formatted_address as formatte2_0_0_,
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.latitude as latitude3_0_0_,
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.longitude as longitud4_0_0_,
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.name as name5_0_0_ 
+2020-10-01 02:20:05,228 INFO  [stdout] (Hibernate Search: entityloader-1)     from
+2020-10-01 02:20:05,229 INFO  [stdout] (Hibernate Search: entityloader-1)         Location this_ 
+2020-10-01 02:20:05,229 INFO  [stdout] (Hibernate Search: entityloader-1)     where
+2020-10-01 02:20:05,229 INFO  [stdout] (Hibernate Search: entityloader-1)         this_.locationId in (
+2020-10-01 02:20:05,229 INFO  [stdout] (Hibernate Search: entityloader-1)             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-01 02:20:05,229 INFO  [stdout] (Hibernate Search: entityloader-1)         )
+2020-10-01 02:20:05,233 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-2) Session Metrics {
+    278354 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    262821 nanoseconds spent preparing 1 JDBC statements;
+    619674 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    3718 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,236 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (Hibernate Search: entityloader-1) Session Metrics {
+    331204 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    229523 nanoseconds spent preparing 1 JDBC statements;
+    432419 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    3615 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:05,464 INFO  [org.hibernate.search.batchindexing.impl.SimpleIndexingProgressMonitor] (default task-2) HSEARCH000028: Reindexed 118 entities
+2020-10-01 02:20:05,481 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (default task-2) HHH000397: Using ASTQueryTranslatorFactory
+2020-10-01 02:20:05,562 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-2) HHH000248: Starting query cache at region: movies
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2) Hibernate: 
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)     select
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.movieId as movieId1_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.category as category2_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.detail as detail3_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.large_picture as large_pi5_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.name as name6_1_,
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)     from
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         Movie movie0_ 
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)     order by
+2020-10-01 02:20:05,566 INFO  [stdout] (default task-2)         movie0_.name asc limit ?
+2020-10-01 02:20:05,607 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-2) Session Metrics {
+    804432 nanoseconds spent acquiring 2 JDBC connections;
+    290020 nanoseconds spent releasing 1 JDBC connections;
+    218135 nanoseconds spent preparing 1 JDBC statements;
+    906780 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    22757243 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    780954 nanoseconds spent performing 1 L2C misses;
+    7112600 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    23597 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:51,988 INFO  [stdout] (default task-16) Cookie filter...
+2020-10-01 02:20:51,988 INFO  [stdout] (default task-16) Path: /book/venue/1039
+2020-10-01 02:20:51,989 INFO  [stdout] (default task-16) Ciphertext filter...
+2020-10-01 02:20:52,005 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-16) HHH000248: Starting query cache at region: venues
+2020-10-01 02:20:52,006 INFO  [stdout] (default task-16) Hibernate: 
+2020-10-01 02:20:52,006 INFO  [stdout] (default task-16)     select
+2020-10-01 02:20:52,006 INFO  [stdout] (default task-16)         venues0_.venuesId as venuesId1_7_,
+2020-10-01 02:20:52,006 INFO  [stdout] (default task-16)         venues0_.address as address2_7_,
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         venues0_.contact as contact3_7_,
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         venues0_.location_locationId as location7_7_,
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         venues0_.name as name4_7_,
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         venues0_.screen_screenId as screen_s5_7_,
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         venues0_.venues_picture as venues_p6_7_ 
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)     from
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         Venues venues0_ 
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)     inner join
+2020-10-01 02:20:52,007 INFO  [stdout] (default task-16)         Screen screen1_ 
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)             on venues0_.screen_screenId=screen1_.screenId 
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)     inner join
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)         Movie movie2_ 
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)             on screen1_.movie_movieId=movie2_.movieId 
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)     where
+2020-10-01 02:20:52,008 INFO  [stdout] (default task-16)         movieId=?
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16) Hibernate: 
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)     select
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.locationId as location1_0_0_,
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.formatted_address as formatte2_0_0_,
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.latitude as latitude3_0_0_,
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.longitude as longitud4_0_0_,
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.name as name5_0_0_ 
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)     from
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         Location location0_ 
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)     where
+2020-10-01 02:20:52,012 INFO  [stdout] (default task-16)         location0_.locationId=?
+2020-10-01 02:20:52,017 INFO  [stdout] (default task-16) Hibernate: 
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)     select
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screen0_.screenId as screenId1_3_0_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screen0_.seats as seats2_3_0_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.movieId as movieId1_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.category as category2_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.detail as detail3_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.name as name6_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-01 02:20:52,018 INFO  [stdout] (default task-16)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.address as address2_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.contact as contact3_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.location_locationId as location7_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.name as name4_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.seatId as seatId1_5_4_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.seatId as seatId1_5_5_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.price as price3_5_5_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-01 02:20:52,019 INFO  [stdout] (default task-16)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         seat4_.tax as tax6_5_5_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)     from
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         Screen screen0_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)     left outer join
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         Movie movie1_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)     left outer join
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         ScreeningDates screeningd2_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)     left outer join
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         Venues venues3_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)     left outer join
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)         Seats seat4_ 
+2020-10-01 02:20:52,020 INFO  [stdout] (default task-16)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-01 02:20:52,021 INFO  [stdout] (default task-16)     where
+2020-10-01 02:20:52,021 INFO  [stdout] (default task-16)         screen0_.screenId=?
+2020-10-01 02:20:52,039 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-16) Session Metrics {
+    738745 nanoseconds spent acquiring 2 JDBC connections;
+    308851 nanoseconds spent releasing 1 JDBC connections;
+    1451460 nanoseconds spent preparing 3 JDBC statements;
+    2091102 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1142523 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    279650 nanoseconds spent performing 2 L2C misses;
+    2770139 nanoseconds spent executing 1 flushes (flushing a total of 35 entities and 2 collections);
+    5954 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-01 02:20:59,247 INFO  [stdout] (default task-18) Cookie filter...
+2020-10-01 02:20:59,247 INFO  [stdout] (default task-18) Path: /book/dates/32/1039
+2020-10-01 02:20:59,247 INFO  [stdout] (default task-18) Ciphertext filter...
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18) Hibernate: 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)     select
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         screeningd0_.movieId as movieId2_4_,
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         screeningd0_.screeningDate as screenin3_4_,
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)     from
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         ScreeningDates screeningd0_ 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)     inner join
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         Venues venues1_ 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)     inner join
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)         Screen screen2_ 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)             on venues1_.screen_screenId=screen2_.screenId 
+2020-10-01 02:20:59,255 INFO  [stdout] (default task-18)     where
+2020-10-01 02:20:59,256 INFO  [stdout] (default task-18)         movieId=? 
+2020-10-01 02:20:59,256 INFO  [stdout] (default task-18)         and venuesId=?
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18) Hibernate: 
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)     select
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screen0_.screenId as screenId1_3_0_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screen0_.seats as seats2_3_0_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.movieId as movieId1_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.category as category2_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.detail as detail3_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.name as name6_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         venues3_.address as address2_7_3_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         venues3_.contact as contact3_7_3_,
+2020-10-01 02:20:59,259 INFO  [stdout] (default task-18)         venues3_.location_locationId as location7_7_3_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         venues3_.name as name4_7_3_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.seatId as seatId1_5_4_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.seatId as seatId1_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.price as price3_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         seat4_.tax as tax6_5_5_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     from
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         Screen screen0_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     left outer join
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         Movie movie1_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     left outer join
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         ScreeningDates screeningd2_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     left outer join
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         Venues venues3_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     left outer join
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         Seats seat4_ 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)     where
+2020-10-01 02:20:59,260 INFO  [stdout] (default task-18)         screen0_.screenId=?
+2020-10-01 02:20:59,268 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-18) Session Metrics {
+    367470 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    339051 nanoseconds spent preparing 2 JDBC statements;
+    1419540 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    43474 nanoseconds spent performing 1 L2C puts;
+    451912 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1054650 nanoseconds spent executing 1 flushes (flushing a total of 35 entities and 2 collections);
+    6099 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

@@ -1,0 +1,139 @@
+2020-10-23 23:09:59,458 INFO  [stdout] (default task-29) Cookie filter...
+2020-10-23 23:09:59,469 INFO  [stdout] (default task-29) Path: /book/movies/paging
+2020-10-23 23:09:59,470 INFO  [stdout] (default task-29) Ciphertext filter...
+2020-10-23 23:09:59,506 INFO  [stdout] (default task-29) Hibernate: 
+2020-10-23 23:09:59,506 INFO  [stdout] (default task-29)     select
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.movieId as movieId1_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.category as category2_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.detail as detail3_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.large_picture as large_pi5_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.name as name6_1_,
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)     from
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         Movie movie0_ 
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)     order by
+2020-10-23 23:09:59,507 INFO  [stdout] (default task-29)         movie0_.name asc limit ?
+2020-10-23 23:09:59,545 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-29) Session Metrics {
+    17086008 nanoseconds spent acquiring 2 JDBC connections;
+    493386 nanoseconds spent releasing 1 JDBC connections;
+    1299632 nanoseconds spent preparing 1 JDBC statements;
+    15674050 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    10058257 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    2456364 nanoseconds spent performing 1 L2C misses;
+    1004901 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    39057 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:11:13,906 INFO  [stdout] (default task-31) Cookie filter...
+2020-10-23 23:11:13,907 INFO  [stdout] (default task-31) Path: /book/movies/paging
+2020-10-23 23:11:13,907 INFO  [stdout] (default task-31) Ciphertext filter...
+2020-10-23 23:11:13,926 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-31) Session Metrics {
+    436649 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    8571487 nanoseconds spent performing 31 L2C hits;
+    2584416 nanoseconds spent performing 1 L2C misses;
+    366275 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    18142 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:12:09,557 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-80) Session Metrics {
+    2168898 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1184292 nanoseconds spent preparing 1 JDBC statements;
+    838976 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58496 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6545 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:12:09,562 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-80) Session Metrics {
+    573564 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    232743 nanoseconds spent preparing 1 JDBC statements;
+    571569 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    56172 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5071 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:13:32,117 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-83) Session Metrics {
+    438210 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    226683 nanoseconds spent preparing 1 JDBC statements;
+    457928 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    68856 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6530 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:13:32,122 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-83) Session Metrics {
+    302729 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    187520 nanoseconds spent preparing 1 JDBC statements;
+    848179 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    43259 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    3848 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:19:12,383 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-121) Session Metrics {
+    1081807 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    351923 nanoseconds spent preparing 1 JDBC statements;
+    458428 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    87096 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    8056 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:19:12,390 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-121) Session Metrics {
+    539004 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    378187 nanoseconds spent preparing 1 JDBC statements;
+    535054 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    95054 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6472 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:27:27,790 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-10) Session Metrics {
+    427935 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    212851 nanoseconds spent preparing 1 JDBC statements;
+    373725 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    57330 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6233 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-23 23:27:27,795 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-10) Session Metrics {
+    915855 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    190106 nanoseconds spent preparing 1 JDBC statements;
+    353750 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    41271 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    3708 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

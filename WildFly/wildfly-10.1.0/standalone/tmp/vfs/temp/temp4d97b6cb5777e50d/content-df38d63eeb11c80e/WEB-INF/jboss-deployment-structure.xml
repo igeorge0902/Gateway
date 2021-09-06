@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+  <deployment>
+    <exclusions>
+      <module name="org.hibernate" slot="main" />
+      <module name="org.hibernate" slot="search" />
+      <module name="org.hibernate" slot="infinispan" />
+      <module name="org.hibernate" slot="commons-annotations" />
+    </exclusions>
+    <dependencies>
+      <module name="org.hibernate" />
+    </dependencies>
+  </deployment>
+</jboss-deployment-structure>

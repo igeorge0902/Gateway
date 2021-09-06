@@ -1,0 +1,1956 @@
+2020-10-14 00:14:23,373 INFO  [stdout] (default task-15) Cookie filter...
+2020-10-14 00:14:23,376 INFO  [stdout] (default task-15) Path: /book/locations
+2020-10-14 00:14:23,376 INFO  [stdout] (default task-15) Ciphertext filter...
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15) Hibernate: 
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)     select
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.locationId as location1_0_,
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.formatted_address as formatte2_0_,
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.latitude as latitude3_0_,
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.longitude as longitud4_0_,
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.name as name5_0_,
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         location0_.thumbnail as thumbnai6_0_ 
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)     from
+2020-10-14 00:14:23,378 INFO  [stdout] (default task-15)         Location location0_
+2020-10-14 00:14:23,384 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-15) Session Metrics {
+    1224090 nanoseconds spent acquiring 2 JDBC connections;
+    184675 nanoseconds spent releasing 1 JDBC connections;
+    50891 nanoseconds spent preparing 1 JDBC statements;
+    340128 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2536597 nanoseconds spent performing 14 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    41017 nanoseconds spent performing 1 L2C misses;
+    314169 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 0 collections);
+    7043 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:14:28,813 INFO  [stdout] (default task-16) Cookie filter...
+2020-10-14 00:14:28,814 INFO  [stdout] (default task-16) Path: /book/movies/paging
+2020-10-14 00:14:28,814 INFO  [stdout] (default task-16) Ciphertext filter...
+2020-10-14 00:14:28,844 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-16) HHH000248: Starting query cache at region: movies
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16) Hibernate: 
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)     select
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.movieId as movieId1_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.category as category2_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.detail as detail3_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.name as name6_1_,
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)     from
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         Movie movie0_ 
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)     order by
+2020-10-14 00:14:28,845 INFO  [stdout] (default task-16)         movie0_.name asc limit ?
+2020-10-14 00:14:28,856 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-16) Session Metrics {
+    555287 nanoseconds spent acquiring 2 JDBC connections;
+    234730 nanoseconds spent releasing 1 JDBC connections;
+    386642 nanoseconds spent preparing 1 JDBC statements;
+    637144 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    4954592 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    42075 nanoseconds spent performing 1 L2C misses;
+    863731 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5864 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:14:44,769 INFO  [stdout] (default task-20) Cookie filter...
+2020-10-14 00:14:44,769 INFO  [stdout] (default task-20) Path: /book/movies/paging
+2020-10-14 00:14:44,769 INFO  [stdout] (default task-20) Ciphertext filter...
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20) Hibernate: 
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)     select
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.movieId as movieId1_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.category as category2_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.detail as detail3_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.name as name6_1_,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)     from
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         Movie movie0_ 
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)     order by
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         movie0_.name asc limit ?,
+2020-10-14 00:14:44,776 INFO  [stdout] (default task-20)         ?
+2020-10-14 00:14:44,787 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-20) Session Metrics {
+    597098 nanoseconds spent acquiring 2 JDBC connections;
+    225818 nanoseconds spent releasing 1 JDBC connections;
+    220961 nanoseconds spent preparing 1 JDBC statements;
+    633268 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    6625274 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    36104 nanoseconds spent performing 1 L2C misses;
+    520227 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    8228 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:15:24,624 INFO  [stdout] (default task-44) Cookie filter...
+2020-10-14 00:15:24,624 INFO  [stdout] (default task-44) Path: /book/movies/paging
+2020-10-14 00:15:24,624 INFO  [stdout] (default task-44) Ciphertext filter...
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44) Hibernate: 
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)     select
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.movieId as movieId1_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.category as category2_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.detail as detail3_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.name as name6_1_,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)     from
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         Movie movie0_ 
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)     order by
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         movie0_.name asc limit ?,
+2020-10-14 00:15:24,629 INFO  [stdout] (default task-44)         ?
+2020-10-14 00:15:24,639 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-44) Session Metrics {
+    556469 nanoseconds spent acquiring 2 JDBC connections;
+    314127 nanoseconds spent releasing 1 JDBC connections;
+    37518 nanoseconds spent preparing 1 JDBC statements;
+    819955 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    5255070 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    67789 nanoseconds spent performing 1 L2C misses;
+    497227 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7845 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:20:08,515 INFO  [stdout] (default task-71) Cookie filter...
+2020-10-14 00:20:08,516 INFO  [stdout] (default task-71) Path: /book/locations
+2020-10-14 00:20:08,517 INFO  [stdout] (default task-71) Ciphertext filter...
+2020-10-14 00:20:08,518 INFO  [stdout] (default task-71) Hibernate: 
+2020-10-14 00:20:08,518 INFO  [stdout] (default task-71)     select
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.locationId as location1_0_,
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.formatted_address as formatte2_0_,
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.latitude as latitude3_0_,
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.longitude as longitud4_0_,
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.name as name5_0_,
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         location0_.thumbnail as thumbnai6_0_ 
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)     from
+2020-10-14 00:20:08,519 INFO  [stdout] (default task-71)         Location location0_
+2020-10-14 00:20:08,524 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-71) Session Metrics {
+    975071 nanoseconds spent acquiring 2 JDBC connections;
+    209719 nanoseconds spent releasing 1 JDBC connections;
+    35996 nanoseconds spent preparing 1 JDBC statements;
+    464507 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2209562 nanoseconds spent performing 14 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    39347 nanoseconds spent performing 1 L2C misses;
+    146821 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 0 collections);
+    7131 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:20:16,097 INFO  [stdout] (default task-72) Cookie filter...
+2020-10-14 00:20:16,097 INFO  [stdout] (default task-72) Path: /book/movies/search
+2020-10-14 00:20:16,097 INFO  [stdout] (default task-72) Ciphertext filter...
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72) Hibernate: 
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)     select
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.movieId as movieId1_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.category as category2_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.detail as detail3_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.large_picture as large_pi5_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.name as name6_1_0_,
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)     from
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         Movie this_ 
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)     where
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         (
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)             this_.movieId in (
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)                 ?, ?, ?, ?
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)             )
+2020-10-14 00:20:16,156 INFO  [stdout] (default task-72)         )
+2020-10-14 00:20:16,158 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-72) Session Metrics {
+    1099516 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:20:16,693 INFO  [stdout] (default task-73) Cookie filter...
+2020-10-14 00:20:16,693 INFO  [stdout] (default task-73) Path: /book/movies/search
+2020-10-14 00:20:16,693 INFO  [stdout] (default task-73) Ciphertext filter...
+2020-10-14 00:20:16,699 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-73) Session Metrics {
+    384881 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:23:48,449 INFO  [stdout] (default task-84) Cookie filter...
+2020-10-14 00:23:48,449 INFO  [stdout] (default task-84) Path: /book/movies/search
+2020-10-14 00:23:48,449 INFO  [stdout] (default task-84) Ciphertext filter...
+2020-10-14 00:23:48,455 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-84) Session Metrics {
+    570930 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:23:53,193 INFO  [stdout] (default task-85) Cookie filter...
+2020-10-14 00:23:53,193 INFO  [stdout] (default task-85) Path: /book/locations
+2020-10-14 00:23:53,193 INFO  [stdout] (default task-85) Ciphertext filter...
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85) Hibernate: 
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)     select
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.locationId as location1_0_,
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.formatted_address as formatte2_0_,
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.latitude as latitude3_0_,
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.longitude as longitud4_0_,
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.name as name5_0_,
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         location0_.thumbnail as thumbnai6_0_ 
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)     from
+2020-10-14 00:23:53,195 INFO  [stdout] (default task-85)         Location location0_
+2020-10-14 00:23:53,200 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-85) Session Metrics {
+    606265 nanoseconds spent acquiring 2 JDBC connections;
+    205622 nanoseconds spent releasing 1 JDBC connections;
+    40702 nanoseconds spent preparing 1 JDBC statements;
+    421021 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2264395 nanoseconds spent performing 14 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    56092 nanoseconds spent performing 1 L2C misses;
+    113693 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 0 collections);
+    7874 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:24:23,520 INFO  [stdout] (default task-86) Cookie filter...
+2020-10-14 00:24:23,521 INFO  [stdout] (default task-86) Path: /book/admin/addscreen
+2020-10-14 00:24:23,521 INFO  [stdout] (default task-86) Ciphertext filter...
+2020-10-14 00:24:23,522 INFO  [stdout] (default task-86) Hibernate: 
+2020-10-14 00:24:23,522 INFO  [stdout] (default task-86)     select
+2020-10-14 00:24:23,522 INFO  [stdout] (default task-86)         location0_.locationId as location1_0_,
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.formatted_address as formatte2_0_,
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.latitude as latitude3_0_,
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.longitude as longitud4_0_,
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.name as name5_0_,
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.thumbnail as thumbnai6_0_ 
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)     from
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         Location location0_ 
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)     where
+2020-10-14 00:24:23,523 INFO  [stdout] (default task-86)         location0_.name=?
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86) Hibernate: 
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)     select
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.movieId as movieId1_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.category as category2_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.detail as detail3_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.name as name6_1_,
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)     from
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         Movie movie0_ 
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)     where
+2020-10-14 00:24:23,524 INFO  [stdout] (default task-86)         movie0_.name=?
+2020-10-14 00:24:23,526 INFO  [stdout] (default task-86) Hibernate: 
+2020-10-14 00:24:23,526 INFO  [stdout] (default task-86)     select
+2020-10-14 00:24:23,526 INFO  [stdout] (default task-86)         max(venues0_.venuesId) as col_0_0_ 
+2020-10-14 00:24:23,526 INFO  [stdout] (default task-86)     from
+2020-10-14 00:24:23,526 INFO  [stdout] (default task-86)         Venues venues0_
+2020-10-14 00:25:17,483 INFO  [stdout] (default task-87) Cookie filter...
+2020-10-14 00:25:17,484 INFO  [stdout] (default task-87) Path: /book/locations
+2020-10-14 00:25:17,484 INFO  [stdout] (default task-87) Ciphertext filter...
+2020-10-14 00:25:17,492 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-87) Session Metrics {
+    2968659 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    2598718 nanoseconds spent performing 14 L2C hits;
+    42611 nanoseconds spent performing 1 L2C misses;
+    122734 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 0 collections);
+    7678 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:23,974 INFO  [stdout] (default task-88) Cookie filter...
+2020-10-14 00:25:23,974 INFO  [stdout] (default task-88) Path: /book/admin/addscreen
+2020-10-14 00:25:23,974 INFO  [stdout] (default task-88) Ciphertext filter...
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)     select
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.locationId as location1_0_,
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.formatted_address as formatte2_0_,
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.latitude as latitude3_0_,
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.longitude as longitud4_0_,
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.name as name5_0_,
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.thumbnail as thumbnai6_0_ 
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)     from
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         Location location0_ 
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)     where
+2020-10-14 00:25:23,976 INFO  [stdout] (default task-88)         location0_.name=?
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)     select
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.movieId as movieId1_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.category as category2_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.detail as detail3_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.name as name6_1_,
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)     from
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         Movie movie0_ 
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)     where
+2020-10-14 00:25:23,978 INFO  [stdout] (default task-88)         movie0_.name=?
+2020-10-14 00:25:23,979 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,979 INFO  [stdout] (default task-88)     select
+2020-10-14 00:25:23,979 INFO  [stdout] (default task-88)         max(venues0_.venuesId) as col_0_0_ 
+2020-10-14 00:25:23,979 INFO  [stdout] (default task-88)     from
+2020-10-14 00:25:23,979 INFO  [stdout] (default task-88)         Venues venues0_
+2020-10-14 00:25:23,980 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,980 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,980 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,980 INFO  [stdout] (default task-88)         Venues
+2020-10-14 00:25:23,981 INFO  [stdout] (default task-88)         (address, contact, location_locationId, name, screen_screenId, venues_picture) 
+2020-10-14 00:25:23,981 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,981 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,982 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,982 INFO  [stdout] (default task-88)     select
+2020-10-14 00:25:23,982 INFO  [stdout] (default task-88)         max(screeningd0_.screeningDatesId) as col_0_0_ 
+2020-10-14 00:25:23,982 INFO  [stdout] (default task-88)     from
+2020-10-14 00:25:23,982 INFO  [stdout] (default task-88)         ScreeningDates screeningd0_
+2020-10-14 00:25:23,983 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)         ScreeningDates
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)         (movieId, screeningDate, venues_venuesId) 
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,984 INFO  [stdout] (default task-88)         (?, ?, ?)
+2020-10-14 00:25:23,985 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,985 INFO  [stdout] (default task-88)     select
+2020-10-14 00:25:23,985 INFO  [stdout] (default task-88)         max(seats0_.seatId) as col_0_0_ 
+2020-10-14 00:25:23,985 INFO  [stdout] (default task-88)     from
+2020-10-14 00:25:23,985 INFO  [stdout] (default task-88)         Seats seats0_
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)         Screen
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)         (movie_movieId, screeningDates_screeningDatesId, seats, screenId) 
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,986 INFO  [stdout] (default task-88)         (?, ?, ?, ?)
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,987 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,989 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,990 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,991 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,992 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,993 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,994 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,995 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,996 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,997 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,998 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:23,999 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,000 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,001 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,002 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,003 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,004 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,005 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,006 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,007 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,008 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,009 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,010 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,011 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,012 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,012 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,012 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,012 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,012 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,013 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,014 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,015 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,016 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,017 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,018 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,019 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,020 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,021 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,022 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,023 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,024 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,025 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,026 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,027 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,028 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,029 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,030 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,031 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,032 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,033 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,034 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,035 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,036 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,037 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,038 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,039 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,040 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,041 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,042 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,043 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,044 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,045 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,046 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,047 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,048 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,049 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,050 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,051 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,052 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,056 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,057 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,058 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,059 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,060 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,061 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,062 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,063 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,064 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,065 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,066 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,067 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,068 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,069 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,071 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,072 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,073 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,074 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)     insert 
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)     into
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)         Seats
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)         (isReserved, price, screen_screenId, seatNumber, seatRow, tax) 
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)     values
+2020-10-14 00:25:24,075 INFO  [stdout] (default task-88)         (?, ?, ?, ?, ?, ?)
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88) Hibernate: 
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)     update
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         Venues 
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)     set
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         address=?,
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         contact=?,
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         location_locationId=?,
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         name=?,
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         screen_screenId=?,
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         venues_picture=? 
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)     where
+2020-10-14 00:25:24,076 INFO  [stdout] (default task-88)         venuesId=?
+2020-10-14 00:25:24,078 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-88) Session Metrics {
+    367950 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    3929734 nanoseconds spent preparing 119 JDBC statements;
+    50141060 nanoseconds spent executing 119 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    5542789 nanoseconds spent performing 124 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    2183472 nanoseconds spent executing 1 flushes (flushing a total of 115 entities and 2 collections);
+    16978 nanoseconds spent executing 5 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:52,197 INFO  [stdout] (default task-89) Cookie filter...
+2020-10-14 00:25:52,198 INFO  [stdout] (default task-89) Path: /book/movies/search
+2020-10-14 00:25:52,198 INFO  [stdout] (default task-89) Ciphertext filter...
+2020-10-14 00:25:52,204 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-89) Session Metrics {
+    1270398 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:52,743 INFO  [stdout] (default task-90) Cookie filter...
+2020-10-14 00:25:52,743 INFO  [stdout] (default task-90) Path: /book/movies/search
+2020-10-14 00:25:52,743 INFO  [stdout] (default task-90) Ciphertext filter...
+2020-10-14 00:25:52,748 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-90) Session Metrics {
+    404542 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:53,241 INFO  [stdout] (default task-91) Cookie filter...
+2020-10-14 00:25:53,241 INFO  [stdout] (default task-91) Path: /book/movies/search
+2020-10-14 00:25:53,241 INFO  [stdout] (default task-91) Ciphertext filter...
+2020-10-14 00:25:53,246 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-91) Session Metrics {
+    412640 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:53,367 INFO  [stdout] (default task-92) Cookie filter...
+2020-10-14 00:25:53,367 INFO  [stdout] (default task-92) Path: /book/movies/search
+2020-10-14 00:25:53,367 INFO  [stdout] (default task-92) Ciphertext filter...
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92) Hibernate: 
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)     select
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.movieId as movieId1_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.category as category2_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.detail as detail3_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.iMDB_url as iMDB_url4_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.large_picture as large_pi5_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.name as name6_1_0_,
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         this_.thumbnail_picture as thumbnai7_1_0_ 
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)     from
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         Movie this_ 
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)     where
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         (
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)             this_.movieId in (
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)             )
+2020-10-14 00:25:53,374 INFO  [stdout] (default task-92)         )
+2020-10-14 00:25:53,377 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-92) Session Metrics {
+    338946 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:25:55,274 INFO  [stdout] (default task-94) Cookie filter...
+2020-10-14 00:25:55,274 INFO  [stdout] (default task-94) Path: /book/venue/1027
+2020-10-14 00:25:55,275 INFO  [stdout] (default task-94) Ciphertext filter...
+2020-10-14 00:25:55,287 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-94) HHH000248: Starting query cache at region: venues
+2020-10-14 00:25:55,287 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,287 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,287 INFO  [stdout] (default task-94)         venues0_.venuesId as venuesId1_7_,
+2020-10-14 00:25:55,287 INFO  [stdout] (default task-94)         venues0_.address as address2_7_,
+2020-10-14 00:25:55,287 INFO  [stdout] (default task-94)         venues0_.contact as contact3_7_,
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         venues0_.location_locationId as location7_7_,
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         venues0_.name as name4_7_,
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         venues0_.screen_screenId as screen_s5_7_,
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         venues0_.venues_picture as venues_p6_7_ 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         Venues venues0_ 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)     inner join
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         Screen screen1_ 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)             on venues0_.screen_screenId=screen1_.screenId 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)     inner join
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         Movie movie2_ 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)             on screen1_.movie_movieId=movie2_.movieId 
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,288 INFO  [stdout] (default task-94)         movieId=?
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,290 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,291 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,304 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,305 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,314 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,315 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,321 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,322 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,329 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,329 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,329 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,329 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,329 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,330 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,336 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,337 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94) Hibernate: 
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)     select
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.category as category2_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.name as name6_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.address as address2_7_3_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.name as name4_7_3_,
+2020-10-14 00:25:55,347 INFO  [stdout] (default task-94)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.price as price3_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     from
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         Screen screen0_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         Movie movie1_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         ScreeningDates screeningd2_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         Venues venues3_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     left outer join
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         Seats seat4_ 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)     where
+2020-10-14 00:25:55,348 INFO  [stdout] (default task-94)         screen0_.screenId=?
+2020-10-14 00:25:55,363 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-94) Session Metrics {
+    567607 nanoseconds spent acquiring 2 JDBC connections;
+    206385 nanoseconds spent releasing 1 JDBC connections;
+    708609 nanoseconds spent preparing 8 JDBC statements;
+    6571144 nanoseconds spent executing 8 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    2496246 nanoseconds spent performing 9 L2C puts;
+    892136 nanoseconds spent performing 4 L2C hits;
+    43888 nanoseconds spent performing 1 L2C misses;
+    4172316 nanoseconds spent executing 1 flushes (flushing a total of 576 entities and 8 collections);
+    6696 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:26:06,780 INFO  [stdout] (default task-99) Cookie filter...
+2020-10-14 00:26:06,780 INFO  [stdout] (default task-99) Path: /book/dates/148/1027
+2020-10-14 00:26:06,780 INFO  [stdout] (default task-99) Ciphertext filter...
+2020-10-14 00:26:06,786 INFO  [stdout] (default task-99) Hibernate: 
+2020-10-14 00:26:06,786 INFO  [stdout] (default task-99)     select
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         screeningd0_.movieId as movieId2_4_,
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         screeningd0_.screeningDate as screenin3_4_,
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)     from
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         ScreeningDates screeningd0_ 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)     inner join
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         Venues venues1_ 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)     inner join
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         Screen screen2_ 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)             on venues1_.screen_screenId=screen2_.screenId 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)     where
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         movieId=? 
+2020-10-14 00:26:06,787 INFO  [stdout] (default task-99)         and venuesId=?
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99) Hibernate: 
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)     select
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.category as category2_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.name as name6_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.address as address2_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.name as name4_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.price as price3_5_5_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:26:06,789 INFO  [stdout] (default task-99)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     from
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         Screen screen0_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     left outer join
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         Movie movie1_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     left outer join
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         ScreeningDates screeningd2_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     left outer join
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         Venues venues3_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     left outer join
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         Seats seat4_ 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)     where
+2020-10-14 00:26:06,790 INFO  [stdout] (default task-99)         screen0_.screenId=?
+2020-10-14 00:26:06,798 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-99) Session Metrics {
+    413400 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    224407 nanoseconds spent preparing 2 JDBC statements;
+    1345891 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    67868 nanoseconds spent performing 1 L2C puts;
+    279274 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    844280 nanoseconds spent executing 1 flushes (flushing a total of 165 entities and 2 collections);
+    7579 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:26:12,337 INFO  [stdout] (default task-100) Cookie filter...
+2020-10-14 00:26:12,337 INFO  [stdout] (default task-100) Path: /book/dates/152/1027
+2020-10-14 00:26:12,337 INFO  [stdout] (default task-100) Ciphertext filter...
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100) Hibernate: 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)     select
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         screeningd0_.movieId as movieId2_4_,
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         screeningd0_.screeningDate as screenin3_4_,
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)     from
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         ScreeningDates screeningd0_ 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)     inner join
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         Venues venues1_ 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)     inner join
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         Screen screen2_ 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)             on venues1_.screen_screenId=screen2_.screenId 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)     where
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         movieId=? 
+2020-10-14 00:26:12,339 INFO  [stdout] (default task-100)         and venuesId=?
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100) Hibernate: 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     select
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.category as category2_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.name as name6_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.address as address2_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.name as name4_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.price as price3_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     from
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         Screen screen0_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     left outer join
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         Movie movie1_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     left outer join
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         ScreeningDates screeningd2_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     left outer join
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         Venues venues3_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     left outer join
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         Seats seat4_ 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)     where
+2020-10-14 00:26:12,341 INFO  [stdout] (default task-100)         screen0_.screenId=?
+2020-10-14 00:26:12,349 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-100) Session Metrics {
+    414108 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    71443 nanoseconds spent preparing 2 JDBC statements;
+    1420748 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    72533 nanoseconds spent performing 1 L2C puts;
+    95209 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    765256 nanoseconds spent executing 1 flushes (flushing a total of 115 entities and 2 collections);
+    9203 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 00:26:16,474 INFO  [stdout] (default task-101) Cookie filter...
+2020-10-14 00:26:16,475 INFO  [stdout] (default task-101) Path: /book/dates/148/1027
+2020-10-14 00:26:16,475 INFO  [stdout] (default task-101) Ciphertext filter...
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101) Hibernate: 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)     select
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         screeningd0_.movieId as movieId2_4_,
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         screeningd0_.screeningDate as screenin3_4_,
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)     from
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         ScreeningDates screeningd0_ 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)     inner join
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         Venues venues1_ 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)     inner join
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         Screen screen2_ 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)             on venues1_.screen_screenId=screen2_.screenId 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)     where
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         movieId=? 
+2020-10-14 00:26:16,479 INFO  [stdout] (default task-101)         and venuesId=?
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101) Hibernate: 
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)     select
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screen0_.screenId as screenId1_3_0_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screen0_.seats as seats2_3_0_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.movieId as movieId1_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.category as category2_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.detail as detail3_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.iMDB_url as iMDB_url4_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.large_picture as large_pi5_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.name as name6_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         movie1_.thumbnail_picture as thumbnai7_1_1_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screeningd2_.movieId as movieId2_4_2_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.venuesId as venuesId1_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.address as address2_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.contact as contact3_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.location_locationId as location7_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.name as name4_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         venues3_.venues_picture as venues_p6_7_3_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.seatId as seatId1_5_4_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.seatId as seatId1_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.isReserved as isReserv2_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.price as price3_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.seatRow as seatRow5_5_5_,
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         seat4_.tax as tax6_5_5_ 
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)     from
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         Screen screen0_ 
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)     left outer join
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         Movie movie1_ 
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)             on screen0_.movie_movieId=movie1_.movieId 
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)     left outer join
+2020-10-14 00:26:16,481 INFO  [stdout] (default task-101)         ScreeningDates screeningd2_ 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)     left outer join
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)         Venues venues3_ 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)     left outer join
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)         Seats seat4_ 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)             on screen0_.screenId=seat4_.screen_screenId 
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)     where
+2020-10-14 00:26:16,482 INFO  [stdout] (default task-101)         screen0_.screenId=?
+2020-10-14 00:26:16,488 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-101) Session Metrics {
+    3156021 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    66952 nanoseconds spent preparing 2 JDBC statements;
+    1374793 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    54540 nanoseconds spent performing 1 L2C puts;
+    95318 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    741812 nanoseconds spent executing 1 flushes (flushing a total of 165 entities and 2 collections);
+    8135 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:36:21,571 INFO  [stdout] (default task-103) Cookie filter...
+2020-10-14 19:36:21,574 INFO  [stdout] (default task-103) Path: /book/movies/paging
+2020-10-14 19:36:21,574 INFO  [stdout] (default task-103) Ciphertext filter...
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103) Hibernate: 
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)     select
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.movieId as movieId1_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.category as category2_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.detail as detail3_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.iMDB_url as iMDB_url4_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.large_picture as large_pi5_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.name as name6_1_,
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2020-10-14 19:36:21,596 INFO  [stdout] (default task-103)     from
+2020-10-14 19:36:21,661 INFO  [stdout] (default task-103)         Movie movie0_ 
+2020-10-14 19:36:21,661 INFO  [stdout] (default task-103)     order by
+2020-10-14 19:36:21,661 INFO  [stdout] (default task-103)         movie0_.name asc limit ?
+2020-10-14 19:36:21,690 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-103) Session Metrics {
+    3826542 nanoseconds spent acquiring 2 JDBC connections;
+    884334 nanoseconds spent releasing 1 JDBC connections;
+    1687217 nanoseconds spent preparing 1 JDBC statements;
+    2602751 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    10524099 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    970960 nanoseconds spent performing 1 L2C misses;
+    2909394 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    34447 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:36:44,608 INFO  [org.hibernate.dialect.Dialect] (default task-111) HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2020-10-14 19:36:44,621 INFO  [org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl] (default task-111) HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2020-10-14 19:36:44,625 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-111) Envers integration enabled? : true
+2020-10-14 19:36:44,765 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (default task-111) HHH000397: Using ASTQueryTranslatorFactory
+2020-10-14 19:36:44,789 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-111) Session Metrics {
+    529145 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    16628149 nanoseconds spent preparing 1 JDBC statements;
+    1862820 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    75542 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5377 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:36:44,795 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-111) Session Metrics {
+    303110 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    506151 nanoseconds spent preparing 1 JDBC statements;
+    784960 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    77448 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5112 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:50:08,711 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-15) Session Metrics {
+    602518 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    614752 nanoseconds spent preparing 1 JDBC statements;
+    501566 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    71968 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5233 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:50:08,716 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-15) Session Metrics {
+    415759 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    256825 nanoseconds spent preparing 1 JDBC statements;
+    463439 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    81717 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    3925 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:52:03,529 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-19) Session Metrics {
+    337663 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    185677 nanoseconds spent preparing 1 JDBC statements;
+    363418 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    55314 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5471 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:52:03,534 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-19) Session Metrics {
+    380709 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    205672 nanoseconds spent preparing 1 JDBC statements;
+    479574 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    73462 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5475 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:58:01,639 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-22) Session Metrics {
+    339903 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    186520 nanoseconds spent preparing 1 JDBC statements;
+    473748 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    59885 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    5617 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-10-14 19:58:01,646 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-22) Session Metrics {
+    2322532 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    751687 nanoseconds spent preparing 1 JDBC statements;
+    550784 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58466 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    6442 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

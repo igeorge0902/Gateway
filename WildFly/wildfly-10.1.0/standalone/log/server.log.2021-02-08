@@ -1,0 +1,163 @@
+2021-02-08 10:27:02,795 INFO  [stdout] (default task-21) Cookie filter...
+2021-02-08 10:27:02,800 INFO  [stdout] (default task-21) Path: /book/movies/paging
+2021-02-08 10:27:02,801 INFO  [stdout] (default task-21) Ciphertext filter...
+2021-02-08 10:27:02,883 INFO  [org.hibernate.cache.internal.StandardQueryCache] (default task-21) HHH000248: Starting query cache at region: movies
+2021-02-08 10:27:02,885 INFO  [stdout] (default task-21) Hibernate: 
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)     select
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.movieId as movieId1_1_,
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.category as category2_1_,
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.detail as detail3_1_,
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.large_picture as large_pi5_1_,
+2021-02-08 10:27:02,886 INFO  [stdout] (default task-21)         movie0_.name as name6_1_,
+2021-02-08 10:27:02,929 INFO  [stdout] (default task-21)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-02-08 10:27:02,929 INFO  [stdout] (default task-21)     from
+2021-02-08 10:27:02,929 INFO  [stdout] (default task-21)         Movie movie0_ 
+2021-02-08 10:27:02,929 INFO  [stdout] (default task-21)     order by
+2021-02-08 10:27:02,930 INFO  [stdout] (default task-21)         movie0_.name asc limit ?
+2021-02-08 10:27:02,968 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-21) Session Metrics {
+    13897085 nanoseconds spent acquiring 2 JDBC connections;
+    396795 nanoseconds spent releasing 1 JDBC connections;
+    1889183 nanoseconds spent preparing 1 JDBC statements;
+    15928044 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    10585524 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    741276 nanoseconds spent performing 1 L2C misses;
+    1872402 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    15538 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-02-08 10:35:15,136 INFO  [stdout] (default task-57) Cookie filter...
+2021-02-08 10:35:15,137 INFO  [stdout] (default task-57) Path: /book/locations
+2021-02-08 10:35:15,137 INFO  [stdout] (default task-57) Ciphertext filter...
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57) Hibernate: 
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)     select
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.locationId as location1_0_,
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.formatted_address as formatte2_0_,
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.latitude as latitude3_0_,
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.longitude as longitud4_0_,
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.name as name5_0_,
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)         location0_.thumbnail as thumbnai6_0_ 
+2021-02-08 10:35:15,139 INFO  [stdout] (default task-57)     from
+2021-02-08 10:35:15,140 INFO  [stdout] (default task-57)         Location location0_
+2021-02-08 10:35:15,149 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-57) Session Metrics {
+    698531 nanoseconds spent acquiring 2 JDBC connections;
+    241578 nanoseconds spent releasing 1 JDBC connections;
+    306999 nanoseconds spent preparing 1 JDBC statements;
+    1930399 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    3465946 nanoseconds spent performing 14 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    88586 nanoseconds spent performing 1 L2C misses;
+    591035 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 13 collections);
+    7255 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-02-08 11:35:27,977 INFO  [stdout] (default task-76) Cookie filter...
+2021-02-08 11:35:27,978 INFO  [stdout] (default task-76) Path: /book/movies/paging
+2021-02-08 11:35:27,978 INFO  [stdout] (default task-76) Ciphertext filter...
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76) Hibernate: 
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)     select
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.movieId as movieId1_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.category as category2_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.detail as detail3_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.large_picture as large_pi5_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.name as name6_1_,
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)     from
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         Movie movie0_ 
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)     order by
+2021-02-08 11:35:27,987 INFO  [stdout] (default task-76)         movie0_.name asc limit ?
+2021-02-08 11:35:28,001 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-76) Session Metrics {
+    574767 nanoseconds spent acquiring 2 JDBC connections;
+    252264 nanoseconds spent releasing 1 JDBC connections;
+    62242 nanoseconds spent preparing 1 JDBC statements;
+    854270 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    6985475 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    52033 nanoseconds spent performing 1 L2C misses;
+    1180799 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5678 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-02-08 12:06:51,833 INFO  [stdout] (default task-114) Cookie filter...
+2021-02-08 12:06:51,835 INFO  [stdout] (default task-114) Path: /book/locations
+2021-02-08 12:06:51,835 INFO  [stdout] (default task-114) Ciphertext filter...
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114) Hibernate: 
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)     select
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.locationId as location1_0_,
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.formatted_address as formatte2_0_,
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.latitude as latitude3_0_,
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.longitude as longitud4_0_,
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.name as name5_0_,
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         location0_.thumbnail as thumbnai6_0_ 
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)     from
+2021-02-08 12:06:51,839 INFO  [stdout] (default task-114)         Location location0_
+2021-02-08 12:06:51,848 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-114) Session Metrics {
+    2400083 nanoseconds spent acquiring 2 JDBC connections;
+    215205 nanoseconds spent releasing 1 JDBC connections;
+    89613 nanoseconds spent preparing 1 JDBC statements;
+    527729 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    4343225 nanoseconds spent performing 14 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    58424 nanoseconds spent performing 1 L2C misses;
+    614153 nanoseconds spent executing 1 flushes (flushing a total of 13 entities and 13 collections);
+    8288 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-02-08 13:02:27,465 INFO  [stdout] (default task-115) Cookie filter...
+2021-02-08 13:02:27,466 INFO  [stdout] (default task-115) Path: /book/movies/paging
+2021-02-08 13:02:27,466 INFO  [stdout] (default task-115) Ciphertext filter...
+2021-02-08 13:02:27,471 INFO  [stdout] (default task-115) Hibernate: 
+2021-02-08 13:02:27,471 INFO  [stdout] (default task-115)     select
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.movieId as movieId1_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.category as category2_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.detail as detail3_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.large_picture as large_pi5_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.name as name6_1_,
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)     from
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         Movie movie0_ 
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)     order by
+2021-02-08 13:02:27,472 INFO  [stdout] (default task-115)         movie0_.name asc limit ?
+2021-02-08 13:02:27,485 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-115) Session Metrics {
+    1412865 nanoseconds spent acquiring 2 JDBC connections;
+    179795 nanoseconds spent releasing 1 JDBC connections;
+    76889 nanoseconds spent preparing 1 JDBC statements;
+    1098699 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    6848630 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    80999 nanoseconds spent performing 1 L2C misses;
+    988377 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    5647 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-02-08 14:03:23,218 INFO  [stdout] (default task-26) Cookie filter...
+2021-02-08 14:03:23,219 INFO  [stdout] (default task-26) Path: /book/movies/paging
+2021-02-08 14:03:23,219 INFO  [stdout] (default task-26) Ciphertext filter...
+2021-02-08 14:03:23,224 INFO  [stdout] (default task-26) Hibernate: 
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)     select
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.movieId as movieId1_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.category as category2_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.detail as detail3_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.iMDB_url as iMDB_url4_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.large_picture as large_pi5_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.name as name6_1_,
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.thumbnail_picture as thumbnai7_1_ 
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)     from
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         Movie movie0_ 
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)     order by
+2021-02-08 14:03:23,225 INFO  [stdout] (default task-26)         movie0_.name asc limit ?
+2021-02-08 14:03:23,237 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-26) Session Metrics {
+    1467095 nanoseconds spent acquiring 2 JDBC connections;
+    255614 nanoseconds spent releasing 1 JDBC connections;
+    63934 nanoseconds spent preparing 1 JDBC statements;
+    756956 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    6077115 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    45380 nanoseconds spent performing 1 L2C misses;
+    732678 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    7164 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

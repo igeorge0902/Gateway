@@ -1,0 +1,2013 @@
+2020-04-26 02:25:00,024 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-110) SQL Error: 0, SQLState: 08S01
+2020-04-26 02:25:00,036 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-110) The last packet successfully received from the server was 77,926,426 milliseconds ago.  The last packet sent successfully to the server was 77,926,426 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2020-04-26 02:25:05,074 INFO  [stdout] (default task-117) Hibernate: 
+2020-04-26 02:25:05,074 INFO  [stdout] (default task-117)     select
+2020-04-26 02:25:05,074 INFO  [stdout] (default task-117)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:25:05,074 INFO  [stdout] (default task-117)         movie0_.detail as detail2_1_,
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         movie0_.name as name5_1_,
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)     from
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         Movie movie0_ 
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)     order by
+2020-04-26 02:25:05,075 INFO  [stdout] (default task-117)         movie0_.name asc limit ?
+2020-04-26 02:25:05,092 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-117) SQL Error: 0, SQLState: 08S01
+2020-04-26 02:25:05,092 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-117) The last packet successfully received from the server was 77,970,029 milliseconds ago.  The last packet sent successfully to the server was 77,970,030 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+2020-04-26 02:25:05,092 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-117) Session Metrics {
+    2891241 nanoseconds spent acquiring 2 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    620139 nanoseconds spent preparing 1 JDBC statements;
+    2227919 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    7489385 nanoseconds spent performing 31 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    398286 nanoseconds spent performing 1 L2C misses;
+    1384899 nanoseconds spent executing 1 flushes (flushing a total of 30 entities and 30 collections);
+    13977 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:10,545 INFO  [stdout] (default task-18) Hibernate: 
+2020-04-26 02:27:10,545 INFO  [stdout] (default task-18)     select
+2020-04-26 02:27:10,545 INFO  [stdout] (default task-18)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:27:10,545 INFO  [stdout] (default task-18)         movie0_.detail as detail2_1_,
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         movie0_.name as name5_1_,
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)     from
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         Movie movie0_ 
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)     where
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         category=? 
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)     order by
+2020-04-26 02:27:10,546 INFO  [stdout] (default task-18)         movie0_.name asc
+2020-04-26 02:27:10,554 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-18) Session Metrics {
+    2274152 nanoseconds spent acquiring 2 JDBC connections;
+    229988 nanoseconds spent releasing 1 JDBC connections;
+    309584 nanoseconds spent preparing 1 JDBC statements;
+    4968727 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    842150 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    28262 nanoseconds spent performing 1 L2C misses;
+    159991 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    6163 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20) Hibernate: 
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)     select
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.detail as detail2_1_,
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.name as name5_1_,
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)     from
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)         Movie movie0_ 
+2020-04-26 02:27:15,241 INFO  [stdout] (default task-20)     where
+2020-04-26 02:27:15,242 INFO  [stdout] (default task-20)         category=? 
+2020-04-26 02:27:15,242 INFO  [stdout] (default task-20)     order by
+2020-04-26 02:27:15,242 INFO  [stdout] (default task-20)         movie0_.name asc
+2020-04-26 02:27:15,244 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-20) Session Metrics {
+    560848 nanoseconds spent acquiring 2 JDBC connections;
+    189966 nanoseconds spent releasing 1 JDBC connections;
+    86891 nanoseconds spent preparing 1 JDBC statements;
+    586869 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    294937 nanoseconds spent performing 2 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    28776 nanoseconds spent performing 1 L2C misses;
+    158867 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    5807 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21) Hibernate: 
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)     select
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.detail as detail2_1_,
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.name as name5_1_,
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)     from
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         Movie movie0_ 
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)     where
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         category=? 
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)     order by
+2020-04-26 02:27:20,308 INFO  [stdout] (default task-21)         movie0_.name asc
+2020-04-26 02:27:20,311 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-21) Session Metrics {
+    481137 nanoseconds spent acquiring 2 JDBC connections;
+    201323 nanoseconds spent releasing 1 JDBC connections;
+    50562 nanoseconds spent preparing 1 JDBC statements;
+    481440 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    511233 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    27153 nanoseconds spent performing 1 L2C misses;
+    135913 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5902 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:37,673 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-24) Session Metrics {
+    568404 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    1072693 nanoseconds spent performing 3 L2C hits;
+    340313 nanoseconds spent performing 1 L2C misses;
+    137513 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    14071 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:44,119 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-26) Session Metrics {
+    544978 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    739342 nanoseconds spent performing 2 L2C hits;
+    31242 nanoseconds spent performing 1 L2C misses;
+    109329 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    5544 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:46,933 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-27) Session Metrics {
+    292437 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    1326459 nanoseconds spent performing 3 L2C hits;
+    35408 nanoseconds spent performing 1 L2C misses;
+    137804 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5744 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:27:49,771 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-29) Session Metrics {
+    373192 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    75180 nanoseconds spent performing 3 L2C hits;
+    27640 nanoseconds spent performing 1 L2C misses;
+    141450 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5839 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:10,268 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-30) Session Metrics {
+    646114 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    119208 nanoseconds spent performing 3 L2C hits;
+    36001 nanoseconds spent performing 1 L2C misses;
+    173032 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    7242 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:12,840 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-28) Session Metrics {
+    385072 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    65654 nanoseconds spent performing 2 L2C hits;
+    31257 nanoseconds spent performing 1 L2C misses;
+    172412 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    8424 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:15,694 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-31) Session Metrics {
+    301713 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    96100 nanoseconds spent performing 3 L2C hits;
+    41897 nanoseconds spent performing 1 L2C misses;
+    165524 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    7321 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17) Hibernate: 
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)     select
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.venuesId as venuesId1_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.address as address2_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.contact as contact3_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.location_locationId as location7_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.name as name4_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.screen_screenId as screen_s5_7_,
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         venues0_.venues_picture as venues_p6_7_ 
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)     from
+2020-04-26 02:28:19,381 INFO  [stdout] (default task-17)         Venues venues0_ 
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)     inner join
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)         Screen screen1_ 
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)             on venues0_.screen_screenId=screen1_.screenId 
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)     inner join
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)         Movie movie2_ 
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)             on screen1_.movie_movieId=movie2_.movieId 
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)     where
+2020-04-26 02:28:19,382 INFO  [stdout] (default task-17)         movieId=?
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17) Hibernate: 
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)     select
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.locationId as location1_0_0_,
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.formatted_address as formatte2_0_0_,
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.latitude as latitude3_0_0_,
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.longitude as longitud4_0_0_,
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.name as name5_0_0_ 
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)     from
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         Location location0_ 
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)     where
+2020-04-26 02:28:19,385 INFO  [stdout] (default task-17)         location0_.locationId=?
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17) Hibernate: 
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)     select
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.name as name5_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         venues3_.address as address2_7_3_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:28:19,389 INFO  [stdout] (default task-17)         venues3_.name as name4_7_3_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.price as price3_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     from
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         Screen screen0_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     left outer join
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         Movie movie1_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     left outer join
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         ScreeningDates screeningd2_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     left outer join
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         Venues venues3_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     left outer join
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         Seats seat4_ 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)     where
+2020-04-26 02:28:19,390 INFO  [stdout] (default task-17)         screen0_.screenId=?
+2020-04-26 02:28:19,398 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-17) Session Metrics {
+    495561 nanoseconds spent acquiring 2 JDBC connections;
+    180545 nanoseconds spent releasing 1 JDBC connections;
+    896713 nanoseconds spent preparing 3 JDBC statements;
+    5893590 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    831461 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    255217 nanoseconds spent performing 2 L2C misses;
+    627966 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    6180 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33) Hibernate: 
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)     select
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)     from
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         ScreeningDates screeningd0_ 
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)     inner join
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)         Venues venues1_ 
+2020-04-26 02:28:21,363 INFO  [stdout] (default task-33)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)     inner join
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)         Screen screen2_ 
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)     where
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)         movieId=? 
+2020-04-26 02:28:21,364 INFO  [stdout] (default task-33)         and venuesId=?
+2020-04-26 02:28:21,368 INFO  [stdout] (default task-33) Hibernate: 
+2020-04-26 02:28:21,368 INFO  [stdout] (default task-33)     select
+2020-04-26 02:28:21,368 INFO  [stdout] (default task-33)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:28:21,368 INFO  [stdout] (default task-33)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.name as name5_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.address as address2_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.name as name4_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:28:21,369 INFO  [stdout] (default task-33)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         seat4_.price as price3_5_5_,
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)     from
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         Screen screen0_ 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)     left outer join
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         Movie movie1_ 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)     left outer join
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)         ScreeningDates screeningd2_ 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:28:21,370 INFO  [stdout] (default task-33)     left outer join
+2020-04-26 02:28:21,371 INFO  [stdout] (default task-33)         Venues venues3_ 
+2020-04-26 02:28:21,371 INFO  [stdout] (default task-33)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:28:21,371 INFO  [stdout] (default task-33)     left outer join
+2020-04-26 02:28:21,374 INFO  [stdout] (default task-33)         Seats seat4_ 
+2020-04-26 02:28:21,374 INFO  [stdout] (default task-33)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:28:21,374 INFO  [stdout] (default task-33)     where
+2020-04-26 02:28:21,374 INFO  [stdout] (default task-33)         screen0_.screenId=?
+2020-04-26 02:28:21,380 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-33) Session Metrics {
+    455890 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    985644 nanoseconds spent preparing 2 JDBC statements;
+    3097760 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    68331 nanoseconds spent performing 1 L2C puts;
+    1081255 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    649356 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    7179 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:28:29,447 INFO  [stdout] (default task-34) Hibernate: 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)     select
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.seatId as seatId1_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.price as price3_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         seat3_.tax as tax6_5_ 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)     from
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         ScreeningDates screeningd0_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         Venues venues1_,
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         Screen screen2_ 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)     inner join
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         Seats seat3_ 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)     where
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:28:29,448 INFO  [stdout] (default task-34)         and screeningDatesId=?
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34) Hibernate: 
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)     select
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.name as name5_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.address as address2_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.name as name4_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:28:29,453 INFO  [stdout] (default task-34)         seat4_.price as price3_5_5_,
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     from
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         Screen screen0_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     left outer join
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         Movie movie1_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     left outer join
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         ScreeningDates screeningd2_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     left outer join
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         Venues venues3_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     left outer join
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         Seats seat4_ 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)     where
+2020-04-26 02:28:29,454 INFO  [stdout] (default task-34)         screen0_.screenId=?
+2020-04-26 02:28:29,457 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-34) Session Metrics {
+    321562 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    368027 nanoseconds spent preparing 2 JDBC statements;
+    3816392 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    59976 nanoseconds spent performing 2 L2C puts;
+    82718 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    410714 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    6611 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35) Hibernate: 
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)     select
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)         movie0_.detail as detail2_1_,
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:31:33,402 INFO  [stdout] (default task-35)         movie0_.name as name5_1_,
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)     from
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)         Movie movie0_ 
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)     where
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)         category=? 
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)     order by
+2020-04-26 02:31:33,403 INFO  [stdout] (default task-35)         movie0_.name asc
+2020-04-26 02:31:33,406 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-35) Session Metrics {
+    1624400 nanoseconds spent acquiring 2 JDBC connections;
+    260379 nanoseconds spent releasing 1 JDBC connections;
+    76626 nanoseconds spent preparing 1 JDBC statements;
+    613651 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    348455 nanoseconds spent performing 2 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    27570 nanoseconds spent performing 1 L2C misses;
+    119286 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    7385 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36) Hibernate: 
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)     select
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.detail as detail2_1_,
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.name as name5_1_,
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)     from
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         Movie movie0_ 
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)     where
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         category=? 
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)     order by
+2020-04-26 02:31:36,199 INFO  [stdout] (default task-36)         movie0_.name asc
+2020-04-26 02:31:36,202 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-36) Session Metrics {
+    542409 nanoseconds spent acquiring 2 JDBC connections;
+    215998 nanoseconds spent releasing 1 JDBC connections;
+    60808 nanoseconds spent preparing 1 JDBC statements;
+    529507 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    520405 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    22008 nanoseconds spent performing 1 L2C misses;
+    126325 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5722 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:31:38,178 INFO  [stdout] (default task-37) Hibernate: 
+2020-04-26 02:31:38,178 INFO  [stdout] (default task-37)     select
+2020-04-26 02:31:38,178 INFO  [stdout] (default task-37)         venues0_.venuesId as venuesId1_7_,
+2020-04-26 02:31:38,178 INFO  [stdout] (default task-37)         venues0_.address as address2_7_,
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         venues0_.contact as contact3_7_,
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         venues0_.location_locationId as location7_7_,
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         venues0_.name as name4_7_,
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         venues0_.screen_screenId as screen_s5_7_,
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         venues0_.venues_picture as venues_p6_7_ 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)     from
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         Venues venues0_ 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)     inner join
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         Screen screen1_ 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)             on venues0_.screen_screenId=screen1_.screenId 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)     inner join
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         Movie movie2_ 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)             on screen1_.movie_movieId=movie2_.movieId 
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)     where
+2020-04-26 02:31:38,179 INFO  [stdout] (default task-37)         movieId=?
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37) Hibernate: 
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)     select
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)         location0_.locationId as location1_0_0_,
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)         location0_.formatted_address as formatte2_0_0_,
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)         location0_.latitude as latitude3_0_0_,
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)         location0_.longitude as longitud4_0_0_,
+2020-04-26 02:31:38,180 INFO  [stdout] (default task-37)         location0_.name as name5_0_0_ 
+2020-04-26 02:31:38,181 INFO  [stdout] (default task-37)     from
+2020-04-26 02:31:38,181 INFO  [stdout] (default task-37)         Location location0_ 
+2020-04-26 02:31:38,181 INFO  [stdout] (default task-37)     where
+2020-04-26 02:31:38,181 INFO  [stdout] (default task-37)         location0_.locationId=?
+2020-04-26 02:31:38,183 INFO  [stdout] (default task-37) Hibernate: 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     select
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.name as name5_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.address as address2_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.name as name4_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.price as price3_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     from
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         Screen screen0_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     left outer join
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         Movie movie1_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     left outer join
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         ScreeningDates screeningd2_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     left outer join
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         Venues venues3_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     left outer join
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         Seats seat4_ 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)     where
+2020-04-26 02:31:38,184 INFO  [stdout] (default task-37)         screen0_.screenId=?
+2020-04-26 02:31:38,191 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-37) Session Metrics {
+    502922 nanoseconds spent acquiring 2 JDBC connections;
+    278377 nanoseconds spent releasing 1 JDBC connections;
+    241508 nanoseconds spent preparing 3 JDBC statements;
+    4783495 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1148087 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    166252 nanoseconds spent performing 2 L2C misses;
+    584800 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5405 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39) Hibernate: 
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)     select
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)     from
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)         ScreeningDates screeningd0_ 
+2020-04-26 02:31:39,901 INFO  [stdout] (default task-39)     inner join
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)         Venues venues1_ 
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)     inner join
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)         Screen screen2_ 
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)     where
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)         movieId=? 
+2020-04-26 02:31:39,902 INFO  [stdout] (default task-39)         and venuesId=?
+2020-04-26 02:31:39,906 INFO  [stdout] (default task-39) Hibernate: 
+2020-04-26 02:31:39,906 INFO  [stdout] (default task-39)     select
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.name as name5_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.address as address2_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.name as name4_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:31:39,907 INFO  [stdout] (default task-39)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.price as price3_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     from
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         Screen screen0_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     left outer join
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         Movie movie1_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     left outer join
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         ScreeningDates screeningd2_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     left outer join
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         Venues venues3_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     left outer join
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         Seats seat4_ 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)     where
+2020-04-26 02:31:39,908 INFO  [stdout] (default task-39)         screen0_.screenId=?
+2020-04-26 02:31:39,919 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-39) Session Metrics {
+    369535 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    170745 nanoseconds spent preparing 2 JDBC statements;
+    1784758 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    35284 nanoseconds spent performing 1 L2C puts;
+    1349887 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    622981 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    30367 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41) Hibernate: 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)     select
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.seatId as seatId1_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.price as price3_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         seat3_.tax as tax6_5_ 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)     from
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         ScreeningDates screeningd0_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         Venues venues1_,
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         Screen screen2_ 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)     inner join
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         Seats seat3_ 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)     where
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:31:52,832 INFO  [stdout] (default task-41)         and screeningDatesId=?
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41) Hibernate: 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)     select
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.name as name5_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.address as address2_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.name as name4_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.price as price3_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)     from
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         Screen screen0_ 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)     left outer join
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         Movie movie1_ 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)     left outer join
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)         ScreeningDates screeningd2_ 
+2020-04-26 02:31:52,834 INFO  [stdout] (default task-41)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)     left outer join
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)         Venues venues3_ 
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)     left outer join
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)         Seats seat4_ 
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)     where
+2020-04-26 02:31:52,835 INFO  [stdout] (default task-41)         screen0_.screenId=?
+2020-04-26 02:31:52,838 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-41) Session Metrics {
+    299579 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    105036 nanoseconds spent preparing 2 JDBC statements;
+    1011420 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    53130 nanoseconds spent performing 2 L2C puts;
+    13527 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    538859 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5928 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43) Hibernate: 
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)     select
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.movieId as movieId1_1_,
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.detail as detail2_1_,
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.name as name5_1_,
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)     from
+2020-04-26 02:54:10,813 INFO  [stdout] (default task-43)         Movie movie0_ 
+2020-04-26 02:54:10,814 INFO  [stdout] (default task-43)     where
+2020-04-26 02:54:10,814 INFO  [stdout] (default task-43)         category=? 
+2020-04-26 02:54:10,814 INFO  [stdout] (default task-43)     order by
+2020-04-26 02:54:10,814 INFO  [stdout] (default task-43)         movie0_.name asc
+2020-04-26 02:54:10,819 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-43) Session Metrics {
+    1875685 nanoseconds spent acquiring 2 JDBC connections;
+    242163 nanoseconds spent releasing 1 JDBC connections;
+    100914 nanoseconds spent preparing 1 JDBC statements;
+    726665 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1224923 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    161789 nanoseconds spent performing 1 L2C misses;
+    216361 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    20484 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45) Hibernate: 
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)     select
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.venuesId as venuesId1_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.address as address2_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.contact as contact3_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.location_locationId as location7_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.name as name4_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.screen_screenId as screen_s5_7_,
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         venues0_.venues_picture as venues_p6_7_ 
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)     from
+2020-04-26 02:54:12,139 INFO  [stdout] (default task-45)         Venues venues0_ 
+2020-04-26 02:54:12,140 INFO  [stdout] (default task-45)     inner join
+2020-04-26 02:54:12,140 INFO  [stdout] (default task-45)         Screen screen1_ 
+2020-04-26 02:54:12,140 INFO  [stdout] (default task-45)             on venues0_.screen_screenId=screen1_.screenId 
+2020-04-26 02:54:12,140 INFO  [stdout] (default task-45)     inner join
+2020-04-26 02:54:12,140 INFO  [stdout] (default task-45)         Movie movie2_ 
+2020-04-26 02:54:12,226 INFO  [stdout] (default task-45)             on screen1_.movie_movieId=movie2_.movieId 
+2020-04-26 02:54:12,226 INFO  [stdout] (default task-45)     where
+2020-04-26 02:54:12,226 INFO  [stdout] (default task-45)         movieId=?
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45) Hibernate: 
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)     select
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.locationId as location1_0_0_,
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.formatted_address as formatte2_0_0_,
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.latitude as latitude3_0_0_,
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.longitude as longitud4_0_0_,
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.name as name5_0_0_ 
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)     from
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         Location location0_ 
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)     where
+2020-04-26 02:54:12,228 INFO  [stdout] (default task-45)         location0_.locationId=?
+2020-04-26 02:54:12,229 INFO  [stdout] (default task-45) Hibernate: 
+2020-04-26 02:54:12,229 INFO  [stdout] (default task-45)     select
+2020-04-26 02:54:12,229 INFO  [stdout] (default task-45)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:54:12,229 INFO  [stdout] (default task-45)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:54:12,229 INFO  [stdout] (default task-45)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.name as name5_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.address as address2_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.name as name4_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.price as price3_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     from
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         Screen screen0_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     left outer join
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         Movie movie1_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     left outer join
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         ScreeningDates screeningd2_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     left outer join
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         Venues venues3_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     left outer join
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         Seats seat4_ 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)     where
+2020-04-26 02:54:12,230 INFO  [stdout] (default task-45)         screen0_.screenId=?
+2020-04-26 02:54:12,240 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-45) Session Metrics {
+    603523 nanoseconds spent acquiring 2 JDBC connections;
+    275742 nanoseconds spent releasing 1 JDBC connections;
+    190413 nanoseconds spent preparing 3 JDBC statements;
+    4683956 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    3626124 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    239183 nanoseconds spent performing 2 L2C misses;
+    510852 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5352 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46) Hibernate: 
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46)     select
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 02:54:13,520 INFO  [stdout] (default task-46)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)     from
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)         ScreeningDates screeningd0_ 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)     inner join
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)         Venues venues1_ 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)     inner join
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)         Screen screen2_ 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)     where
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)         movieId=? 
+2020-04-26 02:54:13,521 INFO  [stdout] (default task-46)         and venuesId=?
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46) Hibernate: 
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)     select
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.name as name5_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:54:13,531 INFO  [stdout] (default task-46)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.address as address2_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.name as name4_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:54:13,532 INFO  [stdout] (default task-46)         seat4_.price as price3_5_5_,
+2020-04-26 02:54:13,699 INFO  [stdout] (default task-46)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:54:13,699 INFO  [stdout] (default task-46)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:54:13,699 INFO  [stdout] (default task-46)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:54:13,699 INFO  [stdout] (default task-46)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:54:13,699 INFO  [stdout] (default task-46)     from
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         Screen screen0_ 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)     left outer join
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         Movie movie1_ 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)     left outer join
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         ScreeningDates screeningd2_ 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)     left outer join
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         Venues venues3_ 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)     left outer join
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         Seats seat4_ 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)     where
+2020-04-26 02:54:13,700 INFO  [stdout] (default task-46)         screen0_.screenId=?
+2020-04-26 02:54:13,706 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-46) Session Metrics {
+    991572 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    196156 nanoseconds spent preparing 2 JDBC statements;
+    7000624 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1169851 nanoseconds spent performing 1 L2C puts;
+    1907189 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    530736 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    6914 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:54:19,532 INFO  [stdout] (default task-47) Hibernate: 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)     select
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.seatId as seatId1_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.price as price3_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         seat3_.tax as tax6_5_ 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)     from
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         ScreeningDates screeningd0_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         Venues venues1_,
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         Screen screen2_ 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)     inner join
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         Seats seat3_ 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)     where
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:54:19,533 INFO  [stdout] (default task-47)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:54:19,534 INFO  [stdout] (default task-47)         and screeningDatesId=?
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47) Hibernate: 
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)     select
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:54:19,536 INFO  [stdout] (default task-47)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         movie1_.name as name5_1_1_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.address as address2_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.name as name4_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.price as price3_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     from
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         Screen screen0_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     left outer join
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         Movie movie1_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     left outer join
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         ScreeningDates screeningd2_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     left outer join
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         Venues venues3_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     left outer join
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         Seats seat4_ 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)     where
+2020-04-26 02:54:19,537 INFO  [stdout] (default task-47)         screen0_.screenId=?
+2020-04-26 02:54:19,549 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-47) Session Metrics {
+    369132 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    113050 nanoseconds spent preparing 2 JDBC statements;
+    9087833 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    93295 nanoseconds spent performing 2 L2C puts;
+    807785 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    481596 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5716 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:55:46,782 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-44) Session Metrics {
+    1710000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    97097 nanoseconds spent performing 3 L2C hits;
+    901071 nanoseconds spent performing 1 L2C misses;
+    140966 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5846 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:55:48,166 INFO  [stdout] (default task-48) Hibernate: 
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)     select
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.name as name5_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.address as address2_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.name as name4_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.price as price3_5_5_,
+2020-04-26 02:55:48,167 INFO  [stdout] (default task-48)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     from
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         Screen screen0_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     left outer join
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         Movie movie1_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     left outer join
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         ScreeningDates screeningd2_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     left outer join
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         Venues venues3_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     left outer join
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         Seats seat4_ 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)     where
+2020-04-26 02:55:48,168 INFO  [stdout] (default task-48)         screen0_.screenId=?
+2020-04-26 02:55:48,173 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-48) Session Metrics {
+    304402 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    58003 nanoseconds spent preparing 1 JDBC statements;
+    2236132 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    28460 nanoseconds spent performing 1 L2C puts;
+    1523497 nanoseconds spent performing 3 L2C hits;
+    41187 nanoseconds spent performing 3 L2C misses;
+    526946 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5137 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51) Hibernate: 
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)     select
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)     from
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)         ScreeningDates screeningd0_ 
+2020-04-26 02:55:49,597 INFO  [stdout] (default task-51)     inner join
+2020-04-26 02:55:49,598 INFO  [stdout] (default task-51)         Venues venues1_ 
+2020-04-26 02:55:49,598 INFO  [stdout] (default task-51)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:55:49,598 INFO  [stdout] (default task-51)     inner join
+2020-04-26 02:55:49,599 INFO  [stdout] (default task-51)         Screen screen2_ 
+2020-04-26 02:55:49,599 INFO  [stdout] (default task-51)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:55:49,599 INFO  [stdout] (default task-51)     where
+2020-04-26 02:55:49,599 INFO  [stdout] (default task-51)         movieId=? 
+2020-04-26 02:55:49,599 INFO  [stdout] (default task-51)         and venuesId=?
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51) Hibernate: 
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)     select
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:55:49,604 INFO  [stdout] (default task-51)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         movie1_.name as name5_1_1_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.address as address2_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.name as name4_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.price as price3_5_5_,
+2020-04-26 02:55:49,605 INFO  [stdout] (default task-51)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:55:49,606 INFO  [stdout] (default task-51)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:55:49,606 INFO  [stdout] (default task-51)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)     from
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)         Screen screen0_ 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)     left outer join
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)         Movie movie1_ 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)     left outer join
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)         ScreeningDates screeningd2_ 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:55:49,609 INFO  [stdout] (default task-51)     left outer join
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)         Venues venues3_ 
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)     left outer join
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)         Seats seat4_ 
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)     where
+2020-04-26 02:55:49,610 INFO  [stdout] (default task-51)         screen0_.screenId=?
+2020-04-26 02:55:49,614 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-51) Session Metrics {
+    557772 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    170020 nanoseconds spent preparing 2 JDBC statements;
+    1418977 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    49739 nanoseconds spent performing 1 L2C puts;
+    103332 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1145767 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    8357 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52) Hibernate: 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)     select
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.seatId as seatId1_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.price as price3_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         seat3_.tax as tax6_5_ 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)     from
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         ScreeningDates screeningd0_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         Venues venues1_,
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         Screen screen2_ 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)     inner join
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         Seats seat3_ 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)     where
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 02:55:54,732 INFO  [stdout] (default task-52)         and screeningDatesId=?
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52) Hibernate: 
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)     select
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screen0_.seats as seats2_3_0_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.detail as detail2_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.name as name5_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 02:55:54,734 INFO  [stdout] (default task-52)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.address as address2_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.contact as contact3_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.name as name4_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.price as price3_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         seat4_.tax as tax6_5_5_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     from
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         Screen screen0_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     left outer join
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         Movie movie1_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     left outer join
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         ScreeningDates screeningd2_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     left outer join
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         Venues venues3_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     left outer join
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         Seats seat4_ 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)     where
+2020-04-26 02:55:54,735 INFO  [stdout] (default task-52)         screen0_.screenId=?
+2020-04-26 02:55:54,740 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-52) Session Metrics {
+    315130 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    121162 nanoseconds spent preparing 2 JDBC statements;
+    1044779 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    92393 nanoseconds spent performing 2 L2C puts;
+    26471 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    691751 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5868 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:03:50,372 INFO  [stdout] (default task-53) Hibernate: 
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)     select
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.movieId as movieId1_1_,
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.detail as detail2_1_,
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.name as name5_1_,
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)     from
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         Movie movie0_ 
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)     where
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         category=? 
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)     order by
+2020-04-26 03:03:50,373 INFO  [stdout] (default task-53)         movie0_.name asc
+2020-04-26 03:03:50,375 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-53) Session Metrics {
+    800041 nanoseconds spent acquiring 2 JDBC connections;
+    244069 nanoseconds spent releasing 1 JDBC connections;
+    56561 nanoseconds spent preparing 1 JDBC statements;
+    466668 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    413076 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    27290 nanoseconds spent performing 1 L2C misses;
+    152136 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    5101 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54) Hibernate: 
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)     select
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.venuesId as venuesId1_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.address as address2_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.contact as contact3_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.location_locationId as location7_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.name as name4_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.screen_screenId as screen_s5_7_,
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         venues0_.venues_picture as venues_p6_7_ 
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)     from
+2020-04-26 03:03:52,731 INFO  [stdout] (default task-54)         Venues venues0_ 
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)     inner join
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)         Screen screen1_ 
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)             on venues0_.screen_screenId=screen1_.screenId 
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)     inner join
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)         Movie movie2_ 
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)             on screen1_.movie_movieId=movie2_.movieId 
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)     where
+2020-04-26 03:03:52,732 INFO  [stdout] (default task-54)         movieId=?
+2020-04-26 03:03:52,733 INFO  [stdout] (default task-54) Hibernate: 
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)     select
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.locationId as location1_0_0_,
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.formatted_address as formatte2_0_0_,
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.latitude as latitude3_0_0_,
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.longitude as longitud4_0_0_,
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.name as name5_0_0_ 
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)     from
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         Location location0_ 
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)     where
+2020-04-26 03:03:52,734 INFO  [stdout] (default task-54)         location0_.locationId=?
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54) Hibernate: 
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)     select
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.name as name5_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.address as address2_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.name as name4_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:03:52,736 INFO  [stdout] (default task-54)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.price as price3_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     from
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         Screen screen0_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     left outer join
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         Movie movie1_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     left outer join
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         ScreeningDates screeningd2_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     left outer join
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         Venues venues3_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     left outer join
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         Seats seat4_ 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)     where
+2020-04-26 03:03:52,737 INFO  [stdout] (default task-54)         screen0_.screenId=?
+2020-04-26 03:03:52,744 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-54) Session Metrics {
+    552960 nanoseconds spent acquiring 2 JDBC connections;
+    222762 nanoseconds spent releasing 1 JDBC connections;
+    189662 nanoseconds spent preparing 3 JDBC statements;
+    3882978 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1188758 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    166014 nanoseconds spent performing 2 L2C misses;
+    444057 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    6688 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:03:54,144 INFO  [stdout] (default task-57) Hibernate: 
+2020-04-26 03:03:54,144 INFO  [stdout] (default task-57)     select
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)     from
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         ScreeningDates screeningd0_ 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)     inner join
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         Venues venues1_ 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)     inner join
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         Screen screen2_ 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)     where
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         movieId=? 
+2020-04-26 03:03:54,145 INFO  [stdout] (default task-57)         and venuesId=?
+2020-04-26 03:03:54,150 INFO  [stdout] (default task-57) Hibernate: 
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)     select
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.name as name5_1_1_,
+2020-04-26 03:03:54,151 INFO  [stdout] (default task-57)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         venues3_.address as address2_7_3_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:03:54,153 INFO  [stdout] (default task-57)         venues3_.name as name4_7_3_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.price as price3_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)     from
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         Screen screen0_ 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)     left outer join
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         Movie movie1_ 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)     left outer join
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         ScreeningDates screeningd2_ 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)     left outer join
+2020-04-26 03:03:54,154 INFO  [stdout] (default task-57)         Venues venues3_ 
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)     left outer join
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)         Seats seat4_ 
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)     where
+2020-04-26 03:03:54,155 INFO  [stdout] (default task-57)         screen0_.screenId=?
+2020-04-26 03:03:54,159 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-57) Session Metrics {
+    370675 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    170628 nanoseconds spent preparing 2 JDBC statements;
+    3810286 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    32518 nanoseconds spent performing 1 L2C puts;
+    1460672 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    721207 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    6471 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56) Hibernate: 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)     select
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.seatId as seatId1_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.price as price3_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         seat3_.tax as tax6_5_ 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)     from
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         ScreeningDates screeningd0_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         Venues venues1_,
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         Screen screen2_ 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)     inner join
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         Seats seat3_ 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)     where
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:03:59,912 INFO  [stdout] (default task-56)         and screeningDatesId=?
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56) Hibernate: 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     select
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.name as name5_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.address as address2_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.name as name4_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.price as price3_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     from
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         Screen screen0_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     left outer join
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         Movie movie1_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     left outer join
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         ScreeningDates screeningd2_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     left outer join
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         Venues venues3_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     left outer join
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)         Seats seat4_ 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:03:59,914 INFO  [stdout] (default task-56)     where
+2020-04-26 03:03:59,915 INFO  [stdout] (default task-56)         screen0_.screenId=?
+2020-04-26 03:03:59,917 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-56) Session Metrics {
+    288296 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    98794 nanoseconds spent preparing 2 JDBC statements;
+    958343 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    50050 nanoseconds spent performing 2 L2C puts;
+    12527 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    599412 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5419 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:05:07,539 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-70) Session Metrics {
+    1667194 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    918519 nanoseconds spent performing 3 L2C hits;
+    32524 nanoseconds spent performing 1 L2C misses;
+    135208 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    6214 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:05:08,882 INFO  [stdout] (default task-71) Hibernate: 
+2020-04-26 03:05:08,882 INFO  [stdout] (default task-71)     select
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.name as name5_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.address as address2_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.name as name4_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.price as price3_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)     from
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)         Screen screen0_ 
+2020-04-26 03:05:08,883 INFO  [stdout] (default task-71)     left outer join
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)         Movie movie1_ 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)     left outer join
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)         ScreeningDates screeningd2_ 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)     left outer join
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)         Venues venues3_ 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)     left outer join
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)         Seats seat4_ 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)     where
+2020-04-26 03:05:08,884 INFO  [stdout] (default task-71)         screen0_.screenId=?
+2020-04-26 03:05:08,886 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-71) Session Metrics {
+    473934 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    79625 nanoseconds spent preparing 1 JDBC statements;
+    604256 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    25260 nanoseconds spent performing 1 L2C puts;
+    602027 nanoseconds spent performing 3 L2C hits;
+    45874 nanoseconds spent performing 3 L2C misses;
+    367270 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    9045 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74) Hibernate: 
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)     select
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)     from
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         ScreeningDates screeningd0_ 
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)     inner join
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         Venues venues1_ 
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)     inner join
+2020-04-26 03:05:10,309 INFO  [stdout] (default task-74)         Screen screen2_ 
+2020-04-26 03:05:10,310 INFO  [stdout] (default task-74)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:05:10,310 INFO  [stdout] (default task-74)     where
+2020-04-26 03:05:10,310 INFO  [stdout] (default task-74)         movieId=? 
+2020-04-26 03:05:10,310 INFO  [stdout] (default task-74)         and venuesId=?
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74) Hibernate: 
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)     select
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.name as name5_1_1_,
+2020-04-26 03:05:10,312 INFO  [stdout] (default task-74)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.address as address2_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.name as name4_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.price as price3_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)     from
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         Screen screen0_ 
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)     left outer join
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)         Movie movie1_ 
+2020-04-26 03:05:10,313 INFO  [stdout] (default task-74)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)     left outer join
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)         ScreeningDates screeningd2_ 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)     left outer join
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)         Venues venues3_ 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)     left outer join
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)         Seats seat4_ 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)     where
+2020-04-26 03:05:10,314 INFO  [stdout] (default task-74)         screen0_.screenId=?
+2020-04-26 03:05:10,323 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-74) Session Metrics {
+    517774 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    175140 nanoseconds spent preparing 2 JDBC statements;
+    3156051 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    40778 nanoseconds spent performing 1 L2C puts;
+    133419 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    651260 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    15796 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:05:15,068 INFO  [stdout] (default task-72) Hibernate: 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)     select
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.seatId as seatId1_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.price as price3_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         seat3_.tax as tax6_5_ 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)     from
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         ScreeningDates screeningd0_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         Venues venues1_,
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         Screen screen2_ 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)     inner join
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         Seats seat3_ 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)     where
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:05:15,069 INFO  [stdout] (default task-72)         and screeningDatesId=?
+2020-04-26 03:05:15,071 INFO  [stdout] (default task-72) Hibernate: 
+2020-04-26 03:05:15,071 INFO  [stdout] (default task-72)     select
+2020-04-26 03:05:15,071 INFO  [stdout] (default task-72)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:05:15,071 INFO  [stdout] (default task-72)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:05:15,071 INFO  [stdout] (default task-72)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.name as name5_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.address as address2_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.name as name4_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.price as price3_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)     from
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         Screen screen0_ 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)     left outer join
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         Movie movie1_ 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)     left outer join
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)         ScreeningDates screeningd2_ 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:05:15,072 INFO  [stdout] (default task-72)     left outer join
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)         Venues venues3_ 
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)     left outer join
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)         Seats seat4_ 
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)     where
+2020-04-26 03:05:15,073 INFO  [stdout] (default task-72)         screen0_.screenId=?
+2020-04-26 03:05:15,083 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-72) Session Metrics {
+    353616 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    125169 nanoseconds spent preparing 2 JDBC statements;
+    7978642 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    53937 nanoseconds spent performing 2 L2C puts;
+    12884 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    774473 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5339 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:18:15,851 INFO  [stdout] (default task-75) Hibernate: 
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)     select
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.movieId as movieId1_1_,
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.detail as detail2_1_,
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.iMDB_url as iMDB_url3_1_,
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.large_picture as large_pi4_1_,
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.name as name5_1_,
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.thumbnail_picture as thumbnai6_1_ 
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)     from
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         Movie movie0_ 
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)     where
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         category=? 
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)     order by
+2020-04-26 03:18:15,852 INFO  [stdout] (default task-75)         movie0_.name asc
+2020-04-26 03:18:15,855 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-75) Session Metrics {
+    2340660 nanoseconds spent acquiring 2 JDBC connections;
+    219685 nanoseconds spent releasing 1 JDBC connections;
+    98312 nanoseconds spent preparing 1 JDBC statements;
+    611091 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    598558 nanoseconds spent performing 3 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    41723 nanoseconds spent performing 1 L2C misses;
+    169910 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+    7738 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78) Hibernate: 
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)     select
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.venuesId as venuesId1_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.address as address2_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.contact as contact3_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.location_locationId as location7_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.name as name4_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.screen_screenId as screen_s5_7_,
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         venues0_.venues_picture as venues_p6_7_ 
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)     from
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)         Venues venues0_ 
+2020-04-26 03:18:16,958 INFO  [stdout] (default task-78)     inner join
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)         Screen screen1_ 
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)             on venues0_.screen_screenId=screen1_.screenId 
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)     inner join
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)         Movie movie2_ 
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)             on screen1_.movie_movieId=movie2_.movieId 
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)     where
+2020-04-26 03:18:16,959 INFO  [stdout] (default task-78)         movieId=?
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78) Hibernate: 
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)     select
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.locationId as location1_0_0_,
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.formatted_address as formatte2_0_0_,
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.latitude as latitude3_0_0_,
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.longitude as longitud4_0_0_,
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.name as name5_0_0_ 
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)     from
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         Location location0_ 
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)     where
+2020-04-26 03:18:16,963 INFO  [stdout] (default task-78)         location0_.locationId=?
+2020-04-26 03:18:16,965 INFO  [stdout] (default task-78) Hibernate: 
+2020-04-26 03:18:16,965 INFO  [stdout] (default task-78)     select
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:18:17,046 INFO  [stdout] (default task-78)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         movie1_.name as name5_1_1_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.address as address2_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.name as name4_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.price as price3_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     from
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         Screen screen0_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     left outer join
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         Movie movie1_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     left outer join
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         ScreeningDates screeningd2_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     left outer join
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         Venues venues3_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     left outer join
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         Seats seat4_ 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)     where
+2020-04-26 03:18:17,047 INFO  [stdout] (default task-78)         screen0_.screenId=?
+2020-04-26 03:18:17,060 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-78) Session Metrics {
+    667704 nanoseconds spent acquiring 2 JDBC connections;
+    312154 nanoseconds spent releasing 1 JDBC connections;
+    305025 nanoseconds spent preparing 3 JDBC statements;
+    7652286 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    1777429 nanoseconds spent performing 4 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    313395 nanoseconds spent performing 2 L2C misses;
+    1803694 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    4987 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81) Hibernate: 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)     select
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         screeningd0_.screeningDatesId as screenin1_4_,
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         screeningd0_.movieId as movieId2_4_,
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         screeningd0_.screeningDate as screenin3_4_,
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         screeningd0_.venues_venuesId as venues_v4_4_ 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)     from
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         ScreeningDates screeningd0_ 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)     inner join
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         Venues venues1_ 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)             on screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)     inner join
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)         Screen screen2_ 
+2020-04-26 03:18:18,473 INFO  [stdout] (default task-81)             on venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:18:18,474 INFO  [stdout] (default task-81)     where
+2020-04-26 03:18:18,474 INFO  [stdout] (default task-81)         movieId=? 
+2020-04-26 03:18:18,474 INFO  [stdout] (default task-81)         and venuesId=?
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81) Hibernate: 
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)     select
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.name as name5_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.address as address2_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.name as name4_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:18:18,481 INFO  [stdout] (default task-81)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         seat4_.price as price3_5_5_,
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     from
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         Screen screen0_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     left outer join
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         Movie movie1_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     left outer join
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         ScreeningDates screeningd2_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     left outer join
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         Venues venues3_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     left outer join
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         Seats seat4_ 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)     where
+2020-04-26 03:18:18,482 INFO  [stdout] (default task-81)         screen0_.screenId=?
+2020-04-26 03:18:18,487 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-81) Session Metrics {
+    437248 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    143780 nanoseconds spent preparing 2 JDBC statements;
+    2255305 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    37174 nanoseconds spent performing 1 L2C puts;
+    3350395 nanoseconds spent performing 2 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    778210 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    7206 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80) Hibernate: 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)     select
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.seatId as seatId1_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.isReserved as isReserv2_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.price as price3_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.screen_screenId as screen_s7_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.seatNumber as seatNumb4_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.seatRow as seatRow5_5_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         seat3_.tax as tax6_5_ 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)     from
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         ScreeningDates screeningd0_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         Venues venues1_,
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         Screen screen2_ 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)     inner join
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         Seats seat3_ 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)             on screen2_.screenId=seat3_.screen_screenId 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)     where
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         screeningd0_.venues_venuesId=venues1_.venuesId 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         and venues1_.screen_screenId=screen2_.screenId 
+2020-04-26 03:18:25,667 INFO  [stdout] (default task-80)         and screeningDatesId=?
+2020-04-26 03:18:25,668 INFO  [stdout] (default task-80) Hibernate: 
+2020-04-26 03:18:25,668 INFO  [stdout] (default task-80)     select
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screen0_.screenId as screenId1_3_0_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screen0_.movie_movieId as movie_mo3_3_0_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screen0_.screeningDates_screeningDatesId as screenin4_3_0_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screen0_.seats as seats2_3_0_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.movieId as movieId1_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.detail as detail2_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.iMDB_url as iMDB_url3_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.large_picture as large_pi4_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.name as name5_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         movie1_.thumbnail_picture as thumbnai6_1_1_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screeningd2_.screeningDatesId as screenin1_4_2_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screeningd2_.movieId as movieId2_4_2_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screeningd2_.screeningDate as screenin3_4_2_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         screeningd2_.venues_venuesId as venues_v4_4_2_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.venuesId as venuesId1_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.address as address2_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.contact as contact3_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.location_locationId as location7_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.name as name4_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.screen_screenId as screen_s5_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         venues3_.venues_picture as venues_p6_7_3_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.screen_screenId as screen_s7_5_4_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.seatId as seatId1_5_4_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.seatId as seatId1_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.isReserved as isReserv2_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.price as price3_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.screen_screenId as screen_s7_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.seatNumber as seatNumb4_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.seatRow as seatRow5_5_5_,
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         seat4_.tax as tax6_5_5_ 
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)     from
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         Screen screen0_ 
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)     left outer join
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         Movie movie1_ 
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)             on screen0_.movie_movieId=movie1_.movieId 
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)     left outer join
+2020-04-26 03:18:25,669 INFO  [stdout] (default task-80)         ScreeningDates screeningd2_ 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)             on screen0_.screeningDates_screeningDatesId=screeningd2_.screeningDatesId 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)     left outer join
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)         Venues venues3_ 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)             on screeningd2_.venues_venuesId=venues3_.venuesId 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)     left outer join
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)         Seats seat4_ 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)             on screen0_.screenId=seat4_.screen_screenId 
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)     where
+2020-04-26 03:18:25,670 INFO  [stdout] (default task-80)         screen0_.screenId=?
+2020-04-26 03:18:25,673 INFO  [org.hibernate.engine.internal.StatisticalLoggingSessionEventListener] (default task-80) Session Metrics {
+    344790 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    117439 nanoseconds spent preparing 2 JDBC statements;
+    1758319 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    51008 nanoseconds spent performing 2 L2C puts;
+    12992 nanoseconds spent performing 1 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    583977 nanoseconds spent executing 1 flushes (flushing a total of 15 entities and 2 collections);
+    5008 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
