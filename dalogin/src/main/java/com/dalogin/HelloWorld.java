@@ -213,11 +213,17 @@ public class HelloWorld extends HttpServlet implements Serializable {
 						c.setMaxAge(session.getMaxInactiveInterval());
 						c.setHttpOnly(true);
 						c.setPath(context.getContextPath());
-						System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
+						d = new Cookie("X-Token", token2.get(0));								
+						d.setSecure(true);
+						d.setMaxAge(session.getMaxInactiveInterval());
+						
 						response.addCookie(c);
+						response.addCookie(d);
+						
 						// The token2 will be used as key-salt-whatever as originally planned.
-						response.addHeader("X-Token", token2.get(0));						response.setContentType("application/json"); 
+						response.addHeader("X-Token", token2.get(0));						
+						response.setContentType("application/json"); 
 						response.setCharacterEncoding("utf-8"); 
 						response.setStatus(200);
 		
@@ -242,50 +248,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
 							
 							throw new ServletException(e.getCause().toString());
 							
-						}
-						
-						// mobile webview
-						} else if (WebView.contains("Mobile") && M.equals("M")){ 
-							
-							try {
-								log.info("2");
-								token2 = SQLAccess.token2(deviceId, context);
-								
-								//TODO: IV can be the sessionId
-								String xsrfToken = aesUtil.encrypt(SALT, IV, token2.get(1), token2.get(0));						
-								int l = xsrfToken.length();	
-								String actualToken = "";	
-
-								if (xsrfToken.endsWith("=")) {	
-										actualToken = xsrfToken.substring(0, l-1);	
-
-									} else {	
-										actualToken = xsrfToken.trim();	
-
-										}
-								
-								c = new Cookie("XSRF-TOKEN", actualToken);								
-								c.setSecure(true);
-								c.setMaxAge(session.getMaxInactiveInterval());
-								System.out.println("Set XSRF-TOKEN: " +c.getValue());
-
-								response.addCookie(c);
-								// The token2 will be used as key-salt-whatever as originally planned.
-								response.addHeader("X-Token", token2.get(0));
-
-								// set XSRF-TOKEN as session attribute
-								session.setAttribute(c.getName(), c.getValue());
-								
-								// set timestamp for device login as session attribute
-								session.setAttribute("TIME_", token2.get(1));
-								
-								response.sendRedirect(context.getContextPath() + "/tabularasa.jsp?JSESSIONID="+sessionID);		
-
-								
-							} catch (Exception e) {
-								
-								throw new ServletException(e.getCause().toString());
-								
 							}
 						
 						} 
@@ -310,7 +272,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
 								c = new Cookie("XSRF-TOKEN", actualToken);
 								c.setSecure(true);
 								c.setMaxAge(session.getMaxInactiveInterval());
-								System.out.println("Set XSRF-TOKEN: " +c.getValue());
 
 								d = new Cookie("X-Token", token2.get(0));								
 								d.setSecure(true);

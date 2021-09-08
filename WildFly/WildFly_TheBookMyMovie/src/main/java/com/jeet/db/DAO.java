@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.lucene.index.Term;
-import org.apache.lucene.search.Filter;
-import org.apache.lucene.search.QueryWrapperFilter;
-import org.apache.lucene.search.TermQuery;
 import org.hibernate.CacheMode;
 import org.hibernate.Criteria;
 import org.hibernate.FlushMode;
@@ -18,13 +14,9 @@ import org.hibernate.LockMode;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
-import org.hibernate.ScrollMode;
-import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.mapping.Collection;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.hibernate.search.FullTextQuery;
 import org.hibernate.search.FullTextSession;
@@ -407,11 +399,77 @@ public class DAO {
 
 		@SuppressWarnings("unchecked")
 		List<Movie> list = query.list();
-		
+
 		trans.commit();
 		
 		return list;	
 	}
+	
+	/**
+	 * Returns a list of movies by fulltext search in movie names and details.
+	 * 
+	 * @param match
+	 * @return
+	 */
+	public synchronized List<Movie> fullTextSearchMoviesForVenue(String match) { 
+        
+        if(!session.isOpen()) {          
+            session = factory.openSession(); 
+        } 
+         
+        session = factory.getCurrentSession(); 
+        trans = session.getTransaction(); 
+         
+        if (trans.getStatus() != TransactionStatus.ACTIVE) {             
+            trans.begin(); 
+        } 
+ 
+        // create native Lucene query using the query DSL 
+        QueryBuilder qb = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Movie.class).get(); 
+         
+        if (!match.contains(" ")) { 
+        query = qb 
+          .keyword()
+          .onField("venues.screen.movie.name") 
+          .andField("venues.screen.movie.detail") 
+          .matching(match) 
+          .createQuery();    
+        } 
+         
+        if (match.contains(" ")) { 
+        query = qb 
+                  .phrase() 
+                  .onField("venues.screen.movie.name") 
+                  .andField("venues.screen.movie.detail") 
+                  .sentence(match)
+                  .createQuery(); 
+        } 
+         
+        // wrap Lucene query in a org.hibernate.Query 
+        FullTextQuery hibQuery = fullTextSession.createFullTextQuery(query, Movie.class); 
+     
+        hibQuery.initializeObjectsWith( 
+                ObjectLookupMethod.SECOND_LEVEL_CACHE, 
+                DatabaseRetrievalMethod.QUERY 
+            ); 
+             
+        hibQuery 
+        .setCacheable(true) 
+        .setCacheRegion("movies") 
+        .setCacheMode(CacheMode.NORMAL); 
+        
+        // execute search 
+        @SuppressWarnings("unchecked") 
+        List<Movie> result = hibQuery.list(); 
+        
+        trans.commit(); 
+ 
+        if(session.isOpen()) {           
+            session.close(); 
+        }  
+         
+        return result; 
+    } 
 	
 	/**
 	 * Returns location for a venue by locationId. It will be called from individual screens. 
@@ -734,6 +792,7 @@ public class DAO {
 		Purchase newPurchase = new Purchase();
 		newPurchase.setUuid(uuid);
 		newPurchase.setOrderId(orderId);
+		newPurchase.setTime(new Date());
 		
 		session.save(newPurchase);
 		

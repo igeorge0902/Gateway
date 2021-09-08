@@ -792,6 +792,7 @@ public class DAO {
 		Purchase newPurchase = new Purchase();
 		newPurchase.setUuid(uuid);
 		newPurchase.setOrderId(orderId);
+		newPurchase.setTime(new Date());
 		
 		session.save(newPurchase);
 		
