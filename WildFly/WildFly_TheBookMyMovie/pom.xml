@@ -12,7 +12,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <json.version>20160212</json.version>
         <commonsio.version>2.4</commonsio.version>
         <commonscodec.version>1.10</commonscodec.version>
-        <hibernate.version>5.1.0.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <hibernate.search.version>5.5.4.Final</hibernate.search.version>
         <slf4j-api-version>1.7.7</slf4j-api-version>
         <log4j-over-slf4j-version>1.7.7</log4j-over-slf4j-version>
