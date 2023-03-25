@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Braintree
+import BraintreeCore
 import BraintreeDropIn
 import SwiftyJSON
 // import FacebookCore
@@ -41,13 +41,13 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
+        let btnNav = UIButton(frame: CGRect(x: 0, y: 50, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
         btnNav.showsTouchWhenHighlighted = true
         btnNav.setTitle("Back", for: UIControl.State.normal)
         btnNav.addTarget(self, action: #selector(BasketVC.navigateBack), for: UIControl.Event.touchUpInside)
 
-        let btnData = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
+        let btnData = UIButton(frame: CGRect(x: view.frame.width / 2, y: 50, width: view.frame.width / 2, height: 20))
         btnData.backgroundColor = UIColor.black
         btnData.setTitle("CheckOut", for: UIControl.State())
         btnData.showsTouchWhenHighlighted = true
@@ -56,7 +56,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         view.addSubview(btnNav)
         view.addSubview(btnData)
 
-        layout.sectionInset = UIEdgeInsets(top: 55, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 75, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: view.frame.width * 0.9, height: view.frame.width * 0.5)
 
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
@@ -232,7 +232,7 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         { (controller, result, error) in
             if (error != nil) {
                 print("ERROR")
-            } else if (result?.isCancelled == true) {
+            } else if (result?.isCanceled == true) {
                 print("CANCELLED")
             } else if let result = result {
                 guard let nonce = result.paymentMethod?.nonce

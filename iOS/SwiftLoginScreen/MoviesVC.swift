@@ -34,7 +34,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     var CategoryData = [String]()
     var data: MoviesData?
     var venueData: Admin_ScreenData?
-    var searchController: UISearchController!
+    var searchController: UISearchController?
     lazy var session = URLSession.sharedCustomSession
 
     var refreshControl: UIRefreshControl!
@@ -140,18 +140,18 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
 
         searchController = UISearchController(searchResultsController: nil)
 
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search in Title and Description..."
-        searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.searchBarStyle = .minimal
+        searchController?.searchResultsUpdater = self
+        searchController?.searchBar.delegate = self
+        searchController?.dimsBackgroundDuringPresentation = false
+        searchController?.searchBar.placeholder = "Search in Title and Description..."
+        searchController?.searchBar.autocapitalizationType = .none
+        searchController?.searchBar.searchBarStyle = .minimal
         definesPresentationContext = true
 
-        searchController.searchBar.sizeToFit()
+        searchController?.searchBar.sizeToFit()
 
         let searchBarFrame = UIView(frame: CGRect(x: 0.0, y: 50, width: view.frame.width, height: 44))
-        searchBarFrame.addSubview(searchController.searchBar)
+        searchBarFrame.addSubview(searchController!.searchBar)
         view.addSubview(searchBarFrame)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.navigateBack), name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
@@ -362,17 +362,17 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        searchController.searchBar.resignFirstResponder()
+        ((searchController?.searchBar.resignFirstResponder()) != nil)
     }
 
     func searchBarCancelButtonClicked(_: UISearchBar) {
         shouldShowSearchResults = true
-        searchController.searchBar.resignFirstResponder()
+        searchController?.searchBar.resignFirstResponder()
     }
 
     func searchBarTextDidEndEditing(_: UISearchBar) {
         shouldShowSearchResults = false
-        searchController.searchBar.resignFirstResponder()
+        searchController?.searchBar.resignFirstResponder()
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
@@ -439,7 +439,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         print("Coming in : \(segmentedControl.selectedSegmentIndex)")
         section_ = segmentedControl.selectedSegmentIndex
         if segmentedControl.selectedSegmentIndex == 0 {
-            searchController.searchBar.text = ""
+            searchController?.searchBar.text = ""
             category_ = nil
             SearchData.removeAll()
             TableData.removeAll()
@@ -451,7 +451,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             addData(category: "nil")
             }
         } else if segmentedControl.selectedSegmentIndex == 1 {
-            searchController.searchBar.text = ""
+            searchController?.searchBar.text = ""
             CategoryData = ["Action", "Drama", "Crime", "Romance", "Troll"]
             SearchData.removeAll()
             TableData.removeAll()
@@ -461,7 +461,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 66.0
+        return 120.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -520,34 +520,12 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             // TODO: pictures' size shall not exceed 100 kbytes
             
             let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+            
             if let url = URL(string: urlString) {
 
                 if let imageData = try? Data(contentsOf: url) {
                     cell!.imageView?.image = UIImage(data: imageData)
                     }
-                cell!.imageView?.image = data?.image
-               
-               if let image = data?.image {
-                    cell?.imageView?.image = image
-                    cell!.setNeedsLayout()
-
-                } else {
-                
-                cell?.imageView?.image = nil
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.15) {
-                    if tableView.indexPath(for: cell!) != nil {
-                        if let data = try? Data(contentsOf: url) {
-                            if self.TableData.count > 0 {
-                                self.TableData[indexPath.section].image = UIImage(data: data) }
-                            if self.SearchData.count > 0 {
-                            self.SearchData[indexPath.section].image = UIImage(data: data)
-                            }
-                            cell?.imageView?.image = UIImage(data: data)
-                            cell!.setNeedsLayout()
-                        }
-                    }
-                 }
-            }
             }
             
             if (!adminPage) {
@@ -590,7 +568,15 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+    
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (adminPage && CategoryData.count == 0) {
             if(TableData.count > 0) {
@@ -612,7 +598,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 addVenueId = ScreenData_2[indexPath.section].venueId
                 addCategory = ScreenData_2[indexPath.section].category
             }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newScreenMovieSelected"), object: nil)
+
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "venueSelected"), object: nil)
         }
 
@@ -630,7 +616,13 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             }
         } else {
             if (adminPage || adminUpdatePage) {} else {
-            performSegue(withIdentifier: "goto_venues", sender: self)
+                if veil, shouldShowSearchResults {
+                    dismiss(animated: true, completion: nil)
+                }
+                veil = false
+                shouldShowSearchResults = false
+                performSegue(withIdentifier: "goto_venues", sender: self)
+                
             }
         }
     }

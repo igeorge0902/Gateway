@@ -225,11 +225,26 @@ extension PopOver: UICollectionViewDelegate, UICollectionViewDataSource {
 
         return true
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
+        
+        let filteredAttendees = SeatsData_.filter {
+            $0.seatRow == String(collectionView.tag + 1)
+        }
+
+        let seatId = filteredAttendees[indexPath.row].seatId
+       // let seatNumber = filteredAttendees[indexPath.row].seatNumber
+
+        let seatIds = [Int](seatsToBeReserved.keys.sorted(by: { $0 < $1 }))
+        if  seatIds.contains(seatId!)   {
+            cell.layer.borderWidth = 4
+        }
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? SeatCells
-
-  //      self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: TableViewCell())
 
         cell?.layer.borderWidth = 4
         // cell?.layer.borderColor = UIColor.black.cgColor

@@ -153,17 +153,14 @@ public class HibernateTest {
 		
 		List<Ticket> tickets = bh.returnTickets(2, list);
 		*/
-		Screen screen = DAO.instance().insertNewScreen("Dangerous Minds", "2021-02-10 22:00:00", "Uránia Filmszínház", 6, 6, "T63", "Romance");
-		/*
-		List<Location> location = new BookingHandlerImpl().getAllLocations();
+		Location location = new BookingHandlerImpl().getLocationForVenue(200);
 
 		JSONObject json = new JSONObject();
 		json.put("dates", location);
-		*/
 		//json.put("venue", seats);
 
 		
-		//System.out.println(json.toString());
+		System.out.println(json.toString());
         
 
 	}
@@ -266,3 +263,21 @@ public class HibernateTest {
 	}
 	
 }
+
+/*
+Object [] obj = movies3.toArray();
+Object [] obs = null;
+Object obb = null;
+
+for (int i = 0; i < obj.length; i++) {
+	obs = (Object[]) obj[i];
+
+for (int j = 0; j < obs.length; j++) {
+	
+	Movie m = (Movie) obs[0];
+	obb = obs[j]; 
+System.out.println(obb);
+	}
+
+}
+*/

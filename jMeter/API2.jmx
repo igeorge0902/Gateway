@@ -17,7 +17,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">200</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1574156823000</longProp>
         <longProp name="ThreadGroup.end_time">1574156823000</longProp>
@@ -101,7 +101,7 @@
                 </elementProp>
                 <elementProp name="pswrd" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">c3f143d18059221215df660694195553ce02d4ebb4a48e89a5a5a0104898f61a9c6b24793cf5e80ad37616696d1b504295aa9a0c0a10ed3fd0380928d18b7cc1</stringProp>
+                  <stringProp name="Argument.value">318672fb86ed60eb2a230a782d53f93c243d199f6f6972fee17a0ce8591ec803f0abf83335b2777b1c44792f98cf66567109c843a1c0deaa2a26b85825ca5ee7</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">pswrd</stringProp>
@@ -152,10 +152,10 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 
 String message = &quot;GG&quot;;
-String secret =  &quot;c3f143d18059221215df660694195553ce02d4ebb4a48e89a5a5a0104898f61a9c6b24793cf5e80ad37616696d1b504295aa9a0c0a10ed3fd0380928d18b7cc1&quot;;
+String secret =  &quot;318672fb86ed60eb2a230a782d53f93c243d199f6f6972fee17a0ce8591ec803f0abf83335b2777b1c44792f98cf66567109c843a1c0deaa2a26b85825ca5ee7&quot;;
 String deviceId_ = vars.get(&quot;RANDOM_STRING&quot;);
 String time = &quot;1575970234359&quot;;
-String length =&quot;user=GG&amp;deviceId=&quot;+deviceId_+&quot;&amp;pswrd=c3f143d18059221215df660694195553ce02d4ebb4a48e89a5a5a0104898f61a9c6b24793cf5e80ad37616696d1b504295aa9a0c0a10ed3fd0380928d18b7cc1&quot;;
+String length =&quot;user=GG&amp;deviceId=&quot;+deviceId_+&quot;&amp;pswrd=&quot;+secret;
 
 int contentLength = length.length();
 String contentLength_ = Integer.toString(contentLength);
@@ -165,7 +165,7 @@ String contentLength_ = Integer.toString(contentLength);
      HMAC.init(secret_key);
 String strEncoded = strEncoded = new String(Base64.encodeBase64(HMAC.doFinal(message.getBytes())));
 
-String message_ = &quot;/login/HelloWorld:user=GG&amp;pswrd=c3f143d18059221215df660694195553ce02d4ebb4a48e89a5a5a0104898f61a9c6b24793cf5e80ad37616696d1b504295aa9a0c0a10ed3fd0380928d18b7cc1&amp;deviceId=&quot;+deviceId_+&quot;:&quot;+time+&quot;:&quot;+&quot;188&quot;;
+String message_ = &quot;/login/HelloWorld:user=GG&amp;pswrd=&quot;+secret+&quot;&amp;deviceId=&quot;+deviceId_+&quot;:&quot;+time+&quot;:&quot;+&quot;188&quot;;
 
      Mac HMAC = Mac.getInstance(&quot;HmacSHA512&quot;);
      SecretKeySpec secret_key = new SecretKeySpec(strEncoded.getBytes(), &quot;HmacSHA512&quot;);
@@ -210,10 +210,6 @@ vars.put(&quot;CONTENT_LENGTH&quot;,hmachHash);</stringProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">X-MICRO-TIME</stringProp>
                   <stringProp name="Header.value">1575970234359</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">X-HMAC-HASH-OLD</stringProp>
-                  <stringProp name="Header.value">P3oJZzCoxOg703tkf6PIkOAZsmsSqsRMvNPQy32nYslldcSa9j+fQ9gUq0QES7KvrRvox3rauyjpH2k4u87VPw==</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Content-Length</stringProp>

@@ -7,7 +7,7 @@
 <hibernate-configuration>
  <session-factory name="">
   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/book</property>
-  <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.username">sqluser</property>
   <property name="hibernate.connection.password">sqluserpw</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -40,9 +40,10 @@
   <mapping class="com.jeet.api.ScreeningDates" />
   <mapping class="com.jeet.api.Location" />
   <mapping class="com.jeet.api.Purchase" />
-  <class-cache class="com.jeet.api.Movie" include="all" region="movies" usage="read-write" />
-  <class-cache class="com.jeet.api.Venues" include="all" region="venues" usage="read-write" />
-  <class-cache class="com.jeet.api.Location" include="all" region="location" usage="read-write" />
+
+  <class-cache class="com.jeet.api.Movie" include="all" region="movies" usage="read-only" />
+  <class-cache class="com.jeet.api.Venues" include="all" region="venues" usage="read-only" />
+  <class-cache class="com.jeet.api.Location" include="all" region="location" usage="read-only" />
 <!--     
   <property name="hibernate.cache.region.factory_class" value="org.jboss.as.jpa.hibernate5.infinispan.InfinispanRegionFactory" />
 -->

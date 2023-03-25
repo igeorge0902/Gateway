@@ -1,16 +1,11 @@
 package com.jeet.filters;
 
 import java.io.IOException;
-import java.util.Map;
-
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.PreMatching;
-import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
-import com.jeet.utils.AesUtil;
-import com.jeet.utils.CustomNotFoundException;
 
 @Provider
 @PreMatching

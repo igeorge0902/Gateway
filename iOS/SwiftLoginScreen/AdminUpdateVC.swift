@@ -39,18 +39,23 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
         super.viewDidLoad()
         adminUpdatePage = true
         adminPage = false
+        
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "venueSelected"), object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshVenue), name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
        
-        scrollView.alwaysBounceVertical = true
+       // scrollView.alwaysBounceVertical = true
         scrollView.backgroundColor = UIColor.white
         view.addSubview(scrollView)
         category.delegate = self
         showDatePicker()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AdminUpdateVC.refresh), name: NSNotification.Name(rawValue: "venueSelected"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AdminUpdateVC.refreshVenue), name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
+       
+      //  NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillshow), name: UIResponder.keyboardWillShowNotification, object: nil)
+      //  NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillhide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
 
     override func viewWillAppear(_: Bool) {
@@ -74,10 +79,41 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
         btnDel.setTitle("Delete", for: UIControl.State())
         btnDel.showsTouchWhenHighlighted = true
         btnDel.addTarget(self, action: #selector(AdminUpdateVC.deleteScreen), for: UIControl.Event.touchUpInside)
+        
+        let btnClear = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
+        btnClear.backgroundColor = UIColor.black
+        btnClear.setTitle("Clear", for: UIControl.State())
+        btnClear.showsTouchWhenHighlighted = true
+        btnClear.addTarget(self, action: #selector(AdminUpdateVC.clear), for: UIControl.Event.touchUpInside)
 
+        view.addSubview(btnClear)
         view.addSubview(btnAdd)
         view.addSubview(btnDel)
         view.addSubview(btnNav)
+    }
+    
+    @objc func keyboardwillshow() {
+   //     self.view.frame.origin.y = -150
+    }
+    
+    @objc func keyboardwillhide() {
+   //     self.view.frame.origin.y = 0
+    }
+    
+    @objc func clear() {
+        addMovie = ""
+        addVenue = ""
+        addScreeningID = ""
+        addScreeningDate = ""
+        addCategory = ""
+        addScreeningDateId = ""
+        
+        movieName.text = ""
+        venueName.text = ""
+        ScreeningID.text = ""
+        screeningDate.text = ""
+        category.text = ""
+        
     }
     
     @objc func refresh() {
@@ -192,30 +228,34 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
         view.endEditing(true)
     }
     
-    func textFieldShouldEndEditing(_ category: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
-    func textFieldDidEndEditing(_ category: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
 
         var CategoryData: [String] = [String]()
         CategoryData = ["Action", "Drama", "Crime", "Romance", "Troll"]
 
-        if !CategoryData.contains(category.text!) {
+        if textField == category {
+        if !CategoryData.contains(category.text!) && category.text != "" {
             self.presenAlertView(withTitle: "Hello", message: "Invalid category")
             category.text = ""
             TrollErrorLabel.isHidden = false
+            }
+            
+            self.view.frame.origin.y = 0
+            category.resignFirstResponder()
+
         }
-        
-        if category == venueName {
-            venueChanged.isHidden = false
-        }
-        
         
     }
     
-    func textFieldDidBeginEditing(_ category: UITextField) {
-        print("hello")
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == category {
+        self.view.frame.origin.y = -100
         TrollErrorLabel.isHidden = true
+        }
 
     }
     
@@ -302,12 +342,20 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
                 // TODO: add more info about the screen
                 self.presentAlert(withTitle: "Info:", message: "Screen deleted:, ScreeningDatesId: \(addScreeningDateId)")
                 
+                addMovie = ""
+                addVenue = ""
+                addScreeningID = ""
+                addScreeningDate = ""
+                addCategory = ""
+                addScreeningDateId = ""
+                
                 movieName.text = ""
                 venueName.text = ""
                 ScreeningID.text = ""
                 screeningDate.text = ""
-                category.text = ""                
-            }
+                category.text = ""
+                
+                }
             }
         }
     }

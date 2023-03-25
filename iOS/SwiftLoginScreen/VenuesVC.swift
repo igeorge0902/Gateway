@@ -11,8 +11,7 @@ import UIKit
 import MapKit
 
 class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
-    
+
     var movieId: Int!
     var movieName: String!
     var selectLarge_picture: String!
@@ -20,9 +19,8 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var selectVenues_picture: String!
     var imdb: String!
     
-    var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
-    var handleVenuesOnMapDelegate:HandleVenueMap? = nil
+    var handleMapSearchDelegate:HandleMapSearch_? = nil
 
     deinit {
         adminPage = false
@@ -287,12 +285,11 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             addVenue = PlacesData_[indexPath.row].title!
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
         
-        } else if mapViewPage{
+        } else if mapViewPage {
             let selectedItem = PlacesData_[indexPath.row].mapItem().placemark
-          //  handleVenuesOnMapDelegate?.dropPinZoomIn(placemark: selectedItem)
-            self.handleVenuesOnMapDelegate?.dropPinZoomIn(placemark: selectedItem)
- 
+            handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
             dismiss(animated: true, completion: nil)
+            
         } else {
             performSegue(withIdentifier: "goto_venues_details", sender: self)
             }

@@ -1,6 +1,4 @@
 RESTful API component for the Booking project
-- serving data endpoints for movies, booking, venues and admin interface
-- for getting started a fully functional wildFly installation is uploaded into the repo
 
 - standard JAX-RS API implementation with RestEasy provided on wildFly
 - do not use the hibernate test config, when deployed

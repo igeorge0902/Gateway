@@ -41,9 +41,11 @@ public class Purchase implements Serializable {
 	protected String uuid;
 	
 	protected String orderId;
-	
+		
 	@Temporal(TemporalType.TIMESTAMP)
     protected Date TIME_;
+
+	protected String braintree_customerId;
 	
 	/**
 	 * Do not use CascadeType.REMOVE, because it will remove the whole purchase once a corresponding ticket is deleted!
@@ -115,6 +117,20 @@ public class Purchase implements Serializable {
 	}
 
 	/**
+	 * @return the orderId
+	 */
+	public String getBrainTreeId() {
+		return braintree_customerId;
+	}
+
+	/**
+	 * @param braintree_customerId the orderId to set
+	 */
+	public void setBrainTreeId(String braintree_customerId) {
+		this.braintree_customerId = braintree_customerId;
+	}
+
+	/**
 	 * @return the time
 	 */
 	public Date getTime() {
@@ -141,6 +157,5 @@ public class Purchase implements Serializable {
 	public void setTicket(List<Ticket> ticket) {
 		this.ticket = ticket;
 	}
-
    
 }

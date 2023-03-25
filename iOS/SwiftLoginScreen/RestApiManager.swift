@@ -67,9 +67,9 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
                     var errorMsg: String = ""
                     if let json: JSON = try? JSON(data: data!) {
-                    if let message_ = json["Error Details"].object as? NSDictionary {
-                        errorMsg =  message_.value(forKey: "ErrorMsg:") as! String
-                        
+                        if let message_ = json["Error Details"].object as? NSDictionary {
+                            errorMsg =  message_.value(forKey: "Error Message:") as! String
+                            
                         }
                         errorMsg = ", " + errorMsg
                     }

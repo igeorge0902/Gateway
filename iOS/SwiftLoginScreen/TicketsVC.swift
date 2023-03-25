@@ -40,8 +40,6 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addData()
-
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
         btnNav.showsTouchWhenHighlighted = true
@@ -63,11 +61,12 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
 
         view.addSubview(collectionView)
         view.sendSubviewToBack(collectionView)
+        
+        addData()
     }
 
     override func viewDidAppear(_: Bool) {
         super.viewDidAppear(true)
-        collectionView.reloadData()
     }
 
     @objc func navigateBack() {
@@ -90,11 +89,13 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
                     }
                 }
             }
+            
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
+
         }
 
-        if collectionView != nil {
-            collectionView.reloadData()
-        }
     }
     
     /*

@@ -535,7 +535,6 @@ public class DAO {
 	/**
 	 * Returns all movies on venues.
 	 * 
-	 * @param name
 	 * @return
 	 */
 	public synchronized List<Venues> getAllVenuesForUpdate() {
@@ -564,7 +563,6 @@ public class DAO {
 	/**
 	 * Returns all movies on venues.
 	 * 
-	 * @param name
 	 * @return
 	 */
 	public synchronized List<Movie> getAllMoviesOnVenues() {
@@ -594,7 +592,6 @@ public class DAO {
 	/**
 	 * Returns all location for the map.
 	 * 
-	 * @param name
 	 * @return
 	 */
 	public synchronized List<Location> getAllLocations() {
@@ -712,7 +709,7 @@ public class DAO {
 	/**
 	 * Get the unique screeningDate for a movie on a venue.
 	 * 
-	 * @param venuesId
+	 * @param locationId
 	 * @param movieId
 	 * @return
 	 */
@@ -798,6 +795,55 @@ public class DAO {
 		
 		Purchase purchase = session.load(Purchase.class, newPurchase.getPurchaseId());
 		
+		return purchase;
+	}
+
+	/**
+	 * Sets the BrainTree customerId for the transaction.
+	 *
+	 * @param uuid
+	 * @return
+	 */
+	public synchronized Purchase getBraintreeId(String uuid) {
+
+		session = factory.getCurrentSession();
+
+		trans = session.beginTransaction();
+
+		String hql = "select purchase from Purchase as purchase where uuid = :uuid and braintree_customerId != null";
+
+		Query query = session.createQuery(hql);
+		query.setParameter("uuid", uuid);
+		List<Purchase> purchase = query.list();
+
+		session.getTransaction().commit();
+
+		return purchase.get(0);
+	}
+
+	/**
+	 * Sets the BrainTree customerId for the transaction.
+	 *
+	 * @param customerId
+	 * @param purchaseId
+	 * @return
+	 */
+	public synchronized Purchase setBraintreeId(String customerId, int purchaseId) {
+
+		session = factory.getCurrentSession();
+
+		trans = session.beginTransaction();
+
+		String hql = "select purchase from Purchase as purchase where purchaseId = :purchaseId";
+
+		Query query = session.createQuery(hql);
+		query.setParameter("purchaseId", purchaseId);
+		Purchase purchase = (Purchase) query.uniqueResult();
+		purchase.setBrainTreeId(customerId);
+		session.saveOrUpdate(purchase);
+
+		session.getTransaction().commit();
+
 		return purchase;
 	}
 	
@@ -962,7 +1008,8 @@ public class DAO {
 	 * Deletes individual ticket, in a purchase package, of reserved seat(s), and sets the seat free.
 	 * It is not applicable for purchases that are settled, unless void transaction is worked out.
 	 * 
-	 * @param ticketId
+	 * @param ticketIds
+	 * @param purchaseId
 	 * @return
 	 */
 	public synchronized boolean cancelTicket(List<Integer> ticketIds, Integer purchaseId){

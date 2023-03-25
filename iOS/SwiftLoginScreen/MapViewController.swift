@@ -15,11 +15,11 @@ var PlacesData_: [PlacesData] = [PlacesData]()
 var PlacesData2_: [PlacesData] = [PlacesData]()
 var mapViewPage: Bool = false
 
-protocol HandleVenueMap {
+protocol HandleMapSearch_ {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
-
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate, UIPopoverPresentationControllerDelegate {
+    
     deinit {
         PlacesData_.removeAll()
         mapViewPage = false
@@ -46,6 +46,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
+        
+        let venuesVC = storyboard!.instantiateViewController(withIdentifier: "VenuesVC") as! VenuesVC        
+        venuesVC.mapView = mapView
+        venuesVC.handleMapSearchDelegate = self
 
         // user activated automatic authorization info mode
         let status = CLLocationManager.authorizationStatus()
@@ -65,12 +69,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.mapType = MKMapType.standard
-        // mapView.userTrackingMode = .follow
-        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        mapView.userTrackingMode = .follow
+        //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
 
         mapView.showsScale = true
         mapView.showsTraffic = true
-        mapView.showsCompass = false
+        mapView.showsCompass = true
         mapView.showsBuildings = true
         mapView.showsUserLocation = true
         mapView.isScrollEnabled = true
@@ -89,11 +93,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         view.addSubview(btnVen)
         view.addSubview(btnNav)
-        
-        let venues = VenuesVC()
-        venues.mapView = mapView
-        venues.handleVenuesOnMapDelegate = self
-        
+            
         addData()
     }
 
@@ -288,12 +288,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print("hello")
     }
 
-    /*
-     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 
-         mapView.centerCoordinate = userLocation.location!.coordinate
+        // mapView.centerCoordinate = userLocation.location!.coordinate
 
-     }*/
+     }
 
     func locationManager(_: CLLocationManager, didUpdateToLocations newLocations: CLLocation, fromLocation _: CLLocation) {
         print("present location : \(newLocations.coordinate.latitude), \(newLocations.coordinate.longitude)")
@@ -334,12 +334,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         actionSheetController.addAction(cancelAction)
         // Create and add first option action
-        let takePictureAction: UIAlertAction = UIAlertAction(title: "Go to Venue", style: .default) { _ -> Void in
+        let takeAction: UIAlertAction = UIAlertAction(title: "Go to Venue", style: .default) { _ -> Void in
 
             self.performSegue(withIdentifier: "goto_venues_for_movies", sender: self)
             // Code for launching the camera goes here
         }
-        actionSheetController.addAction(takePictureAction)
+        actionSheetController.addAction(takeAction)
 
         // Present the AlertController
         present(actionSheetController, animated: true, completion: nil)
@@ -389,19 +389,24 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //  }
 }
 
-extension MapViewController: HandleVenueMap {
+extension MapViewController: HandleMapSearch_ {
     
-    func dropPinZoomIn(placemark:MKPlacemark) {
-
-        selectedPin = placemark
-        mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = placemark.coordinate
-        annotation.title = placemark.name
-        mapView.addAnnotation(annotation)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: placemark.coordinate,
-                                        span: span)
-        mapView.setRegion(region, animated: true)
+    func dropPinZoomIn(placemark:MKPlacemark){
+    // cache the pin
+    selectedPin = placemark
+    // clear existing pins
+    
+   mapView.removeAnnotations(mapView.annotations)
+    let annotation = MKPointAnnotation()
+    annotation.coordinate = placemark.coordinate
+    annotation.title = placemark.name
+    
+    if let city = placemark.locality, let state = placemark.administrativeArea {
+    annotation.subtitle = "(city) (state)" }
+    mapView.addAnnotation(annotation)
+    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+    mapView.setRegion(region, animated: true)
+    
     }
 }

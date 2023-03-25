@@ -1,9 +1,0 @@
-version: "Apple Swift version 4.0 (swiftlang-900.0.65.2 clang-900.0.37)"
-options: "342837a73372bb99e74bf2c04a189a56"
-build_time: [1522937923, 371532000]
-inputs:
-  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Sources/Kanna/CSS.swift": [1488233383, 0]
-  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Sources/Kanna/Kanna.swift": [1488233383, 0]
-  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Sources/Kanna/libxmlHTMLDocument.swift": [1488233383, 0]
-  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Sources/Kanna/libxmlHTMLNode.swift": [1488233383, 0]
-  "/Users/georgegaspar/Documents/Git/iOS_S3/Pods/Kanna/Sources/Kanna/libxmlParserOption.swift": [1488233383, 0]

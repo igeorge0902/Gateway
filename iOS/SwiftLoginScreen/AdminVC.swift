@@ -48,16 +48,18 @@ class AdminVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIVi
         adminPage = true
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "newScreenMovieSelected"), object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshVenue), name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
        
-        scrollView.alwaysBounceVertical = true
+       // scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
         scrollView.backgroundColor = UIColor.white
         view.addSubview(scrollView)
         category.delegate = self
+        ScreeningID.delegate = self
         showDatePicker()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AdminVC.refresh), name: NSNotification.Name(rawValue: "newScreenMovieSelected"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(AdminVC.refreshVenue), name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
     }
 
     override func viewWillAppear(_: Bool) {
@@ -232,29 +234,43 @@ class AdminVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIVi
         view.endEditing(true)
     }
     
-    func textFieldShouldEndEditing(_ category: UITextField) -> Bool {
-        return true
-    }
-    func textFieldDidEndEditing(_ category: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
 
         var CategoryData: [String] = [String]()
         CategoryData = ["Action", "Drama", "Crime", "Romance", "Troll"]
 
-        if !CategoryData.contains(category.text!) {
-            self.presenAlertView(withTitle: "Hello", message: "Invalid category")
+        if !CategoryData.contains(category.text!) && category.text != "" {
+            //self.presenAlertView(withTitle: "Hello", message: "Invalid category")
             category.text = ""
             TrollErrorLabel.isHidden = false
         }
-        
-        
+        self.view.frame.origin.y = 0
     }
     
-    func textFieldDidBeginEditing(_ category: UITextField) {
-        print("hello")
-        TrollErrorLabel.isHidden = true
-
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == ScreeningID {
+            self.view.frame.origin.y = -100
+        }
+        
+        if textField == category {
+            self.view.frame.origin.y = -175
+        }
     }
-
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func presentationController(forPresented presented: UIViewController, presenting _: UIViewController?, source _: UIViewController) -> UIPresentationController? {
         return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
     }

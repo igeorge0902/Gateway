@@ -29,9 +29,11 @@ import org.apache.lucene.analysis.ngram.NGramFilterFactory;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Analyzer;
 import org.hibernate.search.annotations.AnalyzerDef;
+import org.hibernate.search.annotations.ContainedIn;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.FullTextFilterDef;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 import org.hibernate.search.annotations.Parameter;
 import org.hibernate.search.annotations.TokenFilterDef;
 import org.hibernate.search.annotations.TokenizerDef;
@@ -80,7 +82,7 @@ public class Movie implements Serializable {
 	@Field(analyze = Analyze.NO)
     protected String category;
 	/**
-	 * List of screen of one movie
+	 * List of screen of one movie, one movie to many screening(s)
 	 */
     @OneToMany(mappedBy = "movie", fetch=FetchType.LAZY)
     protected List<Screen> screens;

@@ -69,7 +69,7 @@ public class DBConnectionManager {
 	 */
 	public Connection getConnection() throws SQLException, ClassNotFoundException{
 		
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		con = DriverManager.getConnection(dbURL, user, password);	
 		con.setCatalog("login");
 		con.setAutoCommit(true);

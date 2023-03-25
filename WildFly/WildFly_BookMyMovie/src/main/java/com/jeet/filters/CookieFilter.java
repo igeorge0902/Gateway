@@ -35,14 +35,11 @@ public class CookieFilter implements ContainerRequestFilter {
     	
     	if(requestContext.getUriInfo().getPath().contains("user")) {
     	cookies = requestContext.getCookies();
-    	System.out.println("Cookie filter running...");
 
   		if (!cookies.isEmpty()) {
-  	    	System.out.println("Merre jarsz...?");  
   			cookie = cookies.get("XSRF-TOKEN");
   	  		if (cookie != null) {
   		    xsrfToken = aesUtil.encrypt(SALT, IV, requestContext.getProperty("TIME_").toString(), requestContext.getProperty("token2").toString());
-  	    	System.out.println("Mizu? " + xsrfToken);  
 
 			   String actualToken = "";
 			   String token = xsrfToken.trim();

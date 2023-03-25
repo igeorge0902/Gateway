@@ -156,21 +156,6 @@ public class HelloWorld extends HttpServlet implements Serializable {
 				// synchronized session object to prevent concurrent update		        	   
 				synchronized(session) {
 	                
-				/* 
-				 * The reason session ids are not checked at this point is 
-				 * that it can have impact on the speed. In normal conditions, the listener works correctly 
-				 * in normal conditions, independently from the main thread and always the last generated 
-				 * token can be used, only. 
-				 * 
-				 * There is no user count limitation, not planned, but also the listener should manage it.
-				 * 
-                 *	// Init HashMap that stores session objects
-                 *	activeUsers = (ConcurrentHashMap<String, HttpSession>)context.getAttribute("activeUsers");
-                 *	// Get session with sessionId
-                 *	session = activeUsers.get(session.getId());
-                 *
-                 */
-	                
 				session.setAttribute("user", user);
 				session.setAttribute("deviceId", deviceId);
 				

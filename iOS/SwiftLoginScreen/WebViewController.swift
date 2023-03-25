@@ -43,9 +43,8 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         view.addSubview(webView)
         
         let requestURL = URL(string: "https://igeorge1982.local/login/index.html")
-        var urlrequest = URLRequest(url: requestURL!)
+        let urlrequest = URLRequest(url: requestURL!)
         
-        //urlrequest.setValue("M", forHTTPHeaderField: "M")
         webView.load(urlrequest)
     }
     

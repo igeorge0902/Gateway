@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -48,18 +51,24 @@ public class test {
 	public static Map<String, Integer> crunchifySynchronizedMapObject = null;
 	//spublic static Map<String, Integer> crunchifyConcurrentHashMapObject = null;
  
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws InterruptedException, IOException, SQLException, ClassNotFoundException {
 		
 		
 		AesUtil aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
 
 		String query_ = aesUtil.decrypt(SALT, IV, activationToken_, "0+/H2wuaUTwxrD/sJJ9jyWytNprm6BvqjSwCLj4KTtiWpxJjCIkhprk/SKVQ45v+");
         //  String split = query_.split("r=")[1];     
-		//  String hmacHash = hmac512.getLoginHmac512("g", "g", "g", null, null);
+		  String hmacHash = hmac512.getLoginHmac512("GG", "318672fb86ed60eb2a230a782d53f93c243d199f6f6972fee17a0ce8591ec803f0abf83335b2777b1c44792f98cf66567109c843a1c0deaa2a26b85825ca5ee7", "12345678", "1634743894", "188");
 		
+		System.out.println(hmacHash);
 	//	String test = "aC8SRTzA1vhfFZr_bSjE2GmAj8wgHWHck7O1N1YM.gaspars-macbook-pro";
 	//	System.out.println(test.split("\\.")[0].toString());
         
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "sqluser", "sqluserpw-1982");	
+		con.setCatalog("login");
+		con.setAutoCommit(true);
+		System.out.print("dB Connection created, catalog set to \"login\"");
 		
         String [] params_ = query_.split("&");
         Map<String, String> queryMap = new HashMap<String, String>();

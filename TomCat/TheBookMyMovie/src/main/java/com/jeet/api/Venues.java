@@ -15,6 +15,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
+import org.hibernate.search.annotations.ContainedIn;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
+
 @Entity
 @Cacheable
 public class Venues implements Serializable {

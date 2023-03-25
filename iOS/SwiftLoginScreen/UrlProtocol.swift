@@ -137,8 +137,6 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
         let cachedResponse = NSEntityDescription.insertNewObject(forEntityName: "CachedURLResponse", into: context) as NSManagedObject
 
         if let httpResponse = response as? HTTPURLResponse {
-            switch httpResponse.statusCode {
-            case 200:
 
                         cachedResponse.setValue(mutableData, forKey: "data")
                         cachedResponse.setValue(request.url!.absoluteString, forKey: "url")
@@ -146,11 +144,6 @@ class MyURLProtocol: URLProtocol, NSURLConnectionDelegate {
                         cachedResponse.setValue(response.mimeType, forKey: "mimeType")
                         cachedResponse.setValue(response.textEncodingName, forKey: "encoding")
                         cachedResponse.setValue(httpresponse.statusCode, forKey: "statusCode")
-
-            default:
-
-                NSLog("Url was redirected.")
-            }
         }
 
         if context.hasChanges {

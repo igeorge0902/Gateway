@@ -382,7 +382,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     }
 
     @objc func map(_: UIButton, event _: UIEvent) {
-            performSegue(withIdentifier: "goto_map2", sender: self)
+            performSegue(withIdentifier: "goto_venue_map", sender: self)
     }
 
     @objc func dates(_: UIButton, event: UIEvent) {

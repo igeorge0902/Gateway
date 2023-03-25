@@ -251,6 +251,8 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                             self.alertViewPresentingVC = UIViewController()
                             self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
                         }
+                    } else {
+                        UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
                     }
                         
                 } else {
@@ -266,8 +268,12 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                             }
 
                         } else {
-                            UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
+                            self.alertViewPresentingVC = UIViewController()
+                            self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
                         }
+                    } else {
+                        self.alertViewPresentingVC = UIViewController()
+                        self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
                     }
                 }
 

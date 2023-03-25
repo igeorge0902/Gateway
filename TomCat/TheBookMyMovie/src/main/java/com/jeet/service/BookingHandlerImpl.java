@@ -241,6 +241,20 @@ public class BookingHandlerImpl {
 		
 		return true;
 	}
+
+	public Purchase setBrainTreeCustomerId(String customerId, int purchaseId) {
+
+		Purchase purchase = DAO.instance().setBraintreeId(customerId, purchaseId);
+
+		return purchase;
+	}
+
+	public Purchase getBrainTreeCustomerId(String uuid) {
+
+		Purchase purchase = DAO.instance().getBraintreeId(uuid);
+
+		return purchase;
+	}
 	
 	public boolean deletePurchase(Integer purchaseId) {
 		

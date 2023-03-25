@@ -70,21 +70,22 @@ public class HibernateTest {
 		json.put("clientToken", clientToken);
 		*/
 		
-		//BookingHandlerImpl bh = new BookingHandlerImpl();
+		BookingHandlerImpl bh = new BookingHandlerImpl();
 		//List<Location> venues = DAO.instance().getLocationForMovie(1075);
 
-		
-		//Screen screen = DAO.instance().insertNewScreen("My Fair Lady", "2021-02-10 22:00:00", "Uránia Filmszínház", 6, 6, "T48", "Romance");
-
+		Purchase purchase_ = bh.getBrainTreeCustomerId("65f63602-6ddf-11e5-8441-71caa0c5f788");
+		Purchase purchase = bh.setBrainTreeCustomerId("11111", 238);
+		Screen screen = DAO.instance().insertNewScreen("Dangerous Minds", "2021-02-10 22:00:00", "Uránia Filmszínház", 6, 6, "T60", "Romance");
+		//ScreeningDates date = DAO.instance().insertNewScreen();
 		//List<Movie> movies = bh.getAllMovies(104);
 		//System.out.print(movies.size());
 		//DAO.instance().updateScreen();
 		//DAO.instance().insertNewScreen();
 		
-		for (int i = 246; i < 248; i++) {
-			DAO.instance().deleteScreen(i);
+		//for (int i = 246; i < 248; i++) {
+		//	DAO.instance().deleteScreen(i);
 
-		}
+		//}
 		//DAO.instance().deleteScreen(208);
 
 		//JSONObject json = new JSONObject();
@@ -100,7 +101,7 @@ public class HibernateTest {
 	  
     //  List<Venues> venue = bh.getVenueByLocation(10);
 	//	List<Movie> movies = bh.fullTextSearchMovies("angr","", 0);
-		
+
 	//	List<Integer> ticketIds = new ArrayList<Integer>();
 	//	ticketIds.add(78);
 	//	ticketIds.add(82);

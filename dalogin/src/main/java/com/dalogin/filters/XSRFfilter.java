@@ -61,9 +61,6 @@ public class XSRFfilter implements Filter {
              		   if (cookie.getName().equalsIgnoreCase("XSRF-TOKEN")) {
    						String actualToken = cookie.getValue().trim();
 
-        				   log.info("XSRF-TOKEN is: " + actualToken);
-        				   log.info("encrypted_token: " + encrypted_token);
-
         				   String encrypted_token_ = "";
         				   String token = encrypted_token.trim();
         				   int l = token.length();
