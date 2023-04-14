@@ -8,7 +8,7 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <json.version>20160212</json.version>
+        <json.version>20230227</json.version>
 	</properties>
 	
 	<dependencies>
