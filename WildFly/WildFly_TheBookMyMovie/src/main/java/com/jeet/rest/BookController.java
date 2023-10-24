@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.text.DecimalFormat;
@@ -272,13 +273,16 @@ public class BookController {
 
 		}
 
-			String taxSumma = String.format("%.2f", taxSum_);
-			String summa = String.format("%.2f", sum_);
-			TransactionRequest request = new TransactionRequest()
+		BigDecimal tax_Sum = new BigDecimal(taxSum_);
+		BigDecimal a = tax_Sum.setScale(2, RoundingMode.HALF_UP);
+		BigDecimal summa = new BigDecimal(sum_);
+		BigDecimal b = summa.setScale(2, RoundingMode.HALF_UP);
+
+		TransactionRequest request = new TransactionRequest()
 					.merchantAccountId("testcompany")
 					.customerId(customerId)
-					.amount(new BigDecimal(summa))
-					.taxAmount(new BigDecimal(taxSumma))
+					.amount(b)
+					.taxAmount(a)
 					.paymentMethodNonce(nonce)
 					.options()
 					.submitForSettlement(true)
@@ -335,8 +339,8 @@ public class BookController {
 		json.put("ResponseCode", ResponseCode);
 		json.put("ResponseText", "hello");
 		json.put("Status", Status);  
-		json.put("Amount",String.valueOf(sum_));  
-		json.put("TaxAmount",String.valueOf(taxSum_)); 
+		json.put("Amount",TaxAmount);
+		json.put("TaxAmount",String.format("%.2f", Amount));
 		json.put("Success", "true");
 		json.put("tickets", allTickets);
 		//updates seats in the popOver as reserved

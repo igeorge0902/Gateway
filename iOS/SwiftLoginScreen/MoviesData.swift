@@ -57,9 +57,18 @@ extension Data {
             
             let request = URLRequest(url: url as URL)
 
-            NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
-                (_: URLResponse?, _: Data?, _: Error?) -> Void in
-          }
+         //   NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+         //       (_: URLResponse?, _: Data?, _: Error?) -> Void in
+         // }
+        
+            var loadPictures: GeneralRequestManager?
+            loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+            
+            
+            loadPictures?.getData_ {
+            (data: Data, _: NSError?) in
+           // let image = UIImage(data: data)
+            }
             
         }
     }

@@ -51,8 +51,8 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
     func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
         let prefs: UserDefaults = UserDefaults.standard
         let xtoken = prefs.value(forKey: "X-Token")
-
-        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as? String ?? "none"], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
+        
+        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as? String ?? "none"], cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         let session = URLSession.sharedCustomSession
 
@@ -128,8 +128,13 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
                 }
 
             } else {
-                let json: JSON = try! JSON(data: data!)
-                onCompletion(json, error as NSError?)
+                do {
+                    let json: JSON = try JSON(data: data!)
+                        onCompletion(json, error as NSError?)
+                    } catch {
+                        UIAlertController.popUp(title: "Error: ", message: "no response")
+                    }
+                
             }
         })
         task.resume()

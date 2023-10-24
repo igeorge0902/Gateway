@@ -250,11 +250,11 @@ class AdminVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIVi
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == ScreeningID {
-            self.view.frame.origin.y = -100
+           // self.view.frame.origin.y = -100
         }
         
         if textField == category {
-            self.view.frame.origin.y = -175
+           // self.view.frame.origin.y = -175
         }
     }
     

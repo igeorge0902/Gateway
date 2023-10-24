@@ -117,8 +117,8 @@
             timestampString = "596878307.104987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -134,8 +134,8 @@
             timestampString = "596846323.656147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
+            startingLineNumber = "580"
+            endingLineNumber = "580"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,40 +314,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1CE49626-E97C-47F4-B4CC-80BE262394A9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "ViewController"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF433622-B3EB-432B-96C4-E194A29751DF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "dropPinZoomIn(placemark:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4843D57E-0C99-43F8-B2B8-BDA5EDF2D465"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -382,121 +348,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "367A702F-F7E2-4178-9FA5-A76B568311D2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147">
-            <Locations>
-               <Location
-                  uuid = "367A702F-F7E2-4178-9FA5-A76B568311D2 - 6a978741a1ffa3e"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftLoginScreen.MapViewController.artworks.getter : Swift.Array&lt;SwiftLoginScreen.PlacesData&gt;"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Gateway-master/iOS/SwiftLoginScreen/ViewController.swift"
-                  timestampString = "488937817.593961"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "367A702F-F7E2-4178-9FA5-A76B568311D2 - 25fc3ecef39ba2a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftLoginScreen.MapViewController.artworks.setter : Swift.Array&lt;SwiftLoginScreen.PlacesData&gt;"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Gateway-master/iOS/SwiftLoginScreen/ViewController.swift"
-                  timestampString = "488937817.594182"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "367A702F-F7E2-4178-9FA5-A76B568311D2 - 66b5ab74ff1c6e10"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftLoginScreen.MapViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SwiftLoginScreen.MapViewController"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Gateway-master/iOS/SwiftLoginScreen/ViewController.swift"
-                  timestampString = "488937817.594312"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "228">
-               </Location>
-               <Location
-                  uuid = "367A702F-F7E2-4178-9FA5-A76B568311D2 - cf38851b700078f"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftLoginScreen.MapViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SwiftLoginScreen.MapViewController&gt;"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Gateway-master/iOS/SwiftLoginScreen/ViewController.swift"
-                  timestampString = "488937817.594441"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "172">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3A90DEF-CFE8-485E-A082-45BE8226B154"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "dropPinZoomIn(placemark:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0DB85E71-ABAA-4E1F-A0B4-AFE7F9CA44F0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "dropPinZoomIn(placemark:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E1B8552C-4CBA-4317-88CE-F8921CBB62BD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -505,10 +356,10 @@
             timestampString = "488940088.323242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -573,8 +424,8 @@
             timestampString = "596846323.6566499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "book(_:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -916,23 +767,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BDC81E11-3B4D-4F55-9132-6F330AE04826"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/ViewController.swift"
-            timestampString = "513982949.832613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "dropPinZoomIn(placemark:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1D509874-A583-45AD-A7E4-8355FC70C9D7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -941,8 +775,8 @@
             timestampString = "516549728.725279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -958,8 +792,8 @@
             timestampString = "516549728.725279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1160,8 +994,8 @@
             timestampString = "516549728.725279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1177,8 +1011,8 @@
             timestampString = "596846323.663252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "book(_:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1194,8 +1028,8 @@
             timestampString = "596846323.663305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "movieDetail(_:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1211,8 +1045,8 @@
             timestampString = "596846323.663352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
             landmarkName = "dates(_:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1851,8 +1685,8 @@
             timestampString = "596878307.108519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1868,8 +1702,8 @@
             timestampString = "596878307.10886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "applicationDocumentsDirectory"
             landmarkType = "24">
          </BreakpointContent>
@@ -1885,8 +1719,8 @@
             timestampString = "596878307.109603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "managedObjectModel"
             landmarkType = "24">
             <Locations>
@@ -1936,8 +1770,8 @@
             timestampString = "596878307.109957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "persistentStoreCoordinator"
             landmarkType = "24">
          </BreakpointContent>
@@ -1953,8 +1787,8 @@
             timestampString = "596878307.110594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "persistentStoreCoordinator"
             landmarkType = "24">
          </BreakpointContent>
@@ -2463,8 +2297,8 @@
             timestampString = "596846323.670211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
             landmarkName = "VenuesDetailsVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -2480,8 +2314,8 @@
             timestampString = "596846323.670276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "book(_:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2548,8 +2382,8 @@
             timestampString = "596393495.515595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2565,8 +2399,8 @@
             timestampString = "596393495.515753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "centerMapOnLocation(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2582,8 +2416,8 @@
             timestampString = "596393495.5158679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2599,8 +2433,8 @@
             timestampString = "596393495.515926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2616,8 +2450,8 @@
             timestampString = "596393495.51605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3347,8 +3181,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "MyURLProtocol"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3363,8 +3197,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "connection(_:canAuthenticateAgainstProtectionSpace:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3377,8 +3211,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -3441,8 +3275,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "applicationDocumentsDirectory"
             landmarkType = "24">
          </BreakpointContent>
@@ -3457,8 +3291,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3473,8 +3307,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3489,8 +3323,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3505,8 +3339,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "checkRealm()"
             landmarkType = "7">
             <Locations>
@@ -3562,20 +3396,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A79E6C5C-ED24-40DC-8DE1-FA84E523C50D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9D5E5524-0175-4822-8D47-9FA55B7A3F6C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -3603,20 +3423,6 @@
             endingLineNumber = "91"
             landmarkName = "startLoading()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1979ED01-BC1C-4C24-B1D1-FFB673863618"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3903,8 +3709,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3919,8 +3725,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "checkRealm()"
             landmarkType = "7">
             <Locations>
@@ -3967,8 +3773,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3983,8 +3789,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3993,22 +3799,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3353AB7F-21A0-446D-A313-EC9CA67C9CC0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "checkRealm()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CA4A983A-A9F1-43BB-A16E-E6AAAC3054C8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -4024,6 +3814,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CA4A983A-A9F1-43BB-A16E-E6AAAC3054C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "checkRealm()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "6F5154BF-B250-45E8-B83A-0CFC645B73E8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -4031,8 +3837,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4047,8 +3853,8 @@
             filePath = "SwiftLoginScreen/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "checkRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4127,8 +3933,8 @@
             filePath = "SwiftLoginScreen/PurchasesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "addPurchasesData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4137,14 +3943,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CD077B0B-BD08-48C2-830E-9D7A873D4B7B"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399">
+            startingLineNumber = "449"
+            endingLineNumber = "449">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4173,8 +3979,8 @@
             filePath = "SwiftLoginScreen/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4189,8 +3995,8 @@
             filePath = "SwiftLoginScreen/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4205,8 +4011,8 @@
             filePath = "SwiftLoginScreen/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "addData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4269,8 +4075,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4367,8 +4173,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "connection(_:didReceiveResponse:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4383,8 +4189,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "connection(_:didReceiveResponse:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4557,8 +4363,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
             landmarkName = "cachedResponseForCurrentRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4573,105 +4379,9 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "cachedResponseForCurrentRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9F8484C2-690B-407F-A86B-C52B795B33B6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "getResponse(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C0B861C6-CFC6-48BD-9BDF-5D118F2A28FA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "getResponse(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3BCF9C51-4FD8-469C-8FE1-9F9D60EE7AEE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "getResponse(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3BCF9C51-4FD8-469C-8FE1-9F9D60EE7AEE - 5c14011de91a00d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftLoginScreen.GeneralRequestManager.getResponse((SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Git/iOS_S5/iOS_S5/SwiftLoginScreen/GeneralRequestManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "2436">
-               </Location>
-               <Location
-                  uuid = "3BCF9C51-4FD8-469C-8FE1-9F9D60EE7AEE - 714e2ee3d4226eeb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in SwiftLoginScreen.GeneralRequestManager.getResponse((SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SwiftLoginScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/georgegaspar/Documents/Git/iOS_S5/iOS_S5/SwiftLoginScreen/GeneralRequestManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9BF978EA-2F50-4B5F-810D-05200456098A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "getResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4685,8 +4395,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
+            startingLineNumber = "675"
+            endingLineNumber = "675"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4781,8 +4491,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "673"
-            endingLineNumber = "673"
+            startingLineNumber = "802"
+            endingLineNumber = "802"
             landmarkName = "load(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4797,8 +4507,8 @@
             filePath = "SwiftLoginScreen/PurchasesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4813,8 +4523,8 @@
             filePath = "SwiftLoginScreen/PurchasesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4854,22 +4564,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "312E5BD5-F1AD-4DDC-BBA4-B9F5E531BE72"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/VenuesDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C29DF886-2B76-4355-9B21-F7ED12058532"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -4877,8 +4571,8 @@
             filePath = "SwiftLoginScreen/VenuesDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4909,8 +4603,8 @@
             filePath = "SwiftLoginScreen/VenuesDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4976,22 +4670,6 @@
             startingLineNumber = "344"
             endingLineNumber = "344"
             landmarkName = "addLoadMoviesonVenue()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0AFF60F1-6F73-4234-8475-02E7891E7B05"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/MoviesVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5094,8 +4772,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5110,8 +4788,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "618"
-            endingLineNumber = "618"
+            startingLineNumber = "731"
+            endingLineNumber = "731"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5151,22 +4829,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91522E3E-9040-46AD-919A-BC6070608E5F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/WebViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "webView(_:didCommit:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F60B6E3D-5F35-4ABF-8EA9-D82257CAB0E4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -5178,6 +4840,38 @@
             endingLineNumber = "55"
             landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F60B6E3D-5F35-4ABF-8EA9-D82257CAB0E4 - f9166750def88b44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.RestApiManager.makeHTTPGetRequest(_: Swift.String, onCompletion: (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  uuid = "F60B6E3D-5F35-4ABF-8EA9-D82257CAB0E4 - f9166750def88b44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.RestApiManager.makeHTTPGetRequest(_: Swift.String, onCompletion: (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/RestApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "556">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5190,8 +4884,8 @@
             filePath = "SwiftLoginScreen/WebViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "webView(_:didCommit:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5206,8 +4900,8 @@
             filePath = "SwiftLoginScreen/WebViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "webView(_:didCommit:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5222,8 +4916,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590"
+            startingLineNumber = "703"
+            endingLineNumber = "703"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5238,8 +4932,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "602"
-            endingLineNumber = "602"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5254,8 +4948,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5270,8 +4964,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5286,8 +4980,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "481"
-            endingLineNumber = "481"
+            startingLineNumber = "572"
+            endingLineNumber = "572"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5302,8 +4996,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "474"
-            endingLineNumber = "474"
+            startingLineNumber = "565"
+            endingLineNumber = "565"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5320,8 +5014,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "connectionDidFinishLoading(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5336,8 +5030,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "saveCachedResponse()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5350,8 +5044,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "647"
-            endingLineNumber = "647"
+            startingLineNumber = "776"
+            endingLineNumber = "776"
             landmarkName = "movieDetail(button:event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5366,8 +5060,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
             landmarkName = "searchBarCancelButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5382,8 +5076,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "searchBarShouldEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5398,8 +5092,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "valueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5414,8 +5108,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
             landmarkName = "valueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5430,8 +5124,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5446,8 +5140,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "610"
-            endingLineNumber = "610"
+            startingLineNumber = "723"
+            endingLineNumber = "723"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5456,22 +5150,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "15A4C1BA-51AB-45F1-B5E9-021976FDFE1D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/MoviesVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
-            landmarkName = "searchBar(_:textDidChange:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C6932627-76B7-4E13-8161-FCE454189931"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -5487,6 +5165,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C6932627-76B7-4E13-8161-FCE454189931"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "4D5FA4E7-CC44-4739-B2CD-904F21839FA4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -5494,8 +5188,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5510,8 +5204,8 @@
             filePath = "SwiftLoginScreen/MoviesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "569"
+            endingLineNumber = "569"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5615,22 +5309,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B3CC547-0C43-4219-8215-A8F95368818D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/VenuesVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FB412737-F224-40D8-8344-7901B2C22849"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -5638,8 +5316,8 @@
             filePath = "SwiftLoginScreen/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "mapView(_:didUpdate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5648,31 +5326,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FE4176FA-9950-4BA3-84CA-8E0C9400A008"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftLoginScreen/LocationSearchTable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "12017BEA-B779-45E2-BAF1-3C740F43A93C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5686,25 +5348,9 @@
             filePath = "SwiftLoginScreen/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "333D094B-C5ED-48A8-93E0-1E9F871BFC4C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftLoginScreen/MoviesVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "527"
-            endingLineNumber = "527"
-            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -5718,8 +5364,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5734,8 +5380,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5750,8 +5396,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5766,8 +5412,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5782,8 +5428,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5798,8 +5444,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5814,8 +5460,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5830,8 +5476,8 @@
             filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "dataTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5849,6 +5495,1012 @@
             startingLineNumber = "271"
             endingLineNumber = "271"
             landmarkName = "postNonceToServer(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2E922A6-6441-4776-B241-68261E553690"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "620"
+            endingLineNumber = "620"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFCCB9AB-FD52-4F53-ABCF-7047D37F5024"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
+            landmarkName = "cachedResponseForCurrentRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE483315-B764-4F3D-863B-37007ED854A2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/GeneralRequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "saveCachedResponse(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "218704AF-F727-4366-B6FD-0042222620CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "668"
+            endingLineNumber = "668"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6CBA4330-B175-4EA8-914B-295C4D28F2FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "670"
+            endingLineNumber = "670"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4DF3F0D-8D0E-406F-9452-5D390217C6A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E1702CD-D4A8-4EA8-A168-C2BFD4824A6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E1702CD-D4A8-4EA8-A168-C2BFD4824A6E - 9c99bebfe6bd45f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MoviesVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MoviesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "618"
+                  endingLineNumber = "618"
+                  offsetFromSymbolStart = "14868">
+               </Location>
+               <Location
+                  uuid = "3E1702CD-D4A8-4EA8-A168-C2BFD4824A6E - 313c9a5342723e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.Data, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in SwiftLoginScreen.MoviesVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MoviesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "474"
+                  endingLineNumber = "474"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "806B9554-BC9E-429D-902E-B6072FC8C7FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MoviesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "724"
+            endingLineNumber = "724"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6D784F3-8A3A-4374-8F46-9DA0D6713958"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/BasketVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A6D784F3-8A3A-4374-8F46-9DA0D6713958 - 59b49c1fa46d9b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.BasketVC.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/BasketVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1460">
+               </Location>
+               <Location
+                  uuid = "A6D784F3-8A3A-4374-8F46-9DA0D6713958 - aae59c891c0437f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSDictionary) -&gt; () in SwiftLoginScreen.BasketVC.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/BasketVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58A05463-B4D8-46B9-8ACE-4BB7B7E37FA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/BasketVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B3D1AD5-D8D8-46EE-8982-CB6C18F5A7C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/BasketVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0168993C-ADB1-4E63-8703-E91725EFF467"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/BasketVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F8BBF7F-A0DD-4A42-A5FA-FC76DC2142CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MenuVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07CD3A75-71FA-4944-ADB9-71E4908758C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "connection(_:didReceiveResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70249227-6D06-4148-8DFB-6DF9110F886C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "836B0BD3-F04C-4FE8-9B9B-F12C31C91BDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F585D06C-BA43-4C94-8D89-86FD5AA8D471"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "connection(_:willSendRequest:redirectResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC007262-99E4-4462-8732-A4A7DDA05625"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "connection(_:didReceiveResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "167201A7-F3F3-44A5-9F51-76EF825E1708"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "connection(_:didReceiveData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6B98F6D-1AEA-4803-8D7E-8B7C607FCF75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "connectionDidFinishLoading(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD2EC33F-4446-45C1-B4B2-32D07979CC7E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/UrlProtocol2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "saveCachedResponse()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E69EFF6-9D0F-46B8-A88D-C2395BAB1A3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/CustomURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E09312C7-8EAB-49AB-B8E1-C022110B12FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/CustomURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "urlSession(_:dataTask:didReceive:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C7D2355-2C1F-4B9B-9EE9-3256E36C79ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/CustomURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "urlSession(_:dataTask:didReceive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10E851AA-01F3-4E5A-96B9-01C7986013EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/CustomURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "urlSession(_:task:didCompleteWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B50A3F5E-E7A9-496D-B1AE-8E5A8052E874"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/CustomURLProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BE18338-A792-4736-AFA3-AC9962EA6F9A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACB6150C-E636-44D9-B4FD-A4B1022E9808"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/LocationSearchTable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ACB6150C-E636-44D9-B4FD-A4B1022E9808 - 63ba87d564ba311e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.LocationSearchTable.updateSearchResults(for: __C.UISearchController) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/LocationSearchTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  uuid = "ACB6150C-E636-44D9-B4FD-A4B1022E9808 - 63ba87d564ba311e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.LocationSearchTable.updateSearchResults(for: __C.UISearchController) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/LocationSearchTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFDD11A9-E8DF-45AE-9BEA-318817D0813F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/LocationSearchTable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DFDD11A9-E8DF-45AE-9BEA-318817D0813F - 63ba87d564ba30bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.LocationSearchTable.updateSearchResults(for: __C.UISearchController) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/LocationSearchTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "DFDD11A9-E8DF-45AE-9BEA-318817D0813F - 63ba87d564ba30bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.LocationSearchTable.updateSearchResults(for: __C.UISearchController) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/LocationSearchTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6775A6EE-7FDF-4FF1-9AE7-814BCE2EA9AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/LocationSearchTable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2468B8E0-E711-484A-8237-07001E46406C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "925CD873-51C0-4D87-B693-DA258EDE5E7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1857EDA2-EB5E-49C5-B612-E33318D7ECFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "HandleMapSearch_"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  uuid = "1857EDA2-EB5E-49C5-B612-E33318D7ECFA - e41b18930e5a6b3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MapViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SwiftLoginScreen.MapViewController"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "1857EDA2-EB5E-49C5-B612-E33318D7ECFA - 322f6b3da8d119db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MapViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SwiftLoginScreen.MapViewController"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "1857EDA2-EB5E-49C5-B612-E33318D7ECFA - af28f86079766549"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MapViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SwiftLoginScreen.MapViewController&gt;"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "1857EDA2-EB5E-49C5-B612-E33318D7ECFA - 87371e10fabde419"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.MapViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SwiftLoginScreen.MapViewController&gt;"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A4330D7-05C7-4541-9826-9A2510C31F0B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "dropPinZoomIn(placemark:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2A4330D7-05C7-4541-9826-9A2510C31F0B - 73d1ca31e56c77fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.ViewController.dropPinZoomIn(placemark: __C.MKPlacemark) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "2A4330D7-05C7-4541-9826-9A2510C31F0B - 73d1ca31e56c70c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.ViewController.dropPinZoomIn(placemark: __C.MKPlacemark) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B0B6268-4B67-46A5-B7B9-59CE3099A5CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "dropPinZoomIn(placemark:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B0B6268-4B67-46A5-B7B9-59CE3099A5CD - 73d1ca31e56c7761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.ViewController.dropPinZoomIn(placemark: __C.MKPlacemark) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "8B0B6268-4B67-46A5-B7B9-59CE3099A5CD - 73d1ca31e56c70a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.ViewController.dropPinZoomIn(placemark: __C.MKPlacemark) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B004F0CE-9E23-44A7-ABC2-956DD347FFDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B004F0CE-9E23-44A7-ABC2-956DD347FFDF - 9cdca267a69b84ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.VenuesVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/VenuesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "2868">
+               </Location>
+               <Location
+                  uuid = "B004F0CE-9E23-44A7-ABC2-956DD347FFDF - 9cdca267a69b84ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftLoginScreen.VenuesVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "SwiftLoginScreen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgegaspar/Git/iOS_S5/iOS_S5/SwiftLoginScreen/VenuesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "2868">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EC83B1C-0138-4C23-AB07-E55E129ADB5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "155C52F8-0956-4D2E-9497-D3369DDD6A9D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52810F04-C2E7-4360-B5AA-56D204ACC23B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE53489C-E297-4CFB-958C-0DE38F36A85F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "addData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4379262A-38CE-435A-91E2-CA4277AE53F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "addData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "774AF238-0B20-44D1-B64A-842674F152C9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/VenuesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3BAC831-E0FE-42B7-A0B1-D8D0FB7027CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "addData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AE60E87-7AF4-4497-9863-6D9FE446ACBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/WebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "275F6912-1850-48CA-AC4D-45191124EC11"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftLoginScreen/WebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

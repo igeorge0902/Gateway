@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // URL classes available
         // add from git if needed; discontinued
-        URLProtocol.registerClass(MyURLProtocol.self)
-        //URLProtocol.registerClass(MyURLProtocolSession.self)
+        //URLProtocol.registerClass(CustomURLProtocol.self)
 
         // Nav, Tool bar appearance tweaks
         UINavigationBar.appearance().barStyle = .blackTranslucent

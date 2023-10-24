@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/braintree/braintree-ios-drop-in",
       "state" : {
-        "revision" : "89154896389b7d63f06f4808b571821701e1a383",
-        "version" : "9.7.0"
+        "revision" : "46827ee65ebab4084e1a097524d2b8ca40ad973e",
+        "version" : "9.10.0"
       }
     },
     {

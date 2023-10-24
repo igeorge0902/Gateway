@@ -12,12 +12,15 @@ import MapKit
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
-
+//var mapview_:MKMapView? = nil
 class ViewController : UIViewController, UIPopoverPresentationControllerDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
+    deinit {
+        mapview_ = nil
+    }
+    
+    @IBOutlet var mapView: MKMapView!
     let locationManager = CLLocationManager()
-    var resultSearchController:UISearchController? = nil
     var selectedPin:MKPlacemark? = nil
     
     override func viewDidLoad() {
@@ -29,31 +32,28 @@ class ViewController : UIViewController, UIPopoverPresentationControllerDelegate
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
-        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-        resultSearchController?.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
-        
-        locationSearchTable.mapView = mapView
-        locationSearchTable.handleMapSearchDelegate = self
-        
-        let searchBar = resultSearchController!.searchBar
-        searchBar.sizeToFit()
-        searchBar.placeholder = "Search for places"
-        navigationItem.searchController = resultSearchController
-        
-        resultSearchController?.hidesNavigationBarDuringPresentation = false
-        resultSearchController?.dimsBackgroundDuringPresentation = true
-        definesPresentationContext = true
+        mapview_ = mapView
         
         let btnVen = UIButton(frame: CGRect(x: view.frame.width / 2, y: 100, width: view.frame.width / 2, height: 20))
         btnVen.backgroundColor = UIColor.black
         btnVen.setTitle("Venues", for: UIControl.State())
         btnVen.showsTouchWhenHighlighted = true
         btnVen.addTarget(self, action: #selector(ViewController.listVenues), for: UIControl.Event.touchUpInside)
+        
+        let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
+        btnNav.backgroundColor = UIColor.black
+        btnNav.setTitle("Back", for: UIControl.State())
+        btnNav.showsTouchWhenHighlighted = true
+        btnNav.addTarget(self, action: #selector(ViewController.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnVen)
+        view.addSubview(btnNav)
         
-        
+    }
+
+    
+    @objc func navigateBack() {
+        dismiss(animated: false, completion: nil)
     }
     
     @objc func listVenues() {

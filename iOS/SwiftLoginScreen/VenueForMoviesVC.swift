@@ -208,10 +208,24 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
         let data = TableData[indexPath.row]
 
         cell!.textLabel?.text = data.name
-        let url = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + data.large_picture!)
-        let imageData = try? Data(contentsOf: url!)
+   
+        let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data.large_picture!)
+        
+        if let url = URL(string: urlString) {
 
-        cell!.imageView?.image = UIImage(data: imageData!)
+            var loadPictures: GeneralRequestManager?
+            loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+            
+            
+            loadPictures?.getData_ {
+            (data: Data, _: NSError?) in
+            let image = UIImage(data: data)
+            cell!.imageView?.image = image
+            cell!.imageView?.image = image
+
+            }
+
+        }
 
         return cell!
     }

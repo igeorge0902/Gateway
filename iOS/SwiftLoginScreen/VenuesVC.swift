@@ -20,7 +20,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var imdb: String!
     
     var mapView: MKMapView? = nil
-    var handleMapSearchDelegate:HandleMapSearch_? = nil
+    var handleMapSearchDelegate:HandleMapSearch? = nil
 
     deinit {
         adminPage = false
@@ -30,9 +30,9 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     // local
-    //  var TableData: [datastruct] = [datastruct]()
+    var TableData: [datastruct] = [datastruct]()
     var LocationData: [PlacesData] = [PlacesData]()
-    /*
+    
     struct datastruct : Equatable {
         var venuesId: Int!
         var name: String!
@@ -55,7 +55,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return lhs.name == rhs.name
         }
     }
-     */
+     
     
     var refreshControl: UIRefreshControl!
     var tableView: UITableView?
@@ -64,25 +64,28 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "goto_venues_details" {
             let nextSegue = segue.destination as? VenuesDetailsVC
             if let indexPath = self.tableView!.indexPathForSelectedRow {
-               // let data = TableData[indexPath.row]
-                let data_ = LocationData[indexPath.row]
+                let data = TableData[indexPath.row]
+               // let data_ = LocationData[indexPath.row]
 
                 //TODO: remove venues data, and use location data, instead
-                //nextSegue?.selectVenues_picture = data.venues_picture
-                //nextSegue?.selectVenueId = data.venuesId
-                //nextSegue?.venueName = data.name
-                //nextSegue?.selectAddress = data.address
-                //nextSegue?.screen_screenId = data.screen_screenId
-                //nextSegue?.locationId = data.locationId
+                nextSegue?.selectVenues_picture = data.venues_picture
+                nextSegue?.selectVenueId = data.venuesId
+                nextSegue?.venueName = data.name
+                nextSegue?.selectAddress = data.address
+                nextSegue?.screen_screenId = data.screen_screenId
+                nextSegue?.locationId = data.locationId
                 
-                nextSegue?.locationId = data_.locationId
-                nextSegue?.selectVenues_picture = data_.thumbnail
-                nextSegue?.venueName = data_.title
                 nextSegue?.movieId = movieId
                 nextSegue?.movieName = movieName
                 nextSegue?.movieDetails = selectDetails
                 nextSegue?.selectLarge_picture = selectLarge_picture
                 nextSegue?.iMDB = imdb
+                
+                /*
+                nextSegue?.locationId = data_.locationId
+                nextSegue?.selectVenues_picture = data_.thumbnail
+                nextSegue?.venueName = data_.title
+                */
             }
         }
     }
@@ -98,14 +101,6 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         NotificationCenter.default.addObserver(self, selector: #selector(navigateBack), name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
         
-            
-        if adminPage  {
-            addLocation()
-        } else  if mapViewPage {
-            addLocation()
-        } else {
-            addLocalData()
-        }
     }
 
     override func viewWillAppear(_: Bool) {
@@ -123,13 +118,21 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         btnNav.addTarget(self, action: #selector(VenuesVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnNav)
+        
+        if adminPage  {
+            addLocation()
+        } else  if mapViewPage {
+            addLocation()
+        } else {
+            addData()
+        }
     }
 
     @objc func navigateBack() {
         dismiss(animated: false, completion: nil)
     }
     
-    /*
+    
     func addData() {
         let myString = String(movieId)
         var errorOnLogin: GeneralRequestManager?
@@ -153,13 +156,13 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    */
+    
     
     func addLocalData() {
         let myString = String(movieId)
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/v2/" + myString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/venue/" + myString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse { [self]
             (json: JSON, _: NSError?) in
@@ -250,19 +253,27 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
 
         } else {
-            LocationData.sort { ($0.title ?? "") < ($1.title ?? "")}
-            let data = LocationData[indexPath.row]
+           // TableData.sort { ($0.title ?? "") < ($1.title ?? "")}
+            let data = TableData[indexPath.row]
             
             let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-            let detailText = NSMutableAttributedString(string: data.title!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+            let detailText = NSMutableAttributedString(string: data.name!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
             cell!.textLabel?.attributedText = detailText
+    
+            let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data.venues_picture!)
+                
+            var image:UIImage?
+                var loadPictures: GeneralRequestManager?
+                loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+                
+                loadPictures?.getData_ {
+                (data: Data, _: NSError?) in
+                image = UIImage(data: data)
 
-            if let url = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + data.thumbnail!) {
-                if let imageData = try? Data(contentsOf: url) {
-                    cell!.imageView?.image = UIImage(data: imageData)
                 }
-            }
+            cell!.imageView?.image = image
+            cell!.imageView?.image = image
         }
 
         return cell!
@@ -275,22 +286,36 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } else if mapViewPage {
             return PlacesData2_.count
         } else {
-            return LocationData.count
+            return TableData.count
 
         }
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (adminPage && LocationData.count == 0) {
+        if (adminPage && TableData.count == 0) {
             addVenue = PlacesData_[indexPath.row].title!
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
         
         } else if mapViewPage {
-            let selectedItem = PlacesData_[indexPath.row].mapItem().placemark
-            handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
-            dismiss(animated: true, completion: nil)
+            addVenue = PlacesData_[indexPath.row].title!
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "screeningVenueSelected"), object: nil)
             
-        } else {
+            let selectedItem = PlacesData_[indexPath.row].mapItem().placemark
+          //  mapview_!.removeAnnotations(mapview_!.annotations)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = selectedItem.coordinate
+            annotation.title = selectedItem.name
+            
+            if let city = selectedItem.locality, let state = selectedItem.administrativeArea {
+            annotation.subtitle = "(city) (state)" }
+            mapview_!.addAnnotation(annotation)
+            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let region = MKCoordinateRegion(center: selectedItem.coordinate, span: span)
+            mapview_!.setRegion(region, animated: true)
+
+            dismiss(animated: true, completion: nil)
+        }
+        else {
             performSegue(withIdentifier: "goto_venues_details", sender: self)
             }
         }

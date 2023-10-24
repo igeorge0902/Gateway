@@ -243,8 +243,8 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
             TrollErrorLabel.isHidden = false
             }
             
-            self.view.frame.origin.y = 0
-            category.resignFirstResponder()
+           // self.view.frame.origin.y = 0
+           // category.resignFirstResponder()
 
         }
         
@@ -253,7 +253,7 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == category {
-        self.view.frame.origin.y = -100
+       // self.view.frame.origin.y = -100
         TrollErrorLabel.isHidden = true
         }
 

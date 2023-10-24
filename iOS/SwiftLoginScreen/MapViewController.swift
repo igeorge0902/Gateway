@@ -14,6 +14,7 @@ import UserNotifications
 var PlacesData_: [PlacesData] = [PlacesData]()
 var PlacesData2_: [PlacesData] = [PlacesData]()
 var mapViewPage: Bool = false
+var mapview_:MKMapView? = nil
 
 protocol HandleMapSearch_ {
     func dropPinZoomIn(placemark:MKPlacemark)
@@ -46,10 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-        
-        let venuesVC = storyboard!.instantiateViewController(withIdentifier: "VenuesVC") as! VenuesVC        
-        venuesVC.mapView = mapView
-        venuesVC.handleMapSearchDelegate = self
+        mapview_ = mapView
 
         // user activated automatic authorization info mode
         let status = CLLocationManager.authorizationStatus()
@@ -94,12 +92,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         view.addSubview(btnVen)
         view.addSubview(btnNav)
             
-        addData()
     }
 
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
-
+        
+        addData()
         mapView.addAnnotations(PlacesData_)
     }
 
@@ -389,24 +387,3 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //  }
 }
 
-extension MapViewController: HandleMapSearch_ {
-    
-    func dropPinZoomIn(placemark:MKPlacemark){
-    // cache the pin
-    selectedPin = placemark
-    // clear existing pins
-    
-   mapView.removeAnnotations(mapView.annotations)
-    let annotation = MKPointAnnotation()
-    annotation.coordinate = placemark.coordinate
-    annotation.title = placemark.name
-    
-    if let city = placemark.locality, let state = placemark.administrativeArea {
-    annotation.subtitle = "(city) (state)" }
-    mapView.addAnnotation(annotation)
-    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
-    mapView.setRegion(region, animated: true)
-    
-    }
-}

@@ -11,7 +11,7 @@ import Realm
 import SwiftyJSON
 // import Kanna
 
-let serverURL = "https://igeorge1982.local"
+let serverURL = "https://milo.crabdance.com"
 enum contentType_: String {
     case json = "application/json"
     case urlEncoded = "application/x-www-form-urlencoded"
@@ -68,10 +68,53 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
     lazy var session: URLSession = URLSession.sharedCustomSession
 
     func getData_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+        if isCacheable == "1" {
+            if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+                if localResponse.timestamp.addingTimeInterval(3600) > Date() {
+                    var headerFields: [String: String] = [:]
+
+                    headerFields["Content-Length"] = String(format: "%d", data.count)
+
+                    if let mimeType = localResponse.mimeType {
+                        headerFields["Content-Type"] = mimeType as String
+                    }
+
+                    headerFields["Content-Encoding"] = localResponse.encoding!
+                    let err: NSError = NSError()
+
+                   // let json: JSON = try! JSON(data: data)
+
+                    onCompletion(data as Data, err)
+
+                } else {
+                    dataTask_ { data, err in
+
+                        onCompletion(data as Data, err)
+                    }
+                    self.saveCachedResponse(data)
+                }
+
+            } else {
+                dataTask_ { data, err in
+
+                    self.saveCachedResponse(data)
+                    onCompletion(data as Data, err)
+                }
+                
+            }
+
+        } else {
+            dataTask_ { data, err in
+
+                onCompletion(data as Data, err)
+            }
+        }
+        /*
         dataTask_ { data, err in
 
             onCompletion(data as Data, err)
         }
+        */
     }
 
     func getData(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
@@ -344,6 +387,13 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                 cachedResponse!.url = absoluteString
             }
         }
+        
+        if let url: URL? = url, let absoluteString = url?.absoluteString {
+            if (absoluteString.contains("images")) {
+                cachedResponse!.url = absoluteString
+            }
+        }
+
 
         cachedResponse!.timestamp = Date()
         if let response = self.urlResponse {

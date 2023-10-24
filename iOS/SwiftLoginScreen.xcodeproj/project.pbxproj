@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -92,7 +92,6 @@
 		A4C3F2A71BFCEAC700ADE1E3 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C3F2A61BFCEAC700ADE1E3 /* Responses.swift */; };
 		A4CA8DA51C07328F00EA59A4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */; };
 		A4CAC1B426C26C3000B808C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAC1B326C26C3000B808C3 /* ViewController.swift */; };
-		A4CAC1B626C26E4600B808C3 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAC1B526C26E4600B808C3 /* LocationSearchTable.swift */; };
 		A4CC2C451C33E07A0015546C /* ciphertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CC2C441C33E07A0015546C /* ciphertext.swift */; };
 		A4D58A451BFA40AB00D379F8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D58A441BFA40AB00D379F8 /* AFNetworkReachabilityManager.m */; };
 		A4D9B6471D81AC9B00FB5C44 /* DatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9B6461D81AC9B00FB5C44 /* DatesData.swift */; };
@@ -216,7 +215,6 @@
 		A4C3F2A61BFCEAC700ADE1E3 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		A4CA8DA41C07328F00EA59A4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A4CAC1B326C26C3000B808C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4CAC1B526C26E4600B808C3 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		A4CC2C441C33E07A0015546C /* ciphertext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ciphertext.swift; sourceTree = "<group>"; };
 		A4CD12011D9818700013014C /* MyPlayground4Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground4Closures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4CD12021D981D0D0013014C /* MyPlayground5.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground5.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -356,7 +354,6 @@
 				A4ED18DA2524A4DC005820BC /* AdminVC.swift */,
 				A48301CB25FD25C6008F230C /* AdminUpdateVC.swift */,
 				A4CAC1B326C26C3000B808C3 /* ViewController.swift */,
-				A4CAC1B526C26E4600B808C3 /* LocationSearchTable.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -831,7 +828,6 @@
 				A4743E941BF3E0FB009078F9 /* LogItem.swift in Sources */,
 				A4382E9C2458F35A007E3A7D /* CustomListTableViewCell.swift in Sources */,
 				A4C3F2A31BFCC90400ADE1E3 /* CustomURLSession.swift in Sources */,
-				A4CAC1B626C26E4600B808C3 /* LocationSearchTable.swift in Sources */,
 				A4743E4E1BF3DBD6009078F9 /* CoreDataModel.xcdatamodeld in Sources */,
 				A4B992901BED305900F87E21 /* CryptoJS.swift in Sources */,
 				A4CC2C451C33E07A0015546C /* ciphertext.swift in Sources */,

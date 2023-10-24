@@ -42,6 +42,9 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView?.delegate = self
 
         view.addSubview(tableView!)
+        
+        addPurchasesData()
+
     }
 
     override func viewDidLoad() {
@@ -97,7 +100,6 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         
-        addPurchasesData()
     }
 
     override func viewDidAppear(_: Bool) {
@@ -176,11 +178,18 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         cell!.textLabel?.attributedText = detailText
 
-        if let urlMovie = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + TableData[indexPath.section].movie_picture) {
-            if let movieImage = try? Data(contentsOf: urlMovie) {
-                cell!.imageView?.image = UIImage(data: movieImage)
-            }
-        }
+         let urlMovie = serverURL + "/simple-service-webapp/webapi/myresource" + TableData[indexPath.section].movie_picture
+                
+                var loadPictures: GeneralRequestManager?
+                loadPictures = GeneralRequestManager(url: urlMovie, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+                
+                loadPictures?.getData_ {
+                (data: Data, _: NSError?) in
+                let image = UIImage(data: data)
+                cell!.imageView?.image = image
+                cell!.imageView?.image = image
+                }
+        
 
         return cell!
     }

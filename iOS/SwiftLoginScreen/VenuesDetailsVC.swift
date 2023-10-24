@@ -21,6 +21,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     deinit {
         screeningDateId = nil
        // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
+        mapview_ = nil
         print(#function, "\(self)")
     }
 
@@ -72,18 +73,37 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         PlacesData_.removeAll()
         icons = ["Calendar-icon": "calendar-icon", "iCal-icon": "ical", "FBShare": "facebook_share"]
 
-        if let urlMovie = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + selectLarge_picture!) {
-            if let movieImage = try? Data(contentsOf: urlMovie) {
-                moviePicture = UIImage(data: movieImage)!
-            }
+        let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (selectLarge_picture!)
+        
+            var loadPictures: GeneralRequestManager?
+            loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+            
+            
+            loadPictures?.getData_ {
+            (data: Data, _: NSError?) in
+            let image = UIImage(data: data)
+            self.moviePicture = image!
+            self.moviePicture = image!
+
         }
+        
 
         if (!selectVenues_picture.isEmpty) {
-        if let urlVenue = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + selectVenues_picture!) {
-            if let venueImage = try? Data(contentsOf: urlVenue) {
-                venuePicture = UIImage(data: venueImage)!
+        
+            let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (selectVenues_picture!)
+        
+                var loadPictures: GeneralRequestManager?
+                loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+                
+                
+                loadPictures?.getData_ {
+                (data: Data, _: NSError?) in
+                let image = UIImage(data: data)
+                self.venuePicture = image!
+                self.venuePicture = image!
+
             }
-        }
+            
         } else {
         NoPicture = ["NoPicture": "cat2"]
             venuePicture = UIImage(named: NoPicture["NoPicture"]!)!
@@ -382,7 +402,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     }
 
     @objc func map(_: UIButton, event _: UIEvent) {
-            performSegue(withIdentifier: "goto_venue_map", sender: self)
+            performSegue(withIdentifier: "goto_map2", sender: self)
     }
 
     @objc func dates(_: UIButton, event: UIEvent) {

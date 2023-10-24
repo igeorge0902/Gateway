@@ -129,15 +129,8 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
       //  refreshControl = UIRefreshControl()
       //  tableView?.addSubview(refreshControl)
 
-        if (adminUpdatePage == true) {
-            TableData.removeAll()
-            addLoadMoviesonVenue()
-        } else {
-            addData(category: "nil")
-        }
 
         // Initialize and set up the search controller
-
         searchController = UISearchController(searchResultsController: nil)
 
         searchController?.searchResultsUpdater = self
@@ -171,6 +164,13 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         btnNav.addTarget(self, action: #selector(MoviesVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnNav)
+        
+        if (adminUpdatePage == true) {
+            TableData.removeAll()
+            addLoadMoviesonVenue()
+        } else {
+            addData(category: "nil")
+        }
     }
     
 
@@ -362,7 +362,10 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        ((searchController?.searchBar.resignFirstResponder()) != nil)
+
+       // self.searchController!.searchBar.isHidden = true;
+        searchController?.searchBar.resignFirstResponder()
+         return true
     }
 
     func searchBarCancelButtonClicked(_: UISearchBar) {
@@ -371,7 +374,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func searchBarTextDidEndEditing(_: UISearchBar) {
-        shouldShowSearchResults = false
+        shouldShowSearchResults = true
         searchController?.searchBar.resignFirstResponder()
     }
 
@@ -450,7 +453,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
             } else {
             addData(category: "nil")
             }
-        } else if segmentedControl.selectedSegmentIndex == 1 {
+        } else if section_ == 1 {
             searchController?.searchBar.text = ""
             CategoryData = ["Action", "Drama", "Crime", "Romance", "Troll"]
             SearchData.removeAll()
@@ -461,113 +464,221 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        if(adminUpdatePage) {
+            return 30
+        }
+        if(CategoryData.count > 0) {
+            return 30
+        }
         return 120.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as! ListViewCell?
 
-        if cell == nil {
-            cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
-        }
-        if ScreenData_2.count > 0 {
-            venueData = ScreenData_2[indexPath.section]
-        }
-        
-        if TableData.count > 0 {
-            data = TableData[indexPath.section]
-        }
-        if SearchData.count > 0 {
-            data = SearchData[indexPath.section]
-        }
-        
-        if ScreenData_2.count > 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
-
-            if cell == nil {
-                cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
-            }
-            // TODO: add date to details so that the user can see more info when selecting
-            let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-            let detailText = NSMutableAttributedString(string: ScreenData_2[indexPath.section].movie, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
-
-            cell!.textLabel?.attributedText = detailText
-        }
-        else if CategoryData.count > 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
-
-            if cell == nil {
-                cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
-            }
-
-            let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-            let detailText = NSMutableAttributedString(string: CategoryData[indexPath.section], attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
-
-            cell!.textLabel?.attributedText = detailText
-
-        } else {
-            let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
-            btn.frame = CGRect(x: view.frame.width * 0.9, y: 15, width: 20, height: 30)
-            btn.addTarget(self, action: #selector(MoviesVC.movieDetail), for: .touchUpInside)
-            btn.tag = indexPath.section
-            btn.setImage(UIImage(named: "window-7.png"), for: .normal)
-
-            let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-            let detailText = NSMutableAttributedString(string: (data?.name)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
-
-            cell!.textLabel?.attributedText = detailText
-            cell!.textLabel?.numberOfLines = 3
-            // TODO: pictures' size shall not exceed 100 kbytes
+        if(adminUpdatePage) {
             
-            let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+            if cell == nil {
+                cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
+            }
+            if ScreenData_2.count > 0 {
+                venueData = ScreenData_2[indexPath.row]
+            }
             
-            if let url = URL(string: urlString) {
+            if TableData.count > 0 {
+                data = TableData[indexPath.row]
+            }
+            if SearchData.count > 0 {
+                data = SearchData[indexPath.row]
+            }
+            
+            if ScreenData_2.count > 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
 
-                if let imageData = try? Data(contentsOf: url) {
-                    cell!.imageView?.image = UIImage(data: imageData)
+                if cell == nil {
+                    cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
+                }
+                // TODO: add date to details so that the user can see more info when selecting
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: ScreenData_2[indexPath.row].movie, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+
+                cell!.textLabel?.attributedText = detailText
+            }
+            else if CategoryData.count > 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
+
+                if cell == nil {
+                    cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
+                }
+
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: CategoryData[indexPath.row], attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+
+                cell!.textLabel?.attributedText = detailText
+
+            } else {
+                let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
+                btn.frame = CGRect(x: view.frame.width * 0.9, y: 15, width: 20, height: 30)
+                btn.addTarget(self, action: #selector(MoviesVC.movieDetail), for: .touchUpInside)
+                btn.tag = indexPath.row
+                btn.setImage(UIImage(named: "window-7.png"), for: .normal)
+
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: (data?.name)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+
+                cell!.textLabel?.attributedText = detailText
+                cell!.textLabel?.numberOfLines = 3
+                // TODO: pictures' size shall not exceed 100 kbytes
+                
+                let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+                
+                if let url = URL(string: urlString) {
+
+                    var loadPictures: GeneralRequestManager?
+                    loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+                    
+                    
+                    loadPictures?.getData_ {
+                    (data: Data, _: NSError?) in
+                    let image = UIImage(data: data)
+                    cell!.imageView?.image = image
                     }
+                    /*
+                    if let imageData = try? Data(contentsOf: url) {
+                        cell!.imageView?.image = UIImage(data: imageData)
+                        }
+                    */
+                }
+                
+                if (!adminPage) {
+                cell?.contentView.addSubview(btn)
+                }
+                cell?.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
+
+            }
+        } else {
+            
+            if cell == nil {
+                cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL")
+            }
+            if ScreenData_2.count > 0 {
+                venueData = ScreenData_2[indexPath.section]
             }
             
-            if (!adminPage) {
-            cell?.contentView.addSubview(btn)
+            if TableData.count > 0 {
+                data = TableData[indexPath.section]
             }
-            cell?.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
-            // TODO: export method, and reload tableview
-            /*
-            var loadPictures: GeneralRequestManager?
-            loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
-             
+            if SearchData.count > 0 {
+                data = SearchData[indexPath.section]
+            }
             
-             loadPictures?.getData_ {
-                 (data: Data, _: NSError?) in
-                 let image = UIImage(data: data)
-                 cell!.imageView?.image = image
-                 }
-             */
+            if ScreenData_2.count > 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
+                
+                if cell == nil {
+                    cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
+                }
+                // TODO: add date to details so that the user can see more info when selecting
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: ScreenData_2[indexPath.section].movie, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+                
+                cell!.textLabel?.attributedText = detailText
+            }
+            else if CategoryData.count > 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "CELL2") as? ListViewCell
+                
+                if cell == nil {
+                    cell = ListViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "CELL2")
+                }
+                
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: CategoryData[indexPath.row], attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+                
+                cell!.textLabel?.attributedText = detailText
+                
+            } else {
+                let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
+                btn.frame = CGRect(x: view.frame.width * 0.9, y: 15, width: 20, height: 30)
+                btn.addTarget(self, action: #selector(MoviesVC.movieDetail), for: .touchUpInside)
+                btn.tag = indexPath.section
+                btn.setImage(UIImage(named: "window-7.png"), for: .normal)
+                
+                let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
+                let detailText = NSMutableAttributedString(string: (data?.name)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
+                
+                cell!.textLabel?.attributedText = detailText
+                cell!.textLabel?.numberOfLines = 3
+                
+                let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+                                    
+                    var loadPictures: GeneralRequestManager?
+                    loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+                    
+                    loadPictures?.getData_ {
+                    (data: Data, _: NSError?) in
+                    let image = UIImage(data: data)
+                    cell!.imageView?.image = image
+                    cell!.imageView?.image = image
+            
+                }
+                
+                if (!adminPage) {
+                    cell?.contentView.addSubview(btn)
+                }
+                cell?.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
+            }
         }
         
         return cell!
     }
     
-
     func numberOfSections(in tableView: UITableView) -> Int  {
-    
-        if SearchData.count > 0 {
-            return SearchData.count
+        if(adminUpdatePage) {
+            return 1;
+            
+        } else {
+            
+            if SearchData.count > 0 {
+                return SearchData.count
+            }
+            if CategoryData.count > 0 {
+                return 1;
+            }
+            if ScreenData_2.count > 0 {
+                return ScreenData_2.count
+            }
+            return TableData.count
+            
         }
-        if CategoryData.count > 0 {
-            return CategoryData.count
-        }
-        if ScreenData_2.count > 0 {
-            return ScreenData_2.count
-        }
-        return TableData.count
-        
     }
 
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(adminUpdatePage) {
+            if SearchData.count > 0 {
+                return SearchData.count
+            }
+            if CategoryData.count > 0 {
+                return CategoryData.count
+            }
+            if ScreenData_2.count > 0 {
+                return ScreenData_2.count
+            }
+            return TableData.count
+            
+        } else if (section_ == 1){
+            
+            if CategoryData.count > 0 {
+                return CategoryData.count
+            }
+            
+        } else {
+            
+            return 1
+            
+        }
         return 1
     }
+            
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 30
@@ -578,6 +689,8 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.searchController!.searchBar.isHidden = false;
+
         if (adminPage && CategoryData.count == 0) {
             if(TableData.count > 0) {
                 addMovie = TableData[indexPath.section].name
@@ -604,7 +717,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
 
         if CategoryData.count > 0 {
             // select category
-            category_ = CategoryData[indexPath.section]
+            category_ = CategoryData[indexPath.row]
             CategoryData.removeAll()
             TableData.removeAll()
             if (!adminUpdatePage) {
@@ -628,6 +741,8 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
     }
 
     func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.searchController!.searchBar.isHidden = false;
+
         if TableData.count > 10 || SearchData.count > 10 {
             if indexPath.section == TableData.count - 3 {
                 if endOfFile == false {
@@ -637,6 +752,20 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     addData_(searchString!, category: "nil")
                 } else if indexPath.section == SearchData.count - 3, section_ == 1, endOfFile == false {
                     addData_(searchString!, category: category_!)
+                }
+            }
+        }
+        if(adminUpdatePage) {
+            if TableData.count > 10 || SearchData.count > 10 {
+                if indexPath.row == TableData.count - 3 {
+                    if endOfFile == false {
+                        self.addData(category: "nil")
+                    }
+                    if indexPath.row == SearchData.count - 3, section_ == 0, endOfFile == false {
+                        addData_(searchString!, category: "nil")
+                    } else if indexPath.row == SearchData.count - 3, section_ == 1, endOfFile == false {
+                        addData_(searchString!, category: category_!)
+                    }
                 }
             }
         }

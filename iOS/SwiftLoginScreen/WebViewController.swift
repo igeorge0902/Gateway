@@ -42,9 +42,15 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.scrollView.bounces = true
         view.addSubview(webView)
         
-        let requestURL = URL(string: "https://igeorge1982.local/login/index.html")
+        let requestURL = URL(string: serverURL + "/login/index.html")
         let urlrequest = URLRequest(url: requestURL!)
         
+        let cookieStorage = HTTPCookieStorage.shared
+        if let cookies_ = cookieStorage.cookies {
+            for cookie in cookies_ {
+                cookieStorage.deleteCookie(cookie)
+            }
+        }
         webView.load(urlrequest)
     }
     
@@ -58,10 +64,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
-            print("cookis: \(cookies)")
-          
+        
                 for cookie in cookies {
                 let cookieStorage = HTTPCookieStorage.shared
+                    
                 cookieStorage.setCookie(cookie)
                     
                     if (cookie.name == "X-Token") {
@@ -69,7 +75,27 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
                         prefs.setValue(cookie.value, forKey: "X-Token")
                     }
                 }
+           
+            print("cookis: \(cookies)")
+
         }
+    }
+    
+
+    
+    func webView(_ webView: WKWebView, shouldStartLoadWith request: URLRequest, navigationType:
+        WKNavigationType) -> Bool
+    {
+        let request  = URLRequest.init(url: request.url!)
+
+        let mutableRequest = request as! NSMutableURLRequest;
+        let ciphertext = cipherText.getCipherText(deviceId)
+        mutableRequest.setValue(ciphertext, forHTTPHeaderField: "M-Device")
+        mutableRequest.setValue("M", forHTTPHeaderField: "M")
+
+        webView.load(request)
+
+        return true
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

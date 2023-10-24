@@ -186,30 +186,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
 
                                 prefs.synchronize()
                                 
-                                /*
-                                let query = [
-                                  kSecClass: kSecClassInternetPassword,
-                                  kSecAttrServer: "pullipstyle.com",
-                                  kSecAttrAccount: "andyibanez",
-                                  kSecValueData: "Pullip2020".data(using: .utf8)!,
-                                  kSecReturnAttributes: true,
-                                  kSecReturnData: true,
-                                  kSecMatchLimit: 5
-                                ] as CFDictionary
-
-                                var result: AnyObject?
-                                let status = SecItemCopyMatching(query, &result)
-
-                                print("Operation finished with status: \(status)")
-                                let array = result as! [NSDictionary]
-
-                                array.forEach { dic in
-                                  let username = dic[kSecAttrAccount] ?? ""
-                                  let passwordData = dic[kSecValueData] as! Data
-                                  let password = String(data: passwordData, encoding: .utf8)!
-                                  print("Username: \(username)")
-                                  print("Password: \(password)")
-                                }*/
                             }
 
                             NSLog("got a 200")
