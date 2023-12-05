@@ -17,7 +17,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <slf4j-api-version>1.7.7</slf4j-api-version>
         <log4j-over-slf4j-version>1.7.7</log4j-over-slf4j-version>
         <jcl-over-slf4j-version>1.7.7</jcl-over-slf4j-version>
-        <logback.version>1.2.0</logback.version>
+        <logback.version>1.2.13</logback.version>
         <mysql.version>8.0.31</mysql.version>
         <java.version>1.8</java.version>
     </properties>
