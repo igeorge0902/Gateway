@@ -26,7 +26,7 @@ code.google.com/p/crypto-js/wiki/License
                 c = f.charAt(64);
             c && (c = b.indexOf(c), -1 != c && (e = c));
             for (var c = [], a = 0, d = 0; d <
-                e; d++)
+            e; d++)
                 if (d % 4) {
                     var g = f.indexOf(b.charAt(d - 1)) << 2 * (d % 4),
                         h = f.indexOf(b.charAt(d)) >>> 6 - 2 * (d % 4);

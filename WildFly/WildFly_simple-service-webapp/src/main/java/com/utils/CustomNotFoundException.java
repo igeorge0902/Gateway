@@ -1,11 +1,8 @@
 package com.utils;
 
 import java.io.Serializable;
-
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
 
 public class CustomNotFoundException extends WebApplicationException implements Serializable {
 	 
@@ -26,6 +23,6 @@ public class CustomNotFoundException extends WebApplicationException implements 
 	  * @param message the String that is the entity of the 404 response.
 	  */
 	  public CustomNotFoundException(String message) {
-	    super(Response.status(Status.NOT_FOUND).entity(message).type("text/plain").build());
+	    super(Response.status(Response.Status.NOT_FOUND).entity(message).type("text/plain").build());
 	  }
 	}

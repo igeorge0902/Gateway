@@ -97,8 +97,6 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
         searchBarFrame.addSubview(searchController.searchBar)
         view.addSubview(searchBarFrame)
 
-        addData()
-        // self.addDatesData()
     }
 
     override func viewWillAppear(_: Bool) {
@@ -116,6 +114,10 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
         btnNav.addTarget(self, action: #selector(VenueForMoviesVC.navigateBack), for: UIControl.Event.touchUpInside)
 
         view.addSubview(btnNav)
+        
+        addData()
+        // self.addDatesData()
+
     }
 
     @objc func navigateBack() {
@@ -209,7 +211,7 @@ class VenueForMoviesVC: UIViewController, UITableViewDataSource, UITableViewDele
 
         cell!.textLabel?.text = data.name
    
-        let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data.large_picture!)
+        let urlString = serverURL + "/simple-service-webapp/webapi" + (data.large_picture!)
         
         if let url = URL(string: urlString) {
 

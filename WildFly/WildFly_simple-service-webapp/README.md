@@ -5,7 +5,6 @@ RESTful API component for the Gateway project
 
 Feature set:
 - it checks the active user sessions in the /login context
-- it serves the images from a given directory, that you have to set up for yourself
 
 Build from Eclipse:
 - import as Maven project

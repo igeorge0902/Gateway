@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="ngRouteExample" lang="en">
+<html lang="en" ng-app="ngRouteExample">
 
 <head>
     <meta charset="UTF-8">
@@ -10,32 +10,35 @@
 
 <body ng-controller="BookController">
 
-    <div id="content" class="container">
-        <div class="row">
-            <section class="6u">
-                <br> List of venues
-                <input type="search" ng-model="q" placeholder="filter venues..." aria-label="filter venues" />
-                <div class="animate-repeat" ng-repeat="location in locations | filter:q as results">
-                    <div id="content" class="container">
-                        <div class="row">
-                            <section class="6u">
-                                <ul>
-                                    <picture>
-                                        <a href="mbooks-1/rest/book/dates/{{location.locationId}}/{{$routeParams.bookId}}" class="image full"><img id="image_id_{{$index + 1}}" ng-src="../simple-service-webapp/webapi/myresource{{location.thumbnail}}" alt="" width="50%" height="50%" referrerpolicy="origin"></a>
-                                    </picture>
-                                    <header>
-                                        <h2>[{{$index + 1}}] Venues: {{locations.name}}</h2>
-                                    </header>
+<div class="container" id="content">
+    <div class="row">
+        <section class="6u">
+            <br> List of venues
+            <input aria-label="filter venues" ng-model="q" placeholder="filter venues..." type="search"/>
+            <div class="animate-repeat" ng-repeat="location in locations | filter:q as results">
+                <div class="container" id="content">
+                    <div class="row">
+                        <section class="6u">
+                            <ul>
+                                <picture>
+                                    <a class="image full"
+                                       href="mbooks-1/rest/book/dates/{{location.locationId}}/{{$routeParams.bookId}}"><img alt=""
+                                                               height="50%"
+                                                               id="image_id_{{$index + 1}}" ng-src="../simple-service-webapp/webapi/myresource{{location.thumbnail}}" referrerpolicy="origin" width="50%"></a>
+                                </picture>
+                                <header>
+                                    <h2>[{{$index + 1}}] Venues: {{locations.name}}</h2>
+                                </header>
 
-                                    <details>
-                                        "hello"
-                                    </details>
-                                </ul>
-                            </section>
-                        </div>
+                                <details>
+                                    "hello"
+                                </details>
+                            </ul>
+                        </section>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
+</div>
 </body>

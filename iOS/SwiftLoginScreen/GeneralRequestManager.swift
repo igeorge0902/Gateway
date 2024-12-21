@@ -258,11 +258,11 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
 
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
                     
-                    self.alertViewPresentingVC = UIViewController()
-                    self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
+                  //  self.alertViewPresentingVC = UIViewController()
+                  //  self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
 
-                    //self.alertPresentingVC = UIViewController()
-                    //self.alertPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
+                    self.alertPresentingVC = UIViewController()
+                    self.alertPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
                     NSLog(error!.localizedDescription)
                 }
             }
@@ -292,7 +292,7 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                             onCompletion(json, error as NSError?)
                         } else {
                             self.alertViewPresentingVC = UIViewController()
-                            self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
+                            self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
                         }
                     } else {
                         UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
@@ -304,19 +304,25 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                             if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
                                 
                                 self.alertViewPresentingVC = UIViewController()
-                                self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: result)
+                                self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: result)
                                 // if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
                                 //        UIAlertController.popUp(title: "Error:", message: doc.title!)
                                 //     }
                             }
 
-                        } else {
-                            self.alertViewPresentingVC = UIViewController()
-                            self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
                         }
+                        
+                        if httpResponse.statusCode == 404 {
+                            if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
+                                
+                                self.alertViewPresentingVC = UIViewController()
+                                self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: "The endpoint is not reachable")
+                            }
+                        }
+                        
                     } else {
                         self.alertViewPresentingVC = UIViewController()
-                        self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
+                        self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
                     }
                 }
 

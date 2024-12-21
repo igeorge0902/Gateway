@@ -1,1 +1,0 @@
-INSERT INTO Location (locationId, formatted_address, name, latitude, longitude ) VALUES (1,'Budapest, Alkotas u. 53, Magyarorszag','Cinema City Mom Park','47.4909131','19.0241229');

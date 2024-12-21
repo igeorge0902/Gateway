@@ -14,11 +14,15 @@ import com.jeet.api.Ticket;
 import com.jeet.api.Venues;
 import com.jeet.db.DAO;
 import com.jeet.db.Enums;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
+@RequestScoped
 public class BookingHandlerImpl {
 	
 	
-	public List<Ticket> returnTickets(int screeningDateId, List<String> seats, String uuid, String orderId) {
+	public List<Ticket> returnTickets(int screeningDateId, List<String> seats, String uuid, String orderId) throws InterruptedException {
 		
 		List<Ticket> tickets = DAO.instance().bookTickets(screeningDateId, seats, uuid, orderId);
 		
@@ -43,7 +47,7 @@ public class BookingHandlerImpl {
 		return bookedTickets;
 	}
 	
-	public List<Seats> returnUpdatedseats(int screeningDateId) {
+	public List<Seats> returnUpdatedseats(int screeningDateId) throws InterruptedException {
 		
 		List<Seats> seats = DAO.instance().updatetedSeats(screeningDateId);
 		
@@ -66,42 +70,42 @@ public class BookingHandlerImpl {
 		return seats_;
 	}
 	
-	public List<Movie> getAllMovies(int setFirstResult, String category) {
+	public List<Movie> getAllMovies(int setFirstResult, String category) throws InterruptedException {
 		
 		List<Movie> movies = DAO.instance().getAllMovies(setFirstResult, category);
 
 		return movies;	
 	}
 	
-	public Movie getMovie(int movieId) {
+	public Movie getMovie(int movieId) throws InterruptedException {
 		
 		Movie movie = DAO.instance().getMovie(movieId);
 
 		return movie;	
 	}
 	
-	public List<Movie> getMoviesForVenue(int locationId) {
+	public List<Movie> getMoviesForVenue(int locationId) throws InterruptedException {
 		
 		List<Movie> movies = DAO.instance().getMoviesForVenue(locationId);		
 
 		return movies;	
 	}
 	
-	public List<Location> getAllLocations() {
+	public List<Location> getAllLocations() throws InterruptedException {
 		
 		List<Location> locations = DAO.instance().getAllLocations();		
 
 		return locations;	
 	}
 	
-	public List<Venues> getAllVenuesForUpdate() {
+	public List<Venues> getAllVenuesForUpdate() throws InterruptedException {
 		
 		List<Venues> venues = DAO.instance().getAllVenuesForUpdate();
 	
 		return venues;	
 	}
 	
-	public Location getLocationForVenue(int venuesId) {
+	public Location getLocationForVenue(int venuesId) throws InterruptedException {
 		
 		Venues venue = DAO.instance().getLocationForVenue(venuesId);		
 		Location location = venue.getLocation();
@@ -109,7 +113,7 @@ public class BookingHandlerImpl {
 		return location;	
 	}
 	
-	public List<Venues> getVenueByLocation(int locationId) {
+	public List<Venues> getVenueByLocation(int locationId) throws InterruptedException {
 		
 		List<Venues> venue = DAO.instance().getVenueByLocation(locationId);						
 		List<Venues> venues = new ArrayList<Venues>();
@@ -132,14 +136,14 @@ public class BookingHandlerImpl {
 	}
 
 	
-	public List<Location> getLocationForMovie(int movieId) {
+	public List<Location> getLocationForMovie(int movieId) throws InterruptedException {
 		
 		List<Location> locations = DAO.instance().getLocationForMovie(movieId);
 
 		return locations;	
 	}
 	
-	public List<Venues> getVenues(int movieId) {
+	public List<Venues> getVenues(int movieId) throws InterruptedException {
 		
 		List<Venues> venue = DAO.instance().getVenuesForMovie(movieId);
 		List<Venues> venues = new ArrayList<Venues>();
@@ -162,7 +166,7 @@ public class BookingHandlerImpl {
 		return venues;	
 	}
 	
-	public List<ScreeningDates> getScreeningDatesForMovieOnVenue(int locationId, int movieId) {
+	public List<ScreeningDates> getScreeningDatesForMovieOnVenue(int locationId, int movieId) throws InterruptedException {
 		
 		List<ScreeningDates> date = DAO.instance().getScreeningDatesForMovieOnVenue(locationId, movieId);
 		List<ScreeningDates> dates = new ArrayList<ScreeningDates>();
@@ -182,7 +186,7 @@ public class BookingHandlerImpl {
 		return dates;	
 	}
 	
-	public List<Seats> getSeatsForScreenForMovieOnVenue(int screeningDateId) {
+	public List<Seats> getSeatsForScreenForMovieOnVenue(int screeningDateId) throws InterruptedException {
 		
 		List<Seats> seat = DAO.instance().getSeatsForScreening(screeningDateId);
 		List<Seats> seats = new ArrayList<Seats>();
@@ -204,14 +208,16 @@ public class BookingHandlerImpl {
 		return seats;	
 	}
 	
-	public List<Movie> fullTextSearchMovies(String match, String category, int setFirstResult) {
+
+	public List<Movie> fullTextSearchMovies(String match, String category, int setFirstResult) throws InterruptedException {
 		
 		List<Movie> movie = DAO.instance().fullTextSearchMovies(match, category, setFirstResult);
 
 		return movie;	
 	}
+
 	
-	public List<Movie> searchMovies(String name, String order) {
+	public List<Movie> searchMovies(String name, String order) throws InterruptedException {
 		
 		if(order.equalsIgnoreCase(Enums.SortOrder.ASC.get()) || order.equalsIgnoreCase(Enums.SortOrder.DESC.get())) {
 
@@ -235,63 +241,63 @@ public class BookingHandlerImpl {
 	}
 	*/
 	
-	public boolean deleteTicket(List<Integer> ticketIds, Integer purchaseId) {
+	public boolean deleteTicket(List<Integer> ticketIds, Integer purchaseId) throws InterruptedException {
 		
 		DAO.instance().cancelTicket(ticketIds, purchaseId);
 		
 		return true;
 	}
 
-	public Purchase setBrainTreeCustomerId(String customerId, int purchaseId) {
+	public Purchase setBrainTreeCustomerId(String customerId, int purchaseId) throws InterruptedException {
 
 		Purchase purchase = DAO.instance().setBraintreeId(customerId, purchaseId);
 
 		return purchase;
 	}
 
-	public Purchase getBrainTreeCustomerId(String uuid) {
+	public Purchase getBrainTreeCustomerId(String uuid) throws InterruptedException {
 
 		Purchase purchase = DAO.instance().getBraintreeId(uuid);
 
 		return purchase;
 	}
 	
-	public boolean deletePurchase(Integer purchaseId) {
+	public boolean deletePurchase(Integer purchaseId) throws InterruptedException {
 		
 		DAO.instance().deletePurchase(purchaseId);
 		
 		return true;
 	}
 
-	public Screen addScreen(String movie, String Date, String Venue, int nrOfRows, int nrOfSeatsInRow, String ScreeningId, String category) throws ParseException {
+	public Screen addScreen(String movie, String Date, String Venue, int nrOfRows, int nrOfSeatsInRow, String ScreeningId, String category) throws ParseException, InterruptedException {
 		
 		Screen screen = DAO.instance().insertNewScreen(movie, Date, Venue, nrOfRows, nrOfSeatsInRow, ScreeningId, category);
 		
 		return screen;
 	}
 	
-	public Screen updateScreen(String Venue, int venuesId, int screeningDatesId, int moviesId, String screenId, String Date, String category) throws ParseException {
+	public Screen updateScreen(String Venue, int venuesId, int screeningDatesId, int moviesId, String screenId, String Date, String category) throws ParseException, InterruptedException {
 		
 		Screen screen = DAO.instance().updateScreen(Venue, venuesId, screeningDatesId, moviesId, screenId, Date, category);
 		
 		return screen;
 	}
 	
-	public boolean deleteScreen(int screeningDatesId) throws ParseException {
+	public boolean deleteScreen(int screeningDatesId) throws ParseException, InterruptedException {
 		 
 		boolean delete = DAO.instance().deleteScreen(screeningDatesId);
 		
 		return delete;
 	}
 	
-	public List<Purchase> getAllPurchases(String uuid) {
+	public List<Purchase> getAllPurchases(String uuid) throws InterruptedException {
 		
 		List<Purchase> movies = DAO.instance().getPurchases(uuid);
 
 		return movies;	
 	}
 	
-	public List<Ticket> getTicketPerPurchase(int purchaseId) {
+	public List<Ticket> getTicketPerPurchase(int purchaseId) throws InterruptedException {
 		
 		List<Ticket> tickets = DAO.instance().getTicketPerPurchase(purchaseId);
 

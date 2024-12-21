@@ -1,10 +1,10 @@
 package com.example.api;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlRootElement;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /**
  * MasterPiece :)
@@ -12,11 +12,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author georgegaspar
  *
  */
-@XmlRootElement
 @Entity
 public class Sessions {
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy= GenerationType.AUTO)
   private String id;
   private String session;
   private String deviceId;

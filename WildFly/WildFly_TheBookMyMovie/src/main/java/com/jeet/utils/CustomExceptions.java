@@ -2,11 +2,10 @@ package com.jeet.utils;
 
 import java.io.Serializable;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 import org.json.JSONObject;
 
 public class CustomExceptions extends WebApplicationException implements Serializable {
@@ -29,10 +28,8 @@ public class CustomExceptions extends WebApplicationException implements Seriali
 	  * @param message the String that is the entity of the response.
 	  */
 	  public CustomExceptions(String title, String message) {
-		  
 	    super(Response.status(Status.OK).
 	    entity(jsonMessage(title, message)).type(MediaType.APPLICATION_JSON).build());
-	  
 	  }
 	  
 	  private static JSONObject jsonMessage(String title, String message) {

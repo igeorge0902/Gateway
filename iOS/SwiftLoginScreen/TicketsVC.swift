@@ -181,7 +181,7 @@ class TicketsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
 
         cell.textLabel?.attributedText = title
 
-        if let urlMovie = URL(string: serverURL + "/simple-service-webapp/webapi/myresource" + CollectionData[indexPath.row].movie_picture) {
+        if let urlMovie = URL(string: serverURL + "/simple-service-webapp/webapi" + CollectionData[indexPath.row].movie_picture) {
             if let movieImage = try? Data(contentsOf: urlMovie) {
                 cell.profileImage?.image = UIImage(data: movieImage)
             }

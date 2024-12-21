@@ -261,7 +261,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
             cell!.textLabel?.attributedText = detailText
     
-            let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data.venues_picture!)
+            let urlString = serverURL + "/simple-service-webapp/webapi" + (data.venues_picture!)
                 
             var image:UIImage?
                 var loadPictures: GeneralRequestManager?

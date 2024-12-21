@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ab-base64',[]).constant('base64', (function() {
+angular.module('ab-base64', []).constant('base64', (function () {
 
     /*
      * Encapsulation of Vassilis Petroulias's base64.js library for AngularJS
@@ -33,8 +33,8 @@ angular.module('ab-base64',[]).constant('base64', (function() {
                 position = -1,
                 result,
                 len = buffer.length,
-                nan0, nan1, nan2, enc = [, , , ];
-            
+                nan0, nan1, nan2, enc = [, , ,];
+
             if (B64.ie) {
                 result = [];
                 while (++position < len) {
@@ -76,7 +76,7 @@ angular.module('ab-base64',[]).constant('base64', (function() {
             s = s.replace(/\s/g, '');
             if (s.length % 4)
                 throw new Error('InvalidLengthError: decode failed: The string to be decoded is not the correct length for a base64 encoded string.');
-            if(/[^A-Za-z0-9+\/=\s]/g.test(s))
+            if (/[^A-Za-z0-9+\/=\s]/g.test(s))
                 throw new Error('InvalidCharacterError: decode failed: The string contains characters invalid in a base64 encoded string.');
 
             var buffer = B64.fromUtf8(s),
@@ -130,7 +130,7 @@ angular.module('ab-base64',[]).constant('base64', (function() {
             /* jshint bitwise:false */
             var position = -1,
                 len, buffer = [],
-                enc = [, , , ];
+                enc = [, , ,];
             if (!B64.lookup) {
                 len = B64.alphabet.length;
                 B64.lookup = {};
@@ -157,7 +157,7 @@ angular.module('ab-base64',[]).constant('base64', (function() {
     };
 
     var B64url = {
-        decode: function(input) {
+        decode: function (input) {
             // Replace non-url compatible chars with base64 standard chars
             input = input
                 .replace(/-/g, '+')
@@ -165,17 +165,17 @@ angular.module('ab-base64',[]).constant('base64', (function() {
 
             // Pad out with standard base64 required padding characters
             var pad = input.length % 4;
-            if(pad) {
-              if(pad === 1) {
-                throw new Error('InvalidLengthError: Input base64url string is the wrong length to determine padding');
-              }
-              input += new Array(5-pad).join('=');
+            if (pad) {
+                if (pad === 1) {
+                    throw new Error('InvalidLengthError: Input base64url string is the wrong length to determine padding');
+                }
+                input += new Array(5 - pad).join('=');
             }
 
             return B64.decode(input);
         },
 
-        encode: function(input) {
+        encode: function (input) {
             var output = B64.encode(input);
             return output
                 .replace(/\+/g, '-')

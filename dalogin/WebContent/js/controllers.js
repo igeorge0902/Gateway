@@ -115,7 +115,7 @@ myAppControllers.controller('GetUser', ['$scope', 'userApi', function ($scope, u
 
         userApi.getUser()
             .success(function (data, status, headers) {
-               // console.log(headers());
+                // console.log(headers());
                 $scope.user = null;
                 $scope.user = data;
                 $scope.status = status;

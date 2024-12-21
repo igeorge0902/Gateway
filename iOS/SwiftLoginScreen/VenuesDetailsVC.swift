@@ -73,7 +73,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         PlacesData_.removeAll()
         icons = ["Calendar-icon": "calendar-icon", "iCal-icon": "ical", "FBShare": "facebook_share"]
 
-        let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (selectLarge_picture!)
+        let urlString = serverURL + "/simple-service-webapp/webapi" + (selectLarge_picture!)
         
             var loadPictures: GeneralRequestManager?
             loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
@@ -90,7 +90,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
 
         if (!selectVenues_picture.isEmpty) {
         
-            let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (selectVenues_picture!)
+            let urlString = serverURL + "/simple-service-webapp/webapi" + (selectVenues_picture!)
         
                 var loadPictures: GeneralRequestManager?
                 loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
@@ -368,7 +368,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
                 SelectMovieName = movieName
                 SelectVenueForMovie = selectAddress
                 SelectVenueName = venueName
-                SelectMoviePicture = serverURL + "/simple-service-webapp/webapi/myresource" + selectLarge_picture!
+                SelectMoviePicture = serverURL + "/simple-service-webapp/webapi" + selectLarge_picture!
 
                 SeatsData.addData(Int(screeningDateId!)!)
 

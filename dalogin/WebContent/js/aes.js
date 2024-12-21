@@ -7,7 +7,8 @@
 var CryptoJS = CryptoJS || function (u, p) {
     var d = {},
         l = d.lib = {},
-        s = function () {},
+        s = function () {
+        },
         t = l.Base = {
             extend: function (a) {
                 s.prototype = this;
@@ -25,7 +26,8 @@ var CryptoJS = CryptoJS || function (u, p) {
                 a.init.apply(a, arguments);
                 return a
             },
-            init: function () {},
+            init: function () {
+            },
             mixIn: function (a) {
                 for (var c in a) a.hasOwnProperty(c) && (this[c] = a[c]);
                 a.hasOwnProperty("toString") && (this.toString = a.toString)
@@ -205,7 +207,7 @@ var CryptoJS = CryptoJS || function (u, p) {
                 t = s.charAt(64);
             t && (t = d.indexOf(t), -1 != t && (l = t));
             for (var t = [], r = 0, w = 0; w <
-                l; w++)
+            l; w++)
                 if (w % 4) {
                     var v = s.indexOf(d.charAt(w - 1)) << 2 * (w % 4),
                         b = s.indexOf(d.charAt(w)) >>> 6 - 2 * (w % 4);
@@ -237,6 +239,7 @@ var CryptoJS = CryptoJS || function (u, p) {
         b = b + (a ^ (n | ~c)) + e + k;
         return (b << j | b >>> 32 - j) + n
     }
+
     for (var t = CryptoJS, r = t.lib, w = r.WordArray, v = r.Hasher, r = t.algo, b = [], x = 0; 64 > x; x++) b[x] = 4294967296 * u.abs(u.sin(x + 1)) | 0;
     r = r.MD5 = v.extend({
         _doReset: function () {
@@ -544,8 +547,8 @@ CryptoJS.lib.Cipher || function (u) {
                 var b = a.ciphertext;
                 a = a.salt;
                 return (a ? s.create([1398893684,
-                              1701076831
-                              ]).concat(a).concat(b) : b).toString(r)
+                    1701076831
+                ]).concat(a).concat(b) : b).toString(r)
             },
             parse: function (a) {
                 a = r.parse(a);
@@ -650,8 +653,8 @@ CryptoJS.lib.Cipher || function (u) {
         e ? (e = z ^ a[a[a[G ^ z]]], j ^= a[a[j]]) : e = j = 1
     }
     var H = [0, 1, 2, 4, 8,
-          16, 32, 64, 128, 27, 54
-          ],
+            16, 32, 64, 128, 27, 54
+        ],
         d = d.AES = p.extend({
             _doReset: function () {
                 for (var a = this._key, c = a.words, d = a.sigBytes / 4, a = 4 * ((this._nRounds = d + 6) + 1), e = this._keySchedule = [], j = 0; j < a; j++)
@@ -663,7 +666,7 @@ CryptoJS.lib.Cipher || function (u) {
                     }
                 c = this._invKeySchedule = [];
                 for (d = 0; d < a; d++) j = a - d, k = d % 4 ? e[j] : e[j - 4], c[d] = 4 > d || 4 >= j ? k : b[l[k >>> 24]] ^ x[l[k >>> 16 & 255]] ^ q[l[k >>>
-                    8 & 255]] ^ n[l[k & 255]]
+                8 & 255]] ^ n[l[k & 255]]
             },
             encryptBlock: function (a, b) {
                 this._doCryptBlock(a, b, this._keySchedule, t, r, w, v, l)
@@ -681,7 +684,7 @@ CryptoJS.lib.Cipher || function (u) {
                 for (var m = this._nRounds, g = a[b] ^ c[0], h = a[b + 1] ^ c[1], k = a[b + 2] ^ c[2], n = a[b + 3] ^ c[3], p = 4, r = 1; r < m; r++) var q = d[g >>> 24] ^ e[h >>> 16 & 255] ^ j[k >>> 8 & 255] ^ l[n & 255] ^ c[p++],
                     s = d[h >>> 24] ^ e[k >>> 16 & 255] ^ j[n >>> 8 & 255] ^ l[g & 255] ^ c[p++],
                     t =
-                    d[k >>> 24] ^ e[n >>> 16 & 255] ^ j[g >>> 8 & 255] ^ l[h & 255] ^ c[p++],
+                        d[k >>> 24] ^ e[n >>> 16 & 255] ^ j[g >>> 8 & 255] ^ l[h & 255] ^ c[p++],
                     n = d[n >>> 24] ^ e[g >>> 16 & 255] ^ j[h >>> 8 & 255] ^ l[k & 255] ^ c[p++],
                     g = q,
                     h = s,

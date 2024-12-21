@@ -357,7 +357,7 @@
         .directive('deviceDetector', ["deviceDetector", function (deviceDetector) {
             return {
                 restrict: "A",
-                link: function (scope, elm /*, attrs*/ ) {
+                link: function (scope, elm /*, attrs*/) {
                     elm.addClass('os-' + deviceDetector.os);
                     elm.addClass('browser-' + deviceDetector.browser);
                     elm.addClass('device-' + deviceDetector.device);

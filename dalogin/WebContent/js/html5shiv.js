@@ -47,6 +47,7 @@
         g || t(a, b);
         return a
     }
+
     var k = l.html5 || {},
         s = /^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,
         r = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,

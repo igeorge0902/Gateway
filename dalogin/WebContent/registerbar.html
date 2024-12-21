@@ -8,9 +8,9 @@
 
 <head>
     <title>Linear by TEMPLATED</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
     <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->
@@ -20,23 +20,23 @@
     <script src="js/init.js"></script>
 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <script type="text/javascript" src="jsR/sha512.js"></script>
-    <script type="text/javascript" src="jsR/sha3.js"></script>
-    <script type="text/javascript" src="jsR/hmac-sha512.js"></script>
-    <script type="text/javascript" src="jsR/angular.min.js"></script>
-    <script type="text/javascript" src="jsR/register.js"></script>
-    <script type="text/javascript" src="jsR/enc-base64-min.js"></script>
-    <script type="text/javascript" src="jsR/angular-utf8-base64.min.js"></script>
-    <script type="text/javascript" src="jsR/ng-device-detector.min.js"></script>
-    <script type="text/javascript" src="jsR/re-tree/re-tree.min.js"></script>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <script src="jsR/sha512.js" type="text/javascript"></script>
+    <script src="jsR/sha3.js" type="text/javascript"></script>
+    <script src="jsR/hmac-sha512.js" type="text/javascript"></script>
+    <script src="jsR/angular.min.js" type="text/javascript"></script>
+    <script src="jsR/register.js" type="text/javascript"></script>
+    <script src="jsR/enc-base64-min.js" type="text/javascript"></script>
+    <script src="jsR/angular-utf8-base64.min.js" type="text/javascript"></script>
+    <script src="jsR/ng-device-detector.min.js" type="text/javascript"></script>
+    <script src="jsR/re-tree/re-tree.min.js" type="text/javascript"></script>
 
     <noscript>
-        <link rel="stylesheet" href="css/skel-noscript.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-desktop.css" />
+        <link href="css/skel-noscript.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+        <link href="css/style-desktop.css" rel="stylesheet"/>
     </noscript>
 
     <style type="text/css">
@@ -44,13 +44,13 @@
             max-width: 300px;
             margin: 0 auto;
         }
-        
+
         #inputUsername {
             margin-bottom: -1px;
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
         }
-        
+
         #inputPassword {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
@@ -60,104 +60,110 @@
 
 <body>
 
-    <!-- Header -->
-    <div id="header">
-        <div id="nav-wrapper">
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.jsp">Homepage</a></li>
-                    <li><a href="left-sidebar.html">Movies</a></li>
-                    <li class="active"><a href="registerbar.html">Register</a></li>
-                    <li><a href="loginbar.html">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="container">
+<!-- Header -->
+<div id="header">
+    <div id="nav-wrapper">
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="index.jsp">Homepage</a></li>
+                <li><a href="left-sidebar.html">Movies</a></li>
+                <li class="active"><a href="registerbar.html">Register</a></li>
+                <li><a href="loginbar.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
 
-            <!-- Logo -->
-            <div id="logo">
-                <h1><a href="#">Linear</a></h1>
-                <span class="tag">By TEMPLATED</span>
-            </div>
+        <!-- Logo -->
+        <div id="logo">
+            <h1><a href="#">Linear</a></h1>
+            <span class="tag">By TEMPLATED</span>
         </div>
     </div>
-    <!-- Header -->
+</div>
+<!-- Header -->
 
-    <!-- Main -->
-    <div id="main">
-        <div data-ng-app="hmac">
-            <div class="container">
-                <div ng-controller="RegController">
-                    <form class="login-form">
-                        <h2>Login</h2>
+<!-- Main -->
+<div id="main">
+    <div data-ng-app="hmac">
+        <div class="container">
+            <div ng-controller="RegController">
+                <form class="login-form">
+                    <h2>Login</h2>
+                    <section class="4u">
+                        <label class="sr-only" for="voucher_">Voucher</label>
+                        <input id="voucher_" name=voucher_ ng-change="fields()" ng-model="voucher_" type="text"/>
+                        <br/>
+                        <label class="sr-only" for="username">Username</label>
+                        <input id="username" name=username ng-change="search()" ng-change="fields()" ng-model="username"
+                               type="text"/>
+                        <br/>
+                        <label class="sr-only" for="email">Email</label>
+                        <input id="email" name=email ng-change="email_search()" ng-change="fields()" ng-model="email"
+                               type="text"/>
+                        <br/>
+                        <label class="sr-only" for="password">Password</label>
+                        <input id="password" name=password ng-change="fields()" ng-model="password" type="password"/>
+                    </section>
+                    <div class="row">
                         <section class="4u">
-                            <label for="voucher_" class="sr-only">Voucher</label>
-                            <input type="text" name=voucher_ id="voucher_" ng-model="voucher_" ng-change="fields()" />
-                            <br />
-                            <label for="username" class="sr-only">Username</label>
-                            <input type="text" name=username id="username" ng-model="username" ng-change="search()" ng-change="fields()" />
-                            <br />
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="text" name=email id="email" ng-model="email" ng-change="email_search()" ng-change="fields()" />
-                            <br />
-                            <label for="password" class="sr-only">Password</label>
-                            <input type="password" name=password id="password" ng-model="password" ng-change="fields()" />
+                            <br>
+                            <div class="alert alert-danger" ng-show="errorMsg_User" role="alert">{{errorMsg_User}}</div>
+                            <div class="alert alert-danger" ng-show="successMsg_User" role="alert">{{successMsg_User}}
+                            </div>
+                            <div class="alert alert-danger" ng-show="errorMsg" role="alert">{{errorMsg.name}}</div>
+                            <div class="alert alert-danger" ng-show="successMsg" role="alert">{{successMsg}}</div>
+                            <br>
+                            <button ng-click="register()" ng-disabled="modelP.isDisabled">Register</button>
+                            <input type="reset" value="Cancel"/>
                         </section>
-                        <div class="row">
-                            <section class="4u">
-                                <br>
-                                <div class="alert alert-danger" role="alert" ng-show="errorMsg_User">{{errorMsg_User}}</div>
-                                <div class="alert alert-danger" role="alert" ng-show="successMsg_User">{{successMsg_User}}</div>
-                                <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg.name}}</div>
-                                <div class="alert alert-danger" role="alert" ng-show="successMsg">{{successMsg}}</div>
-                                <br>
-                                <button ng-disabled="modelP.isDisabled" ng-click="register()">Register</button>
-                                <input type="reset" value="Cancel" />
-                            </section>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!-- /Main -->
+</div>
+<!-- /Main -->
 
-    <!-- Tweet -->
-    <div id="tweet">
-        <div class="container">
-            <section>
-                <blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
-            </section>
-        </div>
+<!-- Tweet -->
+<div id="tweet">
+    <div class="container">
+        <section>
+            <blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque
+                viverra vulputate enim. Aliquam erat volutpat.&rdquo;
+            </blockquote>
+        </section>
     </div>
-    <!-- /Tweet -->
+</div>
+<!-- /Tweet -->
 
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container">
-            <section>
-                <header>
-                    <h2>Get in touch</h2>
-                    <span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
-                </header>
-                <ul class="contact">
-                    <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-                    <li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-                    <li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-                    <li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
-                </ul>
-            </section>
-        </div>
+<!-- Footer -->
+<div id="footer">
+    <div class="container">
+        <section>
+            <header>
+                <h2>Get in touch</h2>
+                <span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+            </header>
+            <ul class="contact">
+                <li><a class="fa fa-twitter" href="#"><span>Twitter</span></a></li>
+                <li class="active"><a class="fa fa-facebook" href="#"><span>Facebook</span></a></li>
+                <li><a class="fa fa-dribbble" href="#"><span>Pinterest</span></a></li>
+                <li><a class="fa fa-tumblr" href="#"><span>Google+</span></a></li>
+            </ul>
+        </section>
     </div>
-    <!-- /Footer -->
+</div>
+<!-- /Footer -->
 
-    <!-- Copyright -->
-    <div id="copyright">
-        <div class="container">
-            Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-        </div>
+<!-- Copyright -->
+<div id="copyright">
+    <div class="container">
+        Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a
+            href="http://unsplash.com/cc0">CC0</a>)
     </div>
+</div>
 
 
 </body>

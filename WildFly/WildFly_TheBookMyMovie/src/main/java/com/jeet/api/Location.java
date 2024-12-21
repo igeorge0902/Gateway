@@ -3,22 +3,15 @@ package com.jeet.api;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Cacheable;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import org.hibernate.search.annotations.Analyze;
-import org.hibernate.search.annotations.Field;
-import org.hibernate.search.annotations.Index;
-import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.Store;
+import jakarta.persistence.Cacheable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
-@Indexed
 @Cacheable
 public class Location implements Serializable {
 	
@@ -30,9 +23,8 @@ public class Location implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
     protected int locationId;
-	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     protected String formatted_address;
-	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
+
     protected String name;
     protected double latitude;
     protected double longitude;

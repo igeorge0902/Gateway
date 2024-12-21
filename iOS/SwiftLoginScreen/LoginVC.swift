@@ -245,8 +245,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
         } else {
 
             dataTask(username! as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
-                (resultString, _) -> Void in
-
+                (resultString, error) in
+                   
+                if((error) != nil) {
+                    self.presentAlert(withTitle: "String", message: error!.localizedDescription)
+                }
                 print(resultString)
             }
         }

@@ -36,7 +36,6 @@ class AdminVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIVi
     @IBOutlet var nrOfSeatsInRow: UITextField!
     @IBOutlet var ScreeningID: UITextField!
     @IBOutlet var category: UITextField!
-    
     @IBOutlet weak var TrollErrorLabel: UILabel!
     
     let datePicker = UIDatePicker()
@@ -222,6 +221,7 @@ class AdminVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, UIVi
         screeningDate.inputAccessoryView = toolbar
         screeningDate.inputView = datePicker
     }
+    
 
     @objc func donedatePicker() {
         let formatter = DateFormatter()

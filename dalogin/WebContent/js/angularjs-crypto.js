@@ -5,6 +5,7 @@ function missingCryptoJs(shouldCrypt, cfg, q) {
     if (cfg.key().length <= 0) return false;
     if (typeof (CryptoJS) === 'undefined') return true;
 }
+
 var cryptoModule = angular.module('angularjs-crypto', []);
 cryptoModule.config(['$httpProvider', function ($httpProvider) {
     var interceptor = ['$q', 'cfCryptoHttpInterceptor', function ($q, cfg) {
@@ -153,7 +154,8 @@ function ContentHeaderCheck(headerToCrypt) {
                 var result = contentType.beginsWith(headerToCrypt[index]);
                 if (result) {
                     return true
-                };
+                }
+                ;
             }
             return false;
         }

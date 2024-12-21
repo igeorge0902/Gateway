@@ -1,60 +1,40 @@
 package com.jeet.db;
 
+import com.jeet.api.*;
+import jakarta.enterprise.context.Dependent;
+import jakarta.persistence.FlushModeType;
+import org.hibernate.*;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
+import org.hibernate.search.engine.search.query.SearchResult;
+import org.hibernate.search.mapper.orm.Search;
+import org.hibernate.search.mapper.orm.session.SearchSession;
+import org.hibernate.stat.Statistics;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.CacheMode;
-import org.hibernate.Criteria;
-import org.hibernate.FlushMode;
-import org.hibernate.HibernateException;
-import org.hibernate.LockMode;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.resource.transaction.spi.TransactionStatus;
-import org.hibernate.search.FullTextQuery;
-import org.hibernate.search.FullTextSession;
-import org.hibernate.search.Search;
-import org.hibernate.search.query.DatabaseRetrievalMethod;
-import org.hibernate.search.query.ObjectLookupMethod;
-import org.hibernate.search.query.dsl.QueryBuilder;
-import org.hibernate.stat.Statistics;
-
-import com.jeet.api.Location;
-import com.jeet.api.Movie;
-import com.jeet.api.Purchase;
-import com.jeet.api.Screen;
-import com.jeet.api.ScreeningDates;
-import com.jeet.api.Seats;
-import com.jeet.api.Ticket;
-import com.jeet.api.Venues;
-
+@Dependent
 public class DAO {
 
 	private static DAO instance;
-	private SessionFactory factory;
+	private final SessionFactory factory;
 	private static volatile Session session;
 	private static volatile Transaction trans;
 	private static volatile Seats seat;
 	private static volatile Purchase purchase;
-	private static volatile FullTextSession fullTextSession;
-	private static volatile org.apache.lucene.search.Query query;
+	private final SearchSession searchSession;
 	private static volatile Screen screen;
 
 
 	/**
 	 * Intantiate DAO class that loads configured SessionFactory object. 
-	 * 
-	 * You can also configure further settings for the session. 
+	 * You can also configure further settings for the session.
 	 * 
 	 */
-	private DAO() {
+	private DAO() throws InterruptedException {
 
 		factory = HibernateUtil.getSessionFactory();
 		System.out.println("Creating factory");
@@ -63,25 +43,17 @@ public class DAO {
 		stats.setStatisticsEnabled(true);
 		
 		session = factory.openSession();
-		session.setFlushMode(FlushMode.ALWAYS);
+		session.setFlushMode(FlushModeType.AUTO);
 		
 		// clear cache
 		factory.getCache().evictAllRegions();
 		System.out.println("Cache cleared.");
-		
-		
-		fullTextSession = Search.getFullTextSession(session);
-		System.out.println("Creating a FullTextSession from a regular Session.");
 
-		try {
-			fullTextSession.createIndexer().startAndWait();
-		
-		} catch (InterruptedException e) {
-		
-            // Make sure you log the exception, as it might be swallowed
-            System.err.println("Initial FullTextSession creation failed." + e);
-            throw new ExceptionInInitializerError(e);		
-		}
+		searchSession = Search.session(session);
+		Search.mapping(factory)
+				.scope(Movie.class)
+				.massIndexer()
+				.startAndWait();
 	}
 
 	/**
@@ -90,7 +62,7 @@ public class DAO {
 	 * 
 	 * @return DAO instance
 	 */
-	public static synchronized DAO instance() {
+	public synchronized static DAO instance() throws InterruptedException {
 		if (instance == null) {
 			instance = new DAO();
 		}
@@ -106,7 +78,6 @@ public class DAO {
 	public synchronized Screen getScreen(Movie movie){
 		
 		session = factory.getCurrentSession();
-		
 	    trans = session.getTransaction();
 		
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
@@ -157,7 +128,7 @@ public class DAO {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public synchronized List<Movie> getAllMovies(int setFirstResult, String category){
+	public synchronized List<Movie> getAllMovies(int setFirstResult, String category) {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
@@ -167,40 +138,38 @@ public class DAO {
 			trans.begin();
 		}
 		
-		List<Movie> movies = null;
+		List<Movie> movies;
 		String hql;
-		if(category == "") {
+		if(category.isBlank()) {
 		hql = "from Movie order by name asc";
 		} else {
 		hql = "from Movie where category = :mCategory order by name asc";
 		}
 		
 		if(setFirstResult == -1 && category.equals("")) {
-		org.hibernate.Query query = session.createQuery(hql)
+		movies = session.createQuery(hql, Movie.class)
 				.setCacheable(true)
 				.setCacheRegion("movies")
-				.setCacheMode(CacheMode.NORMAL);
+				.setCacheMode(CacheMode.NORMAL)
+				.getResultList();
 		
-		movies = query.list();
 		} else if(!category.isEmpty() && setFirstResult > -1) {
-		org.hibernate.Query query = session.createQuery(hql)
+		movies = session.createQuery(hql)
 				.setCacheable(true)
 				.setParameter("mCategory", category)
 				.setCacheRegion("movies")
 				.setCacheMode(CacheMode.NORMAL)
 				.setFirstResult(setFirstResult)
-				.setMaxResults(30);
+				.setMaxResults(30).getResultList();
 		
-		movies = query.list();
 		} else {
-			 org.hibernate.Query query = session.createQuery(hql)
+			 movies = session.createQuery(hql)
 			.setCacheable(true)
 			.setCacheRegion("movies")
 			.setCacheMode(CacheMode.NORMAL)
 			.setFirstResult(setFirstResult)
-			.setMaxResults(30);
+			.setMaxResults(30).getResultList();
 	
-	    movies = query.list();
 	    }
 				 
 
@@ -222,21 +191,16 @@ public class DAO {
 		trans = session.getTransaction();
 		
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
-			
 			trans.begin();
 		}
 		
 		String hql = "from Movie m where name like '%"+name+"%' order by m.name "+order;
-		
-		Query query = session.createQuery(hql);
-		query.setCacheable(true);
-		query.setCacheRegion("movies");
+		List<Movie> list = session.createQuery(hql)
+		.setCacheable(true)
+		.setCacheRegion("movies").getResultList();
 		
 		//query.setParameter("mName", "%"+name+"%");
 		//query.setParameter("mOrder", order);
-		
-		@SuppressWarnings("unchecked")
-		List<Movie> list = query.list();
 		
 		trans.commit();
 		
@@ -249,70 +213,25 @@ public class DAO {
 	 * @param match
 	 * @return
 	 */
-	public synchronized List<Movie> fullTextSearchMovies(String match, String category, int setFirstResult) { 
-        
-        if(!session.isOpen()) {          
-            session = factory.openSession(); 
-        } 
+
+	public synchronized List<Movie> fullTextSearchMovies(String match, String category, int setFirstResult) {
          
         session = factory.getCurrentSession(); 
         trans = session.getTransaction(); 
          
         if (trans.getStatus() != TransactionStatus.ACTIVE) {             
             trans.begin(); 
-        } 
- 
-        // create native Lucene query using the query DSL 
-        QueryBuilder qb = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Movie.class).get(); 
-         
-        if (!match.contains(" ")) { 
-        query = qb 
-          .keyword()
-          .onField("name") 
-          .andField("detail") 
-          .matching(match) 
-          .createQuery();    
-        } 
-         
-        if (match.contains(" ")) { 
-        query = qb 
-                  .phrase() 
-                  .onField("name") 
-                  .andField("detail") 
-                  .sentence(match)
-                  .createQuery(); 
-        } 
-         
-        // wrap Lucene query in a org.hibernate.Query 
-        FullTextQuery hibQuery = fullTextSession.createFullTextQuery(query, Movie.class); 
-     
-        hibQuery.initializeObjectsWith( 
-                ObjectLookupMethod.SECOND_LEVEL_CACHE, 
-                DatabaseRetrievalMethod.QUERY 
-            ); 
-             
-        hibQuery 
-        .setCacheable(true) 
-        .setCacheRegion("movies") 
-        .setCacheMode(CacheMode.NORMAL); 
-        
-        if(!category.isEmpty() && setFirstResult > -1) {
-         hibQuery
-         .setCacheable(true) 
-         .setCacheRegion("movies") 
-         .setCacheMode(CacheMode.NORMAL);
-       	
-        hibQuery 
-        .enableFullTextFilter("category").setParameter("category", category);
-		 
-        hibQuery
-    	 .setFirstResult(setFirstResult)
-         .setMaxResults(30);
         }
-        
-        // execute search 
-        @SuppressWarnings("unchecked") 
-        List<Movie> result = hibQuery.list(); 
+
+		SearchResult<Movie> result = null;
+			// Full-text search query
+			result = searchSession.search(Movie.class)
+					.where(f -> f.bool()
+							.must(f.match().field("name").matching(match))
+							.should(f.match().field("detail").matching(match))) // Search term
+					.fetch(20);
+
+        List<Movie> results = result.hits();
         
         trans.commit(); 
  
@@ -320,8 +239,9 @@ public class DAO {
             session.close(); 
         }  
          
-        return result; 
-    } 
+        return results;
+    }
+
 	
 	/**
 	 * Returns all seats for a screen (movie/venue) by screeningDateId.
@@ -333,19 +253,16 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "select screeningdates.venues.screen.seat from ScreeningDates as screeningdates where screeningDatesId = :mScreeningDatesId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mScreeningDatesId", screeningDateId);
-		
-		@SuppressWarnings("unchecked")
-		List<Seats> list = query.list();
+
+		List<Seats> list = session.createQuery(hql)
+		.setParameter("mScreeningDatesId", screeningDateId).getResultList();
 		
 		trans.commit();
 		
@@ -362,17 +279,19 @@ public class DAO {
 	public synchronized Seats getSeatForAvailability(int screeningDatesId, String seatNumber) {
 		
 		session = factory.getCurrentSession();
-		
-		trans = session.beginTransaction();
-		
-		String hql = "select seats from ScreeningDates as screeningdates inner join screeningdates.venues.screen.seat as seats where screeningDatesId = :mScreeningDatesId and seatNumber = :mSeatNumber";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mScreeningDatesId", screeningDatesId);
-		query.setParameter("mSeatNumber", seatNumber);
+		trans = session.getTransaction();
 
-		Seats seat = (Seats) query.uniqueResult();
-		
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+
+			trans.begin();
+		}
+
+		String hql = "select seats from ScreeningDates as screeningdates inner join screeningdates.venues.screen.seat as seats where screeningdates.screeningDatesId = :mScreeningDatesId and seats.seatNumber = :mSeatNumber";
+
+		Seats seat = (Seats) session.createQuery(hql)
+				.setParameter("mScreeningDatesId", screeningDatesId)
+				.setParameter("mSeatNumber", seatNumber).uniqueResult();
+
 		return seat;	
 	}
 	
@@ -392,13 +311,11 @@ public class DAO {
 		}
 		
 		String hql = "select venues.screen.movie from Venues as venues where venues.location.locationId = :mLocationId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mLocationId", locationId);
-		query.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 
-		@SuppressWarnings("unchecked")
-		List<Movie> list = query.list();
+		List<Movie> list = session.createQuery(hql)
+			.setParameter("mLocationId", locationId)
+			//.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+			.getResultList();
 
 		trans.commit();
 		
@@ -411,6 +328,7 @@ public class DAO {
 	 * @param match
 	 * @return
 	 */
+	/*
 	public synchronized List<Movie> fullTextSearchMoviesForVenue(String match) { 
         
         if(!session.isOpen()) {          
@@ -470,7 +388,7 @@ public class DAO {
          
         return result; 
     } 
-	
+	*/
 	/**
 	 * Returns location for a venue by locationId. It will be called from individual screens. 
 	 * 
@@ -481,20 +399,18 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mlocationId", locationId);
-		query.setCacheable(true);
-		query.setCacheRegion("location");
-		
-		Location location = (Location) query.uniqueResult();
+
+		Location location = (Location) session.createQuery(hql)
+			.setParameter("mlocationId", locationId)
+			.setCacheable(true)
+			.setCacheRegion("location").uniqueResult();
 		
 		trans.commit();
 		
@@ -511,7 +427,7 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
@@ -519,13 +435,10 @@ public class DAO {
 		
 		String hql = "select venues from Venues as venues inner join venues.location where venues.location.locationId = :mlocationId";
 
-		Query query = session.createQuery(hql);
-		query.setParameter("mlocationId", locationId);
-		query.setCacheable(true);
-		query.setCacheRegion("venues");
-
-		@SuppressWarnings("unchecked")
-		List<Venues> venue = query.list();
+		List<Venues> venue = session.createQuery(hql)
+			.setParameter("mlocationId", locationId)
+			.setCacheable(true)
+			.setCacheRegion("venues").getResultList();
 
 		trans.commit();
 		
@@ -541,19 +454,16 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "select venues from Venues as venues inner join venues.screen.movie";
-		Query query = session.createQuery(hql);
-		query.setCacheable(true);
-		query.setCacheRegion("movies");
-		
-		@SuppressWarnings("unchecked")
-		List<Venues> list = query.list();
+		List<Venues> list = session.createQuery(hql)
+			.setCacheable(true)
+			.setCacheRegion("movies").getResultList();
 		
 		trans.commit();
 		
@@ -569,20 +479,16 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "select venues.screen.movie from Venues as venues inner join venues.screen.movie";
-		Query query = session.createQuery(hql);
-		query.setCacheable(true);
-		query.setCacheRegion("movies");
-	
-		
-		@SuppressWarnings("unchecked")
-		List<Movie> list = query.list();
+		List<Movie> list = session.createQuery(hql)
+			.setCacheable(true)
+			.setCacheRegion("movies").getResultList();
 		
 		trans.commit();
 		
@@ -598,19 +504,16 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "select location from Location as location";
-		Query query = session.createQuery(hql);
-		query.setCacheable(true);
-		query.setCacheRegion("location");
-		
-		@SuppressWarnings("unchecked")
-		List<Location> list = query.list();
+		List<Location> list = session.createQuery(hql)
+			.setCacheable(true)
+			.setCacheRegion("location").getResultList();
 		
 		trans.commit();
 		
@@ -621,19 +524,17 @@ public class DAO {
 		
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
-		
+
 		if (trans.getStatus() != TransactionStatus.ACTIVE) {
 			
 			trans.begin();
 		}
 		
 		String hql = "select venues from Venues as venues inner join venues.location where venues.venuesId = :mVenuesId";
-		Query query = session.createQuery(hql);
-		query.setParameter("mVenuesId", venuesId);
-		query.setCacheable(true);
-		query.setCacheRegion("location");
-		
-		Venues venue = (Venues) query.uniqueResult();
+		Venues venue = (Venues) session.createQuery(hql)
+			.setParameter("mVenuesId", venuesId)
+			.setCacheable(true)
+			.setCacheRegion("location").uniqueResult();
 		
 		trans.commit();
 		
@@ -655,19 +556,17 @@ public class DAO {
 			
 			trans.begin();
 		}
-		
+
 		String sql = "SELECT distinct * FROM book.location join book.venues on venues.location_locationId = location.locationId join book.Screen on venues.screen_screenId = Screen.screenId join book.Movie on Screen.movie_movieId = Movie.movieId where movieId = :movieId";
-		SQLQuery query = session.createSQLQuery(sql);
-		query.setParameter("movieId", movieId);
+		List<Location> location = session.createNativeQuery(sql)
+			.setParameter("movieId", movieId)
 		// query.addEntity(Location.class);
-		query.addEntity(Location.class);
-		query.setCacheable(true);
-		query.setCacheRegion("location");
+			.addEntity(Location.class)
+			.setCacheable(true)
+			.setCacheRegion("location").getResultList();
 		// criteria filters for a location, discarding all other matches for the same location, 
 		// i.e. for the query; hence the criteria is the location as distinct root entity, by selecting a kind of movie
-		query.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
-		@SuppressWarnings("unchecked")
-		List<Location> location = query.list();
+		//query.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 		
 		trans.commit();
 		
@@ -690,16 +589,12 @@ public class DAO {
 			trans.begin();
 		}
 		
-		String hql = "select venues from Venues as venues inner join venues.screen.movie as movie where movieId = :mMovieId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mMovieId", movieId);
-		query.setCacheable(true);
-		query.setCacheRegion("venues");
+		String hql = "select venues from Venues as venues inner join venues.screen.movie as movie where movie.movieId = :mMovieId";
 
-		
-		@SuppressWarnings("unchecked")
-		List<Venues> list = query.list();
+		List<Venues> list = session.createQuery(hql)
+			.setParameter("mMovieId", movieId)
+			.setCacheable(true)
+			.setCacheRegion("venues").getResultList();
 		
 		trans.commit();
 		
@@ -723,14 +618,11 @@ public class DAO {
 			trans.begin();
 		}
 		
-		String hql = "select date from ScreeningDates as date inner join date.venues.location where movieId = :mMovieId and locationId = :mLocationId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mMovieId", movieId);
-		query.setParameter("mLocationId", locationId);
-		
-		@SuppressWarnings("unchecked")
-		List<ScreeningDates> list = query.list();
+		String hql = "select date from ScreeningDates as date inner join date.venues.location as location where date.movieId = :mMovieId and location.locationId = :mLocationId";
+
+		List<ScreeningDates> list = session.createQuery(hql)
+			.setParameter("mMovieId", movieId)
+			.setParameter("mLocationId", locationId).getResultList();
 		
 		trans.commit();
 		
@@ -754,14 +646,11 @@ public class DAO {
 			trans.begin();
 		}
 		
-		String hql = "from Ticket where screen_screenId=:screenId and seat_seatNum=:seatId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("screenId", screenId);
-		query.setParameter("seatId", seatId);
-		
-		@SuppressWarnings("unchecked")
-		List<Ticket> list = query.list();
+		String hql = "from Ticket where screen_screenId=:screenId and seats_seatNumber=:seatId";
+
+		List<Ticket> list = session.createQuery(hql)
+			.setParameter("screenId", screenId)
+			.setParameter("seatId", seatId).getResultList();
 		
 		trans.commit();
 		
@@ -781,11 +670,14 @@ public class DAO {
 	 * @return
 	 */
 	public synchronized Purchase setPurchaseId(String uuid, String orderId) {
-		
+
 		session = factory.getCurrentSession();
-		
-		trans = session.beginTransaction();
-		
+		trans = session.getTransaction();
+
+		if (trans.getStatus() != TransactionStatus.ACTIVE) {
+			trans.begin();
+		}
+
 		Purchase newPurchase = new Purchase();
 		newPurchase.setUuid(uuid);
 		newPurchase.setOrderId(orderId);
@@ -807,18 +699,20 @@ public class DAO {
 	public synchronized Purchase getBraintreeId(String uuid) {
 
 		session = factory.getCurrentSession();
-
 		trans = session.beginTransaction();
 
 		String hql = "select purchase from Purchase as purchase where uuid = :uuid and braintree_customerId != null";
 
-		Query query = session.createQuery(hql);
-		query.setParameter("uuid", uuid);
-		List<Purchase> purchase = query.list();
+		List<Purchase> purchase = session.createQuery(hql)
+			.setParameter("uuid", uuid).getResultList();
 
 		session.getTransaction().commit();
-
-		return purchase.get(0);
+		
+		if(purchase.size() > 0) {
+			return purchase.get(0);
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -831,14 +725,12 @@ public class DAO {
 	public synchronized Purchase setBraintreeId(String customerId, int purchaseId) {
 
 		session = factory.getCurrentSession();
-
 		trans = session.beginTransaction();
 
 		String hql = "select purchase from Purchase as purchase where purchaseId = :purchaseId";
 
-		Query query = session.createQuery(hql);
-		query.setParameter("purchaseId", purchaseId);
-		Purchase purchase = (Purchase) query.uniqueResult();
+		Purchase purchase = (Purchase) session.createQuery(hql)
+			.setParameter("purchaseId", purchaseId).uniqueResult();
 		purchase.setBrainTreeId(customerId);
 		session.saveOrUpdate(purchase);
 
@@ -855,7 +747,7 @@ public class DAO {
 	 * @param uuid
 	 * @return
 	 */
-	public synchronized List<Ticket> bookTickets(int screeningDateId, List<String> seats, String uuid, String orderId) {
+	public synchronized List<Ticket> bookTickets(int screeningDateId, List<String> seats, String uuid, String orderId) throws InterruptedException {
 		
 		purchase = DAO.instance().setPurchaseId(uuid, orderId);
 		List<Ticket> tickets = new ArrayList<Ticket>();
@@ -1015,7 +907,6 @@ public class DAO {
 	public synchronized boolean cancelTicket(List<Integer> ticketIds, Integer purchaseId){
 		
 		session = factory.getCurrentSession();
-		
 		trans = session.beginTransaction();
 		
 		try {
@@ -1068,13 +959,10 @@ public class DAO {
 		}
 		
 		String hql = "select purchase from Purchase as purchase where uuid = :uuid";
-		Query query = session.createQuery(hql);
-		query.setParameter("uuid", uuid);
-		query.setCacheable(true);
-		query.setCacheRegion("purchases");
-		
-		@SuppressWarnings("unchecked")
-		List<Purchase> list = query.list();
+		List<Purchase> list = session.createQuery(hql)
+			.setParameter("uuid", uuid)
+			.setCacheable(true)
+			.setCacheRegion("purchases").getResultList();
 		
 		trans.commit();
 		
@@ -1138,13 +1026,10 @@ public class DAO {
 			trans.begin();
 		}
 		
-		String hql = "from Ticket where purchase_purchaseId=:purchaseId";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("purchaseId", purchaseId);
-		
-		@SuppressWarnings("unchecked")
-		List<Ticket> list = query.list();
+		String hql = "FROM Ticket WHERE purchase_purchaseId = :purchaseId";
+
+		List<Ticket> list = session.createQuery(hql)
+			.setParameter("purchaseId", purchaseId).getResultList();
 		
 		trans.commit();
 		
@@ -1356,20 +1241,17 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
         
         trans = session.beginTransaction();
         String hql = "from Location where name = :mLocationName";
-        Query query = session.createQuery(hql);
-        query.setParameter("mLocationName", Venue);     
-        Location location = (Location) query.uniqueResult();    
+		Location location = (Location) session.createQuery(hql)
+        	.setParameter("mLocationName", Venue).uniqueResult();
         
         String hql_ = "from Movie where name = :mMovieName";
-        Query query_movie = session.createQuery(hql_);
-        query_movie.setParameter("mMovieName", movie);      
-        Movie movie_ = (Movie) query_movie.uniqueResult();  
+	    Movie movie_ = (Movie) session.createQuery(hql_)
+        	.setParameter("mMovieName", movie).uniqueResult();
         movie_.setCategory(category);
         session.save(movie_);
         
         String hql__ = "select max(venuesId) from Venues";
-        Query query_venue = session.createQuery(hql__);
-        int venuesId = (int) query_venue.uniqueResult();
+		int venuesId = (int) session.createQuery(hql__).uniqueResult();
         int newVenuesId = venuesId+1;
         
         Venues venue = new Venues(); 
@@ -1384,8 +1266,7 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
         session.buildLockRequest(LockOptions.UPGRADE).lock(venue);
 
         String hql___ = "select max(screeningDatesId) from ScreeningDates";
-        Query query_dates = session.createQuery(hql___);
-        int date = (int) query_dates.uniqueResult();
+	    int date = (int) session.createQuery(hql___).uniqueResult();
         int newScreeningDatesId = date+1;
 
         ScreeningDates dates = new ScreeningDates(); 
@@ -1418,7 +1299,7 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
     public  Screen insertNewScreen(String movie, String Date, String Venue, int nrOfRows, int nrOfSeatsInRow, String ScreeningId, String category) throws HibernateException, ParseException {
         
         session = factory.getCurrentSession();
-        session.setFlushMode(FlushMode.MANUAL);
+        session.setFlushMode(FlushMode.MANUAL.toJpaFlushMode());
         trans = session.getTransaction();
         
         if (trans.getStatus() != TransactionStatus.ACTIVE) {            
@@ -1428,7 +1309,7 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
         try {
         screen = DAO.instance().getScreenForAvailability(movie, Date, Venue, ScreeningId, category);
         
-        } catch (HibernateException e) {
+        } catch (HibernateException | InterruptedException e) {
         e.printStackTrace();
         session = factory.getCurrentSession();
         session.getTransaction().rollback();
@@ -1438,8 +1319,7 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
         }
     
         String hql_Seats = "select max(seatId) from Seats";
-        Query query_seats = session.createQuery(hql_Seats);
-        int seats = (int) query_seats.uniqueResult();
+		int seats = (int) session.createQuery(hql_Seats).uniqueResult();
         int newSeatsId = seats+1;
         
         List<Seats> seats_ = new ArrayList<>(); 
@@ -1500,7 +1380,7 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
             // save to dB
             
             session = factory.getCurrentSession();
-            session.setFlushMode(FlushMode.MANUAL);
+            session.setFlushMode(FlushMode.MANUAL.toJpaFlushMode());
             trans = session.getTransaction();
             
             if (trans.getStatus() != TransactionStatus.ACTIVE) {                
@@ -1533,9 +1413,8 @@ public synchronized Screen getScreenForAvailability(String movie, String Date, S
 		
 		// change venue i.e. cinema location
         String hql = "from Location where name = :mLocationName";
-        Query query = session.createQuery(hql);
-        query.setParameter("mLocationName", Venue);     
-        Location location = (Location) query.uniqueResult();
+		Location location = (Location) session.createQuery(hql)
+			.setParameter("mLocationName", Venue).uniqueResult();
         
         // keep original venuesId
 		Venues venue_ = session.get(Venues.class, venuesId);

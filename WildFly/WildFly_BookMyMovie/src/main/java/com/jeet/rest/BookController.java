@@ -1,38 +1,35 @@
 package com.jeet.rest;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.List;
-
-import javax.activation.MimetypesFileTypeMap;
-import javax.imageio.ImageIO;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.GenericEntity;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
-import org.json.JSONObject;
-
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
-import com.jeet.api.Tokens;
 import com.jeet.service.BookingHandlerImpl;
 import com.jeet.utils.AesUtil;
 import com.jeet.utils.CustomNotFoundException;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.*;
+import org.json.JSONObject;
 
+import jakarta.activation.MimetypesFileTypeMap;
+import javax.imageio.ImageIO;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
+import java.text.ParseException;
+import java.util.List;
+
+@RequestScoped
 @Path("/")
-public class BookController {
+public class BookController extends Application implements Serializable {
 	
     private static final String SALT = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
     private static final String IV = "F27D5C9927726BCEFE7510B1BDD3D137";
@@ -46,10 +43,10 @@ public class BookController {
     private static final int KEYSIZE = 128;
     private static final int ITERATIONCOUNT = 1000;
     private static AesUtil aesUtil = new AesUtil(KEYSIZE, ITERATIONCOUNT);
-	
+
 	@GET
 	@Path("/device/{uuid}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getDevice(@PathParam(value = "uuid") String uuid) {
 		
 		List<Devices> device = new BookingHandlerImpl().getDevice(uuid);
@@ -65,25 +62,46 @@ public class BookController {
 	}
 	@GET
 	@Path("/user/{user}/{token1}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	
+	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getUser(@Context HttpServletRequest request, @Context HttpHeaders headers, @PathParam(value = "user") String user) throws ParseException {
-		
+
+		String token2 = request.getHeader("X-Token");
+
+		JSONObject myObject_user = new JSONObject();
+		Object myObject = null;
+
+		if(request.getAttribute("Error Details") != null) {
+        myObject = request.getAttribute("Error Details");
+		JSONObject myObject_ = new JSONObject(myObject.toString());
+		myObject_user.append("Error Details", myObject_);
+		}
+
 		Logins user_ = new BookingHandlerImpl().getUser(user);
+
+		myObject_user.put("uuid", user_.getUuid());
+		myObject_user.put("user", user_.getUser());
+		myObject_user.put("email", user_.getEmail());
+
 	        
 				if (user_.getId() != 0) {
-								
-						return Response.ok().status(200).entity(user_).header("User", user_.getUuid()).build();		
+					if (myObject != null) {
+
+						return Response.ok().status(300).entity(myObject_user.toString())
+								.header("User", user_.getUuid()).header("X-Token", token2).build();	
+						} else {
+							return Response.ok().status(200).entity(myObject_user.toString())
+									.header("User", user_.getUuid()).build();
+						}
 					
 					} else {
 				
-						return Response.ok().status(Status.PRECONDITION_FAILED).entity(user_).build();
+						return Response.ok().status(Response.Status.PRECONDITION_FAILED).entity(user_).build();
 			}
 	}
 	
 	@GET
 	@Path("/newuser/{newuser}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
+	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getNewUser(@PathParam(value = "newuser") String newuser) {
 		
 		int newuser_ = new BookingHandlerImpl().getNewUser(newuser);
@@ -105,7 +123,7 @@ public class BookController {
 	
 	@GET
 	@Path("/newemail/{newemail}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
+	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getNewEmail(@PathParam(value = "newemail") String newemail) {
 		
 		int newuser_ = new BookingHandlerImpl().getNewEmail(newemail);

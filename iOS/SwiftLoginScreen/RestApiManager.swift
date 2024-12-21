@@ -61,6 +61,12 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
             var error = sessionError
 
             if let httpResponse = response as? HTTPURLResponse {
+                
+                if httpResponse.statusCode == 200 {
+                    let json: JSON = try! JSON(data: data!)
+                    onCompletion(json, error as NSError?)
+                }
+                
                 if httpResponse.statusCode < 200 || httpResponse.statusCode > 300 {
                     let description = "HTTP response was \(httpResponse.statusCode)"
 
@@ -74,25 +80,24 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
                         errorMsg = ", " + errorMsg
                     }
                     self.alertViewPresentingVC = UIAlertController()
-                    self.alertViewPresentingVC!.presenAlertView(withTitle: "Error", message: error!.localizedDescription + errorMsg)
+                    self.alertViewPresentingVC!.presentAlert(withTitle: "Error", message: error!.localizedDescription + errorMsg)
                     NSLog(error!.localizedDescription)
                 }
-            }
-
-            if error != nil {
-                let alertView: UIAlertView = UIAlertView()
-
-                if let httpResponse = response as? HTTPURLResponse {
+   
                     if httpResponse.statusCode == 300 {
+                        let alertView: UIAlertView = UIAlertView()
+
                         let jsonData: NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
 
                             JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
 
-                        guard let message_ = jsonData.value(forKey: "Error Details"),
-                            let message = (message_ as AnyObject).value(forKey: "Activation") else { return }
+                        let messageArray = jsonData.value(forKey: "Error Details") as? NSArray
+                        let message_ = messageArray![0]
+                        let messageObj = (message_ as AnyObject).value(forKey: "Error Details")
+                        let message = (messageObj as AnyObject).value(forKey: "Activation")
 
                         alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
-                        alertView.message = "Voucher is active: \(message)"
+                        alertView.message = "Voucher is active: \(message as! NSString)"
                         alertView.delegate = self
                         alertView.addButton(withTitle: "Okay")
                         alertView.addButton(withTitle: "Cancel")
@@ -102,14 +107,13 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
                         let json: JSON = try! JSON(data: data!)
                         onCompletion(json, error as NSError?)
                     }
-
+                   
+                if error != nil {
+                        
+                    let alertView: UIAlertView = UIAlertView()
                     if httpResponse.statusCode == 503 {
                         if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
-                            // if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
-
-                            //  UIAlertController.popUp(title: "Error:", message: result)
-
-                            //     }
+                            UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: result)
                         }
                     }
 
@@ -117,13 +121,14 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
                         let json: JSON = try! JSON(data: data!)
                         let prefs: UserDefaults = UserDefaults.standard
                         prefs.set(0, forKey: "ISLOGGEDIN")
+                        print(json)
                         onCompletion(json, error as NSError?)
                     }
 
                     if httpResponse.statusCode == 500 {
                         // assumes the Exception handler servlet is on
-                        let json: JSON = try! JSON(data: data!)
-                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: json.rawString()!)
+                    //let json: JSON = try! JSON(data: data!)
+                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: "Server erro 500. See the logs for more details")
                     }
                 }
 

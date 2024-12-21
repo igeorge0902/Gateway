@@ -3,13 +3,13 @@ package com.jeet.filters;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.container.PreMatching;
-import javax.ws.rs.core.Cookie;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.Provider;
 import com.jeet.utils.AesUtil;
+import jakarta.ws.rs.container.ContainerRequestContext;
+import jakarta.ws.rs.container.ContainerRequestFilter;
+import jakarta.ws.rs.container.PreMatching;
+import jakarta.ws.rs.core.Cookie;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.Provider;
 
 @Provider
 @PreMatching
@@ -31,15 +31,17 @@ public class CookieFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
     	System.out.println("Cookie filter...");
-    	System.out.println("Path: " + requestContext.getUriInfo().getPath());
-    	
+		System.out.println("Uri: " + requestContext.getUriInfo().getBaseUri().toString());
+		System.out.println("Absolute Path: " + requestContext.getUriInfo().getAbsolutePath().toString());
+		System.out.println("Path: " + requestContext.getUriInfo().getPath());
+
     	if(requestContext.getUriInfo().getPath().contains("user")) {
     	cookies = requestContext.getCookies();
 
   		if (!cookies.isEmpty()) {
   			cookie = cookies.get("XSRF-TOKEN");
   	  		if (cookie != null) {
-  		    xsrfToken = aesUtil.encrypt(SALT, IV, requestContext.getProperty("TIME_").toString(), requestContext.getProperty("token2").toString());
+  		    xsrfToken = aesUtil.encrypt(SALT, IV, requestContext.getHeaderString("TIME_").toString(), requestContext.getHeaderString("token2").toString());
 
 			   String actualToken = "";
 			   String token = xsrfToken.trim();

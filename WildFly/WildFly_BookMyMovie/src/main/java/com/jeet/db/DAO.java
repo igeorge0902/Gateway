@@ -1,17 +1,20 @@
 package com.jeet.db;
 
 import java.util.List;
+
+import jakarta.enterprise.context.RequestScoped;
 import org.hibernate.FlushMode;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.hibernate.stat.Statistics;
 import com.jeet.api.Devices;
 import com.jeet.api.Logins;
 import com.jeet.api.Tokens;
 
+@RequestScoped
 public class DAO extends Thread {
 
 	private static DAO instance;
@@ -35,7 +38,7 @@ public class DAO extends Thread {
 		stats.setStatisticsEnabled(true);
 		
 		session = factory.openSession();
-		session.setFlushMode(FlushMode.ALWAYS);
+		session.setFlushMode(FlushMode.ALWAYS.toJpaFlushMode());
 
 		
 	}
@@ -69,12 +72,9 @@ public class DAO extends Thread {
 		}
 		
 		String hql = "from Devices where uuid = :mUuid";
-		
-		Query query = session.createQuery(hql);
-		query.setParameter("mUuid", uuid);
-		
-		@SuppressWarnings("unchecked")
-		List<Devices> list = query.list();
+
+		List<Devices> list = session.createQuery(hql)
+		.setParameter("mUuid", uuid).getResultList();
 		
 		trans.commit();
 
@@ -108,10 +108,10 @@ public class DAO extends Thread {
 		}
 		
 		String hql = "from Logins where user = :mUser";
-		
+
 		Query query = session.createQuery(hql);
 		query.setParameter("mUser", user);
-		
+
 		Logins user_ = (Logins) query.uniqueResult();
 		
 		trans.commit();

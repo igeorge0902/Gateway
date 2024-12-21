@@ -2,15 +2,11 @@
 <jboss-deployment-structure>
   <deployment>
     <exclusions>
-      <module name="org.hibernate" slot="main" />
-      <module name="org.hibernate" slot="search" />
-      <module name="org.hibernate" slot="infinispan" />
-      <module name="org.hibernate" slot="commons-annotations" />
-      <module name="org.javassist" slot="main" />
     </exclusions>
     <dependencies>
-      <module name="org.hibernate" />
-      <module name="org.javassist" />
+      <module name="javax.api"/>
+      <module name="sun.jdk"/>
+      <module name="org.javassist" optional="true"/>
     </dependencies>
   </deployment>
 </jboss-deployment-structure>

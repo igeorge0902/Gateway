@@ -10,7 +10,7 @@ hmacApp.config(function ($httpProvider) {
                 if (!localStorage.hmacSecret) {
                     return $q.reject('No HMAC secret to sign request!');
                 }
-                
+
                 //TODO: get absolute path
                 config.headers['X-URL'] = config.url;
 
@@ -21,7 +21,7 @@ hmacApp.config(function ($httpProvider) {
             responseError: function (rejection) {
 
                 if (rejection.status === 502) {
-                    
+
                 }
 
                 return $q.reject(rejection);
@@ -63,22 +63,22 @@ hmacApp.config(function ($httpProvider) {
             // Add current time to prevent replay attacks
             var microTime = new Date().getTime();
             headersGetter()['X-MICRO-TIME'] = microTime;
-            
-            
-        //    var headers = headersGetter();
-        //    var mDevice = headersGetter('M-Device');
-              // ??
-        //    if (mDevice != undefined) {
-        //        var newData = '';
-        //    
-        //        var originalId = /deviceId=[0-9]*/gi;
-        //        var str = data;
-        //        var newId = 'deviceId=' + headersGetter['M-Device'];
-        //        newData = str.replace(originalId, newId);
 
-        //        data = newData;
-        //    }
-            
+
+            //    var headers = headersGetter();
+            //    var mDevice = headersGetter('M-Device');
+            // ??
+            //    if (mDevice != undefined) {
+            //        var newData = '';
+            //
+            //        var originalId = /deviceId=[0-9]*/gi;
+            //        var str = data;
+            //        var newId = 'deviceId=' + headersGetter['M-Device'];
+            //        newData = str.replace(originalId, newId);
+
+            //        data = newData;
+            //    }
+
 
             // 4RI "Message", "secret"
             var hash = CryptoJS.HmacSHA512(headersGetter()['X-URL'] + ':' + data + ':' + microTime + ':' + data.length, localStorage.hmacSecret);
@@ -94,7 +94,7 @@ hmacApp.config(function ($httpProvider) {
             // No legacy is so rich as honesty. - Shakespeare
             // put the Alert here to debug
             // inizialize this constant for mobileWebView
-             localStorage.M = headersGetter()['M']; 
+            localStorage.M = headersGetter()['M'];
 
         }
         return data;
@@ -169,8 +169,7 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'authorization': 'Basic ' + token
             }
-        }).
-        success(function (data, status, headers, config) {
+        }).success(function (data, status, headers, config) {
 
             // Store session token 
             localStorage.sessionToken = headers('X-Token');
@@ -190,8 +189,7 @@ hmacApp.controller('LoginController', function ($scope, $http, base64, $location
                 // 
                 $scope.errorMsg = data;
             }
-        }).
-        error(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
 
             $scope.errorMsg = data;
         });
@@ -247,7 +245,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
             $scope.email +
             '&deviceId=' +
             encodeURIComponent($scope.uuid);
-        
+
         /*
         var encodedString_ = {
             "email" : $scope.email,
@@ -263,8 +261,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             }
-        }).
-        success(function (data, status, headers, config) {
+        }).success(function (data, status, headers, config) {
 
             // Create &store session token 
             localStorage.sessionToken = CryptoJS.SHA512(headers('XSRF-TOKEN'), localStorage.hmacSecret);
@@ -288,8 +285,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
 
                 $scope.errorMsg = data;
             }
-        }).
-        error(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
 
             $scope.errorMsg = data;
         });
@@ -321,8 +317,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             }
-        }).
-        success(function (data, status, headers, config) {
+        }).success(function (data, status, headers, config) {
 
             $scope.Result = data;
 
@@ -338,8 +333,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
 
             $scope.success_Msg = data;
 
-        }).
-        error(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
 
             $scope.error_Msg = data;
 
@@ -378,8 +372,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             }
-        }).
-        success(function (data, status, headers, config) {
+        }).success(function (data, status, headers, config) {
 
             $scope.Result = data;
 
@@ -404,8 +397,7 @@ hmacApp.controller('ForgetPSWController', function ($scope, $http, base64, $loca
                 $scope.errorMsg_ = data;
             }
 
-        }).
-        error(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
 
             $scope.modelE = {
                 isDisabled: true

@@ -49,7 +49,7 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
         category.delegate = self
         showDatePicker()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(AdminUpdateVC.refresh), name: NSNotification.Name(rawValue: "venueSelected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AdminUpdateVC.refresh), name: NSNotification.Name(rawValue: "movieSelected"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(AdminUpdateVC.refreshVenue), name: NSNotification.Name(rawValue: "newScreenVenueSelected"), object: nil)
        
@@ -203,6 +203,7 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
     func showDatePicker() {
         // Formate Date
         datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .compact
 
         // ToolBar
         let toolbar = UIToolbar()
@@ -238,7 +239,7 @@ class AdminUpdateVC: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
 
         if textField == category {
         if !CategoryData.contains(category.text!) && category.text != "" {
-            self.presenAlertView(withTitle: "Hello", message: "Invalid category")
+            self.presentAlert(withTitle: "Hello", message: "Invalid category")
             category.text = ""
             TrollErrorLabel.isHidden = false
             }

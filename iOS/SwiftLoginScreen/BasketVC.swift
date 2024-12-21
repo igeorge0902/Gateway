@@ -178,12 +178,27 @@ class BasketVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         title.append(NSAttributedString(attachment: icon))
 
         cell.textLabel?.attributedText = title
-
+        
+        /*
         if let urlMovie = URL(string: values[indexPath.row].movie_picture) {
             print(values[indexPath.row].movie_picture)
             if let movieImage = try? Data(contentsOf: urlMovie) {
                 cell.profileImage?.image = UIImage(data: movieImage)
             }
+        }
+        */
+        let urlString = values[indexPath.row].movie_picture
+    
+            var loadPictures: GeneralRequestManager?
+            loadPictures = GeneralRequestManager(url: urlString!, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+            
+            
+            loadPictures?.getData_ {
+            (data: Data, _: NSError?) in
+            let image = UIImage(data: data)
+            cell.profileImage?.image = image!
+            cell.profileImage?.image = image!
+
         }
 
         let text = NSMutableAttributedString(string: "Ticket details: \n Seat Row: \(values[indexPath.row].seats_seatRow!), \n Seat Nr: \(values[indexPath.row].seats_seatNumber!), \nDate of Screening: \n\(values[indexPath.row].screening_date!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 14.0)!]))

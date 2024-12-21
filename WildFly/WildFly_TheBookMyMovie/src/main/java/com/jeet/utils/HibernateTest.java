@@ -40,6 +40,7 @@ import com.jeet.api.Venues;
 import com.jeet.db.DAO;
 import com.jeet.db.HibernateUtil;
 import com.jeet.service.BookingHandlerImpl;
+import org.hibernate.cache.spi.Region.*;
 
 public class HibernateTest {
 	
@@ -73,11 +74,13 @@ public class HibernateTest {
 		BookingHandlerImpl bh = new BookingHandlerImpl();
 		//List<Location> venues = DAO.instance().getLocationForMovie(1075);
 
-		Purchase purchase_ = bh.getBrainTreeCustomerId("65f63602-6ddf-11e5-8441-71caa0c5f788");
-		Purchase purchase = bh.setBrainTreeCustomerId("11111", 238);
-		Screen screen = DAO.instance().insertNewScreen("Dangerous Minds", "2021-02-10 22:00:00", "Uránia Filmszínház", 6, 6, "T60", "Romance");
+	//	Purchase purchase_ = bh.getBrainTreeCustomerId("65f63602-6ddf-11e5-8441-71caa0c5f788");
+	//	Purchase purchase = bh.setBrainTreeCustomerId("11111", 238);
+		//Screen screen = DAO.instance().insertNewScreen("Dangerous Minds", "2021-02-10 22:00:00", "Uránia Filmszínház", 6, 6, "T60", "Romance");
 		//ScreeningDates date = DAO.instance().insertNewScreen();
-		//List<Movie> movies = bh.getAllMovies(104);
+		List<Movie> movies0 = bh.getAllMovies(0, "");
+	//	List<Movie> movies1 = bh.getAllMovies(0, "");
+	//	List<Movie> movies2 = bh.getAllMovies(0, "");
 		//System.out.print(movies.size());
 		//DAO.instance().updateScreen();
 		//DAO.instance().insertNewScreen();
@@ -88,19 +91,19 @@ public class HibernateTest {
 		//}
 		//DAO.instance().deleteScreen(208);
 
-		//JSONObject json = new JSONObject();
-		//json.put("screen", screen);
-		//System.out.println(json.toString());
+	//	JSONObject json = new JSONObject();
+	//	json.put("movies", movies);
+	//	System.out.println(json.toString());
 		
-		//List<Movie> movies = bh.getMoviesForVenue(10);
-	    //List<Venues> venue = bh.getVenueByLocation(10);
-		//System.out.println(venue.toString());
+	//	List<Movie> moviesForVenue = bh.getMoviesForVenue(10);
+	//    List<Venues> venue = bh.getVenueByLocation(10);
+	//	System.out.println(venue.toString());
 
 		
-		//List<Location> location = bh.getAllLocations();
+	//	List<Location> location = bh.getAllLocations();
 	  
     //  List<Venues> venue = bh.getVenueByLocation(10);
-	//	List<Movie> movies = bh.fullTextSearchMovies("angr","", 0);
+		List<Movie> movies = bh.fullTextSearchMovies("Angry","", 0);
 
 	//	List<Integer> ticketIds = new ArrayList<Integer>();
 	//	ticketIds.add(78);
@@ -159,7 +162,7 @@ public class HibernateTest {
 		//bh.deleteTicket(17);
 		//List<Movie> movies = bh.getAllMovies();
 
-	//	JSONObject json = new JSONObject();
+		//JSONObject json = new JSONObject();
 		//HashMap<String,String> responseObjPayment = null;
 
 		//for (int i = 0; i < movies.size(); i++) {
@@ -182,9 +185,9 @@ public class HibernateTest {
 		
 		List<Ticket> tickets = bh.returnTickets(2, list);
 		*/
-		//JSONObject json = new JSONObject();
-		//json.put("dates", movies);
-		//json.put("venue", venue);
+		JSONObject json = new JSONObject();
+		json.put("fullTextMovies", movies);
+		json.put("movies", movies0);
 
 		
 		//System.out.println(json.toString());

@@ -26,8 +26,12 @@ public class HibernateTest {
 
 		BookingHandlerImpl bh = new BookingHandlerImpl();
 		
-		List<Devices> device = bh.getDevice("f");
-		
+		List<Devices> device = bh.getDevice("65f63602-6ddf-11e5-8441-71caa0c5f788");
+
+		JSONObject json = new JSONObject();
+		json.put("device", device);
+		System.out.println("hello");
+
 		Logins user = bh.getUser("II");
 		
 		if(user.getId() !=0) {
@@ -43,7 +47,7 @@ public class HibernateTest {
 
 		
         stats.logSummary();
-        stats.getSecondLevelCacheStatistics("movies");
+        stats.getCacheRegionStatistics("movies");
         
 
 	}

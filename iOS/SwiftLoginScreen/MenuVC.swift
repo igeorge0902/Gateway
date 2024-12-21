@@ -157,11 +157,10 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         RestApiManager.sharedInstance.getRandomUser {
             (json: JSON, error: NSError?) in
 
-            // if response == 300
-            if json["Error Details"].object is NSDictionary {
-          //      if let errorMsg = message_.value(forKey: "ErrorMsg:") as? String {
-          //      self.presentAlert(withTitle: "Error Details", message: errorMsg)
-          //      }
+            if let message_ = json["Error Details"].object as? NSDictionary {
+                if let errorMsg = message_.value(forKey: "Error Message:") as? String {
+                self.presentAlert(withTitle: "Error Details", message: errorMsg)
+                }
             } else {
                 let users: AnyObject = json["user"].object as AnyObject
                 self.items.add(users)

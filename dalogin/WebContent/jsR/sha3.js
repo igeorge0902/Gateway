@@ -7,7 +7,8 @@
 var CryptoJS = CryptoJS || function (v, p) {
     var d = {},
         u = d.lib = {},
-        r = function () {},
+        r = function () {
+        },
         f = u.Base = {
             extend: function (a) {
                 r.prototype = this;
@@ -25,7 +26,8 @@ var CryptoJS = CryptoJS || function (v, p) {
                 a.init.apply(a, arguments);
                 return a
             },
-            init: function () {},
+            init: function () {
+            },
             mixIn: function (a) {
                 for (var b in a) a.hasOwnProperty(b) && (this[b] = a[b]);
                 a.hasOwnProperty("toString") && (this.toString = a.toString)

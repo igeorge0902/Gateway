@@ -2,9 +2,9 @@ package com.jeet.utils;
 
 import java.io.Serializable;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 public class CustomNotFoundException extends WebApplicationException implements Serializable {
 	 
@@ -17,9 +17,7 @@ public class CustomNotFoundException extends WebApplicationException implements 
 	  * Create a HTTP 404 (Not Found) exception.
 	  */
 	  public CustomNotFoundException() {
-	    
 		  super(Response.noContent().build());
-	  
 	  }
 	 
 	  /**
@@ -27,8 +25,6 @@ public class CustomNotFoundException extends WebApplicationException implements 
 	  * @param message the String that is the entity of the 401 response.
 	  */
 	  public CustomNotFoundException(String message) {
-	    
 		  super(Response.status(Status.UNAUTHORIZED).entity(message).type("text/plain").build());
-	  	
 	  	}
 	}

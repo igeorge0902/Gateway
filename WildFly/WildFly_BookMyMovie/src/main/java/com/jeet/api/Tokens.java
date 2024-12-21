@@ -8,68 +8,19 @@
 
 package com.jeet.api;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="deviceId" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="token1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="token2" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="TIME_" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-	"id",
-    "deviceId",
-    "token1",
-    "token2",
-    "TIME_"
-})
-@XmlRootElement(name = "tokens")
 @Entity
 public class Tokens {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO)
     protected int id;
-    @XmlElement(required = true)
     protected String deviceId;
-    @XmlElement(required = true)
     protected String token1;
-    @XmlElement(required = true)
-    protected String token2;    
+    protected String token2;
     protected String TIME_;
     
     /**

@@ -307,3 +307,45 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
         // Dispose of any resources that can be recreated.
     }
 }
+
+extension UIViewController {
+    func presentAlert(withTitle title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { _ in
+        }
+        alertController.addAction(OKAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentAlertWithFunction(withTitle title: String, message: String, function: String) {
+       
+        var OKAction:UIAlertAction?
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+        if(function == "sendEmail") {
+            OKAction = UIAlertAction(title: "OK", style: .default, handler: {(alertController) in
+
+                let prefs: UserDefaults = UserDefaults.standard
+                let user = prefs.value(forKey: "USERNAME")
+
+                var errorOnLogin: GeneralRequestManager?
+                errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
+
+                errorOnLogin?.getResponse {
+                    (resultString, error) -> Void in
+
+                    print(resultString)
+                    print(error as Any)
+                }
+            })
+        }
+        if(function.isEmpty) {
+            OKAction = UIAlertAction(title: "OK", style: .default) { _ in
+            }
+        }
+        alertController.addAction(OKAction!)
+        present(alertController, animated: true, completion: nil)
+    }
+
+}

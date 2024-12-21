@@ -530,7 +530,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 cell!.textLabel?.numberOfLines = 3
                 // TODO: pictures' size shall not exceed 100 kbytes
                 
-                let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+                let urlString = serverURL + "/simple-service-webapp/webapi" + (data?.large_picture)!
                 
                 if let url = URL(string: urlString) {
 
@@ -609,7 +609,7 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                 cell!.textLabel?.attributedText = detailText
                 cell!.textLabel?.numberOfLines = 3
                 
-                let urlString = serverURL + "/simple-service-webapp/webapi/myresource" + (data?.large_picture)!
+                let urlString = serverURL + "/simple-service-webapp/webapi" + (data?.large_picture)!
                                     
                     var loadPictures: GeneralRequestManager?
                     loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
@@ -702,17 +702,17 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
         
         if (adminUpdatePage && CategoryData.count == 0) {
             if(ScreenData_2.count > 0) {
-                addMovie = ScreenData_2[indexPath.section].movie
-                addVenue = ScreenData_2[indexPath.section].venue
-                addScreeningID = ScreenData_2[indexPath.section].ScreeningId
-                addScreeningDate = ScreenData_2[indexPath.section].date
-                addScreeningDateId = ScreenData_2[indexPath.section].screeningDatesId
-                addMovieId = ScreenData_2[indexPath.section].movieId
-                addVenueId = ScreenData_2[indexPath.section].venueId
-                addCategory = ScreenData_2[indexPath.section].category
+                addMovie = ScreenData_2[indexPath.row].movie
+                addVenue = ScreenData_2[indexPath.row].venue
+                addScreeningID = ScreenData_2[indexPath.row].ScreeningId
+                addScreeningDate = ScreenData_2[indexPath.row].date
+                addScreeningDateId = ScreenData_2[indexPath.row].screeningDatesId
+                addMovieId = ScreenData_2[indexPath.row].movieId
+                addVenueId = ScreenData_2[indexPath.row].venueId
+                addCategory = ScreenData_2[indexPath.row].category
             }
 
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "venueSelected"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "movieSelected"), object: nil)
         }
 
         if CategoryData.count > 0 {

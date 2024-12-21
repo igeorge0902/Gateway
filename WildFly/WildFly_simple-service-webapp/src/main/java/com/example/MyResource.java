@@ -1,42 +1,37 @@
  package com.example;
 
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+ import com.example.api.Sessions;
+ import com.example.dao.DAO;
+ import com.example.interceptors.Compress;
+ import com.utils.CustomNotFoundException;
+ import jakarta.activation.MimetypesFileTypeMap;
+ import jakarta.enterprise.context.RequestScoped;
+ import jakarta.ws.rs.GET;
+ import jakarta.ws.rs.Path;
+ import jakarta.ws.rs.PathParam;
+ import jakarta.ws.rs.Produces;
+ import jakarta.ws.rs.core.*;
 
-import javax.activation.MimetypesFileTypeMap;
-import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
-import javax.servlet.http.*;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import com.example.api.Sessions;
-import com.example.dao.DAO;
-import com.example.interceptors.Compress;
-import com.utils.CustomNotFoundException;
+ import jakarta.servlet.ServletContext;
+ import jakarta.servlet.http.HttpServletRequest;
+ import jakarta.servlet.http.HttpServletResponse;
+ import jakarta.servlet.http.HttpSession;
+
+ import javax.imageio.ImageIO;
+ import java.awt.image.BufferedImage;
+ import java.io.*;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Set;
+ import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("myresource")
-public class MyResource {
+@RequestScoped
+@Path("/")
+public class MyResource extends Application {
 	
 	private static volatile HttpSession session;
 

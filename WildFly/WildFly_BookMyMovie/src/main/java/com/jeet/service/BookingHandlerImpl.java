@@ -6,7 +6,10 @@ import com.jeet.api.Devices;
 import com.jeet.api.Logins;
 import com.jeet.api.Tokens;
 import com.jeet.db.DAO;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
 
+@RequestScoped
 public class BookingHandlerImpl {
 
 	

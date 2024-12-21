@@ -1,14 +1,28 @@
 package com.jeet.rest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.braintreegateway.*;
+import com.jeet.api.*;
+import com.jeet.service.BookingHandlerImpl;
+import com.jeet.utils.AesUtil;
+import com.jeet.utils.CustomExceptions;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.*;
+import jakarta.ws.rs.core.Response.Status;
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -16,62 +30,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.CacheControl;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
-import javax.ws.rs.core.Request;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.Response.StatusType;
-
-import org.apache.commons.io.IOUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.braintreegateway.BraintreeGateway;
-import com.braintreegateway.ClientTokenRequest;
-import com.braintreegateway.CreditCardVerification;
-import com.braintreegateway.Customer;
-import com.braintreegateway.CustomerRequest;
-import com.braintreegateway.Environment;
-import com.braintreegateway.PaymentMethod;
-import com.braintreegateway.PaymentMethodNonce;
-import com.braintreegateway.PaymentMethodRequest;
-import com.braintreegateway.Result;
-import com.braintreegateway.Transaction;
-import com.braintreegateway.TransactionRequest;
-import com.braintreegateway.ValidationError;
-import com.braintreegateway.ValidationErrors;
-import com.braintreegateway.exceptions.NotFoundException;
-import com.jeet.api.Location;
-import com.jeet.api.Movie;
-import com.jeet.api.Purchase;
-import com.jeet.api.Screen;
-import com.jeet.api.ScreeningDates;
-import com.jeet.api.Seats;
-import com.jeet.api.Ticket;
-import com.jeet.api.Venues;
-import com.jeet.service.BookingHandlerImpl;
-import com.jeet.utils.AesUtil;
-import com.jeet.utils.CustomExceptions;
-import com.jeet.utils.CustomNotFoundException;
 
 //TODO: add APIKEY container request filter
 /*
@@ -81,10 +39,16 @@ import com.jeet.utils.CustomNotFoundException;
 /*
  * https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/representations.html#d0e6367
  */
-@SuppressWarnings("unused")
-@Path("/")
-public class BookController {
-	
+@Path("")
+@RequestScoped
+public class BookController extends Application implements Serializable {
+
+	@Inject
+	private BookingHandlerImpl bookingHandler;
+
+	@Context
+	private HttpServletRequest request_;
+
 	private static final String SALT = "3FF2EC019C627B945225DEBAD71A01B6985FE84C95A70EB132882F88C0A59A55";
     private static final String IV = "F27D5C9927726BCEFE7510B1BDD3D137";
     private static volatile String ciphertext;
@@ -115,7 +79,15 @@ public class BookController {
       		  "rzmyrsbswb3hwsmk",
       		  "37113dbf6dc015806f510e7e630755fb"
     		);
-    
+
+	@GET
+	@Path("/book/hello")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getGreeting() {
+		JSONObject json = new JSONObject();
+		json.put("greeting", "hello");
+		return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON).build();
+	}
     
     /**
      * TODO: with BrainTree Payment API
@@ -138,9 +110,9 @@ public class BookController {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response fullcheckout(
     		@Context HttpHeaders headers,
-    		@Context HttpServletRequest request_) throws IOException {
+    		@Context HttpServletRequest request_) throws IOException, InterruptedException {
 
-		uuid = request_.getAttribute("uuid").toString();
+		uuid = request_.getHeader("uuid").toString();
 		orderId = request_.getParameter("orderId").toString();
 	    seatsToBeReserved = request_.getParameter("seatsToBeReserved").trim();
 	    nonce = request_.getParameter("payment_method_nonce").trim();
@@ -175,7 +147,7 @@ public class BookController {
 		BigDecimal TaxAmount = null;
 		String CVS = "";
 		
-      	BookingHandlerImpl bh = new BookingHandlerImpl();
+      	
 		int purchaseId = 0;
 	    JSONObject jsonObj = new JSONObject(seatsToBeReserved);
 	    JSONArray companyList = (JSONArray) jsonObj.get("seatsToBeReserved");
@@ -205,7 +177,7 @@ public class BookController {
 				//TODO: add error cases
 		        // we do the payment first, then book the tickets
 				// if any of the tickets cannot be booked...rollback the order, let the purchase cancel
-				List<Ticket> ticket = bh.returnTickets(Integer.parseInt(screeningDateId), seatList, uuid, orderId);					
+				List<Ticket> ticket = bookingHandler.returnTickets(Integer.parseInt(screeningDateId), seatList, uuid, orderId);					
 
 					allTickets.addAll(ticket);	
 								
@@ -215,7 +187,7 @@ public class BookController {
 				}
 				purchaseId = ticket.get(0).getPurchase().getPurchaseId();
 				// return updated seats for screenings
-				List<Seats> seats_ = bh.returnUpdatedseats(Integer.parseInt(screeningDateId));   
+				List<Seats> seats_ =bookingHandler.returnUpdatedseats(Integer.parseInt(screeningDateId));   
 				allSeats.addAll(seats_);
 		    	
 				// we use ticket resource to calculate the price + tax, since the DAO ensures it is correct.				
@@ -248,15 +220,36 @@ public class BookController {
 		// TODO: upon the result of verification proceed with the transaction, or clear the reserved seats.
 		Purchase purchase = null;
 		Purchase purchase_ = null;
-		try {
-			purchase_ = bh.getBrainTreeCustomerId(uuid);
-			Customer customer = gateway.customer().find(purchase_.getBrainTreeId());
-			customerId = customer.getId();
-			bh.setBrainTreeCustomerId(customerId, purchaseId);
 
+			purchase_ =bookingHandler.getBrainTreeCustomerId(uuid);
+			
+			if(purchase_ != null) {
+				
+				Customer customer = gateway.customer().find(purchase_.getBrainTreeId());
+				
+				if(customer != null) {
 
-		} catch (NotFoundException e) {
-			  System.out.println(e.getMessage());
+				customerId = customer.getId();
+			    bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
+				
+					} else {
+						  
+						CustomerRequest requestCustomer = new CustomerRequest()
+								  .firstName("Mark")
+								  .lastName("Jones")
+								  .company("Jones Co.")
+								  .email("mark.jones@example.com")
+								  .fax("419-555-1234")
+								  .phone("614-555-1234");
+								Result<Customer> resultCustomer = gateway.customer().create(requestCustomer);
+								customerId = resultCustomer.getTarget().getId();
+	
+					purchase =bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
+					customerId = purchase.getBrainTreeId();
+	
+				}
+			
+			} else {
 			  
 				CustomerRequest requestCustomer = new CustomerRequest()
 						  .firstName("Mark")
@@ -268,7 +261,7 @@ public class BookController {
 						Result<Customer> resultCustomer = gateway.customer().create(requestCustomer);
 						customerId = resultCustomer.getTarget().getId();
 
-			purchase = bh.setBrainTreeCustomerId(customerId, purchaseId);
+			purchase =bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
 			customerId = purchase.getBrainTreeId();
 
 		}
@@ -309,7 +302,7 @@ public class BookController {
 				System.out.print("Error with Transaction: " + result.getMessage());
 				ticketIds.addAll(ticketIds_);
 
-				bh.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
+				bookingHandler.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
 				JSONObject json = new JSONObject();
 				json.put("Error with Transaction", result.getMessage());
 
@@ -325,7 +318,7 @@ public class BookController {
 					
 			ticketIds.addAll(ticketIds_);
 			
-			bh.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
+			bookingHandler.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
 
 			json.put("Error","Tickets are already sold!");  
 			json.put("Success", "true");
@@ -361,14 +354,11 @@ public class BookController {
     @GET
 	@Path("/book/purchases")
 	@Produces(MediaType.APPLICATION_JSON)	
-	public Response getAllPurchases(
-			@Context HttpHeaders headers,
-    		@Context HttpServletRequest request_) throws IOException {
+	public Response getAllPurchases() throws IOException, InterruptedException {
 
-		uuid = request_.getAttribute("uuid").toString();
-      	
-		BookingHandlerImpl bh = new BookingHandlerImpl();
-      	List<Purchase> purchases = bh.getAllPurchases(uuid);
+		uuid = request_.getHeader("uuid").toString();
+		//
+      	List<Purchase> purchases = bookingHandler.getAllPurchases(uuid);
       	
 		JSONObject json = new JSONObject();
 		HashMap<String, String> tickets = new HashMap<>();
@@ -399,7 +389,7 @@ public class BookController {
     public Response getTicketsPerPurchase(
     		@Context HttpHeaders headers,
     		@Context HttpServletRequest request_,
-    		@QueryParam(value = "purchaseId") String purchaseId) throws IOException {
+    		@QueryParam(value = "purchaseId") String purchaseId) throws IOException, InterruptedException {
 		
 		List<Ticket> tickets = new BookingHandlerImpl().getTicketPerPurchase(Integer.valueOf(purchaseId));
 		
@@ -547,11 +537,11 @@ public class BookController {
 			 
 		 }
 		 
-		BookingHandlerImpl bh = new BookingHandlerImpl();
 		
-		List<Ticket> ticket = bh.returnTickets(screeningDateId, seatList, uuid);
-		List<Seats> seats_ = bh.returnUpdatedseats(screeningDateId);
-		//List<Seats> seats_ = bh.getSeatsForScreenForMovieOnVenue(screeningDateId);
+		
+		List<Ticket> ticket =bookingHandler.returnTickets(screeningDateId, seatList, uuid);
+		List<Seats> seats_ =bookingHandler.returnUpdatedseats(screeningDateId);
+		//List<Seats> seats_ =bookingHandler.getSeatsForScreenForMovieOnVenue(screeningDateId);
 		
 		if (ticket != null && seats != null) {
 			
@@ -572,7 +562,7 @@ public class BookController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response searchMovies(
 			@PathParam(value = "name") String name,
-			@PathParam(value = "order") String order) {
+			@PathParam(value = "order") String order) throws InterruptedException {
 		
 		
 		List<Movie> movies = new BookingHandlerImpl().searchMovies(name, order);
@@ -610,13 +600,14 @@ public class BookController {
 		else  throw new CustomExceptions("Error!", "Wrong sorting argument");
 	}
 	
+
 	@GET
 	@Path("/book/movies/search")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response fullTextSearchMovies(
 			@QueryParam(value = "match") String match,
 			@QueryParam(value = "setFirstResult") String setFirstResult,
-    		@QueryParam(value = "category") String category) {
+    		@QueryParam(value = "category") String category) throws InterruptedException {
 		
 		if (match.length() < 3) {
 			
@@ -629,7 +620,7 @@ public class BookController {
 			category = "";
 		}
 		
-		List<Movie> movies = new BookingHandlerImpl().fullTextSearchMovies(match, category, Integer.parseInt(setFirstResult));
+		List<Movie> movies = bookingHandler.fullTextSearchMovies(match, category, Integer.parseInt(setFirstResult));
 		
 		if (!movies.isEmpty()) {
 						
@@ -661,7 +652,8 @@ public class BookController {
 			
 			}
 	}
-	
+
+
 	@GET
 	@Path("/book/movies")
 	@Produces(MediaType.APPLICATION_JSON)	
@@ -669,23 +661,11 @@ public class BookController {
     		@Context HttpHeaders headers,
     		@Context HttpServletResponse response,
     		@Context HttpServletRequest request,
-    		@Context ServletContext contex) {
+    		@Context ServletContext contex) throws InterruptedException {
 		
-		//TODO PBI: use the variable X-Token and deviceId. 
-		if (headers.getRequestHeader("X-Token").isEmpty() || headers.getRequestHeader("X-Device").isEmpty()) {	         
-			
-			JSONObject json = new JSONObject();
-			json.put("Error", "User not authorized!)");
-			
-			return Response.status(403).entity(json.toString()).type(MediaType.APPLICATION_JSON).build();
-		}
-		
-		ciphertext = headers.getRequestHeader("X-Device").get(0);
-
+		//TODO PBI: use the variable X-Token and deviceId.
 		List<Movie> movies = new BookingHandlerImpl().getAllMovies(-1, "");
-		c = aesUtil.encrypt(SALT, IV, APIKEY, ciphertext);
-		NewCookie nc = new NewCookie("ApiKey", c.trim(), request.getContextPath(), null, null, 1800, true);
-		
+
 		if (movies.size() > 0) {
 			
 			JSONObject json = new JSONObject();
@@ -705,13 +685,13 @@ public class BookController {
 			}
 			
 			
-			return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON).header("APIKEY", c).lastModified(Date.from(Instant.now())).cookie(nc).build();
+			return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON).lastModified(Date.from(Instant.now())).build();
 		
 		} else {
 			JSONObject json = new JSONObject();
 			json.put("NotFoundMovies", "EndOfFile:)");
 			
-			return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON).header("APIKEY", c).lastModified(Date.from(Instant.now())).cookie(nc).build();			
+			return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON).lastModified(Date.from(Instant.now())).build();
 		}
 	}
 	
@@ -724,12 +704,7 @@ public class BookController {
     		@Context HttpServletRequest request,
     		@Context ServletContext contex,
     		@QueryParam(value = "setFirstResult") String setFirstResult,
-    		@QueryParam(value = "category") String category) {
-		
-		//TODO PBI: use the variable X-Token and deviceId. 
-		if (headers.getRequestHeader("X-Token").isEmpty() || headers.getRequestHeader("X-Device").isEmpty()) {	         
-			throw new CustomExceptions("Error!", "User is not authorized!");
-		}
+    		@QueryParam(value = "category") String category) throws InterruptedException {
 		
 		ciphertext = headers.getRequestHeader("X-Device").get(0);
 		c = aesUtil.encrypt(SALT, IV, APIKEY, ciphertext);
@@ -776,7 +751,7 @@ public class BookController {
 	@Path("/book/venue/{movieId}")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getVenuesForMovie(
-			@PathParam(value = "movieId") int movieId) {
+			@PathParam(value = "movieId") int movieId) throws InterruptedException {
 				
 		List<Venues> venue = new BookingHandlerImpl().getVenues(movieId);
 		
@@ -798,7 +773,7 @@ public class BookController {
 	@Path("/book/venue/v2/{movieId}")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getLocationForMovie(
-			@PathParam(value = "movieId") int movieId) {
+			@PathParam(value = "movieId") int movieId) throws InterruptedException {
 				
 		List<Location> locations = new BookingHandlerImpl().getLocationForMovie(movieId);
 		
@@ -820,12 +795,12 @@ public class BookController {
 	@Path("/book/venue/movies")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getMoviesForVenue(
-			@QueryParam(value = "locationId") int locationId) {
+			@QueryParam(value = "locationId") int locationId) throws InterruptedException {
 				
-		BookingHandlerImpl bh = new BookingHandlerImpl();
+		
 
-		List<Movie> movies = bh.getMoviesForVenue(locationId);
-	    List<Venues> venue = bh.getVenueByLocation(locationId);
+		List<Movie> movies =bookingHandler.getMoviesForVenue(locationId);
+	    List<Venues> venue =bookingHandler.getVenueByLocation(locationId);
 		
 		if (movies != null && venue != null) {
 			
@@ -861,7 +836,7 @@ public class BookController {
 	@Path("/book/locations/venue")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getLocationForVenue(
-			@QueryParam(value = "venuesId") int venuesId) {
+			@QueryParam(value = "venuesId") int venuesId) throws InterruptedException {
 				
 		Location location = new BookingHandlerImpl().getLocationForVenue(venuesId);
 		
@@ -878,11 +853,11 @@ public class BookController {
 	
 	
 	@GET
-	@Path("/book/locations")
+	@Path("book/locations")
 	@Produces(MediaType.APPLICATION_JSON)	
-	public Response getAllLocation() {
+	public Response getAllLocation() throws InterruptedException {
 				
-		List<Location> locations = new BookingHandlerImpl().getAllLocations();
+		List<Location> locations = bookingHandler.getAllLocations();
 		
 		if (locations != null) {
 			
@@ -901,7 +876,7 @@ public class BookController {
 	@GET
 	@Path("/book/admin/moviesonvenues")
 	@Produces(MediaType.APPLICATION_JSON)	
-	public Response getAllMoviesOnAllVenues() {
+	public Response getAllMoviesOnAllVenues() throws InterruptedException {
 				
 		List<Venues> venues = new BookingHandlerImpl().getAllVenuesForUpdate();
 		
@@ -940,7 +915,7 @@ public class BookController {
 	@Path("/book/admin/moviesonvenuescategorized")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getAllMoviesOnAllVenuesWithCategory(
-					@QueryParam(value = "category") String category) {
+					@QueryParam(value = "category") String category) throws InterruptedException {
 				
 		List<Venues> venues = new BookingHandlerImpl().getAllVenuesForUpdate();
 		
@@ -980,7 +955,7 @@ public class BookController {
 	@Path("/book/admin/moviesonvenuessearch")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getAllMoviesOnAllVenuesForSearch(
-					@QueryParam(value = "match") String match) {
+					@QueryParam(value = "match") String match) throws InterruptedException {
 				
 		List<Venues> venues = new BookingHandlerImpl().getAllVenuesForUpdate();
 		
@@ -1022,7 +997,7 @@ public class BookController {
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getDatesForMovieOnVenue (
 			@PathParam(value = "locationId") int locationId,
-			@PathParam(value = "movieId") int movieId){
+			@PathParam(value = "movieId") int movieId) throws InterruptedException {
 				
 		List<ScreeningDates> dates = new BookingHandlerImpl().getScreeningDatesForMovieOnVenue(locationId, movieId);
 
@@ -1044,7 +1019,7 @@ public class BookController {
 	@Path("/book/seats/{screeningDateId}")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response getSeatsForScreenForMovieOnVenue (
-			@PathParam(value = "screeningDateId") int screeningDateId) {
+			@PathParam(value = "screeningDateId") int screeningDateId) throws InterruptedException {
 				
 		List<Seats> seats = new BookingHandlerImpl().getSeatsForScreenForMovieOnVenue(screeningDateId);
 		
@@ -1065,14 +1040,14 @@ public class BookController {
 	@POST
 	@Path("/book/managepurchases")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response cancelTicket(
 			@Context HttpServletRequest request,
-			@Context HttpHeaders headers) {
+			@Context HttpHeaders headers) throws InterruptedException {
 		
 		ciphertext = headers.getRequestHeader("Ciphertext").get(0);
 		
-		if (!ciphertext.equals(request.getAttribute("token2").toString())) {
+		if (!ciphertext.equals(request.getHeader("token2").toString())) {
 			JSONObject json = new JSONObject();
 			json.put("Error", "User not authorized!)");
 			
@@ -1092,8 +1067,8 @@ public class BookController {
 				 
 			 }
 	    
-		BookingHandlerImpl bh = new BookingHandlerImpl();
-		boolean deleteTickets = bh.deleteTicket(ticketIds, Integer.valueOf(purchaseId));
+		
+		boolean deleteTickets =bookingHandler.deleteTicket(ticketIds, Integer.valueOf(purchaseId));
 		
 		if(deleteTickets) {
 			
@@ -1115,12 +1090,12 @@ public class BookController {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 	public Response deletePurchase(
-			@Context HttpServletRequest request) {
+			@Context HttpServletRequest request) throws InterruptedException {
 		
 		String purchaseId = request.getParameter("purchaseId").trim();
 		    
-		BookingHandlerImpl bh = new BookingHandlerImpl();
-		boolean deletePurchase = bh.deletePurchase(Integer.valueOf(purchaseId));
+		
+		boolean deletePurchase =bookingHandler.deletePurchase(Integer.valueOf(purchaseId));
 		
 		if(deletePurchase) {
 			
@@ -1141,7 +1116,7 @@ public class BookController {
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 		public Response addScreen(
-				@Context HttpServletRequest request, String newScreen) throws ParseException, IOException {
+				@Context HttpServletRequest request, String newScreen) throws ParseException, IOException, InterruptedException {
 			
 			//String newScreen = request.getParameter("newScreen").trim();
 		    //System.out.print(newScreen);
@@ -1170,8 +1145,8 @@ public class BookController {
 		     int nrOfRows = Integer.parseInt(nrOfRows_);
 		     int nrOfSeatsInRow = Integer.parseInt(nrOfSeatsInRow_);
 
-			BookingHandlerImpl bh = new BookingHandlerImpl();
-			Screen newScreen_ = bh.addScreen(movie, date, venue, nrOfRows, nrOfSeatsInRow, ScreeningId, category);
+			
+			Screen newScreen_ =bookingHandler.addScreen(movie, date, venue, nrOfRows, nrOfSeatsInRow, ScreeningId, category);
 			
 			//String movieName = newScreen_.getMovie().getName();
 			//String dateTime = newScreen_.getScreeningDates().getScreeningDate().toString();
@@ -1206,7 +1181,7 @@ public class BookController {
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 		public Response updateScreen(
-				@Context HttpServletRequest request, String updateScreen) throws ParseException, IOException {
+				@Context HttpServletRequest request, String updateScreen) throws ParseException, IOException, InterruptedException {
 			
 			//String newScreen = request.getParameter("newScreen").trim();
 		    //System.out.print(newScreen);
@@ -1231,8 +1206,8 @@ public class BookController {
 		     String screeningDatesId = jObj.getString("ScreeningDatesId");
 		     
 
-			BookingHandlerImpl bh = new BookingHandlerImpl();
-			Screen newScreen_ = bh.updateScreen(Venue,Integer.parseInt(venuesId), Integer.parseInt(screeningDatesId), Integer.parseInt(moviesId), screenId, Date, category);
+			
+			Screen newScreen_ =bookingHandler.updateScreen(Venue,Integer.parseInt(venuesId), Integer.parseInt(screeningDatesId), Integer.parseInt(moviesId), screenId, Date, category);
 			
 			String screeningId = newScreen_.getScreenId();
 			if(screeningId.contains("Error:")) {
@@ -1262,7 +1237,7 @@ public class BookController {
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })	
 		public Response deleteScreen(
-				@Context HttpServletRequest request, String deleteScreen) throws ParseException, IOException {
+				@Context HttpServletRequest request, String deleteScreen) throws ParseException, IOException, InterruptedException {
 			
 			//String newScreen = request.getParameter("newScreen").trim();
 		    //System.out.print(newScreen);
@@ -1280,8 +1255,8 @@ public class BookController {
 		     String screeningDatesId = jObj.getString("ScreeningDatesId");
 		     
 
-			BookingHandlerImpl bh = new BookingHandlerImpl();
-			boolean deleteScreen_ = bh.deleteScreen(Integer.parseInt(screeningDatesId));
+			
+			boolean deleteScreen_ =bookingHandler.deleteScreen(Integer.parseInt(screeningDatesId));
 			
 			if(!deleteScreen_) {
 				

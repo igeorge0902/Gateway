@@ -122,59 +122,39 @@ class SignupVC: UIViewController {
                     let description = "HTTP response was \(httpResponse.statusCode)"
 
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                    
                     NSLog(error!.localizedDescription)
                 }
-            }
 
             if error != nil {
-                let alertView: UIAlertView = UIAlertView()
 
                 if let httpResponse = response as? HTTPURLResponse {
                     if httpResponse.statusCode == 412 {
-                        alertView.title = "SignUp Failed!"
-                        alertView.message = "Voucher is already used!"
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
+                        
+                        self.presentAlert(withTitle: "SignUp Failed!", message: "Voucher is already used! \(error!.localizedDescription)")
 
                     } else {
-                        alertView.title = "Connection Failure!"
-                        alertView.message = error!.localizedDescription
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                    }
+                        self.presentAlert(withTitle: "Connection Failure!", message: error!.localizedDescription)                    }
                 } else {
-                    alertView.title = "Connection Failure!"
-                    alertView.message = error!.localizedDescription
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
+                    self.presentAlert(withTitle: "Connection Failure!", message: error!.localizedDescription)
                 }
 
             } else {
-                let json: JSON = try! JSON(data: data!)
-
-                if let httpResponse = response as? HTTPURLResponse {
-                    print("got some data")
-
+                    
                     switch httpResponse.statusCode {
                     case 200:
-
+                        
                         do {
-                            self.dataTask(request, username: username, onCompletion: { (json, _: NSError?) in
+                            self.dataTask(request, username: username, onCompletion: { (json, error: NSError?) in
                                 print(json)
                             })
                         }
-
+                        
                     default:
-
+                        
                         self.presentAlert(withTitle: "SignUp Failed!", message: "Server error \(httpResponse.statusCode)")
                     }
                 }
-
-                self.running = false
-                onCompletion(json, error as NSError?)
             }
         })
 
@@ -256,7 +236,7 @@ class SignupVC: UIViewController {
                         NSLog("Got an HTTP \(httpResponse.statusCode)")
                     }
                 }
-                onCompletion(json, error as NSError?)
+              //  onCompletion(json, error as NSError?)
             }
         })
         task.resume()
@@ -292,17 +272,13 @@ class SignupVC: UIViewController {
                 }
             }
 
-            let alertView: UIAlertView = UIAlertView()
-            alertView.title = "SignUp Failed!"
-            alertView.message = "Please enter \(ErrorData.minimalDescrption)!"
-            alertView.delegate = self
-            alertView.addButton(withTitle: "OK")
-            alertView.show()
+            self.presentAlert(withTitle: "SignUp Failed!", message: "Please enter \(ErrorData.minimalDescrption)!")
 
         } else {
                 dataTask(voucher as String, email: email as String, username: username as String, hash: hash, deviceId: deviceId, systemVersion: systemVersion) {
                     (resultString, _) -> Void in
 
+                    //TODO: finish the login
                     print(resultString)
             }
         }

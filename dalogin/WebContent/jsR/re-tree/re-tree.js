@@ -7,44 +7,38 @@
 
     function test(string, regex) {
         if (typeof regex === 'string' || regex instanceof String) {
-            regex=new RegExp(regex);
+            regex = new RegExp(regex);
         }
 
         if (regex instanceof RegExp) {
             return regex.test(string);
-        }
-        else if (regex && Array.isArray(regex.and)) {
+        } else if (regex && Array.isArray(regex.and)) {
             return regex.and.every(function (item) {
                 return test(string, item);
             });
-        }
-        else if (regex && Array.isArray(regex.or)) {
+        } else if (regex && Array.isArray(regex.or)) {
             return regex.or.some(function (item) {
                 return test(string, item);
             });
-        }
-        else if (regex && regex.not) {
+        } else if (regex && regex.not) {
             return !test(string, regex.not);
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     function exec(string, regex) {
         if (typeof regex === 'string' || regex instanceof String) {
-            regex=new RegExp(regex);
+            regex = new RegExp(regex);
         }
 
         if (regex instanceof RegExp) {
             return regex.exec(string);
-        }
-        else if (regex && Array.isArray(regex)) {
+        } else if (regex && Array.isArray(regex)) {
             return regex.reduce(function (res, item) {
                 return (!!res) ? res : exec(string, item);
             }, null);
-        }
-        else {
+        } else {
             return null;
         }
     }

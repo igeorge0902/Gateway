@@ -1,245 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID"
+         version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <description>MySQL Test App</description>
     <display-name>myapplication</display-name>
-<!-- <distributable/> -->
-<!-- DBManager -->
-    <context-param>
-        <param-name>DBUSER</param-name>
-        <param-value>sqluser</param-value>
-    </context-param>
     <context-param>
         <param-name>DBPWD</param-name>
         <param-value>sqluserpw</param-value>
     </context-param>
     <context-param>
         <param-name>DBURL</param-name>
-        <param-value>jdbc:mysql://localhost:3306/login</param-value>
+        <param-value>jdbc:mysql://localhost:3306/login_</param-value>
     </context-param>
-<!-- Time -->
+    <!-- <distributable/>
+    DBManager -->
+    <context-param>
+        <param-name>DBUSER</param-name>
+        <param-value>sqluser</param-value>
+    </context-param>
+    <!-- Time -->
     <context-param>
         <param-name>TIME</param-name>
         <param-value>8640000000</param-value>
     </context-param>
-<!-- UrlManager -->
     <context-param>
-        <param-name>voucherRedirect</param-name>
-        <param-value></param-value>
+        <param-name>webApi2Context</param-name>
+        <param-value>/mbooks-1</param-value>
     </context-param>
     <context-param>
-        <param-name>voucherElseRedirect</param-name>
-        <param-value></param-value>
-    </context-param>
-    <context-param>
-        <param-name>homePage</param-name>
-        <param-value>/example</param-value>
-    </context-param>
-    <context-param>
-        <param-name>homePageIndex</param-name>
-        <param-value>/index.jsp</param-value>
-    </context-param>
-    <context-param>
-        <param-name>loginContext</param-name>
-        <param-value>/login</param-value>
-    </context-param>
-    <context-param>
-        <param-name>loginToRegister</param-name>
-        <param-value>/register</param-value>
-    </context-param>
-    <context-param>
-        <param-name>loginToLogout</param-name>
-        <param-value>/logout</param-value>
+        <param-name>webApi2ContextUrl</param-name>
+        <param-value>/rest/</param-value>
     </context-param>
     <context-param>
         <param-name>webApiContext</param-name>
         <param-value>/mbook-1</param-value>
     </context-param>
-        <context-param>
-        <param-name>webApi2Context</param-name>
-        <param-value>/mbooks-1</param-value>
-    </context-param>
     <context-param>
         <param-name>webApiContextUrl</param-name>
         <param-value>/rest/user/</param-value>
     </context-param>
-        <context-param>
-        <param-name>webApi2ContextUrl</param-name>
-        <param-value>/rest/</param-value>
-    </context-param>
-<!-- 
-<listener>
-    <listener-class>
-        com.dalogin.listeners.CustomServletContextListener
-    </listener-class>
-</listener>
-
-<listener>
-    <listener-class>
-        com.dalogin.listeners.CustomHttpSessionListener
-    </listener-class>
-</listener>
-    
-<listener>
-    <listener-class>
-        com.dalogin.listeners.SessionAttributeListener
-    </listener-class>
-</listener>
--->
-<!-- 
-    <filter>
-        <filter-name>XssFilter</filter-name>
-        <filter-class>com.dalogin.filters.XssFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>XssFilter</filter-name>
-        <url-pattern>/login/*</url-pattern>
-    </filter-mapping>
-    <filter>
-        <filter-name>HSTSFilter</filter-name>
-        <filter-class>com.dalogin.filters.HSTSFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>HSTSFilter</filter-name>
-        <url-pattern>/login/*</url-pattern>
-    </filter-mapping>
-        <filter>
-        <filter-name>RohadekFilter</filter-name>
-        <filter-class>com.dalogin.filters.RohadekFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>RohadekFilter</filter-name>
-        <url-pattern>/login/*</url-pattern>
-    </filter-mapping>
- -->
-    <servlet>
-        <servlet-name>AdminServlet</servlet-name>
-        <servlet-class>com.dalogin.AdminServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AdminServlet</servlet-name>
-        <url-pattern>/admin</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>com.dalogin.HelloWorld</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
-        <url-pattern>/HelloWorld</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Registration</servlet-name>
-        <servlet-class>com.dalogin.Registration</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Registration</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Voucher</servlet-name>
-        <servlet-class>com.dalogin.Voucher</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Voucher</servlet-name>
-        <url-pattern>/voucher</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Loggingout</servlet-name>
-        <servlet-class>com.dalogin.Loggingout</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Loggingout</servlet-name>
-        <url-pattern>/logout</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>RegActivation</servlet-name>
-        <servlet-class>com.dalogin.RegActivation</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegActivation</servlet-name>
-        <url-pattern>/activation</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ChangePassword</servlet-name>
-        <servlet-class>com.dalogin.ChangePassword</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ChangePassword</servlet-name>
-        <url-pattern>/forgotPSw</url-pattern>
-    </servlet-mapping>
-       <servlet>
-        <servlet-name>ChangePasswordCode</servlet-name>
-        <servlet-class>com.dalogin.ChangePasswordCode</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ChangePasswordCode</servlet-name>
-        <url-pattern>/forgotPSwCode</url-pattern>
-    </servlet-mapping>   
-    <servlet>
-        <servlet-name>ChangePasswordNewPassword</servlet-name>
-        <servlet-class>com.dalogin.ChangePasswordNewPassword</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ChangePasswordNewPassword</servlet-name>
-        <url-pattern>/forgotPSwNewPSw</url-pattern>
-    </servlet-mapping>
-        <servlet>
-        <servlet-name>CheckOut</servlet-name>
-        <servlet-class>com.dalogin.CheckOut</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CheckOut</servlet-name>
-        <url-pattern>/CheckOut</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>GetAllPurchases</servlet-name>
-        <servlet-class>com.dalogin.GetAllPurchases</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>GetAllPurchases</servlet-name>
-        <url-pattern>/GetAllPurchases</url-pattern>
-    </servlet-mapping>
-    <description>MySQL Test App</description>
-    <resource-ref>
-        <description>DB Connection</description>
-        <res-ref-name>jdbc/TestDB</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-    </resource-ref>
-<!-- <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>Voucher</web-resource-name>
-      <url-pattern>/login/voucher</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-       <role-name>manager-gui</role-name>
-    </auth-constraint>
-  </security-constraint>
-    
-  <login-config>
-    <auth-method>BASIC</auth-method>
-    <realm-name>Gateway - Voucher</realm-name>
-  </login-config> -->
     <session-config>
         <cookie-config>
             <http-only>true</http-only>
             <secure>true</secure>
         </cookie-config>
     </session-config>
-        <servlet>
-            <servlet-name>ExceptionHandler</servlet-name>
-            <servlet-class>com.dalogin.ExceptionHandler</servlet-class>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>ExceptionHandler</servlet-name>
-            <url-pattern>/ExceptionHandler</url-pattern>
-        </servlet-mapping>
-        <error-page>
-            <error-code>404</error-code>
-            <location>/ExceptionHandler</location>
-        </error-page>
-        <error-page>
-            <exception-type>java.lang.Throwable</exception-type>
-            <location>/ExceptionHandler</location>
-        </error-page>
 </web-app>

@@ -1,10 +1,9 @@
 package com.jeet.utils;
 
-import java.io.Serializable;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import java.io.Serializable;
 
 public class CustomNotFoundException extends WebApplicationException implements Serializable {
 	 
@@ -28,7 +27,7 @@ public class CustomNotFoundException extends WebApplicationException implements 
 	  */
 	  public CustomNotFoundException(String message) {
 	    
-		  super(Response.status(Status.UNAUTHORIZED).entity(message).type("text/plain").build());
+		  super(Response.status(Response.Status.UNAUTHORIZED).entity(message).type("text/plain").build());
 	  	
 	  	}
 	}
