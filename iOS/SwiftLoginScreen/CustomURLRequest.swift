@@ -3,50 +3,60 @@
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.
-//  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
 import Foundation
 
-extension NSURLRequest {
-    
+extension URLRequest {
     /// Helper for making a URL request.
     /// JSON encodes parameters if any are provided. You may want to change this if your server uses, say, XML.
-        
-    class func requestWithURL(URL: NSURL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy: NSURLRequestCachePolicy?, timeoutInterval: NSTimeInterval?) -> NSURLRequest {
 
+    static func requestWithURL(_ URL: Foundation.URL, method: String, queryParameters: [String: String]?, bodyParameters: NSDictionary?, headers: [String: String]?, cachePolicy _: NSURLRequest.CachePolicy?, timeoutInterval _: TimeInterval?, isCacheable _: String?, contentType: String?, bodyToPost: Data?) -> URLRequest {
         // If there's a querystring, append it to the URL.
-        let actualURL: NSURL
-      
+        let actualURL: Foundation.URL
+
         if let queryParameters = queryParameters {
-        
-            let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: true)!
-            components.queryItems = queryParameters.map { (key, value) in NSURLQueryItem(name: key, value: value) }
-            
-            actualURL = components.URL!
-        
+            var components = URLComponents(url: URL, resolvingAgainstBaseURL: true)!
+            components.queryItems = queryParameters.map { key, value in URLQueryItem(name: key, value: value) }
+
+            actualURL = components.url!
+
         } else {
             actualURL = URL
         }
-        
+
         // Make the request for the given method.
-        let request = NSMutableURLRequest(URL: actualURL)
-        request.HTTPMethod = method
-        
+        let request = NSMutableURLRequest(url: actualURL)
+        request.httpMethod = method
+
         // Add any body JSON params (for POSTs).
+        if contentType == contentType_.json.rawValue {
         if let bodyParameters = bodyParameters {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(bodyParameters, options: [])
+            request.httpBody = try? JSONSerialization.data(withJSONObject: bodyParameters, options: [])
+            }
         }
         
+        if contentType == contentType_.urlEncoded.rawValue {
+            if let bodyToPost = bodyToPost {
+                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                request.httpBody = bodyToPost
+            }
+        }
+        
+        if contentType == contentType_.image.rawValue {
+                request.setValue("image/jpeg", forHTTPHeaderField: "Accept")
+        }
+
         // Add any extra headers if given.
         if let headers = headers {
             for (field, value) in headers {
                 request.addValue(value, forHTTPHeaderField: field)
             }
         }
-        
-        return request
+
+        // TEST
+        request.httpShouldHandleCookies = true
+        return request as URLRequest
     }
-    
 }

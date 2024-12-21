@@ -1,5 +1,0 @@
-version: "Apple Swift version 2.3 (swiftlang-800.10.12 clang-800.0.38)"
-options: "ed429f102a76d8c00d59ffcb51a6a8aa"
-build_time: [529151344, 260340000]
-inputs:
-  "/Users/georgegaspar/Documents/Git/Upload/Gateway.git/iOS/Pods/SwiftyJSON/Source/SwiftyJSON.swift": [523321567, 0]

@@ -1,81 +1,77 @@
 package com.dalogin.utils;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Enumeration;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
-
-
 public class PropertyUtils {
+    /**
+     *
+     */
+    private static Properties p = new Properties();
+    /**
+     *
+     */
+    private static Logger log = Logger.getLogger(Logger.class.getName());
 
-	private static Properties p = new Properties();
-	private static Logger log = Logger.getLogger(Logger.class.getName());
+    /**
+     * Loads the property file on the context from the resource path.
+     * According to the standard maven project folder layout it is the "../src/main/resources".
+     *
+     * @param propertyFileName
+     * @param context
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public static void loadPropertyFile(String propertyFileName, BufferedReader br) throws FileNotFoundException, IOException {
+        //InputStream is = new FileInputStream(new File(propertyFileName));
+        //DataInputStream in = new DataInputStream(is);
+        //BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        p.load(br);
+        log.info(propertyFileName + " is loaded.");
+        br.close();
+    }
 
-	static {
-		String workingDir = System.getProperty("user.dir");
+    /**
+     * Returns the property value by its key.
+     *
+     * @param propertyKey
+     * @return
+     * @throws Exception
+     */
+    public static String getProperty(String propertyKey) throws Exception {
+        String propertyValue = p.getProperty(propertyKey.trim());
+        try {
+            propertyValue.trim();
+        } catch (Exception e) {
+            log.info("The property value for the key " + propertyKey + " is missing!");
+        }
+        return propertyValue.trim();
+    }
 
-		try {
-			loadPropertyFile(workingDir + File.separator + "properties.properties");
+    /**
+     * @param propertyKey
+     * @param value
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public static void setProperty(String propertyKey, String value) throws FileNotFoundException, IOException {
+        p.setProperty(propertyKey, value);
+    }
 
-		} catch (FileNotFoundException realCause) {
-			log.info(workingDir + File.separator + "properties.properties was not found");
-
-		} catch (IOException realCause) {
-			log.info("Error");
-
-		}
-	}
-
-	public static void loadPropertyFile(String propertyFileName)
-			throws FileNotFoundException, IOException {
-		InputStream is;
-
-		is = new FileInputStream(new File(propertyFileName));
-		DataInputStream in = new DataInputStream(is);
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
-
-		p.load(br);
-		log.info(propertyFileName + " is loaded.");
-		log.info(propertyFileName + " is loaded.");
-		in.close();
-		br.close();
-	}
-
-	public static String getProperty(String propertyKey) {
-		String propertyValue = p.getProperty(propertyKey.trim());
-
-		if (propertyValue == null || propertyValue.trim().length() == 0)
-
-		{
-
-			log.info("The property key: " + propertyKey + " is missing!");
-
-		}
-
-		return propertyValue.trim();
-	}
-
-	public static void setProperty(String propertyKey, String value)
-			throws FileNotFoundException, IOException {
-		p.setProperty(propertyKey, value);
-	}
-
-	public static void listProperties() throws FileNotFoundException, IOException {
-
-		for (Enumeration<?> e = p.propertyNames(); e.hasMoreElements();)
-
-			while (e.hasMoreElements()) {
-				String propertyKey = (String) e.nextElement();
-				log.info(propertyKey + " -- " + p.getProperty(propertyKey));
-
-			}
-	}
+    /**
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public static void listProperties() throws FileNotFoundException, IOException {
+        for (Enumeration<?> e = p.propertyNames(); e.hasMoreElements(); )
+            while (e.hasMoreElements()) {
+                String propertyKey = (String) e.nextElement();
+                log.info(propertyKey + " -- " + p.getProperty(propertyKey));
+            }
+    }
 }

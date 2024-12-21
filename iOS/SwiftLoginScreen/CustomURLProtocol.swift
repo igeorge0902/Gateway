@@ -26,11 +26,11 @@
 import Foundation
 import Realm
 
-class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTaskDelegate {
-
-    private var dataTask:NSURLSessionDataTask?
-    private var urlResponse:NSURLResponse?
-    private var receivedData:NSMutableData?
+class CustomURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTaskDelegate {
+    
+    fileprivate var dataTask:URLSessionDataTask?
+    fileprivate var urlResponse:URLResponse?
+    fileprivate var receivedData:NSMutableData?
     
     class var CustomKey:String {
         return "myCustomKey"
@@ -38,69 +38,69 @@ class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTa
     
     // MARK: NSURLProtocol
     
-    override class func canInitWithRequest(request: NSURLRequest) -> Bool {
-       
-        if (NSURLProtocol.propertyForKey(CustomURLProtocol.CustomKey, inRequest: request) != nil) {
+    override class func canInit(with request: URLRequest) -> Bool {
+        
+        if (URLProtocol.property(forKey: CustomURLProtocol.CustomKey, in: request) != nil) {
             return false
         }
-
-        NSLog("Relative path for SessionDataTask==> %@", request.URL!.relativePath!)
+        
+        NSLog("Relative path for SessionDataTask==> %@", request.url!.relativePath)
         return true
     }
     
-    override class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
     
     override func startLoading() {
-       
-        if AFNetworkReachabilityManager.sharedManager().reachable {
-        NSLog("AFNetwork is reachable...")
-            let newRequest = self.request.mutableCopy() as! NSMutableURLRequest
-            
-        //    NSURLProtocol.setProperty("true", forKey: CustomURLProtocol.CustomKey, inRequest: newRequest)
-            
-            let defaultConfigObj = NSURLSessionConfiguration.defaultSessionConfiguration()
-            let defaultSession = NSURLSession(configuration: defaultConfigObj, delegate: self, delegateQueue: nil)
-            
-            self.dataTask = defaultSession.dataTaskWithRequest(newRequest)
-            self.dataTask!.resume()
         
-        } /*else {
-
-            NSLog("No AFNetwork is reachable...")
-
-            let httpVersion = "1.1"
+        if AFNetworkReachabilityManager.shared().isReachable {
+            NSLog("AFNetwork is reachable...")
+            let newRequest = (self.request as NSURLRequest).mutableCopy() as! URLRequest
             
-            if let localResponse = cachedResponseForCurrentRequest(), data = localResponse.data {
+            //    NSURLProtocol.setProperty("true", forKey: CustomURLProtocol.CustomKey, inRequest: newRequest)
             
-                var headerFields:[String : String] = [:]
-                
-                headerFields["Content-Length"] = String(format:"%d", data.length)
-                
-                if let mimeType = localResponse.mimeType {
-                    headerFields["Content-Type"] = mimeType as String
-                }
-                
-                headerFields["Content-Encoding"] = localResponse.encoding!
-                
-                let okResponse = NSHTTPURLResponse(URL: self.request.URL!, statusCode: 200, HTTPVersion: httpVersion, headerFields: headerFields)
-                self.client?.URLProtocol(self, didReceiveResponse: okResponse!, cacheStoragePolicy: .NotAllowed)
-                self.client?.URLProtocol(self, didLoadData: data)
-                self.client?.URLProtocolDidFinishLoading(self)
+            let defaultConfigObj = URLSessionConfiguration.default
+            let defaultSession = Foundation.URLSession(configuration: defaultConfigObj, delegate: self, delegateQueue: nil)
             
-            } else {
+            self.dataTask = defaultSession.dataTask(with: newRequest)
+            self.dataTask!.resume()
             
-                NSLog("AFNetwork failed to respond......")
-
-                let failedResponse = NSHTTPURLResponse(URL: self.request.URL!, statusCode: 0, HTTPVersion: httpVersion, headerFields: nil)
-                
-                self.client?.URLProtocol(self, didReceiveResponse: failedResponse!, cacheStoragePolicy: .NotAllowed)
-                
-                self.client?.URLProtocolDidFinishLoading(self)
-            }
-            
-        }*/
+        } else {
+         
+         NSLog("No AFNetwork is reachable...")
+         
+         let httpVersion = "1.1"
+         
+         if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+         
+         var headerFields:[String : String] = [:]
+         
+         headerFields["Content-Length"] = String(format:"%d", data.count)
+         
+         if let mimeType = localResponse.mimeType {
+         headerFields["Content-Type"] = mimeType as String
+         }
+         
+         headerFields["Content-Encoding"] = localResponse.encoding!
+         
+         let okResponse = HTTPURLResponse(url: self.request.url!, statusCode: 200, httpVersion: httpVersion, headerFields: headerFields)
+         self.client?.urlProtocol(self, didReceive: okResponse!, cacheStoragePolicy: .notAllowed)
+         self.client?.urlProtocol(self, didLoad: data)
+         self.client?.urlProtocolDidFinishLoading(self)
+         
+         } else {
+         
+         NSLog("AFNetwork failed to respond......")
+         
+         let failedResponse = HTTPURLResponse(url: self.request.url!, statusCode: 0, httpVersion: httpVersion, headerFields: nil)
+         
+         self.client?.urlProtocol(self, didReceive: failedResponse!, cacheStoragePolicy: .notAllowed)
+         
+         self.client?.urlProtocolDidFinishLoading(self)
+         }
+         
+         }
     }
     
     override func stopLoading() {
@@ -113,56 +113,56 @@ class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTa
     
     // MARK: NSURLSessionDataDelegate
     
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask,
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
+                    
+                    didReceive response: URLResponse,
+                    completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         
-        didReceiveResponse response: NSURLResponse,
-        completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-            
-            self.client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
-            
-            self.urlResponse = response
-            self.receivedData = NSMutableData()
-            
-            completionHandler(.Allow)
-            
-            NSLog("AFNetwork has received session response data from dataTask...")
-
+        self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        
+        self.urlResponse = response
+        self.receivedData = NSMutableData()
+        
+        completionHandler(.allow)
+        
+        NSLog("AFNetwork has received session response data from dataTask...")
+        
     }
     
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-       
-        self.client?.URLProtocol(self, didLoadData: data)
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         
-        self.receivedData?.appendData(data)
+        self.client?.urlProtocol(self, didLoad: data)
+        
+        self.receivedData?.append(data)
     }
     
     // MARK: NSURLSessionTaskDelegate
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
-      
-        if error != nil && error!.code != NSURLErrorCancelled {
-            self.client?.URLProtocol(self, didFailWithError: error!)
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        
+        if error != nil {
+            self.client?.urlProtocol(self, didFailWithError: error!)
             
-            NSLog("AFNetwork error code: \(error!.code)")
-
-        
+            NSLog("AFNetwork error code: \(error!.localizedDescription)")
+            
+            
         } else {
-        
-          //  saveCachedResponse()
-          //  NSLog("AFNetwork saved cahced response")
-           
-            self.client?.URLProtocolDidFinishLoading(self)
+            
+              saveCachedResponse()
+              NSLog("AFNetwork saved cahced response")
+            
+            self.client?.urlProtocolDidFinishLoading(self)
         }
     }
     
     // MARK: Private methods
     
     /**
-    Save the current response in local storage for use when offline.
-    */
-    private func saveCachedResponse() {
-       
-        let realm = RLMRealm.defaultRealm()
+     Save the current response in local storage for use when offline.
+     */
+    fileprivate func saveCachedResponse() {
+        
+        let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         
         var cachedResponse = cachedResponseForCurrentRequest()
@@ -172,18 +172,18 @@ class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTa
         }
         
         if let data = self.receivedData {
-            cachedResponse!.data = data
+            cachedResponse!.data = data as Data?
         }
         
-        if let url:NSURL? = self.request.URL, let absoluteString = url?.absoluteString {
+        if let url:URL = self.request.url, let absoluteString = url.absoluteString as? String{
             cachedResponse!.url = absoluteString
         }
         
-        cachedResponse!.timestamp = NSDate()
+        cachedResponse!.timestamp = Date()
         if let response = self.urlResponse {
-        
-            if let mimeType = response.MIMEType {
-                cachedResponse!.mimeType = mimeType
+            
+            if let mimeType = response.mimeType {
+                cachedResponse!.mimeType = mimeType as NSString?
             }
             
             if let encoding = response.textEncodingName {
@@ -191,7 +191,7 @@ class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTa
             }
         }
         
-        realm.addObject(cachedResponse!)
+        realm.add(cachedResponse!)
         
         do {
             try realm.commitWriteTransaction()
@@ -206,18 +206,19 @@ class CustomURLProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTa
      
      :returns: A CachedResponse optional object.
      */
-    private func cachedResponseForCurrentRequest() -> CachedResponse? {
-        if let url:NSURL? = self.request.URL, let absoluteString = url?.absoluteString {
+    fileprivate func cachedResponseForCurrentRequest() -> CachedResponse? {
+        if let url:URL = self.request.url, let absoluteString = url.absoluteString as? String {
             let p:NSPredicate = NSPredicate(format: "url == %@", argumentArray: [ absoluteString ])
             
             // Query
-            let results = CachedResponse.objectsWithPredicate(p)
+            let results = CachedResponse.objects(with: p)
             
             if results.count > 0 {
-                return results.objectAtIndex(0) as? CachedResponse
+                return results.object(at: 0) as? CachedResponse
             }
         }
         
         return nil
     }
 }
+

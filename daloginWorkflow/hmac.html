@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>hmac</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/hmac/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/hmac/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u238" class="ax_default flow_shape">
+        <div id="u238_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u239" class="text">
+          <p style="text-align:center;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">super safe hmac validation</span></p><p><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;"><br></span></p><p style="text-align:left;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">&#149; </span><span style="font-family:'ArialMT', 'Arial';font-weight:400;">user,&nbsp; </span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; pass, </span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">deviceId</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;">,&nbsp; </span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; time, </span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; contentLength</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u240" class="ax_default flow_shape">
+        <div id="u240_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u241" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">generate </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hmacSecret</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; user,</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; pass</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Generate hmacSecret as payload for hmac512 hash in the following way:</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; payload: pass</span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; message: user</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u242" class="ax_default flow_shape">
+        <div id="u242_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u243" class="text">
+          <p style="text-align:center;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">generate the </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">final hmac hash</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p style="text-align:left;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;">Generate a hmac 512 hash in the following way:&nbsp; </span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;"><br></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; payload: </span><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">hmacSecret</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"></span></p><p><span style="font-family:'ArialMT', 'Arial';font-weight:400;">&#149; message: &quot;/login/HelloWorld:user=&quot;+user+&quot;&amp;pswrd=&quot;+pswrd+&quot;&amp;deviceId=&quot;+deviceId+&quot;:&quot;+time+&quot;:&quot;+contentLength&quot;</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u244" class="ax_default connector">
+        <img id="u244_seg0" class="img " src="images/hmac/u244_seg0.png" alt="u244_seg0"/>
+        <img id="u244_seg1" class="img " src="images/registration_workflow/u36_seg1.png" alt="u244_seg1"/>
+        <img id="u244_seg2" class="img " src="images/registration_workflow/u36_seg2.png" alt="u244_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u245" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u246" class="ax_default connector">
+        <img id="u246_seg0" class="img " src="images/hmac/u246_seg0.png" alt="u246_seg0"/>
+        <img id="u246_seg1" class="img " src="images/registration_workflow/u36_seg1.png" alt="u246_seg1"/>
+        <img id="u246_seg2" class="img " src="images/registration_workflow/u36_seg2.png" alt="u246_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u247" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Vertical Line) -->
+      <div id="u248" class="ax_default arrow">
+        <img id="u248_img" class="img " src="images/hmac/u248.png"/>
+        <!-- Unnamed () -->
+        <div id="u249" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u250" class="ax_default connector">
+        <img id="u250_seg0" class="img " src="images/hmac/u250_seg0.png" alt="u250_seg0"/>
+        <img id="u250_seg1" class="img " src="images/request/u214_seg1.png" alt="u250_seg1"/>
+        <img id="u250_seg2" class="img " src="images/registration/u128_seg2.png" alt="u250_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u251" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Stacked Rectangle) -->
+      <div id="u252" class="ax_default flow_shape">
+        <img id="u252_img" class="img " src="images/hmac/u252.png"/>
+        <!-- Unnamed () -->
+        <div id="u253" class="text">
+          <p><span>sessionCreation</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Diamond) -->
+      <div id="u254" class="ax_default flow_shape">
+        <img id="u254_img" class="img " src="images/hmac/u254.png"/>
+        <!-- Unnamed () -->
+        <div id="u255" class="text">
+          <p><span>Is the final hmac hash matching the headerField X-HMAC-HASH?</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Bracket) -->
+      <div id="u256" class="ax_default flow_shape">
+        <img id="u256_img" class="img " src="images/request/u208.png"/>
+        <!-- Unnamed () -->
+        <div id="u257" class="text">
+          <p><span>End</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u258" class="ax_default connector">
+        <img id="u258_seg0" class="img " src="images/hmac/u258_seg0.png" alt="u258_seg0"/>
+        <img id="u258_seg1" class="img " src="images/registration_workflow/u36_seg1.png" alt="u258_seg1"/>
+        <img id="u258_seg2" class="img " src="images/registration_workflow/u36_seg2.png" alt="u258_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u259" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u260" class="ax_default connector">
+        <img id="u260_seg0" class="img " src="images/hmac/u260_seg0.png" alt="u260_seg0"/>
+        <img id="u260_seg1" class="img " src="images/registration_workflow/u36_seg1.png" alt="u260_seg1"/>
+        <img id="u260_seg2" class="img " src="images/registration_workflow/u36_seg2.png" alt="u260_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u261" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Connector) -->
+      <div id="u262" class="ax_default connector">
+        <img id="u262_seg0" class="img " src="images/hmac/u262_seg0.png" alt="u262_seg0"/>
+        <img id="u262_seg1" class="img " src="images/registration_workflow/u36_seg1.png" alt="u262_seg1"/>
+        <img id="u262_seg2" class="img " src="images/registration_workflow/u36_seg2.png" alt="u262_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u263" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u264" class="ax_default icon">
+        <img id="u264_img" class="img " src="images/voucher/u96.png"/>
+        <!-- Unnamed () -->
+        <div id="u265" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u266" class="ax_default icon">
+        <img id="u266_img" class="img " src="images/hmac/u266.png"/>
+        <!-- Unnamed () -->
+        <div id="u267" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

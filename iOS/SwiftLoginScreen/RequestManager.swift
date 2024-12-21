@@ -8,201 +8,159 @@
 
 import Foundation
 import SwiftyJSON
+// import Kanna
+// import Toaster
+// import Toast_Swift
 
 typealias ServiceResponses = (JSON, NSError?) -> Void
+typealias ServiceResponsesData = (Data, NSError?) -> Void
 // Only used to handle webview logins
 class RequestManager: NSObject {
-    
-    var url: NSURL!
+    var url: URL!
     var errors: String!
-    var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    
+    var prefs: UserDefaults = UserDefaults.standard
+
     init?(url: String, errors: String) {
         super.init()
-        self.url = NSURL(string: url)!
+        self.url = URL(string: url)!
         self.errors = errors
-        if url.isEmpty { }
-        if errors.isEmpty { }
-
+        if url.isEmpty {}
+        if errors.isEmpty { self.errors = "Trouble" }
     }
-    
+
     deinit {
-        
-        NSLog("\(url) is being deinitialized")
-        NSLog("\(errors) is being deinitialized")
+        NSLog("\(url!) is being deinitialized")
+        NSLog("\(errors!) is being deinitialized")
         NSLog(#function, "\(self)")
-
     }
 
-  // lazy var config = NSURLSessionConfiguration.defaultSessionConfiguration()
-  // lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
-    
-  lazy var session: NSURLSession = NSURLSession.sharedCustomSession
+    // lazy var config = NSURLSessionConfiguration.defaultSessionConfiguration()
+    // lazy var session: NSURLSession = NSURLSession(configuration: self.config, delegate: self, delegateQueue:NSOperationQueue.mainQueue())
+
+    lazy var session: URLSession = URLSession.sharedCustomSession
 
     var running = false
-    
-    func getResponse(onCompletion: ServiceResponses) {
-        
-        dataTask ({ json, err in
-        
+
+    func getResponse(_ onCompletion: @escaping ServiceResponses) {
+        dataTask { json, err in
+
             onCompletion(json as JSON, err)
-        
-        })
+        }
     }
     
-    func dataTask(onCompletion: ServiceResponses) {
-       
-        let xtoken = prefs.valueForKey("X-Token")
-        
-        let request = NSMutableURLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
-            
-          //  if  let json:JSON = try! JSON(data: data!) {
+    func getData(_ onCompletion: @escaping ServiceResponsesData) {
+        dataTask_ { data, err in
+
+            onCompletion(data as Data, err)
+        }
+    }
+    
+    func dataTask_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+
+        let request = URLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: nil, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: contentType_.image.rawValue, bodyToPost: nil)
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+
+            onCompletion(data!, sessionError as NSError?)
+        })
+
+        task.resume()
+    }
+
+
+    func dataTask(_ onCompletion: @escaping ServiceResponses) {
+        var xtoken = prefs.value(forKey: "X-Token")
+
+        if xtoken == nil {
+            xtoken = ""
+        }
+
+        let request = URLRequest.requestWithURL(url, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .useProtocolCachePolicy, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+
             var error = sessionError
 
-            if let httpResponse = response as? NSHTTPURLResponse {
-                
+            if let httpResponse = response as? HTTPURLResponse {
+                let description = "HTTP response was \(httpResponse.statusCode)"
+
+                error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                NSLog(error!.localizedDescription)
+
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
-                    
-                    let headers:NSDictionary = httpResponse.allHeaderFields
-                    
-                    if let xtoken:NSString = headers.valueForKey("X-Token") as? NSString {
-                        
-                        self.prefs.setObject(xtoken, forKey: "X-Token")
-                 
-                    }
-                    
-                    if let user:NSString = headers.valueForKey("user") as? NSString {
-                        
-                        self.prefs.setObject(user, forKey: "USERNAME")
-                        
-                    }
-                
-                    let description = "HTTP response was \(httpResponse.statusCode)"
-                    
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
+                    NSLog(error!.localizedDescription)
 
+                    let headers: NSDictionary = httpResponse.allHeaderFields as NSDictionary
+                    
+                    // set credentials to activate voucher
+                    if let xtoken: NSString = headers.value(forKey: "X-Token") as? NSString {
+                        self.prefs.set(xtoken, forKey: "X-Token")
+                    }
+
+                    if let user: NSString = headers.value(forKey: "User") as? NSString {
+                        self.prefs.set(user, forKey: "USERNAME")
+                    }
                 }
-            }
-        
-            if error != nil {
-                
-                if let httpResponse = response as? NSHTTPURLResponse {
-            
+
                 if httpResponse.statusCode == 300 {
-                    
-                    let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
-                        
-                        NSJSONReadingOptions.MutableContainers ) as! NSDictionary
-                    
-                    let activation:NSString = jsonData.valueForKey("Activation") as! NSString
-                    
+                    let jsonData: NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
+
+                        JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+
+                    guard let message = jsonData.value(forKey: "Error Details"),
+                        let activation = (message as AnyObject).value(forKey: "Activation") else { return }
+
                     self.prefs.setValue(activation, forKey: "Activation")
-                    self.prefs.setInteger(1, forKey: "ISWEBLOGGEDIN")
-                    
-                    let alertView:UIAlertView = UIAlertView()
-                    
-                    alertView.title = "Warning!"
-                    alertView.message = "Your account is not activated yet: \(error!.localizedDescription)"
-                    alertView.delegate = self
-                    alertView.addButtonWithTitle("OK")
-                    alertView.show()
-                    
-                } else {
-                    
-                    let alertView:UIAlertView = UIAlertView()
-                    
-                    alertView.title = self.errors
-                    alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                    alertView.delegate = self
-                    alertView.addButtonWithTitle("OK")
-                    alertView.show()
-                    
-                    }
+                    self.prefs.set(1, forKey: "ISWEBLOGGEDIN")
+
+                    UIAlertController.popUp(title: "Warning", message: "Your account is not activated yet: \(message)")
                 }
 
-            }
-
-            else {
-                
-                let json:JSON = JSON(data: data!)
-                let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-
-                if let httpResponse = response as? NSHTTPURLResponse {
-                    
-                print("got some data")
-                    
-                switch(httpResponse.statusCode) {
-                
-                case 300:
-                        
-                do {
-
-                    print("Case 300")
-                
-                }
-                
-                default:
-                        
-                    let alertView:UIAlertView = UIAlertView()
-                    
-                    NSLog("got a 200")
-                    
-                    if let user = json["user"].string {
-                        
-                        if !user.isEmpty {
-                            
-                            prefs.setObject(user, forKey: "USERNAME")
-                            prefs.setInteger(1, forKey: "ISWEBLOGGEDIN")
-
-                            alertView.title = "Welcome"
-                            alertView.message = user as String
-                            alertView.delegate = self
-                            alertView.addButtonWithTitle("OK")
-                            alertView.show()
-                            
-                            NSLog("User ==> %@", user);
-                            
-                            
-                        } else {
-                            
-                            alertView.title = "Sorry!"
-                            alertView.message = "User does not exist!"
-                            alertView.delegate = self
-                            alertView.addButtonWithTitle("OK")
-                            alertView.show()
-                            
-                            NSLog("User ==> %@", user);
-                            
-                        }
-                        
+                if httpResponse.statusCode == 502 || httpResponse.statusCode == 503 {
+                    if self.errors != nil {
+                        UIAlertController.popUp(title: "Error:", message: self.errors)
                     } else {
-                        
-                        alertView.title = "Hmmm..."
-                        alertView.message = "Something went wrong... \(json["user"].error?.localizedDescription)" as String
-                        alertView.delegate = self
-                        alertView.addButtonWithTitle("OK")
-                        alertView.show()
-                        
-                        NSLog("User does not exist")
+                        UIAlertController.popUp(title: self.errors, message: "Connection Failure: \(error!.localizedDescription)")
                     }
+                } else {
+                    let json:JSON = try! JSON(data: data!)
+                    let prefs: UserDefaults = UserDefaults.standard
+
+                    if let httpResponse = response as? HTTPURLResponse {
+                        NSLog("got a " + String(httpResponse.statusCode) + " response code")
+
+                        if httpResponse.statusCode == 200 {
+                            if let user = json["user"].string, let uuid = json["uuid"].string {
+                                if uuid != "no UUID" {
+                                    prefs.set(user, forKey: "USERNAME")
+                                    prefs.set(1, forKey: "ISWEBLOGGEDIN")
+                                    prefs.set(1, forKey: "ISLOGGEDIN")
+                                //TODO: add observer to replace alert, and use it with AlertViewController on the view
+                                   let alertView: UIAlertView = UIAlertView()
+                                   alertView.title = "Welcome!"
+                                   alertView.message = user as String
+                                   alertView.delegate = self
+                                   alertView.addButton(withTitle: "That's all folks!")
+                                   alertView.show()
+
+                                    NSLog("User ==> %@", user)
+
+                                } else {
+                                    // TODO: add corresponding server response
+                                    UIAlertController.popUp(title: "Sorry!", message: "User does not exist!")
+
+                                    NSLog("User ==> %@", user)
+                                }
+                            }
+                        }
+                      }
+                    
+                    onCompletion(json, error as NSError?)
+                }
             }
-            
-                
-            self.running = false            
-            onCompletion(json, error)
-                
-                    }
-            
-              }
+
         })
-        
-        running = true
         task.resume()
-        
-        
     }
-    
 }

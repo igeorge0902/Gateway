@@ -27,20 +27,21 @@ import Foundation
 import Realm
 
 class CachedResponse: RLMObject {
-    
-    dynamic var data:NSData!
-    dynamic var encoding:String!
-    dynamic var mimeType:NSString!
-    dynamic var url:String!
-    dynamic var timestamp:NSDate!
-    
+    @objc dynamic var data: Data!
+    @objc dynamic var encoding: String!
+    @objc dynamic var mimeType: NSString!
+    @objc dynamic var url: String!
+    @objc dynamic var query:String!
+    @objc dynamic var timestamp: Date!
+
     override init() {
         super.init()
-        
-        data        = NSData()
-        encoding    = "utf-8"
-        mimeType    = ""
-        url         = ""
-        timestamp   = NSDate()
+
+        data = NSData() as Data?
+        encoding = "utf-8"
+        mimeType = ""
+        url = ""
+        query = ""
+        timestamp = NSDate() as Date?
     }
 }

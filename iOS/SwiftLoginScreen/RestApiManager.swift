@@ -8,156 +8,140 @@
 
 import Foundation
 import SwiftyJSON
+// import Kanna
 
 typealias ServiceResponse = (JSON, NSError?) -> Void
 
-class RestApiManager: NSObject, UIAlertViewDelegate {
-
-    static let sharedInstance = RestApiManager()
+class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
+    var alertViewPresentingVC: UIViewController?
     
-    func alertView(View: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-        
-        switch buttonIndex{
-            
+    static let sharedInstance = RestApiManager()
+    let baseURL = serverURL + "/login/admin?JSESSIONID="
+    
+    func alertView(_: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        switch buttonIndex {
         case 0:
-            
-            let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            let user = prefs.valueForKey("USERNAME")
-            
-            var errorOnLogin:GeneralRequestManager?
-            
-            //var i = ["a","b"]
-            
-            //let stringRepresentation = i.joinWithSeparator("-")
-            
-            errorOnLogin = GeneralRequestManager(url: "https://milo.crabdance.com/login/activation", errors: "", method: "POST", queryParameters: nil , bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil)
-            
+
+            let prefs: UserDefaults = UserDefaults.standard
+            let user = prefs.value(forKey: "USERNAME")
+
+            var errorOnLogin: GeneralRequestManager?
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
+
             errorOnLogin?.getResponse {
-                
                 (resultString, error) -> Void in
-                
+
                 print(resultString)
+                print(error as Any)
             }
 
         default: break
-            
         }
     }
 
-    //let baseURL = "http://api.randomuser.me/"
-    let baseURL = "https://milo.crabdance.com/login/admin?JSESSIONID="
+    func getRandomUser(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
+       // let prefs: UserDefaults = UserDefaults.standard
+        let route = baseURL
 
-    var running = false
-
-    func getRandomUser(onCompletion: (JSON, NSError?) -> Void) {
-        
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        let sessionId:NSString = prefs.valueForKey("JSESSIONID") as! NSString
-        
-        let route = baseURL+(sessionId as String)
-       // let route = baseURL
-        
-        makeHTTPGetRequest(route, onCompletion: { json, err in
-            onCompletion(json as JSON, err)
-        })
+            makeHTTPGetRequest(route, onCompletion: { json, err in
+                onCompletion(json as JSON, err)
+            })
     }
-    
-    func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-        
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let xtoken = prefs.valueForKey("X-Token")
 
-        let request = NSMutableURLRequest.requestWithURL(NSURL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 20)
-
-        let session = NSURLSession.sharedCustomSession
+    func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
+        let prefs: UserDefaults = UserDefaults.standard
+        let xtoken = prefs.value(forKey: "X-Token")
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
-            
+        let request = URLRequest.requestWithURL(URL(string: path)!, method: "GET", queryParameters: nil, bodyParameters: nil, headers: ["Ciphertext": xtoken as? String ?? "none"], cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 20, isCacheable: nil, contentType: "", bodyToPost: nil)
+
+        let session = URLSession.sharedCustomSession
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+
             var error = sessionError
 
-            if let httpResponse = response as? NSHTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 
-                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
-                    
-                    let description = "HTTP response was \(httpResponse.statusCode)"
-                    
-                    error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
-                    
+                if httpResponse.statusCode == 200 {
+                    let json: JSON = try! JSON(data: data!)
+                    onCompletion(json, error as NSError?)
                 }
-            }
-            
-            if error != nil {
                 
-                let alertView:UIAlertView = UIAlertView()
-                
-                if let httpResponse = response as? NSHTTPURLResponse {
-                    
-                    if httpResponse.statusCode == 300 {
-                        
-                        let jsonData:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:
+                if httpResponse.statusCode < 200 || httpResponse.statusCode > 300 {
+                    let description = "HTTP response was \(httpResponse.statusCode)"
+
+                    error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
+                    var errorMsg: String = ""
+                    if let json: JSON = try? JSON(data: data!) {
+                        if let message_ = json["Error Details"].object as? NSDictionary {
+                            errorMsg =  message_.value(forKey: "Error Message:") as! String
                             
-                            NSJSONReadingOptions.MutableContainers ) as! NSDictionary
-                        
-                        let message:NSString = jsonData.valueForKey("Activation") as! NSString
-                        
+                        }
+                        errorMsg = ", " + errorMsg
+                    }
+                    self.alertViewPresentingVC = UIAlertController()
+                    self.alertViewPresentingVC!.presentAlert(withTitle: "Error", message: error!.localizedDescription + errorMsg)
+                    NSLog(error!.localizedDescription)
+                }
+   
+                    if httpResponse.statusCode == 300 {
+                        let alertView: UIAlertView = UIAlertView()
+
+                        let jsonData: NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
+
+                            JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+
+                        let messageArray = jsonData.value(forKey: "Error Details") as? NSArray
+                        let message_ = messageArray![0]
+                        let messageObj = (message_ as AnyObject).value(forKey: "Error Details")
+                        let message = (messageObj as AnyObject).value(forKey: "Activation")
+
                         alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
-                        alertView.message = "Voucher is active: \(message)"
+                        alertView.message = "Voucher is active: \(message as! NSString)"
                         alertView.delegate = self
-                        alertView.addButtonWithTitle("Okay")
-                        alertView.addButtonWithTitle("Cancel")
+                        alertView.addButton(withTitle: "Okay")
+                        alertView.addButton(withTitle: "Cancel")
                         alertView.cancelButtonIndex = 1
                         alertView.show()
+
+                        let json: JSON = try! JSON(data: data!)
+                        onCompletion(json, error as NSError?)
+                    }
+                   
+                if error != nil {
                         
-                        
-                    } else {
-                        
-                        let alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Connection Failure!"
-                        alertView.message = error!.localizedDescription
-                        alertView.delegate = self
-                        alertView.addButtonWithTitle("OK")
-                        alertView.show()
-                        NSLog("Got an HTTP \(httpResponse.statusCode)")
-                        
+                    let alertView: UIAlertView = UIAlertView()
+                    if httpResponse.statusCode == 503 {
+                        if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
+                            UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: result)
+                        }
+                    }
+
+                    if httpResponse.statusCode == 502 {
+                        let json: JSON = try! JSON(data: data!)
+                        let prefs: UserDefaults = UserDefaults.standard
+                        prefs.set(0, forKey: "ISLOGGEDIN")
+                        print(json)
+                        onCompletion(json, error as NSError?)
+                    }
+
+                    if httpResponse.statusCode == 500 {
+                        // assumes the Exception handler servlet is on
+                    //let json: JSON = try! JSON(data: data!)
+                        UIAlertController.popUp(title: "Error: \(httpResponse.statusCode)", message: "Server erro 500. See the logs for more details")
                     }
                 }
-                
-                
+
             } else {
-            
-            let json:JSON = JSON(data: data!)
-                onCompletion(json, error)
+                do {
+                    let json: JSON = try JSON(data: data!)
+                        onCompletion(json, error as NSError?)
+                    } catch {
+                        UIAlertController.popUp(title: "Error: ", message: "no response")
+                    }
+                
             }
         })
-        running = true
         task.resume()
     }
-    
-    //MARK: Perform a POST Request
-    func makeHTTPPostRequest(path: String, body: [String: AnyObject], onCompletion: ServiceResponse) {
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-        
-        // Set the method to POST
-        request.HTTPMethod = "POST"
-
-        let body = body as? NSData
-        
-        // Set the POST body for the request
-        request.HTTPBody = (try! NSJSONSerialization.JSONObjectWithData(body!, options:NSJSONReadingOptions.MutableContainers)) as? NSData
-        
-        //NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &err)
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json:JSON = JSON(data: data!)
-            let err = error
-
-            onCompletion(json, err)
-        })
-        task.resume()
-    }
-    
 }

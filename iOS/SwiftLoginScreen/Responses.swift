@@ -3,7 +3,6 @@
 //  SwiftLoginScreen
 //
 //  Created by Gaspar Gyorgy on 18/11/15.
-//  Copyright © 2015 Dipin Krishna. All rights reserved.
 //
 
 import Foundation
@@ -12,29 +11,28 @@ import Foundation
 /// so it'll be easy for you to add any helpers/fields as you need it.
 
 struct Responses {
-   
     // Actual fields.
-    let data: NSData!
-    let response: NSURLResponse!
+    let data: Data!
+    let response: URLResponse!
     var error: NSError?
-    
+
     // Helpers.
-    var HTTPResponse: NSHTTPURLResponse! {
-        return response as? NSHTTPURLResponse
+    var HTTPResponse: HTTPURLResponse! {
+        return response as? HTTPURLResponse
     }
-    
+
     var responseJSON: AnyObject? {
         if let data = data {
-            return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+            return try! JSONSerialization.jsonObject(with: data, options: []) as AnyObject?
         } else {
             return nil
         }
     }
-    
+
     var responseString: String? {
         if let data = data,
-            string = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                return String(string)
+            let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+            return String(string)
         } else {
             return nil
         }

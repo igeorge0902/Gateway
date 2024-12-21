@@ -7,223 +7,448 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Realm
-
+import SwiftyJSON
+// import Kanna
 
 let serverURL = "https://milo.crabdance.com"
-class GeneralRequestManager: NSObject {
-    
-    private var urlResponse:NSURLResponse?
+enum contentType_: String {
+    case json = "application/json"
+    case urlEncoded = "application/x-www-form-urlencoded"
+    case image = "image/jpeg"
+}
 
-    var url: NSURL!
+protocol AlertProtocol {
+    var alertPresentingVC: UIViewController? { get set }
+}
+
+protocol AlertViewProtocol {
+    var alertViewPresentingVC: UIViewController? { get set }
+}
+
+class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
+    var alertPresentingVC: UIViewController?
+    var alertViewPresentingVC: UIViewController?
+
+    fileprivate var urlResponse: URLResponse?
+
+    var url: URL!
     var errors: String!
     var method: String!
-    var queryParameters: [String:String]?
-    var bodyParameters: [String:String]?
+    var queryParameters: [String: String]?
+    var headers: [String: String]?
+    var bodyParameters: [String: String]?
     var isCacheable: String?
+    var contentType: String!
+    var bodyToPost: Data?
 
-    var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    
-    init?(url: String, errors: String, method: String, queryParameters: [String:String]?, bodyParameters: [String:String]?, isCacheable: String?) {
+    var prefs: UserDefaults = UserDefaults.standard
+
+    init?(url: String, errors: String, method: String, headers: [String: String]?, queryParameters: [String: String]?, bodyParameters: [String: String]?, isCacheable: String?, contentType: String, bodyToPost: Data?) {
         super.init()
-        self.url = NSURL(string: url)!
+        self.url = URL(string: url)!
         self.errors = errors
         self.method = method
+        self.headers = headers
         self.queryParameters = queryParameters
         self.bodyParameters = bodyParameters
         self.isCacheable = isCacheable
-        if url.isEmpty { }
-        if errors.isEmpty { }
-        
+        self.contentType = contentType
+        self.bodyToPost = bodyToPost
+        if url.isEmpty {}
+        if errors.isEmpty {}
     }
-    
+
     deinit {
-        
-        NSLog("\(url) is being deinitialized")
-        NSLog("\(errors) is being deinitialized")
+        NSLog("\(url!) is being deinitialized")
+        NSLog("\(errors!) is being deinitialized")
         NSLog(#function, "\(self)")
-        
     }
 
-    
-    lazy var session: NSURLSession = NSURLSession.sharedCustomSession
-    
-    var running = false
-    
-    func getResponse(onCompletion: (JSON, NSError?) -> Void) {
-        
-        if self.isCacheable == "1" {
-        
-        if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
-            
-            var headerFields:[String : String] = [:]
-            
-            headerFields["Content-Length"] = String(format:"%d", data.length)
-            
-            if let mimeType = localResponse.mimeType {
-                headerFields["Content-Type"] = mimeType as String
+    lazy var session: URLSession = URLSession.sharedCustomSession
+
+    func getData_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+        if isCacheable == "1" {
+            if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+                if localResponse.timestamp.addingTimeInterval(3600) > Date() {
+                    var headerFields: [String: String] = [:]
+
+                    headerFields["Content-Length"] = String(format: "%d", data.count)
+
+                    if let mimeType = localResponse.mimeType {
+                        headerFields["Content-Type"] = mimeType as String
+                    }
+
+                    headerFields["Content-Encoding"] = localResponse.encoding!
+                    let err: NSError = NSError()
+
+                   // let json: JSON = try! JSON(data: data)
+
+                    onCompletion(data as Data, err)
+
+                } else {
+                    dataTask_ { data, err in
+
+                        onCompletion(data as Data, err)
+                    }
+                    self.saveCachedResponse(data)
+                }
+
+            } else {
+                dataTask_ { data, err in
+
+                    self.saveCachedResponse(data)
+                    onCompletion(data as Data, err)
+                }
+                
             }
-            
-            headerFields["Content-Encoding"] = localResponse.encoding!
-            
 
         } else {
-            
-            dataTask ({ json, err in
-                
-                onCompletion(json as JSON, err)
-                
-                    })
+            dataTask_ { data, err in
+
+                onCompletion(data as Data, err)
             }
-            
-            
+        }
+        /*
+        dataTask_ { data, err in
+
+            onCompletion(data as Data, err)
+        }
+        */
+    }
+
+    func getData(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
+        if isCacheable == "1" {
+            if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+                if localResponse.timestamp.addingTimeInterval(3600) > Date() {
+                    var headerFields: [String: String] = [:]
+
+                    headerFields["Content-Length"] = String(format: "%d", data.count)
+
+                    if let mimeType = localResponse.mimeType {
+                        headerFields["Content-Type"] = mimeType as String
+                    }
+
+                    headerFields["Content-Encoding"] = localResponse.encoding!
+                    let err: NSError = NSError()
+
+                    let json: JSON = try! JSON(data: data)
+
+                    onCompletion(json as JSON, err)
+
+                } else {
+                    dataTask { json, err in
+
+                        onCompletion(json as JSON, err)
+                    }
+
+                    let realm = RLMRealm.default()
+                    realm.beginWriteTransaction()
+                    realm.delete(localResponse)
+
+                    do {
+                        try realm.commitWriteTransaction()
+                    } catch {
+                        print("Something went wrong!")
+                    }
+                }
+
+            } else {
+                dataTask { json, err in
+
+                    onCompletion(json as JSON, err)
+                }
+            }
+
         } else {
-        
-        dataTask ({ json, err in
-            
-            onCompletion(json as JSON, err)
-            
-            })
+            dataTask { json, err in
+
+                onCompletion(json as JSON, err)
+            }
         }
     }
-    
+
+    func getResponse(_ onCompletion: @escaping (JSON, NSError?) -> Void) {
+        if isCacheable == "1" {
+            if let localResponse = cachedResponseForCurrentRequest(), let data = localResponse.data {
+                if localResponse.timestamp.addingTimeInterval(3600) > Date() {
+                    var headerFields: [String: String] = [:]
+
+                    headerFields["Content-Length"] = String(format: "%d", data.count)
+
+                    if let mimeType = localResponse.mimeType {
+                        headerFields["Content-Type"] = mimeType as String
+                    }
+
+                    headerFields["Content-Encoding"] = localResponse.encoding!
+                    let err: NSError = NSError()
+
+                    let json: JSON = try! JSON(data: data)
+                    
+                    DispatchQueue.main.async {
+                    onCompletion(json as JSON, err)
+                    }
+                    
+                } else {
+                    dataTask { json, err in
+                       
+                        DispatchQueue.main.async {
+                        onCompletion(json as JSON, err)
+                        }
+                    }
+
+                    let realm = RLMRealm.default()
+                    realm.beginWriteTransaction()
+                    realm.delete(localResponse)
+
+                    do {
+                        try realm.commitWriteTransaction()
+                    } catch {
+                        print("Something went wrong!")
+                    }
+                }
+
+            } else {
+                dataTask { json, err in
+
+                    onCompletion(json as JSON, err)
+                }
+            }
+
+        } else {
+            dataTask { json, err in
+
+                onCompletion(json as JSON, err)
+            }
+        }
+    }
+
+    // for testing
+    func dataTask_(_ onCompletion: @escaping (Data, NSError?) -> Void) {
+        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: headers, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30, isCacheable: isCacheable, contentType: contentType, bodyToPost: bodyToPost)
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
+
+            // let json: JSON = try! JSON(data: data!)
+            onCompletion(data!, sessionError as NSError?)
+
+        })
+        task.resume()
+    }
+
     // INFO: use this class for every dataTask operation
-    func dataTask(onCompletion: ServiceResponses) {
-        
-        // TODO: temp solution
-        var xtoken = prefs.valueForKey("X-Token")
+    func dataTask(_ onCompletion: @escaping ServiceResponses) {
+        // TODO: temp solution; refactor webservice header auth to block unauth access
+        var xtoken = prefs.value(forKey: "X-Token")
         if xtoken == nil {
-            
             xtoken = ""
         }
+        if url.absoluteString.contains(serverURL) {
+            headers = ["Ciphertext": xtoken as! String, "X-Token": "client-secret", "X-Device": deviceId as String]
+        }
 
-        
-        let request = NSMutableURLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters, headers: ["Ciphertext": xtoken as! String], cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 30)
-                
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, sessionError -> Void in
+        let request = URLRequest.requestWithURL(url, method: method, queryParameters: queryParameters, bodyParameters: bodyParameters as NSDictionary?, headers: headers, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30, isCacheable: "", contentType: contentType, bodyToPost: bodyToPost)
 
-           // dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            
-            //  if  let json:JSON = try! JSON(data: data!) {
+        let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
             var error = sessionError
-            
-            if let httpResponse = response as? NSHTTPURLResponse {
-                
+
+            if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
-                    
                     let description = "HTTP response was \(httpResponse.statusCode)"
-                    
+
                     error = NSError(domain: "Custom", code: 0, userInfo: [NSLocalizedDescriptionKey: description])
-                    NSLog(error!.description)
                     
+                  //  self.alertViewPresentingVC = UIViewController()
+                  //  self.alertViewPresentingVC!.presenAlertView(withTitle: "Error:", message: error!.localizedDescription)
+
+                    self.alertPresentingVC = UIViewController()
+                    self.alertPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
+                    NSLog(error!.localizedDescription)
                 }
             }
-            
+
             if error != nil {
-                
-                let alertView:UIAlertView = UIAlertView()
-                
-                alertView.title = self.errors
-                alertView.message = "Connection Failure: \(error!.localizedDescription)"
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
-                
-                
+                if data == nil {
+
+                    if let httpResponse = response as? HTTPURLResponse {
+                        if httpResponse.statusCode == 300 {
+                            let jsonData: NSDictionary = try! JSONSerialization.jsonObject(with: data!, options:
+
+                                JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+
+                            guard let message_ = jsonData.value(forKey: "Error Details"),
+                                let message = (message_ as AnyObject).value(forKey: "Activation") else { return }
+                            
+                            let alertView: UIAlertView = UIAlertView()
+                            alertView.title = "Activation is required! To send the activation email tap on the Okay button!"
+                            alertView.message = "Voucher is active: \(message)"
+                            alertView.delegate = self
+                            alertView.addButton(withTitle: "Okay")
+                            alertView.addButton(withTitle: "Cancel")
+                            alertView.cancelButtonIndex = 1
+                            alertView.show()
+
+                            let json: JSON = try! JSON(data: data!)
+                            onCompletion(json, error as NSError?)
+                        } else {
+                            self.alertViewPresentingVC = UIViewController()
+                            self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
+                        }
+                    } else {
+                        UIAlertController.popUp(title: "Error:", message: error!.localizedDescription)
+                    }
+                        
+                } else {
+                    if let httpResponse = response as? HTTPURLResponse {
+                        if httpResponse.statusCode == 503 {
+                            if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
+                                
+                                self.alertViewPresentingVC = UIViewController()
+                                self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: result)
+                                // if let doc = Kanna.HTML(html: result, encoding: String.Encoding.ascii) {
+                                //        UIAlertController.popUp(title: "Error:", message: doc.title!)
+                                //     }
+                            }
+
+                        }
+                        
+                        if httpResponse.statusCode == 404 {
+                            if let result = NSString(data: data!, encoding: String.Encoding.ascii.rawValue) as String? {
+                                
+                                self.alertViewPresentingVC = UIViewController()
+                                self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: "The endpoint is not reachable")
+                            }
+                        }
+                        
+                    } else {
+                        self.alertViewPresentingVC = UIViewController()
+                        self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
+                    }
+                }
+
+            } else {
+                // let json: AnyObject! = try?NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                if let httpResponse = response as? HTTPURLResponse {
+                    NSLog("got a " + String(httpResponse.statusCode) + " response code")
+                    if let json: JSON = try? JSON(data: data!) {
+                        if self.isCacheable == "1" {
+                            self.saveCachedResponse(data!)
+                        }
+
+                        if json["Email was sent to:"].string != nil {
+                            UIAlertController.popUp(title: "Hello!", message: json.rawString()!)
+
+                        } else {
+                            NSLog("Hey, You, what's that sound?")
+                        }
+
+                        onCompletion(json, error as NSError?)
+                    }
+                }
             }
-            else {
-                
-               // let json: AnyObject! = try?NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                
-                if self.isCacheable == "1" {
-                    
-                    self.saveCachedResponse(data!)
-                }
-                
-                let json:JSON = JSON(data: data!)
-                
-                //self.saveCachedResponse(data!)
-                
-                NSLog("got a 200")
-                
-                self.running = false
-                onCompletion(json, error)
-                
-                }
-            
-           // })
-            //  }
         })
-        
-        running = true
+
         task.resume()
-        
-        
     }
-    
+
+    func alertView(_: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        switch buttonIndex {
+        case 0:
+
+            let prefs: UserDefaults = UserDefaults.standard
+            let user = prefs.value(forKey: "USERNAME")
+
+            var errorOnLogin: GeneralRequestManager?
+            errorOnLogin = GeneralRequestManager(url: serverURL + "/login/activation", errors: "", method: "POST", headers: nil, queryParameters: nil, bodyParameters: ["deviceId": deviceId as String, "user": user as! String], isCacheable: nil, contentType: "", bodyToPost: nil)
+
+            errorOnLogin?.getResponse {
+                (resultString, error) -> Void in
+
+                print(resultString)
+                print(error as Any)
+            }
+
+        default: break
+        }
+    }
     /**
      Save the current response in local storage for use when offline.
      */
-    private func saveCachedResponse(data: NSData) {
-        
-        let realm = RLMRealm.defaultRealm()
+    fileprivate func saveCachedResponse(_ data: Data) {
+        let realm = RLMRealm.default()
         realm.beginWriteTransaction()
-        
+
         var cachedResponse = cachedResponseForCurrentRequest()
-        
+
         if cachedResponse == nil {
             cachedResponse = CachedResponse()
         }
-        
-        if let data_:NSData = data {
-            cachedResponse!.data = data_
-        }
-        
-        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
-            cachedResponse!.url = absoluteString
-        }
-        
-        cachedResponse!.timestamp = NSDate()
-        if let response = self.urlResponse {
-            
-            if let mimeType = response.MIMEType {
-                cachedResponse!.mimeType = mimeType
+
+        cachedResponse!.data = data
+
+        if let url: URL? = url, let absoluteString = url?.absoluteString, let query = queryParameters?.keys.contains("setFirstResult") {
+            let queries = queryParameters?.keys.count
+            if (queries == 1) {
+                cachedResponse!.query = queryParameters?.filter{$0.key == "setFirstResult"}.values.first
+                cachedResponse!.url = absoluteString
             }
-            
+        }
+        
+        if let url: URL? = url, let absoluteString = url?.absoluteString {
+            if (absoluteString.contains("images")) {
+                cachedResponse!.url = absoluteString
+            }
+        }
+
+
+        cachedResponse!.timestamp = Date()
+        if let response = self.urlResponse {
+            if let mimeType = response.mimeType {
+                cachedResponse!.mimeType = mimeType as NSString?
+            }
+
             if let encoding = response.textEncodingName {
                 cachedResponse!.encoding = encoding
             }
         }
-        
-        realm.addObject(cachedResponse!)
-        
+
+        realm.add(cachedResponse!)
+
         do {
             try realm.commitWriteTransaction()
         } catch {
             print("Something went wrong!")
         }
-        
     }
-    
+
     /**
      Gets a cached response from local storage if there is any.
-     
+
      :returns: A CachedResponse optional object.
      */
-    private func cachedResponseForCurrentRequest() -> CachedResponse? {
-        if let url:NSURL? = url, let absoluteString = url?.absoluteString {
-            let p:NSPredicate = NSPredicate(format: "url == %@", argumentArray: [ absoluteString ])
-            
+    func cachedResponseForCurrentRequest() -> CachedResponse? {
+        if let url: URL? = url, let absoluteString = url?.absoluteString, let query = queryParameters?.keys.contains("setFirstResult") {
+            let queries = queryParameters?.keys.count
+            if (queries == 1) {
+                let queryValue = queryParameters?.values.first
+                let p: NSPredicate = NSPredicate(format: "query == %@", argumentArray: [queryValue!])
+
+                // Query
+                let results = CachedResponse.objects(with: p)
+                if results.count > 0 {
+                    return results.object(at: 0) as? CachedResponse
+                }
+            }
+        } else if let url: URL? = url, let absoluteString = url?.absoluteString {
+            let p: NSPredicate = NSPredicate(format: "url == %@", argumentArray: [absoluteString])
+
             // Query
-            let results = CachedResponse.objectsWithPredicate(p)
-            
+            let results = CachedResponse.objects(with: p)
             if results.count > 0 {
-                return results.objectAtIndex(0) as? CachedResponse
+                return results.object(at: 0) as? CachedResponse
             }
         }
-        
+
         return nil
     }
-    
 }

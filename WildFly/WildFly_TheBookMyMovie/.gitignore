@@ -1,0 +1,11 @@
+.settings
+.project
+.idea
+.classpath
+target/**
+com.jeet.api.Location/**
+com.jeet.api.Movie/**
+log
+target
+Movie
+Location
