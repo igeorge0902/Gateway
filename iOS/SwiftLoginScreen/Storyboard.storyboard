@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qyG-Pz-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qyG-Pz-KlK">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -896,7 +896,7 @@
         <!--VenuesVC-->
         <scene sceneID="zkt-Ie-s7i">
             <objects>
-                <viewController storyboardIdentifier="VenuesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ia-cv-R5R" customClass="VenuesVC" customModule="SwiftLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VenuesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ia-cv-R5R" customClass="VenuesVC" customModule="SwiftLoginScreen" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qIe-qI-BZ5"/>
                         <viewControllerLayoutGuide type="bottom" id="cM7-hd-YJe"/>
@@ -1052,10 +1052,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LKr-QZ-LCg"/>
-        <segue reference="n3a-ZX-8SF"/>
-        <segue reference="xiF-My-4cW"/>
-        <segue reference="7ua-hE-UVo"/>
+        <segue reference="g9H-cd-8a0"/>
+        <segue reference="UTu-1k-n07"/>
+        <segue reference="NgI-Mj-edO"/>
+        <segue reference="MVo-F5-4Ad"/>
         <segue reference="oeI-Ys-Fb5"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -58,7 +58,9 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
      
     
     var refreshControl: UIRefreshControl!
-    var tableView: UITableView?
+    var tableView: UITableView!
+    var detailsView: UIView!  // View for displaying venue details
+    var detailsLabel: UILabel!
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "goto_venues_details" {
@@ -92,24 +94,15 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView?.delegate = self
-        tableView?.dataSource = self
-
-        refreshControl = UIRefreshControl()
-        tableView?.addSubview(refreshControl)
+        
+        setupTableView()
+        setupDetailsView()
 
         NotificationCenter.default.addObserver(self, selector: #selector(navigateBack), name: NSNotification.Name(rawValue: "navigateBack"), object: nil)
         
     }
 
     override func viewWillAppear(_: Bool) {
-        let frame: CGRect = CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.height - 100)
-        tableView = UITableView(frame: frame)
-        tableView?.dataSource = self
-        tableView?.delegate = self
-
-        view.addSubview(tableView!)
 
         let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
         btnNav.backgroundColor = UIColor.black
@@ -127,11 +120,41 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             addData()
         }
     }
+    
+    private func setupTableView() {
+        let tableHeight = view.frame.height / 2  // Upper half of the screen
+        tableView = UITableView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: tableHeight))
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        refreshControl = UIRefreshControl()
+        tableView?.addSubview(refreshControl)
+        view.addSubview(tableView)
+    }
+    
+    private func setupDetailsView() {
+        let detailsFrame = CGRect(x: 0, y: view.frame.height / 2, width: view.frame.width, height: view.frame.height / 2)
+        detailsView = UIView(frame: detailsFrame)
+        detailsView.backgroundColor = UIColor.lightGray
+
+        // Add a label inside detailsView to show selected venue details
+        detailsLabel = UILabel(frame: CGRect(x: 20, y: 20, width: detailsView.frame.width - 40, height: 100))
+        detailsLabel.numberOfLines = 0
+        detailsLabel.textAlignment = .center
+        detailsLabel.font = UIFont.systemFont(ofSize: 16)
+        detailsLabel.text = "Select a venue to see details here."
+
+        detailsView.addSubview(detailsLabel)
+        view.addSubview(detailsView)
+    }
 
     @objc func navigateBack() {
         dismiss(animated: false, completion: nil)
     }
     
+    @objc func navigateToVenue(button: UIButton, event _: UIEvent) {
+        performSegue(withIdentifier: "goto_venues_details", sender: self)
+    }
     
     func addData() {
         let myString = String(movieId)
@@ -242,6 +265,7 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 let mutableAttributedString = NSMutableAttributedString.init(string: s as String)
                 mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
                 cell!.textLabel?.attributedText = mutableAttributedString
+                cell!.detailTextLabel?.text = data_?.address
 
             } else {
             
@@ -249,10 +273,18 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 let detailText = NSMutableAttributedString(string: (data_?.title!)!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
             cell!.textLabel?.attributedText = detailText
+         //   cell!.detailTextLabel?.text = data_?.address
                 
             }
 
         } else {
+            let btn = UIButton(type: UIButton.ButtonType.custom) as UIButton
+            btn.frame = CGRect(x: view.frame.width * 0.9, y: 15, width: 20, height: 30)
+            btn.addTarget(self, action: #selector(VenuesVC.navigateToVenue), for: .touchUpInside)
+            btn.tag = indexPath.row
+            btn.setImage(UIImage(named: "window-7.png"), for: .normal)
+            cell?.contentView.addSubview(btn)
+            
            // TableData.sort { ($0.title ?? "") < ($1.title ?? "")}
             let data = TableData[indexPath.row]
             
@@ -260,20 +292,22 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let detailText = NSMutableAttributedString(string: data.name!, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
 
             cell!.textLabel?.attributedText = detailText
+           // cell!.detailTextLabel?.text = data.address!
     
             let urlString = serverURL + "/simple-service-webapp/webapi" + (data.venues_picture!)
                 
-            var image:UIImage?
                 var loadPictures: GeneralRequestManager?
                 loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
                 
                 loadPictures?.getData_ {
-                (data: Data, _: NSError?) in
-                image = UIImage(data: data)
-
-                }
-            cell!.imageView?.image = image
-            cell!.imageView?.image = image
+                    (data: Data, _: NSError?) in
+                    let image = UIImage(data: data)
+                    cell!.imageView?.image = image
+                    if let updatedCell = tableView.cellForRow(at: indexPath) {
+                            updatedCell.imageView?.image = image
+                            updatedCell.setNeedsLayout() // Force the cell to update
+                        }
+                    }
         }
 
         return cell!
@@ -316,7 +350,19 @@ class VenuesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             dismiss(animated: true, completion: nil)
         }
         else {
-            performSegue(withIdentifier: "goto_venues_details", sender: self)
+            let data = TableData[indexPath.row]
+            // Update detailsView with the selected venue information
+              detailsLabel.text = "📍 Venue: \(data.name ?? "Unknown")\n🏠 Address: \(data.address ?? "N/A")"
+
+              // Animate background color change to highlight selection
+              UIView.animate(withDuration: 0.3) {
+                  self.detailsView.backgroundColor = UIColor.white
+              } completion: { _ in
+                  UIView.animate(withDuration: 0.3) {
+                      self.detailsView.backgroundColor = UIColor.lightGray
+                  }
+              }
+           // performSegue(withIdentifier: "goto_venues_details", sender: self)
             }
         }
     }

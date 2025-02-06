@@ -44,13 +44,13 @@ public class Ticket implements Serializable {
    
     @OneToOne(fetch=FetchType.EAGER)
     protected Screen screen;
-    @OneToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.EAGER)
     protected Seats seats;
 	
     @Transient
     protected String movie_name;
     
-    @ManyToOne (cascade={CascadeType.PERSIST, CascadeType.REFRESH}, fetch=FetchType.EAGER)
+    @ManyToOne (cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
     @JoinColumn(name="purchase_purchaseId")
     protected Purchase purchase;
 

@@ -40,7 +40,7 @@ class MoviesData: NSObject {
                 for i in 0 ..< list.count {
                     if let dataBlock = list[i] as? NSDictionary {
 
-                        Data.imageFromUrl(urlString: serverURL + "/simple-service-webapp/webapi/myresource" + MoviesData(add: dataBlock).large_picture!)
+                        Data.imageFromUrl(urlString: serverURL + "/simple-service-webapp/webapi" + MoviesData(add: dataBlock).large_picture!)
 
                     }
                 }

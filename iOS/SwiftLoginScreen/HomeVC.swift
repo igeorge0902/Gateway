@@ -9,7 +9,6 @@ import CoreData
 import SwiftyJSON
 import UIKit
 import WebKit
-// import Starscream
 
 @available(iOS 9.0, *)
 class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , WebSocketDelegate */
@@ -25,28 +24,11 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
 
     var running = false
     var beenViewed = false
-    
-    // var socket: WebSocket!
-    // var stream: Stream = Stream()
-
-    // Retreive the managedObjectContext from AppDelegate
-    //let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
-        // COREDATA:
-     //   let newItem = NSEntityDescription.insertNewObject(forEntityName: "LogItem", into: managedObjectContext) as! LogItem
-
-     //   newItem.title = "Wrote Core Data Tutorial"
-     //   newItem.itemText = "Wrote and post a tutorial on the basics of Core Data to blog."
-
-
-       // let view: UIView = UIView(frame: CGRect(x: -15, y: 0, width: self.view.frame.size.width /* * 0.7*/, height: self.view.frame.size.height))
-       // self.view.addSubview(view)
-       // self.view.sendSubviewToBack(view)
         
         backgroundDict = ["Background1": "background1"]
         let backgroundImage: UIImage? = UIImage(named: backgroundDict["Background1"]!)
@@ -54,49 +36,14 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
         imageView = UIImageView(frame: view.bounds)
         imageView.image = backgroundImage
         view.addSubview(imageView);
-
-        /*
-         let delegate = UIApplication.shared.delegate as! AppDelegate
-         let context = delegate.managedObjectContext
-         let cachedResponse = NSEntityDescription.insertNewObject(forEntityName: "CachedURLResponse", into: context) as NSManagedObject
-         context.refresh(cachedResponse, mergeChanges: false)
-         */
-
         MoviesData.addData()
 
-        // socket = WebSocket(url: URL(string: "wss://milo.crabdance.com:8444/login/jsr356toUpper")!)
-        // socket.delegate = self
-        // socket.connect()
     }
 
     override func viewDidAppear(_: Bool) {
         super.viewDidAppear(true)
 
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
-        // Create a new fetch request using the LogItem entity
-        //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LogItem")
-
-        // Execute the fetch request, and cast the results to an array of LogItem objects
-        //if let fetchResults = (try? managedObjectContext.fetch(fetchRequest)) as? [LogItem] {
-            /*
-                 // Create an Alert, and set it's message to whatever the itemText is
-                 let alert = UIAlertController(title: fetchResults[0].title,
-                     message: fetchResults[0].itemText,
-                     preferredStyle: .Alert)
-
-                 //Create and add the Cancel action
-                 let okayAction: UIAlertAction = UIAlertAction(title: "Okay", style: .Cancel) { action -> Void in
-                     //Do some stuff
-                 }
-
-                 alert.addAction(okayAction)
-
-                 // Display the alert
-                 self.presentViewController(alert,
-                     animated: true,
-                     completion: nil)
-             }*/
 
             let prefs: UserDefaults = UserDefaults.standard
             let isLoggedIn: Int = prefs.integer(forKey: "ISLOGGEDIN") as Int
@@ -106,13 +53,7 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
                 performSegue(withIdentifier: "goto_login", sender: self)
 
             } else {
-                /*
-                 if (socket.isConnected) {
-
-                     socket.write(string: "hello!", completion: {
-                         print("hello!")
-                         })
-                     }*/
+    
             }
     }
 
@@ -202,8 +143,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
 
             pvc.modalPresentationStyle = UIModalPresentationStyle.custom
             pvc.transitioningDelegate = self
-            // pvc.view.backgroundColor = UIColor.groupTableViewBackgroundColor()
-
             present(pvc, animated: true, completion: nil)
         }
     }
@@ -243,7 +182,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
         let goToLogin: UIAlertAction = UIAlertAction(title: "Go to Login Screen", style: .default) { _ -> Void in
             let prefs: UserDefaults = UserDefaults.standard
             prefs.set(0, forKey: "ISLOGGEDIN")
-          //  prefs.synchronize()
             self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "goto_login", sender: self)
         }
@@ -267,29 +205,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate { /* , Web
     @IBAction func Movies(_: UIButton) {
         performSegue(withIdentifier: "goto_movies", sender: self)
     }
-
-    
-    /*
-     func websocketDidConnect(socket: WebSocket) {
-         print("websocket is connected")
-     }
-
-     func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-         print("websocket is disconnected: \(error?.localizedDescription)")
-     }
-
-     func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-         print("got some text: \(text)")
-     }
-
-     func websocketDidReceiveData(socket: WebSocket, data: Data) {
-         print("got some data: \(data.count)")
-         let str: NSString? = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-         print(str as Any)
-        // socket.stream(stream, handle: Stream.Event.hasBytesAvailable)
-
-     }
-     */
 
     // Helper function inserted by Swift 4.2 migrator.
     fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {

@@ -20,6 +20,7 @@
         <property name="hibernate.search.backend.type">lucene</property>
         <property name="hibernate.search.backend.directory.type">local-filesystem</property>
         <property name="hibernate.search.backend.directory.root">/Users/georgegaspar/Git/workspace/WildFly_TheBookMyMovie/</property>
+        <property name="hibernate.search.backend.lucene.index_defaults.locking.strategy">simple</property>
         <property name="hibernate.search.mapping.build_missing_discovered_jandex_indexes">false</property>
         <property name="hibernate.search.backend.directory.filesystem_access.strategy">auto</property>
         <property name="hibernate.c3p0.min_size">5</property>

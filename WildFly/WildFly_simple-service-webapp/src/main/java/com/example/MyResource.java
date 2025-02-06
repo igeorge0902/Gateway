@@ -126,6 +126,32 @@ public class MyResource extends Application {
        String mt = new MimetypesFileTypeMap().getContentType(f);
        return Response.ok(new ByteArrayInputStream(imageData), mt).build();
     }
+
+    @GET
+    @Path("/images/profiles/{image}")
+    @Produces("image/*")
+    public Response getProfilesImages(
+            @Context HttpHeaders header,
+            @Context HttpServletResponse response,
+            @PathParam("image") String image) throws IOException {
+
+        response.setContentType("images/jpg");
+        File f = new File("/Users/georgegaspar/Pictures/profiles/" + image);
+        byte[] bytes = new byte[(int) f.length()];
+
+        if (f.exists() == false)
+            throw new CustomNotFoundException("Image not found");
+
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f));
+        BufferedImage images = ImageIO.read(bis);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(bytes.length);
+        ImageIO.write(images, "jpg", baos);
+
+        byte[] imageData = baos.toByteArray();
+
+        String mt = new MimetypesFileTypeMap().getContentType(f);
+        return Response.ok(new ByteArrayInputStream(imageData), mt).build();
+    }
     
     //TODO: add pagination
     @SuppressWarnings("unchecked")

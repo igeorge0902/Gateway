@@ -187,7 +187,10 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 (data: Data, _: NSError?) in
                 let image = UIImage(data: data)
                 cell!.imageView?.image = image
-                cell!.imageView?.image = image
+                if let updatedCell = tableView.cellForRow(at: indexPath) {
+                        updatedCell.imageView?.image = image
+                        updatedCell.setNeedsLayout() // Force the cell to update
+                    }
                 }
         
 
@@ -255,25 +258,35 @@ class PurchasesVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func addPurchasesData() {
         var errorOnLogin: GeneralRequestManager?
 
-        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases", errors: "", method: "GET", headers: nil, queryParameters: ["book" : "GetAllPurchases"], bodyParameters: nil, isCacheable: nil, contentType: contentType_.urlEncoded.rawValue, bodyToPost: nil)
+        errorOnLogin = GeneralRequestManager(url: serverURL + "/login/GetAllPurchases",
+                                             errors: "",
+                                             method: "GET",
+                                             headers: nil,
+                                             queryParameters: ["book" : "GetAllPurchases"],
+                                             bodyParameters: nil,
+                                             isCacheable: nil,
+                                             contentType: contentType_.urlEncoded.rawValue,
+                                             bodyToPost: nil)
 
-        errorOnLogin?.getResponse {
-            (json: JSON, error: NSError?) in
-
+        errorOnLogin?.getResponse { (json: JSON, error: NSError?) in
             if let list = json["purchases"].object as? NSArray {
-                for i in 0 ..< list.count {
-                    if let dataBlock = list[i] as? NSDictionary {
-                        TableData.append(PurchaseData(add: dataBlock))
+                DispatchQueue.main.async {
+                    TableData.removeAll() // ✅ Fix: Clear existing data before adding new ones
+                    
+                    for i in 0 ..< list.count {
+                        if let dataBlock = list[i] as? NSDictionary {
+                            TableData.append(PurchaseData(add: dataBlock))
+                        }
                     }
+                    self.tableView?.reloadData() // ✅ Fix: Reload on the main thread
                 }
             }
 
-            if((error) != nil) {
-                self.presentAlert(withTitle: "String", message: error!.localizedDescription)
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.presentAlert(withTitle: "Error", message: error.localizedDescription)
+                }
             }
-            DispatchQueue.main.async(execute: {
-                self.tableView?.reloadData()
-            })
         }
     }
 

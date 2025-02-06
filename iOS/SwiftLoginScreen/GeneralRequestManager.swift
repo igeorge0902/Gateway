@@ -83,13 +83,14 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                     let err: NSError = NSError()
 
                    // let json: JSON = try! JSON(data: data)
-
-                    onCompletion(data as Data, err)
-
+                    DispatchQueue.main.async {
+                        onCompletion(data as Data, err)
+                    }
                 } else {
                     dataTask_ { data, err in
-
-                        onCompletion(data as Data, err)
+                        DispatchQueue.main.async {
+                            onCompletion(data as Data, err)
+                        }
                     }
                     self.saveCachedResponse(data)
                 }
@@ -98,15 +99,18 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                 dataTask_ { data, err in
 
                     self.saveCachedResponse(data)
-                    onCompletion(data as Data, err)
+                    DispatchQueue.main.async {
+                        onCompletion(data as Data, err)
+                    }
                 }
                 
             }
 
         } else {
             dataTask_ { data, err in
-
-                onCompletion(data as Data, err)
+                DispatchQueue.main.async {
+                    onCompletion(data as Data, err)
+                }
             }
         }
         /*
@@ -133,13 +137,15 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                     let err: NSError = NSError()
 
                     let json: JSON = try! JSON(data: data)
-
-                    onCompletion(json as JSON, err)
+                    DispatchQueue.main.async {
+                        onCompletion(json as JSON, err)
+                    }
 
                 } else {
                     dataTask { json, err in
-
-                        onCompletion(json as JSON, err)
+                        DispatchQueue.main.async {
+                            onCompletion(json as JSON, err)
+                        }
                     }
 
                     let realm = RLMRealm.default()
@@ -155,15 +161,17 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
 
             } else {
                 dataTask { json, err in
-
-                    onCompletion(json as JSON, err)
+                    DispatchQueue.main.async {
+                        onCompletion(json as JSON, err)
+                    }
                 }
             }
 
         } else {
             dataTask { json, err in
-
-                onCompletion(json as JSON, err)
+                DispatchQueue.main.async {
+                    onCompletion(json as JSON, err)
+                }
             }
         }
     }
@@ -210,15 +218,17 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
 
             } else {
                 dataTask { json, err in
-
-                    onCompletion(json as JSON, err)
+                    DispatchQueue.main.async {
+                        onCompletion(json as JSON, err)
+                    }
                 }
             }
 
         } else {
             dataTask { json, err in
-
-                onCompletion(json as JSON, err)
+                DispatchQueue.main.async {
+                    onCompletion(json as JSON, err)
+                }
             }
         }
     }
@@ -230,8 +240,9 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
         let task = session.dataTask(with: request, completionHandler: { data, response, sessionError -> Void in
 
             // let json: JSON = try! JSON(data: data!)
-            onCompletion(data!, sessionError as NSError?)
-
+            DispatchQueue.main.async {
+                onCompletion(data!, sessionError as NSError?)
+            }
         })
         task.resume()
     }
@@ -289,7 +300,9 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                             alertView.show()
 
                             let json: JSON = try! JSON(data: data!)
-                            onCompletion(json, error as NSError?)
+                            DispatchQueue.main.async {
+                                onCompletion(json, error as NSError?)
+                            }
                         } else {
                             self.alertViewPresentingVC = UIViewController()
                             self.alertViewPresentingVC!.presentAlert(withTitle: "Error:", message: error!.localizedDescription)
@@ -341,8 +354,9 @@ class GeneralRequestManager: NSObject, AlertProtocol, AlertViewProtocol {
                         } else {
                             NSLog("Hey, You, what's that sound?")
                         }
-
-                        onCompletion(json, error as NSError?)
+                        DispatchQueue.main.async {
+                            onCompletion(json, error as NSError?)
+                        }
                     }
                 }
             }

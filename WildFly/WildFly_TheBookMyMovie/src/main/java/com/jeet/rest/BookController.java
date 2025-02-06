@@ -2,6 +2,9 @@ package com.jeet.rest;
 
 import com.braintreegateway.*;
 import com.jeet.api.*;
+import com.jeet.booking.PaymentService;
+import com.jeet.booking.PurchaseDAO;
+import com.jeet.booking.TicketService;
 import com.jeet.service.BookingHandlerImpl;
 import com.jeet.utils.AesUtil;
 import com.jeet.utils.CustomExceptions;
@@ -42,6 +45,15 @@ import java.util.stream.Collectors;
 @Path("")
 @RequestScoped
 public class BookController extends Application implements Serializable {
+
+	@Inject
+	TicketService ticketService;
+
+	@Inject
+	PaymentService paymentService;
+
+	@Inject
+	PurchaseDAO purchaseDAO;
 
 	@Inject
 	private BookingHandlerImpl bookingHandler;
@@ -90,8 +102,7 @@ public class BookController extends Application implements Serializable {
 	}
     
     /**
-     * TODO: with BrainTree Payment API
-     * The user completes the checkout: the user needs to have a customer, therefore create a new CustomerRequest, if necessary. 
+     * The user completes the checkout: the user needs to have a customer, therefore create a new CustomerRequest, if necessary.
      * Unless the card is not valid, the booking takes places, and the order will be recorded with purchase and payment details, that 
      * defines an order: the Order table will hold the payment details, 
      * linked with the order_orderId to the Purchase table, which holds all the purchased items for a given order, 
@@ -104,252 +115,112 @@ public class BookController extends Application implements Serializable {
      * @return
      * @throws IOException
      */
-    @POST
-    @Path("/book/payment/fullcheckout")
+	@POST
+	@Path("/book/payment/fullcheckout2")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response fullcheckout(
-    		@Context HttpHeaders headers,
-    		@Context HttpServletRequest request_) throws IOException, InterruptedException {
+	public Response fullcheckout2(@Context HttpHeaders headers, @Context HttpServletRequest request_)
+			throws IOException, InterruptedException {
 
-		uuid = request_.getHeader("uuid").toString();
-		orderId = request_.getParameter("orderId").toString();
-	    seatsToBeReserved = request_.getParameter("seatsToBeReserved").trim();
-	    nonce = request_.getParameter("payment_method_nonce").trim();
+		String uuid = request_.getHeader("uuid");
+		String orderId = request_.getParameter("orderId");
+		String seatsToBeReserved = request_.getParameter("seatsToBeReserved").trim();
+		String nonce = request_.getParameter("payment_method_nonce").trim();
 
-	    int price = new Integer(0);
-	    double price_ = price;
-	    
-	    int ticketPrice = new Integer(0);
-	    double ticketPrice_ = ticketPrice;
-	    
-	    int sum = new Integer(0);
-	    double sum_ = sum;
-	    
-	    int taxPrice = new Integer(0);
-	    double taxPrice_ = taxPrice;
-	    
-	    int taxedTicketPrice = new Integer(0);
-	    double taxedTicketPrice_ = taxedTicketPrice;
-	    
-	    int taxSum = new Integer(0);
-	    double taxSum_ = taxSum;
-	    	    
-	    List<Ticket> allTickets = new ArrayList<Ticket>();
-	    List<Ticket> failedTickets = new ArrayList<Ticket>();
-	    List<Seats> allSeats = new ArrayList<Seats>();
-	    
-		String AuthCode = "";
-		String ResponseCode = "";
-		String ResponseText = "";
-		String Status = "";
-		BigDecimal Amount = null;
-		BigDecimal TaxAmount = null;
-		String CVS = "";
-		
-      	
-		int purchaseId = 0;
-	    JSONObject jsonObj = new JSONObject(seatsToBeReserved);
-	    JSONArray companyList = (JSONArray) jsonObj.get("seatsToBeReserved");
-	        	        
-		for (int i = 0; i < companyList.length(); i++) { 
-	
-		    	JSONObject jObj = new JSONObject(companyList.get(i).toString());
-			    
-		    	screeningDateId = jObj.getString("screeningDateId");
-		        String seats = jObj.getString("seat");
-		        
-		        List<String> seatList = new ArrayList<>();
-		        for (String seat: seats.split("-")){
-				 	
-					 if (!seat.isEmpty()) {
-						 
-						 seatList.add(seat);
-					 
-					 } else {
-						 
-						 throw new CustomExceptions("Error", "Seats might have been lost in the ether...");
-						 
-					 }
-					 
-				 }
-				 
-				//TODO: add error cases
-		        // we do the payment first, then book the tickets
-				// if any of the tickets cannot be booked...rollback the order, let the purchase cancel
-				List<Ticket> ticket = bookingHandler.returnTickets(Integer.parseInt(screeningDateId), seatList, uuid, orderId);					
-
-					allTickets.addAll(ticket);	
-								
-				if(ticket.size() != seatList.size()) {	
-					// exclude purchases, where race-condition occurred (each screening is a different purchase)
-					failedTickets.addAll(ticket);					
-				}
-				purchaseId = ticket.get(0).getPurchase().getPurchaseId();
-				// return updated seats for screenings
-				List<Seats> seats_ =bookingHandler.returnUpdatedseats(Integer.parseInt(screeningDateId));   
-				allSeats.addAll(seats_);
-		    	
-				// we use ticket resource to calculate the price + tax, since the DAO ensures it is correct.				
-		    	for (int j = 0; j < ticket.size(); j++) {
-		    		
-		    		if (ticket.get(0).getTicketId() == 0) {
-		    			
-		    		} else {
-		    		
-		    		ticketPrice_ = ticket.get(j).getPrice();
-		    		taxedTicketPrice_ = ticketPrice_ * ticket.get(j).getTax();
-		    		
-		    		price_ = sum_ + taxedTicketPrice_;
-		    		taxPrice_ = taxSum_ + (taxedTicketPrice_ - ticketPrice_);
-		    		
-		    		sum_ = price_;
-		    		taxSum_ = taxPrice_;
-		    		
-		    		}
-		    		
-		    	}
-		    }
-		//End of reserving seats//
-		List<Integer> ticketIds = new ArrayList<Integer>();	
-		List<Integer> ticketIds_ = allTickets.stream().map(e -> e.getTicketId()).collect(Collectors.toList());	
-		
-		// TODO: create a customer request, first, if it does not exist, and store its id (or go with the anonymous way)
-		// FIX: you need to save the Braintree customerId, and link to the uuid
-		// TODO: then verify the card and amount		
-		// TODO: upon the result of verification proceed with the transaction, or clear the reserved seats.
-		Purchase purchase = null;
-		Purchase purchase_ = null;
-
-			purchase_ =bookingHandler.getBrainTreeCustomerId(uuid);
-			
-			if(purchase_ != null) {
-				
-				Customer customer = gateway.customer().find(purchase_.getBrainTreeId());
-				
-				if(customer != null) {
-
-				customerId = customer.getId();
-			    bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
-				
-					} else {
-						  
-						CustomerRequest requestCustomer = new CustomerRequest()
-								  .firstName("Mark")
-								  .lastName("Jones")
-								  .company("Jones Co.")
-								  .email("mark.jones@example.com")
-								  .fax("419-555-1234")
-								  .phone("614-555-1234");
-								Result<Customer> resultCustomer = gateway.customer().create(requestCustomer);
-								customerId = resultCustomer.getTarget().getId();
-	
-					purchase =bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
-					customerId = purchase.getBrainTreeId();
-	
-				}
-			
-			} else {
-			  
-				CustomerRequest requestCustomer = new CustomerRequest()
-						  .firstName("Mark")
-						  .lastName("Jones")
-						  .company("Jones Co.")
-						  .email("mark.jones@example.com")
-						  .fax("419-555-1234")
-						  .phone("614-555-1234");
-						Result<Customer> resultCustomer = gateway.customer().create(requestCustomer);
-						customerId = resultCustomer.getTarget().getId();
-
-			purchase =bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
-			customerId = purchase.getBrainTreeId();
-
+		if (uuid == null || orderId == null || seatsToBeReserved.isEmpty() || nonce.isEmpty()) {
+			return Response.status(Response.Status.BAD_REQUEST)
+					.entity("{\"error\": \"Missing required parameters\"}")
+					.type(MediaType.APPLICATION_JSON)
+					.build();
 		}
 
-		BigDecimal tax_Sum = new BigDecimal(taxSum_);
-		BigDecimal a = tax_Sum.setScale(2, RoundingMode.HALF_UP);
-		BigDecimal summa = new BigDecimal(sum_);
-		BigDecimal b = summa.setScale(2, RoundingMode.HALF_UP);
+		JSONObject jsonObj = new JSONObject(seatsToBeReserved);
+		JSONArray seatArray = jsonObj.getJSONArray("seatsToBeReserved");
 
-		TransactionRequest request = new TransactionRequest()
-					.merchantAccountId("testcompany")
-					.customerId(customerId)
-					.amount(b)
-					.taxAmount(a)
-					.paymentMethodNonce(nonce)
-					.options()
-					.submitForSettlement(true)
-					.done();
+		//List<Ticket> allTickets = new ArrayList<>();
+		List<Ticket> tickets = new ArrayList<>();
+		List<Ticket> failedTickets = new ArrayList<>();
+		List<Integer> ticketIds_ = new ArrayList<>();
+		List<Seats> allSeats = new ArrayList<>();
+		BigDecimal totalAmount = BigDecimal.ZERO;
+		BigDecimal totalTax = BigDecimal.ZERO;
 
-			Result<Transaction> result = gateway.transaction().sale(request);
-			System.out.println("Transaction finished...");
+		int purchaseId = 0;
 
-			Transaction transaction = result.getTarget();
-			if (result.isSuccess()) {
+		for (int i = 0; i < seatArray.length(); i++) {
+			JSONObject seatObj = seatArray.getJSONObject(i);
+			int screeningDateId = seatObj.getInt("screeningDateId");
+			String[] seatNumbers = seatObj.getString("seat").split("-");
 
-				AuthCode = transaction.getProcessorAuthorizationCode().trim();
-				ResponseCode = transaction.getProcessorResponseCode().trim();
-				ResponseText = transaction.getProcessorResponseText().trim();
-				Amount = transaction.getAmount();
-				TaxAmount = transaction.getTaxAmount();
-				Status = gateway.transaction().find(transaction.getId()).getStatus().toString();
-				CVS = transaction.getCvvResponseCode().trim();
-				//String TransactionID = transaction.getAuthorizedTransactionId();
-				//bh.saveTransactionId(TransactionID);
+			tickets = ticketService.reserveTickets(screeningDateId, seatNumbers, uuid, orderId);
+			ticketIds_ = tickets.stream().map(e -> e.getTicketId()).collect(Collectors.toList());
+			//allTickets.addAll(tickets);
 
+			if (tickets.size() != seatNumbers.length) {
+				failedTickets.addAll(tickets);
 			} else {
-
-				System.out.print("Error with Transaction: " + result.getMessage());
-				ticketIds.addAll(ticketIds_);
-
-				bookingHandler.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
-				JSONObject json = new JSONObject();
-				json.put("Error with Transaction", result.getMessage());
-
-				return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON_TYPE).build();
-
+				purchaseId = tickets.get(0).getPurchase().getPurchaseId();
+				allSeats.addAll(ticketService.getUpdatedSeats(screeningDateId));
+				for (Ticket ticket : tickets) {
+					BigDecimal price = BigDecimal.valueOf(ticket.getPrice());
+					BigDecimal tax = price.multiply(BigDecimal.valueOf(ticket.getTax()));
+					totalAmount = totalAmount.add(price).add(tax);
+					totalTax = totalTax.add(tax);
+				}
 			}
-		
+		}
 
-		//TODO: save the main transaction details into dB (order table), to keep records independently from Ticket/Purchase tables 
-		JSONObject json = new JSONObject();
-
-		if (allTickets.isEmpty() || !failedTickets.isEmpty()) {
-					
-			ticketIds.addAll(ticketIds_);
-			
-			bookingHandler.deleteTicket(ticketIds, allTickets.get(0).getPurchase().getPurchaseId());
-
-			json.put("Error","Tickets are already sold!");  
+		if (tickets.isEmpty() || !failedTickets.isEmpty()) {
+			ticketService.rollbackTickets(ticketIds_, purchaseId);
+			JSONObject json = new JSONObject();
+			json.put("Error","Tickets are already sold!");
 			json.put("Success", "true");
 			json.put("failedTickets", failedTickets);
-						
-    		return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON_TYPE).build();	
-
+			return Response.ok()
+					.entity(json)
+					.type(MediaType.APPLICATION_JSON)
+					.build();
 		}
 
-		json.put("AuthCode", AuthCode);
-		json.put("ResponseCode", ResponseCode);
-		json.put("ResponseText", "hello");
-		json.put("Status", Status);  
-		json.put("Amount",TaxAmount);
-		json.put("TaxAmount",String.format("%.2f", Amount));
-		json.put("Success", "true");
-		json.put("tickets", allTickets);
-		//updates seats in the popOver as reserved
-		json.put("seatsforscreen", allSeats);
-		
-		System.out.println(AuthCode);
-		System.out.println(ResponseCode); 
-		System.out.println(ResponseText);
-	    System.out.println(Amount); 
-		System.out.println(TaxAmount);
-		System.out.println(Status);
-		System.out.println(CVS);
-				
-		return Response.ok().entity(json.toString()).type(MediaType.APPLICATION_JSON_TYPE).build();	
-		
-    }
+		Purchase brainTreeCustomer = purchaseDAO.getBrainTreeCustomer(uuid);
+		String customerId = paymentService.getOrCreateCustomerId(uuid, brainTreeCustomer);
+		bookingHandler.setBrainTreeCustomerId(customerId, purchaseId);
+
+		TransactionRequest request = new TransactionRequest()
+				.merchantAccountId("testcompany")
+				.customerId(customerId)
+				.amount(totalAmount.setScale(2, RoundingMode.HALF_UP))
+				.taxAmount(totalTax.setScale(2, RoundingMode.HALF_UP))
+				.paymentMethodNonce(nonce)
+				.options().submitForSettlement(true).done();
+
+		Result<Transaction> result = paymentService.processTransaction(request);
+
+		if (!result.isSuccess()) {
+			ticketService.rollbackTickets(ticketIds_, purchaseId);
+			JSONObject json = new JSONObject();
+			json.put("Error with Transaction", result.getMessage());
+			return Response.ok()
+					.entity(json)
+					.type(MediaType.APPLICATION_JSON)
+					.build();
+		}
+
+		Transaction transaction = result.getTarget();
+
+		JSONObject responseJson = new JSONObject();
+		responseJson.put("ResponseText", "hello");
+		responseJson.put("AuthCode", transaction.getProcessorAuthorizationCode().trim());
+		responseJson.put("ResponseCode", transaction.getProcessorResponseCode().trim());
+		responseJson.put("Status", transaction.getStatus().toString());
+		responseJson.put("Amount", totalAmount);
+		responseJson.put("TaxAmount", String.format("%.2f", totalTax));
+		responseJson.put("Success", "true");
+		responseJson.put("tickets", tickets);
+		responseJson.put("seatsforscreen", allSeats);
+
+		return Response.ok().entity(responseJson.toString()).type(MediaType.APPLICATION_JSON_TYPE).build();
+	}
     
     @GET
 	@Path("/book/purchases")

@@ -21,95 +21,48 @@ public class Logins {
     protected String user;
     protected String uuid;
     protected String email;
+    protected String profilePicture;
 
-    /**
-     * Gets the value of the Id property.
-     * 
-     */
+
     public int getId() {
         return id;
     }
 
-    /**
-     * Sets the value of the Id property.
-     * 
-     */
     public void setId(int value) {
         this.id = value;
     }
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     public String getUser() {
         return user;
     }
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     public void setUser(String value) {
         this.user = value;
     }
 
-    /**
-     * Gets the value of the uuid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     public String getUuid() {
         return uuid;
     }
 
-    /**
-     * Sets the value of the uuid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     public void setUuid(String value) {
         this.uuid = value;
     }
-    
-    /**
-     * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
+
     public String getEmail() {
         return email;
     }
 
-    /**
-     * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     public void setEmail(String value) {
         this.email = value;
     }
 
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String value) {
+        this.profilePicture = value;
+    }
 }
 
 

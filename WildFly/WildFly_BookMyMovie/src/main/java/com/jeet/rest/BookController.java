@@ -81,6 +81,7 @@ public class BookController extends Application implements Serializable {
 		myObject_user.put("uuid", user_.getUuid());
 		myObject_user.put("user", user_.getUser());
 		myObject_user.put("email", user_.getEmail());
+		myObject_user.put("profilePicture", user_.getProfilePicture());
 
 	        
 				if (user_.getId() != 0) {

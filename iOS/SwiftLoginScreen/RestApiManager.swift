@@ -61,7 +61,7 @@ class RestApiManager: NSObject, UIAlertViewDelegate, AlertViewProtocol {
             var error = sessionError
 
             if let httpResponse = response as? HTTPURLResponse {
-                
+                //TODO: check it on the server side
                 if httpResponse.statusCode == 200 {
                     let json: JSON = try! JSON(data: data!)
                     onCompletion(json, error as NSError?)

@@ -1,8 +1,11 @@
 package com.jeet.db;
 
 import com.jeet.api.*;
+import com.jeet.utils.CustomExceptions;
 import jakarta.enterprise.context.Dependent;
 import jakarta.persistence.FlushModeType;
+import jakarta.persistence.LockModeType;
+import jakarta.transaction.Transactional;
 import org.hibernate.*;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.hibernate.search.engine.search.query.SearchResult;
@@ -15,6 +18,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 @Dependent
 public class DAO {
@@ -27,14 +33,15 @@ public class DAO {
 	private static volatile Purchase purchase;
 	private final SearchSession searchSession;
 	private static volatile Screen screen;
-
+	private static volatile boolean isIndexingRunning;
+	private static final ExecutorService executor = Executors.newSingleThreadExecutor();
 
 	/**
 	 * Intantiate DAO class that loads configured SessionFactory object. 
 	 * You can also configure further settings for the session.
 	 * 
 	 */
-	private DAO() throws InterruptedException {
+	public DAO() throws InterruptedException {
 
 		factory = HibernateUtil.getSessionFactory();
 		System.out.println("Creating factory");
@@ -50,10 +57,24 @@ public class DAO {
 		System.out.println("Cache cleared.");
 
 		searchSession = Search.session(session);
-		Search.mapping(factory)
-				.scope(Movie.class)
-				.massIndexer()
-				.startAndWait();
+
+		if (!isIndexingRunning) {
+			executor.submit(() -> {
+				try {
+					System.out.println("Starting Hibernate Search Indexing...");
+					Search.mapping(factory)
+							.scope(Movie.class)
+							.massIndexer()
+							.purgeAllOnStart(true)
+							.startAndWait();
+					System.out.println("Indexing complete.");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			});
+
+			isIndexingRunning = true;
+		}
 	}
 
 	/**
@@ -290,7 +311,9 @@ public class DAO {
 
 		Seats seat = (Seats) session.createQuery(hql)
 				.setParameter("mScreeningDatesId", screeningDatesId)
-				.setParameter("mSeatNumber", seatNumber).uniqueResult();
+				.setParameter("mSeatNumber", seatNumber)
+				.setLockMode(LockModeType.PESSIMISTIC_WRITE)
+				.uniqueResult();
 
 		return seat;	
 	}
@@ -701,7 +724,7 @@ public class DAO {
 		session = factory.getCurrentSession();
 		trans = session.beginTransaction();
 
-		String hql = "select purchase from Purchase as purchase where uuid = :uuid and braintree_customerId != null";
+		String hql = "SELECT p FROM Purchase p WHERE p.uuid = :uuid AND p.braintree_customerId IS NOT NULL";
 
 		List<Purchase> purchase = session.createQuery(hql)
 			.setParameter("uuid", uuid).getResultList();
@@ -747,93 +770,54 @@ public class DAO {
 	 * @param uuid
 	 * @return
 	 */
+	@Transactional
 	public synchronized List<Ticket> bookTickets(int screeningDateId, List<String> seats, String uuid, String orderId) throws InterruptedException {
-		
-		purchase = DAO.instance().setPurchaseId(uuid, orderId);
-		List<Ticket> tickets = new ArrayList<Ticket>();
-		
-		for (int i = 0; i < seats.size(); i++) {
-		
-		// because seats won't be checked (reserved) in advance, in vain
-		seat = DAO.instance().getSeatForAvailability(screeningDateId, seats.get(i));
-		
-			if(seat.getIsReserved().equals("0")){
-			
-				Ticket newTic = new Ticket();
-				newTic.setScreen(seat.getScreen());
-				newTic.setPrice(seat.getPrice());
-				newTic.setTax(seat.getTax());
-				newTic.setSeats_seatNumber(seat.getSeatNumber());
-				newTic.setSeats_seatRow(seat.getSeatRow());
-				newTic.setSeats(seat);
-				newTic.setPurchase(purchase);
-				seat.setIsReserved("1");
-								
-				session = factory.getCurrentSession();
-				
-				trans = session.getTransaction();
-				
-				if (trans.getStatus() != TransactionStatus.ACTIVE) {
-					
-					trans.begin();
-				}
-				
-				// ez mi?
-				session.save(newTic.getSeats());
-				//
-				session.save(newTic);
-				
-				tickets.add(newTic);
+		Purchase purchase = DAO.instance().setPurchaseId(uuid, orderId);
+		List<Ticket> tickets = new ArrayList<>();
+
+		try {
+			// Fetch and lock all seats first to prevent race conditions
+			List<Seats> seatsList = seats.stream()
+					.map(seatNum -> {
+						try {
+							return DAO.instance().getSeatForAvailability(screeningDateId, seatNum);
+						} catch (InterruptedException e) {
+							throw new RuntimeException(e);
+						}
+					})
+					.collect(Collectors.toList());
+
+			// Check if any seat is already reserved
+			boolean anySeatReserved = seatsList.stream().anyMatch(seat -> !"0".equals(seat.getIsReserved()));
+			if (anySeatReserved) {
+				throw new CustomExceptions("Booking Failed", "One or more seats are already reserved.");
 			}
-		
-		}
-		
-		if (tickets.size() != seats.size()) {
-		
-			tickets.clear();
-			
-			session.getTransaction().rollback();
-			
-			Ticket newTic = new Ticket();
-			newTic.setTicketId(0);
-			newTic.setScreen(seat.getScreen());
-			newTic.setPrice(seat.getPrice());
-			newTic.setTax(seat.getTax());
-			newTic.setSeats_seatNumber(seat.getSeatNumber());
-			newTic.setSeats_seatRow(seat.getSeatRow());
-			
-			tickets.add(newTic);
 
-		
-		} else {
-			
-			try {
-				
-				// save to dB
-				session.getTransaction().commit();
+			// If all seats are available, proceed with booking
+			for (Seats seat : seatsList) {
+				Ticket newTicket = new Ticket();
+				newTicket.setScreen(seat.getScreen());
+				newTicket.setPrice(seat.getPrice());
+				newTicket.setTax(seat.getTax());
+				newTicket.setSeats_seatNumber(seat.getSeatNumber());
+				newTicket.setSeats_seatRow(seat.getSeatRow());
+				newTicket.setSeats(seat);
+				newTicket.setPurchase(purchase);
 
-			} catch (Exception e) {
-				
-				tickets.clear();
+				seat.setIsReserved("1"); // Mark seat as reserved
 
-				session.getTransaction().rollback();
-				
-				Ticket newTic = new Ticket();
-				newTic.setTicketId(0);
-				newTic.setScreen(seat.getScreen());
-				newTic.setPrice(seat.getPrice());
-				newTic.setTax(seat.getTax());
-				newTic.setSeats_seatNumber(seat.getSeatNumber());
-				newTic.setSeats_seatRow(seat.getSeatRow());
+				session.save(newTicket);
+				session.update(seat);
 
-				tickets.add(newTic);
-
-				
+				tickets.add(newTicket);
 			}
-			
+
+			return tickets; // Successful booking
+
+		} catch (Exception e) {
+			// If anything fails, the transaction is automatically rolled back
+			throw new CustomExceptions("Booking Failed", "Unable to book seats: " + e.getMessage());
 		}
-		
-		return tickets;
 	}
 	
 	/*
@@ -977,36 +961,46 @@ public class DAO {
 	 * @return
 	 */
 	public synchronized boolean deletePurchase(Integer purchaseId) {
-		
+
 		session = factory.getCurrentSession();
-		trans = session.getTransaction();
-		
-		if (trans.getStatus() != TransactionStatus.ACTIVE) {
-			
-			trans.begin();
-		}
-		
-		Purchase pur = (Purchase)session.load(Purchase.class, purchaseId);
+		Transaction trans = session.beginTransaction();
+
+		Purchase pur = session.createQuery(
+				"SELECT p FROM Purchase p LEFT JOIN FETCH p.ticket t LEFT JOIN FETCH t.seats WHERE p.id = :purchaseId",
+				Purchase.class
+		).setParameter("purchaseId", purchaseId).getSingleResult();
+
 		List<Ticket> ticketIds = pur.getTicketsForPurchase();
-		
+
+		int batchSize = 20;
 		for (int i = 0; i < ticketIds.size(); i++) {
-			Ticket tic = (Ticket)session.load(Ticket.class, ticketIds.get(i).getTicketId());
-			Seats seat = (Seats)session.load(Seats.class, tic.getSeats().getSeatId());
+			Ticket tic = ticketIds.get(i);
+			Seats seat = tic.getSeats();
 			seat.setIsReserved("0");
 
 			session.saveOrUpdate(seat);
-			session.delete(tic);
-				
-			
-			}
-		
-		// remove purchase once it has no more associated ticket
-		session.delete(pur);
+		//	session.delete(tic);
 
+			if (i % batchSize == 0) {
+				session.flush();
+				session.clear();
+			}
+		}
+
+		// Bulk delete all tickets for the purchase
+	//	session.createQuery("DELETE FROM Ticket t WHERE t.purchase_purchaseId = :purchaseId")
+	//			.setParameter("purchaseId", purchaseId)
+	//			.executeUpdate();
+
+		// Delete the purchase itself
+		session.createQuery("DELETE FROM Purchase WHERE purchaseId = :purchaseId")
+				.setParameter("purchaseId", purchaseId)
+				.executeUpdate();
+
+	//	session.delete(pur);
 		trans.commit();
-		
+
 		return true;
-		
 	}
 	
 	/**
@@ -1017,7 +1011,7 @@ public class DAO {
 	 * @return
 	 */
 	public synchronized List<Ticket> getTicketPerPurchase(int purchaseId){
-		
+
 		session = factory.getCurrentSession();
 		trans = session.getTransaction();
 		

@@ -25,33 +25,37 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
         print(#function, "\(self)")
     }
 
-    lazy var NoPicture: [String: String] = Dictionary()
+    // MARK: - Properties
+    lazy var noPicture: [String: String] = [:]
+    let pickerData: NSDictionary = ["screeningDatesId": 0, "screeningDate": "Select date", "movieId": 0]
 
-    let pickerdata: NSDictionary = ["screeningDatesId": 0, "screeningDate": "Select date", "movieId": 0]
     var nameTextView: UITextView?
-
-    var selectVenues_picture: String!
-    var selectLarge_picture: String!
-    var selectVenueId: Int!
-    var venueName: String!
-    var selectAddress: String!
+    var selectVenues_picture: String?
+    var selectLarge_picture: String?
+    var selectVenueId: Int?
+    var venueName: String?
+    var selectAddress: String?
     var movieId: Int!
-    var movieName: String!
-    var movieDetails: String!
-    var screen_screenId: String!
+    var movieName: String?
+    var movieDetails: String?
+    var screen_screenId: String?
     var locationId: Int!
-    var iMDB: String!
+    var iMDB: String?
 
-    var starty: CGFloat!
+    var startY: CGFloat!
     var imageHeight: CGFloat!
     var popOverY: CGFloat!
-    // var popOverX:CGFloat!
 
     lazy var imageView = UIImageView()
-    lazy var imageView_ = UIImageView()
+    lazy var venueImageView = UIImageView()
     var scrollView: UIScrollView!
 
-    lazy var icons: [String: String] = Dictionary()
+    lazy var icons: [String: String] = [
+        "Calendar-icon": "calendar-icon",
+        "iCal-icon": "ical",
+        "FBShare": "facebook_share"
+    ]
+
     lazy var googleCalendar = UIImageView()
     lazy var ical = UIImageView()
     lazy var fbShare = UIImageView()
@@ -64,17 +68,60 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     lazy var fb = UIImage()
 
     var calendars: [EKCalendar]?
-    let eventStore: EKEventStore = EKEventStore()
+    let eventStore = EKEventStore()
     var playerItemContext = 0
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScrollView()
+        addDatesData()
+    }
 
-        PlacesData_.removeAll()
-        icons = ["Calendar-icon": "calendar-icon", "iCal-icon": "ical", "FBShare": "facebook_share"]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadMovieImage()
+        loadVenueImage()
+    }
 
-        let urlString = serverURL + "/simple-service-webapp/webapi" + (selectLarge_picture!)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupUI()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+
+    // MARK: - Setup Methods
+    private func setupScrollView() {
+        scrollView = UIScrollView(frame: view.bounds)
+        scrollView.delegate = self
+        scrollView.alwaysBounceVertical = true
+        scrollView.backgroundColor = .white
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
+        view.addSubview(scrollView)
+    }
+
+    private func loadMovieImage() {
+        guard let selectLargePicture = selectLarge_picture else { return }
+        let urlString = serverURL + "/simple-service-webapp/webapi" + selectLargePicture
+
+        var loadPictures: GeneralRequestManager?
+        loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
         
+        loadPictures?.getData_ {
+        (data: Data, _: NSError?) in
+        let image = UIImage(data: data)
+        self.moviePicture = image!
+        self.setupMovieImageView()
+        }
+    }
+
+    private func loadVenueImage() {
+        if let selectVenuesPicture = selectVenues_picture, !selectVenuesPicture.isEmpty {
+            let urlString = serverURL + "/simple-service-webapp/webapi" + selectVenuesPicture
+
             var loadPictures: GeneralRequestManager?
             loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
             
@@ -82,242 +129,161 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
             loadPictures?.getData_ {
             (data: Data, _: NSError?) in
             let image = UIImage(data: data)
-            self.moviePicture = image!
-            self.moviePicture = image!
-
-        }
-        
-
-        if (!selectVenues_picture.isEmpty) {
-        
-            let urlString = serverURL + "/simple-service-webapp/webapi" + (selectVenues_picture!)
-        
-                var loadPictures: GeneralRequestManager?
-                loadPictures = GeneralRequestManager(url: urlString, errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: "1", contentType: "", bodyToPost: nil)
+            self.venuePicture = image!
+            self.setupVenueImageView()
                 
-                
-                loadPictures?.getData_ {
-                (data: Data, _: NSError?) in
-                let image = UIImage(data: data)
-                self.venuePicture = image!
-                self.venuePicture = image!
-
             }
-            
         } else {
-        NoPicture = ["NoPicture": "cat2"]
-            venuePicture = UIImage(named: NoPicture["NoPicture"]!)!
+            noPicture = ["NoPicture": "cat2"]
+            venuePicture = UIImage(named: noPicture["NoPicture"]!) ?? UIImage()
+            setupVenueImageView()
         }
-        
-        var imageWidth = moviePicture.size.width
-        imageHeight = moviePicture.size.height
+    }
 
-        let aspectRatio = imageWidth / imageHeight
-
-        var startx: CGFloat = view.frame.width * 0.1
-        starty = view.frame.height * 0.15
-
-        if imageWidth > view.frame.width {
-            imageWidth = view.frame.width * 0.9
-            imageHeight = imageWidth / aspectRatio
-            startx = view.frame.width * 0.05
-        }
-
-        var imageWidth_ = venuePicture.size.width
-        var imageHeight_ = venuePicture.size.height
-
-        let aspectRatio_ = imageWidth_ / imageHeight_
-
-        var startx_: CGFloat = view.frame.width * 0.1
-        let starty_: CGFloat = view.frame.height * 0.85
-
-        if imageWidth_ > view.frame.width {
-            imageWidth_ = view.frame.width * 0.9
-            imageHeight_ = imageWidth_ / aspectRatio_
-            startx_ = view.frame.width * 0.05
-        }
-
-        imageView = UIImageView(frame: CGRect(x: startx, y: starty, width: imageWidth, height: imageHeight))
+    private func setupMovieImageView() {
+        let (width, height, x, y) = getResizedImageDimensions(for: moviePicture, startY: view.frame.height * 0.15)
+        imageView.frame = CGRect(x: x, y: y, width: width, height: height)
         imageView.image = moviePicture
-
-        imageView_ = UIImageView(frame: CGRect(x: startx_, y: starty_, width: imageWidth_, height: imageHeight_))
-        imageView_.image = venuePicture
-
-        scrollView = UIScrollView()
-        scrollView.delegate = self
-        scrollView.frame = view.bounds
-        scrollView.alwaysBounceVertical = true
-        scrollView.backgroundColor = UIColor.white
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
-
         scrollView.addSubview(imageView)
-        scrollView.addSubview(imageView_)
+    }
 
-        let btnData = UIButton(frame: CGRect(x: view.frame.width / 2, y: 25, width: view.frame.width / 2, height: 20))
-        btnData.backgroundColor = UIColor.black
-        btnData.setTitle("Button", for: UIControl.State())
-        //  btnData.addTarget(self, action: #selector(VenuesDetailsVC.dates), forControlEvents: UIControlEvents.TouchUpInside)
+    private func setupVenueImageView() {
+        let (width, height, x, y) = getResizedImageDimensions(for: venuePicture, startY: view.frame.height * 0.85)
+        venueImageView.frame = CGRect(x: x, y: y, width: width, height: height)
+        venueImageView.image = venuePicture
+        scrollView.addSubview(venueImageView)
+    }
 
-        let btnNav = UIButton(frame: CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 20))
-        btnNav.backgroundColor = UIColor.black
-        btnNav.showsTouchWhenHighlighted = true
-        btnNav.setTitle("Back", for: UIControl.State())
-        btnNav.addTarget(self, action: #selector(VenuesDetailsVC.navigateBack), for: UIControl.Event.touchUpInside)
+    private func setupUI() {
+        setupButtons()
+        setupTextView()
+        setupPlayer()
+    }
 
-        let frame1 = CGRect(x: view.frame.width * 0.15, y: (starty * 2.5) + imageHeight, width: 44, height: 20)
-        let button = UIButton(frame: frame1)
-        let myAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
-        let title = NSMutableAttributedString(string: "Book", attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttribute))
-
-        button.tintColor = UIColor.darkGray
-        button.setAttributedTitle(title, for: UIControl.State())
-        button.backgroundColor = UIColor.white
-        button.showsTouchWhenHighlighted = true
-        button.addTarget(self, action: #selector(VenuesDetailsVC.book), for: UIControl.Event.touchUpInside)
+    private func setupButtons() {
+        let buttonTitlesFirstRow = [("Book", #selector(book)), ("Dates", #selector(dates)), ("Map", #selector(map))]
         
-        let frameD = CGRect(x: view.frame.width * 0.15, y: (starty * 3) + imageHeight, width: 130, height: 20)
-        let buttonD = UIButton(frame: frameD)
-        let myAttributeD = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
-        let titleD = NSMutableAttributedString(string: "Movie detail", attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttributeD))
+        let buttonTitlesSecondRow = [("Movie Detail", #selector(movieDetail)), ("Calendar", #selector(selectCalendar))]
+        
+        let yOffset = imageView.frame.height + (view.frame.height / 6) + 150 // Adjust vertical position
+        let buttonWidth: CGFloat = 100  // Set button width
+        let spacing: CGFloat = 20       // Space between buttons
+        let maxButtons = max(buttonTitlesFirstRow.count, buttonTitlesSecondRow.count)
+        
+        // Calculate total width needed for the row
+        let totalWidth = (buttonWidth * CGFloat(maxButtons)) + (spacing * CGFloat(maxButtons - 1))
+        let startX = (view.frame.width - totalWidth) / 2  // Center the buttons horizontally
+        
+        var xOffset = startX  // Ensure both rows start at the same X position
 
-        buttonD.tintColor = UIColor.darkGray
-        buttonD.setAttributedTitle(titleD, for: UIControl.State())
-        buttonD.backgroundColor = UIColor.white
-        buttonD.showsTouchWhenHighlighted = true
-        buttonD.addTarget(self, action: #selector(VenuesDetailsVC.movieDetail), for: UIControl.Event.touchUpInside)
-
-        let frame2 = CGRect(x: view.frame.width * 0.65, y: (starty * 2.5) + imageHeight, width: 44, height: 20)
-        let buttonDate = UIButton(frame: frame2)
-        let text: NSString = "Dates"
-        let myAttributeDate = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
-
-        // let myAttributeDate_ = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14) ]
-        let titleDate = NSMutableAttributedString(string: text as String, attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttributeDate))
-        //titleDate.addAttributes(myAttributeDate_, range: text.range(of: text as String))
-
-        buttonDate.tintColor = UIColor.darkGray
-        buttonDate.setAttributedTitle(titleDate, for: UIControl.State())
-        buttonDate.backgroundColor = UIColor.white
-        buttonDate.showsTouchWhenHighlighted = true
-        buttonDate.addTarget(self, action: #selector(VenuesDetailsVC.dates), for: UIControl.Event.touchUpInside)
-
-        let frameM = CGRect(x: view.frame.width * 0.35, y: (starty * 2.5) + imageHeight, width: 44, height: 20)
-        let buttonMap = UIButton(frame: frameM)
-        let textM: NSString = "Map"
-        let myAttributeMap = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "CourierNewPS-BoldMT", size: 14.0)!]
-
-        // let myAttributeDate_ = [ NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14) ]
-        let titleMap = NSMutableAttributedString(string: textM as String, attributes: convertToOptionalNSAttributedStringKeyDictionary(myAttributeMap))
-        //titleDate.addAttributes(myAttributeDate_, range: text.range(of: text as String))
-
-        buttonMap.tintColor = UIColor.darkGray
-        buttonMap.setAttributedTitle(titleMap, for: UIControl.State())
-        buttonMap.backgroundColor = UIColor.white
-        buttonMap.showsTouchWhenHighlighted = true
-        buttonMap.addTarget(self, action: #selector(VenuesDetailsVC.map), for: UIControl.Event.touchUpInside)
-
-        google = UIImage(named: icons["Calendar-icon"]!)!
-        googleCalendar = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-        googleCalendar.image = google
-
-        let frame3 = CGRect(x: view.frame.width * 0.75, y: (starty * 2.9) + imageHeight, width: 44, height: 44)
-        let buttonCalendar = UIButton(frame: frame3)
-        buttonCalendar.setImage(googleCalendar.image, for: UIControl.State())
-        buttonCalendar.showsTouchWhenHighlighted = true
-        buttonCalendar.addTarget(self, action: #selector(VenuesDetailsVC.selectCalendar), for: UIControl.Event.touchUpInside)
-
-        ios = UIImage(named: icons["iCal-icon"]!)!
-        ical = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-        ical.image = ios
-
-        let frame3_ = CGRect(x: view.frame.width * 0.64, y: (starty * 2.9) + imageHeight, width: 44, height: 44)
-        let buttonCalendar_ = UIButton(frame: frame3_)
-        buttonCalendar_.setImage(ical.image, for: UIControl.State())
-        buttonCalendar_.showsTouchWhenHighlighted = true
-        buttonCalendar_.addTarget(self, action: #selector(VenuesDetailsVC.selectCalendar_), for: UIControl.Event.touchUpInside)
-
-        fb = UIImage(named: icons["FBShare"]!)!
-        fbShare = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
-        fbShare.image = fb
-
-        let frame4 = CGRect(x: view.frame.width * 0.15, y: (starty * 3) + imageHeight, width: 50, height: 30)
-        let buttonShare = UIButton(frame: frame4)
-        buttonShare.setImage(fbShare.image, for: UIControl.State())
-        buttonShare.showsTouchWhenHighlighted = true
-        //     buttonShare.addTarget(self, action: #selector(VenuesDetailsVC.shareOnFaceBook), for: UIControlEvents.touchUpInside)
-
-        // TODO: add venue details, info, etc
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(VenuesDetailsVC.showMoreActions))
-        tap.delegate = self
-        tap.numberOfTapsRequired = 1
-        scrollView.addGestureRecognizer(tap)
-        scrollView.addSubview(button)
-        scrollView.addSubview(buttonDate)
-        scrollView.addSubview(buttonMap)
-        scrollView.addSubview(buttonD)
-
-        // scrollView.addSubview(buttonCalendar)
-        scrollView.addSubview(buttonCalendar_)
-        // scrollView.addSubview(buttonShare)
-        view.addSubview(scrollView)
-
-        view.addSubview(btnData)
-        view.addSubview(btnNav)
-        // self.view.addSubview(buttonCalendar)
-
-        // create the textView
-        nameTextView = UITextView(frame: CGRect(x: view.frame.size.height * 0.05, y: starty * 3.0, width: view.frame.size.width * 0.8, height: view.frame.height / 7))
-        nameTextView?.isEditable = false
-
-        let myTextAttribute = [convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont(name: "Courier New", size: 13.0)!]
-        let detailText = NSMutableAttributedString(string: movieDetails, attributes: convertToOptionalNSAttributedStringKeyDictionary(myTextAttribute))
-
-        nameTextView?.attributedText = detailText
-        nameTextView?.textAlignment = NSTextAlignment.justified
-        nameTextView?.alwaysBounceVertical = true
-        scrollView.addSubview(nameTextView!)
-
-        //Seats
-        while !SeatsData_.isEmpty {
-            SeatsData_.removeAll()
+        // First row
+        for (title, selector) in buttonTitlesFirstRow {
+            let button = createButton(title: title, y: yOffset, x: xOffset, width: buttonWidth)
+            button.addTarget(self, action: selector, for: .touchUpInside)
+            scrollView.addSubview(button)
+            xOffset += buttonWidth + spacing
         }
-        ScreeningDates.removeAll()
-        ScreeningDates.append(DatesData(add: pickerdata))
- 
+
+        // Second row (directly below, properly aligned)
+        let secondRowYOffset = yOffset + 50
+        // Calculate total width needed for the row
+        let totalWidth2 = (buttonWidth * CGFloat(maxButtons - 1)) + (spacing * CGFloat(maxButtons - 1))
+        let startX2 = (view.frame.width - totalWidth2) / 2  // Center the buttons horizontally
+        xOffset = startX2  // Reset xOffset for proper alignment
+
+        for (title, selector) in buttonTitlesSecondRow {
+            let button = createButton(title: title, y: secondRowYOffset, x: xOffset, width: buttonWidth)
+            button.addTarget(self, action: selector, for: .touchUpInside)
+            scrollView.addSubview(button)
+            xOffset += buttonWidth + spacing
+        }
+
+        let btnNav = createUpperButton(title: "Back", action: #selector(navigateBack))
+        view.addSubview(btnNav)
+    }
+
+    private func setupTextView() {
+        let textViewFrame = CGRect(x: view.frame.size.width * 0.1, y: imageView.frame.height + 150, width: view.frame.size.width * 0.8, height: view.frame.height / 7)
+        nameTextView = UITextView(frame: textViewFrame)
+        nameTextView?.isEditable = false
+        nameTextView?.textAlignment = .justified
+        nameTextView?.alwaysBounceVertical = true
+        nameTextView?.backgroundColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .gray : .white
+        }
+        nameTextView?.textColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .black : .black
+        }
+        nameTextView?.layer.borderWidth = 1
+
+        if let movieDetails = movieDetails {
+            let textAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Courier New", size: 13.0)!]
+            nameTextView?.attributedText = NSAttributedString(string: movieDetails, attributes: textAttributes)
+        }
         
+        scrollView.addSubview(nameTextView!)
+    }
+
+    private func setupPlayer() {
         guard let fileURL = Bundle.main.path(forResource: "garnier1", ofType: "mov") else {
-                fatalError("File not found")
+            print("File not found")
+            return
         }
 
         let url = NSURL.fileURL(withPath: fileURL)
         let playerItem = AVPlayerItem(asset: AVAsset(url: url), automaticallyLoadedAssetKeys: ["playable"])
         let player = AVPlayer(playerItem: playerItem)
-        
-        let playerFrame = CGRect(x: startx_, y: view.frame.height * 1.2, width: view.frame.width * 0.9, height: imageHeight_)
+
+        let playerFrame = CGRect(x: 20, y: view.frame.height * 1.2, width: view.frame.width * 0.9, height: 300)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.view.frame = playerFrame
-
         addChild(playerViewController)
-        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 55.0, right: 0.0)
-        scrollView.contentSize.height = view.frame.height * 1.2 + imageHeight_
- 
+
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 55, right: 0)
+        scrollView.contentSize.height = view.frame.height * 1.2 + 300
+
         scrollView.addSubview(playerViewController.view)
         playerViewController.didMove(toParent: self)
-        addDatesData()
+    }
+
+    // MARK: - Helper Methods
+    private func getResizedImageDimensions(for image: UIImage, startY: CGFloat) -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+        var width = image.size.width
+        var height = image.size.height
+        let aspectRatio = width / height
+
+        if width > view.frame.width {
+            width = view.frame.width * 0.9
+            height = width / aspectRatio
+        }
+
+        let x = (view.frame.width - width) / 2
+        return (width, height, x, startY)
+    }
+
+    private func createButton(title: String, y: CGFloat, x: CGFloat, width: CGFloat = 85) -> UIButton {
+        let button = UIButton(frame: CGRect(x: x, y: y, width: width, height: 30))
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 13, weight: .bold)
+        // Use dynamic colors for background and title
+        button.backgroundColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }
+        button.setTitleColor(UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .black : .white
+        }, for: .normal)
+        return button
     }
     
-    override func viewWillAppear(_: Bool) {
-        super.viewWillAppear(true)
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.viewDidAppear(true)
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    private func createUpperButton(title: String, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 0, y: 25, width: view.frame.width / 2, height: 40)
+        button.setTitle(title, for: .normal)
+        button.backgroundColor = .black
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: action, for: .touchUpInside)
+        return button
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -502,6 +468,7 @@ class VenuesDetailsVC: UIViewController, UIScrollViewDelegate, UIPopoverPresenta
     func addDatesData() {
         var errorOnLogin: GeneralRequestManager?
 
+        //TODO: check it on the server side
         errorOnLogin = GeneralRequestManager(url: serverURL + "/mbooks-1/rest/book/dates/" + String(locationId) + "/" + String(movieId), errors: "", method: "GET", headers: nil, queryParameters: nil, bodyParameters: nil, isCacheable: nil, contentType: "", bodyToPost: nil)
 
         errorOnLogin?.getResponse {

@@ -542,12 +542,11 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     (data: Data, _: NSError?) in
                     let image = UIImage(data: data)
                     cell!.imageView?.image = image
-                    }
-                    /*
-                    if let imageData = try? Data(contentsOf: url) {
-                        cell!.imageView?.image = UIImage(data: imageData)
+                    if let updatedCell = tableView.cellForRow(at: indexPath) {
+                            updatedCell.imageView?.image = image
+                            updatedCell.setNeedsLayout() // Force the cell to update
                         }
-                    */
+                    }
                 }
                 
                 if (!adminPage) {
@@ -618,9 +617,11 @@ class MoviesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UI
                     (data: Data, _: NSError?) in
                     let image = UIImage(data: data)
                     cell!.imageView?.image = image
-                    cell!.imageView?.image = image
-            
-                }
+                    if let updatedCell = tableView.cellForRow(at: indexPath) {
+                            updatedCell.imageView?.image = image
+                            updatedCell.setNeedsLayout() // Force the cell to update
+                        }
+                    }
                 
                 if (!adminPage) {
                     cell?.contentView.addSubview(btn)
