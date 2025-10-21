@@ -18,7 +18,7 @@
         <slf4j-api-version>2.1.0-alpha1</slf4j-api-version>
         <log4j-over-slf4j-version>2.1.0-alpha1</log4j-over-slf4j-version>
         <jcl-over-slf4j-version>2.1.0-alpha1</jcl-over-slf4j-version>
-        <logback.version>1.5.10</logback.version>
+        <logback.version>1.5.19</logback.version>
         <mysql.version>8.0.31</mysql.version>
         <wildfly.version>33.0.2.Final</wildfly.version>
         <version.server>33.0.2.Final</version.server>
